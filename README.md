@@ -121,7 +121,7 @@ Thank you for testing Combustion Toolbox!
 
 Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain
 
-See also the list of [contributors](CONTRIBUTORS.md) who participated in this project.
+See also the list of contributors who participated in this project.
 
 # Citing Combustion Toolbox
 
