@@ -5,3 +5,7 @@ body {
   .content {
     max-width: 75% !important;
 }
+
+dl.py .field-list dt {
+  text-transform: none !important;
+}
