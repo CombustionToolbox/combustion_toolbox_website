@@ -4,7 +4,7 @@
 The documentation is under development 
 ```
 
-```{include} ../../README.md
+```{include} README.md
 :relative-images:
 ```
   
