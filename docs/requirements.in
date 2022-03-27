@@ -6,3 +6,4 @@ sphinxcontrib-fulltoc
 ablog
 nbsphinx
 furo
+myst-parser
