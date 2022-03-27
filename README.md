@@ -9,5 +9,6 @@ pip install -r docs/requirements.txt
 
 To build it locally
 ```terminal
+pip install sphinx-autobuild
 sphinx-autobuild docs/source docs/build/html
 ```
