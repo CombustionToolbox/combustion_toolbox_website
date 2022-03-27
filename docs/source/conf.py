@@ -22,7 +22,7 @@ copyright = '2022, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
-release = '0.9.0'
+release = 'v0.9.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -87,4 +87,8 @@ html_css_files = [
     'css/style.css',
 ]
 
+html_theme_options = {
+    "light_logo": "img/logo_CT.svg",
+    "dark_logo": "img/logo_CT.svg",
+}
 
