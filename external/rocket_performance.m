@@ -6,17 +6,17 @@ function [mix1, mix2, mix3] = rocket_performance(self, mix1, varargin)
     %    [mix1, mix2, mix3] = rocket_performance(varargin)
     %
     % INPUTS:
-    %     self:           Struct with all the data
-    %     mix1:           Struct mix with all the properties of the initial mixture
+    %     :self:           Struct with all the data
+    %     :mix1:           Struct mix with all the properties of the initial mixture
     %
     % OPTIONAL INPUTS:
-    %     mix2:           Struct mix with all the properties of the chamber mixture
-    %     mix3:           Struct mix with all the properties of the thoat mixture
+    %     :mix2:           Struct mix with all the properties of the chamber mixture
+    %     :mix3:           Struct mix with all the properties of the thoat mixture
     %
     % OUTPUTS:
-    %     mix1:           Struct mix with all the properties of the initial mixture
-    %     mix2:           Struct mix with all the properties of the chamber mixture
-    %     mix3:           Struct mix with all the properties of the thoat mixture
+    %     :mix1:           Struct mix with all the properties of the initial mixture
+    %     :mix2:           Struct mix with all the properties of the chamber mixture
+    %     :mix3:           Struct mix with all the properties of the thoat mixture
     
     % Assign values
     self = varargin{1};
