@@ -1,0 +1,3 @@
+[submodule "external/combustion_toolbox"]
+	path = external/combustion_toolbox
+	url = https://github.com/AlbertoCuadra/combustion_toolbox
