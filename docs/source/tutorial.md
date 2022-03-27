@@ -31,7 +31,7 @@ Indicate temperature and pressure of the initial mixture
 >> self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
 ```
 Indicate species and nº moles of each species in the initial mixture
-#### Individual case
+### Individual case
 For example, for a stochiometric CH4-ideal_air mixture:
 ```matlab
 >> self.PD.S_Fuel     = {'CH4'};
@@ -50,7 +50,7 @@ This is the same as specifying a unit value for the equivalence ratio:
 >> self.PD.proportion_inerts_O2 = 79/21;
 ```
 The last two lines of code establish the equivalence relation and the proportion of the inert species over the oxidazer, respectively. The number of moles is calculated considering that the number of moles of fuel is one.
-#### Several cases
+### Several cases
 CT also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:
 ```matlab
 >> self.PD.S_Fuel     = {'CH4'};
