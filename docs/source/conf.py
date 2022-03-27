@@ -10,11 +10,20 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import requests
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+import requests
+
+# sys.path.append('sphinxext')
+# from sphinxext.github_linkcode import github_linkcode_resolve
+
+
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
+
+# tell Sphinx matlab extension where to find matlab code.
+matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
+# matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
 
 
 # -- Project information -----------------------------------------------------
@@ -42,6 +51,8 @@ extensions = [
     'sphinx_togglebutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab', # support for Matlab
+    # 'github',
+    # 'sphinx.ext.linkcode',
     'sphinx.ext.napoleon',  # support for shorthand syntax
     'sphinx.ext.mathjax',   # LaTeX support
     'texext.math_dollar',   # lightweight LaTeX filter
@@ -54,6 +65,17 @@ highlight_language = "matlab"
 nitpicky = True
 source_suffix = ['.rst', '.md']
 
+
+def linkcode_resolve(domain, info):
+    return github_linkcode_resolve(
+            domain=domain,
+            info=info,
+            allowed_module_names=['external'],
+            github_org_id='combustion_toolbox',
+            github_repo_id='combustion_toolbox_website',
+            branch='master',
+            source_prefix='')
+
 # Autodoc settings
 
 autodoc_default_options = {'members': True, 'show-inheritance': True}
@@ -62,7 +84,6 @@ autosummary_generate = True
 # Matlab domain settings
 
 matlab_keep_package_prefix = False
-matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
 primary_domain = 'mat'
 
 # The master toctree document.

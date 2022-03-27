@@ -1,0 +1,6 @@
+# Functions
+
+```{eval-rst}
+.. autoscript:: equilibrium
+```
+

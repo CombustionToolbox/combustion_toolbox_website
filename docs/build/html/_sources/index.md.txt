@@ -1,5 +1,3 @@
-
-
 ```{include} README.md
 :relative-images:
 ```
@@ -8,6 +6,7 @@
     :caption: 'Contents:'
     :maxdepth: 2
 
+functions
 tutorial
 validations
 thermo
