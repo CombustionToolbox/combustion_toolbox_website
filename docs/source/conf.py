@@ -36,7 +36,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'nbsphinx',
     'sphinx_togglebutton',
-    'sphinx-copybutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab', # support for Matlab
     'sphinx.ext.napoleon',  # support for shorthand syntax
@@ -93,5 +92,3 @@ html_theme_options = {
     "light_logo": "img/logo_CT.svg",
     "dark_logo": "img/logo_CT.svg",
 }
-
-
