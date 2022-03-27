@@ -54,8 +54,8 @@ matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../src" # ..
 primary_domain = 'mat'
 default_role = 'obj'
 
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+
 
 # The master toctree document.
 master_doc = 'index'
@@ -79,7 +79,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['../_static']
+html_static_path = ['_static']
 
 numfig = True
 highlight_language = "matlab"

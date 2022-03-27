@@ -1,5 +1,5 @@
 <p align="left">
-    <img alt="UC3M" style="border-width:0" src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/Icons/logo.svg" width="1500"/></a>
+    <img alt="UC3M" style="border-width:0" src="_static/logo.svg" width="1500"/></a>
 </p>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6383180.svg)](https://doi.org/10.5281/zenodo.6383180)
@@ -79,29 +79,26 @@ The [tutorial](https://github.com/AlbertoCuadra/combustion_toolbox/wiki/Tutorial
 
 We have several examples of what Combustion Toolbox can do. Here we show a preview of the GUI and some results obtained from Combustion Toolbox.
 
-![test](GUI/Snapshots/snapshot_1.svg)
-
 <p align="left">
-    <img src="docs/_static/snapshot_1.svg" width="500">
+    <img src="_static/snapshot_1.svg" width="500">
 </p>
 
 **Figure 1:** *Snapshot of the GUI*.
 
-
 <p align="left">
-    <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Validations/Figures/Hugoniot_benchmarking.svg" width="400">
+    <img src="_static/Hugoniot_benchmarking.svg" width="400">
 </p>
     
 **Figure 2:** *Hugoniot curves for different molecular gases at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm \[numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code excluding ionization (symbols)\]*.
     
 <p align="left">
-    <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Validations/Figures/run_validation_DET_CEA_3_molar.svg" width="1200">
+    <img src="_static/run_validation_DET_CEA_3_molar.svg" width="1200">
 </p>
 
 **Figure 3:** *Example CJ detonation for lean to rich CH4-air mixtures at standard conditions: (a) variation of molar fraction, (b) variation of temperature. The computational time was of 9.25 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 351 case studies.*
 
 <p align="left">
-    <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Validations/Figures/polar_shock_full_and_frozen_both_air_complete.svg" width="1000">
+    <img src="_static/polar_shock_full_and_frozen_both_air_complete.svg" width="1000">
 </p>
 
 **Figure 4:** *Pressure-deflection shock polar (left) and wave angle-deflection shock polar (right) for an air mixture (78.084% N2, 20.9476% O2, 0.9365% Ar, 0.0319% CO2) at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm, and a range of preshock Mach numbers M1 = [2, 14]; line: considering dissociation, ionization, and recombination in multi-species mixtures; dashed: considering a thermochemically frozen air mixture.*
@@ -124,7 +121,7 @@ Thank you for testing Combustion Toolbox!
 
 Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain
 
-See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/CONTRIBUTORS.md) who participated in this project.
+See also the list of [contributors](CONTRIBUTORS.md) who participated in this project.
 
 # Citing Combustion Toolbox
 
