@@ -1,9 +1,4 @@
 
-
-```{warning}
-The documentation is under development 
-```
-
 ```{include} README.md
 :relative-images:
 ```

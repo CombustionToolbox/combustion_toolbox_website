@@ -11,9 +11,11 @@
 
 A MATLAB-GUI based open-source tool for solving gaseous combustion problems.
 
-<!-- Website: https://combustiontoolbox.netlify.app/ -->
-:top: There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox)
+There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox)
 
+```{warning}
+The documentation is under development 
+```
 
 # Key features
 
