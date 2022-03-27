@@ -48,7 +48,7 @@ autosummary_generate = True
 
 matlab_keep_package_prefix = False
 
-matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/.." # ... from the point of view of the generated/sphinx folder
+matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
 primary_domain = 'mat'
 default_role = 'obj'
 numfig = True
