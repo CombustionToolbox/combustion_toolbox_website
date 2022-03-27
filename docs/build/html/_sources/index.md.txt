@@ -4,7 +4,7 @@
 The documentation is under development 
 ```
 
-```{include} ../../external/combustion_toolbox/README.md
+```{include} README.md
 :relative-images:
 ```
   
