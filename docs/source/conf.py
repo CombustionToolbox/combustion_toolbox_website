@@ -11,8 +11,10 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import requests
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +24,9 @@ copyright = '2022, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
-release = 'v0.9.0'
+url = 'https://github.com/AlbertoCuadra/combustion_toolbox/releases/latest'
+r = requests.get(url)
+release = r.url.split('/')[-1]
 
 
 # -- General configuration ---------------------------------------------------
@@ -82,7 +86,8 @@ html_theme = 'furo'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_title = '<project> <release> documentation'
+html_space = ' '
+html_title = project + html_space + release
 
 html_css_files = [
     'css/style.css',
