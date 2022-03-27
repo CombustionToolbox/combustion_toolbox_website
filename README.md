@@ -1,4 +1,4 @@
-# Combustion Toolbox documentation
+# Combustion Toolbox website
 
 The source code of Combustion Toolbox is in its own [repository](https://github.com/AlbertoCuadra/combustion_toolbox). This repository is used to build the website and the documentation of the project.
 
