@@ -196,48 +196,82 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-external">
-<span id="functions"></span><h1>Functions<a class="headerlink" href="#module-external" title="Permalink to this headline">#</a></h1>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="external.rocket_performance">
-<span class="sig-name descname"><span class="pre">rocket_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#external.rocket_performance" title="Permalink to this definition">#</a></dt>
-<dd><p>Routine that computes the propellant rocket performance</p>
-<p>USAGE:</p>
-<blockquote>
-<div><p>[mix1, mix2, mix3] = rocket_performance(varargin)</p>
-</div></blockquote>
+          <section id="module-src">
+<span id="functions"></span><h1>Functions<a class="headerlink" href="#module-src" title="Permalink to this headline">#</a></h1>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.Combustion_Toolbox">
+<span class="sig-name descname"><span class="pre">Combustion_Toolbox</span></span><a class="headerlink" href="#src.Combustion_Toolbox" title="Permalink to this definition">#</a></dt>
+<dd><p>COMBUSTION TOOLBOX @v0.9.1
+A MATLAB-GUI based open-source tool for solving gaseous combustion problems</p>
 <dl class="simple">
-<dt>INPUTS:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">self</dt>
-<dd class="field-odd"><p>Struct with all the data</p>
-</dd>
-<dt class="field-even">mix1</dt>
-<dd class="field-even"><p>Struct mix with all the properties of the initial mixture</p>
-</dd>
-</dl>
-</dd>
-<dt>OPTIONAL INPUTS:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">mix2</dt>
-<dd class="field-odd"><p>Struct mix with all the properties of the chamber mixture</p>
-</dd>
-<dt class="field-even">mix3</dt>
-<dd class="field-even"><p>Struct mix with all the properties of the thoat mixture</p>
-</dd>
-</dl>
-</dd>
-<dt>OUTPUTS:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">mix1</dt>
-<dd class="field-odd"><p>Struct mix with all the properties of the initial mixture</p>
-</dd>
-<dt class="field-even">mix2</dt>
-<dd class="field-even"><p>Struct mix with all the properties of the chamber mixture</p>
-</dd>
-<dt class="field-odd">mix3</dt>
-<dd class="field-odd"><p>Struct mix with all the properties of the thoat mixture</p>
+<dt>Type of problems:</dt><dd><ul class="simple">
+<li><p>TP —————–&gt; Equilibrium composition at defined T and p</p></li>
+<li><p>HP —————–&gt; Adiabatic T and composition at constant p</p></li>
+<li><p>SP —————–&gt; Isentropic compression/expansion to a specified p</p></li>
+<li><p>TV —————–&gt; Equilibrium composition at defined T and constant v</p></li>
+<li><p>EV —————–&gt; Adiabatic T and composition at constant v</p></li>
+<li><p>SV —————–&gt; Isentropic compression/expansion to a specified v</p></li>
+<li><p>SHOCK_I ————&gt; Planar incident shock wave</p></li>
+<li><p>SHOCK_R ————&gt; Planar reflected shock wave</p></li>
+<li><p>SHOCK_OBLIQUE ——&gt; Oblique incident shock wave</p></li>
+<li><p>SHOCK_OBLIQUE_R —-&gt; Oblique incident and reflected states</p></li>
+<li><p>SHOCK_POLAR ——–&gt; Shock polar plots</p></li>
+<li><p>SHOCK_POLAR_R ——&gt; Shock polar plots for incident and reflected states</p></li>
+<li><p>SHOCK_IDEAL_GAS —-&gt; Planar incident shock wave for a fixed adibatic index</p></li>
+<li><p>DET —————-&gt; Chapman-Jouguet Detonation</p></li>
+<li><p>DET_R ————–&gt; Reflected Chapman-Jouguet Detonation</p></li>
+<li><p>DET_OBLIQUE ——–&gt; Oblique Detonation</p></li>
+<li><p>DET_OVERDRIVEN —–&gt; Overdriven Detonation</p></li>
+<li><p>DET_OVERDRIVEN_R —&gt; Overdriven reflected Detonation</p></li>
+<li><p>ROCKET ————-&gt; Propellant rocket performance</p></li>
+</ul>
 </dd>
 </dl>
+<p>SEE THE EXAMPLES OR WIKI TO KNOW HOW TO START USING COMBUSTION TOOLBOX
+LIST OF TUTORIAL SCRIPTS:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Example_TP</p></li>
+<li><p>Example_HP</p></li>
+<li><p>Example_HP_PROPELLANTS</p></li>
+<li><p>Example_HP_MIXTEMP</p></li>
+<li><p>Example_SP</p></li>
+<li><p>Example_TV</p></li>
+<li><p>Example_EV</p></li>
+<li><p>Example_SV</p></li>
+<li><p>Example_SV_FROZEN</p></li>
+<li><p>Example_SHOCK_I</p></li>
+<li><p>Example_SHOCK_I_IONIZATION</p></li>
+<li><p>Example_SHOCK_R</p></li>
+<li><p>Example_SHOCK_OBLIQUE_BETA</p></li>
+<li><p>Example_SHOCK_OBLIQUE_THETA</p></li>
+<li><p>Example_SHOCK_OBLIQUE_R</p></li>
+<li><p>Example_SHOCK_POLAR</p></li>
+<li><p>Example_SHOCK_POLAR_R</p></li>
+<li><p>Example_DET</p></li>
+<li><p>Example_DET_R</p></li>
+<li><p>Example_DET_OVERDRIVEN</p></li>
+<li><p>Example_DET_OVERDRIVEN_R</p></li>
+<li><p>Example_ROCKET</p></li>
+</ul>
+</div></blockquote>
+<p>Please to send feedback or inquiries run uifeedback
+Thank you for testing Combustion Toolbox!</p>
+<dl class="simple">
+<dt>@author: Alberto Cuadra Lara</dt><dd><p>PhD Candidate - Group Fluid Mechanics
+Universidad Carlos III de Madrid</p>
 </dd>
 </dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Combustion_Toolbox_setPath">
+<span class="sig-name descname"><span class="pre">Combustion_Toolbox_setPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.Combustion_Toolbox_setPath" title="Permalink to this definition">#</a></dt>
+<dd><p>Set directories to MATLAB search path</p>
+</dd></dl>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.run_test">
+<span class="sig-name descname"><span class="pre">run_test</span></span><a class="headerlink" href="#src.run_test" title="Permalink to this definition">#</a></dt>
+<dd><p>Routine that checks a set of test of the code</p>
 </dd></dl>
 </section>
 

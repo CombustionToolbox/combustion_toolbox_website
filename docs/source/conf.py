@@ -70,7 +70,7 @@ def linkcode_resolve(domain, info):
     return github_linkcode_resolve(
             domain=domain,
             info=info,
-            allowed_module_names=['external'],
+            allowed_module_names=['src'],
             github_org_id='combustion_toolbox',
             github_repo_id='combustion_toolbox_website',
             branch='master',

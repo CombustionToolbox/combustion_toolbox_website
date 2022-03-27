@@ -1,6 +1,7 @@
 # Functions
 
 ```{eval-rst}
-.. automodule:: external
+.. automodule:: src
    :members:
+   :show-inheritance:
 ```
