@@ -65,24 +65,17 @@ Features
 * `Display predefined plots` (e.g., molar fraction vs equilence ratio)
 
 
-<!--
----
-⚠️ **NOTE**
-- At the moment, the Python version does not have all the capabilities that the MATLAB version has. I will continue with the development of this version adding all the remaining capabilities. I will also add a GUI using Qt6 and Pyside6.
----
--->
-
 This project is also part of the PhD of [Alberto Cuadra-Lara](https://www.acuadralara.com/).
 
 ---
 ⚠️ **NOTE**
 
 - The first final version v1.0.0 is expected to be released in April 2022. Check out the  upcoming features of [Combustion Toolbox v1.0.0](https://github.com/AlbertoCuadra/combustion_toolbox/projects/2).
-- [Wiki](https://github.com/AlbertoCuadra/combustion_toolbox/wiki) under construction :building_construction:
+- [Wiki](https://combustion-toolbox-documentation.readthedocs.io/) under construction :building_construction:
 
 ---
 # Start here!
-The [tutorial](https://github.com/AlbertoCuadra/combustion_toolbox/wiki/Tutorial) will help you get started using Combustion Toolbox on your pc.
+The [tutorial](https://combustion-toolbox-documentation.readthedocs.io/en/latest/tutorial.html) will help you get started using Combustion Toolbox on your pc.
 
 # Gallery
 
@@ -130,7 +123,7 @@ Thank you for testing Combustion Toolbox!
 
 Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain
 
-See also the list of contributors who participated in this project.
+See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/CONTRIBUTORS.md) who participated in this project.
 
 # Citing Combustion Toolbox
 
