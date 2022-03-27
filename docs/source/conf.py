@@ -34,7 +34,6 @@ extensions = [
     'myst_parser',
     'sphinx.ext.autodoc',   # for enumeration of objects stuff
     'sphinx.ext.autosummary',
-    'sphinx.ext.githubpages',
     'nbsphinx',
     'sphinx_togglebutton',
     'sphinx-copybutton',
