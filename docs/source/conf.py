@@ -53,6 +53,9 @@ matlab_keep_package_prefix = False
 matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../src" # ... from the point of view of the generated/sphinx folder
 primary_domain = 'mat'
 default_role = 'obj'
+numfig = True
+highlight_language = "matlab"
+nitpicky = True
 
 source_suffix = ['.rst', '.md']
 
@@ -81,6 +84,8 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-numfig = True
-highlight_language = "matlab"
-nitpicky = True
+html_css_files = [
+    'css/style.css',
+]
+
+
