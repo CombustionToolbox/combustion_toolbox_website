@@ -7,5 +7,5 @@ body {
 }
 
 dl.py .field-list dt {
-  text-transform: none;
+  text-transform: none !important;
 }
