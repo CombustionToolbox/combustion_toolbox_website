@@ -47,20 +47,23 @@ extensions = [
     'texext.math_dollar',   # lightweight LaTeX filter
 ]
 
-autodoc_default_options = {'members': True, 'show-inheritance': True}
-autosummary_generate = True
-
-matlab_keep_package_prefix = False
-
-matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
-primary_domain = 'mat'
+# Other settings
 default_role = 'obj'
 numfig = True
 highlight_language = "matlab"
 nitpicky = True
-
 source_suffix = ['.rst', '.md']
 
+# Autodoc settings
+
+autodoc_default_options = {'members': True, 'show-inheritance': True}
+autosummary_generate = True
+
+# Matlab domain settings
+
+matlab_keep_package_prefix = False
+matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
+primary_domain = 'mat'
 
 # The master toctree document.
 master_doc = 'index'
