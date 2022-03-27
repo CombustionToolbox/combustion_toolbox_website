@@ -1,6 +1,6 @@
 # Thermodynamics properties
 Functions to obtain thermodynamic properties from a given mixture:
-
+ 
 ## adiabaticIndex(mix)
 
 Get the adiabatic index (-).

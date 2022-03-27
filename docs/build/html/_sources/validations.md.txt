@@ -1,5 +1,5 @@
 # Validations
-
+ 
 A set of the results obtained using Combustion Toolbox, [CEA-NASA](https://cearun.grc.nasa.gov/), [CANTERA](https://cantera.org/) & [SD-Toolbox](https://shepherd.caltech.edu/EDL/PublicResources/sdt/)<sup>1</sup>, and [TEA](https://github.com/dzesmin/TEA).
 
 <sup>1</sup> The Shock & Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.
