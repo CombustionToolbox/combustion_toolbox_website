@@ -14,6 +14,13 @@ A MATLAB-GUI based open-source tool for solving gaseous combustion problems.
 <!-- Website: https://combustiontoolbox.netlify.app/ -->
 :top: There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox)
 
+
+# Key features
+
+| Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
+| ----------- | ----------- | ----------- |
+|  The kernel has been optimized ...	| All changes done in the kernel and in the implemented numerical routines will be used directly in the GUI	| The code/GUI is available is full open source - compatible with MATLAB |
+
 # Features
 
 Combustion Toolbox is a a MATLAB-GUI based tool for solving gaseous combustion problems.
