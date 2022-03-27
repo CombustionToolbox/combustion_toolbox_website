@@ -19,7 +19,7 @@ A MATLAB-GUI based open-source tool for solving gaseous combustion problems.
 
 | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
 | ----------- | ----------- | ----------- |
-|  The kernel has been optimized ...	| All changes done in the kernel and in the implemented numerical routines will be used directly in the GUI	| The code/GUI is available is full open source - compatible with MATLAB |
+|  The kernel has been optimized ...	| All changes done in the kernel and in the implemented numerical routines will be used directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB |
 
 # Features
 
