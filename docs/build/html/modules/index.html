@@ -2,13 +2,16 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Tutorial" href="../tutorial.html" /><link rel="prev" title="Key features" href="../index.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/><title>Search - Combustion Toolbox v0.9.0</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
-    <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>Functions - Combustion Toolbox v0.9.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/style.css" />
     
     
 
@@ -120,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Combustion Toolbox v0.9.0</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -140,27 +143,27 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo only-light" src="_static/img/logo_CT.svg" alt="Light Logo"/>
-    <img class="sidebar-logo only-dark" src="_static/img/logo_CT.svg" alt="Dark Logo"/>
+    <img class="sidebar-logo only-light" src="../_static/img/logo_CT.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/img/logo_CT.svg" alt="Dark Logo"/>
   </div>
   
   <span class="sidebar-brand-text">Combustion Toolbox v0.9.0</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="validations.html">Validations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thermo.html">Thermodynamics properties</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thermo.html">Thermodynamics properties</a></li>
 </ul>
 
 </div>
@@ -193,25 +196,56 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
-
-<div id="search-results"></div>
+          <section id="module-external">
+<span id="functions"></span><h1>Functions<a class="headerlink" href="#module-external" title="Permalink to this headline">#</a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="external.rocket_performance">
+<span class="sig-name descname"><span class="pre">rocket_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#external.rocket_performance" title="Permalink to this definition">#</a></dt>
+<dd><p>Routine that computes the propellant rocket performance</p>
+<p>USAGE:</p>
+<blockquote>
+<div><p>[mix1, mix2, mix3] = rocket_performance(varargin)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>INPUTS:</dt><dd><p>self:           Struct with all the data
+mix1:           Struct mix with all the properties of the initial mixture</p>
+</dd>
+<dt>OPTIONAL INPUTS:</dt><dd><p>mix2:           Struct mix with all the properties of the chamber mixture
+mix3:           Struct mix with all the properties of the thoat mixture</p>
+</dd>
+<dt>OUTPUTS:</dt><dd><p>mix1:           Struct mix with all the properties of the initial mixture
+mix2:           Struct mix with all the properties of the chamber mixture
+mix3:           Struct mix with all the properties of the thoat mixture</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../tutorial.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Tutorial</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -238,19 +272,16 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

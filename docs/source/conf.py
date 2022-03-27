@@ -86,6 +86,12 @@ autosummary_generate = True
 matlab_keep_package_prefix = False
 primary_domain = 'mat'
 
+# remove path in function names
+add_module_names = False
+
+# The encoding of source files.
+source_encoding = 'utf-8'
+
 # The master toctree document.
 master_doc = 'index'
 

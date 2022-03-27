@@ -6,7 +6,7 @@
     :caption: 'Contents:'
     :maxdepth: 2
 
-functions
+modules/index
 tutorial
 validations
 thermo
