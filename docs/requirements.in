@@ -2,6 +2,7 @@ sphinx
 sphinxcontrib-matlabdomain
 texext
 sphinx-togglebutton
+sphinx-copybutton
 sphinxcontrib-fulltoc
 nbsphinx
 furo

@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'nbsphinx',
     'sphinx_togglebutton',
+    'sphinx-copybutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab', # support for Matlab
     'sphinx.ext.napoleon',  # support for shorthand syntax
@@ -83,6 +84,8 @@ html_theme = 'furo'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_title = '<project> <release> documentation'
+
 html_css_files = [
     'css/style.css',
 ]
@@ -91,4 +94,5 @@ html_theme_options = {
     "light_logo": "img/logo_CT.svg",
     "dark_logo": "img/logo_CT.svg",
 }
+
 

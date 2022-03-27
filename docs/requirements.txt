@@ -24,7 +24,6 @@ defusedxml==0.7.1
     # via nbconvert
 docutils==0.17.1
     # via
-    #   ablog
     #   myst-parser
     #   nbsphinx
     #   sphinx
@@ -34,8 +33,6 @@ entrypoints==0.4
     # via
     #   jupyter-client
     #   nbconvert
-feedgen==0.9.0
-    # via ablog
 furo==2022.3.4
     # via -r docs/requirements.in
 future==0.18.2
@@ -48,8 +45,6 @@ importlib-metadata==4.11.2
     # via sphinx
 importlib-resources==5.4.0
     # via jsonschema
-invoke==1.7.0
-    # via ablog
 ipython-genutils==0.2.0
     # via nbformat
 jinja2==3.0.3
@@ -69,8 +64,6 @@ jupyter-core==4.9.2
     #   nbformat
 jupyterlab-pygments==0.1.2
     # via nbconvert
-lxml==4.8.0
-    # via feedgen
 markdown-it-py==2.0.1
     # via
     #   mdit-py-plugins
@@ -118,10 +111,7 @@ pyparsing==3.0.7
 pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
-    # via
-    #   ablog
-    #   feedgen
-    #   jupyter-client
+    # via jupyter-client
 pytz==2022.1
     # via babel
 pyyaml==6.0
@@ -142,13 +132,15 @@ soupsieve==2.3.1
 sphinx==4.4.0
     # via
     #   -r docs/requirements.in
-    #   ablog
     #   furo
     #   myst-parser
     #   nbsphinx
+    #   sphinx-copybutton
     #   sphinx-togglebutton
     #   sphinxcontrib-matlabdomain
     #   texext
+sphinx-copybutton==0.5.0
+    # via -r docs/requirements.in
 sphinx-togglebutton==0.3.1
     # via -r docs/requirements.in
 sphinxcontrib-applehelp==1.0.2
@@ -185,8 +177,6 @@ typing-extensions==4.1.1
     # via myst-parser
 urllib3==1.26.8
     # via requests
-watchdog==2.1.7
-    # via ablog
 webencodings==0.5.1
     # via bleach
 wheel==0.37.1
