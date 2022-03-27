@@ -30,11 +30,17 @@ release = '0.9.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'myst_parser',
-    # 'sphinx.ext.autodoc',
-    'sphinx.ext.duration',
-    'sphinx.ext.autosectionlabel',
+extensions = ['sphinx.ext.autodoc',   # for enumeration of objects stuff
+              'sphinx.ext.autosummary',
+              'sphinx.ext.githubpages',
+              'nbsphinx',
+              'sphinx_togglebutton',
+#              'sphinxcontrib.fulltoc', # for sidebar TOC
+              'sphinxcontrib.matlab', # support for Matlab
+              'sphinx.ext.napoleon',  # support for shorthand syntax
+              'sphinx.ext.mathjax',   # LaTeX support
+              'texext.math_dollar',   # lightweight LaTeX filter
+              'ablog',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
