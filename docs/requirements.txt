@@ -4,8 +4,6 @@
 #
 #    pip-compile docs/requirements.in
 #
-ablog==0.10.23
-    # via -r docs/requirements.in
 alabaster==0.7.12
     # via sphinx
 attrs==21.4.0

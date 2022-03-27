@@ -3,7 +3,6 @@ sphinxcontrib-matlabdomain
 texext
 sphinx-togglebutton
 sphinxcontrib-fulltoc
-ablog
 nbsphinx
 furo
 myst-parser
