@@ -12,15 +12,7 @@ Here we can find the documentation for the routines implemented in Combustion To
 solver
 ```
 
-
-<!-- ### Shocks and detonations
-
-```{eval-rst}
-.. automodule:: src.solver.shocks_detonations
-   :members:
-```
-
-## Settings
+<!-- ## Settings
 
 ### self
 
@@ -54,18 +46,18 @@ solver
 
 ```{eval-rst}
 .. automodule:: src.Settings.self.TunningProperties
-```
+``` -->
 
-### Functions
-
-```{eval-rst}
-.. automodule:: src.Settings.functions
-   :members:
-```
-
-### Extensions
+<!-- ### Functions
 
 ```{eval-rst}
 .. automodule:: src.Settings.functions
    :members:
-``` --> -->
+``` -->
+
+<!-- ### Extensions
+
+```{eval-rst}
+.. automodule:: src.Settings.functions
+   :members:
+``` --> --> -->
