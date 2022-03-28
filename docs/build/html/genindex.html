@@ -205,7 +205,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#V"><strong>V</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#V"><strong>V</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -229,6 +229,8 @@
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.cell2vector">cell2vector() (in module src.solver.functions)</a>
 </li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.cj_detonation">cj_detonation() (in module src.solver.shocks_detonations)</a>
+</li>
         <li><a href="modules/solver_chemical_equilibrium.html#src.solver.chemical_equilibrium.complete_combustion">complete_combustion() (in module src.solver.chemical_equilibrium)</a>
 </li>
         <li><a href="modules/solver_rocket.html#src.solver.rocket.compute_chemical_equilibria">compute_chemical_equilibria() (in module src.solver.rocket)</a>
@@ -237,12 +239,14 @@
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.compute_first_derivative">compute_first_derivative() (in module src.solver.functions)</a>
 </li>
-        <li><a href="modules/solver_rocket.html#src.solver.rocket.compute_IAC_model">compute_IAC_model() (in module src.solver.rocket)</a>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.compute_guess_det">compute_guess_det() (in module src.solver.shocks_detonations)</a>
 </li>
-        <li><a href="modules/solver_functions.html#src.solver.functions.Compute_phi_c">Compute_phi_c() (in module src.solver.functions)</a>
+        <li><a href="modules/solver_rocket.html#src.solver.rocket.compute_IAC_model">compute_IAC_model() (in module src.solver.rocket)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="modules/solver_functions.html#src.solver.functions.Compute_phi_c">Compute_phi_c() (in module src.solver.functions)</a>
+</li>
         <li><a href="modules/solver_rocket.html#src.solver.rocket.compute_rocket_parameters">compute_rocket_parameters() (in module src.solver.rocket)</a>
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.compute_temperature_mixture">compute_temperature_mixture() (in module src.solver.functions)</a>
@@ -268,6 +272,12 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="modules/solver_functions.html#src.solver.functions.thermo.density">density() (in module src.solver.functions.thermo)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.det_oblique_beta">det_oblique_beta() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.det_oblique_theta">det_oblique_theta() (in module src.solver.shocks_detonations)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -395,6 +405,16 @@
   </tr></table>
 </section>
 
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.overdriven_detonation">overdriven_detonation() (in module src.solver.shocks_detonations)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="P" class="genindex-section">
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
@@ -429,18 +449,32 @@
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.SetSpecies">SetSpecies() (in module src.solver.functions)</a>
 </li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_ideal_gas">shock_ideal_gas() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_incident">shock_incident() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_oblique_beta">shock_oblique_beta() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_oblique_reflected_theta">shock_oblique_reflected_theta() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_oblique_theta">shock_oblique_theta() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_polar">shock_polar() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#src.solver.shocks_detonations.shock_reflected">shock_reflected() (in module src.solver.shocks_detonations)</a>
+</li>
         <li><a href="modules/solver.html#src.solver.SolveProblem">SolveProblem() (in module src.solver)</a>
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.thermo.soundspeed">soundspeed() (in module src.solver.functions.thermo)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="modules/solver_functions.html#src.solver.functions.soundspeed_eq">soundspeed_eq() (in module src.solver.functions)</a>
 </li>
         <li><a href="modules/solver.html#module-src.solver">src.solver (module)</a>
 </li>
         <li><a href="modules/solver_chemical_equilibrium.html#module-src.solver.chemical_equilibrium">src.solver.chemical_equilibrium (module)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="modules/solver_functions.html#module-src.solver.functions">src.solver.functions (module)</a>
 </li>
         <li><a href="modules/solver_functions.html#module-src.solver.functions.root_finding">src.solver.functions.root_finding (module)</a>
@@ -452,6 +486,8 @@
         <li><a href="modules/solver_functions.html#module-src.solver.functions.thermo">src.solver.functions.thermo (module)</a>
 </li>
         <li><a href="modules/solver_rocket.html#module-src.solver.rocket">src.solver.rocket (module)</a>
+</li>
+        <li><a href="modules/solver_shocks_detonations.html#module-src.solver.shocks_detonations">src.solver.shocks_detonations (module)</a>
 </li>
         <li><a href="modules/solver_functions.html#src.solver.functions.root_finding.steffenson.steff">steff() (in module src.solver.functions.root_finding.steffenson)</a>
 </li>

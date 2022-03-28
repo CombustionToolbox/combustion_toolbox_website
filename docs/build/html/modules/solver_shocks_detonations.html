@@ -212,7 +212,373 @@ The kernel of the incident, reflected, and Chapman-Jouguet detonations are based
 </div>
 <hr class="docutils"/>
 <details class="summary-routines">
-<summary>Routines</summary></details></section>
+<summary>Routines</summary><span class="target" id="module-src.solver.shocks_detonations"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.cj_detonation">
+<span class="sig-name descname"><span class="pre">cj_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.cj_detonation" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a Chapman-Jouguet detonation</p>
+<p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
+1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct): Properties of the mixture in the post-shock state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.compute_guess_det">
+<span class="sig-name descname"><span class="pre">compute_guess_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.compute_guess_det" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain guess of the jump conditions for a Chapman-Jouguet detonation.
+Only valid if the mixture have CHON. It computes the guess assuming
+first a complete combustion, next it recomputes assuming an incomplete
+combustion from the composition obtained in the previous step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equivalence ratio [-]</p></li>
+<li><p><strong>overdriven</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven ratio [-] respect to the sound velocity of the mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pressure ratio [-]
+T (float):          Temperature ratio [-]
+M1 (float):         Pre-shock Mach number [-]
+R (float):          Density ratio [-]
+Q (float):          Dimensionless Heat release []
+STOP (float):       Relative error [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>P (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.det_oblique_beta">
+<span class="sig-name descname"><span class="pre">det_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.det_oblique_beta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
+given the wave angle (one solution)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>overdriven</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven factor [-]</p></li>
+<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Wave angle [deg] of the incident oblique detonation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct):      Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct):      Properties of the mixture at the post-shock state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.det_oblique_theta">
+<span class="sig-name descname"><span class="pre">det_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.det_oblique_theta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
+given the deflection angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak detonation</p></li>
+<li><p>Strong detonation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>overdriven</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven factor [-]</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2_1 (struct): Properties of the mixture in the post-shock state - weak detonation (previous calculation)
+mix2_2 (struct): Properties of the mixture in the post-shock state - strong detonation (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2_1 (struct): Properties of the mixture in the post-shock state - weak detonation
+mix2_2 (struct): Properties of the mixture in the post-shock state - strong detonation</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.overdriven_detonation">
+<span class="sig-name descname"><span class="pre">overdriven_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.overdriven_detonation" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an overdriven planar detonation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>overdriven</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven factor [-]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct):      Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct):      Properties of the mixture in the post-shock state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_ideal_gas">
+<span class="sig-name descname"><span class="pre">shock_ideal_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">M1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_ideal_gas" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute jump conditions assuming a thermochemically frozen gas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gamma</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Adiabatic index [-]</p></li>
+<li><p><strong>M1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock Mach number [-]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Density ratio [-]
+P (float):     Pressure ratio [-]
+T (float):     Temperature ratio [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>R (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_incident">
+<span class="sig-name descname"><span class="pre">shock_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_incident" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a planar incident shock wave</p>
+<p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
+1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct): Properties of the mixture in the post-shock state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_beta">
+<span class="sig-name descname"><span class="pre">shock_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_beta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique shock wave
+given the wave angle (one solution)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Wave angle [deg] of the incident oblique shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct): Properties of the mixture at the post-shock state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_reflected_theta">
+<span class="sig-name descname"><span class="pre">shock_oblique_reflected_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u2</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_reflected_theta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique reflected shock wave
+given the deflection angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak shock</p></li>
+<li><p>Strong shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p><strong>u2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock velocity [m/s] of the incident shock</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the post-shock state of the incident shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix5_1 (struct): Properties of the mixture in the post-shock state of the reflected shock - weak shock (previous calculation)
+mix5_2 (struct): Properties of the mixture in the post-shock state of the reflected shock - strong shock (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state of the incident shock
+mix2 (struct):   Properties of the mixture in the post-shock state of the incident shock
+mix5_1 (struct): Properties of the mixture in the post-shock state of the reflected shock - weak shock
+mix5_2 (struct): Properties of the mixture in the post-shock state of the reflected shock - strong shock</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_theta">
+<span class="sig-name descname"><span class="pre">shock_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_theta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique shock wave
+given the deflection angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak shock</p></li>
+<li><p>Strong shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2_1 (struct): Properties of the mixture in the post-shock state - weak shock (previous calculation)
+mix2_2 (struct): Properties of the mixture in the post-shock state - strong shock (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2_1 (struct): Properties of the mixture in the post-shock state - weak shock
+mix2_2 (struct): Properties of the mixture in the post-shock state - strong shock</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_polar">
+<span class="sig-name descname"><span class="pre">shock_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_polar" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute shock polars of an oblique shock wave</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (struct): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state
+mix2 (struct): Properties of the mixture at the post-shock state with the shock polar results</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_reflected">
+<span class="sig-name descname"><span class="pre">shock_reflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_reflected" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a planar reflected shock wave</p>
+<p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
+1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the post-shock state of the incident shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix5 (struct): Properties of the mixture in the post-shock state of the reflected shock (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Properties of the mixture in the pre-shock state of the incident shock
+mix2 (struct): Properties of the mixture at the post-shock state of the incident shock
+mix5 (struct): Properties of the mixture in the post-shock state of the reflected shock</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mix1 (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+</details></section>
 
         </article>
       </div>

@@ -11,6 +11,6 @@ The kernel of the incident, reflected, and Chapman-Jouguet detonations are based
 ```{eval-rst}
 .. collapse:: Routines
 
-   .. automodule:: src.solver.shock_detonations
+   .. automodule:: src.solver.shocks_detonations
       :members:
 ```
