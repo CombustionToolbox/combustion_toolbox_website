@@ -14,7 +14,7 @@ A collection of general functions necessary to obtain different data in the solv
 ```{eval-rst}
 .. collapse:: Routines
 
-   .. automodule:: Solver.Functions
+   .. automodule:: src.Solver.Functions
       :members:
 ```
 
@@ -29,11 +29,11 @@ Roots algorithm used to obtain the temperature at equilibrium for a given thermo
 ```{eval-rst}
 .. collapse:: Routines
 
-   .. automodule:: Solver.Functions.root_finding
+   .. automodule:: src.Solver.Functions.root_finding
       :members:
-   .. automodule:: Solver.Functions.root_finding.newton
+   .. automodule:: src.Solver.Functions.root_finding.newton
       :members:
-   .. automodule:: Solver.Functions.root_finding.steffenson
+   .. automodule:: src.Solver.Functions.root_finding.steffenson
       :members:
 ```
 
@@ -46,6 +46,6 @@ Functions to obtain thermodynamic properties from a given mixture.
 ```{eval-rst}
 .. collapse:: Routines
 
-   .. automodule:: Solver.Functions.Thermo
+   .. automodule:: src.Solver.Functions.Thermo
       :members:
 ```

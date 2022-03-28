@@ -209,9 +209,9 @@ The kernel of the code is based on Gordon, S., &amp; McBride, B. J. (1994). NASA
 </div>
 <hr class="docutils"/>
 <details class="summary-routines">
-<summary>Routines</summary><span class="target" id="module-Solver.chemical_equilibrium"></span><dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.complete_combustion">
-<span class="sig-name descname"><span class="pre">complete_combustion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">phi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.complete_combustion" title="Permalink to this definition">#</a></dt>
+<summary>Routines</summary><span class="target" id="module-src.Solver.chemical_equilibrium"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.complete_combustion">
+<span class="sig-name descname"><span class="pre">complete_combustion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">phi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.complete_combustion" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve chemical equilibrium for CHNO mixtures assuming a complete combustion</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -231,8 +231,8 @@ species (str): Species considered in the complemte combustion model</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrate">
-<span class="sig-name descname"><span class="pre">equilibrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrate" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrate">
+<span class="sig-name descname"><span class="pre">equilibrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrate" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain properties at equilibrium for the set thermochemical transformation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -251,8 +251,8 @@ species (str): Species considered in the complemte combustion model</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrate_T">
-<span class="sig-name descname"><span class="pre">equilibrate_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrate_T" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrate_T">
+<span class="sig-name descname"><span class="pre">equilibrate_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrate_T" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain equilibrium properties and composition for the given temperature [K] and pressure [bar]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -272,8 +272,8 @@ species (str): Species considered in the complemte combustion model</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrium">
-<span class="sig-name descname"><span class="pre">equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrium" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrium">
+<span class="sig-name descname"><span class="pre">equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrium" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
@@ -299,8 +299,8 @@ STOP (float):  Relative error [-]</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrium_dT">
-<span class="sig-name descname"><span class="pre">equilibrium_dT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrium_dT" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrium_dT">
+<span class="sig-name descname"><span class="pre">equilibrium_dT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrium_dT" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
 respect to temperature from a given composition [moles] at equilibrium</p>
 <dl class="field-list simple">
@@ -321,8 +321,8 @@ dN_T (float): Thermodynamic derivative of the moles of the mixture respect to te
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrium_dp">
-<span class="sig-name descname"><span class="pre">equilibrium_dp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrium_dp" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrium_dp">
+<span class="sig-name descname"><span class="pre">equilibrium_dp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrium_dp" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
 respect to pressure from a given composition [moles] at equilibrium</p>
 <dl class="field-list simple">
@@ -343,8 +343,8 @@ dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pr
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="Solver.chemical_equilibrium.equilibrium_ions">
-<span class="sig-name descname"><span class="pre">equilibrium_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">strR</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Solver.chemical_equilibrium.equilibrium_ions" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.Solver.chemical_equilibrium.equilibrium_ions">
+<span class="sig-name descname"><span class="pre">equilibrium_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">strR</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.chemical_equilibrium.equilibrium_ions" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar]
 considering ionization of the species. The code stems from the minimization of the free
 energy of the system by using Lagrange multipliers combined with a Newton-Raphson method,

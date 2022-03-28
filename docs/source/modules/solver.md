@@ -19,6 +19,6 @@ solver_chemical_equilibrium
 ```{eval-rst}
 .. collapse:: Routines
 
-   .. automodule:: solver
+   .. automodule:: src.Solver
       :members:
 ```
