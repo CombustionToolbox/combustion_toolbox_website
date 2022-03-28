@@ -18,11 +18,10 @@ import requests
 # sys.path.append('sphinxext')
 # from sphinxext.github_linkcode import github_linkcode_resolve
 
-# sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
 # tell Sphinx matlab extension where to find matlab code.
 matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
-
 
 # -- Project information -----------------------------------------------------
 
@@ -110,7 +109,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['build', 'Thumbs.db', '.DS_Store', 'src']
+exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 
 
 # -- Options for HTML output -------------------------------------------------
