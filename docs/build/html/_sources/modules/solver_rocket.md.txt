@@ -12,6 +12,8 @@ This module is based on Gordon, S., & McBride, B. J. (1994). NASA reference publ
 ***
 
 ```{eval-rst}
-.. automodule:: src.solver.rocket
-   :members:
+.. collapse:: Routines
+
+   .. automodule:: src.solver.rocket
+      :members:
 ```

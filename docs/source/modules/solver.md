@@ -12,6 +12,7 @@ Routines to solve different type of problems. We can distinguish three main type
 
 solver_functions
 solver_chemical_equilibrium
+solver_shocks_detonations
 solver_rocket
 ```
 
