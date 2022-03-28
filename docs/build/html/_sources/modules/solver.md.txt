@@ -16,12 +16,13 @@ Routines to solve different type of problems. We can distinguish three main type
 
 A collection of functions necessary to obtain different data.
 
-***
 ```{eval-rst}
-.. automodule:: src.Solver.Functions
-   :members:
+.. collapse:: Routines
+
+   .. automodule:: src.Solver.Functions
+      :members:
 ```
-***
+
 
 ## Root finding algorithms
 
@@ -29,20 +30,20 @@ Roots algorithm used to obtain the temperature at equilibrium for a given thermo
    * Newton-Raphson method.
    * Steffensen-Aitken method.
 
-***
 ```{eval-rst}
-.. automodule:: src.Solver.Functions.root_finding
-   :members:
+.. collapse:: Routines
+
+   .. automodule:: src.Solver.Functions.root_finding
+      :members:
 ```
-***
 
 ## Thermodynamics properties
 
 Functions to obtain thermodynamic properties from a given mixture.
 
-***
 ```{eval-rst}
-.. automodule:: src.Solver.Functions.Thermo
-   :members:
+.. collapse:: Routines
+
+   .. automodule:: src.Solver.Functions.Thermo
+      :members:
 ```
-***
