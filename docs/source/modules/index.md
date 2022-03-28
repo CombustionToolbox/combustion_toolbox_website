@@ -7,13 +7,13 @@
    :members:
 ```
 
-<!-- 
+
 ### Functions
 
 ```{eval-rst}
 .. automodule:: src.Solver.Functions
    :members:
-``` -->
+```
 
 <!-- ### Chemical equilibrium
 

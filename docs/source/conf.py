@@ -62,9 +62,17 @@ extensions = [
 default_role = 'obj'
 numfig = True
 highlight_language = "matlab"
-nitpicky = True
+
 source_suffix = ['.rst', '.md']
 
+nitpicky = True
+nitpick_ignore = [
+    ('mat:obj', 'struct'),
+    ('mat:obj', 'str'),
+    ('mat:obj', 'float'),
+    ('mat:obj', 'cell'),
+    ('mat:obj', 'cell or struct'),
+]
 
 def linkcode_resolve(domain, info):
     return github_linkcode_resolve(
