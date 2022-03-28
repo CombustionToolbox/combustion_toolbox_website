@@ -197,13 +197,14 @@
         <article role="main">
           <section id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
+<p>Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:</p>
 <section id="solvers">
 <h2>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">#</a></h2>
-<p>Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:</p>
+<p>Routines to solve different type of problems. We can distinguish three main types:</p>
 <ul class="simple">
-<li><p>Chemical equilibrium</p></li>
-<li><p>Shocks and detonations</p></li>
-<li><p>Rocket propellant performance</p></li>
+<li><p>chemical equilibrium,</p></li>
+<li><p>shocks and detonations,</p></li>
+<li><p>rocket propellant performance.</p></li>
 </ul>
 <hr class="docutils"/>
 <span class="target" id="module-src.Solver"></span><dl class="mat function">
@@ -228,7 +229,7 @@
 <hr class="docutils"/>
 <section id="id1">
 <h3>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>A collection of functions necessary to obtain different data</p>
+<p>A collection of functions necessary to obtain different data.</p>
 <hr class="docutils"/>
 <span class="target" id="module-src.Solver.Functions"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.CalculatePhic">
@@ -532,8 +533,8 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>field (str):   Fieldname
-value (float): Value/s to assing in the field</p>
+<dt>Optional Args:</dt><dd><p>field (str):   Fieldname in Problem Description (PD)
+value (float): Value/s to assing in the field in Problem Description (PD)</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -600,6 +601,420 @@ value (float): Value/s to assing in the field</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>c (cell)</p>
+</dd>
+</dl>
+</dd></dl>
+<hr class="docutils"/>
+<section id="root-finding-algorithms">
+<h4>Root finding algorithms<a class="headerlink" href="#root-finding-algorithms" title="Permalink to this headline">#</a></h4>
+<p>Roots algorithm used to obtain the temperature at equilibrium for a given thermochemical transformation. The methods implemented are:</p>
+<ul class="simple">
+<li><p>Newton-Raphson method.</p></li>
+<li><p>Steffensen-Aitken method.</p></li>
+</ul>
+<hr class="docutils"/>
+<span class="target" id="module-src.Solver.Functions.root_finding"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.root_finding.print_error_root">
+<span class="sig-name descname"><span class="pre">print_error_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">it</span></em>, <em class="sig-param"><span class="pre">itMax</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">STOP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.root_finding.print_error_root" title="Permalink to this definition">#</a></dt>
+<dd><p>Print error of the method if the number of iterations is greater than maximum iterations allowed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>it</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of iterations executed in the method</p></li>
+<li><p><strong>itMax</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum nNumber of iterations allowed in the method</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>STOP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Relative error [-]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<hr class="docutils"/>
+<section id="thermodynamics-properties">
+<h4>Thermodynamics properties<a class="headerlink" href="#thermodynamics-properties" title="Permalink to this headline">#</a></h4>
+<p>Functions to obtain thermodynamic properties from a given mixture.</p>
+<hr class="docutils"/>
+<span class="target" id="module-src.Solver.Functions.Thermo"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.adiabaticIndex">
+<span class="sig-name descname"><span class="pre">adiabaticIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.adiabaticIndex" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the adiabatic index [-] of the mixture from the ratio of the specific heat capacities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Adiabatic index of the mixture [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.adiabaticIndex_sound">
+<span class="sig-name descname"><span class="pre">adiabaticIndex_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.adiabaticIndex_sound" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the adiabatic index [-] of the mixture from definition of sound velocity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Adiabatic index [-] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.cp_mass">
+<span class="sig-name descname"><span class="pre">cp_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.cp_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.cp_mole">
+<span class="sig-name descname"><span class="pre">cp_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.cp_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.cv_mass">
+<span class="sig-name descname"><span class="pre">cv_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.cv_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.cv_mole">
+<span class="sig-name descname"><span class="pre">cv_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.cv_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.density">
+<span class="sig-name descname"><span class="pre">density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.density" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the density [kg/m3] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>density [kg/m3] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.enthalpy_mass">
+<span class="sig-name descname"><span class="pre">enthalpy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.enthalpy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass specific enthalpy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific enthalpy [kJ/kg] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.enthalpy_mole">
+<span class="sig-name descname"><span class="pre">enthalpy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.enthalpy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole specific enthalpy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific enthalpy [kJ/mol] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.entropy_mass">
+<span class="sig-name descname"><span class="pre">entropy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.entropy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass specific entropy [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific entropy [kJ/kg-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.entropy_mole">
+<span class="sig-name descname"><span class="pre">entropy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.entropy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole specific entropy [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific entropy [kJ/mol-K] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.equivalenceRatio">
+<span class="sig-name descname"><span class="pre">equivalenceRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.equivalenceRatio" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the equivalence ratio of the initial mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Equivalence ratio of the initial mixture [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.gibbs_mass">
+<span class="sig-name descname"><span class="pre">gibbs_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.gibbs_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass specific gibbs free energy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific gibbs free energy [kJ/kg] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.gibbs_mole">
+<span class="sig-name descname"><span class="pre">gibbs_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.gibbs_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole specific gibbs free energy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific gibbs free energy [kJ/mol] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.intEnergy_mass">
+<span class="sig-name descname"><span class="pre">intEnergy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.intEnergy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass specific internal energy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass-basis specific internal energy [kJ/kg] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.intEnergy_mole">
+<span class="sig-name descname"><span class="pre">intEnergy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.intEnergy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole specific internal energy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole-basis specific internal energy [kJ/mol] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.massFractions">
+<span class="sig-name descname"><span class="pre">massFractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.massFractions" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mass fractions of all the species in the mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass fractions of all the species in the mixture [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.meanMolecularWeight">
+<span class="sig-name descname"><span class="pre">meanMolecularWeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.meanMolecularWeight" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mean molecular weight [g/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mean molecular weight [g/mol] of the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.moleFractions">
+<span class="sig-name descname"><span class="pre">moleFractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.moleFractions" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the mole fractions of all the species in the mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mole fractions of all the species in the mixture [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.moles">
+<span class="sig-name descname"><span class="pre">moles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.moles" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the moles [mol] of all the species in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Moles [mol] of all the species in the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.pressure">
+<span class="sig-name descname"><span class="pre">pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.pressure" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the pressure [bar] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pressure [bar] in the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.soundspeed">
+<span class="sig-name descname"><span class="pre">soundspeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.soundspeed" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the speed of sound [m/s] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Speed of sound [m/s] in the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.temperature">
+<span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.temperature" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the temperature [K] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Temperature [K] in the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Thermo.velocity_relative">
+<span class="sig-name descname"><span class="pre">velocity_relative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Thermo.velocity_relative" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the velocity of the gases relative to the shock front [m/s] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Velocity of the gases relative to the shock front [m/s] in the mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -677,6 +1092,7 @@ value (float): Value/s to assing in the field</p>
 </section>
 </section>
 </section>
+</section>
 
         </article>
       </div>
@@ -737,7 +1153,11 @@ value (float): Value/s to assing in the field</p>
             <ul>
 <li><a class="reference internal" href="#">Functions</a><ul>
 <li><a class="reference internal" href="#solvers">Solvers</a><ul>
-<li><a class="reference internal" href="#id1">Functions</a></li>
+<li><a class="reference internal" href="#id1">Functions</a><ul>
+<li><a class="reference internal" href="#root-finding-algorithms">Root finding algorithms</a></li>
+<li><a class="reference internal" href="#thermodynamics-properties">Thermodynamics properties</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

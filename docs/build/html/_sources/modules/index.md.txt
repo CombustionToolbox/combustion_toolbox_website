@@ -1,11 +1,12 @@
 # Functions
+Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:
 
 ## Solvers
 
-Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:
-   * Chemical equilibrium
-   * Shocks and detonations
-   * Rocket propellant performance
+Routines to solve different type of problems. We can distinguish three main types:
+   * chemical equilibrium,
+   * shocks and detonations,
+   * rocket propellant performance.
 
 ***
 ```{eval-rst}
@@ -16,7 +17,7 @@ Here we can find the documentation of the routines of the problems that can be s
 
 ### Functions
 
-A collection of functions necessary to obtain different data
+A collection of functions necessary to obtain different data.
 
 ***
 ```{eval-rst}
@@ -24,6 +25,31 @@ A collection of functions necessary to obtain different data
    :members:
 ```
 ***
+
+#### Root finding algorithms
+
+Roots algorithm used to obtain the temperature at equilibrium for a given thermochemical transformation. The methods implemented are:
+   * Newton-Raphson method.
+   * Steffensen-Aitken method.
+
+***
+```{eval-rst}
+.. automodule:: src.Solver.Functions.root_finding
+   :members:
+```
+***
+
+#### Thermodynamics properties
+
+Functions to obtain thermodynamic properties from a given mixture.
+
+***
+```{eval-rst}
+.. automodule:: src.Solver.Functions.Thermo
+   :members:
+```
+***
+
 
 <!-- ### Chemical equilibrium
 
