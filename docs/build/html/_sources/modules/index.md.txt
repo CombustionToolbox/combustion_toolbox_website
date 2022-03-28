@@ -1,7 +1,10 @@
 # Functions
 
+## Solvers
+
+### Chemical equilibrium
 ```{eval-rst}
-.. automodule:: src
+.. automodule:: src.Solver
    :members:
    :show-inheritance:
 ```
