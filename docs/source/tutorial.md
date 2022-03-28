@@ -70,7 +70,7 @@ and to solve the aforementioned problem, run
 >> self = SolveProblem(self, 'TP');
 ```
 The results are contained in self.PS. By default, this routine print the results through the command window (default: self.Misc.FLAG_RESULTS=true) which gives for the stoichiometric case (phi=1):
-```
+```matlab
 ***********************************************************
 -----------------------------------------------------------
 Problem type: TP  | phi = 1.000
@@ -129,13 +129,11 @@ There are some predefined charts based on the selected problem, in case you have
 ```
 will reproduce **Figure 1** which represents the variation of the molar fraction with the equivalence ratio for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar]. 
 
-<p align="left">
+<p align="center">
     <img src="_static/img/Tutorial_1.svg" width="1000">
 </p>
 
 **Figure 1:** *Example TP: variation of molar fraction for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar], a set of 24 species considered and a total of 451 case studies.*
-
-## Thermodynamic Properties
 
 ## Congratulations!
 Congratulations you have finished the Combustion Toolbox Matlab tutorial! You should now be ready to begin using Combustion Toolbox on your own.
