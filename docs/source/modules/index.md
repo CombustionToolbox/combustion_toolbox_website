@@ -13,24 +13,10 @@ solver
 ```
 
 
-<!-- ### Chemical equilibrium
-
-```{eval-rst}
-.. automodule:: src.solver.chemical_equilibrium
-   :members:
-```
-
-### Shocks and detonations
+<!-- ### Shocks and detonations
 
 ```{eval-rst}
 .. automodule:: src.solver.shocks_detonations
-   :members:
-```
-
-### Rocket propellant performance
-
-```{eval-rst}
-.. automodule:: src.solver.Rocket
    :members:
 ```
 
@@ -82,4 +68,4 @@ solver
 ```{eval-rst}
 .. automodule:: src.Settings.functions
    :members:
-``` -->
+``` --> -->
