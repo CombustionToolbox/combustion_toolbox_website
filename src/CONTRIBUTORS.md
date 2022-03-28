@@ -1,0 +1,5 @@
+# CONTRIBUTORS
+| Contributors            | 
+| ----------------------- | 
+| Samuel Delbarre         |
+
