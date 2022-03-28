@@ -7,16 +7,16 @@
    :members:
    :show-inheritance:
 ```
-
+<!-- 
 ### Functions
 
 ```{eval-rst}
 .. automodule:: src.Solver.Functions
    :members:
    :show-inheritance:
-```
+``` -->
 
-### Chemical equilibrium
+<!-- ### Chemical equilibrium
 
 ```{eval-rst}
 .. automodule:: src.Solver.chemical_equilibrium
@@ -98,4 +98,4 @@
 .. automodule:: src.Settings.functions
    :members:
    :show-inheritance:
-```
+``` -->
