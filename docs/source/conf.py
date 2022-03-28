@@ -18,12 +18,17 @@ import requests
 # sys.path.append('sphinxext')
 # from sphinxext.github_linkcode import github_linkcode_resolve
 
+# current_dir = os.path.dirname(__file__)
+# target_dir = os.path.abspath(os.path.join('..', '..', '..'))
+# sys.path.insert(0, target_dir)
+
+
 # sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'src')))
 
 # tell Sphinx matlab extension where to find matlab code.
-matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
-# matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../external/combustion_toolbox" # ... from the point of view of the generated/sphinx folder
+# matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
+matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../" # ... from the point of view of the generated/sphinx folder
 
 
 # -- Project information -----------------------------------------------------
