@@ -129,9 +129,6 @@ html_title = project + html_space + release
 
 html_css_files = [
     'css/style.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css',
 ]
 
 html_theme_options = {
