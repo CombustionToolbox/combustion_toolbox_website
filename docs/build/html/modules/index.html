@@ -198,10 +198,35 @@
         <article role="main">
           <section id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
-<section id="solvers">
-<h2>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">#</a></h2>
 <section id="module-src.Solver">
-<span id="chemical-equilibrium"></span><h3>Chemical equilibrium<a class="headerlink" href="#module-src.Solver" title="Permalink to this headline">#</a></h3>
+<span id="solvers"></span><h2>Solvers<a class="headerlink" href="#module-src.Solver" title="Permalink to this headline">#</a></h2>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.SolveProblem">
+<span class="sig-name descname"><span class="pre">SolveProblem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ProblemType</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.SolveProblem" title="Permalink to this definition">#</a></dt>
+<dd><p>USAGE:</p>
+<blockquote>
+<div><p>self = SolveProblem(self, ProblemType)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>INPUTS:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">self</dt>
+<dd class="field-odd"><p>Struct with all the data (initial mixture, conditions, and databases)</p>
+</dd>
+<dt class="field-even">ProblemType</dt>
+<dd class="field-even"><p>String with the name of the problem to solve</p>
+</dd>
+</dl>
+</dd>
+<dt>OUTPUTS:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">self</dt>
+<dd class="field-odd"><p>Struct with all the data (initial mixture, conditions, databases, and results)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+<section id="chemical-equilibrium">
+<h3>Chemical equilibrium<a class="headerlink" href="#chemical-equilibrium" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 </section>
@@ -264,8 +289,8 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Functions</a><ul>
-<li><a class="reference internal" href="#solvers">Solvers</a><ul>
-<li><a class="reference internal" href="#module-src.Solver">Chemical equilibrium</a></li>
+<li><a class="reference internal" href="#module-src.Solver">Solvers</a><ul>
+<li><a class="reference internal" href="#chemical-equilibrium">Chemical equilibrium</a></li>
 </ul>
 </li>
 </ul>
