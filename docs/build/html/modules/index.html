@@ -197,9 +197,16 @@
         <article role="main">
           <section id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
-<section id="module-src.Solver">
-<span id="solvers"></span><h2>Solvers<a class="headerlink" href="#module-src.Solver" title="Permalink to this headline">#</a></h2>
-<dl class="mat function">
+<section id="solvers">
+<h2>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">#</a></h2>
+<p>Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:</p>
+<ul class="simple">
+<li><p>Chemical equilibrium</p></li>
+<li><p>Shocks and detonations</p></li>
+<li><p>Rocket propellant performance</p></li>
+</ul>
+<hr class="docutils"/>
+<span class="target" id="module-src.Solver"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.SolveProblem">
 <span class="sig-name descname"><span class="pre">SolveProblem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ProblemType</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.SolveProblem" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve the given ProblemType with the conditions and mixture specified in self</p>
@@ -218,8 +225,11 @@
 </dd>
 </dl>
 </dd></dl>
+<hr class="docutils"/>
 <section id="id1">
 <h3>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>A collection of functions necessary to obtain different data</p>
+<hr class="docutils"/>
 <span class="target" id="module-src.Solver.Functions"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.CalculatePhic">
 <span class="sig-name descname"><span class="pre">CalculatePhic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Fuel</span></em>, <em class="sig-param"><span class="pre">Ninerts</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.CalculatePhic" title="Permalink to this definition">#</a></dt>
@@ -491,19 +501,6 @@ n species with species at different temperatures.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="mat script">
-<dt class="sig sig-object mat" id="src.Solver.Functions.get_vector_value">
-<span class="sig-name descname"><span class="pre">get_vector_value</span></span><a class="headerlink" href="#src.Solver.Functions.get_vector_value" title="Permalink to this definition">#</a></dt>
-<dd><dl>
-<dt>function value = get_vector_value(self, value)</dt><dd><dl class="simple">
-<dt>if length(value) &gt; 1</dt><dd><p>value = value(self.Misc.i);</p>
-</dd>
-</dl>
-<p>end</p>
-</dd>
-</dl>
-<p>end</p>
-</dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.list_phase_species">
 <span class="sig-name descname"><span class="pre">list_phase_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.list_phase_species" title="Permalink to this definition">#</a></dt>
@@ -606,6 +603,7 @@ value (float): Value/s to assing in the field</p>
 </dd>
 </dl>
 </dd></dl>
+<hr class="docutils"/>
 <!-- ### Chemical equilibrium
 
 ```{eval-rst}
@@ -738,7 +736,7 @@ value (float): Value/s to assing in the field</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Functions</a><ul>
-<li><a class="reference internal" href="#module-src.Solver">Solvers</a><ul>
+<li><a class="reference internal" href="#solvers">Solvers</a><ul>
 <li><a class="reference internal" href="#id1">Functions</a></li>
 </ul>
 </li>

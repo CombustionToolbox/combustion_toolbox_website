@@ -2,18 +2,28 @@
 
 ## Solvers
 
+Here we can find the documentation of the routines of the problems that can be solved in the Combustion Toolbox. We can distinguish three main types:
+   * Chemical equilibrium
+   * Shocks and detonations
+   * Rocket propellant performance
+
+***
 ```{eval-rst}
 .. automodule:: src.Solver
    :members:
 ```
-
+***
 
 ### Functions
 
+A collection of functions necessary to obtain different data
+
+***
 ```{eval-rst}
 .. automodule:: src.Solver.Functions
    :members:
 ```
+***
 
 <!-- ### Chemical equilibrium
 
