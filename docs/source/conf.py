@@ -27,8 +27,7 @@ import requests
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..')))
 
 # tell Sphinx matlab extension where to find matlab code.
-# matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
-matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/../../" # ... from the point of view of the generated/sphinx folder
+matlab_src_dir = os.path.abspath(os.path.join('..', '..', 'src'))
 
 
 # -- Project information -----------------------------------------------------
