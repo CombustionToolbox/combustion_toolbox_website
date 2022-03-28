@@ -56,6 +56,7 @@ extensions = [
     'sphinx.ext.napoleon',  # support for shorthand syntax
     'sphinx.ext.mathjax',   # LaTeX support
     'texext.math_dollar',   # lightweight LaTeX filter
+    'sphinx_toolbox.collapse', # collapse long sections
 ]
 
 # Other settings

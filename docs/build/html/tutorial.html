@@ -2,8 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Validations" href="validations.html" /><link rel="prev" title="Functions" href="modules/index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Validations" href="validations.html" /><link rel="prev" title="Solvers" href="modules/solver.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Tutorial - Combustion Toolbox v0.9.0</title>
@@ -160,7 +159,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules/index.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/solver.html">Solvers</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validations.html">Validations</a></li>
 </ul>
@@ -195,9 +197,9 @@
           </label>
         </div>
         <article role="main">
-          <section id="tutorial">
+          <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h1>
-<section id="getting-started">
+<div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
 <p>Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in PATH run this command in the command window:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">addpath</span><span class="p">(</span><span class="nb">genpath</span><span class="p">(</span><span class="nb">pwd</span><span class="p">))</span><span class="w"></span>
@@ -223,15 +225,15 @@
 <span class="w">           </span><span class="n">DB</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="setting-the-state">
+</div>
+<div class="section" id="setting-the-state">
 <h2>Setting the state<a class="headerlink" href="#setting-the-state" title="Permalink to this headline">#</a></h2>
 <p>Indicate temperature and pressure of the initial mixture</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Indicate species and nº moles of each species in the initial mixture</p>
-<section id="individual-case">
+<div class="section" id="individual-case">
 <h3>Individual case<a class="headerlink" href="#individual-case" title="Permalink to this headline">#</a></h3>
 <p>For example, for a stochiometric CH4-ideal_air mixture:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'CH4'</span><span class="p">};</span><span class="w"></span>
@@ -251,8 +253,8 @@
 </pre></div>
 </div>
 <p>The last two lines of code establish the equivalence relation and the proportion of the inert species over the oxidazer, respectively. The number of moles is calculated considering that the number of moles of fuel is one.</p>
-</section>
-<section id="several-cases">
+</div>
+<div class="section" id="several-cases">
 <h3>Several cases<a class="headerlink" href="#several-cases" title="Permalink to this headline">#</a></h3>
 <p>CT also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'CH4'</span><span class="p">};</span><span class="w"></span>
@@ -262,9 +264,9 @@
 <span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">proportion_inerts_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="chemical-equilibrium">
+</div>
+</div>
+<div class="section" id="chemical-equilibrium">
 <h2>Chemical Equilibrium<a class="headerlink" href="#chemical-equilibrium" title="Permalink to this headline">#</a></h2>
 <p>Depending on the problem you want to solve, you may need to configure additional inputs. For example, to compute the equilibrium composition at a defined temperature and pressure (TP) we have to set these values as</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'pP'</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">pR</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s">'TP'</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">);</span><span class="w"></span>
@@ -327,8 +329,8 @@
 <span class="o">***********************************************************</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="postprocessed-results-predefined-plots-for-several-cases">
+</div>
+<div class="section" id="postprocessed-results-predefined-plots-for-several-cases">
 <h2>Postprocessed results (predefined plots for several cases)<a class="headerlink" href="#postprocessed-results-predefined-plots-for-several-cases" title="Permalink to this headline">#</a></h2>
 <p>There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the routine</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">postResults</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
@@ -339,12 +341,12 @@
 <img src="_static/img/Tutorial_1.svg" width="1000"/>
 </p>
 <p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar], a set of 24 species considered and a total of 451 case studies.</em></p>
-</section>
-<section id="congratulations">
+</div>
+<div class="section" id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">#</a></h2>
 <p>Congratulations you have finished the Combustion Toolbox Matlab tutorial! You should now be ready to begin using Combustion Toolbox on your own.</p>
-</section>
-</section>
+</div>
+</div>
 
         </article>
       </div>
@@ -360,14 +362,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="modules/index.html">
+          <a class="prev-page" href="modules/solver.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Functions</div>
+                <div class="title">Solvers</div>
                 
               </div>
             </a>

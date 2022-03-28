@@ -2,8 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Tutorial" href="tutorial.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Tutorial" href="tutorial.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Validations - Combustion Toolbox v0.9.0</title>
@@ -160,7 +159,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules/index.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/solver.html">Solvers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Validations</a></li>
 </ul>
@@ -195,7 +197,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="validations">
+          <div class="section" id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this headline">#</a></h1>
 <p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">CEA-NASA</a>, <a class="reference external" href="https://cantera.org/">CANTERA</a> &amp; <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">SD-Toolbox</a><sup>1</sup>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a>.</p>
 <p><sup>1</sup> The Shock &amp; Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.</p>
@@ -205,7 +207,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validations_CEA</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="validation-tp-1">
+<div class="section" id="validation-tp-1">
 <h2>Validation TP 1<a class="headerlink" href="#validation-tp-1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -226,8 +228,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_TP_CEA_1_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-tp-2">
+</div>
+<div class="section" id="validation-tp-2">
 <h2>Validation TP 2<a class="headerlink" href="#validation-tp-2" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -248,8 +250,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_TP_CEA_2_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-tp-3">
+</div>
+<div class="section" id="validation-tp-3">
 <h2>Validation TP 3<a class="headerlink" href="#validation-tp-3" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -270,8 +272,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_TP_CEA_3_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-tp-4">
+</div>
+<div class="section" id="validation-tp-4">
 <h2>Validation TP 4<a class="headerlink" href="#validation-tp-4" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -292,8 +294,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_TP_CEA_4_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-hp-1">
+</div>
+<div class="section" id="validation-hp-1">
 <h2>Validation HP 1<a class="headerlink" href="#validation-hp-1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -314,8 +316,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_HP_CEA_1_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-hp-2">
+</div>
+<div class="section" id="validation-hp-2">
 <h2>Validation HP 2<a class="headerlink" href="#validation-hp-2" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -336,8 +338,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_HP_CEA_2_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-hp-3">
+</div>
+<div class="section" id="validation-hp-3">
 <h2>Validation HP 3<a class="headerlink" href="#validation-hp-3" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -358,8 +360,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_HP_CEA_3_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-hp-4">
+</div>
+<div class="section" id="validation-hp-4">
 <h2>Validation HP 4<a class="headerlink" href="#validation-hp-4" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -380,8 +382,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_HP_CEA_4_molar.svg" width="1000"/>
 <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600"/>
 </p>
-</section>
-<section id="validation-det-1">
+</div>
+<div class="section" id="validation-det-1">
 <h2>Validation DET 1<a class="headerlink" href="#validation-det-1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -401,8 +403,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <p align="center">
 <img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000"/>
 </p>
-</section>
-<section id="validation-det-2">
+</div>
+<div class="section" id="validation-det-2">
 <h2>Validation DET 2<a class="headerlink" href="#validation-det-2" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -422,8 +424,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <p align="center">
 <img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000"/>
 </p>
-</section>
-<section id="validation-det-3">
+</div>
+<div class="section" id="validation-det-3">
 <h2>Validation DET 3<a class="headerlink" href="#validation-det-3" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -443,8 +445,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <p align="center">
 <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000"/>
 </p>
-</section>
-<section id="validation-det-4">
+</div>
+<div class="section" id="validation-det-4">
 <h2>Validation DET 4<a class="headerlink" href="#validation-det-4" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -464,8 +466,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <p align="center">
 <img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000"/>
 </p>
-</section>
-<section id="validation-shock-ionization-1">
+</div>
+<div class="section" id="validation-shock-ionization-1">
 <h2>Validation SHOCK IONIZATION 1<a class="headerlink" href="#validation-shock-ionization-1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
@@ -486,8 +488,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="600"/>
 <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600"/>
 </p>
-</section>
-<section id="validation-shock-polar-1">
+</div>
+<div class="section" id="validation-shock-polar-1">
 <h2>Validation SHOCK POLAR 1<a class="headerlink" href="#validation-shock-polar-1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Contrasted with: Caltech’s SD Toolbox and CANTERA</p></li>
@@ -508,8 +510,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400"/>
 <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400"/>
 </p>
-</section>
-<section id="validation-tea-1">
+</div>
+<div class="section" id="validation-tea-1">
 <h2>Validation TEA 1<a class="headerlink" href="#validation-tea-1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
@@ -534,8 +536,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </div>
 <p align="left">
 <img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000"/>
-</p> </section>
-</section>
+</p> </div>
+</div>
 
         </article>
       </div>
