@@ -11,11 +11,14 @@ Routines to solve different type of problems. We can distinguish three main type
     :maxdepth: 2
 
 solver_functions
+solver_chemical_equilibrium
 ```
 
 ***
+
 ```{eval-rst}
-.. automodule:: src.Solver
-   :members:
+.. collapse:: Routines
+
+   .. automodule:: src.Solver
+      :members:
 ```
-***

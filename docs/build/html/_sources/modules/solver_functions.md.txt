@@ -9,6 +9,8 @@ A collection of functions necessary to obtain different data in the solver modul
 
 A collection of general functions necessary to obtain different data in the solver module.
 
+***
+
 ```{eval-rst}
 .. collapse:: Routines
 
@@ -21,6 +23,8 @@ A collection of general functions necessary to obtain different data in the solv
 Roots algorithm used to obtain the temperature at equilibrium for a given thermochemical transformation. The methods implemented are:
    * Newton-Raphson method.
    * Steffensen-Aitken method.
+
+***
 
 ```{eval-rst}
 .. collapse:: Routines
@@ -36,6 +40,8 @@ Roots algorithm used to obtain the temperature at equilibrium for a given thermo
 ## Thermodynamics properties
 
 Functions to obtain thermodynamic properties from a given mixture.
+
+***
 
 ```{eval-rst}
 .. collapse:: Routines
