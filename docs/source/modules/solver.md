@@ -3,7 +3,15 @@
 Routines to solve different type of problems. We can distinguish three main types:
    * chemical equilibrium,
    * shocks and detonations,
-   * rocket propellant performance.
+   * rocket propellant performance,
+   * general functions.
+
+```{toctree}
+    :caption: 'Contents:'
+    :maxdepth: 2
+
+solver_functions
+```
 
 ***
 ```{eval-rst}
@@ -11,39 +19,3 @@ Routines to solve different type of problems. We can distinguish three main type
    :members:
 ```
 ***
-
-## Functions
-
-A collection of functions necessary to obtain different data.
-
-```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.Solver.Functions
-      :members:
-```
-
-
-## Root finding algorithms
-
-Roots algorithm used to obtain the temperature at equilibrium for a given thermochemical transformation. The methods implemented are:
-   * Newton-Raphson method.
-   * Steffensen-Aitken method.
-
-```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.Solver.Functions.root_finding
-      :members:
-```
-
-## Thermodynamics properties
-
-Functions to obtain thermodynamic properties from a given mixture.
-
-```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.Solver.Functions.Thermo
-      :members:
-```
