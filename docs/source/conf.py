@@ -46,7 +46,7 @@ release = r.url.split('/')[-1]
 extensions = [
     'myst_parser',
     'sphinx.ext.autodoc',   # for enumeration of objects stuff
-    'sphinx.ext.autosummary',
+    # 'sphinx.ext.autosummary',
     'nbsphinx',
     'sphinx_togglebutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC

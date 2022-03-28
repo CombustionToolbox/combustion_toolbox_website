@@ -9,5 +9,4 @@
 modules/index
 tutorial
 validations
-thermo
 ``` 
