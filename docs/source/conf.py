@@ -72,6 +72,7 @@ nitpick_ignore = [
     ('mat:obj', 'float'),
     ('mat:obj', 'cell'),
     ('mat:obj', 'cell or struct'),
+    ('mat:obj', 'any'),
 ]
 
 def linkcode_resolve(domain, info):

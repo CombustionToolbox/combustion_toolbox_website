@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Tutorial" href="../tutorial.html" /><link rel="prev" title="Key features" href="../index.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Functions - Combustion Toolbox v0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
@@ -248,40 +248,110 @@
 <span class="sig-name descname"><span class="pre">ComputeProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SpeciesMatrix</span></em>, <em class="sig-param"><span class="pre">p</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.ComputeProperties" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute properties from the given SpeciesMatrix at pressure p [bar]
 and temperature T [K]</p>
-</dd></dl>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.Solver.Functions.Plotting">
-<span class="sig-name descname"><span class="pre">Plotting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">display_species</span></em>, <em class="sig-param"><span class="pre">flag</span></em>, <em class="sig-param"><span class="pre">flag_TP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Plotting" title="Permalink to this definition">#</a></dt>
-<dd><p>PLOT FIGURES</p>
-<dl class="simple">
-<dt>INPUT:</dt><dd><p>app = all data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>SpeciesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Matrix with the stoichiometric and properties values of the mixture</p></li>
+<li><p><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – pressure [bar]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
 </dd>
-<dt>OUTPUT:</dt><dd><p>Figures</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self (struct)</p>
 </dd>
 </dl>
-<p>help Plotting</p>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Compute_YFuel">
+<span class="sig-name descname"><span class="pre">Compute_YFuel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">mix_Fuel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Compute_YFuel" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute fuel mass fraction [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture (fuel + oxidizer + inerts)</p></li>
+<li><p><strong>mix_Fuel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture (fuel)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mass fractions of the fuel mixture</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Yi_Fuel (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Compute_density">
+<span class="sig-name descname"><span class="pre">Compute_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Compute_density" title="Permalink to this definition">#</a></dt>
+<dd><p>Get density of the set of mixtures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture/s</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Vector with the densities of all the mixtures</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rho (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.Compute_phi_c">
+<span class="sig-name descname"><span class="pre">Compute_phi_c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Fuel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Compute_phi_c" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute guess of equivalence ratio in which soot appears considering complete combustion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Fuel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct mix with all the properties of the Fuel mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Equivalence ratio in which soot appears [-]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>phi_c (float)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.SetSpecies">
-<span class="sig-name descname"><span class="pre">SetSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.SetSpecies" title="Permalink to this definition">#</a></dt>
-<dd><p>function M = SetSpecies(self, species, N, T)
-DESCRIPTION: Create the stoichiometric matrix
-INPUT:</p>
-<blockquote>
-<div><p>self    = contains necessary data
-Species = species contained in the system
-N       = number of moles of each species
-T       = Temperature of the species</p>
-</div></blockquote>
-<dl class="simple">
-<dt>OUTPUT:</dt><dd><p>M = properties matrix</p>
+<span class="sig-name descname"><span class="pre">SetSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.SetSpecies" title="Permalink to this definition">#</a></dt>
+<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>properties matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>M (float)</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.Stoich_Matrix">
 <span class="sig-name descname"><span class="pre">Stoich_Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.Stoich_Matrix" title="Permalink to this definition">#</a></dt>
-<dd><p>Create stoichiometric matrix</p>
+<dd><p>Initialize the stoichiometric matrix and properties matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self (struct)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.cell2vector">
@@ -303,43 +373,136 @@ given fieldname.</p>
 <dd class="field-odd"><p>Vector with the values of the individual cell/fieldname (struct)</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>vector (float)</p>
+<dd class="field-even"><p>vector (any)</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.compute_first_derivative">
 <span class="sig-name descname"><span class="pre">compute_first_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.compute_first_derivative" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute first central derivate with non-uniform grid</p>
+<dd><p>Compute first central derivate using a non-uniform grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Grid values</p></li>
+<li><p><strong>y</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Values for the corresponding grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value of the first derivate for the given grid and its corresponding values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dxdy (float)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.compute_temperature_mixture">
 <span class="sig-name descname"><span class="pre">compute_temperature_mixture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">temperatures</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.compute_temperature_mixture" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute equilibrium temperature [K] of a gaseous mixture compound of
 n species with species at different temperatures.</p>
-<dl class="simple">
-<dt>Inputs:</dt><dd><ul class="simple">
-<li><p>self: struct variable with all the data of the App (databases)</p></li>
-<li><p>species: cell array with the species of the mixture</p></li>
-<li><p>moles: vector or cell array with the number of moles of each species</p></li>
-<li><p>temperatures: vector or cell array with the temperatures of each species</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Cell array with the species of the mixture</p></li>
+<li><p><strong>moles</strong> – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>temperatures</strong> – Vector or cell array with the temperatures of each species</p></li>
 </ul>
 </dd>
-<dt>Output:</dt><dd><ul class="simple">
-<li><p>T: scalar with the temperature of the mixture at equilibrium</p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Temperature of the mixture at equilibrium</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>T (float)</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.find_ind">
-<span class="sig-name descname"><span class="pre">find_ind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">S</span></em>, <em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.find_ind" title="Permalink to this definition">#</a></dt>
-<dd><p>Find index of the species in the list S</p>
+<span class="sig-name descname"><span class="pre">find_ind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.find_ind" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the index of the species based on the given list (LS)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species to find index values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List with the index of the species based on the given list (LS)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>index (float)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.get_order">
 <span class="sig-name descname"><span class="pre">get_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.get_order" title="Permalink to this definition">#</a></dt>
 <dd><p>Get order of magnitude of a number in base 10</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number in base 10</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>order of magnitude of a number in base 10</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>order (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.get_partial_derivative">
+<span class="sig-name descname"><span class="pre">get_partial_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.get_partial_derivative" title="Permalink to this definition">#</a></dt>
+<dd><p>Get value of the partial derivative for the set problem type [kJ/K] (HP, EV) or [kJ/K^2] (SP, SV)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value of the partial derivative for the set problem type [kJ/K] (HP, EV) or [kJ/K^2] (SP, SV)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.get_transformation">
+<span class="sig-name descname"><span class="pre">get_transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">field</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.get_transformation" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the corresponding value of the field in Problem Description (PD)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value/s assigned to the field</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.Solver.Functions.get_vector_value">
+<span class="sig-name descname"><span class="pre">get_vector_value</span></span><a class="headerlink" href="#src.Solver.Functions.get_vector_value" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>function value = get_vector_value(self, value)</dt><dd><dl class="simple">
+<dt>if length(value) &gt; 1</dt><dd><p>value = value(self.Misc.i);</p>
+</dd>
+</dl>
+<p>end</p>
+</dd>
+</dl>
+<p>end</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.list_phase_species">
@@ -347,16 +510,101 @@ n species with species at different temperatures.</p>
 <dd><p>Establish cataloged list of species according to the state of the
 phase (gaseous or condensed). It also obtains the indices of
 cryogenic liquid species, i.e., liquified gases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self (struct)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.set_prop">
-<span class="sig-name descname"><span class="pre">set_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.set_prop" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.set_prop" title="Permalink to this definition">#</a></dt>
 <dd><p>Assign property values to the respective variables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>field (str):   Fieldname
+value (float): Value/s to assing in the field</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>self (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.set_transformation">
+<span class="sig-name descname"><span class="pre">set_transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.set_transformation" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the corresponding value of the field in Problem Description (PD)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
+<li><p><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Value/s to assign to the field</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self (struct)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.Solver.Functions.soundspeed_eq">
+<span class="sig-name descname"><span class="pre">soundspeed_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">P0</span></em>, <em class="sig-param"><span class="pre">T0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.soundspeed_eq" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute speed of sound at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct mix with all the properties of the mixture</p></li>
+<li><p><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equivalence ratio [-]</p></li>
+<li><p><strong>P0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p><strong>T0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sound speed [m/s]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sound (float)</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.Solver.Functions.vector2cell">
 <span class="sig-name descname"><span class="pre">vector2cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.Solver.Functions.vector2cell" title="Permalink to this definition">#</a></dt>
 <dd><p>Create cell array from vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">any</span></code></span>) – Vector with data of any type</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cell with the values of the vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>c (cell)</p>
+</dd>
+</dl>
 </dd></dl>
 <!-- ### Chemical equilibrium
 
