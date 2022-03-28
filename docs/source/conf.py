@@ -22,7 +22,7 @@ import requests
 # sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.append(os.path.abspath(os.path.join(__file__, "../../src")))
+sys.path.append(os.path.abspath(os.path.join(__file__, "../..")))
 
 # tell Sphinx matlab extension where to find matlab code.
 matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
