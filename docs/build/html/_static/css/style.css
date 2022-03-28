@@ -9,3 +9,7 @@ body {
 dl.py .field-list dt {
   text-transform: none !important;
 }
+
+h4, h5, h6 {
+  text-transform: unset !important;
+}
