@@ -15,10 +15,11 @@ import os
 import sys
 import requests
 
-# sys.path.append('sphinxext')
-# from sphinxext.github_linkcode import github_linkcode_resolve
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
-# sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
+# from docs.source.sphinxext.github_linkcode import github_linkcode_resolve
+
+
 
 # tell Sphinx matlab extension where to find matlab code.
 matlab_src_dir = os.path.abspath('../..') 
@@ -77,9 +78,9 @@ def linkcode_resolve(domain, info):
     return github_linkcode_resolve(
             domain=domain,
             info=info,
-            allowed_module_names=['src'],
-            github_org_id='combustion_toolbox',
-            github_repo_id='combustion_toolbox_website',
+            allowed_module_names='',
+            github_org_id='AlbertoCuadra',
+            github_repo_id='combustion_toolbox',
             branch='master',
             source_prefix='')
 
