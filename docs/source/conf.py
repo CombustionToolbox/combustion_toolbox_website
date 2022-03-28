@@ -80,14 +80,15 @@ def linkcode_resolve(domain, info):
 
 autodoc_default_options = {'members': True, 'show-inheritance': True}
 autosummary_generate = True
+# remove path in function names
+add_module_names = False
 
 # Matlab domain settings
 
 matlab_keep_package_prefix = False
 primary_domain = 'mat'
 
-# remove path in function names
-add_module_names = False
+
 
 # The encoding of source files.
 source_encoding = 'utf-8'
