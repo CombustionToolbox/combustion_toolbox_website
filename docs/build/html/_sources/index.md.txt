@@ -8,8 +8,11 @@
     :titlesonly:
 
 home
-modules/index
+install
 tutorial
+examples
+modules/index
+
 validations
 ```
 

@@ -1,0 +1,16 @@
+# Examples desktop environment
+
+Here we have a collection of examples included in Combustion Toolbox. 
+
+```{toctree}
+    :caption: Contents
+    :maxdepth: 2
+
+examples_plain_TP
+```
+
+```{eval-rst}
+.. literalinclude:: ../../src/examples/Example_TP.m
+   :language: matlab
+   :linenos:
+```

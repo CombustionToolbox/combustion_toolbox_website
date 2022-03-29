@@ -2,8 +2,6 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
 </p>
 
-# Home
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6383180.svg)](https://doi.org/10.5281/zenodo.6383180)
 [![File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://es.mathworks.com/matlabcentral/fileexchange/101088-combustion-toolbox)
 [![CI](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CI.yml/badge.svg)](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CI.yml)
@@ -11,19 +9,22 @@
 [![last modified](https://img.shields.io/github/last-commit/AlbertoCuadra/combustion_toolbox)](https://github.com/AlbertoCuadra/combustion_toolbox/commits/master)
 [![license](https://img.shields.io/github/license/AlbertoCuadra/combustion_toolbox)](https://www.gnu.org/licenses/gpl-3.0.html)
 
-A MATLAB-GUI based open-source tool for solving gaseous combustion problems.
-
-There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox)
-
 ```{warning}
 The documentation is under development 
 ```
 
-<h2> Key features </h2>
+# Home
+
+
+
+<center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center>
+
+<!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
+
 
 | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
 | ----------- | ----------- | ----------- |
-|  The kernel has been optimized ...	| All changes done in the kernel and in the implemented numerical routines will be used directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB |
+|  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB |
 
 ## Features
 
