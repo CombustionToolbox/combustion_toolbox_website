@@ -1,4 +1,18 @@
-```{include} README.md
+<!-- Index PDF -->
+
+<!-- ```{toctree}
+   :hidden:
+   :titlesonly:
+
+home
+modules/index
+tutorial
+validations
+``` -->
+
+<!--------------->
+
+```{include} home.md
 :relative-images:
 ```
   

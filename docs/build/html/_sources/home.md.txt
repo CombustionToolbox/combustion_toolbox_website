@@ -17,7 +17,7 @@ There is also a (less complete) [Python version](https://github.com/AlbertoCuadr
 The documentation is under development 
 ```
 
-# Key features
+<h2> Key features </h2>
 
 | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
 | ----------- | ----------- | ----------- |
