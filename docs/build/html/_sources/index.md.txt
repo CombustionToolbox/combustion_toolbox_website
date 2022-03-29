@@ -7,6 +7,7 @@
     :maxdepth: 2
     :titlesonly:
 
+home
 modules/index
 tutorial
 validations
