@@ -6,7 +6,7 @@ There are two models:
    * FAC: Finite-Area-Chamber.
 
 <div class="note">
-This module is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
+<b>Note</b><br> This module is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
 </div>
 
 ***

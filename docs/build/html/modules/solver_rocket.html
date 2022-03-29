@@ -161,7 +161,20 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="solver.html">Solvers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="settings_self.html">self</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Constants.html">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Elements.html">Elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_ProblemDescription.html">App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_ProblemSolution.html">ProblemSolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Species.html">Species</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_TunningProperties.html">TunningProperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="solver.html">Solvers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="solver_functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_chemical_equilibrium.html">Chemical equilibrium</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_shocks_detonations.html">Shocks and detonations waves</a></li>
@@ -213,7 +226,7 @@ There are two models:</p>
 <li><p>FAC: Finite-Area-Chamber.</p></li>
 </ul>
 <div class="note">
-This module is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.
+<b>Note</b><br/> This module is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.
 </div>
 <hr class="docutils"/>
 <details class="summary-routines">
@@ -232,10 +245,7 @@ This module is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference 
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Properties of the mixture at the throat</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>mix3 (struct)</p>
+<dd class="field-even"><p><em>mix3 (struct)</em> – Properties of the mixture at the throat</p>
 </dd>
 </dl>
 </dd></dl>
@@ -254,10 +264,7 @@ e.g., enthalpy-pressure (HP)</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Properties of the final mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>mix2 (struct)</p>
+<dd class="field-even"><p><em>mix2 (struct)</em> – Properties of the final mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,13 +276,13 @@ e.g., enthalpy-pressure (HP)</p>
 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Properties of the mixture at the throat</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>mix3 (struct)</p>
+<dd class="field-even"><p><em>mix3 (struct)</em> – Properties of the mixture at the throat</p>
 </dd>
 </dl>
 </dd></dl>
@@ -290,10 +297,7 @@ e.g., enthalpy-pressure (HP)</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Pressure [bar]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>pressure (float)</p>
+<dd class="field-even"><p><em>pressure (float)</em> – Pressure [bar]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -319,18 +323,21 @@ e.g., enthalpy-pressure (HP)</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>mix2 (struct): Properties of the mixture at the outlet of the chamber (previous calculation)
-mix3 (struct): Properties of the mixture at the throat (previous calculation)</p>
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2 (struct): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+<li><p>mix3 (struct): Properties of the mixture at the throat (previous calculation)</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Properties of the initial mixture
-mix2 (struct): Properties of the mixture at the outlet of the chamber
-mix3 (struct): Properties of the mixture at the throat</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>mix1 (struct)</p>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (struct): Properties of the initial mixture</p></li>
+<li><p>mix2 (struct): Properties of the mixture at the outlet of the chamber</p></li>
+<li><p>mix3 (struct): Properties of the mixture at the throat</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>

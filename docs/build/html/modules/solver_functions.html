@@ -161,7 +161,20 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="solver.html">Solvers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="settings_self.html">self</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Constants.html">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Elements.html">Elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_ProblemDescription.html">App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_ProblemSolution.html">ProblemSolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_Species.html">Species</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings_self_TunningProperties.html">TunningProperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="solver.html">Solvers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_chemical_equilibrium.html">Chemical equilibrium</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_shocks_detonations.html">Shocks and detonations waves</a></li>
@@ -233,10 +246,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Equivalence ratio in which soot appears [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>phi_c (float)</p>
+<dd class="field-even"><p><em>phi_c (float)</em> – Equivalence ratio in which soot appears [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -255,10 +265,7 @@ and temperature T [K]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>self (struct)</p>
+<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -274,10 +281,7 @@ and temperature T [K]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass fractions of the fuel mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Yi_Fuel (float)</p>
+<dd class="field-even"><p><em>Yi_Fuel (float)</em> – Mass fractions of the fuel mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -290,10 +294,7 @@ and temperature T [K]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture/s</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Vector with the densities of all the mixtures</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>rho (float)</p>
+<dd class="field-even"><p><em>rho (float)</em> – Vector with the densities of all the mixtures</p>
 </dd>
 </dl>
 </dd></dl>
@@ -306,10 +307,7 @@ and temperature T [K]</p>
 <dd class="field-odd"><p><strong>Fuel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct mix with all the properties of the Fuel mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Equivalence ratio in which soot appears [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>phi_c (float)</p>
+<dd class="field-even"><p><em>phi_c (float)</em> – Equivalence ratio in which soot appears [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -327,10 +325,7 @@ and temperature T [K]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>properties matrix</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>M (float)</p>
+<dd class="field-even"><p><em>M (float)</em> – properties matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -343,10 +338,7 @@ and temperature T [K]</p>
 <dd class="field-odd"><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>self (struct)</p>
+<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -367,10 +359,7 @@ given fieldname.</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Vector with the values of the individual cell/fieldname (struct)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>vector (any)</p>
+<dd class="field-odd"><p><em>vector (any)</em> – Vector with the values of the individual cell/fieldname (struct)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -386,10 +375,7 @@ given fieldname.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Value of the first derivate for the given grid and its corresponding values</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dxdy (float)</p>
+<dd class="field-even"><p><em>dxdy (float)</em> – Value of the first derivate for the given grid and its corresponding values</p>
 </dd>
 </dl>
 </dd></dl>
@@ -408,10 +394,7 @@ n species with species at different temperatures.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Temperature of the mixture at equilibrium</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>T (float)</p>
+<dd class="field-even"><p><em>T (float)</em> – Temperature of the mixture at equilibrium</p>
 </dd>
 </dl>
 </dd></dl>
@@ -427,10 +410,7 @@ n species with species at different temperatures.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List with the index of the species based on the given list (LS)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>index (float)</p>
+<dd class="field-even"><p><em>index (float)</em> – List with the index of the species based on the given list (LS)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -443,10 +423,7 @@ n species with species at different temperatures.</p>
 <dd class="field-odd"><p><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number in base 10</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>order of magnitude of a number in base 10</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>order (float)</p>
+<dd class="field-even"><p><em>order (float)</em> – order of magnitude of a number in base 10</p>
 </dd>
 </dl>
 </dd></dl>
@@ -462,10 +439,7 @@ n species with species at different temperatures.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Value of the partial derivative for the set problem type [kJ/K] (HP, EV) or [kJ/K^2] (SP, SV)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Value of the partial derivative for the set problem type [kJ/K] (HP, EV) or [kJ/K^2] (SP, SV)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -481,10 +455,7 @@ n species with species at different temperatures.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Value/s assigned to the field</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Value/s assigned to the field</p>
 </dd>
 </dl>
 </dd></dl>
@@ -502,10 +473,7 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>self (struct)</p>
+<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -519,16 +487,15 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>field (str):   Fieldname in Problem Description (PD)
-value (float): Value/s to assing in the field in Problem Description (PD)</p>
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>field (str):   Fieldname in Problem Description (PD)</p></li>
+<li><p>value (float): Value/s to assing in the field in Problem Description (PD)</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Data of the mixture, conditions, and databases</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>self (struct)</p>
+<dd class="field-odd"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -545,10 +512,7 @@ value (float): Value/s to assing in the field in Problem Description (PD)</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data of the mixture, conditions, and databases</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>self (struct)</p>
+<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -567,10 +531,7 @@ value (float): Value/s to assing in the field in Problem Description (PD)</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>sound speed [m/s]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>sound (float)</p>
+<dd class="field-even"><p><em>sound (float)</em> – sound speed [m/s]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -583,10 +544,7 @@ value (float): Value/s to assing in the field in Problem Description (PD)</p>
 <dd class="field-odd"><p><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">any</span></code></span>) – Vector with data of any type</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Cell with the values of the vector</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>c (cell)</p>
+<dd class="field-even"><p><em>c (cell)</em> – Cell with the values of the vector</p>
 </dd>
 </dl>
 </dd></dl>
@@ -630,11 +588,12 @@ value (float): Value/s to assing in the field in Problem Description (PD)</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Temperature at equilibrium [K]
-STOP (float):  Relative error [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>x (float)</p>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>x (float):     Temperature at equilibrium [K]</p></li>
+<li><p>STOP (float):  Relative error [-]</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -653,11 +612,12 @@ STOP (float):  Relative error [-]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Fixed point of the function [kJ] (HP, EV) or [kJ/K] (SP, SV)
-gpoint_relative (float): Fixed relative point of the function [kJ] (HP, EV) or [kJ/K] (SP, SV)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>gpoint (float)</p>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>gpoint (float): Fixed point of the function [kJ] (HP, EV) or [kJ/K] (SP, SV)</p></li>
+<li><p>gpoint_relative (float): Fixed relative point of the function [kJ] (HP, EV) or [kJ/K] (SP, SV)</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -673,10 +633,7 @@ gpoint_relative (float): Fixed relative point of the function [kJ] (HP, EV) or [
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Point of the function [K]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>point (float)</p>
+<dd class="field-even"><p><em>point (float)</em> – Point of the function [K]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -692,10 +649,7 @@ gpoint_relative (float): Fixed relative point of the function [kJ] (HP, EV) or [
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Point of the function [K]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>point (float)</p>
+<dd class="field-even"><p><em>point (float)</em> – Point of the function [K]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -714,11 +668,12 @@ gpoint_relative (float): Fixed relative point of the function [kJ] (HP, EV) or [
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Temperature at equilibrium [K]
-STOP (float):  Relative error [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>x (float)</p>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>x (float):    Temperature at equilibrium [K]</p></li>
+<li><p>STOP (float): Relative error [-]</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -736,10 +691,7 @@ STOP (float):  Relative error [-]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Guess temperature [K]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>x0 (float)</p>
+<dd class="field-even"><p><em>x0 (float)</em> – Guess temperature [K]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -758,10 +710,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Adiabatic index of the mixture [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Adiabatic index of the mixture [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -774,10 +723,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Adiabatic index [-] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Adiabatic index [-] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -790,10 +736,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -806,10 +749,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -822,10 +762,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -838,10 +775,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -854,10 +788,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>density [kg/m3] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – density [kg/m3] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -870,10 +801,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific enthalpy [kJ/kg] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific enthalpy [kJ/kg] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -886,10 +814,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific enthalpy [kJ/mol] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific enthalpy [kJ/mol] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -902,10 +827,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific entropy [kJ/kg-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific entropy [kJ/kg-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -918,10 +840,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific entropy [kJ/mol-K] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific entropy [kJ/mol-K] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -934,10 +853,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Equivalence ratio of the initial mixture [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Equivalence ratio of the initial mixture [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -950,10 +866,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific gibbs free energy [kJ/kg] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific gibbs free energy [kJ/kg] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -966,10 +879,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific gibbs free energy [kJ/mol] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific gibbs free energy [kJ/mol] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -982,10 +892,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass-basis specific internal energy [kJ/kg] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass-basis specific internal energy [kJ/kg] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -998,10 +905,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole-basis specific internal energy [kJ/mol] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole-basis specific internal energy [kJ/mol] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1014,10 +918,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mass fractions of all the species in the mixture [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mass fractions of all the species in the mixture [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1030,10 +931,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mean molecular weight [g/mol] of the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mean molecular weight [g/mol] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1046,10 +944,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Mole fractions of all the species in the mixture [-]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Mole fractions of all the species in the mixture [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1062,10 +957,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Moles [mol] of all the species in the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Moles [mol] of all the species in the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1078,10 +970,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Pressure [bar] in the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Pressure [bar] in the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1094,10 +983,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Speed of sound [m/s] in the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Speed of sound [m/s] in the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1110,10 +996,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Temperature [K] in the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Temperature [K] in the mixture</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1126,10 +1009,7 @@ STOP (float):  Relative error [-]</p>
 <dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Velocity of the gases relative to the shock front [m/s] in the mixture</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>value (float)</p>
+<dd class="field-even"><p><em>value (float)</em> – Velocity of the gases relative to the shock front [m/s] in the mixture</p>
 </dd>
 </dl>
 </dd></dl>

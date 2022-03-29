@@ -1,6 +1,6 @@
 # Functions
 Here we can find the documentation for the routines implemented in Combustion Toolbox. We have different modules:
-   * settings: routines to generate a self struct with all the data of necessary,
+   * settings: routines to generate a self struct variable with all the data necessary (mixtures, conditions, databases),
    * databases: routines to generate the databases using the NASA's 9 coefficient polynomials fits,
    * solver: routines to solve different type of problems implemented,
    * gui: routines to generate the app, all the necessary functions to be compatible with the plain code and extend its functionality.
@@ -9,6 +9,7 @@ Here we can find the documentation for the routines implemented in Combustion To
     :caption: 'Contents:'
     :maxdepth: 2
 
+settings
 solver
 ```
 
@@ -60,4 +61,4 @@ solver
 ```{eval-rst}
 .. automodule:: src.Settings.functions
    :members:
-``` --> --> -->
+``` -->

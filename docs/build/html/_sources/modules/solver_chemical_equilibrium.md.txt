@@ -4,7 +4,7 @@ In this section, you will find the documentation of the kernel of the code, whic
 
 
 <div class="note">
-The kernel of the code is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
+<b>Note</b><br>The kernel of the code is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
 </div>
 
 ***
