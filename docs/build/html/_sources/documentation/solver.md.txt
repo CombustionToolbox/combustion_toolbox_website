@@ -1,15 +1,11 @@
 # Solvers
 
-Routines to solve different type of problems. We can distinguish three main types:
-   * chemical equilibrium,
-   * shocks and detonations,
-   * rocket propellant performance,
-   * general functions.
+Routines to solve different type of problems. We can distinguish four modules:
 
 ```{toctree}
-    :caption: 'Contents:'
     :maxdepth: 2
-
+    :titlesonly:
+    
 solver_functions
 solver_chemical_equilibrium
 solver_shocks_detonations

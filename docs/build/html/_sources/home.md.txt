@@ -6,25 +6,25 @@
 The documentation is under development 
 ```
 
-<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br> <br>
+<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
 
 <!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
 
+::::{grid} 1 2 2 3
+:margin: 4 4 0 0
+:gutter: 1
 
-::::{grid} 3
-:gutter: 3
-
-:::{grid-item-card}  Robust kernel
+:::{grid-item-card} {octicon}`package` Robust modular kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
-`Robust` and `Fast` chemical equilibrium computations
+`Robust`, `modular`, and `Fast` chemical equilibrium computations
 :::
 
-:::{grid-item-card}  Graphic User Interface
+:::{grid-item-card} {octicon}`device-desktop` Graphic User Interface
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
 The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 
-:::{grid-item-card}  Open source
+:::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
 The code/GUI is fully open source, GUI included!
 :::
@@ -38,65 +38,26 @@ The code/GUI is fully open source, GUI included!
 :margin: 4 4 0 0
 :gutter: 1
 
-:::{grid-item-card} {octicon}`table` Grids
-
-
-Screen size adaptable grid layouts.
-:::
-
-:::{grid-item-card} {octicon}`note` Cards
-
-
-Flexible and extensible content containers.
-:::
-
-:::{grid-item-card} {octicon}`chevron-down` Dropdowns
-
-
-Hide content in expandable containers.
-:::
-
-:::{grid-item-card} {octicon}`duplicate` Tabs
-
-
-Synchronisable, tabbed content sets.
-:::
-
-:::{grid-item-card} {octicon}`plus-circle` Badges, Buttons & Icons
-
-Roles and directives for {bdg-primary}`badges` and other components.
-:::
-
-:::{grid-item-card} {octicon}`image` CSS Styling
-
-
-Change the default colors and other CSS.
-:::
-
-::::
-
-::::{grid} 3
-:gutter: 3
-
-:::{grid-item-card}   Tutorial
+:::{grid-item-card} {octicon}`tasklist` Tutorial
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html
 
 New to Combustion Toolbox?
 :::
 
-:::{grid-item-card} Examples
+:::{grid-item-card} {octicon}`note` Examples
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/examples.html
 
 See examples of Combustion-Toolbox applications.
 :::
 
-:::{grid-item-card} Documentation
+:::{grid-item-card} {octicon}`repo` Documentation
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/index.html
 
 Let's check the documentation of almost (every) functions.
 :::
 
 ::::
+
 
 <!-- | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
 | ----------- | ----------- | ----------- |
@@ -158,7 +119,7 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems",
     year = 2022,
-    note = "Version 0.9.0",
-    doi = {https://doi.org/10.5281/zenodo.6383180}
+    note = "Version 0.9.1",
+    doi = {https://doi.org/10.5281/zenodo.6396748}
 }
 ```
