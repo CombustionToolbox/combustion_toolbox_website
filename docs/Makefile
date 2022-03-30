@@ -10,7 +10,7 @@ SOURCEDIR     = source
 BUILDDIR      = build
 
 #IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS      = source/_static
+IMAGEDIRS      = source/_static/img
 
 # SVG to PDF conversion
 SVG2PDF       = inkscape
