@@ -15,8 +15,8 @@ The documentation is under development
 :::{grid-item-card}  Robust kernel
 `Robust` and `Fast` chemical equilibrium computations
 :::
-:::{grid-item-card}  Modular construction
- All changes made to the kernel will be applied directly in the GUI
+:::{grid-item-card}  Graphic User Interface
+The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 :::{grid-item-card}  Open source
 The code/GUI is fully open source, GUI included!
@@ -42,7 +42,7 @@ See examples of Combustion-Toolbox applications.
 :::{grid-item-card} Documentation
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/index.html
 
-Need more details? lets check the documentation.
+Let's check the documentation of almost (every) functions.
 :::
 
 ::::
