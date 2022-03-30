@@ -3,7 +3,7 @@
 ```
 
 ```{toctree}
-    :caption: 'Contents:'
+    :hidden:
     :maxdepth: 2
     :titlesonly:
 
