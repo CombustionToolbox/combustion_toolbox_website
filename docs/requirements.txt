@@ -188,6 +188,7 @@ sphinx==4.4.0
     #   myst-parser
     #   nbsphinx
     #   sphinx-autodoc-typehints
+    #   sphinx-copybutton
     #   sphinx-prompt
     #   sphinx-tabs
     #   sphinx-togglebutton
@@ -196,6 +197,8 @@ sphinx==4.4.0
     #   texext
 sphinx-autodoc-typehints==1.14.1
     # via sphinx-toolbox
+sphinx-copybutton==0.5.0
+    # via -r docs/requirements.in
 sphinx-prompt==1.5.0
     # via sphinx-toolbox
 sphinx-tabs==3.2.0
