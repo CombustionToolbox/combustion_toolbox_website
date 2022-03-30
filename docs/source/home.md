@@ -36,7 +36,7 @@ New to Combustion Toolbox?
 :::{grid-item-card} Examples
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/examples.html
 
-Many examples included.
+See examples of Combustion-Toolbox applications.
 :::
 
 :::{grid-item-card} Documentation

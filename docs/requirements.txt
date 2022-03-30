@@ -189,6 +189,7 @@ sphinx==4.4.0
     #   nbsphinx
     #   sphinx-autodoc-typehints
     #   sphinx-copybutton
+    #   sphinx-design
     #   sphinx-prompt
     #   sphinx-tabs
     #   sphinx-togglebutton
@@ -198,6 +199,8 @@ sphinx==4.4.0
 sphinx-autodoc-typehints==1.14.1
     # via sphinx-toolbox
 sphinx-copybutton==0.5.0
+    # via -r docs/requirements.in
+sphinx-design==0.0.13
     # via -r docs/requirements.in
 sphinx-prompt==1.5.0
     # via sphinx-toolbox

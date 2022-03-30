@@ -5,6 +5,7 @@ sphinx-togglebutton
 sphinxcontrib-fulltoc
 sphinx-toolbox
 sphinx-copybutton
+sphinx_design
 nbsphinx
 furo
 myst-parser
