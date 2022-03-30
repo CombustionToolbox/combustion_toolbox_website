@@ -12,7 +12,7 @@
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
-`Robust`, `modular`, and `Fast` chemical equilibrium computations
+`Robust`, `modular`, and `Fast` chemical equilibrium computations.
 :::
 
 :::{grid-item-card} {octicon}`device-desktop` Graphic User Interface
