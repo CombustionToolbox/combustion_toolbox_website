@@ -1,10 +1,10 @@
 # Solvers
 
 Routines to solve different type of problems. We can distinguish three main types:
-   * chemical equilibrium,
-   * shocks and detonations,
-   * rocket propellant performance,
-   * general functions.
+   * [chemical equilibrium](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html),
+   * [shocks and detonations](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_shocks_detonations.html),
+   * [rocket propellant performance](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_rocket.html),
+   * [general functions](https://8000-albertocuadra-combustion-oogg9qfd6fe.ws-eu38.gitpod.io/documentation/solver_functions.html).
 
 ```{toctree}
     :caption: 'Contents:'

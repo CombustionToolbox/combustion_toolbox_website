@@ -6,7 +6,6 @@ In this section, you will find the documentation of the routines implemented to 
 The kernel of the incident, reflected, and Chapman-Jouguet detonations are based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
 ```
 
-
 ***
 
 :::{dropdown} Routines
