@@ -13,9 +13,11 @@ The documentation is under development
 
 ::::{grid} 3
 :::{grid-item-card}  Robust kernel
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
 `Robust` and `Fast` chemical equilibrium computations
 :::
 :::{grid-item-card}  Graphic User Interface
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
 The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 :::{grid-item-card}  Open source
