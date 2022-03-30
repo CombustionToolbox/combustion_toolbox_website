@@ -235,9 +235,9 @@ def github_linkcode_resolve(domain, info, github_org_id, github_repo_id,
     # Get the branch/tag/commit to link to.
     ref = _get_git_doc_ref(branch) or branch
     # print "branch: ", branch
-    # print ('https://github.com/%s/%s/blob/%s/%s%s%s'
-    #         % (github_org_id, github_repo_id, ref, source_prefix,
-    #            filename, linespec))
+    print ('https://github.com/%s/%s/blob/%s/%s%s%s'
+            % (github_org_id, github_repo_id, ref, source_prefix,
+               filename, linespec))
     return ('https://github.com/%s/%s/blob/%s/%s%s%s'
             % (github_org_id, github_repo_id, ref, source_prefix,
                filename, linespec))

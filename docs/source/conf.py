@@ -48,13 +48,15 @@ extensions = [
     'nbsphinx',
     'sphinx_togglebutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
-    'sphinxcontrib.matlab', # support for Matlab
+    'sphinxcontrib.matlab',    # support for Matlab
     # 'github',
-    # 'sphinx.ext.linkcode',
-    'sphinx.ext.napoleon',  # support for shorthand syntax
-    'sphinx.ext.mathjax',   # LaTeX support
-    'texext.math_dollar',   # lightweight LaTeX filter
+    'sphinx.ext.linkcode',
+    'sphinx.ext.viewcode',     # view source code
+    'sphinx.ext.napoleon',     # support for shorthand syntax
+    'sphinx.ext.mathjax',      # LaTeX support
+    'texext.math_dollar',      # lightweight LaTeX filter
     'sphinx_toolbox.collapse', # collapse long sections
+    'sphinx_copybutton',
 ]
 
 # Other settings
@@ -145,6 +147,8 @@ html_static_path = ['_static']
 
 html_space = ' '
 html_title = project + html_space + release
+html_permalinks = None
+html_show_sphinx = True
 
 html_css_files = [
     'css/style.css',

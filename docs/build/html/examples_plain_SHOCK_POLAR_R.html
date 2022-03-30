@@ -2,14 +2,14 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Example_DET.m" href="examples_plain_DET.html" /><link rel="prev" title="Example_SHOCK_POLAR.m" href="examples_plain_SHOCK_POLAR.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Example_SHOCK_POLAR_R.m - Combustion Toolbox v0.9.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
     
@@ -159,13 +159,13 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples_gui.html">Examples GUI</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="examples_plain.html">Examples desktop environment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="examples_plain.html">Examples desktop environment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_TP.html">Example_TP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP.html">Example_HP.m</a></li>
@@ -175,6 +175,21 @@
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_SP.html">Example_SP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_SV.html">Example_SV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_SV_FROZEN.html">Example_SV_FROZEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I.html">Example_SHOCK_I.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I_IONIZATION.html">Example_SHOCK_I_IONIZATION.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_R.html">Example_SHOCK_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_OBLIQUE_BETA.html">Example_SHOCK_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_OBLIQUE_THETA.html">Example_SHOCK_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_OBLIQUE_R.html">Example_SHOCK_OBLIQUE_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_POLAR.html">Example_SHOCK_POLAR.m</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Example_SHOCK_POLAR_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET.html">Example_DET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_R.html">Example_DET_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_ROCKET.html">Example_ROCKET.m</a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +250,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="example-shock-polar-r-m">
+          <div class="section" id="example-shock-polar-r-m">
 <h1>Example_SHOCK_POLAR_R.m<a class="headerlink" href="#example-shock-polar-r-m" title="Permalink to this headline">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
 <span class="linenos"> 2</span><span class="c">% EXAMPLE: SHOCK_POLAR_REFLECTED</span><span class="w"></span>
@@ -281,15 +296,33 @@
 <span class="linenos">42</span><span class="n">postResults</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
+</div>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="examples_plain_DET.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Example_DET.m</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="examples_plain_SHOCK_POLAR.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Example_SHOCK_POLAR.m</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -331,6 +364,8 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

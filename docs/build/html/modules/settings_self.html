@@ -2,14 +2,14 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Constants" href="settings_self_Constants.html" /><link rel="prev" title="Settings" href="settings.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Constants" href="settings_self_Constants.html" /><link rel="prev" title="Settings" href="settings.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>self - Combustion Toolbox v0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/css/style.css" />
     
@@ -250,8 +250,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="self">
-<h1>self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h1>
+          <div class="section" id="self">
+<h1>self</h1>
 <p>Routines to initialize the main module. All the data is save in a self variable (struct).</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -269,7 +269,7 @@
 <blockquote>
 <div><span class="target" id="module-src.settings.self.App"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.App">
-<span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.App" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Generate self variable with all the data required to initialize the computations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -294,7 +294,7 @@
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.ContainedElements">
-<span class="sig-name descname"><span class="pre">ContainedElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.ContainedElements" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ContainedElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Obtain containted elements from the given set of species (reactants and products)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -307,7 +307,7 @@
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.Initialize">
-<span class="sig-name descname"><span class="pre">Initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.Initialize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">Initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span></dt>
 <dd><dl class="simple">
 <dt>This routine have three tasks:</dt><dd><ul class="simple">
 <li><p>Check that all species are contained in the Database</p></li>
@@ -329,7 +329,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.set_DB">
-<span class="sig-name descname"><span class="pre">set_DB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">FLAG_REDUCED_DB</span></em>, <em class="sig-param"><span class="pre">FLAG_FAST</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.set_DB" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_DB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">FLAG_REDUCED_DB</span></em>, <em class="sig-param"><span class="pre">FLAG_FAST</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Generate Database with custom polynomials from DB_master</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -345,7 +345,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 </dl>
 </dd></dl>
 </div></blockquote>
-</section>
+</div>
 
         </article>
       </div>
@@ -413,6 +413,8 @@ cryogenic liquid species, e.g., liquified gases</p></li>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

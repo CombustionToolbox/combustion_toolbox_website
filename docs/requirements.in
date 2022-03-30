@@ -4,6 +4,7 @@ texext
 sphinx-togglebutton
 sphinxcontrib-fulltoc
 sphinx-toolbox
+sphinx-copybutton
 nbsphinx
 furo
 myst-parser

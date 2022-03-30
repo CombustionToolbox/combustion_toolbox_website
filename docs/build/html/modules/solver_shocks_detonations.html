@@ -2,14 +2,14 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Rocket propellant performance" href="solver_rocket.html" /><link rel="prev" title="Chemical equilibrium" href="solver_chemical_equilibrium.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Rocket propellant performance" href="solver_rocket.html" /><link rel="prev" title="Chemical equilibrium" href="solver_chemical_equilibrium.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Shocks and detonations waves - Combustion Toolbox v0.9.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/css/style.css" />
     
@@ -250,8 +250,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="shocks-and-detonations-waves">
-<h1>Shocks and detonations waves<a class="headerlink" href="#shocks-and-detonations-waves" title="Permalink to this headline">#</a></h1>
+          <div class="section" id="shocks-and-detonations-waves">
+<h1>Shocks and detonations waves</h1>
 <p>In this section, you will find the documentation of the routines implemented to obtain the pre-shock and post-shock states of a set of fluid dynamic problems related with the shock waves and detonations waves.</p>
 <div class="note">
 <b>Note</b><br/>The kernel of the incident, reflected, and Chapman-Jouguet detonations are based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.
@@ -260,7 +260,7 @@
 <details class="summary-routines">
 <summary>Routines</summary><span class="target" id="module-src.solver.shocks_detonations"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.cj_detonation">
-<span class="sig-name descname"><span class="pre">cj_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.cj_detonation" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cj_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of a Chapman-Jouguet detonation</p>
 <p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
 1311.</p>
@@ -289,7 +289,7 @@
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.compute_guess_det">
-<span class="sig-name descname"><span class="pre">compute_guess_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.compute_guess_det" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">compute_guess_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Obtain guess of the jump conditions for a Chapman-Jouguet detonation.
 Only valid if the mixture have CHON. It computes the guess assuming
 first a complete combustion, next it recomputes assuming an incomplete
@@ -319,7 +319,7 @@ combustion from the composition obtained in the previous step.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.det_oblique_beta">
-<span class="sig-name descname"><span class="pre">det_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.det_oblique_beta" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">det_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
 given the wave angle (one solution)</p>
 <dl class="field-list simple">
@@ -349,7 +349,7 @@ given the wave angle (one solution)</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.det_oblique_theta">
-<span class="sig-name descname"><span class="pre">det_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.det_oblique_theta" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">det_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
 given the deflection angle.</p>
 <dl class="simple">
@@ -390,7 +390,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.overdriven_detonation">
-<span class="sig-name descname"><span class="pre">overdriven_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.overdriven_detonation" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">overdriven_detonation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an overdriven planar detonation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -418,7 +418,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_ideal_gas">
-<span class="sig-name descname"><span class="pre">shock_ideal_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">M1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_ideal_gas" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_ideal_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">M1</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute jump conditions assuming a thermochemically frozen gas</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -440,7 +440,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_incident">
-<span class="sig-name descname"><span class="pre">shock_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_incident" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of a planar incident shock wave</p>
 <p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
 1311.</p>
@@ -470,7 +470,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_beta">
-<span class="sig-name descname"><span class="pre">shock_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_beta" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an oblique shock wave
 given the wave angle (one solution)</p>
 <dl class="field-list simple">
@@ -500,7 +500,7 @@ given the wave angle (one solution)</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_reflected_theta">
-<span class="sig-name descname"><span class="pre">shock_oblique_reflected_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u2</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_reflected_theta" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_oblique_reflected_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u2</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an oblique reflected shock wave
 given the deflection angle.</p>
 <dl class="simple">
@@ -541,7 +541,7 @@ mix5_2 (struct): Properties of the mixture in the post-shock state of the reflec
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_oblique_theta">
-<span class="sig-name descname"><span class="pre">shock_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_oblique_theta" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_oblique_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of an oblique shock wave
 given the deflection angle.</p>
 <dl class="simple">
@@ -582,7 +582,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_polar">
-<span class="sig-name descname"><span class="pre">shock_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_polar" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute shock polars of an oblique shock wave</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -610,7 +610,7 @@ given the deflection angle.</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.shocks_detonations.shock_reflected">
-<span class="sig-name descname"><span class="pre">shock_reflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.shocks_detonations.shock_reflected" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shock_reflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compute pre-shock and post-shock states of a planar reflected shock wave</p>
 <p>This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
 1311.</p>
@@ -640,7 +640,7 @@ given the deflection angle.</p>
 </dd>
 </dl>
 </dd></dl>
-</details></section>
+</details></div>
 
         </article>
       </div>
@@ -708,6 +708,8 @@ given the deflection angle.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
