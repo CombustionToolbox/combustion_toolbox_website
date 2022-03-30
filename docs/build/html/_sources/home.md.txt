@@ -6,7 +6,7 @@
 The documentation is under development 
 ```
 
-<center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
+<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br> <br>
 
 <!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
 
@@ -19,6 +19,7 @@ The documentation is under development
 The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 :::{grid-item-card}  Open source
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
 The code/GUI is fully open source, GUI included!
 :::
 ::::
