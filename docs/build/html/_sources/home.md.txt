@@ -28,8 +28,12 @@ The code is fully open source, GUI included!
 ::::
 
 <p align="center">
+    <b>Combustion Toolbox in action</b>
+</p>
+
+<p align="center">
     <img src="_static/gif/example_HP.gif" width="383">
-    <img src="_static/gif/example_HP_plain.gif" width="416">
+    <img src="_static/gif/example_HP_plain.gif" width="414">
 </p>
 
 
