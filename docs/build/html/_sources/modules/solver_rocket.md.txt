@@ -5,9 +5,9 @@ There are two models:
    * IAC: Infinite-Area-Chamber,
    * FAC: Finite-Area-Chamber.
 
-<div class="note">
-<b>Note</b><br> This module is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
-</div>
+```{note}
+This module is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
+```
 
 ***
 
