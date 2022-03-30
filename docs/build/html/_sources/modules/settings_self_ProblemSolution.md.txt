@@ -5,6 +5,6 @@ Routines to initialize the ProblemSolution submodule in the self variable (struc
 ***
 
 ```{eval-rst}
-   .. automodule:: src.settings.self.ProblemSolution
-      :members:
+.. automodule:: src.settings.self.ProblemSolution
+   :members:
 ```

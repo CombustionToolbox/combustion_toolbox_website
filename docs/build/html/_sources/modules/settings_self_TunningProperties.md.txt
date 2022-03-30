@@ -5,6 +5,6 @@ Routines to initialize the TunningProperties submodule in the self variable (str
 ***
 
 ```{eval-rst}
-   .. automodule:: src.settings.self.TunningProperties
-      :members:
+.. automodule:: src.settings.self.TunningProperties
+   :members:
 ```

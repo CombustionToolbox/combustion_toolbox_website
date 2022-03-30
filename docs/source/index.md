@@ -7,21 +7,18 @@
     :maxdepth: 2
     :titlesonly:
 
-home
 install
+features
 tutorial
 examples
-modules/index
-
 validations
 ```
 
-<!-- ```{toctree}
-    :caption: 'Contents:'
+```{toctree}
+    :caption: 'Documentation'
+    :hidden:
     :maxdepth: 2
     :titlesonly:
 
 modules/index
-tutorial
-validations
-``` -->
+```

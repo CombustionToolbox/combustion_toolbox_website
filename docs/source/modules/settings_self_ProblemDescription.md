@@ -5,6 +5,6 @@ Routines to initialize the ProblemDescription submodule in the self variable (st
 ***
 
 ```{eval-rst}
-   .. automodule:: src.settings.self.ProblemDescription
-      :members:
+.. automodule:: src.settings.self.ProblemDescription
+   :members:
 ```

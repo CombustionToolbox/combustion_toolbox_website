@@ -18,6 +18,6 @@ settings_self_TunningProperties
 ***
 
 ```{eval-rst}
-   .. automodule:: src.settings.self.App
-      :members:
+.. automodule:: src.settings.self.App
+    :members:
 ```

@@ -1,4 +1,0 @@
-# Examples
-
-Combustion Toolbox can be used through the user-friendly Graphic User Interface (GUI) or using the desktop environment.
-

@@ -105,18 +105,15 @@ napoleon_type_aliases = None
 napoleon_attr_annotations = True
 
 # Autodoc settings
-
 autodoc_default_options = {'members': True, 'show-inheritance': True}
 autosummary_generate = True
+
 # remove path in function names
 add_module_names = False
 
 # Matlab domain settings
-
 matlab_keep_package_prefix = False
 primary_domain = 'mat'
-
-
 
 # The encoding of source files.
 source_encoding = 'utf-8'
@@ -130,14 +127,13 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['build', 'Thumbs.db', '.DS_Store', 'source']
+exclude_patterns = ['build', 'Thumbs.db', '.DS_Store', '_static']
 
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'furo'
 
 # Add any paths that contain custom static files (such as style sheets) here,
