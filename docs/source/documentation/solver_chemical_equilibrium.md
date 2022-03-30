@@ -13,9 +13,10 @@ The kernel of the code is based on Gordon, S., & McBride, B. J. (1994). NASA ref
 
 ***
 
+:::{dropdown} Routines
 ```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.solver.chemical_equilibrium
-      :members:
+.. automodule:: src.solver.chemical_equilibrium
+   :members:
 ```
+:::
+

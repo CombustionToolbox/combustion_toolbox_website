@@ -1,5 +1,7 @@
 # Tutorial
- 
+
+With this short tutorial you will familiarize with the basic functionalities of Combustion Toolbox
+
 ## Getting Started 
 Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in PATH run this command in the command window: 
 ```matlab

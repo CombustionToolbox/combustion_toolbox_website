@@ -9,9 +9,9 @@ The kernel of the incident, reflected, and Chapman-Jouguet detonations are based
 
 ***
 
+:::{dropdown} Routines
 ```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.solver.shocks_detonations
-      :members:
+.. automodule:: src.solver.shocks_detonations
+   :members:
 ```
+:::

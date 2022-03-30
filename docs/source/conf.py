@@ -57,12 +57,16 @@ extensions = [
     'texext.math_dollar',      # lightweight LaTeX filter
     'sphinx_toolbox.collapse', # collapse long sections
     'sphinx_copybutton',
+    'sphinx_design',
 ]
+
+myst_enable_extensions = ["colon_fence"]
 
 # Other settings
 default_role = 'obj'
 numfig = True
 highlight_language = 'matlab'
+sd_fontawesome_latex = True
 
 source_suffix = ['.rst', '.md']
 

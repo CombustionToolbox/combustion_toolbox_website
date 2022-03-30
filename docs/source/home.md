@@ -2,22 +2,55 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
 </p>
 
-```{warning}
+```{caution}
 The documentation is under development 
 ```
 
-<center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center>
+<center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
 
 <!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
 
 
-| Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
-| ----------- | ----------- | ----------- |
-|  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB |
-
+::::{grid} 3
+:::{grid-item-card}  Robust kernel
+`Robust` and `Fast` chemical equilibrium computations
+:::
+:::{grid-item-card}  Modular construction
+ All changes made to the kernel will be applied directly in the GUI
+:::
+:::{grid-item-card}  Open source
+The code/GUI is fully open source, GUI included!
+:::
+::::
 
 # Start here!
-The [tutorial](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html) will help you get started using Combustion Toolbox on your pc.
+
+::::{grid} 3
+
+:::{grid-item-card}   Tutorial
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html
+
+New to Combustion Toolbox?
+:::
+
+:::{grid-item-card} Examples
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/examples.html
+
+Many examples included.
+:::
+
+:::{grid-item-card} Documentation
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/index.html
+
+Need more details? lets check the documentation.
+:::
+
+::::
+
+<!-- | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
+| ----------- | ----------- | ----------- |
+|  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB | -->
+
 
 # Gallery
 

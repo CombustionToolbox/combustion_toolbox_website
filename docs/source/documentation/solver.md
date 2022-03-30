@@ -18,9 +18,9 @@ solver_rocket
 
 ***
 
+:::{dropdown} Routines
 ```{eval-rst}
-.. collapse:: Routines
-
-   .. automodule:: src.solver
-      :members:
+.. automodule:: src.solver
+   :members:
 ```
+:::

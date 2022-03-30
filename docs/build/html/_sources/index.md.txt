@@ -20,5 +20,5 @@ validations
     :maxdepth: 2
     :titlesonly:
 
-modules/index
+documentation/index
 ```
