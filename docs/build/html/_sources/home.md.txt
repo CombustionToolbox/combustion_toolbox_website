@@ -2,10 +2,6 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
 </p>
 
-```{caution}
-The documentation is under development 
-```
-
 <br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
 
 <!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
@@ -30,6 +26,12 @@ The code/GUI is fully open source, GUI included!
 :::
 
 ::::
+
+<p align="center">
+    <img src="_static/gif/example_HP.gif" width="383">
+    <img src="_static/gif/example_HP_plain.gif" width="417">
+</p>
+
 
 # Start here!
 
@@ -62,13 +64,6 @@ Let's check the documentation of almost (every) functions.
 <!-- | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
 | ----------- | ----------- | ----------- |
 |  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB | -->
-
-
-<p align="center">
-    <img src="_static/gif/example_HP.gif" width="383">
-    <img src="_static/gif/example_HP_plain.gif" width="417">
-</p>
-
 
 # Gallery
 

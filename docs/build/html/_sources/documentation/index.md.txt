@@ -5,6 +5,10 @@ Here we can find the documentation for the routines implemented in Combustion To
    * solver: routines to solve different type of problems implemented,
    * gui: routines to generate the app, all the necessary functions to be compatible with the plain code and extend its functionality.
 
+```{caution}
+The documentation is under development 
+```
+
 ```{toctree}
     :caption: 'Contents:'
     :maxdepth: 2
