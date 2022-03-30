@@ -27,15 +27,22 @@ The code is fully open source, GUI included!
 
 ::::
 
-<p align="center">
+<!-- <p align="center">
     <b>Combustion Toolbox in action</b>
-</p>
+</p> -->
+
+# Combustion Toolbox in action
 
 <p align="center">
+    <img src="_static/gif/example_HP.gif" width="352">&nbsp;&nbsp;&nbsp;
+    <img src="_static/gif/example_HP_plain.gif" width="381">
+</p>
+
+
+<!-- <p align="center">
     <img src="_static/gif/example_HP.gif" width="383">
     <img src="_static/gif/example_HP_plain.gif" width="414">
-</p>
-
+</p> -->
 
 # Start here!
 
