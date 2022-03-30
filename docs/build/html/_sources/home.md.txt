@@ -12,23 +12,71 @@ The documentation is under development
 
 
 ::::{grid} 3
+:gutter: 3
+
 :::{grid-item-card}  Robust kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
 `Robust` and `Fast` chemical equilibrium computations
 :::
+
 :::{grid-item-card}  Graphic User Interface
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
 The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
+
 :::{grid-item-card}  Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
 The code/GUI is fully open source, GUI included!
 :::
+
 ::::
 
 # Start here!
 
+
+::::{grid} 1 2 2 3
+:margin: 4 4 0 0
+:gutter: 1
+
+:::{grid-item-card} {octicon}`table` Grids
+
+
+Screen size adaptable grid layouts.
+:::
+
+:::{grid-item-card} {octicon}`note` Cards
+
+
+Flexible and extensible content containers.
+:::
+
+:::{grid-item-card} {octicon}`chevron-down` Dropdowns
+
+
+Hide content in expandable containers.
+:::
+
+:::{grid-item-card} {octicon}`duplicate` Tabs
+
+
+Synchronisable, tabbed content sets.
+:::
+
+:::{grid-item-card} {octicon}`plus-circle` Badges, Buttons & Icons
+
+Roles and directives for {bdg-primary}`badges` and other components.
+:::
+
+:::{grid-item-card} {octicon}`image` CSS Styling
+
+
+Change the default colors and other CSS.
+:::
+
+::::
+
 ::::{grid} 3
+:gutter: 3
 
 :::{grid-item-card}   Tutorial
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html

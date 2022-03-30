@@ -14,6 +14,16 @@ h4, h5, h6 {
   text-transform: unset !important;
 }
 
+.full-width-div {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.container {
+  max-width: unset;
+}
+
 /* .note {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -25,3 +35,10 @@ h4, h5, h6 {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   position:relative;
 } */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+}
