@@ -10,7 +10,7 @@ Combustion Toolbox can be used through:
     :maxdepth: 2
     :titlesonly:
     
-examples_gui
-examples_plain
+examples/examples_gui
+examples/examples_plain
 ```
 

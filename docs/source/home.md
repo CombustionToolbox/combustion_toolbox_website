@@ -64,6 +64,12 @@ Let's check the documentation of almost (every) functions.
 |  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB | -->
 
 
+<p align="center">
+    <img src="_static/gif/example_HP.gif" width="383">
+    <img src="_static/gif/example_HP_plain.gif" width="417">
+</p>
+
+
 # Gallery
 
 We have several examples of what Combustion Toolbox can do. Here we show a preview of the GUI and some results obtained from Combustion Toolbox.
