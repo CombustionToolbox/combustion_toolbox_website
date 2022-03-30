@@ -12,7 +12,7 @@ The documentation is under development
 
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
-:gutter: 3
+:gutter: 1
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
@@ -36,7 +36,7 @@ The code/GUI is fully open source, GUI included!
 
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
-:gutter: 3
+:gutter: 1
 
 :::{grid-item-card} {octicon}`tasklist` Tutorial
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html
