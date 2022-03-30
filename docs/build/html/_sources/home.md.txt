@@ -12,24 +12,24 @@
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
-`Robust`, `modular`, and `Fast` chemical equilibrium computations.
+`Robust`, `modular`, and `fast` chemical equilibrium computations.
 :::
 
 :::{grid-item-card} {octicon}`device-desktop` Graphic User Interface
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
-The code is also encapsulated in an `user-friendly` GUI with tons of capabilities.
+The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 
 :::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
-The code/GUI is fully open source, GUI included!
+The code is fully open source, GUI included!
 :::
 
 ::::
 
 <p align="center">
     <img src="_static/gif/example_HP.gif" width="383">
-    <img src="_static/gif/example_HP_plain.gif" width="417">
+    <img src="_static/gif/example_HP_plain.gif" width="416">
 </p>
 
 
