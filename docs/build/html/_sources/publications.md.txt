@@ -26,8 +26,8 @@ Here we have some contributions, work in progress articles, and publications in 
 
 ### Journal articles
 
-* Cuadra, A, Huete, C., & Vera, M. (2022). Development of a wider-scope thermochemical code (work in progress).
-* Juan Sánchez-Monreal, Alberto Cuadra-Lara, César Huete, Marcos Vera (2022). SimEx: A tool for rapid evaluation of the effects of explosions (work in progress).
+* Cuadra, A, Huete, C., & Vera, M. (2022). Development of a wider-scope thermochemical code **(work in progress)**.
+* Juan Sánchez-Monreal, Alberto Cuadra-Lara, César Huete, Marcos Vera (2022). SimEx: A tool for rapid evaluation of the effects of explosions **(work in progress)**.
 * Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock
 waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**.
 https://doi.org/10.1063/5.0059948
