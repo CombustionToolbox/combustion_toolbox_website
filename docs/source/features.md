@@ -1,48 +1,64 @@
 # Features
 
-Combustion Toolbox is a a MATLAB-GUI based tool for solving gaseous combustion problems.
-Features
-  - The code stems from the minimization of the free energy of the system by using Lagrange multipliers combined with a Newton-Raphson method, upon condition that initial gas properties are defined by two functions of states (e.g., temperature and pressure)
-  - When temperature is not externally imposed, the code retrieves a routine also based on Newton-Raphson method to find the equilibrium temperature
-  - Solve processes that involve strong changes in the dynamic pressure, such as detonations and shock waves in the steady state
-  - Find the equilibrium conditions of the different phenomena undergoing behind the shock: molecular vibrational excitation up to dissociation, and electronic excitation up to ionization, thereby providing the `properties of the gas in plasma state` within the temperature range given by the NASA’s 9-coefficient polynomial fits.
-  - The corresponding thermodynamic properties of the species are modelled with `NASA’s 9-coefficient polynomial fits`, which ranges `up to 20000 K`, and the ideal gas equation of state
-  - Results are in `excellent agreement with NASA’s Chemical Equilibrium with Applications (CEA) program`, CANTERA and Caltech’s Shock and Detonation Toolbox
-  - All the routines and computations are encapsulated in a more comprehensive and user-friendly GUI
-  - The code is in it’s transition to Python
-  - Display predefined plots (e.g., molar fraction vs equilence ratio)
-  - Export results in a spreadsheet (requires Excel)
-  - Export results as a .mat format
-* `Chemical equilibrium problems`
-  - TP: Equilibrium composition at defined temperature and pressure
-  - HP: Adiabatic temperature and composition at constant pressure
-  - SP: Isentropic compression/expansion to a specified pressure
-  - TV: Equilibrium composition at defined temperature and constant volume
-  - EV: Adiabatic temperature and composition at constant volume
-  - SV: Isentropic compression/expansion to a specified volume
-* `Shock calculations:`
-  - Pre-shock and post shock states
-  - Equilibrium or frozen composition
-  - Incident or reflected shocks
-  - Chapman-Jouguet detonations and overdriven detonations
-  - Reflected detonations
-  - Oblique shocks/detonations
-  - Shock polar for incident and reflected states
-  - Hugoniot curves
-  - Ideal jump conditions for a given adiabatic index and pre-shock Mach number
-* `Rocket propellant performance assuming:`
-  - Infinite-Area-Chamber model (IAC)
-  - Finite-Area-Chamber model (FAC) - under development -
-* All the routines and computations are encapsulated in a more comprehensive and `user-friendly GUI`
-* The code `is in it’s transition to Python`
-* Export results in a spreadsheet
-* Export results as a .mat format
-* `Display predefined plots` (e.g., molar fraction vs equilence ratio)
 
+::::{grid} 1 2 2 2
+:margin: 4 4 0 0
+:gutter: 1
 
-This project is also part of the PhD of [Alberto Cuadra-Lara](https://www.acuadralara.com/).
+:::{grid-item-card} {octicon}`cpu` Robust chemical equilibrium computations
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
+{bdg-light}`TP` {bdg-light}`HP` {bdg-light}`SP` {bdg-light}`TV` {bdg-light}`EV` {bdg-light}`SV` {bdg-light}`frozen` {bdg-light}`plasma state`
 
+:::
 
-```{note}
-The first final version v1.0.0 is expected to be released in April 2022. Check out the  upcoming features of [Combustion Toolbox v1.0.0](https://github.com/AlbertoCuadra/combustion_toolbox/projects/2).
-```
+:::{grid-item-card} {octicon}`device-desktop` Interactive App
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
+The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
+{bdg-light}`Toolbox` {bdg-light}`Standalone`
+:::
+
+:::{grid-item-card} {octicon}`tab` Shock and detonations pre- and post-shock states 
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
+{bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Shock polars` {bdg-light}`Regular Reflections` 
+:::
+
+:::{grid-item-card} {octicon}`globe` Open source
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+The code is fully open source, GUI included!
+{bdg-light}`Github` {bdg-light}`FileExchange` {bdg-light}`Zenodo` {bdg-info}`GPLv3`
+:::
+
+::::
+
+::::{grid} 1 2 2 3
+:margin: 4 4 0 0
+:gutter: 1
+
+:::{grid-item-card} {octicon}`rocket` Rocket propellant performance
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+{bdg-light}`Infinite-Chamber-Area` {bdg-light}`Finite-Chamber-Area`
+:::
+
+:::{grid-item-card} {octicon}`server` Extensive database with NASA’s 9-coefficient polynomial fits up to 20000 K
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+:::
+
+:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `CANTERA`, and `Caltech's SD-Toolbox`.
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+:::
+
+:::{grid-item-card} {octicon}`graph` Predefined plots
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+:::
+
+:::{grid-item-card} {octicon}`download` Export results
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+{bdg-light}`spreadsheet` {bdg-light}`.mat`
+:::
+
+:::{grid-item-card} {octicon}`versions` Compatible
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+{bdg-light}`windows` {bdg-light}`linux` {bdg-light}`mac`
+:::
+
+::::

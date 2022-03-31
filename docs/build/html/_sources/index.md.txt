@@ -18,7 +18,6 @@
     :titlesonly:
 
 install
-features
 tutorial
 examples
 validations
