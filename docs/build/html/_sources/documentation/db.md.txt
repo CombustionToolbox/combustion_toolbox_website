@@ -23,7 +23,7 @@ This data is collected and formatted into a more accessible structure. We can di
 * DB_master: structured database from NASA's thermo file.
 * DB: structured database with custom thermodynamic functions for faster data access.
 
-This allows to evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, and the thermal enthalpy of $\text{CO}_2$ at $T = 2000 \text{ K}$  with these simple callbacks
+This allows to evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, and the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$  with these simple callbacks
 
 ```matlab
 >> g0_CO2  = species_g0('CO2', 2000, DB)
