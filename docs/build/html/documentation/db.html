@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Thermodynamic functions" href="db_thermo.html" /><link rel="prev" title="Functions" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Settings" href="settings.html" /><link rel="prev" title="Functions" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Database - Combustion Toolbox v0.9.1</title>
@@ -199,15 +199,12 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Database</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="db_thermo.html">Thermodynamic functions</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Database</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="settings_self.html">self</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="solver.html">Solvers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="solver.html">Solvers</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="solver_functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_chemical_equilibrium.html">Chemical equilibrium</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_shocks_detonations.html">Shocks and detonations waves</a></li>
@@ -250,12 +247,100 @@
         <article role="main">
           <div class="section" id="database">
 <h1>Database<a class="headerlink" href="#database" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="db_thermo.html">Thermodynamic functions</a></li>
+<p>Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{eqnarray}
+    C_p^\circ/R &amp;=&amp; a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
+    H^\circ/R   &amp;=&amp; -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
+                &amp;\phantom{{}={}}&amp; + a_7T^4/5 + a_8/T,\\
+    S^\circ/R   &amp;=&amp; -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
+                &amp;\phantom{{}={}}&amp; + a_7T^4/4 + a_9,
+\end{eqnarray}</div></div><p>where <span class="math notranslate nohighlight">\(a_i\)</span> from <span class="math notranslate nohighlight">\(i=1, \dots, 7\)</span> are the temperature coefficients and from <span class="math notranslate nohighlight">\(i =8, 9\)</span> the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the <a class="reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp">source code</a> and can be also obtained from <a class="reference external" href="https://cearun.grc.nasa.gov/ThermoBuild/">NASA’s thermo build website</a>.</p>
+<p>This data is collected and formatted into a more accessible structure. We can distinguish from:</p>
+<ul class="simple">
+<li><p>DB_master: structured database from NASA’s thermo file.</p></li>
+<li><p>DB: structured database with custom thermodynamic functions for faster data access.</p></li>
 </ul>
+<p>This allows to evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, and the thermal enthalpy of <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> at <span class="math notranslate nohighlight">\(T = 2000 \text{ K}\)</span>  with these simple callbacks</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g0_CO2</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="n">species_g0</span><span class="p">(</span><span class="s">'CO2'</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">DhT_CO2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">species_DhT</span><span class="p">(</span><span class="s">'CO2'</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
 </div>
+<p>Another important parameter comes from the conservation of mass, which is the stoichiometric matrix <span class="math notranslate nohighlight">\(A_0\)</span>, by generalizing this constraint condition we have</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+    \sum\limits_{j = 1}^{\text{NS}} a_{ij} n_j - b_i^\circ = 0,
+\end{equation}</div></div><p>or in matricial form</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+    \underbrace{\left(\begin{array}{c c c c}
+    a_{11} &amp; a_{21} &amp; \cdots &amp; a_{\text{NS}1} \\
+    a_{12} &amp; a_{22} &amp; \cdots &amp; a_{\text{NS}2} \\
+    \vdots &amp; \vdots &amp;  &amp; \vdots \\
+    a_{1\text{NE}} &amp; a_{2\text{NE}} &amp; \cdots &amp; a_{\text{NS}\text{NE}} \\
+    \end{array}\right)}_{\mathbf{A^T}}
+    \underbrace{\left(\begin{matrix}
+        \ce{n_1}\\
+        \ce{n_2}\\
+        \ce{\vdots}\\
+        \ce{n_{\text{NS}}}
+        \end{matrix}\right)}_{\mathbf{N}}
+    - \underbrace{\left(\begin{matrix}
+        \ce{b_1}\\
+        \ce{b_2}\\
+        \ce{\vdots}\\
+        \ce{b_{\text{NE}}}
+        \end{matrix}\right)}_{\mathbf{b^\circ}} = 0,
+\end{equation}</div></div><p>where <span class="math notranslate nohighlight">\(a_{ij}\)</span> are the stoichiometric coefficients of the species, which represent the number of atoms of element <span class="math notranslate nohighlight">\(i\)</span> per mole of species <span class="math notranslate nohighlight">\(j\)</span>. The number of moles and the total number of atoms of the <span class="math notranslate nohighlight">\(j\)</span> species and <span class="math notranslate nohighlight">\(i\)</span> element reads <span class="math notranslate nohighlight">\(n_j\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span>, respectively. This is computed during the initialization of the variable <code class="docutils literal notranslate"><span class="pre">self</span></code>. Using one of the predefined list of species, e.g., <code class="docutils literal notranslate"><span class="pre">soot</span> <span class="pre">formation</span></code>, this can be initializate as</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'soot formation'</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A simple test can be performed by considering the global exothermic reaction of hydrogen bromide</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+    \text{H}_2 + \text{Br}_2 \rightleftharpoons 2\text{HBr}.
+\end{equation}</div></div><p>The stochiometric matrix in this case is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+    \left(\begin{array}{c c c}
+    0 &amp; 2 &amp; 1\\
+    2 &amp; 0 &amp; 1\\
+    \end{array}\right)
+    \left(\begin{matrix}
+        n_{\ce{H_2}}\\
+        n_{\ce{Br_2}}\\
+        n_{\ce{HBr}}\\
+        \end{matrix}\right)
+    - \left(\begin{matrix}
+        b_{\ce{Br}}^\circ\\
+        b_{\ce{H}}^\circ\\
+        \end{matrix}\right) = 0.
+\end{equation}</div></div><p>A quick check using Combustion Toolbox:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">'H2'</span><span class="p">,</span><span class="w"> </span><span class="s">'Br2'</span><span class="p">,</span><span class="w"> </span><span class="s">'HBr'</span><span class="p">});</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">print_stochiometric_matrix</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'transpose'</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Transpose</span><span class="w"> </span><span class="s">stochiometric</span><span class="w"> </span><span class="s">matrix:</span><span class="w"></span>
+
+<span class="w">         </span><span class="n">H2</span><span class="w">    </span><span class="n">Br2</span><span class="w">    </span><span class="n">HBr</span><span class="w"></span>
+<span class="w">         </span><span class="n">__</span><span class="w">    </span><span class="n">___</span><span class="w">    </span><span class="n">___</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">BR</span><span class="w">    </span><span class="mi">0</span><span class="w">      </span><span class="mi">2</span><span class="w">      </span><span class="mi">1</span><span class="w"> </span>
+<span class="w">   </span><span class="n">H</span><span class="w">     </span><span class="mi">2</span><span class="w">      </span><span class="mi">0</span><span class="w">      </span><span class="mi">1</span><span class="w"> </span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Routines</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are still documenting these functions.</p>
+</div>
+<hr class="docutils"/>
+<ol class="arabic simple">
+<li><p>B. J. McBride, NASA Glenn coefficients for calculating thermodynamic
+properties of individual species, National Aeronautics and Space Ad-
+ministration, John H. Glenn Research Center, 2002.</p></li>
+</ol>
 </div>
 
         </article>
@@ -263,12 +348,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="db_thermo.html">
+          <a class="next-page" href="settings.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Thermodynamic functions</div>
+                <div class="title">Settings</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -333,5 +418,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

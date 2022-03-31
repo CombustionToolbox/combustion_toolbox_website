@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Settings" href="settings.html" /><link rel="prev" title="Database" href="db.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Thermodynamic functions - Combustion Toolbox v0.9.1</title>
+        <title>&lt;no title&gt; - Combustion Toolbox v0.9.1</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -197,10 +197,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="db.html">Database</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Thermodynamic functions</a></li>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="db.html">Database</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -248,25 +247,7 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="thermodynamic-functions">
-<h1>Thermodynamic functions<a class="headerlink" href="#thermodynamic-functions" title="Permalink to this headline">#</a></h1>
-<p>Combustion Toolbox takes into account the NASA-9 polynomials fitting to evaluate the thermodynamic data of the species for the specific heat, enthalpy, and entropy as function of temperature, namely</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\begin{eqnarray}
-    C_p^\circ/R &amp;=&amp; a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
-    H^\circ/R   &amp;=&amp; -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
-                &amp;\phantom{{}={}}&amp; + a_7T^4/5 + a_8/T,\\
-    S^\circ/R   &amp;=&amp; -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
-                &amp;\phantom{{}={}}&amp; + a_7T^4/4 + a_9,
-\end{eqnarray}</div></div><p>where <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span> are the temperature coefficients and the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. This values are available in the <a class="reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp">source code</a> and can be also obtained from <a class="reference external" href="https://cearun.grc.nasa.gov/ThermoBuild/">NASA’s thermo build website</a>.</p>
-<p> </p>
-<ol class="arabic simple">
-<li><p>B. J. McBride, NASA Glenn coefficients for calculating thermodynamic
-properties of individual species, National Aeronautics and Space Ad-
-ministration, John H. Glenn Research Center, 2002.</p></li>
-</ol>
-</div>
-
+          
         </article>
       </div>
       <footer>
@@ -342,7 +323,5 @@ ministration, John H. Glenn Research Center, 2002.</p></li>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
