@@ -83,11 +83,10 @@ A simple test can be performed by considering the global exothermic reaction of 
     :nowrap:
 
     \begin{equation}
-        \text{H}_2 + \text{Br}_2 \rightleftharpoons 2\text{HBr}.
+        \text{H}_2 + \text{Br}_2 \rightleftharpoons 2\text{HBr}
     \end{equation}
 ```
-
-The stochiometric matrix in this case is 
+which have only three species involve and $n_j$ moles. The system obtained is
 
 ```{eval-rst}
 .. math::
