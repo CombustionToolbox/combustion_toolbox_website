@@ -39,11 +39,16 @@ discontinuities. Journal of Fluid Mechanics, 903, A30. https://doi.org/10.1017/j
 * Cuadra, A., Huete, C., Vera, M., & Urzay, J. (2021). Theory of turbulence augmentation across hypersonic shock waves. In 74th Annual Meeting of the Division of Fluid Dynamics (APS DFD), Phoenix, US.
 * Cuadra, A., Huete, C., & Vera, M. (2021). Effect of fuel mass fraction heterogeneity on the detonation propagation speed. In 25th International Congress of Theoretical and Applied Mechanics (ICTAM), Milano, Italy.
 * Cuadra, A., & Vera, M. (2019). Development and validation of a new MATLAB®/GUI based thermochemical code. In 11th International Mediterranean Combustion Symposium (MSC), Tenerife, Spain.
-* Cuadra, A., & Vera, M. (2019). Development of a GUI-based thermochemical code with teaching and research. In 1st Colloquium of the Spanish Theoretical and Applied Mechanics Society (STAMS), Madrid, Spain.
+* Cuadra, A., & Vera, M. (2019). Development of a GUI-based thermochemical code with teaching and research applications. In 1st Colloquium of the Spanish Theoretical and Applied Mechanics Society (STAMS), Madrid, Spain.
 
 ### Seminars & Workshops
 
 * Cuadra, A., Huete, C. & Vera, M. (2021). Development of an open-source    thermochemical code: Fundamentals and application to shock turbulence interaction problems in the hypersonic regime. Seminar presented as part of the PhD Programme in Mechatronics Engineering, Málaga, Spain
 
+### PhD, MSc & BSc thesis
+
+* Cuadra, A (2022). Development of a wide-spectrum thermochemical code with application to the analysis of combustion problems and high energy materials. Universidad Carlos III de Madrid, Spain (PhD thesis - work in progress). Advisors: Marcos Vera & César Huete.
+* Aguilar, C (2022). CT-ROCKET: A MATLAB-GUI based thermochemical code to estimate rocket propellant performance. Universidad Carlos III de Madrid, Spain (BSc thesis - work in progress). Advisors: Alberto Cuadra.
+* Cuadra, A (2019). Development of a GUI-based thermochemical code with teaching and research applications. Universidad Carlos III de Madrid, Spain (MSc thesis). Advisors: Marcos Vera.
 
 
