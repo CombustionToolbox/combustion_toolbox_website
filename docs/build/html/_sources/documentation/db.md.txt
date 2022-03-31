@@ -113,11 +113,11 @@ A quick check using Combustion Toolbox:
 
 ```matlab
 >> self = App({'H2', 'Br2', 'HBr'});
->> print_stochiometric_matrix(self, 'transpose')
+>> print_stoichiometric_matrix(self, 'transpose')
 ```
 
  ```matlab
-Transpose stochiometric matrix:
+Transpose stoichiometric matrix:
 
           H2    Br2    HBr
           __    ___    ___
