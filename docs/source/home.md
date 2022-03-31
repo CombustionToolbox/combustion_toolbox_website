@@ -63,7 +63,7 @@ Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capab
 {bdg-light}`Toolbox` {bdg-light}`Standalone`
 :::
 
-:::{grid-item-card} {octicon}`tab` Shock and detonations pre- and post-shock states 
+:::{grid-item-card} {octicon}`tab` Shocks and detonations pre- and post-shock states 
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_shocks_detonations.html
 {bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Shock polars` {bdg-light}`Regular Reflections` 
 :::
