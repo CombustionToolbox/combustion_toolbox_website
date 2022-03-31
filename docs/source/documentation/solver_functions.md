@@ -38,7 +38,7 @@ Roots algorithm used to obtain the temperature at equilibrium for a given thermo
 :::
 
 
-## Thermodynamics properties
+## Thermodynamic properties
 
 Functions to obtain thermodynamic properties from a given mixture.
 
