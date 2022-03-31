@@ -33,15 +33,16 @@ The code is fully open source, GUI included!
 
 # Combustion Toolbox in action
 
+
 <p align="center">
-    <img src="_static/gif/example_HP.gif" width="352">&nbsp;&nbsp;&nbsp;
-    <img src="_static/gif/example_HP_plain.gif" width="381">
+    <img src="_static/gif/example_HP_GUI.gif" width="352">&nbsp;&nbsp;&nbsp;
+    <img src="_static/gif/example_HP.gif" width="381">
 </p>
 
 
 <!-- <p align="center">
-    <img src="_static/gif/example_HP.gif" width="383">
-    <img src="_static/gif/example_HP_plain.gif" width="414">
+    <img src="_static/gif/example_HP_GUI.gif" width="383">
+    <img src="_static/gif/example_HP.gif" width="414">
 </p> -->
 
 # Start here!
@@ -78,16 +79,16 @@ Let's check the documentation of almost (every) functions.
 
 # Gallery
 
-We have several examples of what Combustion Toolbox can do. Here we show a preview of the GUI and some results obtained from Combustion Toolbox.
+We have several examples of what Combustion Toolbox can do. Here we show some results obtained from Combustion Toolbox.
 
 <p align="center">
-    <img src="_static/img/snapshot_1.svg" width="500">
+    <img src="_static/gif/example_DET.gif" width="800">
 </p>
 
-**Figure 1:** *Snapshot of the GUI*.
+**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*.
 
 <p align="center">
-    <img src="_static/img/Hugoniot_benchmarking.svg" width="400">
+    <img src="_static/img/Hugoniot_benchmarking.svg" width="450">
 </p>
     
 **Figure 2:** *Hugoniot curves for different molecular gases at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm \[numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code excluding ionization (symbols)\]*.
