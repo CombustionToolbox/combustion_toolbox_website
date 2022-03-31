@@ -21,6 +21,7 @@ install
 tutorial
 examples
 validations
+publications
 ```
 
 ```{toctree}
