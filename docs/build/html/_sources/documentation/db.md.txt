@@ -20,8 +20,8 @@ where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and from $i =8
 
 This data is collected and formatted into a more accessible structure. We can distinguish from:
 
-* DB_master: structured database from NASA's thermo file.
-* DB: structured database with custom thermodynamic functions for faster data access.
+* `DB_master`: structured database from NASA's thermo file.
+* `DB`: structured database with custom thermodynamic functions for faster data access.
 
 This allows to evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$  with these simple callbacks
 
@@ -76,7 +76,7 @@ where $a_{ij}$ are the stoichiometric coefficients of the species, which represe
 self = App('soot formation')
 ```
 
-A simple test can be performed by considering the global exothermic reaction of hydrogen bromide
+A simple test can be performed by considering the global exothermic reaction of hydrogen bromide with $n_j$ moles
 
 ```{eval-rst}
 .. math::
@@ -86,7 +86,7 @@ A simple test can be performed by considering the global exothermic reaction of 
         \text{H}_2 + \text{Br}_2 \rightleftharpoons 2\text{HBr}
     \end{equation}
 ```
-which have only three species involve and $n_j$ moles. The system obtained is
+which have only three species involve. The system obtained is
 
 ```{eval-rst}
 .. math::

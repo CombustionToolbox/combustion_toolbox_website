@@ -258,8 +258,8 @@
 \end{eqnarray}</div></div><p>where <span class="math notranslate nohighlight">\(a_i\)</span> from <span class="math notranslate nohighlight">\(i=1, \dots, 7\)</span> are the temperature coefficients and from <span class="math notranslate nohighlight">\(i =8, 9\)</span> the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the <a class="reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp">source code</a> and can be also obtained from <a class="reference external" href="https://cearun.grc.nasa.gov/ThermoBuild/">NASA’s thermo build website</a>.</p>
 <p>This data is collected and formatted into a more accessible structure. We can distinguish from:</p>
 <ul class="simple">
-<li><p>DB_master: structured database from NASA’s thermo file.</p></li>
-<li><p>DB: structured database with custom thermodynamic functions for faster data access.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DB_master</span></code>: structured database from NASA’s thermo file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DB</span></code>: structured database with custom thermodynamic functions for faster data access.</p></li>
 </ul>
 <p>This allows to evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> at <span class="math notranslate nohighlight">\(T = 2000 \text{ K}\)</span>  with these simple callbacks</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g0_CO2</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="n">species_g0</span><span class="p">(</span><span class="s">'CO2'</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">)</span><span class="w"></span>
@@ -295,11 +295,11 @@
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'soot formation'</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>A simple test can be performed by considering the global exothermic reaction of hydrogen bromide</p>
+<p>A simple test can be performed by considering the global exothermic reaction of hydrogen bromide with <span class="math notranslate nohighlight">\(n_j\)</span> moles</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \begin{equation}
     \text{H}_2 + \text{Br}_2 \rightleftharpoons 2\text{HBr}
-\end{equation}</div></div><p>which have only three species involve and <span class="math notranslate nohighlight">\(n_j\)</span> moles. The system obtained is</p>
+\end{equation}</div></div><p>which have only three species involve. The system obtained is</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \begin{equation}
     \left(\begin{array}{c c c}
