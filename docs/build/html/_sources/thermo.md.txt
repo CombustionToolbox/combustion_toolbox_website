@@ -1,0 +1,15 @@
+# Thermodynamic data
+
+Combustion Toolbox takes into account the NASA-9 polynomials fitting to evaluate the thermodynamic data of the species for the specific heat, enthalpy, and entropy as function of temperature, namely
+
+```{eval-rst}
+.. math::
+    \begin{align}
+        C_p^\circ/R &= a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
+        H^\circ/R   &= -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
+                    &\phantom{{}={}} + a_7T^4/5 + a_8/T,\\
+        S^\circ/R   &= -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
+                    &\phantom{{}={}} + a_7T^4/4 + a_9,
+    \end{align}
+    :label: thermo_polynomials
+```

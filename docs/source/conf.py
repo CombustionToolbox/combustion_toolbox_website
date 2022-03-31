@@ -177,3 +177,6 @@ html_theme_options = {
         },
     ],
 }
+
+
+pngmath_latex_preamble = ['usepackage{amsmath}']

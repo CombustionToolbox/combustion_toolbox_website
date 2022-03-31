@@ -1,0 +1,6 @@
+# Raw database
+
+```{eval-rst}
+.. literalinclude:: ../../../src/databases/thermo.inp
+:language: none
+```

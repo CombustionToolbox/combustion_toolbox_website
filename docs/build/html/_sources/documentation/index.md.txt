@@ -13,6 +13,7 @@ The documentation is under development
     :caption: 'Contents:'
     :maxdepth: 2
 
+db
 settings
 solver
 ```
