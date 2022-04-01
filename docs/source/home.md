@@ -149,7 +149,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img src="_static/gif/example_DET.gif" width="800">
 </p>
 
-**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*.
+**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*
 
 <p align="center">
     <img src="_static/img/Hugoniot_benchmarking.svg" width="450">
