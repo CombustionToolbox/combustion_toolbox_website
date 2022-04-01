@@ -199,6 +199,7 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="documentation/index.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation/db.html">Database</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="documentation/settings.html">Settings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="documentation/settings_self.html">self</a></li>
 </ul>
@@ -276,11 +277,11 @@
 </div>
 <div class="section" id="setting-the-state">
 <h2>Setting the state<a class="headerlink" href="#setting-the-state" title="Permalink to this headline">#</a></h2>
-<p>Indicate temperature and pressure of the initial mixture</p>
+<p>Indicate temperature [K] and pressure [bar] of the initial mixture</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Indicate species and nº moles of each species in the initial mixture</p>
+<p>Indicate species and number of moles of each species in the initial mixture</p>
 <div class="section" id="individual-case">
 <h3>Individual case<a class="headerlink" href="#individual-case" title="Permalink to this headline">#</a></h3>
 <p>For example, for a stochiometric CH4-ideal_air mixture:</p>

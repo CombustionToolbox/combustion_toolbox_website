@@ -16,7 +16,7 @@ Combustion Toolbox generates its own databases taking into account the NASA-9 po
 
 ```
 
-where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and from $i =8, 9$ the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
+where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and $i =8, 9$ are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
 
 This data is collected and formatted into a more accessible structure. We can distinguish from:
 

@@ -16,7 +16,7 @@
 :::
 
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
-:link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
 The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
 :::
 
@@ -58,7 +58,7 @@ The code is fully open source, GUI included!
 :::
 
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
-:link: https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Installer/Combustion%20Toolbox.mlappinstall
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
 Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capabilities.
 {bdg-light}`Toolbox` {bdg-light}`Standalone`
 :::
