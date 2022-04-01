@@ -28,11 +28,11 @@ self =
            DB: [1×1 struct]
 ```
 ## Setting the state
-Indicate temperature and pressure of the initial mixture
+Indicate temperature [K] and pressure [bar] of the initial mixture
  ```matlab
 >> self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
 ```
-Indicate species and nº moles of each species in the initial mixture
+Indicate species and number of moles of each species in the initial mixture
 ### Individual case
 For example, for a stochiometric CH4-ideal_air mixture:
 ```matlab
