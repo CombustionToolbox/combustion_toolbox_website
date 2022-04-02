@@ -259,7 +259,7 @@
 <p>This data is collected and formatted into a more accessible structure. We can distinguish from:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DB_master</span></code>: structured database from NASA’s thermo file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DB</span></code>: structured database with custom thermodynamic functions for faster data access.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DB</span></code>: structured database with piecewise cubic Hermite interpolating polynomials and linear extrapolation for faster data access.</p></li>
 </ul>
 <p>The use of custom polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in <strong>Figure 1</strong>. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> at <span class="math notranslate nohighlight">\(T = 2000 \text{ K}\)</span> is as simple as using these callbacks</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g0_CO2</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="n">species_g0</span><span class="p">(</span><span class="s">'CO2'</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">)</span><span class="w"></span>
@@ -269,7 +269,7 @@
 <p align="center">
 <img src="..\_static\img\performance_thermo.svg" width="800"/>
 </p>
-<p><strong>Figure 1:</strong> <em>Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the custom Combustion Toolbox polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.</em></p>
+<p><strong>Figure 1:</strong> <em>Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.</em></p>
 <p>Another important parameter comes from the conservation of mass, which is the stoichiometric matrix <span class="math notranslate nohighlight">\(A_0\)</span>, by generalizing this constraint condition we have</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \begin{equation}
