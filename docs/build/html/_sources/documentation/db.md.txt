@@ -135,11 +135,12 @@ Transpose stoichiometric matrix:
 
 ***
 
-Routines
-
-```{note}
-We are still documenting these functions.
+:::{dropdown} Routines
+```{eval-rst}
+.. automodule:: src.databases.functions
+   :members:
 ```
+:::
 
 ***
 

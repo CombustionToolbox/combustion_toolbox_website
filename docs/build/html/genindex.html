@@ -247,7 +247,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#V"><strong>V</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -273,9 +273,13 @@
 </li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.cell2vector">cell2vector() (in module src.solver.functions)</a>
 </li>
+        <li><a href="documentation/db.html#src.databases.functions.check_DB">check_DB() (in module src.databases.functions)</a>
+</li>
         <li><a href="documentation/solver_shocks_detonations.html#src.solver.shocks_detonations.cj_detonation">cj_detonation() (in module src.solver.shocks_detonations)</a>
 </li>
         <li><a href="documentation/solver_chemical_equilibrium.html#src.solver.chemical_equilibrium.complete_combustion">complete_combustion() (in module src.solver.chemical_equilibrium)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.compute_change_moles_gas_reaction">compute_change_moles_gas_reaction() (in module src.databases.functions)</a>
 </li>
         <li><a href="documentation/solver_rocket.html#src.solver.rocket.compute_chemical_equilibria">compute_chemical_equilibria() (in module src.solver.rocket)</a>
 </li>
@@ -287,10 +291,12 @@
 </li>
         <li><a href="documentation/solver_rocket.html#src.solver.rocket.compute_IAC_model">compute_IAC_model() (in module src.solver.rocket)</a>
 </li>
-        <li><a href="documentation/solver_functions.html#src.solver.functions.Compute_phi_c">Compute_phi_c() (in module src.solver.functions)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.compute_interval_NASA">compute_interval_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/solver_functions.html#src.solver.functions.Compute_phi_c">Compute_phi_c() (in module src.solver.functions)</a>
+</li>
         <li><a href="documentation/solver_rocket.html#src.solver.rocket.compute_rocket_parameters">compute_rocket_parameters() (in module src.solver.rocket)</a>
 </li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.compute_temperature_mixture">compute_temperature_mixture() (in module src.solver.functions)</a>
@@ -321,11 +327,13 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.thermo.density">density() (in module src.solver.functions.thermo)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_shocks_detonations.html#src.solver.shocks_detonations.det_oblique_beta">det_oblique_beta() (in module src.solver.shocks_detonations)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_shocks_detonations.html#src.solver.shocks_detonations.det_oblique_theta">det_oblique_theta() (in module src.solver.shocks_detonations)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.detect_location_of_phase_specifier">detect_location_of_phase_specifier() (in module src.databases.functions)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -372,6 +380,10 @@
         <li><a href="documentation/solver_functions.html#src.solver.functions.find_ind">find_ind() (in module src.solver.functions)</a>
 </li>
     </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.FullName2name">FullName2name() (in module src.databases.functions)</a>
+</li>
+    </ul></td>
   </tr></table>
 </section>
 
@@ -379,19 +391,35 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.generate_DB">generate_DB() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.generate_DB_master">generate_DB_master() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.generate_DB_master_reduced">generate_DB_master_reduced() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.generate_DB_Theo">generate_DB_Theo() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.get_g0">get_g0() (in module src.databases.functions)</a>
+</li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.root_finding.steffenson.get_gpoint">get_gpoint() (in module src.solver.functions.root_finding.steffenson)</a>
 </li>
         <li><a href="documentation/settings_self.html#src.settings.self.Species.get_index_ions">get_index_ions() (in module src.settings.self.Species)</a>
 </li>
+        <li><a href="documentation/db.html#src.databases.functions.get_interval">get_interval() (in module src.databases.functions)</a>
+</li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.get_order">get_order() (in module src.solver.functions)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.get_partial_derivative">get_partial_derivative() (in module src.solver.functions)</a>
 </li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.root_finding.steffenson.get_point">get_point() (in module src.solver.functions.root_finding.steffenson)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.root_finding.steffenson.get_point_aitken">get_point_aitken() (in module src.solver.functions.root_finding.steffenson)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.get_reference_elements_with_T_intervals">get_reference_elements_with_T_intervals() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.get_speciesProperties">get_speciesProperties() (in module src.databases.functions)</a>
 </li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.get_transformation">get_transformation() (in module src.solver.functions)</a>
 </li>
@@ -411,11 +439,13 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/settings_self.html#src.settings.self.App.Initialize">Initialize() (in module src.settings.self.App)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.thermo.intEnergy_mass">intEnergy_mass() (in module src.solver.functions.thermo)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.thermo.intEnergy_mole">intEnergy_mole() (in module src.solver.functions.thermo)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.isRefElm">isRefElm() (in module src.databases.functions)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -458,6 +488,10 @@
 <section id="N" class="genindex-section">
   <h2>N</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.name_with_parenthesis">name_with_parenthesis() (in module src.databases.functions)</a>
+</li>
+    </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/solver_functions.html#src.solver.functions.root_finding.newton.newton">newton() (in module src.solver.functions.root_finding.newton)</a>
 </li>
@@ -509,6 +543,12 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/settings_self.html#src.settings.self.App.set_DB">set_DB() (in module src.settings.self.App)</a>
 </li>
+        <li><a href="documentation/db.html#src.databases.functions.set_element_matrix">set_element_matrix() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/settings_self.html#src.settings.self.Elements.set_elements">set_elements() (in module src.settings.self.Elements)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.set_g0">set_g0() (in module src.databases.functions)</a>
+</li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.set_prop">set_prop() (in module src.solver.functions)</a>
 </li>
         <li><a href="documentation/solver_functions.html#src.solver.functions.set_transformation">set_transformation() (in module src.solver.functions)</a>
@@ -537,12 +577,46 @@
 </li>
         <li><a href="documentation/settings_self.html#src.settings.self.Species.Species">Species() (in module src.settings.self.Species)</a>
 </li>
+        <li><a href="documentation/db.html#src.databases.functions.species_cP">species_cP() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_cP_NASA">species_cP_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_cV">species_cV() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_cV_NASA">species_cV_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_DeT">species_DeT() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_DeT_NASA">species_DeT_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_DhT">species_DhT() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_DhT_NASA">species_DhT_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_e0_NASA">species_e0_NASA() (in module src.databases.functions)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.species_g0">species_g0() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_g0_NASA">species_g0_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_h0">species_h0() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_h0_NASA">species_h0_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_s0">species_s0() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_s0_NASA">species_s0_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#src.databases.functions.species_thermo_NASA">species_thermo_NASA() (in module src.databases.functions)</a>
+</li>
+        <li><a href="documentation/db.html#module-src.databases.functions">src.databases.functions (module)</a>
+</li>
         <li><a href="documentation/settings_self.html#module-src.settings.self.App">src.settings.self.App (module)</a>
 </li>
         <li><a href="documentation/settings_self.html#module-src.settings.self.Constants">src.settings.self.Constants (module)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/settings_self.html#module-src.settings.self.Elements">src.settings.self.Elements (module)</a>
 </li>
         <li><a href="documentation/settings_self.html#module-src.settings.self.Miscellaneous">src.settings.self.Miscellaneous (module)</a>
@@ -592,6 +666,16 @@
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/settings_self.html#src.settings.self.TunningProperties.TunningProperties">TunningProperties() (in module src.settings.self.TunningProperties)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/db.html#src.databases.functions.unpack_NASA_coefficients">unpack_NASA_coefficients() (in module src.databases.functions)</a>
 </li>
     </ul></td>
   </tr></table>
