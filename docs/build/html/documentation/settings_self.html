@@ -359,6 +359,21 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 </dd>
 </dl>
 </dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.settings.self.Elements.set_elements">
+<span class="sig-name descname"><span class="pre">set_elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Elements.set_elements" title="Permalink to this definition">#</a></dt>
+<dd><p>Set cell with elements name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>elements (cell): Elements</p></li>
+<li><p>NE (struct):     Number of elements</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
 </div>
 <div class="section" id="miscellaneous">
 <h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">#</a></h2>
@@ -413,6 +428,22 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <dt class="sig sig-object mat" id="src.settings.self.Species.ListSpecies">
 <span class="sig-name descname"><span class="pre">ListSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.ListSpecies" title="Permalink to this definition">#</a></dt>
 <dd><p>Set list of species in the mixture (reactants and products)</p>
+<dl class="simple">
+<dt>Predefined list of species:</dt><dd><ul class="simple">
+<li><p>SOOT FORMATION (default)</p></li>
+<li><p>COMPLETE</p></li>
+<li><p>HC/O2/N2 EXTENDED</p></li>
+<li><p>SOOT FORMATION EXTENDED</p></li>
+<li><p>NASA ALL</p></li>
+<li><p>AIR, DISSOCIATED AIR</p></li>
+<li><p>AIR IONS, AIR_IONS</p></li>
+<li><p>IDEAL_AIR, AIR_IDEAL</p></li>
+<li><p>HYDROGEN</p></li>
+<li><p>HYDROGEN_L, HYDROGEN (L)</p></li>
+<li><p>HC/O2/N2 PROPELLANTS</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – return default list of species (soot formation)</p>
@@ -421,6 +452,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
 <li><p>self (struct): Data of the mixture, conditions, and databases</p></li>
+<li><p>LS (cell): Name list species / list of species</p></li>
 <li><p>EquivalenceRatio (float): Equivalence ratio</p></li>
 <li><p>EquivalenceRatio_soot (float): Equivalence ratio in which theoretically appears soot</p></li>
 </ul>

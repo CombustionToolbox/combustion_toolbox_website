@@ -5,7 +5,7 @@ function self = Miscellaneous()
     %     self (struct): struct with miscellaneous data
     
     % Description
-    self.description = "Constants"; 
+    self.description = 'Miscellaneous'; 
     % Variables
     %   * Timer
     self.timer_0 = [];
@@ -15,6 +15,8 @@ function self = Miscellaneous()
     self.config.fontsize = 22;                % Default fontsize
     self.config.colorpalette = 'Spectral';    % Default color palette (see brewermap function for more options)
     self.config.colorpaletteLenght = 12;      % Default number of colors to use in the color palette
+    self.config.labelx = 'x';                 % Default xlabel
+    self.config.labely = 'y';                 % Default ylabel
     %   * Flags
     self.FLAG_FIRST = true;                   % Flag indicating first calculation
     self.FLAG_FOI = true;                     % Flag indicating that the computations of the reactant mixture ....
