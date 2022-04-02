@@ -12,7 +12,7 @@ function Delta_n = compute_change_moles_gas_reaction(element_matrix, swtCondense
     %
     % Args: 
     %   element_matrix (float): Element matrix of the species
-    %   swtCondensed (float, optional):   0 or 1 indicating gas or condensed species
+    %   swtCondensed (float):   0 or 1 indicating gas or condensed species
     %
     % Returns:
     %   Delta_n (float): Change in moles of gases during the formation reaction of a mole of that species starting from the elements in their reference state
