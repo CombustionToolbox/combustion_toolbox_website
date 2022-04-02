@@ -23,7 +23,7 @@ This data is collected and formatted into a more accessible structure. We can di
 * `DB_master`: structured database from NASA's thermo file.
 * `DB`: structured database with piecewise cubic Hermite interpolating polynomials and linear extrapolation for faster data access.
 
-The use of custom polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
+The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
 
 ```matlab
 >> g0_CO2  = species_g0('CO2', 2000, DB)
