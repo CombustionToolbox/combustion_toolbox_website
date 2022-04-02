@@ -4,8 +4,6 @@
 
 <br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
 
-<!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
-
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
 :gutter: 1
@@ -22,28 +20,18 @@ The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
 
 :::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
-The code is fully open source, GUI included!
+Completely open source, GUI included!<br>
+{bdg-light}`Github` {bdg-info}`GPLv3`
 :::
 
 ::::
 
-<!-- <p align="center">
-    <b>Combustion Toolbox in action</b>
-</p> -->
-
 # Combustion Toolbox in action
-
 
 <p align="center">
     <img src="_static/gif/example_HP_GUI.gif" width="352">&nbsp;&nbsp;&nbsp;
     <img src="_static/gif/example_HP.gif" width="381">
 </p>
-
-
-<!-- <p align="center">
-    <img src="_static/gif/example_HP_GUI.gif" width="383">
-    <img src="_static/gif/example_HP.gif" width="414">
-</p> -->
 
 # Combustion Toolbox capabilities
 
@@ -70,7 +58,7 @@ Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capab
 
 :::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
-The code is fully open source, GUI included!
+Completely open source, GUI included!
 {bdg-light}`Github` {bdg-light}`FileExchange` {bdg-light}`Zenodo` {bdg-info}`GPLv3`
 :::
 
@@ -135,11 +123,6 @@ Let's check the documentation of almost (every) functions.
 :::
 
 ::::
-
-
-<!-- | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
-| ----------- | ----------- | ----------- |
-|  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB | -->
 
 # Gallery
 
