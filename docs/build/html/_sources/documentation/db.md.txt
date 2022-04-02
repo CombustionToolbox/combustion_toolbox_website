@@ -23,7 +23,7 @@ This data is collected and formatted into a more accessible structure. We can di
 * `DB_master`: structured database from NASA's thermo file.
 * `DB`: structured database with piecewise cubic Hermite interpolating polynomials and linear extrapolation for faster data access.
 
-The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
+The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1** obtaining the same results as seen  in **Figure 2**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
 
 ```matlab
 >> g0_CO2  = species_g0('CO2', 2000, DB)
@@ -35,6 +35,12 @@ The use of piecewise cubic Hermite interpolating polynomials increments the perf
 </p>
 
 **Figure 1:** *Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.*
+
+<p align="center">
+    <img src="..\_static\img\validation_thermo.svg" width="800">
+</p>
+
+**Figure 2:** *Comparison of entropy  [kJ/(mol-K)] as a function of temperature [K] obtained using the piecewise cubic Hermite interpolating polynomials (lines) and using the NASA's 9 coefficient polynomials (symbols) for a set of species.*
 
 Another important parameter comes from the conservation of mass, which is the stoichiometric matrix $A_0$, by generalizing this constraint condition we have
 
