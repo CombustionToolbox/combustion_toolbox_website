@@ -34,7 +34,7 @@ The use of piecewise cubic Hermite interpolating polynomials increments the perf
     <img src="..\_static\img\performance_thermo.svg" width="800">
 </p>
 
-**Figure 1:** *Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.*
+**Figure 1:** *Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz. Note: lower is better.*
 
 <p align="center">
     <img src="..\_static\img\validation_thermo.svg" width="800">

@@ -269,7 +269,7 @@
 <p align="center">
 <img src="..\_static\img\performance_thermo.svg" width="800"/>
 </p>
-<p><strong>Figure 1:</strong> <em>Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.</em></p>
+<p><strong>Figure 1:</strong> <em>Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz. Note: lower is better.</em></p>
 <p align="center">
 <img src="..\_static\img\validation_thermo.svg" width="800"/>
 </p>
@@ -394,11 +394,14 @@ Routines<div class="sd-summary-down docutils">
 <dd><p class="sd-card-text">In order to compute the internal energy of formation from the enthalpy of
 formation of a given species, we must determine the change in moles of
 gases during the formation reaction of a mole of that species starting
-from the elements in their reference state. The only elements that are
-stable as diatomic gases are elements 1 (H), 8 (N), 9 (O), 10 (F), and 18
-(Cl). The remaining elements that are stable as (monoatomic) gases are
-the noble gases He (3), Ne (11), Ar (19), Kr (37), Xe (55), and Rn (87),
-which do not form any compound.</p>
+from the elements in their reference state.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p class="sd-card-text">The only elements that are stable as diatomic gases are elements
+1 (H), 8 (N), 9 (O), 10 (F), and 18 (Cl). The remaining elements that
+are stable as (monoatomic) gases are the noble gases He (3), Ne (11),
+Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
