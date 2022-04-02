@@ -36,7 +36,7 @@ function mix =  ComputeProperties(self, SpeciesMatrix, p, T)
     % Get non zero species
     FLAG_NONZERO = mix.Xi>0; 
     % Compute mean molecular weight [g/mol]
-    mix.W       = 1/sum(mix.Yi./SpeciesMatrix(:,12), 'OmitNan');
+    mix.W = 1/sum(mix.Yi./SpeciesMatrix(:,12), 'OmitNan');
     % Compute vector atoms of each element
     mix.NatomE = sum(Ni .* self.C.A0.value);
     % Assign values for C, H, O, and N elements
