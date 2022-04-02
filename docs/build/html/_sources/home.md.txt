@@ -4,8 +4,6 @@
 
 <br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
 
-<!-- There is also a (less complete) [Python version](https://github.com/AlbertoCuadra/Combustion-PyToolbox) -->
-
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
 :gutter: 1
@@ -22,28 +20,18 @@ The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
 
 :::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
-The code is fully open source, GUI included!
+Completely open source, GUI included!<br>
+{bdg-light}`Github` {bdg-info}`GPLv3`
 :::
 
 ::::
 
-<!-- <p align="center">
-    <b>Combustion Toolbox in action</b>
-</p> -->
-
 # Combustion Toolbox in action
-
 
 <p align="center">
     <img src="_static/gif/example_HP_GUI.gif" width="352">&nbsp;&nbsp;&nbsp;
     <img src="_static/gif/example_HP.gif" width="381">
 </p>
-
-
-<!-- <p align="center">
-    <img src="_static/gif/example_HP_GUI.gif" width="383">
-    <img src="_static/gif/example_HP.gif" width="414">
-</p> -->
 
 # Combustion Toolbox capabilities
 
@@ -70,7 +58,7 @@ Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capab
 
 :::{grid-item-card} {octicon}`globe` Open source
 :link: https://github.com/AlbertoCuadra/combustion_toolbox
-The code is fully open source, GUI included!
+Completely open source, GUI included!
 {bdg-light}`Github` {bdg-light}`FileExchange` {bdg-light}`Zenodo` {bdg-info}`GPLv3`
 :::
 
@@ -136,11 +124,6 @@ Let's check the documentation of almost (every) functions.
 
 ::::
 
-
-<!-- | Fast Chemical equilibrium computations 	| Modular construction 	| Open source 	|
-| ----------- | ----------- | ----------- |
-|  The kernel has been optimized ...	| All changes made to the kernel will be applied directly in the GUI	| The code/GUI is fully open source - compatible with MATLAB | -->
-
 # Gallery
 
 We have several examples of what Combustion Toolbox can do. Here we show some results obtained from Combustion Toolbox.
@@ -149,7 +132,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img src="_static/gif/example_DET.gif" width="800">
 </p>
 
-**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*.
+**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*
 
 <p align="center">
     <img src="_static/img/Hugoniot_benchmarking.svg" width="450">
