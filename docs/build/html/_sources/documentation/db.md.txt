@@ -34,7 +34,7 @@ The use of custom polynomials increments the performance of Combustion Toolbox i
     <img src="..\_static\img\performance_thermo.svg" width="800">
 </p>
 
-**Figure 1:** *Performance test, execution times for over $10^6$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the custom Combustion Toolbox polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.*
+**Figure 1:** *Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the custom Combustion Toolbox polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.*
 
 Another important parameter comes from the conservation of mass, which is the stoichiometric matrix $A_0$, by generalizing this constraint condition we have
 
