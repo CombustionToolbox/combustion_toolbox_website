@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -239,7 +239,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -252,7 +252,56 @@
 <p class="admonition-title">Note</p>
 <p>The kernel of the code is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.</p>
 </div>
-<hr class="docutils"/>
+<div class="section" id="thermodynamic-derivatives">
+<h2>Thermodynamic derivatives<a class="headerlink" href="#thermodynamic-derivatives" title="Permalink to this headline">#</a></h2>
+<p>All thermodynamic first derivatives can be obtained with any set of three independent first derivatives [1]. Combustion Toolbox computes all thermodynamic first derivatives from <span class="math notranslate nohighlight">\((\partial \text{ln } V/\partial \text{ln } T)_p\)</span>, <span class="math notranslate nohighlight">\((\partial \text{ln } V/\partial \text{ln } p)_T\)</span>, and <span class="math notranslate nohighlight">\((\partial h/\partial T)_p = c_p\)</span>. Considering the ideal equation of state</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+  pV = nRT
+\end{equation}</div></div><p>and applying logarithms to both sides</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+  \text{ln } V = n + \text{ln } R + \text{ln } T - \text{ln } p
+\end{equation}</div></div><p>is readily seen that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+  \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } T}\right)_p = 1 + \left(\dfrac{\partial n }{\partial \text{ln } T}\right)_p,
+\end{equation}</div></div><div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+  \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } p}\right)_T = -1 + \left(\dfrac{\partial n }{\partial \text{ln } p}\right)_T.
+\end{equation}</div></div><p>For <span class="math notranslate nohighlight">\(c_p\)</span> we have to take into account the frozen contribution and the reaction contribution, obtaining the next system of equations</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+  c_p = c_{p,f} + c_{p,r},
+\end{equation}
+\begin{equation}
+  c_{p,f} = \sum\limits_{j=1}^{\text{NS}} n_j c_{p,f}^\circ,
+\end{equation}
+\begin{equation}
+  c_{p,r} = \sum\limits_{j=1}^{\text{NG}} n_j \dfrac{h_j^\circ}{T} \left(\dfrac{\partial \eta_j}{\partial \text{ln } T} \right) + \sum\limits_{j=\text{NG } + 1}^{\text{NS}} \dfrac{h_j^\circ}{T} \left(\dfrac{\partial n_j}{\partial \text{ln } T} \right),
+\end{equation}</div></div><p>with <span class="math notranslate nohighlight">\(\eta_j = \text{ln } n_j\)</span> for non-condensed species and <span class="math notranslate nohighlight">\(\eta_j = n_j\)</span> for condensed species.</p>
+<div class="section" id="derivatives-with-respect-to-temperature">
+<h3>Derivatives with respect to temperature<a class="headerlink" href="#derivatives-with-respect-to-temperature" title="Permalink to this headline">#</a></h3>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{aligned}
+  \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p &amp;= \dfrac{h_j^\circ}{RT}, \quad &amp;\text{for } j=1, \dots, \text{NS},\\
+
+   \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &amp;= 0, \quad &amp;\text{for } i=1, \dots, \text{NE},\\
+
+   \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p&amp;= 0,
+\end{aligned}</div></div><p>with <span class="math notranslate nohighlight">\(\delta_j\)</span> = 1 for non-condensed species and <span class="math notranslate nohighlight">\(\delta_j = 0\)</span> for condensed species.</p>
+<!-- To solve the stem is more practical to change it into matricial form, namely -->
+</div>
+<div class="section" id="derivatives-with-respect-to-pressure">
+<h3>Derivatives with respect to pressure<a class="headerlink" href="#derivatives-with-respect-to-pressure" title="Permalink to this headline">#</a></h3>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{aligned}
+  \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T &amp;= -\delta, \quad &amp;\text{for } j=1, \dots, \text{NS},\\
+
+   \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &amp;= 0, \quad &amp;\text{for } i=1, \dots, \text{NE},\\
+
+   \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T&amp;= 0.
+\end{aligned}</div></div><hr class="docutils"/>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Routines<div class="sd-summary-down docutils">
@@ -428,6 +477,8 @@ temperature and pressure.</p>
 </dd></dl>
 </div>
 </details></div>
+</div>
+</div>
 
         </article>
       </div>
@@ -484,8 +535,31 @@ temperature and pressure.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Chemical equilibrium</a><ul>
+<li><a class="reference internal" href="#thermodynamic-derivatives">Thermodynamic derivatives</a><ul>
+<li><a class="reference internal" href="#derivatives-with-respect-to-temperature">Derivatives with respect to temperature</a></li>
+<li><a class="reference internal" href="#derivatives-with-respect-to-pressure">Derivatives with respect to pressure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -504,5 +578,7 @@ temperature and pressure.</p>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

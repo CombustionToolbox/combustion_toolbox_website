@@ -7,6 +7,103 @@ In this section, you will find the documentation of the kernel of the code, whic
 The kernel of the code is based on Gordon, S., & McBride, B. J. (1994). NASA reference publication, 1311.
 ```
 
+## Thermodynamic derivatives
+
+All thermodynamic first derivatives can be obtained with any set of three independent first derivatives [1]. Combustion Toolbox computes all thermodynamic first derivatives from $(\partial \text{ln } V/\partial \text{ln } T)_p$, $(\partial \text{ln } V/\partial \text{ln } p)_T$, and $(\partial h/\partial T)_p = c_p$. Considering the ideal equation of state
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      pV = nRT
+    \end{equation}
+```
+and applying logarithms to both sides
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      \text{ln } V = n + \text{ln } R + \text{ln } T - \text{ln } p
+    \end{equation}
+```
+
+is readily seen that
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } T}\right)_p = 1 + \left(\dfrac{\partial n }{\partial \text{ln } T}\right)_p,
+    \end{equation}
+```
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } p}\right)_T = -1 + \left(\dfrac{\partial n }{\partial \text{ln } p}\right)_T.
+    \end{equation}
+```
+
+For $c_p$ we have to take into account the frozen contribution and the reaction contribution, obtaining the next system of equations
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      c_p = c_{p,f} + c_{p,r},
+    \end{equation}
+    \begin{equation}
+      c_{p,f} = \sum\limits_{j=1}^{\text{NS}} n_j c_{p,f}^\circ,
+    \end{equation}
+    \begin{equation}
+      c_{p,r} = \sum\limits_{j=1}^{\text{NG}} n_j \dfrac{h_j^\circ}{T} \left(\dfrac{\partial \eta_j}{\partial \text{ln } T} \right) + \sum\limits_{j=\text{NG } + 1}^{\text{NS}} \dfrac{h_j^\circ}{T} \left(\dfrac{\partial n_j}{\partial \text{ln } T} \right),
+    \end{equation}
+```
+
+with $\eta_j = \text{ln } n_j$ for non-condensed species and $\eta_j = n_j$ for condensed species.
+
+
+
+### Derivatives with respect to temperature
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{aligned}
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p &= \dfrac{h_j^\circ}{RT}, \quad &\text{for } j=1, \dots, \text{NS},\\
+
+       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
+
+       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p&= 0,
+    \end{aligned}
+```
+
+with $\delta_j$ = 1 for non-condensed species and $\delta_j = 0$ for condensed species. 
+
+<!-- To solve the stem is more practical to change it into matricial form, namely -->
+
+### Derivatives with respect to pressure
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{aligned}
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T &= -\delta, \quad &\text{for } j=1, \dots, \text{NS},\\
+
+       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
+
+       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T&= 0.
+    \end{aligned}
+```
+
 ***
 
 :::{dropdown} Routines
