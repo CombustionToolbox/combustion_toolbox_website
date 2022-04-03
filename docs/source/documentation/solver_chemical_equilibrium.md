@@ -37,7 +37,7 @@ is readily seen that
     :nowrap:
 
     \begin{equation}
-      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } T}\right)_p = 1 + \left(\dfrac{\partial n }{\partial \text{ln } T}\right)_p,
+      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } T}\right)_p = 1 + \left(\dfrac{\partial \text{ln } n }{\partial \text{ln } T}\right)_p,
     \end{equation}
 ```
 ```{eval-rst}
@@ -45,7 +45,7 @@ is readily seen that
     :nowrap:
 
     \begin{equation}
-      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } p}\right)_T = -1 + \left(\dfrac{\partial n }{\partial \text{ln } p}\right)_T.
+      \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } p}\right)_T = -1 + \left(\dfrac{\partial \text{ln } n }{\partial \text{ln } p}\right)_T.
     \end{equation}
 ```
 
@@ -77,11 +77,11 @@ with $\eta_j = \text{ln } n_j$ for non-condensed species and $\eta_j = n_j$ for 
     :nowrap:
 
     \begin{aligned}
-      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p &= \dfrac{h_j^\circ}{RT}, \quad &\text{for } j=1, \dots, \text{NS},\\
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p &= \dfrac{h_j^\circ}{RT}, \quad &\text{for } j=1, \dots, \text{NS},\\
 
        \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
 
-       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial n}{\partial \text{ln } T}\right)_p&= 0,
+       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p&= 0,
     \end{aligned}
 ```
 
@@ -96,11 +96,11 @@ with $\delta_j$ = 1 for non-condensed species and $\delta_j = 0$ for condensed s
     :nowrap:
 
     \begin{aligned}
-      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T &= -\delta, \quad &\text{for } j=1, \dots, \text{NS},\\
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T &= -\delta, \quad &\text{for } j=1, \dots, \text{NS},\\
 
        \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
 
-       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial n}{\partial \text{ln } p}\right)_T&= 0.
+       \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T&= 0.
     \end{aligned}
 ```
 
@@ -113,3 +113,4 @@ with $\delta_j$ = 1 for non-condensed species and $\delta_j = 0$ for condensed s
 ```
 :::
 
+1. McBride, Bonnie J. Computer program for calculation of complex chemical equilibrium compositions and applications. Vol. 2. NASA Lewis Research Center, 1996.

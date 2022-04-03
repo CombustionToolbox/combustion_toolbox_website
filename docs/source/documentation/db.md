@@ -150,5 +150,4 @@ Transpose stoichiometric matrix:
 
 ***
 
-1. B. J. McBride, NASA Glenn coefficients for calculating thermodynamic
-properties of individual species, National Aeronautics and Space Administration, John H. Glenn Research Center, 2002.
+1. McBride, Bonnie J. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, John H. Glenn Research Center at Lewis Field, 2002.
