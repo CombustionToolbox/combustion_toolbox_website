@@ -49,26 +49,32 @@ is readily seen that
     \end{equation}
 ```
 
-For $c_p$ we have to take into account the frozen contribution and the reaction contribution, obtaining the next system of equations
+To compute $c_p$ we have to distinguish between the frozen contribution and the reaction contribution
+
+```{eval-rst}
+.. math::
+    :nowrap:
+    
+    \begin{equation}
+      c_p = c_{p,f} + c_{p,r}
+    \end{equation}
+```
+
+given by the following relations
 
 ```{eval-rst}
 .. math::
     :nowrap:
 
     \begin{equation}
-      c_p = c_{p,f} + c_{p,r},
-    \end{equation}
-    \begin{equation}
       c_{p,f} = \sum\limits_{j=1}^{\text{NS}} n_j c_{p,f}^\circ,
     \end{equation}
     \begin{equation}
-      c_{p,r} = \sum\limits_{j=1}^{\text{NG}} n_j \dfrac{h_j^\circ}{T} \left(\dfrac{\partial \eta_j}{\partial \text{ln } T} \right) + \sum\limits_{j=\text{NG } + 1}^{\text{NS}} \dfrac{h_j^\circ}{T} \left(\dfrac{\partial n_j}{\partial \text{ln } T} \right),
+      c_{p,r} = \dfrac{1}{T}\left[\sum\limits_{j=1}^{\text{NS}} [1 + \delta_j(n_j - 1)] h_j^\circ\left(\dfrac{\partial \eta_j}{\partial \text{ln } T} \right)\right],
     \end{equation}
 ```
 
-with $\eta_j = \text{ln } n_j$ for non-condensed species and $\eta_j = n_j$ for condensed species.
-
-
+with $\eta_j = \text{ln } n_j$ and $\delta_j = 1 $ for non-condensed species, and $\eta_j = n_j$ and $\delta_j = 0$ for condensed species.
 
 ### Derivatives with respect to temperature
 
@@ -77,15 +83,13 @@ with $\eta_j = \text{ln } n_j$ for non-condensed species and $\eta_j = n_j$ for 
     :nowrap:
 
     \begin{aligned}
-      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p &= \dfrac{h_j^\circ}{RT}, \quad &\text{for } j=1, \dots, \text{NS},\\
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p &= \dfrac{h_j^\circ}{RT}, \quad &\text{for } j=1, \dots, \text{NS}\\
 
-       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
+       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &= 0, \quad &\text{for } i=1, \dots, \text{NE}\\
 
        \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p&= 0,
     \end{aligned}
 ```
-
-with $\delta_j$ = 1 for non-condensed species and $\delta_j = 0$ for condensed species. 
 
 <!-- To solve the stem is more practical to change it into matricial form, namely -->
 
@@ -96,9 +100,9 @@ with $\delta_j$ = 1 for non-condensed species and $\delta_j = 0$ for condensed s
     :nowrap:
 
     \begin{aligned}
-      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T &= -\delta, \quad &\text{for } j=1, \dots, \text{NS},\\
+      \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T &= -\delta, \quad &\text{for } j=1, \dots, \text{NS}\\
 
-       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &= 0, \quad &\text{for } i=1, \dots, \text{NE},\\
+       \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &= 0, \quad &\text{for } i=1, \dots, \text{NE}\\
 
        \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T&= 0.
     \end{aligned}
