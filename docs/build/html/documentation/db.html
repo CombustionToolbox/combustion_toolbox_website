@@ -247,16 +247,25 @@
         <article role="main">
           <div class="section" id="database">
 <h1>Database<a class="headerlink" href="#database" title="Permalink to this headline">#</a></h1>
-<p>Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely</p>
+<p>Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the dimensionless thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \begin{eqnarray}
-    C_p^\circ/R &amp;=&amp; a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
-    H^\circ/R   &amp;=&amp; -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
+    c_p^\circ/R &amp;=&amp; a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
+    h^\circ/RT   &amp;=&amp; -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
                 &amp;\phantom{{}={}}&amp; + a_7T^4/5 + a_8/T,\\
-    S^\circ/R   &amp;=&amp; -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
+    s^\circ/R   &amp;=&amp; -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
                 &amp;\phantom{{}={}}&amp; + a_7T^4/4 + a_9,
 \end{eqnarray}</div></div><p>where <span class="math notranslate nohighlight">\(a_i\)</span> from <span class="math notranslate nohighlight">\(i=1, \dots, 7\)</span> are the temperature coefficients and <span class="math notranslate nohighlight">\(i =8, 9\)</span> are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the <a class="reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp">source code</a> and can be also obtained from <a class="reference external" href="https://cearun.grc.nasa.gov/ThermoBuild/">NASA’s thermo build website</a>.</p>
-<p>This data is collected and formatted into a more accessible structure. We can distinguish from:</p>
+<p>To compute the dimensionless Gibbs energy, <span class="math notranslate nohighlight">\(g_i^\circ (T) / RT\)</span>, from NASA’s polynomials we use the next expression</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{equation}
+    g_i^\circ/RT = h^\circ/RT - s^\circ/R,
+\end{equation}</div></div><p>or equivalently</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\begin{eqnarray}
+    g_i^\circ/RT &amp;=&amp; -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3\ln{T}(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
+                &amp;\phantom{{}={}}&amp; - a_7T^4/20 + a_8/T - a_9.
+\end{eqnarray}</div></div><p>This data is collected and formatted into a more accessible structure. We can distinguish from:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DB_master</span></code>: structured database from NASA’s thermo file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DB</span></code>: structured database with piecewise cubic Hermite interpolating polynomials and linear extrapolation for faster data access.</p></li>

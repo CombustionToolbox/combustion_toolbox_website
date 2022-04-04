@@ -1,22 +1,43 @@
 # Database
 
-Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely
+Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the dimensionless thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely
 
 ```{eval-rst}
 .. math::
     :nowrap:
 
     \begin{eqnarray}
-        C_p^\circ/R &=& a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
-        H^\circ/R   &=& -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
+        c_p^\circ/R &=& a_1T^{-2} + a_2T^{-1} + a_3 + a_4T + a_5T^2 + a_6T^3 + a_7T^4,\\
+        h^\circ/RT   &=& -a_1T^{-2} + a_2T^{-1} \ln{T} + a_3 + a_4T/2  + a_5T^2/3 + a_6T^3/4 \\
                     &\phantom{{}={}}& + a_7T^4/5 + a_8/T,\\
-        S^\circ/R   &=& -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
+        s^\circ/R   &=& -a_1T^{-2}/2 - a_2T^{-1} + a_3\ln{T} + a_4T  + a_5T^2/2 + a_6T^3/3 \\
                     &\phantom{{}={}}& + a_7T^4/4 + a_9,
     \end{eqnarray}
-
 ```
 
 where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and $i =8, 9$ are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Databases/thermo.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
+
+To compute the dimensionless Gibbs energy, $g_i^\circ (T) / RT$, from NASA's polynomials we use the next expression 
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+        g_i^\circ/RT = h^\circ/RT - s^\circ/R,
+    \end{equation}
+```
+or equivalently 
+
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{eqnarray}
+        g_i^\circ/RT &=& -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3\ln{T}(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
+                    &\phantom{{}={}}& - a_7T^4/20 + a_8/T - a_9.
+    \end{eqnarray}
+```
+
 
 This data is collected and formatted into a more accessible structure. We can distinguish from:
 
