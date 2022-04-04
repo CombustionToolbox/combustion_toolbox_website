@@ -33,7 +33,7 @@ or equivalently
     :nowrap:
 
     \begin{eqnarray}
-        g_i^\circ/RT &=& -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3\ln{T}(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
+        g_i^\circ/RT &=& -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
                     &\phantom{{}={}}& - a_7T^4/20 + a_8/T - a_9.
     \end{eqnarray}
 ```
