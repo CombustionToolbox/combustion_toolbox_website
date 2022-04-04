@@ -132,7 +132,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img src="_static/gif/example_DET.gif" width="800">
 </p>
 
-**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states computed in 3 seconds for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 100 case studies.*
+**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered.*
 
 <p align="center">
     <img src="_static/img/Hugoniot_benchmarking.svg" width="450">
@@ -144,7 +144,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1200">
 </p>
 
-**Figure 3:** *Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 atm); line: numerical results obtained with Combustion Toolbox; circles: NASA's Chemical Equilibrium with Applications code. The computational time was of 6.60 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 351 case studies.*
+**Figure 3:** *Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 atm); line: numerical results obtained with Combustion Toolbox; circles: NASA's Chemical Equilibrium with Applications code. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 26 species considered and a total of 351 case studies.*
 
 <p align="center">
     <img src="_static/img/polar_shock_full_and_frozen_both_air_complete.svg" width="1000">

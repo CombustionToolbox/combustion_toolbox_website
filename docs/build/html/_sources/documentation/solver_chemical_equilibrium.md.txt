@@ -74,7 +74,7 @@ given by the following relations
     \end{equation}
 ```
 
-with $\eta_j = \text{ln } n_j$ and $\delta_j = 1 $ for non-condensed species, and $\eta_j = n_j$ and $\delta_j = 0$ for condensed species.
+with $\eta_j = \text{ln } n_j$ and $\delta_j = 1 $ for $j=1,\dots,NG$ (non-condensed species), and $\eta_j = n_j$ and $\delta_j = 0$ for $j = NG + 1, \dots, NS$ (condensed species).
 
 ### Derivatives with respect to temperature
 

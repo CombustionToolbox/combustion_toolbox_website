@@ -250,7 +250,7 @@
 <p>With this short tutorial you will familiarize with the basic functionalities of Combustion Toolbox</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
-<p>Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in PATH run this command in the command window:</p>
+<p>Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in <code class="docutils literal notranslate"><span class="pre">PATH</span></code> run this command in the command window:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">addpath</span><span class="p">(</span><span class="nb">genpath</span><span class="p">(</span><span class="nb">pwd</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
@@ -305,7 +305,7 @@
 </div>
 <div class="section" id="several-cases">
 <h3>Several cases<a class="headerlink" href="#several-cases" title="Permalink to this headline">#</a></h3>
-<p>CT also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:</p>
+<p>Combustion Toolbox also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'CH4'</span><span class="p">};</span><span class="w"></span>
 <span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'O2'</span><span class="p">};</span><span class="w"></span>
 <span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Inert</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'N2'</span><span class="p">};</span><span class="w"></span>
@@ -325,57 +325,61 @@
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SolveProblem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TP'</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The results are contained in self.PS. By default, this routine print the results through the command window (default: self.Misc.FLAG_RESULTS=true) which gives for the stoichiometric case (phi=1):</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">***********************************************************</span><span class="w"></span>
-<span class="o">-----------------------------------------------------------</span><span class="w"></span>
-<span class="n">Problem</span><span class="w"> </span><span class="s">type:</span><span class="w"> </span><span class="s">TP</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.000</span><span class="w"></span>
-<span class="o">-----------------------------------------------------------</span><span class="w"></span>
-<span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="n">REACTANTS</span><span class="w">     </span><span class="o">|</span><span class="w">       </span><span class="n">PRODUCTS</span><span class="w"></span>
-<span class="n">T</span><span class="w"> </span><span class="s">[K]</span><span class="w">         </span><span class="o">|</span><span class="w">	    </span><span class="mf">300.000</span><span class="w">	</span><span class="o">|</span><span class="w">	</span><span class="mf">3000.000</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="s">[bar]</span><span class="w">       </span><span class="o">|</span><span class="w">	      </span><span class="mf">1.013</span><span class="w">	</span><span class="o">|</span><span class="w">	   </span><span class="mf">1.013</span><span class="w"></span>
-<span class="n">r</span><span class="w"> </span><span class="s">[kg/m3]</span><span class="w">     </span><span class="o">|</span><span class="w">	      </span><span class="mf">1.123</span><span class="w">	</span><span class="o">|</span><span class="w">	   </span><span class="mf">0.103</span><span class="w"></span>
-<span class="n">h</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">     </span><span class="o">|</span><span class="w">	   </span><span class="o">-</span><span class="mf">254.958</span><span class="w">	</span><span class="o">|</span><span class="w">	</span><span class="mf">2573.851</span><span class="w"></span>
-<span class="n">e</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">     </span><span class="o">|</span><span class="w">	   </span><span class="o">-</span><span class="mf">345.224</span><span class="w">	</span><span class="o">|</span><span class="w">	</span><span class="mf">1589.064</span><span class="w"></span>
-<span class="n">s</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w"> </span><span class="o">|</span><span class="w">	     </span><span class="mf">24.865</span><span class="w">	</span><span class="o">|</span><span class="w">	  </span><span class="mf">37.636</span><span class="w"></span>
-<span class="n">cp</span><span class="w"> </span><span class="s">[kJ/(kg-K)]|</span><span class="w">	      </span><span class="s">1.080</span><span class="w">	</span><span class="o">|</span><span class="w">	   </span><span class="mf">5.562</span><span class="w"></span>
-<span class="nb">gamma</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w">     </span><span class="o">|</span><span class="w">	      </span><span class="mf">1.386</span><span class="w">	</span><span class="o">|</span><span class="w">	   </span><span class="mf">1.168</span><span class="w"></span>
-<span class="o">-----------------------------------------------------------</span><span class="w"></span>
-<span class="n">REACTANTS</span><span class="w">        </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
-<span class="n">N2</span><span class="w">           	 </span><span class="s">7.1483e-01</span><span class="w"></span>
-<span class="n">O2</span><span class="w">           	 </span><span class="s">1.9011e-01</span><span class="w"></span>
-<span class="n">CH4</span><span class="w">          	 </span><span class="s">9.5057e-02</span><span class="w"></span>
-<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">22</span><span class="p">]</span><span class="w">      </span><span class="mf">0.0000e+00</span><span class="w"></span>
-
-<span class="n">TOTAL</span><span class="w">  		 </span><span class="s">1.0000e+00</span><span class="w"></span>
-<span class="o">-----------------------------------------------------------</span><span class="w"></span>
-<span class="n">PRODUCTS</span><span class="w">	 </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
-<span class="n">N2</span><span class="w">           	 </span><span class="s">6.4761e-01</span><span class="w"></span>
-<span class="n">H2O</span><span class="w">          	 </span><span class="s">1.1166e-01</span><span class="w"></span>
-<span class="n">CO</span><span class="w">           	 </span><span class="s">5.8504e-02</span><span class="w"></span>
-<span class="n">OH</span><span class="w">           	 </span><span class="s">3.5944e-02</span><span class="w"></span>
-<span class="n">H2</span><span class="w">           	 </span><span class="s">3.0832e-02</span><span class="w"></span>
-<span class="n">CO2</span><span class="w">          	 </span><span class="s">2.8626e-02</span><span class="w"></span>
-<span class="n">H</span><span class="w">            	 </span><span class="s">2.7588e-02</span><span class="w"></span>
-<span class="n">O2</span><span class="w">           	 </span><span class="s">2.5917e-02</span><span class="w"></span>
-<span class="n">O</span><span class="w">            	 </span><span class="s">1.8097e-02</span><span class="w"></span>
-<span class="n">NO</span><span class="w">           	 </span><span class="s">1.5206e-02</span><span class="w"></span>
-<span class="n">N</span><span class="w">            	 </span><span class="s">1.1122e-05</span><span class="w"></span>
-<span class="n">HO2</span><span class="w">          	 </span><span class="s">9.5922e-06</span><span class="w"></span>
-<span class="n">NO2</span><span class="w">          	 </span><span class="s">3.1370e-06</span><span class="w"></span>
-<span class="n">N2O</span><span class="w">          	 </span><span class="s">7.8817e-07</span><span class="w"></span>
-<span class="n">HCO</span><span class="w">          	 </span><span class="s">1.2470e-07</span><span class="w"></span>
-<span class="n">NH2</span><span class="w">          	 </span><span class="s">1.1863e-07</span><span class="w"></span>
-<span class="n">NH3</span><span class="w">          	 </span><span class="s">3.0276e-08</span><span class="w"></span>
-<span class="n">HCN</span><span class="w">          	 </span><span class="s">4.4118e-09</span><span class="w"></span>
-<span class="n">CN</span><span class="w">           	 </span><span class="s">4.0118e-10</span><span class="w"></span>
-<span class="n">CH</span><span class="w">           	 </span><span class="s">5.7134e-13</span><span class="w"></span>
-<span class="n">CH3</span><span class="w">          	 </span><span class="s">1.5607e-13</span><span class="w"></span>
-<span class="n">CH4</span><span class="w">          	 </span><span class="s">1.1368e-14</span><span class="w"></span>
-<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="w">       </span><span class="mf">1.3720e-15</span><span class="w"></span>
-
-<span class="n">TOTAL</span><span class="w">  		 </span><span class="s">1.0000e+00</span><span class="w"></span>
-<span class="o">-----------------------------------------------------------</span><span class="w"></span>
+<p>The results are contained in <code class="docutils literal notranslate"><span class="pre">self.PS</span></code>. By default, this routine print the results through the command window (default: self.Misc.FLAG_RESULTS=true) which gives for the stoichiometric case (phi=1):</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">COMPUTING</span><span class="w"> </span><span class="s">Nº</span><span class="w"> </span><span class="s">MOLES</span><span class="w"> </span><span class="s">FROM</span><span class="w"> </span><span class="s">EQUIVALENCE</span><span class="w"> </span><span class="s">RATIO</span><span class="w"> </span><span class="s">(PHI).</span><span class="w"></span>
 <span class="o">***********************************************************</span><span class="w"></span>
+<span class="o">-----------------------------------------------------------</span><span class="w"></span>
+<span class="n">Problem</span><span class="w"> </span><span class="s">type:</span><span class="w"> </span><span class="s">TP</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.0000</span><span class="w"></span>
+<span class="o">-----------------------------------------------------------</span><span class="w"></span>
+<span class="w">               </span><span class="o">|</span><span class="w">    </span><span class="n">REACTANTS</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="n">PRODUCTS</span><span class="w"></span>
+<span class="n">T</span><span class="w"> </span><span class="s">[K]</span><span class="w">          </span><span class="o">|</span><span class="w">       </span><span class="mf">300.0000</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="mf">3000.0000</span><span class="w"></span>
+<span class="n">p</span><span class="w"> </span><span class="s">[bar]</span><span class="w">        </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0132</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0132</span><span class="w"></span>
+<span class="n">r</span><span class="w"> </span><span class="s">[kg/m3]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.1225</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">0.1029</span><span class="w"></span>
+<span class="n">h</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">254.5296</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="mf">2574.2795</span><span class="w"></span>
+<span class="n">e</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">344.7953</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="mf">1589.5140</span><span class="w"></span>
+<span class="n">g</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">     </span><span class="o">-</span><span class="mf">2428.4002</span><span class="w">  </span><span class="o">|</span><span class="w">    </span><span class="o">-</span><span class="mf">30246.9221</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">7.2462</span><span class="w">  </span><span class="o">|</span><span class="w">        </span><span class="mf">10.9404</span><span class="w"></span>
+<span class="n">W</span><span class="w"> </span><span class="s">[g/mol]</span><span class="w">      </span><span class="o">|</span><span class="w">        </span><span class="mf">27.6333</span><span class="w">  </span><span class="o">|</span><span class="w">        </span><span class="mf">25.3293</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlp</span><span class="p">)</span><span class="n">T</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0285</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlT</span><span class="p">)</span><span class="n">p</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">         </span><span class="mf">1.5830</span><span class="w"></span>
+<span class="n">cp</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0786</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">5.5609</span><span class="w"></span>
+<span class="nb">gamma</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3869</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.1357</span><span class="w"></span>
+<span class="nb">sound</span><span class="w"> </span><span class="n">vel</span><span class="w"> </span><span class="p">[</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">]</span><span class="o">|</span><span class="w">       </span><span class="mf">353.8198</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="mf">1057.5349</span><span class="w"></span>
+<span class="o">-----------------------------------------------------------</span><span class="w"></span>
+<span class="n">REACTANTS</span><span class="w">               </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
+<span class="n">N2</span><span class="w">                   </span><span class="s">7.1493e-01</span><span class="w"></span>
+<span class="n">O2</span><span class="w">                   </span><span class="s">1.9005e-01</span><span class="w"></span>
+<span class="n">CH4</span><span class="w">                  </span><span class="s">9.5023e-02</span><span class="w"></span>
+<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">21</span><span class="p">]</span><span class="w">          </span><span class="mf">0.0000e+00</span><span class="w"></span>
+
+<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
+<span class="o">-----------------------------------------------------------</span><span class="w"></span>
+<span class="n">PRODUCTS</span><span class="w">                </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
+<span class="n">N2</span><span class="w">                   </span><span class="s">6.4771e-01</span><span class="w"></span>
+<span class="n">H2O</span><span class="w">                  </span><span class="s">1.1162e-01</span><span class="w"></span>
+<span class="n">CO</span><span class="w">                   </span><span class="s">5.8485e-02</span><span class="w"></span>
+<span class="n">OH</span><span class="w">                   </span><span class="s">3.5936e-02</span><span class="w"></span>
+<span class="n">H2</span><span class="w">                   </span><span class="s">3.0822e-02</span><span class="w"></span>
+<span class="n">CO2</span><span class="w">                  </span><span class="s">2.8615e-02</span><span class="w"></span>
+<span class="n">H</span><span class="w">                    </span><span class="s">2.7583e-02</span><span class="w"></span>
+<span class="n">O2</span><span class="w">                   </span><span class="s">2.5914e-02</span><span class="w"></span>
+<span class="n">O</span><span class="w">                    </span><span class="s">1.8096e-02</span><span class="w"></span>
+<span class="n">NO</span><span class="w">                   </span><span class="s">1.5206e-02</span><span class="w"></span>
+<span class="n">N</span><span class="w">                    </span><span class="s">1.1123e-05</span><span class="w"></span>
+<span class="n">NH</span><span class="w">                   </span><span class="s">9.5805e-07</span><span class="w"></span>
+<span class="n">HCO</span><span class="w">                  </span><span class="s">1.2464e-07</span><span class="w"></span>
+<span class="n">NH2</span><span class="w">                  </span><span class="s">1.1860e-07</span><span class="w"></span>
+<span class="n">NH3</span><span class="w">                  </span><span class="s">3.0265e-08</span><span class="w"></span>
+<span class="n">HCN</span><span class="w">                  </span><span class="s">4.4103e-09</span><span class="w"></span>
+<span class="n">CN</span><span class="w">                   </span><span class="s">4.0110e-10</span><span class="w"></span>
+<span class="n">CH</span><span class="w">                   </span><span class="s">5.7109e-13</span><span class="w"></span>
+<span class="n">CH3</span><span class="w">                  </span><span class="s">1.5595e-13</span><span class="w"></span>
+<span class="n">CH4</span><span class="w">                  </span><span class="s">1.1358e-14</span><span class="w"></span>
+<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span><span class="w">           </span><span class="mf">3.5228e-16</span><span class="w"></span>
+
+<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
+<span class="o">------------------------------------------------------------------------</span><span class="w"></span>
+<span class="o">************************************************************************</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -389,7 +393,7 @@
 <p align="center">
 <img src="_static/img/Tutorial_1.svg" width="1000"/>
 </p>
-<p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar], a set of 24 species considered and a total of 451 case studies. The computational time was of 3.96 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered and a total of 451 case studies.</em></p>
+<p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 3.04 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz.</em></p>
 </div>
 <div class="section" id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">#</a></h2>
