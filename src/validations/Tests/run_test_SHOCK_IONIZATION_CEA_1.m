@@ -13,7 +13,7 @@
     Oxidizer = 'O2';
     Inert    = {'N2', 'Ar', 'CO2'};
     proportion_inerts_O2 = [78.084, 0.9365, 0.0319] ./ 20.9476;
-    LS =  {'eminus','Ar','Arplus','C','Cplus','Cminus','CN','CNplus','CNminus','CNN','CO','COplus','CO2','CO2plus','C2','C2plus','C2minus','CCN','CNC','OCCN','C2N2','C2O','C3','N','Nplus','Nminus','NCO','NO','NOplus','NO2','NO2minus','NO3','NO3minus','N2','N2plus','N2minus','N2O','NCN','N2Oplus','N2O3','N3','O','Oplus','Ominus','O2','O2plus','O2minus','O3'};
+    LS = 'Air_ions';
 
     DisplaySpecies = {'eminus','Ar','Arplus','C','Cplus','Cminus','CN','CNplus','CNminus',...
                       'CNN','CO','COplus','CO2','CO2plus',...
@@ -36,7 +36,7 @@
     % * Molar fractions
 %     max_rel_error_moles = compute_error_moles_CEA(results_CT, results_CEA, 'u', value, 'Xi', DisplaySpecies);
     % * Properties mixture 1
-    max_rel_error_prop_mix1 = compute_error_prop_CEA(results_CT, results_CEA, {'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u'}, value, {'T', 'rho', 'h', 'e', 'g', 'cP', 'cV', 'gamma_s'}, 'mix1');
+    max_rel_error_prop_mix1 = compute_error_prop_CEA(results_CT, results_CEA, {'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u'}, value, {'T', 'rho', 'h', 'e', 'g', 'S', 'cP', 'cV', 'gamma_s'}, 'mix1');
     % * Properties mixture 2
-    max_rel_error_prop_mix2 = compute_error_prop_CEA(results_CT, results_CEA, {'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u'}, value, {'T', 'p', 'rho', 'h', 'e', 'g', 'cP', 'gamma_s', 'cV', 'dVdT_p', 'dVdp_T'}, 'mix2');
+    max_rel_error_prop_mix2 = compute_error_prop_CEA(results_CT, results_CEA, {'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u'}, value, {'T', 'p', 'rho', 'h', 'e', 'g', 'S', 'gamma_s', 'cP', 'cV', 'dVdT_p', 'dVdp_T'}, 'mix2');
 end
