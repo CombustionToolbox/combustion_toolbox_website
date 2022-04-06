@@ -356,7 +356,7 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrate_T">
-<span class="sig-name descname"><span class="pre">equilibrate_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrate_T" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">equilibrate_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrate_T" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain equilibrium properties and composition for the given temperature [K] and pressure [bar]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -367,14 +367,20 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture</p>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">guess_moles (float): mixture composition [mol] of a previous computation</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium">
-<span class="sig-name descname"><span class="pre">equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
@@ -388,12 +394,13 @@ properties are defined by two functions of states. e.g., temperature and pressur
 <li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mixture composition [mol] of a previous computation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">N0 (float):   Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
 <li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
 </ul>
 </p>
@@ -402,7 +409,7 @@ properties are defined by two functions of states. e.g., temperature and pressur
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium_dT">
-<span class="sig-name descname"><span class="pre">equilibrium_dT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_dT" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">equilibrium_dT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_dT" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
 respect to temperature from a given composition [moles] at equilibrium</p>
 <dl class="field-list simple">
@@ -410,6 +417,7 @@ respect to temperature from a given composition [moles] at equilibrium</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
 </ul>
 </dd>
@@ -448,7 +456,7 @@ respect to pressure from a given composition [moles] at equilibrium</p>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium_ions">
-<span class="sig-name descname"><span class="pre">equilibrium_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_ions" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">equilibrium_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_ions" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar]
 considering ionization of the species. The code stems from the minimization of the free
 energy of the system by using Lagrange multipliers combined with a Newton-Raphson method,
@@ -463,12 +471,44 @@ temperature and pressure.</p>
 <li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mixture composition [mol] of a previous computation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">N0 (float):   Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium_reduced">
+<span class="sig-name descname"><span class="pre">equilibrium_reduced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_reduced" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by two functions of states. e.g., temperature and pressure.
+The algorithm implemented take advantage of the sparseness of the
+upper left submatrix obtaining a matrix A of size NE + NS-NG + 1.</p>
+<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
+1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
 <li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
 </ul>
 </p>
