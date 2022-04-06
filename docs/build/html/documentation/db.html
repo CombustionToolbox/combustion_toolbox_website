@@ -404,13 +404,11 @@ Routines<div class="sd-summary-down docutils">
 formation of a given species, we must determine the change in moles of
 gases during the formation reaction of a mole of that species starting
 from the elements in their reference state.</p>
-<div class="admonition-notes admonition">
-<p class="admonition-title">Notes</p>
-<p class="sd-card-text">The only elements that are stable as diatomic gases are elements
+<p class="sd-card-text">Notes:
+The only elements that are stable as diatomic gases are elements
 1 (H), 8 (N), 9 (O), 10 (F), and 18 (Cl). The remaining elements that
 are stable as (monoatomic) gases are the noble gases He (3), Ne (11),
 Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -659,6 +657,24 @@ set of species [J/mol]</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p class="sd-card-text"><em>g0 (float)</em> – Gibbs energy [J/mol]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.set_h0">
+<span class="sig-name descname"><span class="pre">set_h0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_h0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of enthalpies for the given set of
+species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>h0 (float)</em> – Gibbs energy [J/mol]</p>
 </dd>
 </dl>
 </dd></dl>

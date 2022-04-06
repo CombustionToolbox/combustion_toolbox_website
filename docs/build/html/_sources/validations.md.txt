@@ -20,7 +20,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
 
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/TP
 
 To repeat the results, run:
@@ -42,7 +42,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/TP
 
 To repeat the results, run:
@@ -64,7 +64,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/TP
 
 To repeat the results, run:
@@ -86,7 +86,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/TP
 
 To repeat the results, run:
@@ -108,7 +108,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/HP
 
 To repeat the results, run:
@@ -130,7 +130,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/HP
 
 To repeat the results, run:
@@ -152,7 +152,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/HP
 
 To repeat the results, run:
@@ -174,7 +174,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/HP
 
 To repeat the results, run:
@@ -196,7 +196,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/HP
 
 To repeat the results, run:
@@ -217,7 +217,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/DET
 
 To repeat the results, run:
@@ -238,7 +238,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/DET
 
 To repeat the results, run:
@@ -259,7 +259,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-* List of species considered = ListSpecies('Soot formation Extended')
+* List of species considered = `ListSpecies('Soot formation Extended')`
 * URL Folder Results CEA: ./Validations/CEA/Data/DET
 
 To repeat the results, run:
@@ -280,7 +280,7 @@ To repeat the results, run:
 * Initial mixture [moles]:
 
   <img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
-* List of species considered = {'eminus', 'Ar', 'Arplus', 'C', 'Cplus', 'Cminus', 'CN', 'CNplus', 'CNminus', 'CNN', 'CO', 'COplus', 'CO2', 'CO2plus', 'C2', 'C2plus', 'C2minus', 'CCN', 'CNC', 'OCCN', 'C2N2', 'C2O', 'C3', 'N', 'Nplus', 'Nminus', 'NCO', 'NO', 'NOplus', 'NO2', 'NO2minus', 'NO3', 'NO3minus', 'N2', 'N2plus', 'N2minus', 'N2O', 'NCN', 'N2Oplus', 'N2O3', 'N3', 'O', 'Oplus', 'Ominus', 'O2', 'O2plus', 'O2minus', 'O3'}
+* List of species considered = ListSpecies('Air_ions')
 * URL Folder Results CEA: ./Validations/CEA/Data/Shocks
 
 To repeat the results, run:
@@ -293,6 +293,27 @@ To repeat the results, run:
     <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
 
+## Validation SHOCK REFLECTED IONIZATION 1
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: Shock reflected
+* Temperature [K]   = 300
+* Pressure    [bar] = 1
+* Initial mixture [moles]:
+
+  <img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
+* List of species considered = `ListSpecies('Air_ions')`
+* URL Folder Results CEA: ./Validations/CEA/Data/Shocks
+
+To repeat the results, run:
+```matlab
+>> run_validation_SHOCK_R_IONIZATION_CEA_1.m
+```
+
+<p align="center">
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600">
+</p>
 ## Validation SHOCK POLAR 1
 
 * Contrasted with: Caltech's SD Toolbox and CANTERA

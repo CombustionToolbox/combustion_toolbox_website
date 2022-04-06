@@ -126,7 +126,7 @@ function value = interpret_label(property)
             value = 'Internal energy $[kJ/kg]$';
         case 'g'
             value = 'Gibbs energy $[kJ/kg]$';
-        case 's'
+        case {'s', 's0'}
             value = 'Entropy $[kJ/kg-K]$';
         case 'cp'
             value = '$c_p [kJ/kg-K]$';
@@ -136,6 +136,8 @@ function value = interpret_label(property)
             value = 'Adiabatic index';
         case 'u'
             value = 'Incident velocity $[m/s]$';
+        case 'v_shock'
+            value = 'Shock velocity $[m/s]$';
         otherwise
             value = strcat('$', property, '$');
     end

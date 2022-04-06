@@ -495,7 +495,187 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <span class="target" id="module-src.settings.self.TunningProperties"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.TunningProperties.TunningProperties">
 <span class="sig-name descname"><span class="pre">TunningProperties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.TunningProperties.TunningProperties" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with tunning properties data</p>
+<dd><p>Initialize struct with tunning properties attributes</p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.FLAG_FAST">
+<span class="sig-name descname"><span class="pre">FLAG_FAST</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.FLAG_FAST" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag indicating use guess composition of the previous computation (default: false)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tolN">
+<span class="sig-name descname"><span class="pre">tolN</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tolN" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the Gibbs minimization method                        (default: 1e-15)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tolE">
+<span class="sig-name descname"><span class="pre">tolE</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tolE" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the mass balance                                     (default: 1e-06)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_pi_e">
+<span class="sig-name descname"><span class="pre">tol_pi_e</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_pi_e" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the dimensionless Lagrangian multiplier - ions       (default: 1e-04)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the root finding algorithm                           (default: 1e-03)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_method">
+<span class="sig-name descname"><span class="pre">root_method</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_method" title="Permalink to this definition">#</a></dt>
+<dd><p>Method for root finding                                           (default: newton)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - root finding method - HP, EV, SP, SV   (default: 30)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_l">
+<span class="sig-name descname"><span class="pre">root_T0_l</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_l" title="Permalink to this definition">#</a></dt>
+<dd><p>First guess T [K] left branch - root finding method               (default: 300)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_r">
+<span class="sig-name descname"><span class="pre">root_T0_r</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_r" title="Permalink to this definition">#</a></dt>
+<dd><p>First guess T [K] right branch - root finding method              (default: 1500)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0">
+<span class="sig-name descname"><span class="pre">root_T0</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0" title="Permalink to this definition">#</a></dt>
+<dd><p>Guess T[K] if it’s of previous range - root finding method        (default: 2000)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_shocks">
+<span class="sig-name descname"><span class="pre">tol_shocks</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_shocks" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of shocks routines                                      (default: 5e-05)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_shocks">
+<span class="sig-name descname"><span class="pre">it_shocks</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_shocks" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - shocks and detonations                 (default: 50)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.volume_ratio">
+<span class="sig-name descname"><span class="pre">volume_ratio</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.volume_ratio" title="Permalink to this definition">#</a></dt>
+<dd><p>Initial guess volume ratio shocks                                 (default: 5)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_oblique">
+<span class="sig-name descname"><span class="pre">tol_oblique</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_oblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance oblique shocks                                          (default: 1e-03)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_oblique">
+<span class="sig-name descname"><span class="pre">it_oblique</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_oblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - oblique shocks                         (default: 20)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.N_points_polar">
+<span class="sig-name descname"><span class="pre">N_points_polar</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.N_points_polar" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points to compute shock polar                           (default: 100)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_rocket">
+<span class="sig-name descname"><span class="pre">tol_rocket</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_rocket" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance rocket performance                                      (default: 1e-04)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_rocket">
+<span class="sig-name descname"><span class="pre">it_rocket</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_rocket" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - rocket performance                     (default: 10)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>self (struct)</em> – struct with tunning properties data</p>
