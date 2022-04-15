@@ -596,7 +596,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </ul>
 </li>
 <li><p>List of species considered = {‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H’, ‘H2O’, ‘He’, ‘N2’, ‘N’, ‘NH3’, ‘O’}</p></li>
-<li><p>URL Results TEA: https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea</p></li>
+<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea">https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
@@ -611,20 +611,12 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 1 assumming a T-P profile.</p></li>
 <li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
 <li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
-<li><p>Initial mixture [moles]:</p>
-<ul>
-<li><p>H  = 1.0000000000e+00</p></li>
-<li><p>He = 8.5113803820e-02</p></li>
-<li><p>C  = 2.6915348039e-04</p></li>
-<li><p>N  = 6.7608297539e-05</p></li>
-<li><p>O  = 4.8977881937e-04</p></li>
-<li><p>S  = 1.3182567386e-05</p></li>
-</ul>
-</li>
-<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’}</p></li>
-<li><p>URL Results TEA: https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar</p></li>
+<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 1</p></li>
+<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
+<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
@@ -632,6 +624,46 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </div>
 <p align="left">
 <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000"/>
+</p>
+</div>
+<div class="section" id="validation-tea-3">
+<h2>Validation TEA 3<a class="headerlink" href="#validation-tea-3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
+<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 10 assumming a T-P profile.</p></li>
+<li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
+<li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
+<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 10</p></li>
+<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
+<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar</a></p></li>
+</ul>
+<p>To repeat the results, run:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+</pre></div>
+</div>
+<p align="left">
+<img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000"/>
+</p>
+</div>
+<div class="section" id="validation-tea-4">
+<h2>Validation TEA 4<a class="headerlink" href="#validation-tea-4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
+<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 50 assumming a T-P profile.</p></li>
+<li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
+<li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
+<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 50</p></li>
+<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
+<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar</a></p></li>
+</ul>
+<p>To repeat the results, run:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+</pre></div>
+</div>
+<p align="left">
+<img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000"/>
 </p> </div>
 </div>
 
@@ -719,6 +751,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><a class="reference internal" href="#validation-shock-reflected-ionization-1">Validation SHOCK REFLECTED IONIZATION 1</a></li>
 <li><a class="reference internal" href="#validation-tea-1">Validation TEA 1</a></li>
 <li><a class="reference internal" href="#validation-tea-2">Validation TEA 2</a></li>
+<li><a class="reference internal" href="#validation-tea-3">Validation TEA 3</a></li>
+<li><a class="reference internal" href="#validation-tea-4">Validation TEA 4</a></li>
 </ul>
 </li>
 </ul>
