@@ -348,7 +348,7 @@ To repeat the results, run:
   + N  = 6.7608297539e-05
   + O  = 4.8977881937e-04
 * List of species considered = {'C', 'CH4', 'CO2', 'CO', 'H2', 'H', 'H2O', 'He', 'N2', 'N', 'NH3', 'O'}
-* URL Results TEA: https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea
+* URL Results TEA: [https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea](https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea)
 
 To repeat the results, run:
 ```matlab
@@ -362,17 +362,12 @@ To repeat the results, run:
 ## Validation TEA 2
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined T and p
+* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 1 assumming a T-P profile. 
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
-* Initial mixture [moles]:
-  + H  = 1.0000000000e+00
-  + He = 8.5113803820e-02
-  + C  = 2.6915348039e-04
-  + N  = 6.7608297539e-05
-  + O  = 4.8977881937e-04
-  + S  = 1.3182567386e-05
-* List of species considered = {'C2H2_acetylene', 'C2H4', 'C', 'CH4', 'CO2', 'CO', 'H2', 'H2O', 'H2S', 'H', 'HCN', 'He', 'SH', 'N2', 'N', 'NH3', 'O'}
-* URL Results TEA: https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar
+* Initial mixture: Computed from solar abundances assuming a metallicity zeta = 1
+* List of species considered = {'C2H2_acetylene', 'C2H4', 'C', 'CH4', 'CO2', 'CO', 'H2', 'H2O', 'H2S', 'H', 'HCN', 'He', 'SH', 'N2', 'N', 'NH3', 'O', 'S'}
+* URL Results TEA: [https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar](https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar)
 
 To repeat the results, run:
 ```matlab
@@ -381,4 +376,42 @@ To repeat the results, run:
 
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000">
+</p> 
+
+## Validation TEA 3
+* Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
+* Problem type: Equilibrium composition at defined T and p
+* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 10 assumming a T-P profile. 
+* Temperature [K]   = [958.36, 1811.89]
+* Pressure    [bar] = [2.3988e-06, 31.6230]
+* Initial mixture: Computed from solar abundances assuming a metallicity zeta = 10
+* List of species considered = {'C2H2_acetylene', 'C2H4', 'C', 'CH4', 'CO2', 'CO', 'H2', 'H2O', 'H2S', 'H', 'HCN', 'He', 'SH', 'N2', 'N', 'NH3', 'O', 'S'}
+* URL Results TEA: [https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar](https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar)
+
+To repeat the results, run:
+```matlab
+>> run_validation_TP_TEA_3.m
+```
+
+<p align="left">
+    <img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000">
+</p> 
+
+## Validation TEA 4
+* Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
+* Problem type: Equilibrium composition at defined T and p
+* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 50 assumming a T-P profile. 
+* Temperature [K]   = [958.36, 1811.89]
+* Pressure    [bar] = [2.3988e-06, 31.6230]
+* Initial mixture: Computed from solar abundances assuming a metallicity zeta = 50
+* List of species considered = {'C2H2_acetylene', 'C2H4', 'C', 'CH4', 'CO2', 'CO', 'H2', 'H2O', 'H2S', 'H', 'HCN', 'He', 'SH', 'N2', 'N', 'NH3', 'O', 'S'}
+* URL Results TEA: [https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar](https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar)
+
+To repeat the results, run:
+```matlab
+>> run_validation_TP_TEA_4.m
+```
+
+<p align="left">
+    <img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000">
 </p> 
