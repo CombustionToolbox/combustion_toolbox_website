@@ -352,9 +352,33 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_TEA.m
+>> run_validation_TP_TEA_1.m
 ```
 
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000">
+</p> 
+
+## Validation TEA 2
+* Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
+* Problem type: Equilibrium composition at defined T and p
+* Temperature [K]   = [958.36, 1811.89]
+* Pressure    [bar] = [2.3988e-06, 31.6230]
+* Initial mixture [moles]:
+  + H  = 1.0000000000e+00
+  + He = 8.5113803820e-02
+  + C  = 2.6915348039e-04
+  + N  = 6.7608297539e-05
+  + O  = 4.8977881937e-04
+  + S  = 1.3182567386e-05
+* List of species considered = {'C2H2_acetylene', 'C2H4', 'C', 'CH4', 'CO2', 'CO', 'H2', 'H2O', 'H2S', 'H', 'HCN', 'He', 'SH', 'N2', 'N', 'NH3', 'O'}
+* URL Results TEA: https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar
+
+To repeat the results, run:
+```matlab
+>> run_validation_TP_TEA_2.m
+```
+
+<p align="left">
+    <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000">
 </p> 
