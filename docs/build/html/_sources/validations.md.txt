@@ -362,7 +362,7 @@ To repeat the results, run:
 ## Validation TEA 2
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined T and p
-* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 1 assumming a T-P profile. 
+* Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 1$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
 * Initial mixture: Computed from solar abundances assuming a metallicity zeta = 1
@@ -381,7 +381,7 @@ To repeat the results, run:
 ## Validation TEA 3
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined T and p
-* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 10 assumming a T-P profile. 
+* Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 10$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
 * Initial mixture: Computed from solar abundances assuming a metallicity zeta = 10
@@ -400,7 +400,7 @@ To repeat the results, run:
 ## Validation TEA 4
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined T and p
-* Description: Thermochemical equilibrium vertical distribution for different a metallicity zeta = 50 assumming a T-P profile. 
+* Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 50$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
 * Initial mixture: Computed from solar abundances assuming a metallicity zeta = 50
