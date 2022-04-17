@@ -74,10 +74,10 @@ Completely open source, GUI included!
 :::
 
 :::{grid-item-card} {octicon}`server` Extensive database with NASA’s 9-coefficient polynomial fits up to 20000 K
-:link: https://ntrs.nasa.gov/citations/20020085330
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/db.html
 :::
 
-:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `CANTERA`, and `Caltech's SD-Toolbox`.
+:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `CANTERA`, `Caltech's SD-Toolbox`, and `TEA`.
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/validations.html
 :::
 
