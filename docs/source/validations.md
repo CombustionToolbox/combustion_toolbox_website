@@ -314,6 +314,7 @@ To repeat the results, run:
     <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="600">
     <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
+
 ## Validation SHOCK POLAR 1
 
 * Contrasted with: Caltech's SD Toolbox and CANTERA
@@ -334,6 +335,33 @@ To repeat the results, run:
 <p align="center">
     <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400">
     <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400">
+</p>
+
+## Validation ROCKET 1
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: ROCKET
+* Description: Equilibrium composition at exit of the rocket nozzle
+* Temperature Fuel [K] = 298.15
+* Temperature Oxid [K] = 90.17
+* Chamber pressure [bar] = 22
+* Finite-Area-Chamber model (FAC)
+* Area ratio $A_{\rm chamber} / A_{\rm throat}$ = 2
+* Area ratio $A_{\rm exit} / A_{\rm throat}$ = [1:2.6]
+* Initial mixture [moles]:
+
+  <img src="https://latex.codecogs.com/svg.image?\text{RP1}&space;&plus;&space;\frac{0.6723}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[1,&space;4]&space;"/>
+* List of species considered = HC/O2/N2 PROPELLANTS
+* URL Folder Results CEA: ./Validations/CEA/ROCKET
+
+To repeat the results, run:
+```matlab
+>> run_validation_ROCKET_CEA_1.m
+>> run_validation_ROCKET_CEA_16.m
+```
+
+<p align="center">
+    <img src="_static/gif/validation_rocket.gif" width="720">
 </p>
 
 ## Validation TEA 1
