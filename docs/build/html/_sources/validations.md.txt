@@ -187,6 +187,51 @@ To repeat the results, run:
     <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600">
 </p>
 
+## Validation TV 1
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: Equilibrium composition at defined T and v
+* Temperature [K]   = 3000
+* Pressure    [bar] = 1.0132
+* Initial mixture [moles]:
+
+  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* List of species considered = `ListSpecies('Soot formation Extended')`
+* URL Folder Results CEA: ./Validations/CEA/Data/TV
+
+To repeat the results, run:
+```matlab
+>> run_validation_TV_CEA_1.m
+```
+
+<p align="center">
+    <img src="_static/img/run_validation_TV_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="600">
+</p>
+
+## Validation EV 1
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: Adiabatic T and composition at constant v
+* Temperature [K]   = 300
+* Pressure    [bar] = 1.0132
+* Initial mixture [moles]:
+  
+    <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* List of species considered = `ListSpecies('Soot formation Extended')`
+* URL Folder Results CEA: ./Validations/CEA/Data/EV
+
+To repeat the results, run:
+```matlab
+>> run_validation_EV_CEA_1.m
+```
+
+<p align="center">
+    <img src="_static/img/run_validation_EV_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="600">
+</p>
+
+
 ## Validation DET 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
