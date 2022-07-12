@@ -15,8 +15,8 @@ It can be handy the BibTeX format:
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems",
     year = 2022,
-    note = "Version 0.9.6",
-    doi = {https://doi.org/10.5281/zenodo.6635715}
+    note = "Version 0.9.7",
+    doi = {https://doi.org/10.5281/zenodo.6820698}
 }
 ```
 
