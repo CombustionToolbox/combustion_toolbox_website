@@ -38,28 +38,24 @@ For example, for a stochiometric CH4-ideal_air mixture:
 ```matlab
 >> self.PD.S_Fuel     = {'CH4'};
 >> self.PD.N_Fuel     = 1;
->> self.PD.S_Oxidizer = {'O2'};
->> self.PD.N_Oxidizer = 2;
->> self.PD.S_Inert    = {'N2'};
->> self.PD.N_Inert    = 7.52;
+>> self.PD.S_Oxidizer = {'N2', 'O2'};
+>> self.PD.N_Oxidizer = [7.52, 2];
 ```
 This is the same as specifying a unit value for the equivalence ratio:
 ```matlab
 >> self.PD.S_Fuel     = {'CH4'};
->> self.PD.S_Oxidizer = {'O2'};
->> self.PD.S_Inert    = {'N2'};
+>> self.PD.S_Oxidizer = {'N2', 'O2'};
+>> self.PD.ratio_oxidizers_O2 = [79, 21]/21;
 >> self = set_prop(self, 'phi', 1);
->> self.PD.proportion_inerts_O2 = 79/21;
 ```
-The last two lines of code establish the equivalence relation and the proportion of the inert species over the oxidazer, respectively. The number of moles is calculated considering that the number of moles of fuel is one.
+The last two lines of code establish the proportion of the oxidizers species over O$_2$ and the equivalence ratio, respectively. The number of moles is calculated considering that the number of moles of fuel is one.
 ### Several cases
 Combustion Toolbox also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:
 ```matlab
 >> self.PD.S_Fuel     = {'CH4'};
->> self.PD.S_Oxidizer = {'O2'};
->> self.PD.S_Inert    = {'N2'};
+>> self.PD.S_Oxidizer = {'N2', 'O2'};
+>> self.PD.ratio_oxidizers_O2 = [79, 21]/21;
 >> self = set_prop(self, 'phi', 0.5:0.01:5);
->> self.PD.proportion_inerts_O2 = 79/21;
 ```
 ## Chemical Equilibrium
 

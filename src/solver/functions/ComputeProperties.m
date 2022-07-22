@@ -39,8 +39,8 @@ function mix =  ComputeProperties(self, SpeciesMatrix, p, T)
     mix.W = 1/sum(mix.Yi./SpeciesMatrix(:,12), 'OmitNan');
     % Compute vector atoms of each element
     mix.NatomE = sum(Ni .* self.C.A0.value);
-    % Assign values for C, H, O, and N elements
-    mix = assign_values_CHON(self, mix);
+    % Compute vector atoms of each element without frozen species
+    mix.NatomE_react = sum(SpeciesMatrix(self.S.ind_react,1) .* self.C.A0.value(self.S.ind_react, :));
     % Compute volume [m3]
     mix.v = mix.pv / mix.p;
     % Compute density [kg/m3]
@@ -48,15 +48,13 @@ function mix =  ComputeProperties(self, SpeciesMatrix, p, T)
     % Compute enthalpy [kJ]
     mix.h = mix.hf + mix.DhT;
     % Compute internal energy [kJ]
-    mix.e = mix.ef + mix.DeT; 
+    mix.e = mix.h - molesGas(mix) * R0 * T * 1e-3;
     % Compute entropy of mixing [kJ/K]
     mix.DS = compute_entropy_mixing(mix, Ni, R0, FLAG_NONZERO);
     % Compute entropy [kJ/K]
     mix.S = mix.S0 + mix.DS;
     % Compute Gibbs energy [kJ]
     mix.g = mix.h - mix.T * mix.S;
-    % Compute internal energy [kJ]
-    mix.e = mix.h - sum(Ni(FLAG_NONZERO) .* (1 - mix.swtCond(FLAG_NONZERO))) * R0 * T *1e-3; % [kJ]
     % Compute Adibatic index [-]
     mix.gamma = mix.cP/mix.cV;
     % Compute sound velocity [m/s]
@@ -71,8 +69,9 @@ function mix =  ComputeProperties(self, SpeciesMatrix, p, T)
             delta = ~mix.swtCond;
             h0_j = (SpeciesMatrix(:, 2) + SpeciesMatrix(:, 3)) ./ Ni * 1e3; % [J/mol]
             mix.cP_r = sum(h0_j/T .* (1 +  delta .* (Ni - 1)) .* self.dNi_T, 'omitnan'); % [J/K]
-            mix.cP = mix.cP + mix.cP_r; % [J/K]
-            mix.cV = mix.cP + (mix.pv/T * mix.dVdT_p^2) / mix.dVdp_T * 1e5; % [J/K]
+            mix.cP_f = mix.cP;
+            mix.cP = mix.cP_f + mix.cP_r; % [J/K]
+            mix.cV = mix.cP + (molesGas(mix) * R0 * mix.dVdT_p^2) / mix.dVdp_T; % [J/K]
             mix.gamma = mix.cP/mix.cV; % [-]
             mix.gamma_s = - mix.gamma / mix.dVdp_T; % [-]
             mix.sound = sqrt(mix.gamma_s * p*1e5 / mix.rho); % [m/s]
@@ -85,15 +84,6 @@ function mix =  ComputeProperties(self, SpeciesMatrix, p, T)
 end
 
 % SUB-PASS FUNCTIONS
-function mix = assign_values_CHON(self, mix)
-    % Assign values for C, H, O, and N elements
-    
-    if isempty(self.E.ind_C), mix.x = 0; else, mix.x = mix.NatomE(self.E.ind_C); end
-    if isempty(self.E.ind_H), mix.y = 0; else, mix.y = mix.NatomE(self.E.ind_H); end
-    if isempty(self.E.ind_O), mix.z = 0; else, mix.z = mix.NatomE(self.E.ind_O); end
-    if isempty(self.E.ind_N), mix.w = 0; else, mix.w = mix.NatomE(self.E.ind_N); end
-end
-
 function DS = compute_entropy_mixing(mix, Ni, R0, FLAG_NONZERO)
     % Compute entropy of mixing [kJ/K].
     % Note: only nonzero for noncondensed species

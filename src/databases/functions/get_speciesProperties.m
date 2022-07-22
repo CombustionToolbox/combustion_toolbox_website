@@ -47,10 +47,10 @@ function [txFormula, mm, cP0, cV0, hf0, h0, ef0, e0, s0, g0] = get_speciesProper
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Change lowercase 'l' to uppercase 'L'
-    species(strfind(species,'Al')+1)='L';
-    species(strfind(species,'Cl')+1)='L';
-    species(strfind(species,'Tl')+1)='L';
-    species(strfind(species,'Fl')+1)='L';
+    species = replace(species, 'Al', 'AL');
+    species = replace(species, 'Cl', 'CL');
+    species = replace(species, 'Tl', 'TL');
+    species = replace(species, 'Fl', 'FL');
     
     % Store species name with parenthesis (i.e., the name appearing in NASA's
     % document tables)
@@ -59,12 +59,20 @@ function [txFormula, mm, cP0, cV0, hf0, h0, ef0, e0, s0, g0] = get_speciesProper
     % Substitute opening and closing parenthesis and other reserved characters 
     % by 'b' in order to format the species name as in the thermo.inp
     % electronic database 
+
+    FLAG_MILLENIUM = false;
+    if contains(species, '_M')
+        species = strrep(species, '_M', '');
+        FLAG_MILLENIUM = true;
+    end
+    
     name = species;
     if name(end)=='+'
         name=[name(1:end-1) 'plus'];
     elseif name(end)=='-'
         name=[name(1:end-1) 'minus'];
     end
+
     ind=regexp(name,'[()]');
     name(ind)='b';
     ind=regexp(name,'\W');
@@ -72,7 +80,9 @@ function [txFormula, mm, cP0, cV0, hf0, h0, ef0, e0, s0, g0] = get_speciesProper
     if regexp(name(1),'[0-9]')
         name=['num_' name];
     end
-    
+    if FLAG_MILLENIUM
+        name = strcat(name, '_M');
+    end
     species = name;
     
     % If the given species does not exist in strDB, abort the program
@@ -172,10 +182,10 @@ function [txFormula, mm, cP0, cV0, hf0, h0, ef0, e0, s0, g0] = get_speciesProper
             cP0  = [];
             cV0  = [];
             h0   = [];
-            ef0  = [];
+            ef0  = hf0 - Delta_n * R0 * Tref;
             e0   = [];
             s0   = [];
-            g0 = [];
+            g0   = [];
             return
         end
     
@@ -189,7 +199,7 @@ function [txFormula, mm, cP0, cV0, hf0, h0, ef0, e0, s0, g0] = get_speciesProper
         h0  = R0 * T * (sum(a{tInterval} .* T.^tExponents{tInterval} .* [-1 log(T) 1 1/2 1/3 1/4 1/5 0]) + b{tInterval}(1)/T);
         ef0 = hf0 - Delta_n * R0 * Tref;
         e0  = ef0 + (h0 - hf0) - (1 - swtCondensed) * R0 * (T - Tref);
-        s0  = R0 * (sum(a{tInterval} .* T.^tExponents{tInterval} .* [-1/2 -1 log(T) 1   1/2 1/3 1/4 0]) + b{tInterval}(2));
+        s0  = R0 * (sum(a{tInterval} .* T.^tExponents{tInterval} .* [-1/2 -1 log(T) 1 1/2 1/3 1/4 0]) + b{tInterval}(2));
         
         % Compute the standar gibbs free energy of formation at the specified
         % temperature. This enforces us to consider explicitely the formation

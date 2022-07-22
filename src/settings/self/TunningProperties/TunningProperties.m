@@ -31,16 +31,18 @@ function self = TunningProperties()
     % * Flags
     self.FLAG_FAST = false;     % Flag indicating use guess composition of the previous computation
     % * Chemical equilibrium TP, TV
-    self.tolN = 1e-15;          % Tolerance of the gibbs minimization method
+    self.itMax_gibbs = 70;      % Max number of iterations - gibbs minimization method
+    self.itMax_ions = 30;       % Max number of iterations - charge balance (ions)
+    self.tolN = 1e-14;          % Tolerance of the gibbs minimization method
     self.tolE = 1e-6;           % Tolerance of the mass balance
     self.tol_pi_e = 1e-4;       % Tolerance of the dimensionless Lagrangian multiplier - ions
     % * Chemical equilibrium HP, EV, SP, SV
     self.tol0 = 1e-3;           % Tolerance of the root finding algorithm
     self.root_method = @newton; % Method for root finding
     self.itMax = 30;            % Max number of iterations - root finding method
-    self.root_T0_l = 300;       % First guess T[K] left branch - root finding method
-    self.root_T0_r = 1500;      % First guess T[K] right branch - root finding method
-    self.root_T0   = 2000;      % Guess T[K] if it's of previous range - root finding method
+    self.root_T0_l = 1000;      % First guess T[K] left branch - root finding method
+    self.root_T0_r = 2000;      % First guess T[K] right branch - root finding method
+    self.root_T0   = 3000;      % Guess T[K] if it's of previous range - root finding method
     % * Shocks and detonations 
     self.tol_shocks = 5e-5;     % Tolerance of shocks routines
     self.it_shocks = 50;        % Max number of iterations - shocks and detonations

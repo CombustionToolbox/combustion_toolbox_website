@@ -7,6 +7,11 @@ function name = FullName2name(species)
     % Return:
     %     name (str): Full name of the given species
     
+    FLAG_MILLENIUM = false;
+    if contains(species, '_M')
+        species = strrep(species, '_M', '');
+        FLAG_MILLENIUM = true;
+    end
     name = species;
     if isempty(name)
         return
@@ -25,4 +30,7 @@ function name = FullName2name(species)
     end
     ind=regexp(name,'\x27');
     name(ind)='_';
+    if FLAG_MILLENIUM
+        name = strcat(name, '_M');
+    end
 end

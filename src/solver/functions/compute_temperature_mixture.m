@@ -18,10 +18,10 @@ function T = compute_temperature_mixture(self, species, moles, temperatures)
         if length(unique(temperatures)) > 1
             % Obtain specific heat capacity at constant volume and thermal enthalpy
             % by evaluating each species at its initial temperature
-            cP_0 = get_property_list_species(@species_cV_NASA, species, temperatures, self.DB);
+            cV_0 = get_property_list_species(@species_cV_NASA, species, temperatures, self.DB);
             h0_0 = get_property_list_species(@species_h0_NASA, species, temperatures, self.DB);
             % Guess of the temperature of the mixture at equilibrium
-            T = sum(moles .* temperatures .* cP_0) / sum(moles .* cP_0); 
+            T = sum(moles .* temperatures .* cV_0) / sum(moles .* cV_0); 
             % Constants
             it = 0; ERR = 1.0;
             % Solver: numerical 1D Newton-Raphson method

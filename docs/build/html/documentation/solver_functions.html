@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Chemical equilibrium" href="solver_chemical_equilibrium.html" /><link rel="prev" title="Solvers" href="solver.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Functions - Combustion Toolbox v0.9.7</title>
+        <title>Functions - Combustion Toolbox v0.9.8</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.7</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.8</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_dark.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.7</span>
+  <span class="sidebar-brand-text">Combustion Toolbox v0.9.8</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -379,7 +379,7 @@ and temperature T [K]</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.cell2vector">
 <span class="sig-name descname"><span class="pre">cell2vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.cell2vector" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Convert values of a individual cell into a vector. If the value
+<dd><p class="sd-card-text">Convert values of an individual cell into a vector. If the value
 correspond with a struct it can return as a vector the values of a
 given fieldname.</p>
 <dl class="field-list simple">
@@ -551,15 +551,19 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.functions.setup_segregated_solver">
+<span class="sig-name descname"><span class="pre">setup_segregated_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.setup_segregated_solver" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get additional inputs necessary to use the segregated model</p>
+</dd></dl>
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.soundspeed_eq">
-<span class="sig-name descname"><span class="pre">soundspeed_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">P0</span></em>, <em class="sig-param"><span class="pre">T0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.soundspeed_eq" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">soundspeed_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">P0</span></em>, <em class="sig-param"><span class="pre">T0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.soundspeed_eq" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute speed of sound at equilibrium</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct mix with all the properties of the mixture</p></li>
-<li><p class="sd-card-text"><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equivalence ratio [-]</p></li>
 <li><p class="sd-card-text"><strong>P0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>T0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 </ul>
@@ -616,7 +620,7 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 <span class="target" id="module-src.solver.functions.root_finding.newton"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.root_finding.newton.newton">
-<span class="sig-name descname"><span class="pre">newton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.newton.newton" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">newton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.newton.newton" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Find the temperature [K] (root) for the set chemical transformation at equilibrium using the Newton-Raphson method</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -626,13 +630,15 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
 <li><p class="sd-card-text"><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess moles final mixture</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">x (float):     Temperature at equilibrium [K]</p></li>
-<li><p class="sd-card-text">STOP (float):  Relative error [-]</p></li>
+<li><p class="sd-card-text">x (float): Temperature at equilibrium [K]</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">guess_moles (struct): Guess moles final mixture</p></li>
 </ul>
 </p>
 </dd>
@@ -640,7 +646,7 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 <span class="target" id="module-src.solver.functions.root_finding.steffenson"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.root_finding.steffenson.get_gpoint">
-<span class="sig-name descname"><span class="pre">get_gpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.steffenson.get_gpoint" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_gpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.steffenson.get_gpoint" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get fixed point of a function based on the chemical transformation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -696,7 +702,7 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.root_finding.steffenson.steff">
-<span class="sig-name descname"><span class="pre">steff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.steffenson.steff" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">steff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.root_finding.steffenson.steff" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Find the temperature [K] (root) for the set chemical transformation at equilibrium using the Steffenson-Aitken method</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -706,6 +712,7 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
 <li><p class="sd-card-text"><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess moles final mixture</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -713,6 +720,7 @@ Routines<div class="sd-summary-down docutils">
 <ul class="simple">
 <li><p class="sd-card-text">x (float):    Temperature at equilibrium [K]</p></li>
 <li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">guess_moles (float): Guess moles final mixture</p></li>
 </ul>
 </p>
 </dd>
@@ -958,6 +966,19 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 </dd></dl>
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.functions.thermo.mass">
+<span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.thermo.mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass [kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – mass [kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.thermo.massFractions">
 <span class="sig-name descname"><span class="pre">massFractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.thermo.massFractions" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get the mass fractions of all the species in the mixture [-]</p>
@@ -1010,6 +1031,11 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 </dd></dl>
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.functions.thermo.molesGas">
+<span class="sig-name descname"><span class="pre">molesGas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.thermo.molesGas" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the moles of the gases in the mixture [mol]</p>
+</dd></dl>
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.solver.functions.thermo.pressure">
 <span class="sig-name descname"><span class="pre">pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.thermo.pressure" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get the pressure [bar] in the mixture</p>
@@ -1058,6 +1084,19 @@ Routines<div class="sd-summary-down docutils">
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Velocity of the gases relative to the shock front [m/s] in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.solver.functions.thermo.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.functions.thermo.volume" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the volume [m3] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – volume [m3] of the mixture</p>
 </dd>
 </dl>
 </dd></dl>
