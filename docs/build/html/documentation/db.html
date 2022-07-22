@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Settings" href="settings.html" /><link rel="prev" title="Functions" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Database - Combustion Toolbox v0.9.7</title>
+        <title>Database - Combustion Toolbox v0.9.8</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.7</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.8</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_dark.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.7</span>
+  <span class="sidebar-brand-text">Combustion Toolbox v0.9.8</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -454,6 +454,40 @@ Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.find_species_LS">
+<span class="sig-name descname"><span class="pre">find_species_LS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">cond_with</span></em>, <em class="sig-param"><span class="pre">type_with</span></em>, <em class="sig-param"><span class="pre">cond_without</span></em>, <em class="sig-param"><span class="pre">type_without</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.find_species_LS" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Find species contained in the given database that contain all/any
+elements of cond_with and that not include all/any elements of
+cond_without</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>cond_with</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of elements to include</p></li>
+<li><p class="sd-card-text"><strong>type_with</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Satisfy all or any of the elements in cond_with</p></li>
+<li><p class="sd-card-text"><strong>cond_without</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of elements to avoid</p></li>
+<li><p class="sd-card-text"><strong>type_without</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Satisfy all or any of the elements in cond_without</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>LS (cell)</em> – List of species</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<dl class="simple">
+<dt>LS = find_species_LS(LS, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><dl class="simple">
+<dt>{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…</dt><dd><p class="sd-card-text">‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’, ‘G’,’K’,…
+‘U’,’Co’,’Cu’,’B’,’V’,’Ni’,’Na’,’Mg’,…
+‘Mo’,’Ag’,’Nb’,’Cb’,’Cl’,’D’,’T’, ‘Ca’,…
+‘Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.databases.functions.generate_DB">
 <span class="sig-name descname"><span class="pre">generate_DB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB_master</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.generate_DB" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Generate Database (DB) with thermochemical interpolation curves for
@@ -623,6 +657,60 @@ if comes in pair represents parenthesis in the NASA’s database</p>
 </dl>
 </dd></dl>
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.set_DhT">
+<span class="sig-name descname"><span class="pre">set_DhT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_DhT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of thermal enthalpy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>DhT (float)</em> – Thermal enthalpy [J/mol]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.set_cP">
+<span class="sig-name descname"><span class="pre">set_cP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_cP" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of specific heats at constant
+pressure for the given set of species [J/(mol-K)]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>cP (float)</em> – Specific heat at constant pressure [J/(mol-K)]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.set_e0">
+<span class="sig-name descname"><span class="pre">set_e0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_e0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of internal energy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>e0 (float)</em> – Internal energy [J/mol]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.databases.functions.set_element_matrix">
 <span class="sig-name descname"><span class="pre">set_element_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">txFormula</span></em>, <em class="sig-param"><span class="pre">elements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_element_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute element matrix of the given species</p>
@@ -696,6 +784,24 @@ species [J/mol]</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p class="sd-card-text"><em>list (cell)</em> – List with reference form of elements and its
 temperature intervals</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.set_s0">
+<span class="sig-name descname"><span class="pre">set_s0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.set_s0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of entropy for the given
+set of species [J/(mol-K)]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>s0 (float)</em> – Entropy [J/(mol-K)]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1012,6 +1118,18 @@ using NASA’s 9 polynomials</p>
 <li><p class="sd-card-text">g0  (float): Gibbs energy [kJ/mol]</p></li>
 </ul>
 </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.databases.functions.thermo_millenium_2_thermoNASA9">
+<span class="sig-name descname"><span class="pre">thermo_millenium_2_thermoNASA9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.databases.functions.thermo_millenium_2_thermoNASA9" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read Extended Third Millennium Thermodynamic Database of New NASA
+Polynomials with Active Thermochemical Tables update and write a new
+file compatible with thermo NASA 9 format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">file</span></code></span>) – Filename of the thermo_millenium data</p>
 </dd>
 </dl>
 </dd></dl>

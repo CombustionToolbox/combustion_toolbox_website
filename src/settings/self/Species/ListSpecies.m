@@ -146,7 +146,7 @@ function self = ListSpecies(varargin)
                 'HNO2','N','NH3','NO2','N2O','N2H4','N2O5','O','O3',...
                 'HO2','NH2','H2O2','N3H','NH2NO2'};
         
-        elseif strcmpi(LS, 'HYDROGEN_IONS')
+        elseif strcmpi(LS, 'HYDROGEN_IONS') | strcmpi(LS, 'HYDROGEN IONS')
         self.S.LS = {'H2O','H2','O2','N2','H','OH','H2O2','H2Oplus',...
             'H2minus','H2plus','H3Oplus','HNO','HNO2','HNO3','HO2',...
             'HO2minus','Hminus','Hplus','N','N2H2','N2H4','N2O','N2O3',...
@@ -175,6 +175,13 @@ function self = ListSpecies(varargin)
                         'NCO','NH','NH2','NH2OH','NH3','NO','NO2',...
                         'O','OCCN','OH','C3O2','C4N2','RP_1','H2bLb',...
                         'O2bLb'};
+
+        elseif strcmpi(LS, 'Si/HC/O2/N2 PROPELLANTS')
+            self.S.LS = {'CO2','CO','H2O','H2','O2','N2','He','Ar','Cbgrb',...
+                         'C2','C2H4','CH','CH','CH3','CH4','CN','H',...
+                         'H2O2','HCN','HCO','N','NH','NH2','NH3','NO','O','OH',...
+                         'O2bLb','Si','SiH','SiH2','SiH3','SiH4','SiO2','SiO',...
+                         'SibLb','SiO2bLb','Si2'};
         else
             self.S.LS = LS;
         end
@@ -191,8 +198,11 @@ function self = ListSpecies(varargin)
     self.S.LS_formula = get_formula(self.S.LS, self.DB);
     
     if any(get_index_ions(self.S.LS))
-        self.PD.ionization = true;
+        self.PD.FLAG_ION = true;
     end
+
+    % Find index O2
+    self.S.ind_O2 = find_ind(self.S.LS, 'O2');
 end
 
 % SUB-PASS FUNCTIONS
