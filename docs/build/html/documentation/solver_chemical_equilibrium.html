@@ -188,7 +188,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET.html">Example_ROCKET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
 </ul>
 </li>
 </ul>
@@ -322,7 +323,7 @@ Routines<div class="sd-summary-down docutils">
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
 <li><p class="sd-card-text">moles (float): Equilibrium composition [moles] at defined temperature</p></li>
 <li><p class="sd-card-text">species (str): Species considered in the complemte combustion model</p></li>
@@ -398,10 +399,15 @@ properties are defined by temperature and pressure.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
-<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
 </ul>
 </p>
 </dd>
@@ -418,7 +424,14 @@ respect to temperature from a given composition [moles] at equilibrium</p>
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
 <li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>temp_NG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of gaseous species</p></li>
+<li><p class="sd-card-text"><strong>temp_NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of species</p></li>
+<li><p class="sd-card-text"><strong>temp_NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>temp_ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -441,11 +454,18 @@ respect to pressure from a given composition [moles] at equilibrium</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
-<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>temp_NG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of gaseous species</p></li>
+<li><p class="sd-card-text"><strong>temp_NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of species</p></li>
+<li><p class="sd-card-text"><strong>temp_NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>temp_ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>temp_ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
 <li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
 <li><p class="sd-card-text">dN_p (float):  Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
@@ -474,39 +494,15 @@ properties are defined by temperature and volume.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
-<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium_helmholtz_eos">
-<span class="sig-name descname"><span class="pre">equilibrium_helmholtz_eos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">vP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_helmholtz_eos" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and volume [m3].
-The code stems from the minimization of the free energy of the system by using Lagrange
-multipliers combined with a Newton-Raphson method, upon condition that initial gas
-properties are defined by temperature and volume.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>vP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume [m3]</p></li>
-<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mixture composition [mol] of a previous computation</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
-<ul class="simple">
-<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
-<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
 </ul>
 </p>
 </dd>
@@ -536,7 +532,12 @@ temperature and pressure.</p>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
-<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
 </ul>
 </p>
 </dd>
@@ -564,19 +565,18 @@ upper left submatrix obtaining a matrix A of size NE + NS-NG + 1.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
-<li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
 </ul>
 </p>
 </dd>
 </dl>
-</dd></dl>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.solver.chemical_equilibrium.equilibrium_segregated">
-<span class="sig-name descname"><span class="pre">equilibrium_segregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">N0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.solver.chemical_equilibrium.equilibrium_segregated" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">function [N0,STOP] = equilibrium_segregated(app, N0, phi, pP, TP, vP, phi_c, FLAG_SOOT)</p>
 </dd></dl>
 </div>
 </details><ol class="arabic simple">

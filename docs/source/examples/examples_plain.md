@@ -29,5 +29,6 @@ examples_plain_DET_OVERDRIVEN
 examples_plain_DET_OVERDRIVEN_R
 examples_plain_DET_OBLIQUE_BETA
 examples_plain_DET_OBLIQUE_THETA
-examples_plain_ROCKET
+examples_plain_ROCKET_IAC
+examples_plain_ROCKET_FAC
 ```
