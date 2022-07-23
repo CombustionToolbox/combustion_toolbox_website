@@ -188,7 +188,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET.html">Example_ROCKET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
 </ul>
 </li>
 </ul>
@@ -280,12 +281,20 @@ using the Finite-Area-Chamber (FAC) model</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>mix2_inj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the injector of the chamber (previous calculation)</p></li>
-<li><p class="sd-card-text"><strong>mix2_c</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><em>mix2_inj (struct)</em> – Properties of the mixture at the injector of the chamber
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">mix2_inj (struct): Properties of the mixture at the injector of the chamber (previous calculation)</p></li>
+<li><p class="sd-card-text">mix2_c (struct): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+<li><p class="sd-card-text">mix3 (struct): Properties of the mixture at the throat (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p class="sd-card-text"><em>mix2_inj (struct)</em> – Properties of the mixture at the injector of the chamber
 mix2_c (struct): Properties of the mixture at the outlet of the chamber
 mix3 (struct): Properties of the mixture at the throat</p>
 </dd>
@@ -341,7 +350,9 @@ e.g., enthalpy-pressure (HP)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
-<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat (previous calculation)</p></li>
+<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p class="sd-card-text"><strong>mix4</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the exit (previous calculation)</p></li>
+<li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Ratio area_exit / area_throat</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -360,6 +371,7 @@ e.g., enthalpy-pressure (HP)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
 <li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p class="sd-card-text"><strong>gravity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Gravitational acceleration [m/s2]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -410,10 +422,10 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – </p></li>
-<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – </p></li>
-<li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – </p></li>
-<li><p class="sd-card-text"><strong>FLAG_SUBSONIC</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – </p></li>
+<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Ratio area_exit / area_throat</p></li>
+<li><p class="sd-card-text"><strong>FLAG_SUBSONIC</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating if the Aratio refer to the subsonic region or the supersonic region</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -439,6 +451,7 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Ratio area_exit / area_throat</p></li>
 </ul>
 </dd>
 </dl>

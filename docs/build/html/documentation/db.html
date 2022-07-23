@@ -188,7 +188,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET.html">Example_ROCKET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
 </ul>
 </li>
 </ul>
@@ -477,10 +478,10 @@ cond_without</p>
 <p class="admonition-title">Examples</p>
 <dl class="simple">
 <dt>LS = find_species_LS(LS, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><dl class="simple">
-<dt>{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…</dt><dd><p class="sd-card-text">‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’, ‘G’,’K’,…
+<dt>{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…</dt><dd><p class="sd-card-text">‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’,’G’,’K’,…
 ‘U’,’Co’,’Cu’,’B’,’V’,’Ni’,’Na’,’Mg’,…
-‘Mo’,’Ag’,’Nb’,’Cb’,’Cl’,’D’,’T’, ‘Ca’,…
-‘Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
+‘Mo’,’Ag’,’Nb’,’Cb’,’Cl’,’D’,’T’,…
+‘Ca’,’Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
 </dd>
 </dl>
 </dd>
@@ -611,13 +612,11 @@ NASA database</p>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">txFormula (str): Chemical formula</p></li>
-<li><p class="sd-card-text">mm (float): Molar weight [g/mol]</p></li>
+<li><p class="sd-card-text">mm (float):  Molar weight [g/mol]</p></li>
 <li><p class="sd-card-text">cP0 (float): Specific heat at constant pressure [J/(mol-k)]</p></li>
-<li><p class="sd-card-text">cV0 (float): Specific heat at constant volume   [J/(mol-k)]</p></li>
 <li><p class="sd-card-text">hf0 (float): Enthalpy of formation [J/mol]</p></li>
 <li><p class="sd-card-text">h0 (float):  Enthalpy [J/mol]</p></li>
 <li><p class="sd-card-text">ef0 (float): Internal energy of formation [J/mol]</p></li>
-<li><p class="sd-card-text">e0 (float):  Enthalpy [J/mol]</p></li>
 <li><p class="sd-card-text">s0 (float):  Entropy [J/(mol-k)]</p></li>
 <li><p class="sd-card-text">Dg0 (float): Gibbs energy [J/mol]</p></li>
 </ul>

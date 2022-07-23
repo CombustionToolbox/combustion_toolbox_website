@@ -188,7 +188,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET.html">Example_ROCKET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
 </ul>
 </li>
 </ul>
@@ -441,6 +442,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <li><p>HYDROGEN</p></li>
 <li><p>HYDROGEN_L, HYDROGEN (L)</p></li>
 <li><p>HC/O2/N2 PROPELLANTS</p></li>
+<li><p>Si/HC/O2/N2 PROPELLANTS</p></li>
 </ul>
 </dd>
 </dl>
@@ -507,9 +509,29 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax_gibbs">
+<span class="sig-name descname"><span class="pre">itMax_gibbs</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax_gibbs" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - gibbs minimization method              (default: 70)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax_ions">
+<span class="sig-name descname"><span class="pre">itMax_ions</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax_ions" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - charge balance (ions)                  (default: 30)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tolN">
 <span class="sig-name descname"><span class="pre">tolN</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tolN" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of the Gibbs minimization method                        (default: 1e-15)</p>
+<dd><p>Tolerance of the Gibbs minimization method                        (default: 1e-14)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float</p>
@@ -569,7 +591,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_l">
 <span class="sig-name descname"><span class="pre">root_T0_l</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_l" title="Permalink to this definition">#</a></dt>
-<dd><p>First guess T [K] left branch - root finding method               (default: 300)</p>
+<dd><p>First guess T [K] left branch - root finding method               (default: 1000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float</p>
@@ -579,7 +601,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_r">
 <span class="sig-name descname"><span class="pre">root_T0_r</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_r" title="Permalink to this definition">#</a></dt>
-<dd><p>First guess T [K] right branch - root finding method              (default: 1500)</p>
+<dd><p>First guess T [K] right branch - root finding method              (default: 2000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float</p>
@@ -589,7 +611,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0">
 <span class="sig-name descname"><span class="pre">root_T0</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0" title="Permalink to this definition">#</a></dt>
-<dd><p>Guess T[K] if it’s of previous range - root finding method        (default: 2000)</p>
+<dd><p>Guess T[K] if it’s of previous range - root finding method        (default: 3000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float</p>

@@ -1,5 +1,12 @@
 function self = check_inputs(self)
     % Check that all the inputs are specified
+    %
+    % Args:
+    %     self (struct): Data of the mixture, conditions, and databases
+    %
+    % Returns:
+    %     self (struct): Data of the mixture, conditions, and databases
+
     if ~self.Misc.FLAG_CHECK_INPUTS
         self.C.l_phi = length(self.PD.phi.value);
         if isempty(self.PD.TR.value)
@@ -126,7 +133,7 @@ function self = check_input_temperatures(self, name)
         species = self.PD.(Sname);
         N = length(species);
         for i = N:-1:1
-            if self.DB.(species{i}).swtCondensed
+            if self.DB.(species{i}).phase
                 if self.PD.TR.value >= min(self.DB.(species{i}).T) && self.PD.TR.value <= max(self.DB.(species{i}).T)
                     T(i) = self.PD.TR.value;
                 else
