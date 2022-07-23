@@ -11,7 +11,7 @@ First, using Combustion Toolbox, you have to initialize the tool (load databases
 ```matlab
 >> self = App
 ```
-If files contained in Combustion Toolbox are correctly declared, you should see something like this:
+If files contained in Combustion Toolbox are correctly defined, you should see something like this:
 ```matlab
 self = 
 
@@ -48,7 +48,7 @@ This is the same as specifying a unit value for the equivalence ratio:
 >> self.PD.ratio_oxidizers_O2 = [79, 21]/21;
 >> self = set_prop(self, 'phi', 1);
 ```
-The last two lines of code establish the proportion of the oxidizers species over O$_2$ and the equivalence ratio, respectively. The number of moles is calculated considering that the number of moles of fuel is one.
+The last two lines of code establish the proportion of the oxidizers species over O$_2$ and the equivalence ratio, respectively. The number of moles are calculated considering that the number of moles of fuel is one by default.
 ### Several cases
 Combustion Toolbox also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:
 ```matlab
@@ -93,7 +93,7 @@ REACTANTS               Xi [-]
 N2                   7.1493e-01
 O2                   1.9005e-01
 CH4                  9.5023e-02
-MINORS[+21]          0.0000e+00
+MINORS[+22]          0.0000e+00
 
 TOTAL                1.0000e+00
 -----------------------------------------------------------
@@ -118,7 +118,7 @@ CN                   4.0110e-10
 CH                   5.7109e-13
 CH3                  1.5595e-13
 CH4                  1.1358e-14
-MINORS[+4]           3.5228e-16
+MINORS[+5]           9.0496e-19
 
 TOTAL                1.0000e+00
 ------------------------------------------------------------------------
