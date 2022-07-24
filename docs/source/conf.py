@@ -157,7 +157,7 @@ html_css_files = [
 
 html_theme_options = {
     'light_logo': 'img/logo_CT.svg',
-    'dark_logo': 'img/logo_CT_dark.svg',
+    'dark_logo': 'img/logo_CT.svg',
     'footer_icons': [
         {
             'name': 'Email',
