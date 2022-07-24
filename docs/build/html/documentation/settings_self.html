@@ -253,41 +253,48 @@
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the main module.</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.App"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.App">
 <span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.App" title="Permalink to this definition">#</a></dt>
-<dd><p>Generate self variable with all the data required to initialize the computations</p>
+<dd><p class="sd-card-text">Generate self variable with all the data required to initialize the computations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – Generate default self variable assuming as products LS = Soot formation</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – Generate default self variable assuming as products LS = Soot formation</p>
 </dd>
 </dl>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
-<li><p>LS (cell):          List of species</p></li>
-<li><p>obj (class):        Class combustion_toolbox_app (GUI)</p></li>
-<li><p>type (str):         If value is fast initialize from the given Databases</p></li>
-<li><p>DB_master (struct): Master database</p></li>
-<li><p>DB (struct) :       Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p class="sd-card-text">LS (cell):          List of species</p></li>
+<li><p class="sd-card-text">obj (class):        Class combustion_toolbox_app (GUI)</p></li>
+<li><p class="sd-card-text">type (str):         If value is fast initialize from the given Databases</p></li>
+<li><p class="sd-card-text">DB_master (struct): Master database</p></li>
+<li><p class="sd-card-text">DB (struct) :       Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – Data of the mixture (initialization - empty), conditions, and databases</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture (initialization - empty), conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.ContainedElements">
 <span class="sig-name descname"><span class="pre">ContainedElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.ContainedElements" title="Permalink to this definition">#</a></dt>
-<dd><p>Obtain containted elements from the given set of species (reactants and products)</p>
+<dd><p class="sd-card-text">Obtain containted elements from the given set of species (reactants and products)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
@@ -296,415 +303,472 @@
 <span class="sig-name descname"><span class="pre">Initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.Initialize" title="Permalink to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>This routine have three tasks:</dt><dd><ul class="simple">
-<li><p>Check that all species are contained in the Database</p></li>
-<li><p>Establish cataloged list of species according to the state of the
+<li><p class="sd-card-text">Check that all species are contained in the Database</p></li>
+<li><p class="sd-card-text">Establish cataloged list of species according to the state of the
 phase (gaseous or condensed). It also obtains the indices of
 cryogenic liquid species, e.g., liquified gases</p></li>
-<li><p>Compute Stoichiometric Matrix</p></li>
+<li><p class="sd-card-text">Compute Stoichiometric Matrix</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.App.set_DB">
 <span class="sig-name descname"><span class="pre">set_DB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">FLAG_REDUCED_DB</span></em>, <em class="sig-param"><span class="pre">FLAG_FAST</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.set_DB" title="Permalink to this definition">#</a></dt>
-<dd><p>Generate Database with custom polynomials from DB_master</p>
+<dd><p class="sd-card-text">Generate Database with custom polynomials from DB_master</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p><strong>FLAG_REDUCED_DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag compute from reduced database</p></li>
-<li><p><strong>FLAG_FAST</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag load databases</p></li>
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>FLAG_REDUCED_DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag compute from reduced database</p></li>
+<li><p class="sd-card-text"><strong>FLAG_FAST</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag load databases</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="constants">
 <h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the Constants submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.Constants"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Constants.Constants">
 <span class="sig-name descname"><span class="pre">Constants</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Constants.Constants" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with constants data</p>
+<dd><p class="sd-card-text">Initialize struct with constants data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with constants data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with constants data</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="elements">
 <h2>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the Elements submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.Elements"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Elements.Elements">
 <span class="sig-name descname"><span class="pre">Elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Elements.Elements" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with elements data</p>
+<dd><p class="sd-card-text">Initialize struct with elements data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with elements data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with elements data</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Elements.set_elements">
 <span class="sig-name descname"><span class="pre">set_elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Elements.set_elements" title="Permalink to this definition">#</a></dt>
-<dd><p>Set cell with elements name</p>
+<dd><p class="sd-card-text">Set cell with elements name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p><em>Tuple containing</em> –</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
 <ul class="simple">
-<li><p>elements (cell): Elements</p></li>
-<li><p>NE (struct):     Number of elements</p></li>
+<li><p class="sd-card-text">elements (cell): Elements</p></li>
+<li><p class="sd-card-text">NE (struct):     Number of elements</p></li>
 </ul>
 </p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="miscellaneous">
 <h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the Miscellaneous submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.Miscellaneous"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Miscellaneous.Miscellaneous">
 <span class="sig-name descname"><span class="pre">Miscellaneous</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Miscellaneous.Miscellaneous" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with miscellaneous data</p>
+<dd><p class="sd-card-text">Initialize struct with miscellaneous data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with miscellaneous data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with miscellaneous data</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="problemdescription">
 <h2>ProblemDescription<a class="headerlink" href="#problemdescription" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the ProblemDescription submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.ProblemDescription"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.ProblemDescription.ProblemDescription">
 <span class="sig-name descname"><span class="pre">ProblemDescription</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.ProblemDescription.ProblemDescription" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with problem description data</p>
+<dd><p class="sd-card-text">Initialize struct with problem description data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with problem description data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with problem description data</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="problemsolution">
 <h2>ProblemSolution<a class="headerlink" href="#problemsolution" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the ProblemSolution submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.ProblemSolution"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.ProblemSolution.ProblemSolution">
 <span class="sig-name descname"><span class="pre">ProblemSolution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.ProblemSolution.ProblemSolution" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with problem solution data</p>
+<dd><p class="sd-card-text">Initialize struct with problem solution data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with problem solution data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with problem solution data</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 <div class="section" id="species">
 <h2>Species<a class="headerlink" href="#species" title="Permalink to this headline">#</a></h2>
 <p>Routines to initialize the Species submodule in the self variable (struct).</p>
 <hr class="docutils"/>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.Species"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Species.ListSpecies">
 <span class="sig-name descname"><span class="pre">ListSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.ListSpecies" title="Permalink to this definition">#</a></dt>
-<dd><p>Set list of species in the mixture (reactants and products)</p>
+<dd><p class="sd-card-text">Set list of species in the mixture (reactants and products)</p>
 <dl class="simple">
 <dt>Predefined list of species:</dt><dd><ul class="simple">
-<li><p>SOOT FORMATION (default)</p></li>
-<li><p>COMPLETE</p></li>
-<li><p>HC/O2/N2 EXTENDED</p></li>
-<li><p>SOOT FORMATION EXTENDED</p></li>
-<li><p>NASA ALL</p></li>
-<li><p>AIR, DISSOCIATED AIR</p></li>
-<li><p>AIR IONS, AIR_IONS</p></li>
-<li><p>IDEAL_AIR, AIR_IDEAL</p></li>
-<li><p>HYDROGEN</p></li>
-<li><p>HYDROGEN_L, HYDROGEN (L)</p></li>
-<li><p>HC/O2/N2 PROPELLANTS</p></li>
-<li><p>Si/HC/O2/N2 PROPELLANTS</p></li>
+<li><p class="sd-card-text">SOOT FORMATION (default)</p></li>
+<li><p class="sd-card-text">COMPLETE</p></li>
+<li><p class="sd-card-text">HC/O2/N2 EXTENDED</p></li>
+<li><p class="sd-card-text">SOOT FORMATION EXTENDED</p></li>
+<li><p class="sd-card-text">NASA ALL</p></li>
+<li><p class="sd-card-text">AIR, DISSOCIATED AIR</p></li>
+<li><p class="sd-card-text">AIR IONS, AIR_IONS</p></li>
+<li><p class="sd-card-text">IDEAL_AIR, AIR_IDEAL</p></li>
+<li><p class="sd-card-text">HYDROGEN</p></li>
+<li><p class="sd-card-text">HYDROGEN_L, HYDROGEN (L)</p></li>
+<li><p class="sd-card-text">HC/O2/N2 PROPELLANTS</p></li>
+<li><p class="sd-card-text">Si/HC/O2/N2 PROPELLANTS</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – return default list of species (soot formation)</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – return default list of species (soot formation)</p>
 </dd>
 </dl>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
-<li><p>self (struct): Data of the mixture, conditions, and databases</p></li>
-<li><p>LS (cell): Name list species / list of species</p></li>
-<li><p>EquivalenceRatio (float): Equivalence ratio</p></li>
-<li><p>EquivalenceRatio_soot (float): Equivalence ratio in which theoretically appears soot</p></li>
+<li><p class="sd-card-text">self (struct): Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text">LS (cell): Name list species / list of species</p></li>
+<li><p class="sd-card-text">EquivalenceRatio (float): Equivalence ratio</p></li>
+<li><p class="sd-card-text">EquivalenceRatio_soot (float): Equivalence ratio in which theoretically appears soot</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Species.Species">
 <span class="sig-name descname"><span class="pre">Species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.Species" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with problem solution data</p>
+<dd><p class="sd-card-text">Initialize struct with problem solution data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with problem solution data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with problem solution data</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.settings.self.Species.get_index_ions">
 <span class="sig-name descname"><span class="pre">get_index_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.get_index_ions" title="Permalink to this definition">#</a></dt>
-<dd><p>Get index of ions for the given list of species</p>
+<dd><p class="sd-card-text">Get index of ions for the given list of species</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – List of species</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – List of species</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>index (float)</em> – Index of ions</p>
+<dd class="field-even"><p class="sd-card-text"><em>index (float)</em> – Index of ions</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
-<div class="section" id="tunningproperties">
-<h2>TunningProperties<a class="headerlink" href="#tunningproperties" title="Permalink to this headline">#</a></h2>
-<p>Routines to initialize the TunningProperties submodule in the self variable (struct).</p>
+</details></div>
+<div class="section" id="tuningproperties">
+<h2>TuningProperties<a class="headerlink" href="#tuningproperties" title="Permalink to this headline">#</a></h2>
+<p>Routines to initialize the TuningProperties submodule in the self variable (struct).</p>
 <hr class="docutils"/>
-<span class="target" id="module-src.settings.self.TunningProperties"></span><dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.TunningProperties">
-<span class="sig-name descname"><span class="pre">TunningProperties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.TunningProperties.TunningProperties" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialize struct with tunning properties attributes</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.settings.self.TuningProperties"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.TuningProperties">
+<span class="sig-name descname"><span class="pre">TuningProperties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.TuningProperties.TuningProperties" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Initialize struct with tunning properties attributes</p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.FLAG_FAST">
-<span class="sig-name descname"><span class="pre">FLAG_FAST</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.FLAG_FAST" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag indicating use guess composition of the previous computation (default: false)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.FLAG_FAST">
+<span class="sig-name descname"><span class="pre">FLAG_FAST</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.FLAG_FAST" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Flag indicating use guess composition of the previous computation (default: false)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p class="sd-card-text">bool</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax_gibbs">
-<span class="sig-name descname"><span class="pre">itMax_gibbs</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax_gibbs" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - gibbs minimization method              (default: 70)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.itMax_gibbs">
+<span class="sig-name descname"><span class="pre">itMax_gibbs</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.itMax_gibbs" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - gibbs minimization method              (default: 70)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax_ions">
-<span class="sig-name descname"><span class="pre">itMax_ions</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax_ions" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - charge balance (ions)                  (default: 30)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.itMax_ions">
+<span class="sig-name descname"><span class="pre">itMax_ions</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.itMax_ions" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - charge balance (ions)                  (default: 30)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tolN">
-<span class="sig-name descname"><span class="pre">tolN</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tolN" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of the Gibbs minimization method                        (default: 1e-14)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tolN">
+<span class="sig-name descname"><span class="pre">tolN</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tolN" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance of the Gibbs minimization method                        (default: 1e-14)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tolE">
-<span class="sig-name descname"><span class="pre">tolE</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tolE" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of the mass balance                                     (default: 1e-06)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tolE">
+<span class="sig-name descname"><span class="pre">tolE</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tolE" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance of the mass balance                                     (default: 1e-06)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_pi_e">
-<span class="sig-name descname"><span class="pre">tol_pi_e</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_pi_e" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of the dimensionless Lagrangian multiplier - ions       (default: 1e-04)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tol_pi_e">
+<span class="sig-name descname"><span class="pre">tol_pi_e</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tol_pi_e" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance of the dimensionless Lagrangian multiplier - ions       (default: 1e-04)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol0">
-<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol0" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of the root finding algorithm                           (default: 1e-03)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance of the root finding algorithm                           (default: 1e-03)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_method">
-<span class="sig-name descname"><span class="pre">root_method</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_method" title="Permalink to this definition">#</a></dt>
-<dd><p>Method for root finding                                           (default: newton)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.root_method">
+<span class="sig-name descname"><span class="pre">root_method</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.root_method" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Method for root finding                                           (default: newton)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>function</p>
+<dd class="field-odd"><p class="sd-card-text">function</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.itMax">
-<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.itMax" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - root finding method - HP, EV, SP, SV   (default: 30)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - root finding method - HP, EV, SP, SV   (default: 30)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_l">
-<span class="sig-name descname"><span class="pre">root_T0_l</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_l" title="Permalink to this definition">#</a></dt>
-<dd><p>First guess T [K] left branch - root finding method               (default: 1000)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.root_T0_l">
+<span class="sig-name descname"><span class="pre">root_T0_l</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.root_T0_l" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">First guess T [K] left branch - root finding method               (default: 1000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0_r">
-<span class="sig-name descname"><span class="pre">root_T0_r</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0_r" title="Permalink to this definition">#</a></dt>
-<dd><p>First guess T [K] right branch - root finding method              (default: 2000)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.root_T0_r">
+<span class="sig-name descname"><span class="pre">root_T0_r</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.root_T0_r" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">First guess T [K] right branch - root finding method              (default: 2000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.root_T0">
-<span class="sig-name descname"><span class="pre">root_T0</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.root_T0" title="Permalink to this definition">#</a></dt>
-<dd><p>Guess T[K] if it’s of previous range - root finding method        (default: 3000)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.root_T0">
+<span class="sig-name descname"><span class="pre">root_T0</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.root_T0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Guess T[K] if it’s of previous range - root finding method        (default: 3000)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_shocks">
-<span class="sig-name descname"><span class="pre">tol_shocks</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_shocks" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of shocks routines                                      (default: 5e-05)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tol_shocks">
+<span class="sig-name descname"><span class="pre">tol_shocks</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tol_shocks" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance of shocks routines                                      (default: 5e-05)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_shocks">
-<span class="sig-name descname"><span class="pre">it_shocks</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_shocks" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - shocks and detonations                 (default: 50)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.it_shocks">
+<span class="sig-name descname"><span class="pre">it_shocks</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.it_shocks" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - shocks and detonations                 (default: 50)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.volume_ratio">
-<span class="sig-name descname"><span class="pre">volume_ratio</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.volume_ratio" title="Permalink to this definition">#</a></dt>
-<dd><p>Initial guess volume ratio shocks                                 (default: 5)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.volume_ratio">
+<span class="sig-name descname"><span class="pre">volume_ratio</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.volume_ratio" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Initial guess volume ratio shocks                                 (default: 5)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_oblique">
-<span class="sig-name descname"><span class="pre">tol_oblique</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_oblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance oblique shocks                                          (default: 1e-03)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tol_oblique">
+<span class="sig-name descname"><span class="pre">tol_oblique</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tol_oblique" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance oblique shocks                                          (default: 1e-03)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_oblique">
-<span class="sig-name descname"><span class="pre">it_oblique</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_oblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - oblique shocks                         (default: 20)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.it_oblique">
+<span class="sig-name descname"><span class="pre">it_oblique</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.it_oblique" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - oblique shocks                         (default: 20)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.N_points_polar">
-<span class="sig-name descname"><span class="pre">N_points_polar</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.N_points_polar" title="Permalink to this definition">#</a></dt>
-<dd><p>Number of points to compute shock polar                           (default: 100)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.N_points_polar">
+<span class="sig-name descname"><span class="pre">N_points_polar</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.N_points_polar" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of points to compute shock polar                           (default: 100)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.tol_rocket">
-<span class="sig-name descname"><span class="pre">tol_rocket</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.tol_rocket" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance rocket performance                                      (default: 1e-04)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tol_rocket">
+<span class="sig-name descname"><span class="pre">tol_rocket</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tol_rocket" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance rocket performance                                      (default: 1e-04)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TunningProperties.it_rocket">
-<span class="sig-name descname"><span class="pre">it_rocket</span></span><a class="headerlink" href="#src.settings.self.TunningProperties.it_rocket" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - rocket performance                     (default: 10)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.it_rocket">
+<span class="sig-name descname"><span class="pre">it_rocket</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.it_rocket" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Max number of iterations - rocket performance                     (default: 10)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p class="sd-card-text">float</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>self (struct)</em> – struct with tunning properties data</p>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with tunning properties data</p>
 </dd>
 </dl>
 </dd></dl>
 </div>
+</details></div>
 </div>
 
         </article>
@@ -782,7 +846,7 @@ cryogenic liquid species, e.g., liquified gases</p></li>
 <li><a class="reference internal" href="#problemdescription">ProblemDescription</a></li>
 <li><a class="reference internal" href="#problemsolution">ProblemSolution</a></li>
 <li><a class="reference internal" href="#species">Species</a></li>
-<li><a class="reference internal" href="#tunningproperties">TunningProperties</a></li>
+<li><a class="reference internal" href="#tuningproperties">TuningProperties</a></li>
 </ul>
 </li>
 </ul>
