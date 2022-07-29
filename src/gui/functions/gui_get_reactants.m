@@ -50,7 +50,7 @@ function app = gui_set_species_moles_temperatures(obj, app, species, moles, temp
     
     % Set moles
     try
-        app.PD.(moles_name) = cell2vector(moles(obj.(ind_name)));
+        app.PD.(moles_name) = cell2vector(moles(obj.(ind_name))');
     catch 
         app.PD.(moles_name) = [];
     end
@@ -58,7 +58,7 @@ function app = gui_set_species_moles_temperatures(obj, app, species, moles, temp
     % Set temperatures
     try
         if ~app.Misc.FLAGS_PROP.TR
-            app.PD.(temperatures_name) = cell2vector(temperatures(obj.(ind_name)));
+            app.PD.(temperatures_name) = cell2vector(temperatures(obj.(ind_name))');
         else
             app.PD.(temperatures_name) = [];
         end
@@ -115,7 +115,7 @@ function moles = gui_compute_moles_from_equivalence_ratio(obj, app)
         moles = assign_vector2cell(moles, app.PD.phi_t/app.PD.phi.value(1) .* obj.PD.ratio_oxidizers_O2, obj.ind_Oxidizer);
     end
     if any(obj.ind_Inert)
-        moles = assign_vector2cell(moles, obj.UITable_R.Data(obj.ind_Inert, 2), obj.ind_Inert);
+        moles(obj.ind_Inert) = obj.UITable_R.Data(obj.ind_Inert, 2);
     end
 end
 

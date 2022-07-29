@@ -45,6 +45,8 @@ function self = ListSpecies(varargin)
         end
     end
     
+    self.S.FLAG_COMPLETE = false;
+     
     if exist('LS', 'var')
         if contains(LS, 'COMPLETE', 'IgnoreCase', true) 
             self.S.FLAG_COMPLETE = true;
@@ -93,7 +95,8 @@ function self = ListSpecies(varargin)
                         'H2O2','HCCO','HCHO_formaldehy','HCN','HCO',...
                         'HCOOH','HNC','HNCO','HNO','HO2','N','N2O',...
                         'NCO','NH','NH2','NH2OH','NH3','NO','NO2',...
-                        'O','OCCN','OH','C3O2','C4N2'};
+                        'O','OCCN','OH','C3O2','C4N2','CH3CO_acetyl',...
+                        'C4H6_butadiene','C4H6_1butyne','C4H6_2butyne'};
                     
         elseif strcmpi(LS, 'NASA ALL')
             self.S.LS = {'CO2','CO','H2O','H2','O2','N2','He','Ar',...
