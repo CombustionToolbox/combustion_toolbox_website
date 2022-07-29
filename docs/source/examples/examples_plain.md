@@ -9,6 +9,8 @@ Here we have a collection of examples included in Combustion Toolbox.
 examples_plain_TP
 examples_plain_TV
 examples_plain_HP
+examples_plain_HP_complete_incomplete
+examples_plain_HP_pressure
 examples_plain_HP_MIXTEMP
 examples_plain_HP_PROPELLANTS
 examples_plain_EV

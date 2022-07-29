@@ -24,6 +24,7 @@ function mix2 = equilibrate_T(self, mix1, pP, TP, varargin)
     % Compute number of moles 
     [N, self.dNi_T, self.dN_T, self.dNi_p, self.dN_p, STOP, STOP_ions] = select_equilibrium(self_ListProducts, pP, TP, mix1, guess_moles);
     % Reshape matrix of number of moles, N
+    N = reshape_vectors(self, self_ListProducts, N);
     self.dNi_T = reshape_vectors(self, self_ListProducts, self.dNi_T);
     self.dNi_p = reshape_vectors(self, self_ListProducts, self.dNi_p);
     % Add moles of frozen species to the moles vector N
@@ -58,24 +59,14 @@ end
 function pP = compute_pressure(self, mix1, TP, N)
     % Compute pressure of product mixture
     if strcmpi(self.PD.ProblemType, 'SV')
-        pP = mix1.p * N/mix1.N * TP/mix1.T * self.PD.vP_vR.value;
+        pP = mix1.p * self.PD.EOS.pressure(self, N/mix1.N, TP/mix1.T, self.PD.vP_vR.value);
     else
-        pP = (N * TP * self.C.R0 / mix1.v) * 1e-5;
+        pP = self.PD.EOS.pressure(self, N, TP, mix1.v) * 1e-5;
     end
 end
 
 function [N, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = select_equilibrium(self, pP, TP, mix1, guess_moles)
-%     if ~self.PD.FLAG_ION
-        % Compute numer of moles without ionization
-%         [N, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium(self, pP, TP, mix1, guess_moles);
-%         [N, dNi_T, dN_T, dNi_p, dN_p, STOP] = equilibrium_reduced(self, pP, TP, mix1, guess_moles);
-%         STOP_ions = 0;  
-%     else
-        % Compute numer of moles with ionization
-%         [N, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium(self, pP, TP, mix1, guess_moles);
-%         [N, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium_ions(self, pP, TP, mix1, guess_moles);
-%     end
-    
+    % Select equilibrium: TP: Gibbs; TV: Helmholtz
     if strfind(self.PD.ProblemType, 'P') == 2
         [N, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium(self, pP, TP, mix1, guess_moles);
     else
