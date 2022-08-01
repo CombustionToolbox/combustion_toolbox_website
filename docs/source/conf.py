@@ -184,6 +184,8 @@ html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#577A95",
         "color-brand-content": "#577A95",
+        # "font-stack": "nimbus, sans-serif",
+        # "font-stack--monospace": "nimbus, monospace",
     },
     # "announcement": "<em>Important</em> announcement!"
 }
