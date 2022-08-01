@@ -251,6 +251,8 @@ To repeat the results, run:
 
 <p align="center">
     <img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="600">
 </p>
 
 ## Validation DET 2
@@ -272,6 +274,8 @@ To repeat the results, run:
 
 <p align="center">
     <img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="600">
 </p>
 
 ## Validation DET 3
@@ -293,6 +297,8 @@ To repeat the results, run:
 
 <p align="center">
     <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="600">
 </p>
 
 ## Validation DET 4
@@ -314,6 +320,8 @@ To repeat the results, run:
 
 <p align="center">
     <img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="600">
 </p>
 
 ## Validation SHOCK IONIZATION 1
