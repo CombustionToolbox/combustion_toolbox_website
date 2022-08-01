@@ -6,6 +6,8 @@ sphinxcontrib-fulltoc
 sphinx-toolbox
 sphinx-copybutton
 sphinx_design
+sphinx-inline-tabs
+sphinxext-opengraph
 nbsphinx
 furo
 myst-parser

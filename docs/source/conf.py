@@ -58,6 +58,8 @@ extensions = [
     'sphinx_toolbox.collapse', # collapse long sections
     'sphinx_copybutton',
     'sphinx_design',
+    # "sphinxext.opengraph",
+    # "sphinx_inline_tabs",
 ]
 
 myst_enable_extensions = ["colon_fence"]
@@ -178,7 +180,27 @@ html_theme_options = {
             """,
         },
     ],
+    "navigation_with_keys": True,
+    "light_css_variables": {
+        "color-brand-primary": "#577A95",
+        "color-brand-content": "#577A95",
+    },
+    # "announcement": "<em>Important</em> announcement!"
 }
 
+# Code block styling
+# pygments_style = "sphinx"
+pygments_dark_style = "monokai"
 
+# Latex preamble
 pngmath_latex_preamble = ['usepackage{amsmath}']
+
+# Settings sphintext-opengraph
+# ogp_site_url = "https://combustion-toolbox-website.readthedocs.io/"
+# ogp_image = "http://example.org/image.png"
+# ogp_description_length = 300
+# ogp_type = "article"
+
+# ogp_custom_meta_tags = [
+#     '<meta property="og:ignore_canonical" content="true" />',
+# ]
