@@ -417,6 +417,63 @@ To repeat the results, run:
     <img src="_static/gif/validation_rocket.gif" width="720">
 </p>
 
+## Validation ROCKET 2
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: ROCKET
+* Description: Equilibrium composition and performance parameters at exit of the rocket nozzle
+* Temperature Fuel [K] = 20.27
+* Temperature Oxid [K] = 90.17
+* Chamber pressure [bar] = 22
+* Infinite-Area-Chamber model (IAC)
+* Area ratio $A_{\rm exit} / A_{\rm throat}$ = 3
+* Initial mixture [moles]:
+
+  <img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+* List of species considered = HYDROGEN_L
+* URL Folder Results CEA: ./Validations/CEA/ROCKET
+
+To repeat the results, run:
+```matlab
+>> run_validation_ROCKET_CEA_17.m
+```
+
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_3.svg" width="600">
+</p>
+
+## Validation ROCKET 3
+
+* Contrasted with: NASA's Chemical Equilibrium with Applications software
+* Problem type: ROCKET
+* Description: Equilibrium composition and performance parameters at exit of the rocket nozzle
+* Temperature Fuel [K] = 20.27
+* Temperature Oxid [K] = 90.17
+* Chamber pressure [bar] = 22
+* Finite-Area-Chamber model (FAC)
+* Area ratio $A_{\rm chamber} / A_{\rm throat}$ = 2
+* Area ratio $A_{\rm exit} / A_{\rm throat}$ = 3
+* Initial mixture [moles]:
+
+  <img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+* List of species considered = HYDROGEN_L
+* URL Folder Results CEA: ./Validations/CEA/ROCKET
+
+To repeat the results, run:
+```matlab
+>> run_validation_ROCKET_CEA_18.m
+```
+
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_3.svg" width="600">
+</p>
+
 ## Validation TEA 1
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined T and p

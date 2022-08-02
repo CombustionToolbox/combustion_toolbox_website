@@ -194,9 +194,6 @@ html_theme_options = {
 # pygments_style = "sphinx"
 pygments_dark_style = "monokai"
 
-# Latex preamble
-pngmath_latex_preamble = ['usepackage{amsmath}']
-
 # Settings sphintext-opengraph
 # ogp_site_url = "https://combustion-toolbox-website.readthedocs.io/"
 # ogp_image = "http://example.org/image.png"
@@ -206,3 +203,14 @@ pngmath_latex_preamble = ['usepackage{amsmath}']
 # ogp_custom_meta_tags = [
 #     '<meta property="og:ignore_canonical" content="true" />',
 # ]
+
+# Latex preamble
+pngmath_latex_preamble = ['usepackage{amsmath}']
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title, author, document class [howto/manual]).
+# latex_documents = [
+#   ('latexindex', 'combustiontoolbox.tex',
+#    'Combustion Toolbox',
+#    'Alberto Cuadra Lara', 'manual'),
+#     ]
