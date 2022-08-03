@@ -1,5 +1,5 @@
 function mainfigure = plot_properties_validation(results1, results2, varsname_x, varsname_y, type, varargin)
-    % Plot properties varname_y vs varname_x from CT (results1) against CEA (results2)
+    % Plot properties varname_y vs varname_x from CT (results1) against results obtained from other code (results2)
 
     % Default values
     nfrec = 1;
@@ -22,14 +22,19 @@ function mainfigure = plot_properties_validation(results1, results2, varsname_x,
         axes = gca;
         set(axes, 'LineWidth', config.linewidth, 'FontSize', config.fontsize-2, 'BoxStyle', 'full')
         grid(axes, 'off'); box(axes, 'off'); hold(axes, 'on'); axes.Layer = 'Top';
-        xlabel(axes, interpret_label(varname_x), 'FontSize', config.fontsize, 'interpreter', 'latex');
-        ylabel(axes, interpret_label(varname_y), 'FontSize', config.fontsize, 'interpreter', 'latex');
+        xlabel(axes, interpreter_label(varname_x), 'FontSize', config.fontsize, 'interpreter', 'latex');
+        ylabel(axes, interpreter_label(varname_y), 'FontSize', config.fontsize, 'interpreter', 'latex');
         xlim(axes, [min(results1.(varname_x)), max(results1.(varname_x))])
     
-        NUM_COLORS = 3;
+        NUM_COLORS = 1;
         LINE_STYLES = {'-', '--', ':', '-.'};
         SYMBOL_STYLES = {'d', 'o', 's', '<'};
-        colorbw = brewermap(NUM_COLORS, config.colorpalette);
+
+        if NUM_COLORS > 1
+            colorbw = brewermap(NUM_COLORS, config.colorpalette);
+        else
+            colorbw = config.colorlines(3, :);
+        end
         
         k = 1;
         z = 1;
@@ -50,6 +55,10 @@ function dataname = get_dataname(var, type)
         dataname = 'PS.strR';
     elseif strcmpi(type, 'mix2')
         dataname = 'PS.strP';
+    elseif strcmpi(type, 'mix2_c')
+        dataname = 'PS.mix2_c';
+    elseif strcmpi(type, 'mix3')
+        dataname = 'PS.mix3';
     end
 end
 
@@ -68,23 +77,23 @@ function dataselected = select_data(self, dataname)
 end
 
 function titlename = create_title(self)
-    titlename = strcat(self.PD.ProblemType, ': ', cat_moles_species(self.PD.N_Fuel, self.PD.S_Fuel));
+    titlename = [self.PD.ProblemType, ': ', cat_moles_species(self.PD.N_Fuel, self.PD.S_Fuel)];
     if ~isempty(self.PD.S_Oxidizer) || ~isempty(self.PD.S_Inert)
         if ~isempty(self.PD.S_Fuel)
-            titlename = strcat(titlename, ' + ');
+            titlename = [titlename, ' + '];
         end
-        titlename = strcat(titlename, strcat('$\frac{', sprintf('%.3g', self.PD.phi_t), '}{\phi}$'));
+        titlename = [titlename, '$\frac{', sprintf('%.3g', self.PD.phi_t), '}{\phi}$'];
         if ~isempty(self.PD.S_Oxidizer) && ~isempty(self.PD.S_Inert)
-            titlename = strcat(titlename, '(');
+            titlename = [titlename, '('];
         end
         if ~isempty(self.PD.S_Oxidizer)
-            titlename = strcat(titlename, cat_moles_species(1, self.PD.S_Oxidizer));
+            titlename = [titlename, cat_moles_species(1, self.PD.S_Oxidizer)];
         end
         if ~isempty(self.PD.S_Inert)
-            titlename = strcat(titlename, ' + ', cat_moles_species(self.PD.proportion_inerts_O2, self.PD.S_Inert));
+            titlename = [titlename, ' + ', cat_moles_species(self.PD.proportion_inerts_O2, self.PD.S_Inert)];
         end
         if ~isempty(self.PD.S_Oxidizer) && ~isempty(self.PD.S_Inert)
-            titlename = strcat(titlename, ')');
+            titlename = [titlename, ')'];
         end
     end
 end
@@ -95,7 +104,7 @@ function cat_text = cat_moles_species(moles, species)
     if N
         cat_text = cat_mol_species(moles(1), species{1});
         for i=2:N
-            cat_text = strcat(cat_text, ' + ', cat_mol_species(moles(i), species{i}));
+            cat_text = [cat_text, ' + ', cat_mol_species(moles(i), species{i})];
         end
     end
 end
@@ -106,39 +115,5 @@ function cat_text = cat_mol_species(mol, species)
     else
         value = sprintf('%.3g', mol);
     end
-    cat_text = strcat(value, species2latex(species));
-end
-
-function value = interpret_label(property)
-    % Switch label from input property
-    switch lower(property)
-        case 'phi'
-            value = 'Equivalance ratio';
-        case 'rho'
-            value = 'Density $[kg/m^3]$';
-        case 't'
-            value = 'Temperature $[K]$';
-        case 'p'
-            value = 'Pressure $[bar]$';
-        case 'h'
-            value = 'Enthalpy $[kJ/kg]$';
-        case 'e'
-            value = 'Internal energy $[kJ/kg]$';
-        case 'g'
-            value = 'Gibbs energy $[kJ/kg]$';
-        case {'s', 's0'}
-            value = 'Entropy $[kJ/kg-K]$';
-        case 'cp'
-            value = '$c_p [kJ/kg-K]$';
-        case 'cv'
-            value = '$c_v [kJ/kg-K]$';
-        case 'gamma_s'
-            value = 'Adiabatic index';
-        case 'u'
-            value = 'Incident velocity $[m/s]$';
-        case 'v_shock'
-            value = 'Shock velocity $[m/s]$';
-        otherwise
-            value = strcat('$', property, '$');
-    end
+    cat_text = [value, species2latex(species)];
 end

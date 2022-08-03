@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Validations" href="../validations.html" /><link rel="prev" title="Example_ROCKET_IAC.m" href="examples_plain_ROCKET_IAC.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Example_ROCKET_FAC.m - Combustion Toolbox v0.9.92</title>
+        <title>Example_ROCKET_FAC.m - Combustion Toolbox v0.9.93</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.92</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.93</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo only-dark" src="../_static/img/logo_CT.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.92</span>
+  <span class="sidebar-brand-text">Combustion Toolbox v0.9.93</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -253,38 +253,39 @@
           <div class="section" id="example-rocket-fac-m">
 <h1>Example_ROCKET_FAC.m<a class="headerlink" href="#example-rocket-fac-m" title="Permalink to this headline">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="c">% EXAMPLE: ROCKET Propellants considering a Finite-Area-Chamber (FAC)</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: ROCKET Propellants considering an Finite-Area-Chamber (FAC)</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="c">% Compute adiabatic temperature and equilibrium composition at constant</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="c">% pressure (e.g., 1.01325 bar) for lean to rich LH2-LOX mixtures at</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="c">% standard conditions, a set of 24 species considered and a set of</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="c">% equivalence ratios phi contained in (1, 5) [-]</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="c">%   </span><span class="w"></span>
-<span class="linenos"> 9</span><span class="c">% HYDROGEN_L == {'H','H2O','OH','H2','O','O3','O2','HO2','H2O2',...</span><span class="w"></span>
-<span class="linenos">10</span><span class="c">%                'H2bLb','O2bLb'}</span><span class="w"></span>
-<span class="linenos">11</span><span class="c">%   </span><span class="w"></span>
-<span class="linenos">12</span><span class="c">% See wiki or ListSpecies() for more predefined sets of species</span><span class="w"></span>
-<span class="linenos">13</span><span class="c">%</span><span class="w"></span>
-<span class="linenos">14</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
-<span class="linenos">15</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
-<span class="linenos">16</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
-<span class="linenos">17</span><span class="c">%                 </span><span class="w"></span>
-<span class="linenos">18</span><span class="c">% Last update April 12 2022</span><span class="w"></span>
-<span class="linenos">19</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="c">%% INITIALIZE</span><span class="w"></span>
-<span class="linenos">22</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'HYDROGEN_L'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">23</span><span class="c">%% INITIAL CONDITIONS</span><span class="w"></span>
-<span class="linenos">24</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">25</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'H2bLb'</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">26</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'O2bLb'</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">27</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">FLAG_IAC</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">28</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
-<span class="linenos">29</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'Aratio_c'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">30</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
-<span class="linenos">31</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SolveProblem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'ROCKET'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">32</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
-<span class="linenos">33</span><span class="n">postResults</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="c">% Compute rocket propellant performance considering an Finite-Area-Chamber</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="c">% with an area ratio of the combustion chamber A_chamber/A_throat = 2</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="c">% for lean to rich LH2-LOX mixtures at 101.325 bar, a set of 24 species</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="c">% considered, a set of equivalence ratios phi contained in (2, 5) [-], and</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="c">% an exit area ratio A_exit/A_throat = 3 </span><span class="w"></span>
+<span class="linenos"> 9</span><span class="c">%   </span><span class="w"></span>
+<span class="linenos">10</span><span class="c">% HYDROGEN_L == {'H','H2O','OH','H2','O','O3','O2','HO2','H2O2',...</span><span class="w"></span>
+<span class="linenos">11</span><span class="c">%                'H2bLb','O2bLb'}</span><span class="w"></span>
+<span class="linenos">12</span><span class="c">%   </span><span class="w"></span>
+<span class="linenos">13</span><span class="c">% See wiki or ListSpecies() for more predefined sets of species</span><span class="w"></span>
+<span class="linenos">14</span><span class="c">%</span><span class="w"></span>
+<span class="linenos">15</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
+<span class="linenos">16</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
+<span class="linenos">17</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
+<span class="linenos">18</span><span class="c">%                 </span><span class="w"></span>
+<span class="linenos">19</span><span class="c">% Last update Jul 30 2022</span><span class="w"></span>
+<span class="linenos">20</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c">%% INITIALIZE</span><span class="w"></span>
+<span class="linenos">23</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'HYDROGEN_L'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">24</span><span class="c">%% INITIAL CONDITIONS</span><span class="w"></span>
+<span class="linenos">25</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">26</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'H2bLb'</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">27</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'O2bLb'</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">28</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">FLAG_IAC</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">29</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
+<span class="linenos">30</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'Aratio_c'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">'Aratio'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">31</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
+<span class="linenos">32</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SolveProblem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'ROCKET'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">33</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
+<span class="linenos">34</span><span class="n">postResults</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
