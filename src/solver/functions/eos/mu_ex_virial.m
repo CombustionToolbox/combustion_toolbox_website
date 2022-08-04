@@ -18,7 +18,7 @@ function chemical_potential_ex = mu_ex_virial(self, moles, temperature, volume)
     b_j = self.PD.EOS.b;
     % Compute coefficients
     a = compute_cofficient_pair(moles, molesGas, self.PD.EOS.a, Nmoles);
-    b = compute_cofficient_single(moles, molesGas, );
+%     b = compute_cofficient_single(moles, molesGas, );
     c = sum(moles .* a_ij - b_j);
     chemical_potential_ex = self.C.R0 * temperature * volume^2 * (-a^2 - 2*b + 4*a / molesGas * c);
 end

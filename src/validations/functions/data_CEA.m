@@ -1,15 +1,16 @@
-function data = data_CEA(varargin)
-    filename  = varargin{1};
+function data = data_CEA(filename, varargin)
     if ischar(filename)
         Nfiles = 1;
         filename = {filename};
     else
         Nfiles = length(filename);
     end
+
     data = [];
     data1 = []; % Only for shocks
     data2 = []; % Only for shocks
     j = 0;
+    l = 0;
     while j < Nfiles
 %     for j = 1:length(Nfiles)
         clear mix
@@ -18,35 +19,47 @@ function data = data_CEA(varargin)
         data_nasa = read_CEA(filename{j});
         try
             % PROPERTIES
-            mix.p = data_nasa.P(:, end)'; % [bar]
-            mix.T = data_nasa.T(:, end)'; % [K]
-            mix.rho = data_nasa.rho(:, end)'; % [kg/m3]
-            mix.h = data_nasa.H(:, end)'; % [kJ/kg]
-            mix.e = data_nasa.U(:, end)'; % [kJ/kg]
-            mix.S = data_nasa.S(:, end)'; % [kJ/kg-K]
-            mix.g = data_nasa.G(:, end)'; % [kJ/kg]
-            mix.cP = data_nasa.cp(:, end)'; % [kJ/kg-K]
-            mix.gamma_s = data_nasa.gamma_s(:, end)'; % [-]
-            mix.cV = data_nasa.cp(:, end)' ./ mix.gamma_s; % [kJ/kg-K]
-            mix.DhT = data_nasa.cp(:, end)' .* (data_nasa.T(:, end)' - 298.15); % [kJ/kg]
+            mix.p = data_nasa.P(:, end-l)'; % [bar]
+            mix.T = data_nasa.T(:, end-l)'; % [K]
+            mix.rho = data_nasa.rho(:, end-l)'; % [kg/m3]
+            mix.h = data_nasa.H(:, end-l)'; % [kJ/kg]
+            mix.e = data_nasa.U(:, end-l)'; % [kJ/kg]
+            mix.S = data_nasa.S(:, end-l)'; % [kJ/kg-K]
+            mix.g = data_nasa.G(:, end-l)'; % [kJ/kg]
+            mix.cP = data_nasa.cp(:, end-l)'; % [kJ/kg-K]
+            mix.gamma_s = data_nasa.gamma_s(:, end-l)'; % [-]
+            mix.cV = data_nasa.cp(:, end-l)' ./ mix.gamma_s; % [kJ/kg-K]
+            mix.DhT = data_nasa.cp(:, end-l)' .* (data_nasa.T(:, end-l)' - 298.15); % [kJ/kg]
+            mix.W = data_nasa.W(:, end-l)'; % [g/mol]
+            mix.sound = data_nasa.sound(:, end-l)'; % [m/s]
             if isfield(data_nasa, 'dVdp_T')
-                mix.dVdp_T = data_nasa.dVdp_T(:, end)'; % [-]
-                mix.dVdT_p = data_nasa.dVdT_p(:, end)'; % [-]
+                mix.dVdp_T = data_nasa.dVdp_T(:, end-l)'; % [-]
+                mix.dVdT_p = data_nasa.dVdT_p(:, end-l)'; % [-]
             end
             if isfield(data_nasa,'rho2rho1')
                 try % reflected
                     mix.u_postshock = data_nasa.u2 - data_nasa.v2; % [m/s]
                     mix.u_preshock = data_nasa.u1; % [m/s]
+                    mix.u = mix.u_preshock; % [m/s]
                 catch % incident
                     mix.u_preshock = data_nasa.u1; % [m/s]
                     mix.u_postshock = data_nasa.u1 ./ data_nasa.rho2rho1; % [m/s]
+                    mix.u = mix.u_preshock; % [m/s]
                 end
             end
+            if isfield(data_nasa, 'Aratio')
+                mix.Aratio = data_nasa.Aratio(:, end-l)'; % [-]
+                mix.cstar = data_nasa.cstar(:, end-l)'; % [m/s]
+                mix.cf = data_nasa.cf(:, end-l)'; % [-]
+                mix.I_vac = data_nasa.I_vac(:, end-l)' / 9.80665; % [s]
+                mix.I_sp = data_nasa.I_sp(:, end-l)' / 9.80665; % [s]
+                mix.u = data_nasa.u(:, end-l)'; % [m/s]
+            end
             % EQUIVALENCE RATIO
-            mix.phi = data_nasa.phi;
+            mix.phi = data_nasa.phi; % [-]
             % MOLAR FRACTION SPECIES
             if nargin > 1
-                species = varargin{2};
+                species = varargin{1};
                 NS = length(species);
                 mix.Xi = zeros(NS, length(data_nasa.X));
                 for i = 1:length(data_nasa.X)
@@ -71,11 +84,14 @@ function data = data_CEA(varargin)
             mix1.g = data_nasa.G1; % [kJ/kg]
             mix1.cP = data_nasa.cp1; % [kJ/kg-K]
             mix1.gamma_s = data_nasa.gamma_s1; % [-]
+            mix1.sound = data_nasa.sound1; % [m/s]
             mix1.cV = data_nasa.cp1 ./ mix1.gamma_s; % [kJ/kg-K]
             mix1.DhT = data_nasa.cp1 .* (data_nasa.T1 - 298.15); % [kJ/kg]
             mix1.u = data_nasa.u1; % [m/s]
+            mix1.u_preshock = mix1.u; % [m/s]
+            mix1.W = data_nasa.W1; % [g/mol]
             % EQUIVALENCE RATIO
-            mix1.phi = data_nasa.phi;
+            mix1.phi = data_nasa.phi; % [-]
 
             % PROPERTIES MIX 2
             mix2.p = data_nasa.P2; % [bar]
@@ -90,20 +106,24 @@ function data = data_CEA(varargin)
             mix2.g = data_nasa.G2; % [kJ/kg]
             mix2.cP = data_nasa.cp2; % [kJ/kg-K]
             mix2.gamma_s = data_nasa.gamma_s2; % [-]
+            mix2.sound = data_nasa.sound2; % [m/s]
             mix2.cV = data_nasa.cp2 ./ mix2.gamma_s; % [kJ/kg-K]
             mix2.DhT = data_nasa.cp2 .* (data_nasa.T2 - 298.15); % [kJ/kg]
             mix2.u = data_nasa.u2; % [m/s]
+            mix2.u_preshock = mix1.u; % [m/s]
+            mix2.W = data_nasa.W2; % [g/mol]
             if isfield(data_nasa, 'v_shock')
-                mix2.u = mix1.u;
-                mix2.v_shock = data_nasa.v_shock;
+                mix2.v_shock = data_nasa.v_shock; % [m/s]
+                mix2.u_postshock = mix2.v_shock; % [m/s]
+                mix1.u_postshock = mix2.v_shock; % [m/s]
             end
             mix2.dVdp_T = data_nasa.dVdp_T; % [-]
             mix2.dVdT_p = data_nasa.dVdT_p; % [-]
             % EQUIVALENCE RATIO
-            mix2.phi = data_nasa.phi;
+            mix2.phi = data_nasa.phi; % [-]
             % MOLAR FRACTION SPECIES MIX 2
             if nargin > 1
-                species = varargin{2};
+                species = varargin{1};
                 NS = length(species);
                 mix2.Xi = zeros(NS, length(data_nasa.X));
                 for t = 1:NS
