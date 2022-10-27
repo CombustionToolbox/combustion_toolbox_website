@@ -158,8 +158,8 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    'light_logo': 'img/logo_CT.svg',
-    'dark_logo': 'img/logo_CT.svg',
+    'light_logo': 'img/logo_CT_noversion.svg',
+    'dark_logo': 'img/logo_CT_noversion.svg',
     'footer_icons': [
         {
             'name': 'Email',
