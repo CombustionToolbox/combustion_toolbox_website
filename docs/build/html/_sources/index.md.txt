@@ -31,4 +31,6 @@ publications
     :titlesonly:
 
 documentation/index
+documentation/databases
+documentation/functions/index
 ```

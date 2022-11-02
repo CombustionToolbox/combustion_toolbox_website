@@ -84,6 +84,10 @@ nitpick_ignore = [
     ('mat:obj', 'bool'),
     ('mat:obj', 'function'),
     ('mat:obj', 'file'),
+    ('mat:obj', 'obj'),
+    ('mat:obj', 'object'),
+    ('mat:obj', 'char'),
+    ('mat:obj', 'empty'),
 ]
 
 def linkcode_resolve(domain, info):

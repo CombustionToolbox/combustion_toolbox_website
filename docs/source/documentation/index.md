@@ -1,69 +1,9 @@
-# Functions
-Here we can find the documentation for the routines implemented in Combustion Toolbox. We have different modules:
-   * settings: routines to generate a self struct variable with all the data necessary (mixtures, conditions, databases),
-   * databases: routines to generate the databases using the NASA's 9 coefficient polynomials fits,
-   * solver: routines to solve different type of problems implemented,
-   * gui: routines to generate the app, all the necessary functions to be compatible with the plain code and extend its functionality.
-
-```{caution}
-The documentation is under development 
-```
-
-```{toctree}
-    :caption: 'Contents:'
-    :maxdepth: 2
-
-db
-settings
-solver
-```
-
-<!-- ## Settings
-
-### self
-
-```{eval-rst}
-.. automodule:: src.Settings.self.App
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.Constants
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.Elements
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.Miscellaneous
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.ProblemDescription
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.ProblemSolution
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.Species
-```
-
-```{eval-rst}
-.. automodule:: src.Settings.self.TunningProperties
-``` -->
-
-<!-- ### Functions
-
-```{eval-rst}
-.. automodule:: src.Settings.functions
-   :members:
-``` -->
-
-<!-- ### Extensions
-
-```{eval-rst}
-.. automodule:: src.Settings.functions
-   :members:
-``` -->
+# Directory tree
+The directory tree of Combustion Toolbox (CT) is organized as follows:
+   * ```databases```: folder with all the databases.
+   * ```examples```: folder with all the examples.
+   * ```gui```: folder with all the functions to generate the app, add-ons, assets, and all the necessary functions to be compatible with the plain code and extend its functionality.
+   * ```installer```: folder with the installation files (app, toolbox, and package).
+   * ```modules```: routines to solve the different type of problems implemented in the three routines that compound CT (CT-EQUIL, CT-SD, and CT-ROCKET).
+   * ```utils```: folder with a collection of functions with multiple purposes (utilities, database, display, equation of state, export, extensions, root finding algorithms, thermo, and validations).
+   * ```validations```: folder with all the validations of CT with other codes and artifacts (for tests automatization).
