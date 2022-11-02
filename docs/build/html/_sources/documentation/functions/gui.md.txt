@@ -1,3 +1,0 @@
-# GUI
-
-Routines to generate the app, add-ons, assets, and all the necessary functions to be compatible with the plain code and extend its functionality.
