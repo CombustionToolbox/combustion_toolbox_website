@@ -9,7 +9,7 @@
 %                    'C2H2_acetylene','C2H4','C2O','C3','H','HCO',...
 %                    'HO2','H2','H2O','O','OH','O2'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -31,6 +31,6 @@ self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 300);
 %% TUNNUNG PARAMETERS
 self.TN.tolN = 1e-14;
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'TP');
+self = solve_problem(self, 'TP');
 %% DISPLAY RESULTS (PLOTS)
-postResults(self);
+post_results(self);

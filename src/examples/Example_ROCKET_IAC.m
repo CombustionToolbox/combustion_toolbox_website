@@ -9,7 +9,7 @@
 % HYDROGEN_L == {'H','H2O','OH','H2','O','O3','O2','HO2','H2O2',...
 %                'H2bLb','O2bLb'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -28,6 +28,6 @@ self.PD.FLAG_IAC = true;
 %% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)
 self = set_prop(self, 'Aratio', 3);
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'ROCKET');
+self = solve_problem(self, 'ROCKET');
 %% DISPLAY RESULTS (PLOTS)
-postResults(self);
+post_results(self);

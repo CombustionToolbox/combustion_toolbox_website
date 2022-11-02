@@ -13,7 +13,7 @@
 %              'Cminus','CN','CNplus','CNminus','CNN','NCO','NCN','Ar',...
 %              'Arplus'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -34,6 +34,6 @@ self.PD.N_Oxidizer = [78.084, 20.9476, 0.9365, 0.0319] ./ 20.9476;
 overdriven = 10;
 self = set_prop(self, 'u1', 3.472107491008314e+02 * overdriven, 'beta', 20:5:85);
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'SHOCK_OBLIQUE');
+self = solve_problem(self, 'SHOCK_OBLIQUE');
 %% DISPLAY RESULTS (PLOTS)
-postResults(self);
+post_results(self);

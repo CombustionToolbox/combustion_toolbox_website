@@ -9,7 +9,7 @@
 % HYDROGEN_L == {'H','H2O','OH','H2','O','O3','O2','HO2','H2O2',...
 %                'H2bLb','O2bLb'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -39,7 +39,7 @@ for i = length(Aratio):-1:1
     %% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)
     self = set_prop(self, 'Aratio_c', 2, 'Aratio', Aratio(i));
     self = set_prop(self, 'TR', 298.15, 'pR', 22, 'phi', phi);
-    self = SolveProblem(self, 'ROCKET');
+    self = solve_problem(self, 'ROCKET');
     Z(:, i) = cell2vector(self.PS.strP, 'I_sp');
     OF(:, i) = cell2vector(self.PS.strR, 'OF');
     %% DISPLAY RESULTS (PLOTS)

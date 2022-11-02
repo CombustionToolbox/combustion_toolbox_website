@@ -11,7 +11,7 @@
 %                    'C2','C2H4','CH','CH','CH3','CH4','CN','H',...
 %                    'HCN','HCO','N','NH','NH2','NH3','NO','O','OH'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -33,6 +33,6 @@ self.PD.T_Oxidizer = [380, 380, 380, 380];
 %% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)
 self = set_prop(self, 'pP', self.PD.pR.value); 
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'HP');
+self = solve_problem(self, 'HP');
 %% DISPLAY RESULTS (PLOTS)
-postResults(self);
+post_results(self);

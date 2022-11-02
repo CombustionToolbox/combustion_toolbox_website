@@ -2,7 +2,7 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
 </p>
 
-<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems. </b> </center> <br>
+<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
 
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
@@ -78,7 +78,7 @@ Completely open source, GUI included!
 {bdg-light}`NASA` {bdg-light}`Burcat` {bdg-light}`ATcT`
 :::
 
-:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `CANTERA`, `Caltech's SD-Toolbox`, and `TEA`.
+:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `CANTERA`, `Caltech's SD-Toolbox`, and `TEA`
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/validations.html
 :::
 
@@ -178,7 +178,7 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
 If you use Combustion Toolbox in a publication, please cite it using the following reference:
 
 
-* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.92). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
+* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.93). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
 
 It can be handy the BibTeX format:
 
@@ -187,7 +187,7 @@ It can be handy the BibTeX format:
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
     year = 2022,
-    note = "Version 0.9.92",
+    note = "Version 0.9.99",
     doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```

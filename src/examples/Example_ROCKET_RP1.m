@@ -22,7 +22,7 @@
 %                'O','OCCN','OH','C3O2','C4N2','RP_1','H2bLb',...
 %                'O2bLb'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -61,7 +61,7 @@ self.PD.FLAG_IAC = false;
 %% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)
 self = set_prop(self, 'Aratio_c', 2, 'Aratio', 2.62);
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'ROCKET');
+self = solve_problem(self, 'ROCKET');
 %% DISPLAY RESULTS (PLOTS)
 self.C.mintol_display = 1e-10;
-postResults(self);
+post_results(self);

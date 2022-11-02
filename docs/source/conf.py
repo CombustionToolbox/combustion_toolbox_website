@@ -84,6 +84,10 @@ nitpick_ignore = [
     ('mat:obj', 'bool'),
     ('mat:obj', 'function'),
     ('mat:obj', 'file'),
+    ('mat:obj', 'obj'),
+    ('mat:obj', 'object'),
+    ('mat:obj', 'char'),
+    ('mat:obj', 'empty'),
 ]
 
 def linkcode_resolve(domain, info):
@@ -158,8 +162,8 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    'light_logo': 'img/logo_CT.svg',
-    'dark_logo': 'img/logo_CT.svg',
+    'light_logo': 'img/logo_CT_noversion.svg',
+    'dark_logo': 'img/logo_CT_noversion.svg',
     'footer_icons': [
         {
             'name': 'Email',

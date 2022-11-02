@@ -9,7 +9,7 @@
 % HYDROGEN_L == {'H','H2O','OH','H2','O','O3','O2','HO2','H2O2',...
 %                'H2bLb','O2bLb'}
 %   
-% See wiki or ListSpecies() for more predefined sets of species
+% See wiki or list_species() for more predefined sets of species
 %
 % @author: Alberto Cuadra Lara
 %          PhD Candidate - Group Fluid Mechanics
@@ -27,6 +27,6 @@ self.PD.S_Oxidizer = {'O2bLb'};
 %% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)
 self = set_prop(self, 'pP', self.PD.pR.value); 
 %% SOLVE PROBLEM
-self = SolveProblem(self, 'HP');
+self = solve_problem(self, 'HP');
 %% DISPLAY RESULTS (PLOTS)
-postResults(self);
+post_results(self);

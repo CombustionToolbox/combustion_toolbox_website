@@ -2,7 +2,7 @@
     <img alt="UC3M" style="border-width:0" src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/Icons/logo.svg" width="1500"/></a>
 </p>
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6396748.svg)](https://doi.org/10.5281/zenodo.6396748)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5554911.svg)](https://doi.org/10.5281/zenodo.5554911)
 [![File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://es.mathworks.com/matlabcentral/fileexchange/101088-combustion-toolbox)
 [![CI](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CI.yml/badge.svg)](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CI.yml)
 [![CD](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CD.yml/badge.svg)](https://github.com/AlbertoCuadra/combustion_toolbox/actions/workflows/CD.yml)
@@ -11,32 +11,31 @@
 [![license](https://img.shields.io/github/license/AlbertoCuadra/combustion_toolbox)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 
+<img align="left" width="100" src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/icons/logo_CT_noversion.svg">&nbsp;
+<b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems</b>
 
-<p align="center">
-  <b>A MATLAB-GUI based open-source tool for solving gaseous combustion problems.</b>
-</p>
 
 ---
 :information_source: **NOTE**
-- Combustion Toolbox Website is live! Here is the link https://combustion-toolbox-website.readthedocs.io/en/latest/
-- There is a very early version in [Python](https://github.com/AlbertoCuadra/Combustion-PyToolbox)
+- Combustion Toolbox Website is live! Here is the link https://combustion-toolbox-website.readthedocs.io
+- There is a very early version in [Python](https://github.com/AlbertoCuadra/combustion_pytoolbox)
 ---
 
-# Features
 
-Combustion Toolbox is a a MATLAB-GUI based tool for solving gaseous combustion problems.
-Features
+<p align="left">
+    <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/Snapshots/example_HP_GUI.gif" width="342">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+    <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/Snapshots/example_HP.gif" width="370">
+</p>
+
+
+# Main features
   - The code stems from the minimization of the free energy of the system by using Lagrange multipliers combined with a Newton-Raphson method, upon condition that initial gas properties are defined by two functions of states (e.g., temperature and pressure)
   - When temperature is not externally imposed, the code retrieves a routine also based on Newton-Raphson method to find the equilibrium temperature
   - Solve processes that involve strong changes in the dynamic pressure, such as detonations and shock waves in the steady state
   - Find the equilibrium conditions of the different phenomena undergoing behind the shock: molecular vibrational excitation up to dissociation, and electronic excitation up to ionization, thereby providing the `properties of the gas in plasma state` within the temperature range given by the NASA’s 9-coefficient polynomial fits.
+  - Calculate the chemical equilibrium composition of a mixture by selecting which species can react or remain chemically frozen (inert).
   - The corresponding thermodynamic properties of the species are modelled with `NASA’s 9-coefficient polynomial fits`, which ranges `up to 20000 K`, and the ideal gas equation of state
-  - Results are in `excellent agreement with NASA’s Chemical Equilibrium with Applications (CEA) program`, CANTERA and Caltech’s Shock and Detonation Toolbox
-  - All the routines and computations are encapsulated in a more comprehensive and user-friendly GUI
-  - The code is in it’s transition to Python
-  - Display predefined plots (e.g., molar fraction vs equilence ratio)
-  - Export results in a spreadsheet (requires Excel)
-  - Export results as a .mat format
+  - Results are in `excellent agreement with NASA’s Chemical Equilibrium with Applications (CEA) program`, CANTERA and Caltech’s Shock and Detonation Toolbox, and TEA
 * `Chemical equilibrium problems`
   - TP: Equilibrium composition at defined temperature and pressure
   - HP: Adiabatic temperature and composition at constant pressure
@@ -48,15 +47,15 @@ Features
   - Pre-shock and post shock states
   - Equilibrium or frozen composition
   - Incident or reflected shocks
-  - Chapman-Jouguet detonations and overdriven detonations
+  - Chapman-Jouguet detonations, overdriven detonations, and underdriven detonations
   - Reflected detonations
   - Oblique shocks/detonations
-  - Shock polar for incident and reflected states
+  - Shock/detonation polar curves for incident and reflected states
   - Hugoniot curves
   - Ideal jump conditions for a given adiabatic index and pre-shock Mach number
 * `Rocket propellant performance assuming:`
   - Infinite-Area-Chamber model (IAC)
-  - Finite-Area-Chamber model (FAC) - under development -
+  - Finite-Area-Chamber model (FAC)
 * All the routines and computations are encapsulated in a more comprehensive and `user-friendly GUI`
 * The code `is in it’s transition to Python`
 * Export results in a spreadsheet
@@ -66,7 +65,10 @@ Features
 This project is also part of the PhD of [Alberto Cuadra-Lara](https://www.acuadralara.com/).
 
 # Start here!
-The [tutorial](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html) will help you get started using Combustion Toolbox on your pc.
+
+* The [tutorial](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html) will help you get started using Combustion Toolbox on your pc.
+* See [examples](https://combustion-toolbox-website.readthedocs.io/en/latest/examples.html) of Combustion Toolbox applications.
+* Check the [documentation](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/index.html) of almost every functions.
 
 # Gallery
 
@@ -76,7 +78,7 @@ We have several examples of what Combustion Toolbox can do. Here we show a previ
     <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/GUI/Snapshots/snapshot_1.svg" width="500">
 </p>
 
-**Figure 1:** *Snapshot of the GUI*.
+**Figure 1:** *Current state of the GUI*.
 
 <p align="left">
     <img src="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/Validations/Figures/Hugoniot_benchmarking.svg" width="400">
@@ -107,6 +109,8 @@ Thank you for testing Combustion Toolbox!
 # Acknowledgements
 * Combustion Toolbox's color palette is obtained from the following repository: Stephen (2021). ColorBrewer: Attractive and Distinctive Colormaps (https://github.com/DrosteEffect/BrewerMap), GitHub. Retrieved December 3, 2021.
 * For validations, Combustion Toolbox uses CPU Info from the following repository: Ben Tordoff (2022). CPU Info (https://github.com/BJTor/CPUInfo/releases/tag/v1.3), GitHub. Retrieved March 22, 2022.
+* Combustion Toolbox's splash screen is based on a routine from the following repository: Ben Tordoff (2022). SplashScreen (https://www.mathworks.com/matlabcentral/fileexchange/30508-splashscreen), MATLAB Central File Exchange. Retrieved October 15, 2022.
+* Combustion Toolbox's periodic table layout is based in the following repository: Bruno Salcedo (2018). latex-periodic-table (https://github.com/brunosalcedo/latex-periodic-table), Github. Retrieved October 15, 2022.
 
 # Developers
 
@@ -123,9 +127,9 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
 ```bibtex
 @misc{combustiontoolbox,
     author = "Cuadra, A and Huete, C and Vera, M",
-    title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems",
+    title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
     year = 2022,
-    note = "Version 0.9.1",
-    doi = {https://doi.org/10.5281/zenodo.6396748}
+    note = "Version 0.9.93",
+    doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
