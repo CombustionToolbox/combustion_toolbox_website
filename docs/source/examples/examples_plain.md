@@ -9,8 +9,8 @@ Here we have a collection of examples included in Combustion Toolbox.
 examples_plain_TP
 examples_plain_TV
 examples_plain_HP
-examples_plain_HP_complete_incomplete
-examples_plain_HP_pressure
+examples_plain_HP_COMPLETE_INCOMPLETE
+examples_plain_HP_PRESSURE
 examples_plain_HP_MIXTEMP
 examples_plain_HP_PROPELLANTS
 examples_plain_EV
@@ -29,8 +29,14 @@ examples_plain_DET
 examples_plain_DET_R
 examples_plain_DET_OVERDRIVEN
 examples_plain_DET_OVERDRIVEN_R
+examples_plain_DET_UNDERDRIVEN
+examples_plain_DET_UNDERDRIVEN_R
+examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN
 examples_plain_DET_OBLIQUE_BETA
 examples_plain_DET_OBLIQUE_THETA
+examples_plain_DET_POLAR
+examples_plain_DET_POLAR_SONIC_AND_MAX
 examples_plain_ROCKET_IAC
 examples_plain_ROCKET_FAC
+examples_plain_EXOPLANET_WASP43b_1
 ```
