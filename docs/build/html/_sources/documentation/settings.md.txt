@@ -2,8 +2,10 @@
 
 Routines to initialize the main module, print results, plots, and external functions. We can distinguish four folders:
    * self (main struct variable),
-   * general functions,
+   * utilities functions,
+   * database functions,
    * display functions,
+   * export functions,
    * external functions.
 
 ```{toctree}

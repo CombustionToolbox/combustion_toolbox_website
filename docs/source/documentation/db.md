@@ -164,7 +164,7 @@ Transpose stoichiometric matrix:
 
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.databases.functions
+.. automodule:: src.databases.utils
    :members:
 ```
 :::

@@ -5,7 +5,7 @@
 If you use Combustion Toolbox in a publication, please cite it using the following reference:
 
 
-* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.92). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
+* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 
 It can be handy the BibTeX format:
 
@@ -14,7 +14,7 @@ It can be handy the BibTeX format:
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
     year = 2022,
-    note = "Version 0.9.92",
+    note = "Version 0.9.99",
     doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
@@ -25,18 +25,15 @@ Here we have some contributions, work in progress articles, and publications in 
 
 ### Journal articles
 
-* Cuadra, A., Huete, C., & Vera, M. (2022). Development of a wider-scope thermochemical code **(work in progress)**.
-* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions **(work in progress)**.
-* Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock
-waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**.
-https://doi.org/10.1063/5.0059948
-* Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation
-discontinuities. Journal of Fluid Mechanics, 903, A30. https://doi.org/10.1017/jfm.2020.651
+* Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: an open source thermochemical code for solving gaseous combustion problems **(work in progress)**.
+* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions.
+* Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. [https://doi.org/10.1063/5.0059948](https://doi.org/10.1063/5.0059948)
+* Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation discontinuities. Journal of Fluid Mechanics, 903, A30. [https://doi.org/10.1017/jfm.2020.651](https://doi.org/10.1017/jfm.2020.651)
 
 ### Conference contributions
 
-* Cuadra, A., Huete, C., & Vera, M. (2022). Desarrollo de un código termoquímico para la evaluación de las propiedades teóricas de explosivos (CT-EXPLO) y la estimación del rendimiento de motores cohete (CT-ROCKET). In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain (work in progress).
-* Cuadra, A., Huete, C., & Vera, M. (2022). Amplificación de la turbulencia a través de una onda de choque en régimen hipersónico. In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain (work in progress).
+* Cuadra, A., Huete, C., & Vera, M. (2022). Desarrollo de un código termoquímico para la evaluación de las propiedades teóricas de explosivos (CT-EXPLO) y la estimación del rendimiento de motores cohete (CT-ROCKET). In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain.
+* Cuadra, A., Huete, C., & Vera, M. (2022). Amplificación de la turbulencia a través de una onda de choque en régimen hipersónico. In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain.
 * Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: a MATLAB-GUI based open-source tool for solving combustion problems. In 12th National and 3rd International Conference on Engineering Thermodynamics (CNIT), Madrid, Spain.
 * Cuadra, A., Huete, C., & Vera, M. (2022). Theory of turbulence augmentation across hypersonic shock waves in air. In 1st Spanish Fluid Mechanics Conference (SFMC), Cádiz, Spain.
 * Cuadra, A., Huete, C., Vera, M., & Urzay, J. (2021). Theory of turbulence augmentation across hypersonic shock waves. In 74th Annual Meeting of the Division of Fluid Dynamics (APS DFD), Phoenix, US.

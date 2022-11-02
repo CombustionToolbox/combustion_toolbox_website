@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Solvers" href="solver.html" /><link rel="prev" title="Settings" href="settings.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>self - Combustion Toolbox v0.9.93</title>
+        <title>self - Combustion Toolbox v0.9.99</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.93</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.99</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_noversion.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.93</span>
+  <span class="sidebar-brand-text">Combustion Toolbox v0.9.99</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -210,7 +210,6 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="solver.html">Solvers</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="solver_functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_chemical_equilibrium.html">Chemical equilibrium</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_shocks_detonations.html">Shocks and detonations waves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solver_rocket.html">Rocket propellant performance</a></li>
@@ -268,30 +267,10 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.settings.self.App.App">
 <span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.App" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Generate self variable with all the data required to initialize the computations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – Generate default self variable assuming as products LS = Soot formation</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Optional Args:</dt><dd><ul class="simple">
-<li><p class="sd-card-text">LS (cell): List of species</p></li>
-<li><p class="sd-card-text">obj (class): Class combustion_toolbox_app (GUI)</p></li>
-<li><p class="sd-card-text">type (str): If value is fast initialize from the given Databases</p></li>
-<li><p class="sd-card-text">DB_master (struct): Master database</p></li>
-<li><p class="sd-card-text">DB (struct): Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture (initialization - empty), conditions, and databases</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.App.ContainedElements">
-<span class="sig-name descname"><span class="pre">ContainedElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.ContainedElements" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.settings.self.App.contained_elements">
+<span class="sig-name descname"><span class="pre">contained_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.contained_elements" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain containted elements from the given set of species (reactants and products)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -303,8 +282,8 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 </dd></dl>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.App.Initialize">
-<span class="sig-name descname"><span class="pre">Initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.Initialize" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.settings.self.App.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.App.initialize" title="Permalink to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>This routine have three tasks:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">Check that all species are contained in the Database</p></li>
@@ -485,8 +464,31 @@ Routines<div class="sd-summary-down docutils">
 <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.settings.self.Species"></span><dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.Species.ListSpecies">
-<span class="sig-name descname"><span class="pre">ListSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.ListSpecies" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.settings.self.Species.Species">
+<span class="sig-name descname"><span class="pre">Species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.Species" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Initialize struct with problem solution data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with problem solution data</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.settings.self.Species.get_index_ions">
+<span class="sig-name descname"><span class="pre">get_index_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.get_index_ions" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get index of ions for the given list of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – List of species</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p class="sd-card-text"><em>index (float)</em> – Index of ions</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.settings.self.Species.list_species">
+<span class="sig-name descname"><span class="pre">list_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.list_species" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Set list of species in the mixture (reactants and products)</p>
 <dl class="simple">
 <dt>Predefined list of species:</dt><dd><ul class="simple">
@@ -495,13 +497,15 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">HC/O2/N2 EXTENDED</p></li>
 <li><p class="sd-card-text">SOOT FORMATION EXTENDED</p></li>
 <li><p class="sd-card-text">NASA ALL</p></li>
+<li><p class="sd-card-text">NASA ALL CONDENSED</p></li>
+<li><p class="sd-card-text">NASA ALL IONS</p></li>
 <li><p class="sd-card-text">AIR, DISSOCIATED AIR</p></li>
 <li><p class="sd-card-text">AIR IONS, AIR_IONS</p></li>
 <li><p class="sd-card-text">IDEAL_AIR, AIR_IDEAL</p></li>
 <li><p class="sd-card-text">HYDROGEN</p></li>
 <li><p class="sd-card-text">HYDROGEN_L, HYDROGEN (L)</p></li>
 <li><p class="sd-card-text">HC/O2/N2 PROPELLANTS</p></li>
-<li><p class="sd-card-text">Si/HC/O2/N2 PROPELLANTS</p></li>
+<li><p class="sd-card-text">SI/HC/O2/N2 PROPELLANTS</p></li>
 </ul>
 </dd>
 </dl>
@@ -522,29 +526,6 @@ Routines<div class="sd-summary-down docutils">
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.Species.Species">
-<span class="sig-name descname"><span class="pre">Species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.Species" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Initialize struct with problem solution data</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – struct with problem solution data</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.settings.self.Species.get_index_ions">
-<span class="sig-name descname"><span class="pre">get_index_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.settings.self.Species.get_index_ions" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Get index of ions for the given list of species</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – List of species</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p class="sd-card-text"><em>index (float)</em> – Index of ions</p>
 </dd>
 </dl>
 </dd></dl>
@@ -578,7 +559,7 @@ Routines<div class="sd-summary-down docutils">
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TuningProperties.itMax_gibbs">
 <span class="sig-name descname"><span class="pre">itMax_gibbs</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.itMax_gibbs" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Max number of iterations - gibbs minimization method              (default: 70)</p>
+<dd><p class="sd-card-text">Max number of iterations - Gibbs/Helmholtz minimization method    (default: 70)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p class="sd-card-text">float</p>
@@ -598,7 +579,7 @@ Routines<div class="sd-summary-down docutils">
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.settings.self.TuningProperties.tolN">
 <span class="sig-name descname"><span class="pre">tolN</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.tolN" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Tolerance of the Gibbs minimization method                        (default: 1e-14)</p>
+<dd><p class="sd-card-text">Tolerance of the Gibbs/Helmholtz minimization method              (default: 1e-14)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p class="sd-card-text">float</p>
@@ -706,9 +687,9 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 </dd></dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.volume_ratio">
-<span class="sig-name descname"><span class="pre">volume_ratio</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.volume_ratio" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Initial guess volume ratio shocks                                 (default: 5)</p>
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.Mach_thermo">
+<span class="sig-name descname"><span class="pre">Mach_thermo</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.Mach_thermo" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Preshock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2 (default: 2)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p class="sd-card-text">float</p>
@@ -739,6 +720,18 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.settings.self.TuningProperties.N_points_polar">
 <span class="sig-name descname"><span class="pre">N_points_polar</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.N_points_polar" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Number of points to compute shock polar                           (default: 100)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p class="sd-card-text">float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.settings.self.TuningProperties.it_guess_det">
+<span class="sig-name descname"><span class="pre">it_guess_det</span></span><a class="headerlink" href="#src.settings.self.TuningProperties.it_guess_det" title="Permalink to this definition">#</a></dt>
+<dd><ol class="arabic simple" start="5">
+<li></li>
+</ol>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p class="sd-card-text">float</p>

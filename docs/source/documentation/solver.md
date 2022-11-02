@@ -6,7 +6,6 @@ Routines to solve different type of problems. We can distinguish four modules:
     :maxdepth: 2
     :titlesonly:
     
-solver_functions
 solver_chemical_equilibrium
 solver_shocks_detonations
 solver_rocket

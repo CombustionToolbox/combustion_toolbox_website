@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_SP.m" href="examples_plain_SP.html" /><link rel="prev" title="Example_HP_PROPELLANTS.m" href="examples_plain_HP_PROPELLANTS.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Example_EV.m - Combustion Toolbox v0.9.93</title>
+        <title>Example_EV.m - Combustion Toolbox v0.9.99</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.93</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v0.9.99</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -153,7 +153,7 @@
     <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_noversion.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.93</span>
+  <span class="sidebar-brand-text">Combustion Toolbox v0.9.99</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -264,7 +264,7 @@
 <span class="linenos">10</span><span class="c">%                    'C2','C2H4','CH','CH','CH3','CH4','CN','H',...</span><span class="w"></span>
 <span class="linenos">11</span><span class="c">%                    'HCN','HCO','N','NH','NH2','NH3','NO','O','OH'}</span><span class="w"></span>
 <span class="linenos">12</span><span class="c">%   </span><span class="w"></span>
-<span class="linenos">13</span><span class="c">% See wiki or ListSpecies() for more predefined sets of species</span><span class="w"></span>
+<span class="linenos">13</span><span class="c">% See wiki or list_species() for more predefined sets of species</span><span class="w"></span>
 <span class="linenos">14</span><span class="c">%</span><span class="w"></span>
 <span class="linenos">15</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
 <span class="linenos">16</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
@@ -283,9 +283,9 @@
 <span class="linenos">29</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
 <span class="linenos">30</span><span class="c">% No additional data required. The internal energy and volume are constants.</span><span class="w"></span>
 <span class="linenos">31</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
-<span class="linenos">32</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SolveProblem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'EV'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">32</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'EV'</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">33</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
-<span class="linenos">34</span><span class="n">postResults</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">34</span><span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

@@ -1,19 +1,19 @@
 # Functions
 
-A collection of functions necessary to obtain different data in the solver module. Here we can find:
-   * general functions,
+A collection of functions necessary to obtain different data in the settings module. Here we can find:
+   * general utilities functions,
    * root finding algorithms,
    * thermodynamics properties.
 
-## General functions
+## General utilities functions
 
-A collection of general functions necessary to obtain different data in the solver module.
+A collection of general functions necessary to obtain different data in the settings module.
 
 ***
 
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.solver.functions
+.. automodule:: src.settings.functions
    :members:
 ```
 :::
@@ -28,11 +28,11 @@ Roots algorithm used to obtain the temperature at equilibrium for a given thermo
 
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.solver.functions.root_finding
+.. automodule:: src.settings.utils.root_finding
    :members:
-.. automodule:: src.solver.functions.root_finding.newton
+.. automodule:: src.settings.utils.root_finding.newton
    :members:
-.. automodule:: src.solver.functions.root_finding.steffenson
+.. automodule:: src.settings.utils.root_finding.steffenson
    :members:
 ```
 :::
@@ -46,7 +46,7 @@ Functions to obtain thermodynamic properties from a given mixture.
 
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.solver.functions.thermo
+.. automodule:: src.settings.utils.thermo
    :members:
 ```
 :::
