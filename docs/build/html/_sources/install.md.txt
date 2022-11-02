@@ -30,8 +30,12 @@ Combustion toolbox can be used in two ways:
 
 **2.** Open MATLAB with the path set to the downloaded folder
 
-**3.** To install the GUI execute `Combustion Toolbox.mlappintall` in the installer folder. As simple as that.
+**3.** To install the GUI execute `combustion_toolbox_app.mlappinstall` in the installer folder. As simple as that.
 
 <p align="center">
-    <img src="_static/gif/install.gif" width="1000">
+    <img src="_static/gif/install.gif" width="800">
 </p>
+
+Combustion Toolbox GUI can also be used with the MATLAB's standalone version. In this case, proceed running `combustion_toolbox_standalone_installer.exe`.
+
+To use the desktop environment (plain code) along with the GUI install the package from `combustion_toolbox_package.mltbx` or running `INSTALL.m`.
