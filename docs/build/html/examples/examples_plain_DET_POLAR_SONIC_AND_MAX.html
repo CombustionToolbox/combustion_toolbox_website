@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_HP_PRESSURE.m" href="examples_plain_HP_PRESSURE.html" /><link rel="prev" title="Example_HP.m" href="examples_plain_HP.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_ROCKET_IAC.m" href="examples_plain_ROCKET_IAC.html" /><link rel="prev" title="Example_DET_POLAR.m" href="examples_plain_DET_POLAR.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Example_HP_COMPLETE_INCOMPLETE.m - Combustion Toolbox v0.9.99</title>
+        <title>Example_DET_POLAR_SONIC_AND_MAX.m - Combustion Toolbox v0.9.99</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -170,7 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_TP.html">Example_TP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP.html">Example_HP.m</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -195,7 +195,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
 </ul>
@@ -253,73 +253,58 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="example-hp-complete-incomplete-m">
-<h1>Example_HP_COMPLETE_INCOMPLETE.m<a class="headerlink" href="#example-hp-complete-incomplete-m" title="Permalink to this headline">#</a></h1>
+          <div class="section" id="example-det-polar-sonic-and-max-m">
+<h1>Example_DET_POLAR_SONIC_AND_MAX.m<a class="headerlink" href="#example-det-polar-sonic-and-max-m" title="Permalink to this headline">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="c">% EXAMPLE: HP COMPLETE VS INCOMPLETE</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: DET_POLAR_SONIC_AND_MAX</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="c">% Compute adiabatic temperature and equilibrium composition at constant</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="c">% pressure (e.g., 1.01325 bar) for lean to rich natural gas-air mixtures at</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="c">% standard conditions, a set of equivalence ratios phi contained in</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="c">% (0.5, 3) [-], and two different sets of species "Complete" or "Incomplete"</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="c">% </span><span class="w"></span>
-<span class="linenos"> 9</span><span class="c">% * Complete:</span><span class="w"></span>
-<span class="linenos">10</span><span class="c">%       - lean = {'CO2', 'H2O', 'N2', 'Ar', 'O2'};                (equivalence ratio &lt; 1)</span><span class="w"></span>
-<span class="linenos">11</span><span class="c">%       - rich = {'CO2', 'H2O', 'N2', 'Ar', 'CO', 'H2'};          (equivalence ratio &gt; 1)</span><span class="w"></span>
-<span class="linenos">12</span><span class="c">%       - soot = {'N2', 'Ar', 'CO', 'H2', 'Cbgrb', 'CO2', 'H2O'}; (equivalence ratio &gt; equivalence ratio soot)   </span><span class="w"></span>
-<span class="linenos">13</span><span class="c">%</span><span class="w"></span>
-<span class="linenos">14</span><span class="c">% * Incomplete:</span><span class="w"></span>
-<span class="linenos">15</span><span class="c">%       - Soot formation == {'CO2','CO','H2O','H2','O2','N2','He','Ar','Cbgrb',...</span><span class="w"></span>
-<span class="linenos">16</span><span class="c">%                            'C2','C2H4','CH','CH','CH3','CH4','CN','H',...</span><span class="w"></span>
-<span class="linenos">17</span><span class="c">%                            'HCN','HCO','N','NH','NH2','NH3','NO','O','OH'}</span><span class="w"></span>
-<span class="linenos">18</span><span class="c">%   </span><span class="w"></span>
-<span class="linenos">19</span><span class="c">% See wiki or list_species() for more predefined sets of species</span><span class="w"></span>
-<span class="linenos">20</span><span class="c">%</span><span class="w"></span>
-<span class="linenos">21</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
-<span class="linenos">22</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
-<span class="linenos">23</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
-<span class="linenos">24</span><span class="c">%                 </span><span class="w"></span>
-<span class="linenos">25</span><span class="c">% Last update Oct 13 2022</span><span class="w"></span>
-<span class="linenos">26</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="c">%% COMPLETE COMBUSTION</span><span class="w"></span>
-<span class="linenos">29</span><span class="c">% Initialization</span><span class="w"></span>
-<span class="linenos">30</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'Complete'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">31</span><span class="c">% Set fuel composition </span><span class="w"></span>
-<span class="linenos">32</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'CH4'</span><span class="p">,</span><span class="w"> </span><span class="s">'C2H6'</span><span class="p">,</span><span class="w"> </span><span class="s">'C3H8'</span><span class="p">,</span><span class="w"> </span><span class="s">'C4H10_isobutane'</span><span class="p">,</span><span class="w"> </span><span class="s">'H2'</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">33</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">];</span><span class="w"></span>
-<span class="linenos">34</span><span class="c">% Set oxidizer composition</span><span class="w"></span>
-<span class="linenos">35</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_air</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">36</span><span class="c">% Set temperature, pressure and equivalence ratio</span><span class="w"></span>
-<span class="linenos">37</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.02</span><span class="p">:</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">38</span><span class="c">% Set constant pressure for products</span><span class="w"></span>
-<span class="linenos">39</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'pP'</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">pR</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">40</span><span class="c">% Solve Problem</span><span class="w"></span>
-<span class="linenos">41</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'HP'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">42</span><span class="c">% Save results</span><span class="w"></span>
-<span class="linenos">43</span><span class="n">results_complete</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">self</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">44</span><span class="c">%% INCOMPLETE COMBUSTION</span><span class="w"></span>
-<span class="linenos">45</span><span class="c">% Set product species at equilibrium</span><span class="w"></span>
-<span class="linenos">46</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'copy'</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'Soot formation'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">47</span><span class="c">% Solve Problem</span><span class="w"></span>
-<span class="linenos">48</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'HP'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">49</span><span class="c">% Save results</span><span class="w"></span>
-<span class="linenos">50</span><span class="n">results_incomplete</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">self</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">51</span><span class="c">%% COMPARE RESULTS</span><span class="w"></span>
-<span class="linenos">52</span><span class="n">mix1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">results_complete</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strR</span><span class="p">;</span><span class="w"> </span><span class="c">% Is the same as the incomplete case (same initial mixture)</span><span class="w"></span>
-<span class="linenos">53</span><span class="n">mix2_complete</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">results_complete</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">;</span><span class="w"> </span>
-<span class="linenos">54</span><span class="n">mix2_incomplete</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">results_incomplete</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">55</span>
-<span class="linenos">56</span><span class="n">phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cell2vector</span><span class="p">(</span><span class="n">mix1</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">57</span>
-<span class="linenos">58</span><span class="n">self</span><span class="p">.</span><span class="n">Misc</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'\rm{Complete\ vs\ Incomplete}'</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">59</span><span class="n">self</span><span class="p">.</span><span class="n">Misc</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">labelx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'Equivalence ratio $\phi$'</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">60</span><span class="n">self</span><span class="p">.</span><span class="n">Misc</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">labely</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'Temperature $T$ [K]'</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">61</span><span class="n">legend_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'Complete'</span><span class="p">,</span><span class="w"> </span><span class="s">'Incomplete'</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">62</span>
-<span class="linenos">63</span><span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plot_figure</span><span class="p">(</span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="s">'T'</span><span class="p">,</span><span class="w"> </span><span class="n">mix2_complete</span><span class="p">,</span><span class="w"> </span><span class="s">'config'</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">Misc</span><span class="p">.</span><span class="n">config</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">64</span><span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plot_figure</span><span class="p">(</span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="s">'T'</span><span class="p">,</span><span class="w"> </span><span class="n">mix2_incomplete</span><span class="p">,</span><span class="w"> </span><span class="s">'config'</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">Misc</span><span class="p">.</span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="s">'ax'</span><span class="p">,</span><span class="w"> </span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">'legend'</span><span class="p">,</span><span class="w"> </span><span class="n">legend_name</span><span class="p">,</span><span class="w"> </span><span class="s">'color'</span><span class="p">,</span><span class="w"> </span><span class="s">'auto'</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">65</span><span class="n">ax</span><span class="p">.</span><span class="n">Legend</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'northeast'</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="c">% Compute detonation polar curves at standard conditions, a set of 30 species</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="c">% considered, and a set of pre-shock Mach numbers M1 = [1.01*M1cj:15], or</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="c">% what is the same, drive factors M1/M1_cj = [1.01:2.9069]</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="c">%    </span><span class="w"></span>
+<span class="linenos"> 8</span><span class="c">% Hydrogen == {'H2O','H2','O2','N2','He','Ar','H','HNO',...</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="c">%              'HNO3','NH','NH2OH','NO3','N2H2','N2O3','N3','OH',...</span><span class="w"></span>
+<span class="linenos">10</span><span class="c">%              'HNO2','N','NH3','NO2','N2O','N2H4','N2O5','O','O3',...</span><span class="w"></span>
+<span class="linenos">11</span><span class="c">%              'HO2','NH2','H2O2','N3H','NH2NO2'}</span><span class="w"></span>
+<span class="linenos">12</span><span class="c">%   </span><span class="w"></span>
+<span class="linenos">13</span><span class="c">% See wiki or list_species() for more predefined sets of species</span><span class="w"></span>
+<span class="linenos">14</span><span class="c">%</span><span class="w"></span>
+<span class="linenos">15</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
+<span class="linenos">16</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
+<span class="linenos">17</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
+<span class="linenos">18</span><span class="c">%                 </span><span class="w"></span>
+<span class="linenos">19</span><span class="c">% Last update Oct 07 2022</span><span class="w"></span>
+<span class="linenos">20</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c">%% INITIALIZE</span><span class="w"></span>
+<span class="linenos">23</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'Hydrogen'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">24</span><span class="c">%% INITIAL CONDITIONS</span><span class="w"></span>
+<span class="linenos">25</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">26</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'H2'</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">27</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'N2'</span><span class="p">,</span><span class="w"> </span><span class="s">'O2'</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">28</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="o">/</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">29</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
+<span class="linenos">30</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'overdriven'</span><span class="p">,</span><span class="w"> </span><span class="mf">1.01</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">2.9069</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">31</span><span class="c">%% TUNING PROPERTIES</span><span class="w"></span>
+<span class="linenos">32</span><span class="n">self</span><span class="p">.</span><span class="n">TN</span><span class="p">.</span><span class="n">N_points_polar</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span><span class="w">  </span><span class="c">% Number of points to compute shock polar</span><span class="w"></span>
+<span class="linenos">33</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
+<span class="linenos">34</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'DET_POLAR'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">35</span><span class="c">%% GET POINTS</span><span class="w"></span>
+<span class="linenos">36</span><span class="n">theta_sonic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cell2vector</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">,</span><span class="w"> </span><span class="s">'theta_sonic'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">37</span><span class="n">beta_sonic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cell2vector</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">,</span><span class="w"> </span><span class="s">'beta_sonic'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">38</span><span class="n">theta_max</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cell2vector</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">,</span><span class="w"> </span><span class="s">'theta_max'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">39</span><span class="n">beta_max</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cell2vector</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">PS</span><span class="p">.</span><span class="n">strP</span><span class="p">,</span><span class="w"> </span><span class="s">'beta_max'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">40</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
+<span class="linenos">41</span><span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">42</span><span class="c">%% SMOOTH RESULTS - FOURIER</span><span class="w"></span>
+<span class="linenos">43</span><span class="n">start_point_sonic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">0.0508682282375078</span><span class="p">];</span><span class="w"></span>
+<span class="linenos">44</span><span class="n">start_point_max</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">0.0656724073958934</span><span class="p">];</span><span class="w"></span>
+<span class="linenos">45</span><span class="p">[</span><span class="n">beta_sonic_smooth</span><span class="p">,</span><span class="w"> </span><span class="n">theta_sonic_smooth</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">smooth_data</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="n">beta_sonic</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">theta_sonic</span><span class="p">],</span><span class="w"> </span><span class="n">start_point_sonic</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">46</span><span class="p">[</span><span class="n">theta_max_smooth</span><span class="p">,</span><span class="w"> </span><span class="n">beta_max_smooth</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">smooth_data</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">theta_max</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="n">beta_max</span><span class="p">],</span><span class="w"> </span><span class="n">start_point_max</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">47</span><span class="c">%% PLOT</span><span class="w"></span>
+<span class="linenos">48</span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">gca</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">49</span><span class="n">plot_figure</span><span class="p">(</span><span class="s">'$\theta_{\rm cj}$'</span><span class="p">,</span><span class="w"> </span><span class="n">theta_sonic_smooth</span><span class="p">,</span><span class="w"> </span><span class="s">'$\beta_{\rm cj}$'</span><span class="p">,</span><span class="w"> </span><span class="n">beta_sonic_smooth</span><span class="p">,</span><span class="w"> </span><span class="s">'linestyle'</span><span class="p">,</span><span class="w"> </span><span class="s">'k:'</span><span class="p">,</span><span class="w"> </span><span class="s">'color'</span><span class="p">,</span><span class="w"> </span><span class="s">'auto'</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">50</span><span class="n">plot_figure</span><span class="p">(</span><span class="s">'$\theta_{\rm max}$'</span><span class="p">,</span><span class="w"> </span><span class="n">theta_max_smooth</span><span class="p">,</span><span class="w"> </span><span class="s">'$\beta_{\rm max}$'</span><span class="p">,</span><span class="w"> </span><span class="n">beta_max_smooth</span><span class="p">,</span><span class="w"> </span><span class="s">'linestyle'</span><span class="p">,</span><span class="w"> </span><span class="s">'k:'</span><span class="p">,</span><span class="w"> </span><span class="s">'color'</span><span class="p">,</span><span class="w"> </span><span class="s">'auto'</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -329,23 +314,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="examples_plain_HP_PRESSURE.html">
+          <a class="next-page" href="examples_plain_ROCKET_IAC.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Example_HP_PRESSURE.m</div>
+                <div class="title">Example_ROCKET_IAC.m</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="examples_plain_HP.html">
+          <a class="prev-page" href="examples_plain_DET_POLAR.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Example_HP.m</div>
+                <div class="title">Example_DET_POLAR.m</div>
                 
               </div>
             </a>

@@ -1,7 +1,7 @@
-# Example_HP_pressure.m
+# Example_HP_PRESSURE.m
 
 ```{eval-rst}
-.. literalinclude:: ../../../src/examples/Example_HP_pressure.m
+.. literalinclude:: ../../../src/examples/Example_HP_PRESSURE.m
    :language: matlab
    :linenos:
 ```
