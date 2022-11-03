@@ -14,7 +14,6 @@
 import os
 import sys
 import requests
-from docs.source.utils import *
 from docs.source.sphinxext.github_linkcode import github_linkcode_resolve
 
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
@@ -202,7 +201,8 @@ html_theme_options = {
         "color-brand-content": "#9ca0a5",
         "color-sidebar-caption-text": "#a6e22e",
         "color-background-item": "#a6e22e",
-        "color-problematic": "#a6e22e",#1f8782
+        "color-problematic": "#a6e22e",
+        "sd-color-info": "#3493a3",
         # "font-stack": "nimbus, sans-serif",
         # "font-stack--monospace": "nimbus, monospace",
     },
