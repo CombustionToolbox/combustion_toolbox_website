@@ -178,7 +178,7 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
 If you use Combustion Toolbox in a publication, please cite it using the following reference:
 
 
-* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.93). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
+* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
 
 It can be handy the BibTeX format:
 
