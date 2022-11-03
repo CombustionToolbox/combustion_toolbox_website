@@ -1,17 +1,18 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Publications" href="publications.html" /><link rel="prev" title="Example_ROCKET_FAC.m" href="examples/examples_plain_ROCKET_FAC.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Publications" href="publications.html" /><link rel="prev" title="Example_EXOPLANET_WASP43b_1.m" href="examples/examples_plain_EXOPLANET_WASP43b_1.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Validations - Combustion Toolbox v0.9.99</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
     
     
@@ -23,28 +24,41 @@
   --color-code-foreground: black;
   --color-brand-primary: #577A95;
   --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
   
   }
   @media not print {
     body[data-theme="dark"] {
       --color-code-background: #272822;
   --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #9ca0a5;
+  --color-brand-content: #9ca0a5;
+  --color-sidebar-caption-text: #a6e22e;
+  --color-background-item: #a6e22e;
+  --color-problematic: #a6e22e;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #272822;
   --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #9ca0a5;
+  --color-brand-content: #9ca0a5;
+  --color-sidebar-caption-text: #a6e22e;
+  --color-background-item: #a6e22e;
+  --color-problematic: #a6e22e;
   
       }
     }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -149,11 +163,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo only-light" src="_static/img/logo_CT_noversion.svg" alt="Light Logo"/>
-    <img class="sidebar-logo only-dark" src="_static/img/logo_CT_noversion.svg" alt="Dark Logo"/>
+    <img class="sidebar-logo only-light" src="_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/img/logo_CT_version.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.99</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -170,8 +183,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_TP.html">Example_TP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP.html">Example_HP.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_complete_incomplete.html">Example_HP_complete_incomplete.m</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_pressure.html">Example_HP_pressure.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_EV.html">Example_EV.m</a></li>
@@ -190,10 +203,16 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_R.html">Example_DET_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +254,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -249,25 +270,25 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="validations">
-<h1>Validations<a class="headerlink" href="#validations" title="Permalink to this headline">#</a></h1>
+          <section id="validations">
+<h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
 <p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">CEA-NASA</a>, <a class="reference external" href="https://cantera.org/">CANTERA</a> &amp; <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">SD-Toolbox</a><sup>1</sup>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a>.</p>
 <p><sup>1</sup> The Shock &amp; Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.</p>
-<hr class="docutils"/>
+<hr class="docutils" />
 <p><strong><em>For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions.</em></strong>
 To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validations_CEA</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="validation-tp-1">
-<h2>Validation TP 1<a class="headerlink" href="#validation-tp-1" title="Permalink to this headline">#</a></h2>
+<section id="validation-tp-1">
+<h2>Validation TP 1<a class="headerlink" href="#validation-tp-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&amp;space;+&amp;space;\frac{7.5}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;"/>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
 </li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
@@ -277,20 +298,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_TP_CEA_1_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_TP_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-tp-2">
-<h2>Validation TP 2<a class="headerlink" href="#validation-tp-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-tp-2">
+<h2>Validation TP 2<a class="headerlink" href="#validation-tp-2" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&amp;space;+&amp;space;\frac{7.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
@@ -299,20 +320,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_TP_CEA_2_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_TP_CEA_2_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-tp-3">
-<h2>Validation TP 3<a class="headerlink" href="#validation-tp-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-tp-3">
+<h2>Validation TP 3<a class="headerlink" href="#validation-tp-3" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&amp;space;+&amp;space;\frac{1.5}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
@@ -321,20 +342,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_TP_CEA_3_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_TP_CEA_3_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-tp-4">
-<h2>Validation TP 4<a class="headerlink" href="#validation-tp-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-tp-4">
+<h2>Validation TP 4<a class="headerlink" href="#validation-tp-4" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&amp;space;+&amp;space;\frac{1.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
@@ -343,20 +364,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_TP_CEA_4_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_TP_CEA_4_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-hp-1">
-<h2>Validation HP 1<a class="headerlink" href="#validation-hp-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-hp-1">
+<h2>Validation HP 1<a class="headerlink" href="#validation-hp-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Adiabatic T and composition at constant p</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&amp;space;+&amp;space;\frac{2.5}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
@@ -365,20 +386,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_HP_CEA_1_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_HP_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-hp-2">
-<h2>Validation HP 2<a class="headerlink" href="#validation-hp-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-hp-2">
+<h2>Validation HP 2<a class="headerlink" href="#validation-hp-2" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Adiabatic T and composition at constant p</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&amp;space;+&amp;space;\frac{2.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
@@ -387,20 +408,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_HP_CEA_2_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_HP_CEA_2_molar.svg" width="1000">
+    <img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-hp-3">
-<h2>Validation HP 3<a class="headerlink" href="#validation-hp-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-hp-3">
+<h2>Validation HP 3<a class="headerlink" href="#validation-hp-3" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Adiabatic T and composition at constant p</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
@@ -409,20 +430,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_HP_CEA_3_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_HP_CEA_3_molar.svg" width="1000">
+    <img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-hp-4">
-<h2>Validation HP 4<a class="headerlink" href="#validation-hp-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-hp-4">
+<h2>Validation HP 4<a class="headerlink" href="#validation-hp-4" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Adiabatic T and composition at constant p</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
@@ -431,20 +452,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_HP_CEA_4_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_HP_CEA_4_molar.svg" width="1000">
+    <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-tv-1">
-<h2>Validation TV 1<a class="headerlink" href="#validation-tv-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-tv-1">
+<h2>Validation TV 1<a class="headerlink" href="#validation-tv-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and v</p></li>
 <li><p>Temperature [K]   = 3000</p></li>
 <li><p>Pressure    [bar] = 1.0132</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}(\text{O}_2&amp;space;+&amp;space;3.7276&amp;space;\text{N}_2&amp;space;+&amp;space;0.0447&amp;space;\text{Ar}&amp;space;+&amp;space;0.0015&amp;space;\text{CO}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tv</p></li>
 </ul>
@@ -453,20 +474,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_TV_CEA_1_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_TV_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-ev-1">
-<h2>Validation EV 1<a class="headerlink" href="#validation-ev-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-ev-1">
+<h2>Validation EV 1<a class="headerlink" href="#validation-ev-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Adiabatic T and composition at constant v</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1.0132</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}(\text{O}_2&amp;space;+&amp;space;3.7276&amp;space;\text{N}_2&amp;space;+&amp;space;0.0447&amp;space;\text{Ar}&amp;space;+&amp;space;0.0015&amp;space;\text{CO}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/ev</p></li>
 </ul>
@@ -475,20 +496,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_EV_CEA_1_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="600"/>
+    <img src="_static/img/run_validation_EV_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-det-1">
-<h2>Validation DET 1<a class="headerlink" href="#validation-det-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-det-1">
+<h2>Validation DET 1<a class="headerlink" href="#validation-det-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Chapman-Jouget Detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&amp;space;+&amp;space;\frac{2.5}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
@@ -497,21 +518,21 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_DET_CEA_1_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="600"/>
+    <img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-det-2">
-<h2>Validation DET 2<a class="headerlink" href="#validation-det-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-det-2">
+<h2>Validation DET 2<a class="headerlink" href="#validation-det-2" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Chapman-Jouget Detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&amp;space;+&amp;space;\frac{2.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
@@ -520,21 +541,21 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="600"/>
+    <img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-det-3">
-<h2>Validation DET 3<a class="headerlink" href="#validation-det-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-det-3">
+<h2>Validation DET 3<a class="headerlink" href="#validation-det-3" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Chapman-Jouget Detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}(\text{O}_2&amp;space;+&amp;space;3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
@@ -543,21 +564,21 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_DET_CEA_3_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="600"/>
+    <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-det-4">
-<h2>Validation DET 4<a class="headerlink" href="#validation-det-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-det-4">
+<h2>Validation DET 4<a class="headerlink" href="#validation-det-4" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Chapman-Jouget Detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&amp;space;+&amp;space;\frac{2}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
@@ -566,21 +587,21 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_DET_CEA_4_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="600"/>
+    <img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-shock-ionization-1">
-<h2>Validation SHOCK IONIZATION 1<a class="headerlink" href="#validation-shock-ionization-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-shock-ionization-1">
+<h2>Validation SHOCK IONIZATION 1<a class="headerlink" href="#validation-shock-ionization-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Shock incident</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?3.7276&amp;space;\text{N}_2&amp;space;+&amp;space;\text{O}_2&amp;space;+&amp;space;0.0447&amp;space;\text{Ar}&amp;space;+&amp;space;0.0015&amp;space;\text{CO}_2">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
+</li>
 <li><p>List of species considered = list_species(‘Air_ions’)</p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
 </ul>
@@ -589,20 +610,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="600"/>
-<img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600"/>
+    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-shock-reflected-ionization-1">
-<h2>Validation SHOCK REFLECTED IONIZATION 1<a class="headerlink" href="#validation-shock-reflected-ionization-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-shock-reflected-ionization-1">
+<h2>Validation SHOCK REFLECTED IONIZATION 1<a class="headerlink" href="#validation-shock-reflected-ionization-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: Shock reflected</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?3.7276&amp;space;\text{N}_2&amp;space;+&amp;space;\text{O}_2&amp;space;+&amp;space;0.0447&amp;space;\text{Ar}&amp;space;+&amp;space;0.0015&amp;space;\text{CO}_2">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
+</li>
 <li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Air_ions')</span></code></p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
 </ul>
@@ -611,20 +632,20 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="600"/>
-<img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600"/>
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-shock-polar-1">
-<h2>Validation SHOCK POLAR 1<a class="headerlink" href="#validation-shock-polar-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-shock-polar-1">
+<h2>Validation SHOCK POLAR 1<a class="headerlink" href="#validation-shock-polar-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: Caltech’s SD Toolbox and CANTERA</p></li>
 <li><p>Problem type: Shock Polar</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1.01325</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?3.7619&amp;space;\text{N}_2&amp;space;+&amp;space;\text{O}_2">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?3.7619&space;\text{N}_2&space;&plus;&space;\text{O}_2"/>
+</li>
 <li><p>List of species considered = Frozen</p></li>
 <li><p>URL Folder Results SDToolbox: ./validations/sdtoolbox/data</p></li>
 </ul>
@@ -633,12 +654,12 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400"/>
-<img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400"/>
+    <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400">
+    <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400">
 </p>
-</div>
-<div class="section" id="validation-rocket-1">
-<h2>Validation ROCKET 1<a class="headerlink" href="#validation-rocket-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-rocket-1">
+<h2>Validation ROCKET 1<a class="headerlink" href="#validation-rocket-1" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: ROCKET</p></li>
@@ -650,8 +671,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm chamber} / A_{\rm throat}\)</span> = 2</p></li>
 <li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = [1:2.6]</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{RP1}&amp;space;+&amp;space;\frac{0.6723}{\phi}\text{LOX},&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[1,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{RP1}&space;&plus;&space;\frac{0.6723}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[1,&space;4]&space;"/>
+</li>
 <li><p>List of species considered = HC/O2/N2 PROPELLANTS</p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
@@ -661,11 +682,11 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/gif/validation_rocket.gif" width="720"/>
+    <img src="_static/gif/validation_rocket.gif" width="720">
 </p>
-</div>
-<div class="section" id="validation-rocket-2">
-<h2>Validation ROCKET 2<a class="headerlink" href="#validation-rocket-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-rocket-2">
+<h2>Validation ROCKET 2<a class="headerlink" href="#validation-rocket-2" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: ROCKET</p></li>
@@ -676,8 +697,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>Infinite-Area-Chamber model (IAC)</p></li>
 <li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = 3</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{LH2}&amp;space;+&amp;space;\frac{0.5}{\phi}\text{LOX},&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+</li>
 <li><p>List of species considered = HYDROGEN_L</p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
@@ -686,14 +707,14 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_ROCKET_CEA_17_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_ROCKET_CEA_17_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_ROCKET_CEA_17_properties_2.svg" width="600"/>
-<img src="_static/img/run_validation_ROCKET_CEA_17_properties_3.svg" width="600"/>
+    <img src="_static/img/run_validation_ROCKET_CEA_17_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_3.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-rocket-3">
-<h2>Validation ROCKET 3<a class="headerlink" href="#validation-rocket-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-rocket-3">
+<h2>Validation ROCKET 3<a class="headerlink" href="#validation-rocket-3" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
 <li><p>Problem type: ROCKET</p></li>
@@ -705,8 +726,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm chamber} / A_{\rm throat}\)</span> = 2</p></li>
 <li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = 3</p></li>
 <li><p>Initial mixture [moles]:</p>
-<img src="https://latex.codecogs.com/svg.image?\text{LH2}&amp;space;+&amp;space;\frac{0.5}{\phi}\text{LOX},&amp;space;\text{with&amp;space;a&amp;space;equivalence&amp;space;ratio&amp;space;}&amp;space;\phi&amp;space;\in&amp;space;[0.5,&amp;space;4]&amp;space;">
-</img></li>
+<img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+</li>
 <li><p>List of species considered = HYDROGEN_L</p></li>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
@@ -715,14 +736,14 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="center">
-<img src="_static/img/run_validation_ROCKET_CEA_18_molar.svg" width="1000"/>
-<img src="_static/img/run_validation_ROCKET_CEA_18_properties_1.svg" width="600"/>
-<img src="_static/img/run_validation_ROCKET_CEA_18_properties_2.svg" width="600"/>
-<img src="_static/img/run_validation_ROCKET_CEA_18_properties_3.svg" width="600"/>
+    <img src="_static/img/run_validation_ROCKET_CEA_18_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_1.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_3.svg" width="600">
 </p>
-</div>
-<div class="section" id="validation-tea-1">
-<h2>Validation TEA 1<a class="headerlink" href="#validation-tea-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="validation-tea-1">
+<h2>Validation TEA 1<a class="headerlink" href="#validation-tea-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
@@ -745,11 +766,11 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="left">
-<img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000"/>
-</p>
-</div>
-<div class="section" id="validation-tea-2">
-<h2>Validation TEA 2<a class="headerlink" href="#validation-tea-2" title="Permalink to this headline">#</a></h2>
+    <img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000">
+</p> 
+</section>
+<section id="validation-tea-2">
+<h2>Validation TEA 2<a class="headerlink" href="#validation-tea-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
@@ -765,11 +786,11 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="left">
-<img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000"/>
-</p>
-</div>
-<div class="section" id="validation-tea-3">
-<h2>Validation TEA 3<a class="headerlink" href="#validation-tea-3" title="Permalink to this headline">#</a></h2>
+    <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000">
+</p> 
+</section>
+<section id="validation-tea-3">
+<h2>Validation TEA 3<a class="headerlink" href="#validation-tea-3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
@@ -785,11 +806,11 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="left">
-<img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000"/>
-</p>
-</div>
-<div class="section" id="validation-tea-4">
-<h2>Validation TEA 4<a class="headerlink" href="#validation-tea-4" title="Permalink to this headline">#</a></h2>
+    <img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000">
+</p> 
+</section>
+<section id="validation-tea-4">
+<h2>Validation TEA 4<a class="headerlink" href="#validation-tea-4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
 <li><p>Problem type: Equilibrium composition at defined T and p</p></li>
@@ -805,9 +826,9 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </pre></div>
 </div>
 <p align="left">
-<img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000"/>
-</p> </div>
-</div>
+    <img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000">
+</p> </section>
+</section>
 
         </article>
       </div>
@@ -821,16 +842,16 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
                 </div>
                 <div class="title">Publications</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="examples/examples_plain_ROCKET_FAC.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+          <a class="prev-page" href="examples/examples_plain_EXOPLANET_WASP43b_1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Example_ROCKET_FAC.m</div>
+                <div class="title">Example_EXOPLANET_WASP43b_1.m</div>
                 
               </div>
             </a>
@@ -870,7 +891,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -915,7 +936,9 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
