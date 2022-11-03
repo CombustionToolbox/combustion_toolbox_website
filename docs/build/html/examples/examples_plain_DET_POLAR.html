@@ -1,17 +1,18 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_DET_POLAR_SONIC_AND_MAX.m" href="examples_plain_DET_POLAR_SONIC_AND_MAX.html" /><link rel="prev" title="Example_DET_OBLIQUE_THETA.m" href="examples_plain_DET_OBLIQUE_THETA.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_DET_POLAR_SONIC_AND_MAX.m" href="examples_plain_DET_POLAR_SONIC_AND_MAX.html" /><link rel="prev" title="Example_DET_OBLIQUE_THETA.m" href="examples_plain_DET_OBLIQUE_THETA.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Example_DET_POLAR.m - Combustion Toolbox v0.9.99</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/style.css" />
     
     
@@ -23,28 +24,41 @@
   --color-code-foreground: black;
   --color-brand-primary: #577A95;
   --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
   
   }
   @media not print {
     body[data-theme="dark"] {
       --color-code-background: #272822;
   --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #9ca0a5;
+  --color-brand-content: #9ca0a5;
+  --color-sidebar-caption-text: #a6e22e;
+  --color-background-item: #a6e22e;
+  --color-problematic: #a6e22e;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #272822;
   --color-code-foreground: #f8f8f2;
+  --color-brand-primary: #9ca0a5;
+  --color-brand-content: #9ca0a5;
+  --color-sidebar-caption-text: #a6e22e;
+  --color-background-item: #a6e22e;
+  --color-problematic: #a6e22e;
   
       }
     }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -149,11 +163,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo only-light" src="../_static/img/logo_CT_noversion.svg" alt="Light Logo"/>
-    <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_noversion.svg" alt="Dark Logo"/>
+    <img class="sidebar-logo only-light" src="../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../_static/img/logo_CT_version.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Combustion Toolbox v0.9.99</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -192,12 +205,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Example_DET_POLAR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
 </ul>
 </li>
 </ul>
@@ -239,7 +254,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -253,8 +270,8 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="example-det-polar-m">
-<h1>Example_DET_POLAR.m<a class="headerlink" href="#example-det-polar-m" title="Permalink to this headline">#</a></h1>
+          <section id="example-det-polar-m">
+<h1>Example_DET_POLAR.m<a class="headerlink" href="#example-det-polar-m" title="Permalink to this heading">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
 <span class="linenos"> 2</span><span class="c">% EXAMPLE: DET_POLAR</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
@@ -263,10 +280,10 @@
 <span class="linenos"> 6</span><span class="c">% what is the same, drive factors M1/M1_cj = [1.0382, 1.2458, 1.4534,...</span><span class="w"></span>
 <span class="linenos"> 7</span><span class="c">% 1.6611, 2.0763]</span><span class="w"></span>
 <span class="linenos"> 8</span><span class="c">%    </span><span class="w"></span>
-<span class="linenos"> 9</span><span class="c">% Hydrogen == {'H2O','H2','O2','N2','He','Ar','H','HNO',...</span><span class="w"></span>
-<span class="linenos">10</span><span class="c">%              'HNO3','NH','NH2OH','NO3','N2H2','N2O3','N3','OH',...</span><span class="w"></span>
-<span class="linenos">11</span><span class="c">%              'HNO2','N','NH3','NO2','N2O','N2H4','N2O5','O','O3',...</span><span class="w"></span>
-<span class="linenos">12</span><span class="c">%              'HO2','NH2','H2O2','N3H','NH2NO2'}</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="c">% Hydrogen == {&#39;H2O&#39;,&#39;H2&#39;,&#39;O2&#39;,&#39;N2&#39;,&#39;He&#39;,&#39;Ar&#39;,&#39;H&#39;,&#39;HNO&#39;,...</span><span class="w"></span>
+<span class="linenos">10</span><span class="c">%              &#39;HNO3&#39;,&#39;NH&#39;,&#39;NH2OH&#39;,&#39;NO3&#39;,&#39;N2H2&#39;,&#39;N2O3&#39;,&#39;N3&#39;,&#39;OH&#39;,...</span><span class="w"></span>
+<span class="linenos">11</span><span class="c">%              &#39;HNO2&#39;,&#39;N&#39;,&#39;NH3&#39;,&#39;NO2&#39;,&#39;N2O&#39;,&#39;N2H4&#39;,&#39;N2O5&#39;,&#39;O&#39;,&#39;O3&#39;,...</span><span class="w"></span>
+<span class="linenos">12</span><span class="c">%              &#39;HO2&#39;,&#39;NH2&#39;,&#39;H2O2&#39;,&#39;N3H&#39;,&#39;NH2NO2&#39;}</span><span class="w"></span>
 <span class="linenos">13</span><span class="c">%   </span><span class="w"></span>
 <span class="linenos">14</span><span class="c">% See wiki or list_species() for more predefined sets of species</span><span class="w"></span>
 <span class="linenos">15</span><span class="c">%</span><span class="w"></span>
@@ -278,23 +295,23 @@
 <span class="linenos">21</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
 <span class="linenos">22</span>
 <span class="linenos">23</span><span class="c">%% INITIALIZE</span><span class="w"></span>
-<span class="linenos">24</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">'Hydrogen'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">24</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Hydrogen&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">25</span><span class="c">%% INITIAL CONDITIONS</span><span class="w"></span>
-<span class="linenos">26</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'TR'</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">'pR'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">'phi'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">27</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'H2'</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">28</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">'N2'</span><span class="p">,</span><span class="w"> </span><span class="s">'O2'</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">26</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">27</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;H2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">28</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
 <span class="linenos">29</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="o">/</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
 <span class="linenos">30</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
-<span class="linenos">31</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'drive_factor'</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0382</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2458</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4534</span><span class="p">,</span><span class="w"> </span><span class="mf">1.6611</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0763</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos">31</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;drive_factor&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0382</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2458</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4534</span><span class="p">,</span><span class="w"> </span><span class="mf">1.6611</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0763</span><span class="p">]);</span><span class="w"></span>
 <span class="linenos">32</span><span class="c">%% TUNING PROPERTIES</span><span class="w"></span>
 <span class="linenos">33</span><span class="n">self</span><span class="p">.</span><span class="n">TN</span><span class="p">.</span><span class="n">N_points_polar</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span><span class="w"> </span><span class="c">% Number of points to compute polar curves</span><span class="w"></span>
 <span class="linenos">34</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
-<span class="linenos">35</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">'DET_POLAR'</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">35</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DET_POLAR&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">36</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
 <span class="linenos">37</span><span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
+</section>
 
         </article>
       </div>
@@ -308,10 +325,10 @@
                 </div>
                 <div class="title">Example_DET_POLAR_SONIC_AND_MAX.m</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="examples_plain_DET_OBLIQUE_THETA.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -360,7 +377,9 @@
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>

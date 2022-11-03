@@ -14,11 +14,10 @@
 import os
 import sys
 import requests
+from docs.source.utils import *
+from docs.source.sphinxext.github_linkcode import github_linkcode_resolve
 
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
-
-# from docs.source.sphinxext.github_linkcode import github_linkcode_resolve
-
 
 
 # tell Sphinx matlab extension where to find matlab code.
@@ -27,6 +26,7 @@ matlab_src_dir = os.path.abspath('../..')
 # -- Project information -----------------------------------------------------
 
 project = 'Combustion Toolbox'
+project_acronym = 'CT'
 copyright = '2022, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
@@ -50,7 +50,7 @@ extensions = [
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab',    # support for Matlab
     # 'github',
-    'sphinx.ext.linkcode',
+    'sphinx.ext.linkcode',     # to link code to the repository
     'sphinx.ext.viewcode',     # view source code
     'sphinx.ext.napoleon',     # support for shorthand syntax
     'sphinx.ext.mathjax',      # LaTeX support
@@ -94,7 +94,7 @@ def linkcode_resolve(domain, info):
     return github_linkcode_resolve(
             domain=domain,
             info=info,
-            allowed_module_names='',
+            allowed_module_names=[],
             github_org_id='AlbertoCuadra',
             github_repo_id='combustion_toolbox',
             branch='master',
@@ -155,6 +155,7 @@ html_static_path = ['_static']
 
 html_space = ' '
 html_title = project + html_space + release
+
 html_show_sphinx = True
 
 html_css_files = [
@@ -162,8 +163,9 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    'light_logo': 'img/logo_CT_noversion.svg',
-    'dark_logo': 'img/logo_CT_noversion.svg',
+    "sidebar_hide_name": True,
+    'light_logo': 'img/logo_CT_version.svg',
+    'dark_logo': 'img/logo_CT_version.svg',
     'footer_icons': [
         {
             'name': 'Email',
@@ -184,10 +186,23 @@ html_theme_options = {
             """,
         },
     ],
+    
     "navigation_with_keys": True,
+    
     "light_css_variables": {
         "color-brand-primary": "#577A95",
         "color-brand-content": "#577A95",
+        "color-problematic": "#1f8782",
+        # "font-stack": "nimbus, sans-serif",
+        # "font-stack--monospace": "nimbus, monospace",
+    },
+    
+    "dark_css_variables": {
+        "color-brand-primary": "#9ca0a5",
+        "color-brand-content": "#9ca0a5",
+        "color-sidebar-caption-text": "#a6e22e",
+        "color-background-item": "#a6e22e",
+        "color-problematic": "#a6e22e",#1f8782
         # "font-stack": "nimbus, sans-serif",
         # "font-stack--monospace": "nimbus, monospace",
     },

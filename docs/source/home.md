@@ -9,7 +9,7 @@
 :gutter: 1
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/modules/ct_equil/index.html
 `Robust`, `modular`, and `fast` chemical equilibrium computations.
 :::
 
