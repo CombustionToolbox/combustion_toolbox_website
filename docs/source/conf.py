@@ -14,10 +14,10 @@
 import os
 import sys
 import requests
-from sphinxext.github_linkcode import github_linkcode_resolve
 
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
+from sphinxext.github_linkcode import github_linkcode_resolve
 
 
 # tell Sphinx matlab extension where to find matlab code.
