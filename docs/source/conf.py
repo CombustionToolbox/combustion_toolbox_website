@@ -14,10 +14,11 @@
 import os
 import sys
 import requests
+# from sphinxext.github_linkcode import github_linkcode_resolve
 
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
-from ...sphinxext.github_linkcode import github_linkcode_resolve
+
 
 
 # tell Sphinx matlab extension where to find matlab code.
@@ -50,7 +51,7 @@ extensions = [
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab',    # support for Matlab
     # 'github',
-    'sphinx.ext.linkcode',     # to link code to the repository
+    # 'sphinx.ext.linkcode',     # to link code to the repository
     'sphinx.ext.viewcode',     # view source code
     'sphinx.ext.napoleon',     # support for shorthand syntax
     'sphinx.ext.mathjax',      # LaTeX support
