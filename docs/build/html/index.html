@@ -20,35 +20,72 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
+    --color-code-background: #f0f0f0;
   --color-code-foreground: black;
   --color-brand-primary: #577A95;
   --color-brand-content: #577A95;
   --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #272822;
-  --color-code-foreground: #f8f8f2;
-  --color-brand-primary: #9ca0a5;
-  --color-brand-content: #9ca0a5;
-  --color-sidebar-caption-text: #a6e22e;
-  --color-background-item: #a6e22e;
-  --color-problematic: #a6e22e;
-  --sd-color-info: #3493a3;
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #272822;
-  --color-code-foreground: #f8f8f2;
-  --color-brand-primary: #9ca0a5;
-  --color-brand-content: #9ca0a5;
-  --color-sidebar-caption-text: #a6e22e;
-  --color-background-item: #a6e22e;
-  --color-problematic: #a6e22e;
-  --sd-color-info: #3493a3;
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
   
       }
     }
@@ -166,7 +203,7 @@
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="_static/img/logo_CT_version.svg" alt="Light Logo"/>
-    <img class="sidebar-logo only-dark" src="_static/img/logo_CT_version.svg" alt="Dark Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
   </div>
   
   
@@ -281,12 +318,21 @@
 
   gtag('config', 'G-8SBZV15K7W');
 </script>
-<p align="center">
-    <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
+<p class= "only-light" align="center">
+    <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/>
+</p>
+<p class= "only-dark" align="center">
+    <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
 </p>
 <p><br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br></p>
+<p class= "only-light" align="center">
+    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT.svg" width="400"/>
+</p>
+<p class= "only-dark" align="center">
+    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT_dark_v2.svg" width="400"/>
+</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
@@ -352,7 +398,7 @@
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-tab" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.25a.75.75 0 00-1.5 0v15a.75.75 0 001.5 0v-15zm-9.72 14.28a.75.75 0 11-1.06-1.06l4.97-4.97H1.75a.75.75 0 010-1.5h14.44l-4.97-4.97a.75.75 0 011.06-1.06l6.25 6.25a.75.75 0 010 1.06l-6.25 6.25z"></path></svg> Shocks and detonations pre- and post-shock states </div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Incident</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Reflected</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Oblique</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Shock polars</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Regular Reflections</span></p>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Incident</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Reflected</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Oblique</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Polar shocks</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Polar detonations</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Regular Reflections</span></p>
 </div>
 <a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_shocks_detonations.html"></a></div>
 </div>

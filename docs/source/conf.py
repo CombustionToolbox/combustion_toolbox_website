@@ -163,10 +163,15 @@ html_css_files = [
     'css/style.css',
 ]
 
+# templates_path = ["_templates"]
+# html_additional_pages = {
+#    "index": "landing_page.html"
+# }
+
 html_theme_options = {
     "sidebar_hide_name": True,
     'light_logo': 'img/logo_CT_version.svg',
-    'dark_logo': 'img/logo_CT_version.svg',
+    'dark_logo': 'img/logo_CT_version_dark.svg',
     'footer_icons': [
         {
             'name': 'Email',
@@ -194,26 +199,61 @@ html_theme_options = {
         "color-brand-primary": "#577A95",
         "color-brand-content": "#577A95",
         "color-problematic": "#1f8782",
-        # "font-stack": "nimbus, sans-serif",
-        # "font-stack--monospace": "nimbus, monospace",
+        # "color-background-primary": "#0a192fff",
+        # "color-background-secondary": "#172a46ff",
+        "color-foreground-primary": "#323232ff",
+        # "color-foreground-secondary": "#697796ff",
+        # "color-background-hover": "#bac5e54a",
+        # "color-sidebar-caption-text": "#44a79dff",
+        # "color-background-item": "#44a79dff",
+        # "sd-color-info": "#3493a3",
+        # "color-code-foreground": "#172a46ff",
+        # "color-code-background": "rgb(0 0 0 / 0%)",
+        # "color-background-border": "rgb(0 0 0 / 0%)",
+        # "color-background-item": "#44a79dff",
+        # "color-foreground-muted": "#bac5e54a",
+        # "color-card-background": "#172a46ff",
+        # "color-highlight-on-target": "#bac5e54a",
+        # "color-admonition-title--caution": "#ecb365ff",
+        # "color-admonition-title-background--caution": "#ffffc02b",
+        "color-inline-code-background": "#5fbcd399",
+        "sd-color-info": "#264653ff",
+        "sd-color-light": "rgb(0 0 0 / 0%)",
+        "sd-color-light-text": "#323232ff",
     },
     
     "dark_css_variables": {
-        "color-brand-primary": "#9ca0a5",
-        "color-brand-content": "#9ca0a5",
-        "color-sidebar-caption-text": "#a6e22e",
-        "color-background-item": "#a6e22e",
-        "color-problematic": "#a6e22e",
+        "color-brand-primary": "#bac5e5ff",
+        "color-brand-content": "#44a79dff",
+        "color-problematic": "#44a79dff",
+        "color-background-primary": "#0a192fff",
+        "color-background-secondary": "#172a46ff",
+        "color-foreground-primary": "#bac5e5ff",
+        "color-foreground-secondary": "#697796ff",
+        "color-background-hover": "#bac5e54a",
+        "color-sidebar-caption-text": "#44a79dff",
+        "color-background-item": "#44a79dff",
         "sd-color-info": "#3493a3",
-        # "font-stack": "nimbus, sans-serif",
-        # "font-stack--monospace": "nimbus, monospace",
-    },
+        "color-code-foreground": "#697796ff",
+        "color-code-background": "rgb(0 0 0 / 0%)",
+        "color-background-border": "rgb(0 0 0 / 0%)",
+        "color-background-item": "#44a79dff",
+        "color-foreground-muted": "#bac5e54a",
+        "color-card-background": "#172a46ff",
+        "color-highlight-on-target": "#bac5e54a",
+        "color-admonition-title--caution": "#ecb365ff",
+        "color-admonition-title-background--caution": "#ffffc02b",
+        "color-inline-code-background": "#44475aff",
+        "sd-color-info": "#44a79dff",
+        "sd-color-light": "rgb(0 0 0 / 0%)",
+        "sd-color-light-text": "#bac5e5ff",
+    },  
     # "announcement": "<em>Important</em> announcement!"
 }
 
 # Code block styling
-# pygments_style = "sphinx"
-pygments_dark_style = "monokai"
+pygments_style = "friendly"
+pygments_dark_style = "material"
 
 # Settings sphintext-opengraph
 # ogp_site_url = "https://combustion-toolbox-website.readthedocs.io/"
