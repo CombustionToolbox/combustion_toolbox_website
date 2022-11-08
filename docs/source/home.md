@@ -1,10 +1,25 @@
-<p align="center">
-    <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/></a>
+<p class= "only-light" align="center">
+    <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/>
 </p>
 
-<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
+<p class= "only-dark" align="center">
+    <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
+</p>
 
-::::{grid} 1 2 2 3
+
+<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
+    
+
+<p class= "only-light" align="center">
+    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT.svg" width="400"/>
+</p>
+
+<p class= "only-dark" align="center">
+    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT_dark_v2.svg" width="400"/>
+</p>
+
+
+::::{grid} 1 1 1 3
 :margin: 4 4 0 0
 :gutter: 1
 
@@ -41,6 +56,7 @@ Completely open source, GUI included!<br>
 
 :::{grid-item-card} {octicon}`cpu` Robust chemical equilibrium computations
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_chemical_equilibrium.html
+
 {bdg-light}`TP` {bdg-light}`HP` {bdg-light}`SP` {bdg-light}`TV` {bdg-light}`EV` {bdg-light}`SV` {bdg-light}`frozen` {bdg-light}`plasma state`
 
 :::
@@ -53,7 +69,7 @@ Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capab
 
 :::{grid-item-card} {octicon}`tab` Shocks and detonations pre- and post-shock states 
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/solver_shocks_detonations.html
-{bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Shock polars` {bdg-light}`Regular Reflections` 
+{bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Polar shocks` {bdg-light}`Polar detonations` {bdg-light}`Regular Reflections` 
 :::
 
 :::{grid-item-card} {octicon}`globe` Open source

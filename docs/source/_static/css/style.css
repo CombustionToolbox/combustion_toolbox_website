@@ -72,3 +72,25 @@ h4, h5, h6 {
   gap: 10px;
   grid-auto-rows: 100px;
 }
+
+.article {
+  color: #403f4c;
+}
+
+/* .dark_css_variables {
+  color-brand-primary: #bac5e5ff;
+  color-brand-content: #697796ff;
+  color-background-primary: #0a192fff;
+  color-background-secondary: #172a46ff;
+  color-foreground-primary: #bac5e5ff;
+  color-foreground-secondary: #697796ff;
+  color-background-hover: #bac5e54a;
+  color-sidebar-caption-text: #44a79dff;
+  color-background-item: #44a79dff;
+  color-problematic: #44a79dff;
+  sd-color-info: #3493a3;
+  color-code-background: rgb(0 0 0 / 0%);
+  color-background-border: rgb(0 0 0 / 0%);
+  color-background-item: #44a79dff;
+  color-card-background: #172a46ff;
+} */
