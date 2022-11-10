@@ -51,14 +51,22 @@ The use of piecewise cubic Hermite interpolating polynomials increments the perf
 >> DhT_CO2 = species_DhT('CO2', 2000, DB) 
 ```
 
-<p align="center">
-    <img src="..\_static\img\performance_thermo.svg" width="800">
+<p class= "only-light" align="center">
+    <img alt="Performance thermo" style="border-width:0" src="..\_static\img\performance_thermo.svg" width="800"/>
+</p>
+
+<p class= "only-dark" align="center">
+    <img alt="Performance thermo" style="border-width:0" src="..\_static\img\performance_thermo_dark.svg" width="800"/>
 </p>
 
 **Figure 1:** *Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA's 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz. Note: lower is better.*
 
-<p align="center">
-    <img src="..\_static\img\validation_thermo.svg" width="800">
+<p class= "only-light" align="center">
+    <img alt="Validation thermo" style="border-width:0" src="..\_static\img\validation_thermo.svg" width="800"/>
+</p>
+
+<p class= "only-dark" align="center">
+    <img alt="Validation thermo" style="border-width:0" src="..\_static\img\validation_thermo_dark.svg" width="800"/>
 </p>
 
 **Figure 2:** *Comparison of entropy  [kJ/(mol-K)] as a function of temperature [K] obtained using the piecewise cubic Hermite interpolating polynomials (lines) and using the NASA's 9 coefficient polynomials (symbols) for a set of species.*

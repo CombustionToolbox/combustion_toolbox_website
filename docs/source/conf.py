@@ -32,10 +32,10 @@ copyright = '2022, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
-url = 'https://github.com/AlbertoCuadra/combustion_toolbox/releases/latest'
-r = requests.get(url)
-release = r.url.split('/')[-1]
-
+# url = 'https://github.com/AlbertoCuadra/combustion_toolbox/releases/latest'
+# r = requests.get(url)
+# release = r.url.split('/')[-1]
+release = 'v0.9.99'
 
 # -- General configuration ---------------------------------------------------
 
