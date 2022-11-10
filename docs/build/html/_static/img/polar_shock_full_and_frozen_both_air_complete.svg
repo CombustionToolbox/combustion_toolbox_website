@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-   width="1241.0376"
-   height="956.27765"
+   width="1261.7043"
+   height="961.76343"
    version="1.1"
    id="svg213"
    sodipodi:docname="polar_shock_full_and_frozen_both_air_complete.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns25="http://www.iki.fi/pav/software/textext/">
+   xmlns:ns1="http://www.iki.fi/pav/software/textext/">
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer 2">
-    <rect
-       style="fill:#ffffff;stroke-width:1.25069;stroke-miterlimit:10"
-       id="rect4487"
-       width="1291.6705"
-       height="1000.7524"
-       x="-30.367363"
-       y="-17.734076" />
-  </g>
+     inkscape:label="Layer 2"
+     transform="translate(0,5.4857802)" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(0,5.4857802)">
     <g
        id="g21309"
        transform="translate(-28.4707,-48.25637)"
@@ -457,7 +451,7 @@
            id="path181" />
       </g>
       <g
-         transform="rotate(-90,621.01103,-100.01143)"
+         transform="matrix(0,-1.1,1.1,0,714.10783,520.91385)"
          style="font-style:normal;font-weight:normal;font-size:17.649px;font-family:mwa_cmr10;color-interpolation:linearRGB;fill:#262626;fill-opacity:1;stroke:#262626;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
          id="g209">
         <path
@@ -523,16 +517,16 @@
          inkscape:original-d="m 823.58332,342.39783 c -8.57501,8.08151 -17.14909,16.16404 -25.7221,24.24757" />
       <g
          transform="matrix(1.6,0,0,1.6,771.22546,213.5568)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="detached line"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.6"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="detached line"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.6"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g23869">
         <defs
@@ -761,16 +755,16 @@
       </g>
       <g
          transform="matrix(1.6,0,0,1.6,771.22486,369.79176)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="sonic line"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.6"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="sonic line"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.6"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g23869-5">
         <defs
@@ -949,17 +943,17 @@
         </g>
       </g>
       <g
-         transform="matrix(1.6,0,0,1.6,1072.683,121.07357)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="thermochemically frozen gas"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.6"
+         transform="matrix(1.936,0,0,1.936,1052.0165,115.54853)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="thermochemically frozen gas"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.6"
          id="g2607"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
         <defs
@@ -1330,17 +1324,17 @@
         </g>
       </g>
       <g
-         transform="matrix(1.6,0,0,1.6,1003.5282,81.12512)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="thermochemically frozen gas"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.6"
+         transform="matrix(1.936,0,0,1.936,968.33914,76.081655)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="thermochemically frozen gas"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.6"
          id="g2607-2"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
         <defs
@@ -1487,16 +1481,16 @@
         </defs>
         <g
            transform="translate(-19.8756,-1.31645)"
-           ns25:version="1.6.0"
-           ns25:texconverter="pdflatex"
-           ns25:pdfconverter="inkscape"
-           ns25:text="dissociation, ionization, and recombination"
-           ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-           ns25:scale="1.2"
-           ns25:alignment="middle center"
-           ns25:stroke-to-path="0"
-           ns25:inkscapeversion="1.1.1"
-           ns25:jacobian_sqrt="1.0"
+           ns1:version="1.6.0"
+           ns1:texconverter="pdflatex"
+           ns1:pdfconverter="inkscape"
+           ns1:text="dissociation, ionization, and recombination"
+           ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+           ns1:scale="1.2"
+           ns1:alignment="middle center"
+           ns1:stroke-to-path="0"
+           ns1:inkscapeversion="1.1.1"
+           ns1:jacobian_sqrt="1.0"
            id="g7763">
           <defs
              id="id-68384b47-0bca-4a8a-bad3-c330fd86987a">
@@ -1975,17 +1969,17 @@
         </g>
       </g>
       <g
-         transform="matrix(1.0284576,-1.225668,1.225668,1.0284576,775.1825,611.75883)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_1 = 2$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.33333"
+         transform="matrix(1.2444337,-1.4830583,1.4830583,1.2444337,770.23297,615.18061)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_1 = 2$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.33333"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g10984-2">
         <defs
@@ -2118,17 +2112,17 @@
         </g>
       </g>
       <g
-         transform="matrix(1.0284576,-1.225668,1.225668,1.0284576,831.19506,801.45338)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_1 = 14$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.33333"
+         transform="matrix(1.2444337,-1.4830583,1.4830583,1.2444337,825.65703,805.55354)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_1 = 14$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.33333"
          id="g10984-35"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
         <defs
@@ -2263,16 +2257,16 @@
         </g>
       </g>
       <g
-         transform="matrix(1.0284576,-1.225668,1.225668,1.0284576,799.72435,700.5959)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_1 = 3$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:jacobian_sqrt="1.33333"
+         transform="matrix(1.2444337,-1.4830583,1.4830583,1.2444337,794.84742,704.02144)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_1 = 3$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:jacobian_sqrt="1.33333"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g10984-3-1">
         <defs
@@ -2405,16 +2399,16 @@
         </g>
       </g>
       <g
-         transform="matrix(1.0284576,-1.225668,1.225668,1.0284576,822.66088,750.16865)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_1 = 5$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:jacobian_sqrt="1.33333"
+         transform="matrix(1.2444337,-1.4830583,1.4830583,1.2444337,818.76153,752.01667)"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_1 = 5$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:jacobian_sqrt="1.33333"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g10984-8-7">
         <defs
@@ -2560,15 +2554,15 @@
          inkscape:original-d="m 1086.4318,160.76185 c 9.7154,-7.62865 19.4298,-15.2583 29.1433,-22.88895" />
       <g
          transform="matrix(1.6,0,0,1.6,807.26386,265.1118)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="strong shock"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:jacobian_sqrt="1.6"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="strong shock"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:jacobian_sqrt="1.6"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g2607-3">
         <defs
@@ -2792,15 +2786,15 @@
       </g>
       <g
          transform="matrix(1.6,0,0,1.6,807.26426,320.7241)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="weak shock"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.2"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:jacobian_sqrt="1.6"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="weak shock"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.2"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:jacobian_sqrt="1.6"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g2607-3-3">
         <defs
@@ -3001,16 +2995,16 @@
       </g>
       <g
          transform="matrix(1.599996,0,0,1.599996,879.45496,365.44335)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_2 &gt; 1$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.33333"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_2 &gt; 1$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.33333"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g10984-3-3">
         <defs
@@ -3153,16 +3147,16 @@
       </g>
       <g
          transform="matrix(1.599996,0,0,1.599996,879.45496,342.85013)"
-         ns25:version="1.6.0"
-         ns25:texconverter="pdflatex"
-         ns25:pdfconverter="inkscape"
-         ns25:text="$\\mathcal{M}_2 &lt; 1$"
-         ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-         ns25:scale="1.0"
-         ns25:alignment="middle center"
-         ns25:stroke-to-path="0"
-         ns25:inkscapeversion="1.1.1"
-         ns25:jacobian_sqrt="1.33333"
+         ns1:version="1.6.0"
+         ns1:texconverter="pdflatex"
+         ns1:pdfconverter="inkscape"
+         ns1:text="$\\mathcal{M}_2 &lt; 1$"
+         ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+         ns1:scale="1.0"
+         ns1:alignment="middle center"
+         ns1:stroke-to-path="0"
+         ns1:inkscapeversion="1.1.1"
+         ns1:jacobian_sqrt="1.33333"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
          id="g10984-3-3-9">
         <defs
@@ -3396,16 +3390,16 @@
           </g>
           <g
              transform="matrix(1.33333,0,0,1.33333,841.279,62.56093)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              id="g31863-3">
             <defs
                id="id-ca585719-6b17-4e05-b0b3-c7826769df35-4">
@@ -3476,16 +3470,16 @@
           </g>
           <g
              transform="matrix(1.33333,0,0,1.33333,951.219,38.8845)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_2$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_2$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
              id="g31863-1-6">
             <defs
@@ -3566,16 +3560,16 @@
           </g>
           <g
              transform="matrix(1.33333,0,0,1.33333,847.236,88.7664)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\beta$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\beta$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              id="g8225-4">
             <defs
                id="id-f299bc8a-c42d-4507-9ffd-4f8930d20cd0-7">
@@ -3618,16 +3612,16 @@
           </g>
           <g
              transform="matrix(1.33333,0,0,1.33333,953.20706,63.140925)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\theta$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\theta$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
              id="g8225-0-0">
             <defs
@@ -3691,17 +3685,17 @@
              sodipodi:nodetypes="ccc" />
         </g>
         <g
-           transform="matrix(0.76476667,-1.0922,1.0922,0.76476667,477.7999,765.25343)"
-           ns25:version="1.6.0"
-           ns25:texconverter="pdflatex"
-           ns25:pdfconverter="inkscape"
-           ns25:text="oblique shock"
-           ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-           ns25:scale="1.0"
-           ns25:alignment="middle center"
-           ns25:stroke-to-path="0"
-           ns25:inkscapeversion="1.1.1"
-           ns25:jacobian_sqrt="1.33333"
+           transform="matrix(0.84124334,-1.20142,1.20142,0.84124334,475.00012,768.11204)"
+           ns1:version="1.6.0"
+           ns1:texconverter="pdflatex"
+           ns1:pdfconverter="inkscape"
+           ns1:text="oblique shock"
+           ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+           ns1:scale="1.0"
+           ns1:alignment="middle center"
+           ns1:stroke-to-path="0"
+           ns1:inkscapeversion="1.1.1"
+           ns1:jacobian_sqrt="1.33333"
            id="g6007">
           <defs
              id="id-e2c97054-3ade-4d91-a5f0-7b8b781892e9">
@@ -3927,16 +3921,16 @@
            transform="translate(0,10.437517)">
           <g
              transform="matrix(1.33333,0,0,1.33333,465.91667,712.39469)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="1"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="1"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              id="g11246"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
             <defs
@@ -3997,16 +3991,16 @@
              r="7" />
           <g
              transform="matrix(1.33333,0,0,1.33333,465.458,712.395)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="2"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="2"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
              id="g11246-9">
             <defs
@@ -4063,7 +4057,7 @@
        style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
       <g
          id="g211"
-         transform="translate(662.898, 0)">
+         transform="translate(662.898)">
         <defs
            id="defs1">
           <clipPath
@@ -4080,7 +4074,7 @@
         <g
            id="g8229"
            style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-           transform="translate(-662.898, 33.2524)">
+           transform="translate(-662.898,33.2524)">
           <g
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:sRGB;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeSpeed;image-rendering:optimizeSpeed;shape-rendering:crispEdges;text-rendering:optimizeSpeed"
              id="g15-9">
@@ -4495,17 +4489,17 @@
              id="path1702-1"
              sodipodi:nodetypes="cc" />
           <g
-             transform="matrix(1.6,0,0,1.6,238.0878,134.16405)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="thermochemically frozen gas"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.2"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.6"
+             transform="matrix(1.936,0,0,1.936,217.42124,136.63901)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="thermochemically frozen gas"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.2"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.6"
              id="g2607-4"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
             <defs
@@ -4876,17 +4870,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.6,0,0,1.6,219.41066,50.36249)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="thermochemically frozen gas"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.2"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.6"
+             transform="matrix(1.936,0,0,1.936,194.8219,45.319025)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="thermochemically frozen gas"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.2"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.6"
              id="g2607-2-8"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
             <defs
@@ -5033,16 +5027,16 @@
             </defs>
             <g
                transform="translate(-19.8756,-1.31645)"
-               ns25:version="1.6.0"
-               ns25:texconverter="pdflatex"
-               ns25:pdfconverter="inkscape"
-               ns25:text="dissociation, ionization, and recombination"
-               ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-               ns25:scale="1.2"
-               ns25:alignment="middle center"
-               ns25:stroke-to-path="0"
-               ns25:inkscapeversion="1.1.1"
-               ns25:jacobian_sqrt="1.0"
+               ns1:version="1.6.0"
+               ns1:texconverter="pdflatex"
+               ns1:pdfconverter="inkscape"
+               ns1:text="dissociation, ionization, and recombination"
+               ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+               ns1:scale="1.2"
+               ns1:alignment="middle center"
+               ns1:stroke-to-path="0"
+               ns1:inkscapeversion="1.1.1"
+               ns1:jacobian_sqrt="1.0"
                id="g7763-3">
               <defs
                  id="id-68384b47-0bca-4a8a-bad3-c330fd86987a-0">
@@ -5521,17 +5515,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,305.20238,73.63801)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 14$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,298.62988,72.205856)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 14$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              id="g10984-7"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto">
             <defs
@@ -5666,17 +5660,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,309.36217,924.14402)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 2$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,303.66323,914.71186)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 2$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-2-7">
             <defs
@@ -5809,17 +5803,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,309.18717,877.13572)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 4$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,303.45148,875.70356)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 4$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-3-1-5">
             <defs
@@ -5952,17 +5946,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,309.28717,790.14482)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 6$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,303.57248,788.71266)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 6$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-8-3">
             <defs
@@ -6095,17 +6089,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,309.28717,667.38872)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 8$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,303.57248,665.95656)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 8$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-1">
             <defs
@@ -6238,17 +6232,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,305.28988,505.41062)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 10$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,298.73576,503.97846)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 10$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-80">
             <defs
@@ -6399,17 +6393,17 @@
             </g>
           </g>
           <g
-             transform="matrix(1.599996,0,0,1.599996,305.37738,306.91152)"
-             ns25:version="1.6.0"
-             ns25:texconverter="pdflatex"
-             ns25:pdfconverter="inkscape"
-             ns25:text="$\\mathcal{M}_1 = 12$"
-             ns25:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
-             ns25:scale="1.0"
-             ns25:alignment="middle center"
-             ns25:stroke-to-path="0"
-             ns25:inkscapeversion="1.1.1"
-             ns25:jacobian_sqrt="1.33333"
+             transform="matrix(1.9359952,0,0,1.9359952,298.84163,305.47936)"
+             ns1:version="1.6.0"
+             ns1:texconverter="pdflatex"
+             ns1:pdfconverter="inkscape"
+             ns1:text="$\\mathcal{M}_1 = 12$"
+             ns1:preamble="C:\\Users\user\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+             ns1:scale="1.0"
+             ns1:alignment="middle center"
+             ns1:stroke-to-path="0"
+             ns1:inkscapeversion="1.1.1"
+             ns1:jacobian_sqrt="1.33333"
              style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
              id="g10984-80-9">
             <defs
@@ -6572,19 +6566,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.53949628"
-     inkscape:cx="645.97294"
-     inkscape:cy="569.97612"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="312"
+     inkscape:zoom="1.133198"
+     inkscape:cx="712.58507"
+     inkscape:cy="341.51136"
+     inkscape:window-width="2560"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="g21309"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <!--Generated by the Batik Graphics2D SVG Generator-->
   <defs
      id="genericDefs">

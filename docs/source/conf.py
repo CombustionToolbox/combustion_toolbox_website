@@ -35,7 +35,7 @@ author = 'Alberto Cuadra Lara'
 url = 'https://github.com/AlbertoCuadra/combustion_toolbox/releases/latest'
 r = requests.get(url)
 release = r.url.split('/')[-1]
-
+# release = 'v0.9.99'
 
 # -- General configuration ---------------------------------------------------
 
