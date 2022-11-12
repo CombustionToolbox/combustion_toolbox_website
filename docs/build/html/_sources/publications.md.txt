@@ -5,7 +5,7 @@
 If you use Combustion Toolbox in a publication, please cite it using the following reference:
 
 
-* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
+* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99b). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 
 It can be handy the BibTeX format:
 
@@ -14,7 +14,7 @@ It can be handy the BibTeX format:
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
     year = 2022,
-    note = "Version 0.9.99",
+    note = "Version 0.9.99b",
     doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
@@ -24,6 +24,10 @@ It can be handy the BibTeX format:
 Here we have some contributions, work in progress articles, and publications in which Combustion Toolbox has been used.
 
 ### Journal articles
+
+<!-- <a href="https://www.acuadralara.com/files/cv.pdf" class="pdf"> </a> -->
+
+<!-- <div class="pdf"> </div> -->
 
 * Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: an open source thermochemical code for solving gaseous combustion problems **(work in progress)**.
 * Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions.
