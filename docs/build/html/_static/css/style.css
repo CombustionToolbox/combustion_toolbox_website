@@ -86,7 +86,7 @@ h4, h5, h6 {
   color-foreground-secondary: #697796ff;
   color-background-hover: #bac5e54a;
   color-sidebar-caption-text: #44a79dff;
-  color-background-item: #44a79dff;
+  color-background-item: #44a79dff;s
   color-problematic: #44a79dff;
   sd-color-info: #3493a3;
   color-code-background: rgb(0 0 0 / 0%);
@@ -94,3 +94,45 @@ h4, h5, h6 {
   color-background-item: #44a79dff;
   color-card-background: #172a46ff;
 } */
+
+.github{
+  display: block;
+  background-image: url(../img/icon_github.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.matlab{
+  display: block;
+  background-image: url(../img/icon_matlab.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.zenodo{
+  display: block;
+  background-image: url(../img/icon_zenodo.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.pdf{
+  display: block;
+  background-image: url(../img/icon_pdf.svg);
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.stroke {
+  fill: var(--color-brand-primary);
+  stroke: var(--color-brand-primary);
+}
+
+.stroke:hover {
+  fill: var(--color-brand-content);
+  stroke: var(--color-brand-content);
+}
