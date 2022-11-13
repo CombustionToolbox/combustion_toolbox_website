@@ -44,8 +44,8 @@ Completely open source, GUI included!<br>
 # Combustion Toolbox in action
 
 <p align="center">
-    <img src="_static/gif/example_HP_GUI.gif" width="352">&nbsp;&nbsp;&nbsp;
-    <img src="_static/gif/example_HP.gif" width="381">
+    <img src="_static/gif/example_det_overdriven_gui.gif" width="360">&nbsp;
+    <img src="_static/gif/example_det_overdriven.gif" width="360">
 </p>
 
 # Combustion Toolbox capabilities
