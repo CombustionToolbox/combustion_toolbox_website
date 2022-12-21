@@ -26,7 +26,7 @@ and applying logarithms to both sides
     :nowrap:
 
     \begin{equation}
-      \text{ln } V = n + \text{ln } R + \text{ln } T - \text{ln } p
+      \text{ln } V = \text{ln } n + \text{ln } R + \text{ln } T - \text{ln } p
     \end{equation}
 ```
 

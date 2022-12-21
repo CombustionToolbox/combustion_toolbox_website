@@ -172,14 +172,14 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
 **Figure 3:** *Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 atm); line: numerical results obtained with Combustion Toolbox; circles: NASA's Chemical Equilibrium with Applications code. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 26 species considered and a total of 351 case studies.*
 
 <p class= "only-light" align="center">
-    <img alt="Polar shocks" style="border-width:0" src="_static/img/polar_shock_full_and_frozen_both_air_complete.svg" width="1000"/>
+    <img alt="Polar shocks" style="border-width:0" src="_static/img/cuadra2022/shock_polar_all_4.svg" width="1000"/>
 </p>
 
 <p class= "only-dark" align="center">
     <img alt="Polar shocks" style="border-width:0" src="_static/img/polar_shock_full_and_frozen_both_air_complete_dark.svg" width="1000"/>
 </p>
 
-**Figure 4:** *Pressure-deflection shock polar (left) and wave angle-deflection shock polar (right) for an air mixture (78.084% N2, 20.9476% O2, 0.9365% Ar, 0.0319% CO2) at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm, and a range of preshock Mach numbers M1 = [2, 14]; line: considering dissociation, ionization, and recombination in multi-species mixtures; dashed: considering a thermochemically frozen air mixture.*
+**Figure 4:** *Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79\% N2, 21\% O2) at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with CANTERA within Caltech’s SD-Toolbox; diamonds: maximum deflection angle* $\theta_{\rm max}$.
 
 # Contributing
 
