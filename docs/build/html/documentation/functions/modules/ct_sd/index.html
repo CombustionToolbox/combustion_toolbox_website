@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Rocket module" href="../ct_rocket/index.html" /><link rel="prev" title="Thermochemical equilibrium module" href="../ct_equil/index.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Shocks and detonations module - Combustion Toolbox v0.9.992</title>
+        <title>Shocks and detonations module - Combustion Toolbox v0.9.993</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">Combustion Toolbox v0.9.992</div></a>
+      <a href="../../../../index.html"><div class="brand">Combustion Toolbox v0.9.993</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -373,12 +373,12 @@ combustion from the composition obtained in the previous step.</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">P (float):          Pressure ratio [-]</p></li>
-<li><p class="sd-card-text">T (float):          Temperature ratio [-]</p></li>
-<li><p class="sd-card-text">M1 (float):         Pre-shock Mach number [-]</p></li>
-<li><p class="sd-card-text">R (float):          Density ratio [-]</p></li>
-<li><p class="sd-card-text">Q (float):          Dimensionless Heat release []</p></li>
-<li><p class="sd-card-text">STOP (float):       Relative error [-]</p></li>
+<li><p class="sd-card-text">P (float):        Pressure ratio [-]</p></li>
+<li><p class="sd-card-text">T (float):        Temperature ratio [-]</p></li>
+<li><p class="sd-card-text">M1 (float):       Pre-shock Mach number [-]</p></li>
+<li><p class="sd-card-text">R (float):        Density ratio [-]</p></li>
+<li><p class="sd-card-text">Q (float):        Dimensionless Heat release []</p></li>
+<li><p class="sd-card-text">STOP (float):     Relative error [-]</p></li>
 </ul>
 </p>
 </dd>
@@ -584,9 +584,10 @@ given the deflection angle.</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">R (float):     Density ratio [-]</p></li>
-<li><p class="sd-card-text">P (float):     Pressure ratio [-]</p></li>
-<li><p class="sd-card-text">T (float):     Temperature ratio [-]</p></li>
+<li><p class="sd-card-text">R (float):      Density ratio [-]</p></li>
+<li><p class="sd-card-text">P (float):      Pressure ratio [-]</p></li>
+<li><p class="sd-card-text">T (float):      Temperature ratio [-]</p></li>
+<li><p class="sd-card-text">Gammas (float): Rankine-Hugoniot slope parameter [-]</p></li>
 </ul>
 </p>
 </dd>
@@ -793,6 +794,31 @@ given the deflection angle.</p>
 <ul class="simple">
 <li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-shock state</p></li>
 <li><p class="sd-card-text">mix2 (struct): Properties of the mixture at the post-shock state with the shock polar results</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_sd.shock_polar_limitRR">
+<span class="sig-name descname"><span class="pre">shock_polar_limitRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_polar_limitRR" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain polar curves for the given pre-shock conditions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p class="sd-card-text"><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-shock state</p></li>
+<li><p class="sd-card-text">mix2 (struct): Properties of the mixture in the post-shock state - polar diagrams from mix1 (incident)</p></li>
+<li><p class="sd-card-text">mix2_1 (struct): Properties of the mixture in the post-shock state - weak shock</p></li>
+<li><p class="sd-card-text">mix3 (struct): Properties of the mixture in the post-shock state - polar diagrams from mix2_1 (reflected)</p></li>
 </ul>
 </p>
 </dd>

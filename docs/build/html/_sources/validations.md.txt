@@ -16,10 +16,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:
 * Problem type: Equilibrium composition at defined T and p
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
-
+* Initial mixture [moles]: $\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/tp
 
@@ -39,9 +36,7 @@ To repeat the results, run:
 * Problem type: Equilibrium composition at defined T and p
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_6\text{H}_6&space;&plus;&space;\frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}_6\text{H}_6 + \frac{7.5}{\phi} \text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/tp
 
@@ -61,9 +56,7 @@ To repeat the results, run:
 * Problem type: Equilibrium composition at defined T and p
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/tp
 
@@ -83,9 +76,7 @@ To repeat the results, run:
 * Problem type: Equilibrium composition at defined T and p
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_3\text{OH}&space;&plus;&space;\frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/tp
 
@@ -105,9 +96,7 @@ To repeat the results, run:
 * Problem type: Adiabatic T and composition at constant p
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/hp
 
@@ -127,9 +116,7 @@ To repeat the results, run:
 * Problem type: Adiabatic T and composition at constant p
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/hp
 
@@ -149,9 +136,7 @@ To repeat the results, run:
 * Problem type: Adiabatic T and composition at constant p
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/hp
 
@@ -171,9 +156,7 @@ To repeat the results, run:
 * Problem type: Adiabatic T and composition at constant p
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/hp
 
@@ -193,9 +176,7 @@ To repeat the results, run:
 * Problem type: Equilibrium composition at defined T and v
 * Temperature [K]   = 3000
 * Pressure    [bar] = 1.0132
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/tv
 
@@ -215,9 +196,7 @@ To repeat the results, run:
 * Problem type: Adiabatic T and composition at constant v
 * Temperature [K]   = 300
 * Pressure    [bar] = 1.0132
-* Initial mixture [moles]:
-  
-    <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.7276&space;\text{N}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.7276\text{N}_2 + 0.0447\text{Ar} + 0.015\text{CO}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/ev
 
@@ -238,9 +217,7 @@ To repeat the results, run:
 * Problem type: Chapman-Jouget Detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/hp
 
@@ -261,9 +238,7 @@ To repeat the results, run:
 * Problem type: Chapman-Jouget Detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}_2\text{H}_2\text{acetylene}&space;&plus;&space;\frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/det
 
@@ -284,9 +259,7 @@ To repeat the results, run:
 * Problem type: Chapman-Jouget Detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}(\text{O}_2&space;&plus;&space;3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}(\text{O}_2 + 3.76\text{N}_2),&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/det
 
@@ -307,9 +280,7 @@ To repeat the results, run:
 * Problem type: Chapman-Jouget Detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{C}\text{H}_4&space;&plus;&space;\frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" title="\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2,&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;" />
+* Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
 * List of species considered = `list_species('Soot formation Extended')`
 * URL Folder Results CEA: ./validations/cea/data/det
 
@@ -330,9 +301,7 @@ To repeat the results, run:
 * Problem type: Shock incident
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
+* Initial mixture [moles]: $3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2$
 * List of species considered = list_species('Air_ions')
 * URL Folder Results CEA: ./validations/cea/data/shocks
 
@@ -352,9 +321,7 @@ To repeat the results, run:
 * Problem type: Shock reflected
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?3.7276&space;\text{N}_2&space;&plus;&space;\text{O}_2&space;&plus;&space;0.0447&space;\text{Ar}&space;&plus;&space;0.0015&space;\text{CO}_2"/>
+* Initial mixture [moles]: $3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2$
 * List of species considered = `list_species('Air_ions')`
 * URL Folder Results CEA: ./validations/cea/data/shocks
 
@@ -374,9 +341,7 @@ To repeat the results, run:
 * Problem type: Shock Polar
 * Temperature [K]   = 300
 * Pressure    [bar] = 1.01325
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?3.7619&space;\text{N}_2&space;&plus;&space;\text{O}_2"/>
+* Initial mixture [moles]: $3.7619 \text{N}_2 + \text{O}_2$
 * List of species considered = Frozen
 * URL Folder Results SDToolbox: ./validations/sdtoolbox/data
 
@@ -401,9 +366,7 @@ To repeat the results, run:
 * Finite-Area-Chamber model (FAC)
 * Area ratio $A_{\rm chamber} / A_{\rm throat}$ = 2
 * Area ratio $A_{\rm exit} / A_{\rm throat}$ = [1:2.6]
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{RP1}&space;&plus;&space;\frac{0.6723}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[1,&space;4]&space;"/>
+* Initial mixture [moles]: $\text{RP1} + \frac{0.6723}{\phi}\text{LOX}$
 * List of species considered = HC/O2/N2 PROPELLANTS
 * URL Folder Results CEA: ./validations/cea/rocket
 
@@ -427,9 +390,7 @@ To repeat the results, run:
 * Chamber pressure [bar] = 22
 * Infinite-Area-Chamber model (IAC)
 * Area ratio $A_{\rm exit} / A_{\rm throat}$ = 3
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+* Initial mixture [moles]: $\text{LH2} + \frac{0.5}{\phi}\text{LOX}$
 * List of species considered = HYDROGEN_L
 * URL Folder Results CEA: ./validations/cea/rocket
 
@@ -456,9 +417,7 @@ To repeat the results, run:
 * Finite-Area-Chamber model (FAC)
 * Area ratio $A_{\rm chamber} / A_{\rm throat}$ = 2
 * Area ratio $A_{\rm exit} / A_{\rm throat}$ = 3
-* Initial mixture [moles]:
-
-  <img src="https://latex.codecogs.com/svg.image?\text{LH2}&space;&plus;&space;\frac{0.5}{\phi}\text{LOX},&space;\text{with&space;a&space;equivalence&space;ratio&space;}&space;\phi&space;\in&space;[0.5,&space;4]&space;"/>
+* Initial mixture [moles]: $\text{LH2} + \frac{0.5}{\phi}\text{LOX}$
 * List of species considered = HYDROGEN_L
 * URL Folder Results CEA: ./validations/cea/rocket
 

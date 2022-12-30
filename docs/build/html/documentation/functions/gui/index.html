@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="prev" title="Rocket module" href="../modules/ct_rocket/index.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>GUI - Combustion Toolbox v0.9.992</title>
+        <title>GUI - Combustion Toolbox v0.9.993</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v0.9.992</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v0.9.993</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -348,7 +348,7 @@ Routines<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.gui.utils"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_CalculateButtonPushed">
-<span class="sig-name descname"><span class="pre">gui_CalculateButtonPushed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_CalculateButtonPushed" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_CalculateButtonPushed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_CalculateButtonPushed" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Solve selected problem, update GUI with the results and generate
 predefined plots.</p>
 </dd></dl>
@@ -361,25 +361,25 @@ predefined plots.</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_FrozenchemistryCheckBoxValueChanged">
-<span class="sig-name descname"><span class="pre">gui_FrozenchemistryCheckBoxValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_FrozenchemistryCheckBoxValueChanged" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_FrozenchemistryCheckBoxValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_FrozenchemistryCheckBoxValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Set frozen chemistry and update Listbox of species</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_ProblemTypeValueChanged">
-<span class="sig-name descname"><span class="pre">gui_ProblemTypeValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ProblemTypeValueChanged" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_ProblemTypeValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ProblemTypeValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Clear GUI results tab (except UITree) and update GUI items for the problem selected</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_ProductsValueChanged">
-<span class="sig-name descname"><span class="pre">gui_ProductsValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ProductsValueChanged" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_ProductsValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ProductsValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update List of species considered as Products</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_ReactantsValueChanged">
-<span class="sig-name descname"><span class="pre">gui_ReactantsValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ReactantsValueChanged" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_ReactantsValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ReactantsValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update values of the UITable items with:
 - a given predefined set of reactants
 - the new species added in the finder</p>
@@ -387,55 +387,52 @@ predefined plots.</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_UITable_RCellEdit">
-<span class="sig-name descname"><span class="pre">gui_UITable_RCellEdit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_UITable_RCellEdit" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_UITable_RCellEdit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_UITable_RCellEdit" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update values of the UITable items with the changes made</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_add_nodes">
-<span class="sig-name descname"><span class="pre">gui_add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj_parent</span></em>, <em class="sig-param"><span class="pre">results</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_add_nodes" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Function that generate nodes in a UITree and save data on them.
-1. Generate Nodes (childrens)
-* Category 1: new children node: Results -&gt; ProblemType</p>
+<span class="sig-name descname"><span class="pre">gui_add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parent_node</span></em>, <em class="sig-param"><span class="pre">results</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_add_nodes" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that generate nodes in a UITree and save data on them.</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_add_nodes_validations">
-<span class="sig-name descname"><span class="pre">gui_add_nodes_validations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">code_validation_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_add_nodes_validations" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_add_nodes_validations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">code_validation_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_add_nodes_validations" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Add nodes with the name of the validations routines</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_check_temperature_reactants">
-<span class="sig-name descname"><span class="pre">gui_check_temperature_reactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">Nspecies</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_check_temperature_reactants" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_check_temperature_reactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">Nspecies</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_check_temperature_reactants" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Check if is a condensed species with a fixed temperature</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_clear_results">
-<span class="sig-name descname"><span class="pre">gui_clear_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_clear_results" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Function that clears the result tab panel, setting them to 0, or
-empty.</p>
+<span class="sig-name descname"><span class="pre">gui_clear_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_clear_results" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that clears the result tab panel, setting them to 0</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_compute_mach_or_velocity">
-<span class="sig-name descname"><span class="pre">gui_compute_mach_or_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">inputname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_compute_mach_or_velocity" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_compute_mach_or_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">inputname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_compute_mach_or_velocity" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Function that computes the pre-shock Mach number of the mixture from
 a given pre-shock velocity or viceversa.</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_compute_propReactants">
-<span class="sig-name descname"><span class="pre">gui_compute_propReactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_compute_propReactants" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_compute_propReactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_compute_propReactants" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Function that compute fundamental properties (e.g., equivalence ratio,
 molar fractions, …) of the mixture.</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_create_temp_app">
-<span class="sig-name descname"><span class="pre">gui_create_temp_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">FLAG_COMPUTE_FROM_PHI</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_create_temp_app" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Function that creates an app required for preliminary calculations</p>
+<span class="sig-name descname"><span class="pre">gui_create_temp_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">FLAG_COMPUTE_FROM_PHI</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_create_temp_app" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that creates an self required for preliminary calculations</p>
 </dd></dl>
 
 <dl class="mat function">
@@ -445,7 +442,7 @@ molar fractions, …) of the mixture.</p>
 <p class="sd-card-text">[1] Ben Tordoff (2022). SplashScreen (<a class="reference external" href="https://www.mathworks.com/matlabcentral/fileexchange/30508-splashscreen">https://www.mathworks.com/matlabcentral/fileexchange/30508-splashscreen</a>), MATLAB Central File Exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">object</span></code></span>) – App object</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>app</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">object</span></code></span>) – App object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>splash_obj (object)</em> – Splash object</p>
@@ -455,14 +452,14 @@ molar fractions, …) of the mixture.</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_edit_phiValueChanged">
-<span class="sig-name descname"><span class="pre">gui_edit_phiValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_edit_phiValueChanged" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_edit_phiValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_edit_phiValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update moles and mole fractions of the reactant UITables for the
 given equivalence ratio</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_empty_UITables">
-<span class="sig-name descname"><span class="pre">gui_empty_UITables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_empty_UITables" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_empty_UITables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_empty_UITables" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Clear data UITables and set to default the value of the equivalence ratio (-)</p>
 </dd></dl>
 
@@ -475,47 +472,47 @@ error_max</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_generate_panel_base">
-<span class="sig-name descname"><span class="pre">gui_generate_panel_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_generate_panel_base" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_generate_panel_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_generate_panel_base" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Routine that generates all the components to read the thermodynamic
 properties at different stages of the rocket</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_generate_panel_rocket">
-<span class="sig-name descname"><span class="pre">gui_generate_panel_rocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_generate_panel_rocket" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_generate_panel_rocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_generate_panel_rocket" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Routine that generates all the components to read the thermodynamic
 properties at different stages of the rocket</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_get_parameters">
-<span class="sig-name descname"><span class="pre">gui_get_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_parameters" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_get_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_parameters" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">GET EQUIVALENCE RATIO</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_get_reactants">
-<span class="sig-name descname"><span class="pre">gui_get_reactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_reactants" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_get_reactants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_reactants" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get the species and the number of moles of the current data in
 UITable_R</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_get_tolerances">
-<span class="sig-name descname"><span class="pre">gui_get_tolerances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_tolerances" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_get_tolerances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_get_tolerances" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get tolerance from GUI and update values</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_keep_last_entry">
-<span class="sig-name descname"><span class="pre">gui_keep_last_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">entry_obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_keep_last_entry" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_keep_last_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">entry_app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_keep_last_entry" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Function that keeps only the last entry, i.e., if the order is
 entry1 and entry2, entry1 will be set to empty value</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_plot_custom_figures">
-<span class="sig-name descname"><span class="pre">gui_plot_custom_figures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_plot_custom_figures" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_plot_custom_figures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_plot_custom_figures" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Function that plot custom figures based on the parameters of the
 GUI’s custom figures tab</p>
 </dd></dl>
@@ -528,56 +525,56 @@ GUI’s custom figures tab</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_seeker_exact_value">
-<span class="sig-name descname"><span class="pre">gui_seeker_exact_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">ListValues</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_seeker_exact_value" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_seeker_exact_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">ListValues</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_seeker_exact_value" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Return the value that match with the value introduced in the finder</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_seeker_value">
-<span class="sig-name descname"><span class="pre">gui_seeker_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">ListValues</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_seeker_value" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_seeker_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em>, <em class="sig-param"><span class="pre">ListValues</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_seeker_value" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Return the value that match with the value introduced in the finder</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_UITable_R">
-<span class="sig-name descname"><span class="pre">gui_update_UITable_R</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_UITable_R" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_update_UITable_R</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_UITable_R" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update data in the UITable_R with the next order: Inert -&gt; Oxidizer -&gt; Fuel</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_from_uitree">
-<span class="sig-name descname"><span class="pre">gui_update_from_uitree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">selectedNodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_from_uitree" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_update_from_uitree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">selectedNodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_from_uitree" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update GUI with the data that correspond with the selected node from
 the UITree</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_frozen">
-<span class="sig-name descname"><span class="pre">gui_update_frozen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_frozen" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_update_frozen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_frozen" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Set frozen chemistry and update Listbox of species</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_phi">
-<span class="sig-name descname"><span class="pre">gui_update_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_phi" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_update_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_phi" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update GUI: equivalence ratio, O/F, and percentage Fuel</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_terminal">
-<span class="sig-name descname"><span class="pre">gui_update_terminal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_terminal" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_update_terminal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_terminal" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update GUI command window</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_value2list">
-<span class="sig-name descname"><span class="pre">gui_value2list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_value2list" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_value2list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_value2list" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Add/remove (action) selected value to LS</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_write_results">
-<span class="sig-name descname"><span class="pre">gui_write_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">results</span></em>, <em class="sig-param"><span class="pre">i</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_write_results" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">gui_write_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">results</span></em>, <em class="sig-param"><span class="pre">i</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_write_results" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update GUI with the results of the ith case solved</p>
 </dd></dl>
 

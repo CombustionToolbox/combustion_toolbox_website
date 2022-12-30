@@ -9,13 +9,13 @@ function self = solve_problem(self, ProblemType)
     %     self (struct): Data of the mixtures (initial and final), conditions, databases
 
     try
-        % Save Problem Type
+        % Set Problem Type
         self.PD.ProblemType = ProblemType;
         % Check inputs and set length of the loop
         self = check_inputs(self);
         % Get Flags and length of the loop
         self = get_FLAG_N(self);
-
+        % Loop
         for i = self.C.l_phi:-1:1
             % Set problem conditions by case
             self = set_problem_conditions(self, i);
@@ -179,13 +179,15 @@ function self = select_problem(self, i)
                 end
 
                 [self.PS.strR{i}, self.PS.str2{i}] = shock_polar(self, self.PS.strR{i}, u1);
-                [~, self.PS.str2_1{i}, ~] = shock_oblique_theta(self, self.PS.strR{i}, u1, theta);
+                [~, self.PS.str2_1{i}] = shock_oblique_theta(self, self.PS.strR{i}, u1, theta);
                 [~, self.PS.strP{i}] = shock_polar(self, self.PS.str2_1{i}, self.PS.str2_1{i}.u);
                 [~, self.PS.str3_1{i}, self.PS.str3_2{i}] = shock_oblique_theta(self, self.PS.str2_1{i}, self.PS.str2_1{i}.u, theta);
+                
                 % Assing values
                 self.PS.str2_1{i} = assign_shock_polar(self.PS.str2_1{i}, self.PS.str2{i});
                 self.PS.str3_1{i} = assign_shock_polar(self.PS.str3_1{i}, self.PS.strP{i});
                 self.PS.str3_2{i} = assign_shock_polar(self.PS.str3_2{i}, self.PS.strP{i});
+
             else
 
                 try
@@ -197,8 +199,27 @@ function self = select_problem(self, i)
                 [self.PS.strR{i}, self.PS.str2{i}] = shock_polar(self, self.PS.strR{i}, u1);
                 [~, self.PS.str2_1{i}] = shock_oblique_beta(self, self.PS.strR{i}, u1, beta);
                 [~, self.PS.strP{i}] = shock_polar(self, self.PS.str2_1{i}, self.PS.str2_1{i}.u);
+                [~, self.PS.str3_1{i}] = shock_oblique_beta(self, self.PS.str2_1{i}, self.PS.str2_1{i}.u, beta);
+
+                % Assing values
+                self.PS.str2_1{i} = assign_shock_polar(self.PS.str2_1{i}, self.PS.str2{i});
+                self.PS.str3_1{i} = assign_shock_polar(self.PS.str3_1{i}, self.PS.strP{i});
             end
 
+            
+        
+        case {'SHOCK_POLAR_LIMITRR'}
+
+            try
+                u1 = self.PD.u1.value(i);
+            catch
+                u1 = self.PD.u1.value;
+            end
+            
+            [self.PS.strR{i}, self.PS.str2{i}, self.PS.str2_1{i}, self.PS.strP{i}] = shock_polar_limitRR(self, self.PS.strR{i}, u1);
+            % Assing values
+            self.PS.str2_1{i} = assign_shock_polar(self.PS.str2_1{i}, self.PS.str2{i});
+            
         case {'DET'}
 
             if i == self.C.l_phi
