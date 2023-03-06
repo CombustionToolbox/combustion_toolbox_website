@@ -149,7 +149,17 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img src="_static/gif/example_DET.gif" width="800">
 </p>
 
-**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states for a lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 bar). The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered.*
+**Figure 1:** *Performance test, 100 Chapman-Jouguet pre-detonation and post-detonation states for a lean to rich CH4-air mixtures at standard conditions $(T1 = 300$ K and pressure $p1 = 1$ bar$)$. The computational time was of 2.86 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 24 species considered.*
+
+<p class= "only-light" align="center">
+    <img alt="TP with condensed species" style="border-width:0" src="_static/img/cuadra2022/TP_scoggins2015_wide.svg" width="1200"/>
+</p>
+
+<p class= "only-dark" align="center">
+    <img alt="TP with condensed species" style="border-width:0" src="_static/img/cuadra2022/TP_scoggins2015_wide_dark.svg" width="1200"/>
+</p>
+
+**Figure 2:** *Variation of the molar fractions $X_j$ for a TP transformation of a Silica-Phenolic mixture at atmospheric pressure $(p = 1$ atm$)$ with $T \in [200, 5000]$; line: numerical results obtained with CT; symbols: numerical results obtained with NASA's CEA.*.
 
 <p class= "only-light" align="center">
     <img alt="Hugoniot curves" style="border-width:0" src="_static/img/Hugoniot_benchmarking.svg" width="500"/>
@@ -158,8 +168,8 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
 <p class= "only-dark" align="center">
     <img alt="Hugoniot curves" style="border-width:0" src="_static/img/Hugoniot_benchmarking_dark.svg" width="500"/>
 </p>
-    
-**Figure 2:** *Hugoniot curves for different molecular gases at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm \[numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code excluding ionization (symbols)\]*.
+
+**Figure 3:** *Hugoniot curves for different molecular gases at pre-shock temperature $T_1 = 300$ K and pressure $p_{1} = 1$ atm \[numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code excluding ionization (symbols)\]*.
 
 <p class= "only-light" align="center">
     <img alt="Chapman-Jouguet detonation" style="border-width:0" src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1200"/>
@@ -169,7 +179,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img alt="Chapman-Jouguet detonation" style="border-width:0" src="_static/img/run_validation_DET_CEA_3_molar_dark.svg" width="1200"/>
 </p>
 
-**Figure 3:** *Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions (T1 = 300 K and pressure p1 = 1 atm); line: numerical results obtained with Combustion Toolbox; circles: NASA's Chemical Equilibrium with Applications code. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 26 species considered and a total of 351 case studies.*
+**Figure 4:** *Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions $(T_1 = 300$ K and pressure $p_1 = 1$ atm$)$; line: numerical results obtained with Combustion Toolbox; circles: NASA's Chemical Equilibrium with Applications code. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz for a set of 26 species considered and a total of 351 case studies.*
 
 <p class= "only-light" align="center">
     <img alt="Polar shocks" style="border-width:0" src="_static/img/cuadra2022/shock_polar_all_4.svg" width="1000"/>
@@ -179,7 +189,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img alt="Polar shocks" style="border-width:0" src="_static/img/polar_shock_full_and_frozen_both_air_complete_dark.svg" width="1000"/>
 </p>
 
-**Figure 4:** *Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79\% N2, 21\% O2) at pre-shock temperature T1 = 300 K and pressure p1 = 1 atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with CANTERA within Caltech’s SD-Toolbox; diamonds: maximum deflection angle* $\theta_{\rm max}$.
+**Figure 5:** *Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79\% N2, 21\% O2) at pre-shock temperature $T_1 = 300$ K and pressure $p_1 = 1$ atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with Cantera within Caltech’s SD-Toolbox; diamonds: maximum deflection angle* $\theta_{\rm max}$.
 
 # Contributing
 
@@ -208,7 +218,7 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
 If you use Combustion Toolbox in a publication, please cite it using the following reference:
 
 
-* *Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
+* *Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99f). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
 
 It can be handy the BibTeX format:
 
@@ -216,8 +226,8 @@ It can be handy the BibTeX format:
 @misc{combustiontoolbox,
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
-    year = 2022,
-    note = "Version 0.9.99c",
+    year = 2023,
+    note = "Version 0.9.99f",
     doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
