@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="GUI" href="../../gui/index.html" /><link rel="prev" title="Shocks and detonations module" href="../ct_sd/index.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Rocket module - Combustion Toolbox v0.9.993</title>
+        <title>Rocket module - Combustion Toolbox v0.9.996</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">Combustion Toolbox v0.9.993</div></a>
+      <a href="../../../../index.html"><div class="brand">Combustion Toolbox v0.9.996</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -330,9 +330,9 @@ Routines<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <span class="target" id="module-src.modules.ct_rocket"></span><dl class="mat function">
-<dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_chamber_FAC">
-<span class="sig-name descname"><span class="pre">compute_chamber_FAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_chamber_FAC" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute chemical equilibria at the injector, outlet of the chamber,
+<dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_FAC">
+<span class="sig-name descname"><span class="pre">compute_FAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2_inj</span></em>, <em class="sig-param"><span class="pre">mix2_c</span></em>, <em class="sig-param"><span class="pre">mix3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_FAC" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute chemical equilibria at the injector, outlet of the chamber and at the throat
 using the Finite-Area-Chamber (FAC) model</p>
 <p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
@@ -340,22 +340,19 @@ using the Finite-Area-Chamber (FAC) model</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>mix2_inj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the injector of the chamber (previous calculation)</p></li>
+<li><p class="sd-card-text"><strong>mix2_c</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat (previous calculation)</p></li>
 </ul>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Optional Args:</dt><dd><ul class="simple">
-<li><p class="sd-card-text">mix2_inj (struct): Properties of the mixture at the injector of the chamber (previous calculation)</p></li>
-<li><p class="sd-card-text">mix2_c (struct): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
-<li><p class="sd-card-text">mix3 (struct): Properties of the mixture at the throat (previous calculation)</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">mix2_inj (struct): Properties of the mixture at the injector of the chamber</p></li>
+<li><p class="sd-card-text">mix2_c (struct): Properties of the mixture at the outlet of the chamber</p></li>
+<li><p class="sd-card-text">mix3 (struct): Properties of the mixture at the throat</p></li>
 </ul>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><em>mix2_inj (struct)</em> – Properties of the mixture at the injector of the chamber
-mix2_c (struct): Properties of the mixture at the outlet of the chamber
-mix3 (struct): Properties of the mixture at the throat</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -382,26 +379,6 @@ the Infinite-Area-Chamber (IAC) model</p>
 </dd></dl>
 
 <dl class="mat function">
-<dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_chemical_equilibria">
-<span class="sig-name descname"><span class="pre">compute_chemical_equilibria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">mix2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_chemical_equilibria" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute chemical equilibria for the 2 given thermodynamic states,
-e.g., enthalpy-pressure (HP)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
-<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the final mixture (previous calculation)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_exit">
 <span class="sig-name descname"><span class="pre">compute_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">mix4</span></em>, <em class="sig-param"><span class="pre">Aratio</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_exit" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute thermochemical composition for a given Aratio</p>
@@ -415,26 +392,6 @@ e.g., enthalpy-pressure (HP)</p>
 <li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
 <li><p class="sd-card-text"><strong>mix4</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the exit (previous calculation)</p></li>
 <li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Ratio area_exit / area_throat</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>mix3 (struct)</em> – Properties of the mixture at the throat</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_rocket_parameters">
-<span class="sig-name descname"><span class="pre">compute_rocket_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">gravity</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_rocket_parameters" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute Rocket performance parameters at the throat</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
-<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
-<li><p class="sd-card-text"><strong>gravity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Gravitational acceleration [m/s2]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -501,13 +458,33 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_rocket.rocket_parameters">
+<span class="sig-name descname"><span class="pre">rocket_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">gravity</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.rocket_parameters" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute Rocket performance parameters at the throat</p>
+<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
+1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p class="sd-card-text"><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p class="sd-card-text"><strong>gravity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Gravitational acceleration [m/s2]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>mix3 (struct)</em> – Properties of the mixture at the throat</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.rocket_performance">
-<span class="sig-name descname"><span class="pre">rocket_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">Aratio</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.rocket_performance" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rocket_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.rocket_performance" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Routine that computes the propellant rocket performance</p>
 <dl class="simple">
 <dt>Methods implemented:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">Infinite-Area-Chamber (IAC)</p></li>
-<li><p class="sd-card-text">Finite-Area-Chamber (FAC) - NOT YET</p></li>
+<li><p class="sd-card-text">Finite-Area-Chamber (FAC)</p></li>
 </ul>
 </dd>
 </dl>
@@ -518,12 +495,12 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>Aratio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Ratio area_exit / area_throat</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Aratio (struct): Ratio area_exit / area_throat</p></li>
 <li><p class="sd-card-text">mix2 (struct): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
 <li><p class="sd-card-text">mix3 (struct): Properties of the mixture at the throat (previous calculation)</p></li>
 </ul>

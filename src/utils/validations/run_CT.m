@@ -19,6 +19,7 @@ function self = run_CT(varargin)
     N_points_polar = 100;
     FLAG_PHI = true;
     FLAG_IAC = true;
+    FLAG_FAST = true;
     Aratio_c = [];
     Aratio = [];
     % GET INPUTS
@@ -85,6 +86,8 @@ function self = run_CT(varargin)
                 Aratio_c = varargin{i + 1};
             case 'aratio'
                 Aratio = varargin{i + 1};
+            case 'flag_fast'
+                FLAG_FAST = varargin{i + 1};
         end
 
     end
@@ -96,6 +99,7 @@ function self = run_CT(varargin)
     % TUNNING PROPERTIES
     self.TN.tolN = tolN;
     self.TN.N_points_polar = N_points_polar;
+    self.TN.FLAG_FAST = FLAG_FAST;
     % INITIAL CONDITIONS
     self = set_prop(self, 'TR', Temp_mix1, 'pR', Pressure_mix1);
 
@@ -124,12 +128,8 @@ function self = run_CT(varargin)
         self = set_prop(self, 'u1', Velocity, 'phi', 1 * ones(1, length(Velocity)));
     end
 
-    % INITIALIZE TIMER
-    self.Misc.timer_loop = tic;
     % SOLVE PROBLEM
     self = solve_problem(self, ProblemType);
-    % SAVE TIMER (COMPUTATIONAL TIME [s])
-    self.Misc.timer_loop = toc(self.Misc.timer_0);
     % SET PROPERTIES AS CEA
     for i = length(self.PD.range):-1:1
         % Mix 1

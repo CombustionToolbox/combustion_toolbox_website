@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Modules" href="../modules/index.html" /><link rel="prev" title="Functions" href="../index.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Utilities - Combustion Toolbox v0.9.993</title>
+        <title>Utilities - Combustion Toolbox v0.9.996</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v0.9.993</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v0.9.996</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -1144,7 +1144,7 @@ Format: [number element, element, abundance, name, molar mass (g/mol)]</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.set_species">
-<span class="sig-name descname"><span class="pre">set_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.set_species" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.set_species" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Fill the properties matrix with the data of the mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1155,10 +1155,21 @@ Format: [number element, element, abundance, name, molar mass (g/mol)]</p>
 <li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>properties_matrix (float)</em> – Properties matrix</p>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">ind (float): Vector with the indexes of the species to fill the properties matrix</p>
 </dd>
 </dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>properties_matrix (float)</em> – Properties matrix</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">properties_matrix = set_species(self, {‘N2’, ‘O2’}, [3.76, 1], 300)
+properties_matrix = set_species(self, {‘N2’, ‘O2’}, [3.76, 1], 300, [1, 2])</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -1511,26 +1522,6 @@ thermodynamic data of the chemical species</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>DB_master_reduced (struct)</em> – Reduced database with the thermodynamic data of the chemical species</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.utils.databases.get_g0">
-<span class="sig-name descname"><span class="pre">get_g0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.get_g0" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute Compute Gibbs energy [kJ/mol] of the species at the given
-temperature [K] using NASA’s 9 polynomials</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Chemical species</p></li>
-<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
-<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>g0 (float)</em> – Gibbs energy [kJ/mol]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2688,10 +2679,30 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 </dd></dl>
 
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.root_finding.regula_guess">
+<span class="sig-name descname"><span class="pre">regula_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.root_finding.regula_guess" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Find a estimate of the temperature for the set chemical equilibrium
+transformation using the regula falsi method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>x0 (float)</em> – Guess temperature [K]</p>
+</dd>
+</dl>
+</dd></dl>
+
 <span class="target" id="module-src.utils.root_finding.newton"></span><dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.root_finding.newton.newton">
 <span class="sig-name descname"><span class="pre">newton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.root_finding.newton.newton" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Find the temperature [K] (root) for the set chemical transformation at equilibrium using the Newton-Raphson method</p>
+<dd><p class="sd-card-text">Find the temperature [K] (root) for the set chemical transformation at equilibrium using the second-order Newton-Raphson method</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2742,13 +2753,13 @@ Routines<div class="sd-summary-down docutils">
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.root_finding.steffenson.get_point">
-<span class="sig-name descname"><span class="pre">get_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_vector</span></em>, <em class="sig-param"><span class="pre">g_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.root_finding.steffenson.get_point" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Get point of the fixed point function</p>
+<span class="sig-name descname"><span class="pre">get_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_vector</span></em>, <em class="sig-param"><span class="pre">f_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.root_finding.steffenson.get_point" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get point using the regula falsi method</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>x_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess temperature [K]</p></li>
-<li><p class="sd-card-text"><strong>g_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Fixed points of the function [kJ] (HP, EV) or [kJ/K] (SP, SV)</p></li>
+<li><p class="sd-card-text"><strong>f_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – evaluated functions [kJ] (HP, EV) or [kJ/K] (SP, SV)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2792,30 +2803,11 @@ Routines<div class="sd-summary-down docutils">
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">x (float):    Temperature at equilibrium [K]</p></li>
+<li><p class="sd-card-text">x (float): Temperature at equilibrium [K]</p></li>
 <li><p class="sd-card-text">STOP (float): Relative error [-]</p></li>
 <li><p class="sd-card-text">guess_moles (float): Guess moles final mixture</p></li>
 </ul>
 </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.utils.root_finding.steffenson.steff_guess">
-<span class="sig-name descname"><span class="pre">steff_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">field</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.root_finding.steffenson.steff_guess" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Find a estimate of the temperature for the set chemical equilibrium transformation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
-<li><p class="sd-card-text"><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>x0 (float)</em> – Guess temperature [K]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3330,7 +3322,7 @@ Routines<div class="sd-summary-down docutils">
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.validations.debug_plot_error">
-<span class="sig-name descname"><span class="pre">debug_plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">it</span></em>, <em class="sig-param"><span class="pre">STOP</span></em>, <em class="sig-param"><span class="pre">Delta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.debug_plot_error" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">debug_plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">it</span></em>, <em class="sig-param"><span class="pre">STOP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.debug_plot_error" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Debug function that plots the error per iteration along with the
 value of the correction factor</p>
 </dd></dl>
