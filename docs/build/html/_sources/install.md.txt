@@ -40,4 +40,4 @@ Combustion toolbox can be used in two ways:
 
 Combustion Toolbox GUI can also be used with the MATLAB's standalone version. In this case, proceed running `combustion_toolbox_standalone_installer.exe`.
 
-To use the desktop environment (plain code) along with the GUI install the package from `combustion_toolbox_package.mltbx` or running `INSTALL.m`.
+<!-- To use the desktop environment (plain code) along with the GUI run `INSTALL.m`. -->
