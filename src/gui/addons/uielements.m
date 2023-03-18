@@ -188,6 +188,11 @@ classdef uielements < matlab.apps.AppBase
                 app.DB = app.caller_app.DB;
             end
             app.LE_omit = [];
+            
+            % Remove incompatible species
+            app.S.LS_DB(find_ind(app.S.LS_DB, 'Air')) = [];
+            % Get element indeces of each species contained in the database
+            app.S.ind_elements_DB = get_ind_elements(app.S.LS_DB, app.DB, set_elements(), 5);
         end
 
         % Image clicked function: element_1, element_10, element_11, 
@@ -213,7 +218,7 @@ classdef uielements < matlab.apps.AppBase
             % Search species with the elements selected
             if app.NE
                 try
-                    LS = find_species_LS(app.S.LS_DB, app.LE_selected, 'all', app.LE_omit, 'all');
+                    LS = find_products(app, app.LE_selected, 'flag', true, 'ind', app.S.ind_elements_DB);
                 catch
                     LS = {};
                 end
@@ -380,7 +385,7 @@ classdef uielements < matlab.apps.AppBase
             % Create element_1_3
             app.element_1_3 = uiimage(app.GridLayout);
             app.element_1_3.ImageClickedFcn = createCallbackFcn(app, @element_1ImageClicked, true);
-            app.element_1_3.Tag = 'T';
+            app.element_1_3.Tag = 'T_M';
             app.element_1_3.Layout.Row = 1;
             app.element_1_3.Layout.Column = 3;
             app.element_1_3.ImageSource = '1_3.svg';
@@ -1239,6 +1244,7 @@ classdef uielements < matlab.apps.AppBase
             % Create enableremoveMenu
             app.enableremoveMenu = uimenu(app.ContextMenu);
             app.enableremoveMenu.MenuSelectedFcn = createCallbackFcn(app, @enableremoveMenuSelected, true);
+            app.enableremoveMenu.Visible = 'off';
             app.enableremoveMenu.Text = 'enable/remove';
             
             % Assign app.ContextMenu

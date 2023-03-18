@@ -1431,6 +1431,41 @@ Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.find_products">
+<span class="sig-name descname"><span class="pre">find_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.find_products" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Find all the combinations of species from DB that can appear as
+products for the given list of reactants</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of reactants</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">ind_elements_DB (float): Matrix NS_DB x MAX_ELEMENTS with element indeces of the species contained in the database</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">LS (cell): List of products</p></li>
+<li><p class="sd-card-text">ind_elements_DB (float): Matrix NS_DB x MAX_ELEMENTS with element indeces of the species contained in the database</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})
+[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)
+[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.databases.find_species_LS">
 <span class="sig-name descname"><span class="pre">find_species_LS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">cond_with</span></em>, <em class="sig-param"><span class="pre">type_with</span></em>, <em class="sig-param"><span class="pre">cond_without</span></em>, <em class="sig-param"><span class="pre">type_without</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.find_species_LS" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Find species in the given list that contain all/any
@@ -1462,6 +1497,7 @@ cond_without</p>
 </dl>
 </dd>
 </dl>
+<p class="sd-card-text">LS = find_species_LS(self.S.LS_DB, {}, ‘any’, {‘_M’}, ‘all’)</p>
 </div>
 </dd></dl>
 
@@ -1522,6 +1558,25 @@ thermodynamic data of the chemical species</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>DB_master_reduced (struct)</em> – Reduced database with the thermodynamic data of the chemical species</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.get_ind_elements">
+<span class="sig-name descname"><span class="pre">get_ind_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">elements</span></em>, <em class="sig-param"><span class="pre">MAX_ELEMENTS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.get_ind_elements" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get element indeces of each species contained in LS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p class="sd-card-text"><strong>elements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Elements in the periodic table</p></li>
+<li><p class="sd-card-text"><strong>MAX_ELEMENTS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum number of elements contained in one species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>ind_elements (float)</em> – Matrix numel(LS) x MAX_ELEMENTS with element indeces of the species contained in LS</p>
 </dd>
 </dl>
 </dd></dl>
