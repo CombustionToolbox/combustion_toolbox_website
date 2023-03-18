@@ -1,9 +1,9 @@
-name: Update develop branch with every pull request to main
+name: Update develop branch with every push to main
 
-on: 
-  pull_request:
-    branches: [main]
-    types: [closed]
+on:
+  push:
+    branches:
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
