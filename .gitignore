@@ -1,3 +1,4 @@
+# Remove not neccesary folders from the source code 
 src/installer
 src/validations/figures
 src/validations/other stuff
