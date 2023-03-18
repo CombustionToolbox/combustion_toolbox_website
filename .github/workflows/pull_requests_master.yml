@@ -1,7 +1,7 @@
-name: Update develop branch with every pull request to master
+name: Update develop branch with every pull request to main
 on: 
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [closed]
 jobs:
   merge-master-back-to-dev:
@@ -14,7 +14,7 @@ jobs:
       run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
-    - name: Merge master back to dev
+    - name: Merge main back to dev
       run: |
           git fetch --unshallow
           git checkout dev
