@@ -11,7 +11,7 @@ on:
 jobs:
   merge-master-back-to-dev:
     if: github.event.pull_request.merged == true
-    timeout-minutes: 2
+    timeout-minutes: 120
 
     runs-on: ubuntu-latest
 
