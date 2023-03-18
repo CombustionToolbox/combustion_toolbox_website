@@ -818,11 +818,6 @@ n species with species at different temperatures.</p>
 <dt class="sig sig-object mat" id="src.utils.docs_CT">
 <span class="sig-name descname"><span class="pre">docs_CT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.docs_CT" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Open Combustion Toolbox’s documentation in default web browser</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>none</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">empty</span></code></span>) – </p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="mat function">
@@ -942,13 +937,7 @@ to the device</p>
 <dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>self (struct)</em> –</p>
-<dl class="simple">
-<dt>Data of the mixture, conditions, and databases,</dt><dd><p class="sd-card-text">included the oxidizer of reference which can be
-obtained as self.S.ind_ox_ref</p>
-</dd>
-</dl>
-</p>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases, included the oxidizer of reference which can be obtained as self.S.ind_ox_ref</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1051,14 +1040,14 @@ cryogenic liquid species, i.e., liquified gases.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.read_abundances">
 <span class="sig-name descname"><span class="pre">read_abundances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.read_abundances" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Read solar abundances file
-Format: [number element, element, abundance, name, molar mass (g/mol)]</p>
+<dd><p class="sd-card-text">Read solar abundances file</p>
+<p class="sd-card-text">Format: [number element, element, abundance, name, molar mass (g/mol)]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">file</span></code></span>) – Filename with the data</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">abundances (float): Vector with the logarithmic base 10 solar abundances</p></li>
 <li><p class="sd-card-text">elements (cell): List with the given elements</p></li>
@@ -1231,9 +1220,12 @@ properties_matrix = set_species(self, {‘N2’, ‘O2’}, [3.76, 1], 300, [1, 
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">Tuple
-* x (float): smooth data in the x direction
-* y (float): smooth data in the y direction</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">x (float): smooth data in the x direction</p></li>
+<li><p class="sd-card-text">y (float): smooth data in the y direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1306,11 +1298,6 @@ properties_matrix = set_species(self, {‘N2’, ‘O2’}, [3.76, 1], 300, [1, 
 <dt class="sig sig-object mat" id="src.utils.website_CT">
 <span class="sig-name descname"><span class="pre">website_CT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.website_CT" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Open Combustion Toolbox’s website in default web browser</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>none</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">empty</span></code></span>) – </p>
-</dd>
-</dl>
 </dd></dl>
 
 </div>
@@ -1378,11 +1365,13 @@ Routines<div class="sd-summary-down docutils">
 formation of a given species, we must determine the change in moles of
 gases during the formation reaction of a mole of that species starting
 from the elements in their reference state.</p>
-<p class="sd-card-text">Notes:
-The only elements that are stable as diatomic gases are elements
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p class="sd-card-text">The only elements that are stable as diatomic gases are elements
 1 (H), 8 (N), 9 (O), 10 (F), and 18 (Cl). The remaining elements that
 are stable as (monoatomic) gases are the noble gases He (3), Ne (11),
 Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1431,6 +1420,41 @@ Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.find_products">
+<span class="sig-name descname"><span class="pre">find_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.find_products" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Find all the combinations of species from DB that can appear as
+products for the given list of reactants</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of reactants</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">ind_elements_DB (float): Matrix NS_DB x MAX_ELEMENTS with element indeces of the species contained in the database</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">LS (cell): List of products</p></li>
+<li><p class="sd-card-text">ind_elements_DB (float): Matrix NS_DB x MAX_ELEMENTS with element indeces of the species contained in the database</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})
+[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)
+[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.databases.find_species_LS">
 <span class="sig-name descname"><span class="pre">find_species_LS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">cond_with</span></em>, <em class="sig-param"><span class="pre">type_with</span></em>, <em class="sig-param"><span class="pre">cond_without</span></em>, <em class="sig-param"><span class="pre">type_without</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.find_species_LS" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Find species in the given list that contain all/any
@@ -1462,6 +1486,7 @@ cond_without</p>
 </dl>
 </dd>
 </dl>
+<p class="sd-card-text">LS = find_species_LS(self.S.LS_DB, {}, ‘any’, {‘_M’}, ‘all’)</p>
 </div>
 </dd></dl>
 
@@ -1498,7 +1523,7 @@ of a diatomic species only considering dissociation.</p>
 <dd><p class="sd-card-text">Generate Mater Database (DB_master) with the thermodynamic data of
 the chemical species</p>
 <dl class="simple">
-<dt>Optional args:</dt><dd><ul class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">reducedDB (flag):  Flag indicating reduced database</p></li>
 <li><p class="sd-card-text">thermoFile (file): File with NASA’s thermodynamic database</p></li>
 </ul>
@@ -1522,6 +1547,25 @@ thermodynamic data of the chemical species</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>DB_master_reduced (struct)</em> – Reduced database with the thermodynamic data of the chemical species</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.get_ind_elements">
+<span class="sig-name descname"><span class="pre">get_ind_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">elements</span></em>, <em class="sig-param"><span class="pre">MAX_ELEMENTS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.get_ind_elements" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get element indeces of each species contained in LS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p class="sd-card-text"><strong>elements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Elements in the periodic table</p></li>
+<li><p class="sd-card-text"><strong>MAX_ELEMENTS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum number of elements contained in one species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>ind_elements (float)</em> – Matrix numel(LS) x MAX_ELEMENTS with element indeces of the species contained in LS</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1551,8 +1595,7 @@ given species and temperature [K].</p>
 <dd><p class="sd-card-text">Get list with reference form of elements and its temperature intervals</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><em>list (cell)</em> – List with reference form of elements and its
-temperature intervals</p>
+<dd class="field-odd"><p class="sd-card-text"><em>list (cell)</em> – List with reference form of elements and its temperature intervals</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1763,7 +1806,7 @@ set of species</p>
 <dd><p class="sd-card-text">Get list with reference form of elements</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><em>list (cell)</em> – List with reference form of elements</p>
+<dd class="field-odd"><p class="sd-card-text"><em>Reference_form_of_elements (cell)</em> – List with reference form of elements</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1774,8 +1817,7 @@ set of species</p>
 <dd><p class="sd-card-text">Get list with reference form of elements and its temperature intervals</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><em>list (cell)</em> – List with reference form of elements and its
-temperature intervals</p>
+<dd class="field-odd"><p class="sd-card-text"><em>Reference_form_of_elements_with_T_intervals (cell)</em> – List with reference form of elements and its temperature intervals</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3379,9 +3421,11 @@ range(float):   Temperature range [K]</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.validations.plot_validation_shock_polar_SDToolbox">
 <span class="sig-name descname"><span class="pre">plot_validation_shock_polar_SDToolbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results_CT</span></em>, <em class="sig-param"><span class="pre">results_SDToolbox</span></em>, <em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.plot_validation_shock_polar_SDToolbox" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Plot numerical results obtained with SDToolbox, which use CANTERA as a thermochemical kernel.
-* Pressure ratio with the deflection angle [deg]
-* Wave angle [deg] with the deflection angle [deg]</p>
+<dd><p class="sd-card-text">Plot numerical results obtained with SDToolbox, which use CANTERA as a thermochemical kernel.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Pressure ratio with the deflection angle [deg]</p></li>
+<li><p class="sd-card-text">Wave angle [deg] with the deflection angle [deg]</p></li>
+</ul>
 </dd></dl>
 
 <dl class="mat function">
