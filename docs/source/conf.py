@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 
 
 # tell Sphinx matlab extension where to find matlab code.
-matlab_src_dir = os.path.abspath('../..') 
+matlab_src_dir = os.path.abspath('../..')
 
 # -- Project information -----------------------------------------------------
 

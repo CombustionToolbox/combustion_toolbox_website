@@ -2,15 +2,15 @@ function [DB, E, S, C] = check_DB(self, DB_master, DB, varargin)
     % Include not defined species in database from master database
     %
     % Args:
-    %     self (struct): struct with elements data
+    %     self (struct): Data of the mixture, conditions, and databases
     %     DB_master (struct): Database with the thermodynamic data of the chemical species
     %     DB (struct): Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits
     %
     % Optional Args:
-    %     LS_check (cell)
+    %     LS_check (cell): Check only the given list of species
     %
     % Returns:
-    %     Tuple containing:
+    %     Tuple containing
     %
     %     * DB (struct): Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits
     %     * E (struct): Elements data

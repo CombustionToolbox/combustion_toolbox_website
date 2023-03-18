@@ -14,7 +14,7 @@ IMAGEDIRS      = source/_static/img
 
 # SVG to PDF conversion
 SVG2PDF       = inkscape
-SVG2PDF_FLAGS =
+# SVG2PDF_FLAGS =
 
 # Put it first so that "make" without argument is like "make help".
 help:
