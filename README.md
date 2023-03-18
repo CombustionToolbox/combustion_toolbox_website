@@ -2,7 +2,7 @@
 
 [![Documentation](https://readthedocs.org/projects/combustion-toolbox-website/badge/?version=latest)](https://combustion-toolbox-website.readthedocs.io/en/latest/?badge=latest)
 
-The source code of Combustion Toolbox is in its own [repository](https://github.com/AlbertoCuadra/combustion_toolbox). This repository is used to build the website and the documentation of the project.
+The source code of Combustion Toolbox is in its own [repository](https://github.com/AlbertoCuadra/combustion_toolbox). This repository is used to build the website and the documentation of the project, see https://combustion-toolbox-website.readthedocs.io/ .
 
 ## Getting started
 ```terminal
