@@ -20,7 +20,10 @@ formats:
   - pdf
   # - epub
 
-
+# Include submodules
+submodules:
+  include: all
+  
 # Optionally declare the Python requirements required to build your docs
 python:
   install:
