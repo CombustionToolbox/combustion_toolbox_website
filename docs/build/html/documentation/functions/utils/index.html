@@ -1334,19 +1334,19 @@ Routines<div class="sd-summary-down docutils">
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – struct with elements data</p></li>
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>DB_master</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with the thermodynamic data of the chemical species</p></li>
 <li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p class="sd-card-text">LS_check (cell)</p>
+<dt>Optional Args:</dt><dd><p class="sd-card-text">LS_check (cell): Check only the given list of species</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">DB (struct): Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
 <li><p class="sd-card-text">E (struct): Elements data</p></li>
@@ -1442,15 +1442,17 @@ products for the given list of reactants</p>
 <ul class="simple">
 <li><p class="sd-card-text">LS (cell): List of products</p></li>
 <li><p class="sd-card-text">ind_elements_DB (float): Matrix NS_DB x MAX_ELEMENTS with element indeces of the species contained in the database</p></li>
+<li><p class="sd-card-text">FLAG_BURCAT (bool): Flag indicating to look for species also in Burcat’s database</p></li>
+<li><p class="sd-card-text">FLAG_ION (bool): Flag indicating to include ionized species</p></li>
 </ul>
 </p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})
-[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)
-[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p>
+<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})</p>
+<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)</p>
+<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p>
 </div>
 </dd></dl>
 
@@ -1477,13 +1479,11 @@ cond_without</p>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <dl class="simple">
-<dt>LS = find_species_LS(LS, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><dl class="simple">
-<dt>{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…</dt><dd><p class="sd-card-text">‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’,’G’,’K’,…
+<dt>LS = find_species_LS(LS, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><p class="sd-card-text">{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…
+‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’,’G’,’K’,…
 ‘U’,’Co’,’Cu’,’B’,’V’,’Ni’,’Na’,’Mg’,…
 ‘Mo’,’Ag’,’Nb’,’Cb’,’Cl’,’D’,’T’,…
 ‘Ca’,’Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
-</dd>
-</dl>
 </dd>
 </dl>
 <p class="sd-card-text">LS = find_species_LS(self.S.LS_DB, {}, ‘any’, {‘_M’}, ‘all’)</p>
