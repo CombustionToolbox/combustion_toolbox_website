@@ -1,23 +1,32 @@
 name: Update develop branch with every pull request to main
+
 on: 
   pull_request:
     branches: [main]
     types: [closed]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   merge-master-back-to-dev:
     if: github.event.pull_request.merged == true
     timeout-minutes: 2
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Set Git config
       run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
-    - name: Merge main back to dev
+
+    - name: Merge main back to develop
       run: |
           git fetch --unshallow
-          git checkout dev
+          git checkout develop
           git pull
-          git merge --no-ff master -m "Auto-merge master back to dev"
+          git merge --no-ff main -m "Auto-merge main back to develop"
           git push
