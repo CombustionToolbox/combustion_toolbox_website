@@ -3,7 +3,7 @@ name: Update develop branch with every push to main
 on:
   push:
     branches:
-      - master
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
