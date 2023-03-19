@@ -11,7 +11,7 @@ Setup
 To use this, you'll need to import the module and define your own
 :py:func:`linkcode_resolve` in your :file:`conf.py`::
 
-    from beanbag_docutils.sphinx.ext.github import github_linkcode_resolve
+    from sphinxext.github_linkcode import github_linkcode_resolve
 
     extensions = [
         ...
@@ -188,12 +188,6 @@ def github_linkcode_resolve(domain, info, github_org_id, github_repo_id,
     """
     module_name = info['module']
 
-    # print domain != 'mat'
-    # print not module_name
-    # print module_name.split('.')[0]
-    # print allowed_module_names
-    # print (allowed_module_names and
-    #      module_name.split('.')[0] not in allowed_module_names)
     if (domain != 'mat' or
         not module_name or
         (allowed_module_names and
@@ -234,10 +228,8 @@ def github_linkcode_resolve(domain, info, github_org_id, github_repo_id,
 
     # Get the branch/tag/commit to link to.
     ref = _get_git_doc_ref(branch) or branch
+
     # print "branch: ", branch
-    print ('https://github.com/%s/%s/blob/%s/%s%s%s'
-            % (github_org_id, github_repo_id, ref, source_prefix,
-               filename, linespec))
     return ('https://github.com/%s/%s/blob/%s/%s%s%s'
             % (github_org_id, github_repo_id, ref, source_prefix,
                filename, linespec))

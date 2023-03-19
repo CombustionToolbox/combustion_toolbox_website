@@ -14,12 +14,12 @@
 import os
 import sys
 import requests
-# from sphinxext.github_linkcode import github_linkcode_resolve
 
+sys.path.append('sphinxext')
+from github_linkcode import github_linkcode_resolve
+
+# Correct path for autodoc
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
-
-
-
 
 # tell Sphinx matlab extension where to find matlab code.
 matlab_src_dir = os.path.abspath('../..')
@@ -49,10 +49,9 @@ extensions = [
     'nbsphinx',
     'sphinx_togglebutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
-    'sphinxcontrib.matlab',    # support for Matlab
-    # 'github',
-    # 'sphinx.ext.linkcode',     # to link code to the repository
-    'sphinx.ext.viewcode',     # view source code
+    'sphinxcontrib.matlab',    # support for MATLAB
+    'sphinx.ext.linkcode',     # to link code to the repository
+    # 'sphinx.ext.viewcode',     # view source code (local files)
     'sphinx.ext.napoleon',     # support for shorthand syntax
     'sphinx.ext.mathjax',      # LaTeX support
     'texext.math_dollar',      # lightweight LaTeX filter
@@ -91,15 +90,17 @@ nitpick_ignore = [
     ('mat:obj', 'empty'),
 ]
 
+# Define routine to link functions to their files on GitHub
 def linkcode_resolve(domain, info):
+    print('I am here')
     return github_linkcode_resolve(
             domain=domain,
             info=info,
-            allowed_module_names=[],
+            # allowed_module_names=['src'],
             github_org_id='AlbertoCuadra',
             github_repo_id='combustion_toolbox',
-            branch='master',
-            source_prefix='')
+            branch='master')
+            # source_prefix='')
 
 # Napoleon settings
 napoleon_google_docstring = True
