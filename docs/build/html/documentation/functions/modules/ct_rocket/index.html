@@ -334,7 +334,8 @@ Routines<div class="sd-summary-down docutils">
 <span class="sig-name descname"><span class="pre">compute_FAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2_inj</span></em>, <em class="sig-param"><span class="pre">mix2_c</span></em>, <em class="sig-param"><span class="pre">mix3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_FAC" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute chemical equilibria at the injector, outlet of the chamber and at the throat
 using the Finite-Area-Chamber (FAC) model</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -382,8 +383,8 @@ the Infinite-Area-Chamber (IAC) model</p>
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_exit">
 <span class="sig-name descname"><span class="pre">compute_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">mix4</span></em>, <em class="sig-param"><span class="pre">Aratio</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_exit" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute thermochemical composition for a given Aratio</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -404,8 +405,8 @@ the Infinite-Area-Chamber (IAC) model</p>
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.compute_throat_IAC">
 <span class="sig-name descname"><span class="pre">compute_throat_IAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.compute_throat_IAC" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute thermochemical composition for the Infinite-Area-Chamber (IAC) model</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -424,8 +425,8 @@ the Infinite-Area-Chamber (IAC) model</p>
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.guess_pressure_IAC_model">
 <span class="sig-name descname"><span class="pre">guess_pressure_IAC_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.guess_pressure_IAC_model" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pressure guess [bar] at the throat considering an Infinite-Area-Chamber (IAC)</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
@@ -442,6 +443,8 @@ the Infinite-Area-Chamber (IAC) model</p>
 <dd><p class="sd-card-text">Compute guess logarithm of the ratio pressure_inf / pressure_exit
 [-] for the given Area ratio [-] and indicanting if the point of
 interest is in the subsonic area ratios or the supersonic area ratios</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -461,8 +464,8 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 <dt class="sig sig-object mat" id="src.modules.ct_rocket.rocket_parameters">
 <span class="sig-name descname"><span class="pre">rocket_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">gravity</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_rocket.rocket_parameters" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute Rocket performance parameters at the throat</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -488,8 +491,8 @@ interest is in the subsonic area ratios or the supersonic area ratios</p>
 </ul>
 </dd>
 </dl>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -532,8 +535,8 @@ depending of the model selected</p>
 </ul>
 </dd>
 </dl>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

@@ -2238,8 +2238,20 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>xvar</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the x data</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>ax (axes)</em> – Axes object</p>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">config (struct): Struct with the configuration for plots</p></li>
+<li><p class="sd-card-text">xscale (string): Scale fot the x-axis (linear or log)</p></li>
+<li><p class="sd-card-text">yscale (string): Scale fot the y-axis (linear or log)</p></li>
+<li><p class="sd-card-text">xdir (string): Direction of the x-axis (normal or reverse)</p></li>
+<li><p class="sd-card-text">ydir (string): Direction of the x-axis (normal or reverse)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>ax (axes)</em> – Axes object</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2308,8 +2320,8 @@ mixtures = get_mixtures(self.PS, ‘strP’);</p>
 <li><p class="sd-card-text">config (struct): Struct with the configuration for plots</p></li>
 <li><p class="sd-card-text">axis_x (char): Set x-axis limits</p></li>
 <li><p class="sd-card-text">axis_y (char): Set y-axis limits</p></li>
-<li><p class="sd-card-text">xscale (char): Set x-axis scale (linear or logarithmic)</p></li>
-<li><p class="sd-card-text">yscale (char): Set y-axis scale (linear or logarithmic)</p></li>
+<li><p class="sd-card-text">xscale (char): Set x-axis scale (linear or log)</p></li>
+<li><p class="sd-card-text">yscale (char): Set y-axis scale (linear or log)</p></li>
 <li><p class="sd-card-text">xdir (char): Set x-axis direction (normal or reverse)</p></li>
 <li><p class="sd-card-text">ydir (char): Set y-axis direction (normal or reverse)</p></li>
 </ul>
@@ -2317,9 +2329,12 @@ mixtures = get_mixtures(self.PS, ‘strP’);</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text">Tuple containing
-* ax (axes): Axes object
-* fig (figure): Figure object</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">ax (axes): Axes object</p></li>
+<li><p class="sd-card-text">fig (figure): Figure object</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2327,10 +2342,12 @@ mixtures = get_mixtures(self.PS, ‘strP’);</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.display.plot_shock_polar">
 <span class="sig-name descname"><span class="pre">plot_shock_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.display.plot_shock_polar" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Routine to obtain shock polar plots
-* Plot (pressure, deflection)
-* Plot (wave angle, deflection)
-* Plot velocity components</p>
+<dd><p class="sd-card-text">Routine to obtain shock polar plots</p>
+<ul class="simple">
+<li><p class="sd-card-text">Plot (pressure, deflection)</p></li>
+<li><p class="sd-card-text">Plot (wave angle, deflection)</p></li>
+<li><p class="sd-card-text">Plot velocity components</p></li>
+</ul>
 </dd></dl>
 
 <dl class="mat function">
@@ -2358,13 +2375,16 @@ and polynomial order</p>
 <dd><p class="sd-card-text">Print properties and composition of a given mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – </p></li>
-<li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – </p></li>
-</ul>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
-<p class="sd-card-text">Optional Args:</p>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">mix1 (struct): Struct with the properties of the mixture
+mix2 (struct): Struct with the properties of the mixture
+mixi (struct): Struct with the properties of the mixture
+mixN (struct): Struct with the properties of the mixture</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text">Results on command window</p>
@@ -2463,7 +2483,7 @@ Equation of State (EoS)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of the species in the mixture</p></li>
-<li><p class="sd-card-text"><strong>Xi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – molar fractions of the mixture</p></li>
+<li><p class="sd-card-text"><strong>Xi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Molar fractions of the mixture</p></li>
 <li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 </ul>
@@ -2471,8 +2491,8 @@ Equation of State (EoS)</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">V (float): molar volume of the mixture [m3/mol]</p></li>
-<li><p class="sd-card-text">Vi (float): molar volume of the components [m3/mol]</p></li>
+<li><p class="sd-card-text">V (float): Molar volume of the mixture [m3/mol]</p></li>
+<li><p class="sd-card-text">Vi (float): Molar volume of the components [m3/mol]</p></li>
 </ul>
 </p>
 </dd>
@@ -2489,7 +2509,7 @@ Equation of State (EoS)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of the species in the mixture</p></li>
-<li><p class="sd-card-text"><strong>Xi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – molar fractions of the mixture</p></li>
+<li><p class="sd-card-text"><strong>Xi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Molar fractions of the mixture</p></li>
 <li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 </ul>
@@ -2497,8 +2517,8 @@ Equation of State (EoS)</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">V (float): molar volume of the mixture [m3/mol]</p></li>
-<li><p class="sd-card-text">Vi (float): molar volume of the components [m3/mol]</p></li>
+<li><p class="sd-card-text">V (float): Molar volume of the mixture [m3/mol]</p></li>
+<li><p class="sd-card-text">Vi (float): Molar volume of the components [m3/mol]</p></li>
 </ul>
 </p>
 </dd>
@@ -2513,12 +2533,12 @@ Equation of State (EoS)</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – temperature of the mixture [K]</p></li>
-<li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – pressure of the mixture [Pa]</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure of the mixture [Pa]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>V (float)</em> – molar volume of the mixture [m3/mol]</p>
+<dd class="field-even"><p class="sd-card-text"><em>V (float)</em> – Molar volume of the mixture [m3/mol]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2531,13 +2551,13 @@ Equation of State (EoS)</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>n</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number of moles of the mixture in gaseous phase [mol]</p></li>
-<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – temperature of the mixture [K]</p></li>
-<li><p class="sd-card-text"><strong>v</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – volume of the mixture [m3]</p></li>
+<li><p class="sd-card-text"><strong>n</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of moles of the mixture in gaseous phase [mol]</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p class="sd-card-text"><strong>v</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume of the mixture [m3]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>p (float)</em> – pressure of the mixture [Pa]</p>
+<dd class="field-even"><p class="sd-card-text"><em>p (float)</em> – Pressure of the mixture [Pa]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2561,7 +2581,7 @@ assuming cubic Equation of State (EoS) [J/mol]</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>chemical_potential_ex (float)</em> – chemical potential excess [J/mol]</p>
+<dd class="field-even"><p class="sd-card-text"><em>chemical_potential_ex (float)</em> – Chemical potential excess [J/mol]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2575,13 +2595,13 @@ assuming ideal Equation of State [J/mol]</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number of moles of the mixture in gaseous phase [mol]</p></li>
-<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – temperature of the mixture [K]</p></li>
-<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – volume of the mixture [m3]</p></li>
+<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of moles of the mixture in gaseous phase [mol]</p></li>
+<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume of the mixture [m3]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – pressure of the mixture [Pa]</p>
+<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – Pressure of the mixture [Pa]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2595,13 +2615,13 @@ assuming Van der Waal’s Equation of State [J/mol]</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number of moles of the mixture in gaseous phase [mol]</p></li>
-<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – temperature of the mixture [K]</p></li>
-<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – volume of the mixture [m3]</p></li>
+<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of moles of the mixture in gaseous phase [mol]</p></li>
+<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume of the mixture [m3]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – pressure of the mixture [Pa]</p>
+<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – Pressure of the mixture [Pa]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2615,13 +2635,13 @@ assuming Virial Equation of State [J/mol]</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – number of moles of the mixture in gaseous phase [mol]</p></li>
-<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – temperature of the mixture [K]</p></li>
-<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – volume of the mixture [m3]</p></li>
+<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of moles of the mixture in gaseous phase [mol]</p></li>
+<li><p class="sd-card-text"><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p class="sd-card-text"><strong>volume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume of the mixture [m3]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – pressure of the mixture [Pa]</p>
+<dd class="field-even"><p class="sd-card-text"><em>pressure (float)</em> – Pressure of the mixture [Pa]</p>
 </dd>
 </dl>
 </dd></dl>

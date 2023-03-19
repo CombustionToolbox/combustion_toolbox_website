@@ -328,8 +328,8 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.modules.ct_sd.det_cj">
 <span class="sig-name descname"><span class="pre">det_cj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.det_cj" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pre-shock and post-shock states of a Chapman-Jouguet detonation</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -344,7 +344,7 @@ Routines<div class="sd-summary-down docutils">
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-shock state</p></li>
 <li><p class="sd-card-text">mix2 (struct): Properties of the mixture in the post-shock state</p></li>
@@ -352,11 +352,16 @@ Routines<div class="sd-summary-down docutils">
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">[mix1, mix2] = det_cj(self, self.PS.strR{1})
+[mix1, mix2] = det_cj(self, self.PS.strR{1}, self.PS.strP{1})</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_sd.det_compute_guess">
-<span class="sig-name descname"><span class="pre">det_compute_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">overdriven</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.det_compute_guess" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">det_compute_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">drive_factor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.det_compute_guess" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Obtain guess of the jump conditions for a Chapman-Jouguet detonation.
 Only valid if the mixture have CHON. It computes the guess assuming
 first a complete combustion, next it recomputes assuming an incomplete
@@ -367,7 +372,7 @@ combustion from the composition obtained in the previous step.</p>
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
 <li><p class="sd-card-text"><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equivalence ratio [-]</p></li>
-<li><p class="sd-card-text"><strong>overdriven</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven ratio [-] respect to the sound velocity of the mixture</p></li>
+<li><p class="sd-card-text"><strong>drive_factor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven ratio [-] respect to the sound velocity of the mixture</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -383,6 +388,10 @@ combustion from the composition obtained in the previous step.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[P, T, M1, R, Q, STOP] = det_compute_guess(self, self.PS.strR{1}, 1, 2)</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -408,6 +417,10 @@ as in NASA’s CEA code (see Sec. 8.3 of [1])</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[P, T, STOP] = det_compute_guess_CEA(self, self.PS.strR{1})</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -481,6 +494,11 @@ given the deflection angle.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">[mix1, mix2_1, mix2_2] = det_oblique_theta(self, self.PS.strR{1}, 2, 30)
+[mix1, mix2_1, mix2_2] = det_oblique_theta(self, self.PS.strR{1}, 2, 30, self.PS.strP{1})</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -515,7 +533,7 @@ given the deflection angle.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_sd.det_polar">
 <span class="sig-name descname"><span class="pre">det_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">drive_factor</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.det_polar" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute detonation polars</p>
+<dd><p class="sd-card-text">Compute detonation polar diagrams</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -573,7 +591,8 @@ given the deflection angle.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_sd.shock_ideal_gas">
 <span class="sig-name descname"><span class="pre">shock_ideal_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">M1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_ideal_gas" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute jump conditions assuming a thermochemically frozen gas</p>
+<dd><p class="sd-card-text">Compute jump conditions assuming a thermochemically frozen gas
+(calorically perfect gas)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -584,9 +603,9 @@ given the deflection angle.</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">R (float):      Density ratio [-]</p></li>
-<li><p class="sd-card-text">P (float):      Pressure ratio [-]</p></li>
-<li><p class="sd-card-text">T (float):      Temperature ratio [-]</p></li>
+<li><p class="sd-card-text">R (float): Density ratio [-]</p></li>
+<li><p class="sd-card-text">P (float): Pressure ratio [-]</p></li>
+<li><p class="sd-card-text">T (float): Temperature ratio [-]</p></li>
 <li><p class="sd-card-text">Gammas (float): Rankine-Hugoniot slope parameter [-]</p></li>
 </ul>
 </p>
@@ -598,8 +617,8 @@ given the deflection angle.</p>
 <dt class="sig sig-object mat" id="src.modules.ct_sd.shock_incident">
 <span class="sig-name descname"><span class="pre">shock_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_incident" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pre-shock and post-shock states of a planar incident shock wave</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -629,8 +648,6 @@ given the deflection angle.</p>
 <dt class="sig sig-object mat" id="src.modules.ct_sd.shock_incident_2">
 <span class="sig-name descname"><span class="pre">shock_incident_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_incident_2" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pre-shock and post-shock states of a planar incident shock wave</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -711,8 +728,10 @@ given the deflection angle.</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p class="sd-card-text">mix5_1 (struct): Properties of the mixture in the post-shock state of the reflected shock - weak shock (previous calculation)
-mix5_2 (struct): Properties of the mixture in the post-shock state of the reflected shock - strong shock (previous calculation)</p>
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">mix5_1 (struct): Properties of the mixture in the post-shock state of the reflected shock - weak shock (previous calculation)</p></li>
+<li><p class="sd-card-text">mix5_2 (struct): Properties of the mixture in the post-shock state of the reflected shock - strong shock (previous calculation)</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -774,7 +793,7 @@ given the deflection angle.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.ct_sd.shock_polar">
 <span class="sig-name descname"><span class="pre">shock_polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_polar" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Compute shock polar curves</p>
+<dd><p class="sd-card-text">Compute shock polar diagrams</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -809,7 +828,7 @@ given the deflection angle.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
-<li><p class="sd-card-text"><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – pre-shock velocity [m/s]</p></li>
+<li><p class="sd-card-text"><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -829,8 +848,8 @@ given the deflection angle.</p>
 <dt class="sig sig-object mat" id="src.modules.ct_sd.shock_reflected">
 <span class="sig-name descname"><span class="pre">shock_reflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.shock_reflected" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pre-shock and post-shock states of a planar reflected shock wave</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
