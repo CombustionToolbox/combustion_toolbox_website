@@ -15,7 +15,7 @@ pip install sphinx-autobuild
 sphinx-autobuild docs/source docs/build/html
 ```
 
-To compile locally the LaTeX files go to docs folders and run
+To compile the LaTeX files locally go to docs folders and run
 ```terminal
 make.bat latex
 ```
