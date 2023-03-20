@@ -92,11 +92,10 @@ nitpick_ignore = [
 
 # Define routine to link functions to their files on GitHub
 def linkcode_resolve(domain, info):
-    print('I am here')
     return github_linkcode_resolve(
             domain=domain,
             info=info,
-            # allowed_module_names=['src'],
+            allowed_module_names=[],
             github_org_id='AlbertoCuadra',
             github_repo_id='combustion_toolbox',
             branch='master')
