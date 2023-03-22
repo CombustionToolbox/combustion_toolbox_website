@@ -141,4 +141,4 @@ will reproduce **Figure 1** which represents the variation of the molar fraction
 **Figure 1:** *Example TP: variation of molar fraction for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 2.39 seconds using a Intel(R) Core(TM) i7-11800H CPU @ 2.30GHz.*
 
 ## Congratulations!
-Congratulations you have finished the Combustion Toolbox Matlab tutorial! You should now be ready to begin using Combustion Toolbox on your own.
+Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using Combustion Toolbox on your own (see the `examples` folder).
