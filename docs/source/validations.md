@@ -8,7 +8,7 @@ A set of the results obtained using Combustion Toolbox, [CEA-NASA](https://cearu
 **_For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions._**
 To run all the validations contrasted with CEA at once, at the prompt type:
 ```matlab
->> run_validations_CEA
+run_validations_CEA
 ```
 ## Validation TP 1
 
@@ -22,7 +22,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_CEA_1.m
+run_validation_TP_CEA_1.m
 ```
 
 <p align="center">
@@ -42,7 +42,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_CEA_2.m
+run_validation_TP_CEA_2.m
 ```
 
 <p align="center">
@@ -62,7 +62,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_CEA_3.m
+run_validation_TP_CEA_3.m
 ```
 
 <p align="center">
@@ -82,7 +82,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_CEA_4.m
+run_validation_TP_CEA_4.m
 ```
 
 <p align="center">
@@ -102,7 +102,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_HP_CEA_1.m
+run_validation_HP_CEA_1.m
 ```
 
 <p align="center">
@@ -122,7 +122,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_HP_CEA_2.m
+run_validation_HP_CEA_2.m
 ```
 
 <p align="center">
@@ -142,7 +142,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_HP_CEA_3.m
+run_validation_HP_CEA_3.m
 ```
 
 <p align="center">
@@ -162,7 +162,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_HP_CEA_4.m
+run_validation_HP_CEA_4.m
 ```
 
 <p align="center">
@@ -182,7 +182,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TV_CEA_1.m
+run_validation_TV_CEA_1.m
 ```
 
 <p align="center">
@@ -202,7 +202,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_EV_CEA_1.m
+run_validation_EV_CEA_1.m
 ```
 
 <p align="center">
@@ -223,7 +223,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_DET_CEA_1.m
+run_validation_DET_CEA_1.m
 ```
 
 <p align="center">
@@ -244,7 +244,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_DET_CEA_2.m
+run_validation_DET_CEA_2.m
 ```
 
 <p align="center">
@@ -265,7 +265,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_DET_CEA_3.m
+run_validation_DET_CEA_3.m
 ```
 
 <p align="center">
@@ -286,7 +286,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_DET_CEA_4.m
+run_validation_DET_CEA_4.m
 ```
 
 <p align="center">
@@ -307,7 +307,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_SHOCK_IONIZATION_CEA_1.m
+run_validation_SHOCK_IONIZATION_CEA_1.m
 ```
 
 <p align="center">
@@ -327,7 +327,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_SHOCK_R_IONIZATION_CEA_1.m
+run_validation_SHOCK_R_IONIZATION_CEA_1.m
 ```
 
 <p align="center">
@@ -347,7 +347,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_SHOCK_POLAR_SDToolbox_1.m
+run_validation_SHOCK_POLAR_SDToolbox_1.m
 ```
 
 <p align="center">
@@ -372,8 +372,8 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_ROCKET_CEA_1.m
->> run_validation_ROCKET_CEA_16.m
+run_validation_ROCKET_CEA_1.m
+run_validation_ROCKET_CEA_16.m
 ```
 
 <p align="center">
@@ -396,7 +396,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_ROCKET_CEA_17.m
+run_validation_ROCKET_CEA_17.m
 ```
 
 <p align="center">
@@ -423,7 +423,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_ROCKET_CEA_18.m
+run_validation_ROCKET_CEA_18.m
 ```
 
 <p align="center">
@@ -449,7 +449,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_TEA_1.m
+run_validation_TP_TEA_1.m
 ```
 
 <p align="left">
@@ -468,7 +468,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_TEA_2.m
+run_validation_TP_TEA_2.m
 ```
 
 <p align="left">
@@ -487,7 +487,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_TEA_3.m
+run_validation_TP_TEA_3.m
 ```
 
 <p align="left">
@@ -506,7 +506,7 @@ To repeat the results, run:
 
 To repeat the results, run:
 ```matlab
->> run_validation_TP_TEA_4.m
+run_validation_TP_TEA_4.m
 ```
 
 <p align="left">
