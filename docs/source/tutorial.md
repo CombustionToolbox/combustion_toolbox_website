@@ -5,11 +5,11 @@ With this short tutorial you will familiarize with the basic functionalities of 
 ## Getting Started 
 Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in `PATH` run this command in the command window: 
 ```matlab
->> addpath(genpath(pwd))
+addpath(genpath(pwd))
 ```
 First, using Combustion Toolbox, you have to initialize the tool (load databases, set default variables, ...). To do that at the prompt type:
 ```matlab
->> self = App
+self = App
 ```
 If files contained in Combustion Toolbox are correctly defined, you should see something like this:
 ```matlab
@@ -30,42 +30,42 @@ self =
 ## Setting the state
 Indicate temperature [K] and pressure [bar] of the initial mixture
  ```matlab
->> self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
+self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
 ```
 Indicate species and number of moles of each species in the initial mixture
 ### Individual case
 For example, for a stochiometric CH4-ideal_air mixture:
 ```matlab
->> self.PD.S_Fuel     = {'CH4'};
->> self.PD.N_Fuel     = 1;
->> self.PD.S_Oxidizer = {'N2', 'O2'};
->> self.PD.N_Oxidizer = [7.52, 2];
+self.PD.S_Fuel     = {'CH4'};
+self.PD.N_Fuel     = 1;
+self.PD.S_Oxidizer = {'N2', 'O2'};
+self.PD.N_Oxidizer = [7.52, 2];
 ```
 This is the same as specifying a unit value for the equivalence ratio:
 ```matlab
->> self.PD.S_Fuel     = {'CH4'};
->> self.PD.S_Oxidizer = {'N2', 'O2'};
->> self.PD.ratio_oxidizers_O2 = [79, 21]/21;
->> self = set_prop(self, 'phi', 1);
+self.PD.S_Fuel     = {'CH4'};
+self.PD.S_Oxidizer = {'N2', 'O2'};
+self.PD.ratio_oxidizers_O2 = [79, 21]/21;
+self = set_prop(self, 'phi', 1);
 ```
 The last two lines of code establish the proportion of the oxidizers species over O$_2$ and the equivalence ratio, respectively. The number of moles are calculated considering that the number of moles of fuel is one by default.
 ### Several cases
 Combustion Toolbox also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., phi = 0.5:0.01:5, do this:
 ```matlab
->> self.PD.S_Fuel     = {'CH4'};
->> self.PD.S_Oxidizer = {'N2', 'O2'};
->> self.PD.ratio_oxidizers_O2 = [79, 21]/21;
->> self = set_prop(self, 'phi', 0.5:0.01:5);
+self.PD.S_Fuel     = {'CH4'};
+self.PD.S_Oxidizer = {'N2', 'O2'};
+self.PD.ratio_oxidizers_O2 = [79, 21]/21;
+self = set_prop(self, 'phi', 0.5:0.01:5);
 ```
 ## Chemical Equilibrium
 
 Depending on the problem you want to solve, you may need to configure additional inputs. For example, to compute the equilibrium composition at a defined temperature and pressure (TP) we have to set these values as
 ```matlab
->> self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 3000);
+self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 3000);
 ```
 and to solve the aforementioned problem, run
 ```matlab
->> self = SolveProblem(self, 'TP');
+self = SolveProblem(self, 'TP');
 ```
 The results are contained in `self.PS`. By default, this routine print the results through the command window (default: self.Misc.FLAG_RESULTS=true) which gives for the stoichiometric case (phi=1):
 ```matlab
@@ -127,7 +127,7 @@ TOTAL                1.0000e+00
 ## Postprocessed results (predefined plots for several cases)
 There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the routine
 ```matlab
->> postResults(self);
+postResults(self);
 ```
 will reproduce **Figure 1** which represents the variation of the molar fraction with the equivalence ratio for lean to rich CH4-ideal_air mixtures at 3000 [K] and 1.01325 [bar]. 
 

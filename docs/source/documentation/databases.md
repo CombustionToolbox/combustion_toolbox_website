@@ -47,8 +47,8 @@ This data is collected and formatted into a more accessible structure. We can di
 The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1** obtaining the same results as seen  in **Figure 2**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
 
 ```matlab
->> g0_CO2  = species_g0('CO2', 2000, DB)
->> DhT_CO2 = species_DhT('CO2', 2000, DB) 
+g0_CO2  = species_g0('CO2', 2000, DB)
+DhT_CO2 = species_DhT('CO2', 2000, DB) 
 ```
 
 <p class= "only-light" align="center">
@@ -153,8 +153,8 @@ which have only three species involve. The system obtained is
 A quick check using Combustion Toolbox:
 
 ```matlab
->> self = App({'H2', 'Br2', 'HBr'});
->> print_stoichiometric_matrix(self, 'transpose')
+self = App({'H2', 'Br2', 'HBr'});
+print_stoichiometric_matrix(self, 'transpose')
 ```
 
  ```matlab
