@@ -11,7 +11,7 @@ It can be handy the BibTeX format:
 ```bibtex
 @misc{combustiontoolbox,
     author = "Cuadra, A and Huete, C and Vera, M",
-    title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
+    title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year = 2023,
     note = "Version 0.9.99g",
     doi = {https://doi.org/10.5281/zenodo.5554911}
