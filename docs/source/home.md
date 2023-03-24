@@ -1,3 +1,4 @@
+<!-- Logo -->
 <p class= "only-light" align="center">
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/>
 </p>
@@ -6,7 +7,7 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
 </p>
 
-
+<!-- Intro -->
 <br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
     
 
@@ -19,6 +20,7 @@
 </p>
 
 
+<!-- Grid -->
 ::::{grid} 1 1 1 3
 :margin: 4 4 0 0
 :gutter: 1
