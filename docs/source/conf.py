@@ -62,7 +62,18 @@ extensions = [
     # "sphinx_inline_tabs",
 ]
 
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = [
+    'colon_fence',
+    'substitution',
+]
+
+myst_substitutions = {
+    'author': author,
+    'version': release,
+    'copyright': 'Copyright © 2022-2023',
+    'project': project,
+    'affiliation': 'Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain',
+}
 
 # Other settings
 default_role = 'obj'
@@ -141,7 +152,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store', '_static']
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -265,13 +275,53 @@ pygments_dark_style = "material"
 #     '<meta property="og:ignore_canonical" content="true" />',
 # ]
 
-# Latex preamble
-pngmath_latex_preamble = ['usepackage{amsmath}']
+####################################################################################
+# LaTeX configuration
+####################################################################################
+
+latex_engine = 'pdflatex'
+latex_use_xindy = False
+
+# The paper size ('letter' or 'a4').
+latex_paper_size = 'a4'
+
+# The font size ('10pt', '11pt' or '12pt').
+latex_font_size = '10pt'
+
+# latex_additional_files = [
+#     '_static/latex-note.png',
+#     '_static/latex-warning.png',
+# ]
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
-# latex_documents = [
-#   ('latexindex', 'combustiontoolbox.tex',
-#    'Combustion Toolbox',
-#    'Alberto Cuadra Lara', 'manual'),
-#     ]
+latex_documents = [
+  ('index_latex',
+   'combustiontoolbox.tex',
+   'Combustion Toolbox',
+   'Alberto Cuadra Lara',
+   'manual')
+  ]
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+# latex_toplevel_sectioning = "section"
+
+# If false, no module index is generated.
+latex_domain_indices = False
+
+# LaTeX preamble
+
+_PREAMBLE = r"""
+\usepackage[]{geometry}
+\geometry{bindingoffset=0.45in,textheight=7.25in,hdivide={0.5in,*,0.75in},vdivide={1in,7.25in,1in},papersize={7.5in,9.25in}}
+\usepackage{amsmath}
+\usepackage[breaklinks]{hyperref}
+"""
+
+latex_elements = {
+    'preamble': _PREAMBLE,
+    'releasename': 'Release',
+    'title': r'Combustion Toolbox',
+#    'pointsize':'12pt', # uncomment for 12pt version
+}

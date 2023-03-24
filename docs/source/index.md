@@ -8,9 +8,7 @@
   gtag('config', 'G-8SBZV15K7W');
 </script>
 
-```{include} home.md
-:relative-images:
-```
+<!-- Organize Website -->
 
 ```{toctree}
     :hidden:
@@ -23,6 +21,14 @@ examples
 validations
 publications
 ```
+
+<!-- Include home -->
+
+```{include} home.md
+:relative-images:
+```
+
+<!-- Include documentation -->
 
 ```{toctree}
     :caption: 'Documentation'

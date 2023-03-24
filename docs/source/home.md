@@ -1,3 +1,4 @@
+<!-- Logo -->
 <p class= "only-light" align="center">
     <img alt="UC3M" style="border-width:0" src="_static/img/logo.svg" width="1500"/>
 </p>
@@ -6,7 +7,7 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
 </p>
 
-
+<!-- Intro -->
 <br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
     
 
@@ -19,6 +20,7 @@
 </p>
 
 
+<!-- Grid -->
 ::::{grid} 1 1 1 3
 :margin: 4 4 0 0
 :gutter: 1
@@ -225,7 +227,7 @@ It can be handy the BibTeX format:
 ```bibtex
 @misc{combustiontoolbox,
     author = "Cuadra, A and Huete, C and Vera, M",
-    title = "Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems",
+    title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year = 2023,
     note = "Version 0.9.99g",
     doi = {https://doi.org/10.5281/zenodo.5554911}
