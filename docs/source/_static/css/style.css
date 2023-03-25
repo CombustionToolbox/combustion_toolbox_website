@@ -119,14 +119,6 @@ h4, h5, h6 {
   height: 200px;
 }
 
-.pdf{
-  display: block;
-  background-image: url(../img/icon_pdf.svg);
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-}
-
 .stroke {
   fill: var(--color-brand-primary);
   stroke: var(--color-brand-primary);
@@ -135,4 +127,24 @@ h4, h5, h6 {
 .stroke:hover {
   fill: var(--color-brand-content);
   stroke: var(--color-brand-content);
+}
+
+.pdf{
+  display: inline-block;
+  content: url(../img/icon_pdf.svg);
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* To automatically add a PDF icon next
+   to every PDF link on a given page*/
+a[href$=".pdf"]::after {
+  display: inline-block;
+  content: url(../img/icon_pdf.svg);
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
 }

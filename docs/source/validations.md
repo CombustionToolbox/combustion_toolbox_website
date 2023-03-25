@@ -1,6 +1,6 @@
 # Validations
  
-A set of the results obtained using Combustion Toolbox, [CEA-NASA](https://cearun.grc.nasa.gov/), [CANTERA](https://cantera.org/) & [SD-Toolbox](https://shepherd.caltech.edu/EDL/PublicResources/sdt/)<sup>1</sup>, and [TEA](https://github.com/dzesmin/TEA).
+A set of the results obtained using Combustion Toolbox, [CEA-NASA](https://cearun.grc.nasa.gov/), [Cantera](https://cantera.org/) & [Caltech's SD-Toolbox](https://shepherd.caltech.edu/EDL/PublicResources/sdt/)<sup>1</sup>, and [TEA](https://github.com/dzesmin/TEA).
 
 <sup>1</sup> The Shock & Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.
 
@@ -13,7 +13,7 @@ run_validations_CEA
 ## Validation TP 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -33,7 +33,7 @@ run_validation_TP_CEA_1.m
 ## Validation TP 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_6\text{H}_6 + \frac{7.5}{\phi} \text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -53,7 +53,7 @@ run_validation_TP_CEA_2.m
 ## Validation TP 3
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -73,7 +73,7 @@ run_validation_TP_CEA_3.m
 ## Validation TP 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Temperature [K]   = 2500
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -93,7 +93,7 @@ run_validation_TP_CEA_4.m
 ## Validation HP 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Adiabatic T and composition at constant p
+* Problem type: Adiabatic temperature and composition at constant pressure
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -113,7 +113,7 @@ run_validation_HP_CEA_1.m
 ## Validation HP 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Adiabatic T and composition at constant p
+* Problem type: Adiabatic temperature and composition at constant pressure
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -133,7 +133,7 @@ run_validation_HP_CEA_2.m
 ## Validation HP 3
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Adiabatic T and composition at constant p
+* Problem type: Adiabatic temperature and composition at constant pressure
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -153,7 +153,7 @@ run_validation_HP_CEA_3.m
 ## Validation HP 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Adiabatic T and composition at constant p
+* Problem type: Adiabatic temperature and composition at constant pressure
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -173,7 +173,7 @@ run_validation_HP_CEA_4.m
 ## Validation TV 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Equilibrium composition at defined T and v
+* Problem type: Equilibrium composition at defined temperature and volume
 * Temperature [K]   = 3000
 * Pressure    [bar] = 1.0132
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -193,7 +193,7 @@ run_validation_TV_CEA_1.m
 ## Validation EV 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Adiabatic T and composition at constant v
+* Problem type: Adiabatic temperature and composition at constant volume
 * Temperature [K]   = 300
 * Pressure    [bar] = 1.0132
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -214,7 +214,7 @@ run_validation_EV_CEA_1.m
 ## Validation DET 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Chapman-Jouget Detonation
+* Problem type: Chapman-Jouguet detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -235,7 +235,7 @@ run_validation_DET_CEA_1.m
 ## Validation DET 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Chapman-Jouget Detonation
+* Problem type: Chapman-Jouguet detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -256,7 +256,7 @@ run_validation_DET_CEA_2.m
 ## Validation DET 3
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Chapman-Jouget Detonation
+* Problem type: Chapman-Jouguet detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -277,7 +277,7 @@ run_validation_DET_CEA_3.m
 ## Validation DET 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Chapman-Jouget Detonation
+* Problem type: Chapman-Jouguet detonation
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2$, with equivalence ratio $\phi \in [0.5, 4]$
@@ -298,7 +298,7 @@ run_validation_DET_CEA_4.m
 ## Validation SHOCK IONIZATION 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Shock incident
+* Problem type: Planar shock wave
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2$
@@ -318,7 +318,7 @@ run_validation_SHOCK_IONIZATION_CEA_1.m
 ## Validation SHOCK REFLECTED IONIZATION 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
-* Problem type: Shock reflected
+* Problem type: Normal reflection of a planar shock wave from a parallel rigid wall
 * Temperature [K]   = 300
 * Pressure    [bar] = 1
 * Initial mixture [moles]: $3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2$
@@ -337,8 +337,8 @@ run_validation_SHOCK_R_IONIZATION_CEA_1.m
 
 ## Validation SHOCK POLAR 1
 
-* Contrasted with: Caltech's SD Toolbox and CANTERA
-* Problem type: Shock Polar
+* Contrasted with: Caltech's SD Toolbox within Cantera
+* Problem type: Shock polar diagrams
 * Temperature [K]   = 300
 * Pressure    [bar] = 1.01325
 * Initial mixture [moles]: $3.7619 \text{N}_2 + \text{O}_2$
@@ -435,7 +435,7 @@ run_validation_ROCKET_CEA_18.m
 
 ## Validation TEA 1
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Temperature [K]   = linspace(500, 5000)
 * Pressure    [bar] = logspace(-5, 2)
 * Initial mixture [moles]:
@@ -458,7 +458,7 @@ run_validation_TP_TEA_1.m
 
 ## Validation TEA 2
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 1$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
@@ -477,7 +477,7 @@ run_validation_TP_TEA_2.m
 
 ## Validation TEA 3
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 10$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]
@@ -496,7 +496,7 @@ run_validation_TP_TEA_3.m
 
 ## Validation TEA 4
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
-* Problem type: Equilibrium composition at defined T and p
+* Problem type: Equilibrium composition at defined temperature and pressure
 * Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity $\zeta = 50$ assumming a T-P profile
 * Temperature [K]   = [958.36, 1811.89]
 * Pressure    [bar] = [2.3988e-06, 31.6230]

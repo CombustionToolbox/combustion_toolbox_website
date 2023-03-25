@@ -132,7 +132,7 @@ New to Combustion Toolbox?
 :::{grid-item-card} {octicon}`note` Examples
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/examples.html
 
-See examples of Combustion-Toolbox applications.
+See examples of Combustion Toolbox applications.
 :::
 
 :::{grid-item-card} {octicon}`repo` Documentation
@@ -145,7 +145,7 @@ Let's check the documentation of almost (every) functions.
 
 # Gallery
 
-We have several examples of what Combustion Toolbox can do. Here we show some results obtained from Combustion Toolbox.
+Here we show some results obtained from Combustion Toolbox.
 
 <p align="center">
     <img src="_static/gif/example_DET.gif" width="800">
@@ -161,7 +161,7 @@ We have several examples of what Combustion Toolbox can do. Here we show some re
     <img alt="TP with condensed species" style="border-width:0" src="_static/img/cuadra2022/TP_scoggins2015_wide_dark.svg" width="1200"/>
 </p>
 
-**Figure 2:** *Variation of the molar fractions $X_j$ for a TP transformation of a Silica-Phenolic mixture at atmospheric pressure $(p = 1$ atm$)$ with $T \in [200, 5000]$; line: numerical results obtained with CT; symbols: numerical results obtained with NASA's CEA.*.
+**Figure 2:** *Variation of the molar fractions $X_j$ for a TP transformation of a Silica-Phenolic mixture at atmospheric pressure $(p = 1$ atm$)$ with $T \in [200, 5000]$; line: numerical results obtained with CT; symbols: numerical results obtained with NASA's CEA.*
 
 <p class= "only-light" align="center">
     <img alt="Hugoniot curves" style="border-width:0" src="_static/img/Hugoniot_benchmarking.svg" width="500"/>
@@ -217,7 +217,7 @@ See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_
 
 # Citing Combustion Toolbox
 
-If you use Combustion Toolbox in a publication, please cite it using the following reference:
+If you use the Combustion Toolbox in a publication, please cite it using the following reference:
 
 
 * *Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v0.9.99g). Zenodo. https://doi.org/10.5281/zenodo.5554911.*
