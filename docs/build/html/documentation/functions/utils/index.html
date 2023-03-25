@@ -214,6 +214,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -369,14 +372,6 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.utils.GPL">
 <span class="sig-name descname"><span class="pre">GPL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.GPL" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Return Combustion Toolbox license</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>none</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">empty</span></code></span>) – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>license_content (str)</em> – license content</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="mat function">
@@ -535,6 +530,32 @@ given fieldname.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.check_temperature_range">
+<span class="sig-name descname"><span class="pre">check_temperature_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">ind</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">FLAG</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.check_temperature_range" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Remove species indeces out of the temperature range if FLAG = true,
+e.g., linear extrapolation of the polynomial fits is not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the species indeces</p></li>
+<li><p class="sd-card-text"><strong>NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of species</p></li>
+<li><p class="sd-card-text"><strong>FLAG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating linear extrapolation of the polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">ind (float): Updated vector with the species indeces</p></li>
+<li><p class="sd-card-text">NS (float): Update number of species</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1032,7 +1053,10 @@ cryogenic liquid species, i.e., liquified gases.</p>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><p class="sd-card-text">message_solution (str): Message solution</p>
 </dd>
-<dt>Reutnrs:</dt><dd><p class="sd-card-text">error_message (str): Message error</p>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>error_message (str)</em> – Message error</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1102,7 +1126,7 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </dl>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
-<li><p class="sd-card-text">field (str):   Fieldname in Problem Description (PD)</p></li>
+<li><p class="sd-card-text">field (str): Fieldname in Problem Description (PD)</p></li>
 <li><p class="sd-card-text">value (float): Value/s to assing in the field in Problem Description (PD)</p></li>
 </ul>
 </dd>
@@ -1450,9 +1474,11 @@ products for the given list of reactants</p>
 </dl>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})</p>
-<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)</p>
-<p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p>
+<ul class="simple">
+<li><p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘N’, ‘eminus’})</p></li>
+<li><p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true)</p></li>
+<li><p class="sd-card-text">[LS, ind_elements_DB] = find_products(self, {‘O2’, ‘CO’, ‘N’}, DB, ‘Flag’, true, ‘ind’, ind_elements_DB)</p></li>
+</ul>
 </div>
 </dd></dl>
 
@@ -1478,7 +1504,8 @@ cond_without</p>
 </dl>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<dl class="simple">
+<ul class="simple">
+<li><dl class="simple">
 <dt>LS = find_species_LS(LS, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><p class="sd-card-text">{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…
 ‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’,’G’,’K’,…
 ‘U’,’Co’,’Cu’,’B’,’V’,’Ni’,’Na’,’Mg’,…
@@ -1486,7 +1513,9 @@ cond_without</p>
 ‘Ca’,’Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
 </dd>
 </dl>
-<p class="sd-card-text">LS = find_species_LS(self.S.LS_DB, {}, ‘any’, {‘_M’}, ‘all’)</p>
+</li>
+<li><p class="sd-card-text">LS = find_species_LS(self.S.LS_DB, {}, ‘any’, {‘_M’}, ‘all’)</p></li>
+</ul>
 </div>
 </dd></dl>
 
@@ -2002,6 +2031,25 @@ at the given temperature [K] using NASA’s 9 polynomials</p>
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_e0">
+<span class="sig-name descname"><span class="pre">species_e0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_e0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute internal energy [kJ/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>e0 (float)</em> – Internal energy [kJ/mol]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.databases.species_e0_NASA">
 <span class="sig-name descname"><span class="pre">species_e0_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_e0_NASA" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute internal energy and the thermal internal energy [kJ/mol] of
@@ -2059,6 +2107,46 @@ temperature [K] using NASA’s 9 polynomials</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p class="sd-card-text"><em>g0 (float)</em> – Gibbs energy [kJ/mol]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_gamma">
+<span class="sig-name descname"><span class="pre">species_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_gamma" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute adiabatic index of the species [-] at the given temperature
+[K] using piecewise cubic Hermite interpolating polynomials and
+linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>gamma (float)</em> – Adiabatic index [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_gamma_NASA">
+<span class="sig-name descname"><span class="pre">species_gamma_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_gamma_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute adiabatic index of the species [-] at the given temperature
+[K] using piecewise cubic Hermite interpolating polynomials and
+linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>gamma (float)</em> – Adiabatic index [-]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2271,10 +2359,12 @@ Routines<div class="sd-summary-down docutils">
 <dd class="field-even"><p class="sd-card-text"><em>mixtures (cell)</em> – Cell with all the non-empty mixtures</p>
 </dd>
 </dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p class="sd-card-text">mixtures = get_mixtures(self.PS, ‘mix’);
-mixtures = get_mixtures(self.PS, ‘strP’);</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">mixtures = get_mixtures(self.PS, ‘mix’);</p></li>
+<li><p class="sd-card-text">mixtures = get_mixtures(self.PS, ‘strP’);</p></li>
+</ul>
 </div>
 </dd></dl>
 

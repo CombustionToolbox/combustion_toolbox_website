@@ -213,7 +213,10 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -311,19 +314,19 @@
         <article role="main">
           <section id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
-<p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">CEA-NASA</a>, <a class="reference external" href="https://cantera.org/">CANTERA</a> &amp; <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">SD-Toolbox</a><sup>1</sup>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a>.</p>
+<p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">CEA-NASA</a>, <a class="reference external" href="https://cantera.org/">Cantera</a> &amp; <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a><sup>1</sup>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a>.</p>
 <p><sup>1</sup> The Shock &amp; Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.</p>
 <hr class="docutils" />
 <p><strong><em>For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions.</em></strong>
 To run all the validations contrasted with CEA at once, at the prompt type:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validations_CEA</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validations_CEA</span><span class="w"></span>
 </pre></div>
 </div>
 <section id="validation-tp-1">
 <h2>Validation TP 1<a class="headerlink" href="#validation-tp-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -331,7 +334,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -343,7 +346,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TP 2<a class="headerlink" href="#validation-tp-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \frac{7.5}{\phi} \text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -351,7 +354,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -363,7 +366,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TP 3<a class="headerlink" href="#validation-tp-3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -371,7 +374,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -383,7 +386,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TP 4<a class="headerlink" href="#validation-tp-4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Temperature [K]   = 2500</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -391,7 +394,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -403,7 +406,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation HP 1<a class="headerlink" href="#validation-hp-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic T and composition at constant p</p></li>
+<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -411,7 +414,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_HP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -423,7 +426,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation HP 2<a class="headerlink" href="#validation-hp-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic T and composition at constant p</p></li>
+<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -431,7 +434,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_HP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -443,7 +446,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation HP 3<a class="headerlink" href="#validation-hp-3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic T and composition at constant p</p></li>
+<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -451,7 +454,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_HP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -463,7 +466,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation HP 4<a class="headerlink" href="#validation-hp-4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic T and composition at constant p</p></li>
+<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -471,7 +474,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_HP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -483,7 +486,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TV 1<a class="headerlink" href="#validation-tv-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and v</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and volume</p></li>
 <li><p>Temperature [K]   = 3000</p></li>
 <li><p>Pressure    [bar] = 1.0132</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -491,7 +494,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/tv</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -503,7 +506,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation EV 1<a class="headerlink" href="#validation-ev-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic T and composition at constant v</p></li>
+<li><p>Problem type: Adiabatic temperature and composition at constant volume</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1.0132</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -511,7 +514,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/ev</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_EV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_EV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -523,7 +526,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation DET 1<a class="headerlink" href="#validation-det-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouget Detonation</p></li>
+<li><p>Problem type: Chapman-Jouguet detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -531,7 +534,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_DET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -544,7 +547,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation DET 2<a class="headerlink" href="#validation-det-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouget Detonation</p></li>
+<li><p>Problem type: Chapman-Jouguet detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -552,7 +555,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_DET_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -565,7 +568,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation DET 3<a class="headerlink" href="#validation-det-3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouget Detonation</p></li>
+<li><p>Problem type: Chapman-Jouguet detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -573,7 +576,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_DET_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -586,7 +589,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation DET 4<a class="headerlink" href="#validation-det-4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouget Detonation</p></li>
+<li><p>Problem type: Chapman-Jouguet detonation</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
@@ -594,7 +597,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_DET_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -607,7 +610,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation SHOCK IONIZATION 1<a class="headerlink" href="#validation-shock-ionization-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Shock incident</p></li>
+<li><p>Problem type: Planar shock wave</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\)</span></p></li>
@@ -615,7 +618,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_SHOCK_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -627,7 +630,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation SHOCK REFLECTED IONIZATION 1<a class="headerlink" href="#validation-shock-reflected-ionization-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Shock reflected</p></li>
+<li><p>Problem type: Normal reflection of a planar shock wave from a parallel rigid wall</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\)</span></p></li>
@@ -635,7 +638,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_SHOCK_R_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_R_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -646,8 +649,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <section id="validation-shock-polar-1">
 <h2>Validation SHOCK POLAR 1<a class="headerlink" href="#validation-shock-polar-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Contrasted with: Caltech’s SD Toolbox and CANTERA</p></li>
-<li><p>Problem type: Shock Polar</p></li>
+<li><p>Contrasted with: Caltech’s SD Toolbox within Cantera</p></li>
+<li><p>Problem type: Shock polar diagrams</p></li>
 <li><p>Temperature [K]   = 300</p></li>
 <li><p>Pressure    [bar] = 1.01325</p></li>
 <li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7619 \text{N}_2 + \text{O}_2\)</span></p></li>
@@ -655,7 +658,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results SDToolbox: ./validations/sdtoolbox/data</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_SHOCK_POLAR_SDToolbox_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_POLAR_SDToolbox_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -680,8 +683,8 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_ROCKET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_ROCKET_CEA_16</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<span class="n">run_validation_ROCKET_CEA_16</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -704,7 +707,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_ROCKET_CEA_17</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_17</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -731,7 +734,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_ROCKET_CEA_18</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_18</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="center">
@@ -745,7 +748,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TEA 1<a class="headerlink" href="#validation-tea-1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Temperature [K]   = linspace(500, 5000)</p></li>
 <li><p>Pressure    [bar] = logspace(-5, 2)</p></li>
 <li><p>Initial mixture [moles]:</p>
@@ -761,7 +764,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea">https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="left">
@@ -772,7 +775,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TEA 2<a class="headerlink" href="#validation-tea-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 1\)</span> assumming a T-P profile</p></li>
 <li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
 <li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
@@ -781,7 +784,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="left">
@@ -792,7 +795,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TEA 3<a class="headerlink" href="#validation-tea-3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 10\)</span> assumming a T-P profile</p></li>
 <li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
 <li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
@@ -801,7 +804,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="left">
@@ -812,7 +815,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <h2>Validation TEA 4<a class="headerlink" href="#validation-tea-4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined T and p</p></li>
+<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
 <li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 50\)</span> assumming a T-P profile</p></li>
 <li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
 <li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
@@ -821,7 +824,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
 <li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar</a></p></li>
 </ul>
 <p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">run_validation_TP_TEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 <p align="left">

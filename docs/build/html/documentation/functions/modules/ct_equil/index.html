@@ -214,6 +214,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Home</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -459,7 +462,7 @@ Routines<div class="sd-summary-down docutils">
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p class="sd-card-text">guess_moles (float): mixture composition [mol] of a previous computation</p>
+<dt>Optional Args:</dt><dd><p class="sd-card-text">guess_moles (float): Mixture composition [mol] of a previous computation</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -628,8 +631,8 @@ multipliers combined with a Newton-Raphson method, upon condition that initial g
 properties are defined by temperature and pressure.</p>
 <p class="sd-card-text">The algorithm implemented take advantage of the sparseness of the
 upper left submatrix obtaining a matrix J of size NE + NS - NG + 1.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -654,6 +657,13 @@ upper left submatrix obtaining a matrix J of size NE + NS - NG + 1.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_gibbs(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_gibbs(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -663,8 +673,8 @@ upper left submatrix obtaining a matrix J of size NE + NS - NG + 1.</p>
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
 properties are defined by temperature and pressure.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -672,11 +682,11 @@ properties are defined by temperature and pressure.</p>
 <li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
 <li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
 <li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
-<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mixture composition [mol] of a previous computation</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
 <li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
@@ -698,8 +708,8 @@ properties are defined by temperature and pressure.</p>
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
 properties are defined by temperature and pressure.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -725,6 +735,11 @@ properties are defined by temperature and pressure.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">N0 = equilibrium_gibbs_large(self, 1.01325, 3000, self.PS.strR{1}, [])</p>
+<p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_gibbs_large(self, 1.01325, 3000, self.PS.strR{1}, [])</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -736,8 +751,8 @@ multipliers combined with a Newton-Raphson method, upon condition that initial g
 properties are defined by temperature and volume.</p>
 <p class="sd-card-text">The algorithm implemented take advantage of the sparseness of the
 upper left submatrix obtaining a matrix J of size NE + NS - NG.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -763,6 +778,13 @@ upper left submatrix obtaining a matrix J of size NE + NS - NG.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_helmholtz(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_helmholtz(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -772,8 +794,8 @@ upper left submatrix obtaining a matrix J of size NE + NS - NG.</p>
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
 properties are defined by temperature and volume.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -785,7 +807,7 @@ properties are defined by temperature and volume.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text"><em>Tuple containing</em> –</p>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
 <li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
 <li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
@@ -807,8 +829,8 @@ properties are defined by temperature and volume.</p>
 The code stems from the minimization of the free energy of the system by using Lagrange
 multipliers combined with a Newton-Raphson method, upon condition that initial gas
 properties are defined by temperature and volume.</p>
-<p class="sd-card-text">This method is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication,
-1311.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -834,6 +856,13 @@ properties are defined by temperature and volume.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_helmholtz_large(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_helmholtz_large(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
 </dd></dl>
 
 </div>
