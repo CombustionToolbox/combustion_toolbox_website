@@ -9,6 +9,11 @@
 </script>
 
 <!-- Organize Website -->
+```{toctree}
+   :hidden:
+
+Home <self>
+```
 
 ```{toctree}
     :hidden:
