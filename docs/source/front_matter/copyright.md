@@ -11,8 +11,8 @@ by {{author}}
 All rights reserved. This material may be copied or distributed only
 subject to the terms and conditions set forth in the `Creative Commons
 Attribution-Noncommercial-Share Alike 4.0 United States License`
-[https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/).  You must
-give the original author credit.  You may not use this work for
+[https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/). You must
+give the original author credit. You may not use this work for
 commercial purposes.  If you alter, transform, or build upon this
 work, you may distribute the resulting work only under the same or
 similar license to this one.
