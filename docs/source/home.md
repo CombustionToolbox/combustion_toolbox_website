@@ -106,7 +106,7 @@ Completely open source, GUI included!
 
 :::{grid-item-card} {octicon}`download` Export results
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/utils/index.html#export-functions
-{bdg-light}`spreadsheet` {bdg-light}`.mat`
+{bdg-light}`.xls` {bdg-light}`.mat`
 :::
 
 :::{grid-item-card} {octicon}`versions` Compatible
