@@ -167,7 +167,9 @@ html_static_path = ['_static']
 html_space = ' '
 html_title = project + html_space + release
 
-html_favicon = 'img/favicon.ico'
+# Define favicon (relative to the path)
+html_favicon = '_static/img/favicon.ico'
+
 html_show_sphinx = True
 
 html_css_files = [
