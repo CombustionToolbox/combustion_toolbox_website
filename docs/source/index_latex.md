@@ -35,7 +35,6 @@ validations
     :hidden:
     :maxdepth: 2
 
-documentation/index
 documentation/databases
 documentation/functions/index
 ```
