@@ -1,17 +1,19 @@
 # Tutorial
 
-With this short tutorial you will familiarize with the basic functionalities of Combustion Toolbox
+With this short tutorial you will familiarize with the basic functionalities of the Combustion Toolbox.
 
 ## Getting Started 
-Start MATLAB and browse for folder where you have downloaded Combustion Toolbox. To include files in `PATH` run this command in the command window: 
+To begin, start MATLAB and navigate to the folder where you have downloaded the Combustion Toolbox. To include files in `PATH`, run this command in the command window:
 ```matlab
-addpath(genpath(pwd))
+INSTALL()
 ```
-First, using Combustion Toolbox, you have to initialize the tool (load databases, set default variables, ...). To do that at the prompt type:
+
+First, using Combustion Toolbox, you have to initialize the tool (load databases, set default variables, etc.). To do that, type the following at the prompt:
 ```matlab
 self = App('Soot formation')
 ```
-Here, `Soot formation` represents a predefined list of species to be considered as possible products, see routine `list_species.m`.
+
+Here, `Soot formation` represents a predefined list of species to be considered as possible products (see the routine `list_species.m`).
 
 If files contained in Combustion Toolbox are correctly defined, you should see something like this:
 ```matlab
@@ -29,13 +31,15 @@ self =
     DB_master: [1×1 struct]
            DB: [1×1 struct]
 ```
+
 ## Setting the state
-Indicate temperature [K] and pressure [bar] of the initial mixture
+Indicate the temperature [K] and pressure [bar] of the initial mixture, type:
  ```matlab
 self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
 ```
-Indicate species and number of moles of each species in the initial mixture
-### Individual case
+
+Indicate species and number of moles of each species in the initial mixture:
+### Individual study
 For example, for a stochiometric CH4-ideal_air mixture:
 ```matlab
 self.PD.S_Fuel     = {'CH4'};
@@ -43,6 +47,7 @@ self.PD.N_Fuel     = 1;
 self.PD.S_Oxidizer = {'N2', 'O2'};
 self.PD.N_Oxidizer = [7.52, 2];
 ```
+
 This is the same as specifying a unit value for the equivalence ratio:
 ```matlab
 self.PD.S_Fuel     = {'CH4'};
@@ -50,18 +55,21 @@ self.PD.S_Oxidizer = {'N2', 'O2'};
 self.PD.ratio_oxidizers_O2 = [79, 21]/21;
 self = set_prop(self, 'phi', 1);
 ```
+
 The last two lines of code establish the proportion of the oxidizers species over O$_2$ and the equivalence ratio, respectively. The number of moles are calculated considering that the number of moles of fuel is one by default.
-### Several cases
-Combustion Toolbox also allows the computation of a range of values of different properties. For example, in case we want to compute a range of values of the equivalence ratio, e.g., $\phi \in [0.5, 5]$ with a 0.01 step size, do this:
+
+### Parametric study (several cases)
+The Combustion Toolbox also allows the computation of a range of values of different properties. For example, if we want to compute a range of values of the equivalence ratio, e.g., $\phi \in [0.5, 5]$ with a 0.01 step size, do this:
 ```matlab
 self.PD.S_Fuel     = {'CH4'};
 self.PD.S_Oxidizer = {'N2', 'O2'};
 self.PD.ratio_oxidizers_O2 = [79, 21]/21;
 self = set_prop(self, 'phi', 0.5:0.01:5);
 ```
+
 ## Chemical Equilibrium
 
-Depending on the problem you want to solve, you may need to configure additional inputs. For example, to compute the equilibrium composition at a defined temperature and pressure (TP) we have to set these values as
+Depending on the problem you want to solve, you may need to configure additional inputs. For example, to compute the equilibrium composition at a defined temperature and pressure (TP), we have to set these values as
 ```matlab
 self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 3000);
 ```
@@ -69,6 +77,7 @@ and to solve the aforementioned problem, run
 ```matlab
 self = solve_problem(self, 'TP');
 ```
+
 The results are contained in `self.PS`. By default, this routine print the results through the command window (default: self.Misc.FLAG_RESULTS=true) which gives for the stoichiometric case (phi=1):
 ```matlab
 COMPUTING Nº MOLES FROM EQUIVALENCE RATIO (PHI).
