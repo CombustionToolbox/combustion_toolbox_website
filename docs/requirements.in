@@ -11,3 +11,4 @@ sphinxext-opengraph
 nbsphinx
 furo
 myst-parser
+CairoSVG
