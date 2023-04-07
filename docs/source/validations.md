@@ -30,6 +30,14 @@ run_validation_TP_CEA_1.m
     <img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_CEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+```
+
 ## Validation TP 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
