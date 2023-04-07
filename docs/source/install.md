@@ -30,7 +30,7 @@ To install the Combustion Toolbox, you can use the provided `INSTALL.m` file. He
 2. Run the `INSTALL.m` file using the following command in the MATLAB Command Window:
 
 ```matlab
-INSTALL
+INSTALL()
 ```
 
 3. This will add the necessary folders to the MATLAB path and also install the Combustion Toolbox GUI. You can now use the Combustion Toolbox in your MATLAB code.
@@ -49,7 +49,7 @@ The Combustion Toolbox can be used in two ways:
 * Using the MATLAB's desktop environment to obtain all the versatility of the plain code.
 * Using the Graphical User Interface (GUI) and forget about code.
   
-To use the Combustion Toolbox in the MATLAB desktop environment, you can call the functions from your MATLAB code directly.
+To use the Combustion Toolbox in the MATLAB desktop environment, you can call the functions from your MATLAB code directly, e.g., `App()`.
 
 To use the GUI, simply type `combustion_toolbox_app` in the MATLAB Command Window, or click on the app icon in the MATLAB apps toolbar. This will open the Combustion Toolbox GUI, which provides a user-friendly interface for accessing and using the package.
 
