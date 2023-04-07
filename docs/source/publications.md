@@ -47,7 +47,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Seminars & Workshops
 
-* Cuadra, A., Huete, C. & Vera, M. (2023).Linear analysis on shock-turbulence interaction implemented with the Combustion Toolbox. Seminar presented during the research-stay with Prof. M. Di Renzo, Lecce, Italy
+* Cuadra, A., Huete, C. & Vera, M. (2023). Linear analysis on shock-turbulence interaction implemented with the Combustion Toolbox. Seminar presented during the research-stay with Prof. M. Di Renzo, Lecce, Italy
 * Cuadra, A., Huete, C. & Vera, M. (2021). Development of an open-source thermochemical code: Fundamentals and application to shock turbulence interaction problems in the hypersonic regime. Seminar presented as part of the PhD Programme in Mechatronics Engineering, Málaga, Spain
 
 ### PhD, MSc & BSc thesis

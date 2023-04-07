@@ -1,18 +1,18 @@
 # Functions
-Here we can find the documentation for the routines implemented in Combustion Toolbox, which are divided in three different folders:
-   * ```utils```: folder with a collection of functions with multiple purposes (utilities, database, display, equation of state, export, extensions, root finding algorithms, thermo, and validations).
-   * ```modules```: routines to solve the different type of problems implemented in the three routines that compound CT (CT-EQUIL, CT-SD, and CT-ROCKET).
-   * ```gui```: folder with all the functions to generate the app, add-ons, assets, and all the necessary functions to be compatible with the plain code and extend its functionality.
+Here we can find the documentation for the routines implemented in the Combustion Toolbox, which are organized in three different folders:
+   * ```modules```: this folder contains routines that solve different types of problems implemented in the three main routines of CT (CT-EQUIL, CT-SD, and CT-ROCKET).
+   * ```utils```: this folder contains a collection of functions that have multiple purposes (utilities, database, display, equation of state, export, extensions, root finding algorithms, thermo, and validations).
+   * ```gui```: This folder contains all the functions and assets required to generate the app (GUI), add-ons, and extend the functionality of the plain code to the GUI.
 
-```{caution}
-The documentation is under development 
+```{warning}
+Please note that the documentation is currently under development.
 ```
 
 ```{toctree}
     :caption: 'Contents:'
     :maxdepth: 2
 
-utils/index
 modules/index
+utils/index
 gui/index
 ```
