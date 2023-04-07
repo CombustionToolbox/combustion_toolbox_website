@@ -20,7 +20,7 @@ It can be handy the BibTeX format:
 
 ## Contributions
 
-Here are some contributions, work-in-progress articles, and publications where the Combustion Toolbox has been used.
+Here are some contributions, work-in-progress articles, and publications where the Combustion Toolbox has been used, as well as other codes that utilize this toolbox.
 
 ### Journal articles
 
@@ -28,6 +28,10 @@ Here are some contributions, work-in-progress articles, and publications where t
 * Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [https://doi.org/10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
 * Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. [https://doi.org/10.1063/5.0059948](https://doi.org/10.1063/5.0059948)<a href="https://www.researchgate.net/publication/354024089_Thermochemical_effects_on_hypersonic_shock_waves_interacting_with_weak_turbulence" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation discontinuities. Journal of Fluid Mechanics, 903, A30. [https://doi.org/10.1017/jfm.2020.651](https://doi.org/10.1017/jfm.2020.651)<a href="https://www.researchgate.net/publication/343384770_Effect_of_equivalence_ratio_fluctuations_on_planar_detonation_discontinuities" class="pdf" target="_blank"></a>
+
+### Other codes that use the Combustion Toolbox
+
+* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [https://doi.org/10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
 
 ### Conference contributions
 
