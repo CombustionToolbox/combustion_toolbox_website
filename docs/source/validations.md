@@ -36,7 +36,7 @@ run_validation_TP_CEA_1.m
     .. image:: _static/img/run_validation_TP_CEA_1_molar.pdf
         :width: 1000px
         :align: center
-    .. image:: _static/img/run_validation_TP_CEA_1_properties.svg
+    .. image:: _static/img/run_validation_TP_CEA_1_properties.pdf
         :width: 600px
         :align: center
 ```
@@ -67,7 +67,7 @@ run_validation_TP_CEA_2.m
     .. image:: _static/img/run_validation_TP_CEA_2_molar.pdf
         :width: 1000px
         :align: center
-    .. image:: _static/img/run_validation_TP_CEA_2_properties.svg
+    .. image:: _static/img/run_validation_TP_CEA_2_properties.pdf
         :width: 600px
         :align: center
 ```
@@ -98,7 +98,7 @@ run_validation_TP_CEA_3.m
     .. image:: _static/img/run_validation_TP_CEA_3_molar.pdf
         :width: 1000px
         :align: center
-    .. image:: _static/img/run_validation_TP_CEA_3_properties.svg
+    .. image:: _static/img/run_validation_TP_CEA_3_properties.pdf
         :width: 600px
         :align: center
 ```
@@ -128,7 +128,7 @@ run_validation_TP_CEA_4.m
     .. image:: _static/img/run_validation_TP_CEA_4_molar.pdf
         :width: 1000px
         :align: center
-    .. image:: _static/img/run_validation_TP_CEA_4_properties.svg
+    .. image:: _static/img/run_validation_TP_CEA_4_properties.pdf
         :width: 600px
         :align: center
 ```
@@ -152,6 +152,17 @@ run_validation_HP_CEA_1.m
     <img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_HP_CEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_HP_CEA_1_properties.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation HP 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -171,6 +182,17 @@ run_validation_HP_CEA_2.m
     <img src="_static/img/run_validation_HP_CEA_2_molar.svg" width="1000">
     <img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="600">
 </p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_HP_CEA_2_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_HP_CEA_2_properties.pdf
+        :width: 600px
+        :align: center
+```
 
 ## Validation HP 3
 
@@ -192,6 +214,17 @@ run_validation_HP_CEA_3.m
     <img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_HP_CEA_3_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_HP_CEA_3_properties.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation HP 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -211,6 +244,17 @@ run_validation_HP_CEA_4.m
     <img src="_static/img/run_validation_HP_CEA_4_molar.svg" width="1000">
     <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600">
 </p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_HP_CEA_4_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_HP_CEA_4_properties.pdf
+        :width: 600px
+        :align: center
+```
 
 ## Validation TV 1
 
@@ -232,6 +276,17 @@ run_validation_TV_CEA_1.m
     <img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TV_CEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_TV_CEA_1_properties.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation EV 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -252,6 +307,16 @@ run_validation_EV_CEA_1.m
     <img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_EV_CEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_EV_CEA_1_properties.pdf
+        :width: 600px
+        :align: center
+```
 
 ## Validation DET 1
 
@@ -274,6 +339,20 @@ run_validation_DET_CEA_1.m
     <img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_DET_CEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_1_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_1_properties_2.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation DET 2
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -294,6 +373,20 @@ run_validation_DET_CEA_2.m
     <img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="600">
     <img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="600">
 </p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_DET_CEA_2_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_2_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_2_properties_2.pdf
+        :width: 600px
+        :align: center
+```
 
 ## Validation DET 3
 
@@ -316,6 +409,20 @@ run_validation_DET_CEA_3.m
     <img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_DET_CEA_3_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_3_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_3_properties_2.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation DET 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -337,6 +444,21 @@ run_validation_DET_CEA_4.m
     <img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_DET_CEA_4_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_4_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_DET_CEA_4_properties_2.pdf
+        :width: 600px
+        :align: center
+```
+
+
 ## Validation SHOCK IONIZATION 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -356,6 +478,18 @@ run_validation_SHOCK_IONIZATION_CEA_1.m
     <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="600">
     <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.pdf
+        :width: 600px
+        :align: center
+```
+
 
 ## Validation SHOCK REFLECTED IONIZATION 1
 
@@ -377,6 +511,17 @@ run_validation_SHOCK_R_IONIZATION_CEA_1.m
     <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation SHOCK POLAR 1
 
 * Contrasted with: Caltech's SD Toolbox within Cantera
@@ -393,9 +538,16 @@ run_validation_SHOCK_POLAR_SDToolbox_1.m
 ```
 
 <p align="center">
-    <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400">
     <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400">
 </p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.pdf
+        :width: 400px
+        :align: center
+```
 
 ## Validation ROCKET 1
 
@@ -448,6 +600,23 @@ run_validation_ROCKET_CEA_17.m
     <img src="_static/img/run_validation_ROCKET_CEA_17_properties_3.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_ROCKET_CEA_17_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_17_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_17_properties_2.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_17_properties_3.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation ROCKET 3
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -475,6 +644,23 @@ run_validation_ROCKET_CEA_18.m
     <img src="_static/img/run_validation_ROCKET_CEA_18_properties_3.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_ROCKET_CEA_18_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_18_properties_1.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_18_properties_2.pdf
+        :width: 600px
+        :align: center
+    .. image:: _static/img/run_validation_ROCKET_CEA_18_properties_3.pdf
+        :width: 600px
+        :align: center
+```
+
 ## Validation TEA 1
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined temperature and pressure
@@ -498,6 +684,15 @@ run_validation_TP_TEA_1.m
     <img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000">
 </p> 
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_TEA_1_molar.pdf
+        :width: 1000px
+        :align: center
+```
+
+
 ## Validation TEA 2
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined temperature and pressure
@@ -516,6 +711,14 @@ run_validation_TP_TEA_2.m
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000">
 </p> 
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_TEA_2_molar.pdf
+        :width: 1000px
+        :align: center
+```
 
 ## Validation TEA 3
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
@@ -536,6 +739,14 @@ run_validation_TP_TEA_3.m
     <img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000">
 </p> 
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_TEA_3_molar.pdf
+        :width: 1000px
+        :align: center
+```
+
 ## Validation TEA 4
 * Contrasted with: Thermochemical Equilibrium Abundances of chemical species software
 * Problem type: Equilibrium composition at defined temperature and pressure
@@ -553,4 +764,12 @@ run_validation_TP_TEA_4.m
 
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000">
-</p> 
+</p>
+
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_TEA_4_molar.pdf
+        :width: 1000px
+        :align: center
+```

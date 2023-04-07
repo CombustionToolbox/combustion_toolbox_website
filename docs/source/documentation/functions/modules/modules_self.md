@@ -16,6 +16,14 @@ CT built-in functions are written to perform fast parametric studies, thus the d
     <img src="../../../_static/img/cuadra2022/sketch_tree_structure.svg" width="250">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: ../../../_static/img/cuadra2022/sketch_tree_structure.pdf
+        :width: 250px
+        :align: center
+```
+
 **Figure 1:** *Combustion Toolbox hierarchical data tree structure, where* <tt> `App.m` </tt> *is the initialization function.*
 
 ## App
