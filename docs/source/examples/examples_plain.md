@@ -1,6 +1,6 @@
 # Examples desktop environment
 
-Here we have a collection of examples included in Combustion Toolbox. 
+Here we have a collection of examples included in the Combustion Toolbox. 
 
 ```{toctree}
     :caption: Contents
