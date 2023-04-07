@@ -36,6 +36,9 @@ run_validation_TP_CEA_1.m
     .. image:: _static/img/run_validation_TP_CEA_1_molar.pdf
         :width: 1000px
         :align: center
+    .. image:: _static/img/run_validation_TP_CEA_1_properties.svg
+        :width: 600px
+        :align: center
 ```
 
 ## Validation TP 2
@@ -58,6 +61,17 @@ run_validation_TP_CEA_2.m
     <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_CEA_2_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_TP_CEA_2_properties.svg
+        :width: 600px
+        :align: center
+```
+
 ## Validation TP 3
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -78,6 +92,16 @@ run_validation_TP_CEA_3.m
     <img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_CEA_3_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_TP_CEA_3_properties.svg
+        :width: 600px
+        :align: center
+```
 ## Validation TP 4
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
@@ -98,6 +122,16 @@ run_validation_TP_CEA_4.m
     <img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="600">
 </p>
 
+```{eval-rst}
+.. only:: latex
+
+    .. image:: _static/img/run_validation_TP_CEA_4_molar.pdf
+        :width: 1000px
+        :align: center
+    .. image:: _static/img/run_validation_TP_CEA_4_properties.svg
+        :width: 600px
+        :align: center
+```
 ## Validation HP 1
 
 * Contrasted with: NASA's Chemical Equilibrium with Applications software
