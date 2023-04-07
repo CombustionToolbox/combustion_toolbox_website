@@ -282,6 +282,24 @@ pygments_dark_style = "material"
 # LaTeX configuration
 ####################################################################################
 
+FLAG_UPDATE_SVG = False
+
+# Set the directory where the SVG files are located
+dir_path = '_static/img/'
+
+# Traverse the directory tree recursively and find all SVG files
+if FLAG_UPDATE_SVG:
+    import cairosvg
+
+    for root, dirs, files in os.walk(dir_path):
+        for file in files:
+            if file.endswith('.svg'):
+                # Generate the name of the corresponding PDF file
+                pdf_file = os.path.splitext(os.path.join(root, file))[0] + '.pdf'
+                # Convert the SVG file to PDF using CairoSVG
+                cairosvg.svg2pdf(url=os.path.join(root, file), write_to=pdf_file)
+
+# Set compiler
 latex_engine = 'pdflatex'
 latex_use_xindy = False
 
@@ -320,6 +338,7 @@ _PREAMBLE = r"""
 \geometry{bindingoffset=0.45in,textheight=7.25in,hdivide={0.5in,*,0.75in},vdivide={1in,7.25in,1in},papersize={7.5in,9.25in}}
 \usepackage{amsmath}
 \usepackage[breaklinks]{hyperref}
+\usepackage{graphicx}
 """
 
 latex_elements = {
