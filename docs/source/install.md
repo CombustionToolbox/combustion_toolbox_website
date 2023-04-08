@@ -51,7 +51,7 @@ The Combustion Toolbox can be used in two ways:
   
 To use the Combustion Toolbox in the MATLAB desktop environment, you can call the functions from your MATLAB code directly, e.g., `App()`.
 
-To use the GUI, simply type `combustion_toolbox_app` in the MATLAB Command Window, or click on the app icon in the MATLAB apps toolbar. This will open the Combustion Toolbox GUI, which provides a user-friendly interface for accessing and using the package.
+To use the GUI, simply type `combustion_toolbox` or `combustion_toolbox_app` in the MATLAB Command Window, or click on the app icon in the MATLAB apps toolbar. This will open the Combustion Toolbox GUI, which provides a user-friendly interface for accessing and using the package.
 
 ```{note}
 If you encounter any issues during the installation process or while using the Combustion Toolbox, please refer to the "Issues" section of the GitHub repository or contact us directly at [acuadra@ing.uc3m.es](mailto:acuadra@ing.uc3m.es) for assistance.
