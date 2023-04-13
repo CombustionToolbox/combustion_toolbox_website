@@ -13,14 +13,14 @@ CT built-in functions are written to perform fast parametric studies, thus the d
    <br>
    
 <p align="center">
-    <img src="../../../_static/img/cuadra2022/sketch_tree_structure.svg" width="150">
+    <img src="../../../_static/img/cuadra2022/sketch_tree_structure.svg" width="250">
 </p>
 
 ```{eval-rst}
 .. only:: latex
 
     .. image:: ../../../_static/img/cuadra2022/sketch_tree_structure.pdf
-        :width: 250px
+        :width: 150px
         :align: center
 ```
 
