@@ -42,6 +42,8 @@ INSTALL('install', 'gui')
 
 Alternatively, you can execute the `combustion_toolbox_app.mlappinstall` file in the MATLAB Command Window to install the GUI, which will be available through the MATLAB Apps Toolbar.
 
+The standalone version can be installed by running `combustion_toolbox_app.exe` in the installer folder. This royalty-free version requires MATLAB Runtime framework (automatically installed during installation, **requires an internet connection**).
+
 ## Using the Combustion Toolbox
 
 The Combustion Toolbox can be used in two ways:
