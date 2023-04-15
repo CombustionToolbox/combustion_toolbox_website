@@ -136,7 +136,7 @@ See examples of Combustion Toolbox applications.
 :::
 
 :::{grid-item-card} {octicon}`repo` Documentation
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/index.html
 
 Let's check the documentation of almost (every) functions.
 :::
