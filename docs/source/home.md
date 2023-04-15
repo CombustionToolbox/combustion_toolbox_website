@@ -66,7 +66,7 @@ Completely open source, GUI included!<br>
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
 Over 10K lines of code encapsulated in a `user-friendly` GUI with tons of capabilities.
-{bdg-light}`Toolbox` {bdg-light}`Standalone`
+{bdg-light}`Toolbox` {bdg-light}`Standalone (royalty-free)`
 :::
 
 :::{grid-item-card} {octicon}`tab` Shocks and detonations pre- and post-shock states 
