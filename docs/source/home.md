@@ -32,7 +32,7 @@
 
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
-The code is encapsulated in an `user-friendly` GUI with tons of capabilities.
+The code is encapsulated in a `user-friendly` GUI with tons of capabilities.
 :::
 
 :::{grid-item-card} {octicon}`globe` Open source
@@ -65,7 +65,7 @@ Completely open source, GUI included!<br>
 
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
 :link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
-Over 10K lines of code encapsulated in an `user-friendly` GUI with tons of capabilities.
+Over 10K lines of code encapsulated in a `user-friendly` GUI with tons of capabilities.
 {bdg-light}`Toolbox` {bdg-light}`Standalone`
 :::
 
