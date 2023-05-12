@@ -1,0 +1,150 @@
+body {
+  --background-color: rgb(255, 255, 255);
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.content {
+  max-width: 100% !important;
+}
+
+dl.py .field-list dt {
+  text-transform: none !important;
+}
+
+h4, h5, h6 {
+  text-transform: unset !important;
+}
+
+.full-width-div {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.sd-card-body-custom {
+  color: black;
+  background-image: linear-gradient(90deg, white, rgb(149, 181, 189));
+}
+
+.container {
+  max-width: unset;
+}
+
+/* To overlay release on top of the logo */
+/* 
+.sidebar-brand-text{
+  position: relative;
+  top: -156px;
+  left: -33px;
+  text-align: center;
+  font-size: 18px;
+  font-family:'Hind Jalandhar', Times, serif;
+  color: white;
+}
+*/
+
+/* .note {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  border-radius: 4px;
+  color: #3a87ad;
+  background-color:#afe1f58a;
+  border-color: #afe1f58a;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position:relative;
+} */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+}
+
+.article {
+  color: #403f4c;
+}
+
+/* .dark_css_variables {
+  color-brand-primary: #bac5e5ff;
+  color-brand-content: #697796ff;
+  color-background-primary: #0a192fff;
+  color-background-secondary: #172a46ff;
+  color-foreground-primary: #bac5e5ff;
+  color-foreground-secondary: #697796ff;
+  color-background-hover: #bac5e54a;
+  color-sidebar-caption-text: #44a79dff;
+  color-background-item: #44a79dff;
+  color-problematic: #44a79dff;
+  sd-color-info: #3493a3;
+  color-code-background: rgb(0 0 0 / 0%);
+  color-background-border: rgb(0 0 0 / 0%);
+  color-background-item: #44a79dff;
+  color-card-background: #172a46ff;
+} */
+
+.github{
+  display: block;
+  background-image: url(../img/icon_github.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.matlab{
+  display: block;
+  background-image: url(../img/icon_matlab.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.zenodo{
+  display: block;
+  background-image: url(../img/icon_zenodo.svg);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.stroke {
+  fill: var(--color-brand-primary);
+  stroke: var(--color-brand-primary);
+}
+
+.stroke:hover {
+  fill: var(--color-brand-content);
+  stroke: var(--color-brand-content);
+}
+
+.pdf{
+  display: inline-block;
+  content: url(../img/icon_pdf.svg);
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* To automatically add a PDF icon next
+   to every PDF link on a given page*/
+a[href$=".pdf"]::after {
+  display: inline-block;
+  content: url(../img/icon_pdf.svg);
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
+}

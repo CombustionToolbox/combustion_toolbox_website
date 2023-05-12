@@ -4,7 +4,7 @@
 
 If you use the Combustion Toolbox in a publication, please cite it using the following reference:
 
-* *Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v1.0.1). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
+* *Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v1.0.2). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 
 It can be handy the BibTeX format:
 
@@ -13,7 +13,7 @@ It can be handy the BibTeX format:
     author = "Cuadra, A and Huete, C and Vera, M",
     title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year = 2023,
-    note = "Version 1.0.1",
+    note = "Version 1.0.2",
     doi = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
