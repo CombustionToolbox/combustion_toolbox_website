@@ -1,0 +1,1005 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Shocks and detonations module" href="../ct_sd/index.html" /><link rel="prev" title="Initialization module" href="../modules_self.html" />
+
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Thermochemical equilibrium module - Combustion Toolbox v1.0.2</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">Combustion Toolbox v1.0.2</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/examples_gui.html">Examples GUI</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../examples/examples_plain.html">Examples desktop environment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_TP.html">Example_TP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_TV.html">Example_TV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_HP.html">Example_HP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_EV.html">Example_EV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SP.html">Example_SP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SV.html">Example_SV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SV_FROZEN.html">Example_SV_FROZEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_I.html">Example_SHOCK_I.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_I_IONIZATION.html">Example_SHOCK_I_IONIZATION.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_R.html">Example_SHOCK_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_OBLIQUE_BETA.html">Example_SHOCK_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_OBLIQUE_THETA.html">Example_SHOCK_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_OBLIQUE_R.html">Example_SHOCK_OBLIQUE_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_POLAR.html">Example_SHOCK_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_SHOCK_POLAR_R.html">Example_SHOCK_POLAR_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET.html">Example_DET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_R.html">Example_DET_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../databases.html">Databases</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../modules_self.html">Initialization module</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Thermochemical equilibrium module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ct_sd/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ct_rocket/index.html">Rocket module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils/index.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="thermochemical-equilibrium-module">
+<h1>Thermochemical equilibrium module<a class="headerlink" href="#thermochemical-equilibrium-module" title="Permalink to this heading">#</a></h1>
+<p>In this section, you will find the documentation of the kernel of the code, which is used to obtain the chemical equilibrium composition for a desired thermochemical transformation, e.g., constant enthalpy and pressure. It also includes routines to compute chemical equilibrium assuming a complete combustion and the calculation of the thermodynamic derivates. The code stems from the minimization of the free energy of the system by using Lagrange multipliers combined with a Newton-Raphson method, upon condition that initial gas properties are defined by two functions of states, e.g., temperature and pressure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The kernel of the code is based on Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.</p>
+</div>
+<section id="thermodynamic-derivatives">
+<h2>Thermodynamic derivatives<a class="headerlink" href="#thermodynamic-derivatives" title="Permalink to this heading">#</a></h2>
+<p>All thermodynamic first derivatives can be obtained with any set of three independent first derivatives [1]. Combustion Toolbox computes all thermodynamic first derivatives from <span class="math notranslate nohighlight">\((\partial \text{ln } V/\partial \text{ln } T)_p\)</span>, <span class="math notranslate nohighlight">\((\partial \text{ln } V/\partial \text{ln } p)_T\)</span>, and <span class="math notranslate nohighlight">\((\partial h/\partial T)_p = c_p\)</span>. Considering the ideal equation of state</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  pV = nRT
+\end{equation}</div></div>
+<p>and applying logarithms to both sides</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  \text{ln } V = \text{ln } n + \text{ln } R + \text{ln } T - \text{ln } p
+\end{equation}</div></div>
+<p>is readily seen that</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } T}\right)_p = 1 + \left(\dfrac{\partial \text{ln } n }{\partial \text{ln } T}\right)_p,
+\end{equation}</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  \left(\dfrac{\partial \text{ln } V }{\partial \text{ln } p}\right)_T = -1 + \left(\dfrac{\partial \text{ln } n }{\partial \text{ln } p}\right)_T.
+\end{equation}</div></div>
+<p>To compute <span class="math notranslate nohighlight">\(c_p\)</span> we have to distinguish between the frozen contribution and the reaction contribution</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  c_p = c_{p,f} + c_{p,r}
+\end{equation}</div></div>
+<p>given by the following relations</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  c_{p,f} = \sum\limits_{j=1}^{\text{NS}} n_j c_{p,f}^\circ,
+\end{equation}
+\begin{equation}
+  c_{p,r} = \dfrac{1}{T}\left[\sum\limits_{j=1}^{\text{NS}} [1 + \delta_j(n_j - 1)] h_j^\circ\left(\dfrac{\partial \eta_j}{\partial \text{ln } T} \right)\right],
+\end{equation}</div></div>
+<p>with <span class="math notranslate nohighlight">\(\eta_j = \text{ln } n_j\)</span> and <span class="math notranslate nohighlight">\(\delta_j = 1 \)</span> for <span class="math notranslate nohighlight">\(j=1,\dots,NG\)</span> (non-condensed species), and <span class="math notranslate nohighlight">\(\eta_j = n_j\)</span> and <span class="math notranslate nohighlight">\(\delta_j = 0\)</span> for <span class="math notranslate nohighlight">\(j = NG + 1, \dots, NS\)</span> (condensed species).</p>
+<section id="derivatives-with-respect-to-temperature">
+<h3>Derivatives with respect to temperature<a class="headerlink" href="#derivatives-with-respect-to-temperature" title="Permalink to this heading">#</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{aligned}
+  \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } T}\right)_p - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p &amp;= \dfrac{h_j^\circ}{RT}, \quad &amp;\text{for } j=1, \dots, \text{NS}\\
+
+   \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p &amp;= 0, \quad &amp;\text{for } i=1, \dots, \text{NE}\\
+
+   \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } T}\right)_p - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } T}\right)_p&amp;= 0,
+\end{aligned}</div></div>
+<!-- To solve the stem is more practical to change it into matricial form, namely -->
+</section>
+<section id="derivatives-with-respect-to-pressure">
+<h3>Derivatives with respect to pressure<a class="headerlink" href="#derivatives-with-respect-to-pressure" title="Permalink to this heading">#</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{aligned}
+  \delta_j\left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - \sum\limits_{i = 1}^{\text{NE}} a_{ij} \left(\dfrac{\partial \pi_i }{\partial \text{ln } p}\right)_T - \delta_j\left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T &amp;= -\delta, \quad &amp;\text{for } j=1, \dots, \text{NS}\\
+
+   \sum\limits_{j = 1}^{\text{NS}} a_{ij} [1 + \delta_j(n_j - 1)] \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T &amp;= 0, \quad &amp;\text{for } i=1, \dots, \text{NE}\\
+
+   \sum\limits_{j = 1}^{\text{NG}} n_j \left(\dfrac{\partial \eta_j }{\partial \text{ln } p}\right)_T - n \left(\dfrac{\partial \text{ln } n}{\partial \text{ln } p}\right)_T&amp;= 0.
+\end{aligned}</div></div>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.modules.ct_equil"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.complete_combustion">
+<span class="sig-name descname"><span class="pre">complete_combustion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">phi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.complete_combustion" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Solve chemical equilibrium for CHNO mixtures assuming a complete combustion
+using the equilibrium constants method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equivalence ratio [-]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">moles (float): Equilibrium composition [moles] at defined temperature</p></li>
+<li><p class="sd-card-text">species (str): Species considered in the complemte combustion model</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[moles, species] = complete_combustion(self, self.PS.strR{1}, 0.5)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrate">
+<span class="sig-name descname"><span class="pre">equilibrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrate" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain properties at equilibrium for the set thermochemical transformation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">mix2 (struct): Properties of the final mixture (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">mix2 = equilibrate(self, self.PS.strR{1}, 1.01325)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrate_T">
+<span class="sig-name descname"><span class="pre">equilibrate_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrate_T" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium properties and composition for the given temperature [K] and pressure [bar]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">guess_moles (float): Mixture composition [mol] of a previous computation</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">mix2 = equilibrate(self, self.PS.strR{1}, 1.01325, 3000)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrate_T_tchem">
+<span class="sig-name descname"><span class="pre">equilibrate_T_tchem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrate_T_tchem" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium properties and composition for the given
+temperature [K] and pressure [bar] assuming a calorically perfect gas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>mix2 (struct)</em> – Properties of the final mixture assuming a calorically perfect gas</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">mix2 = equilibrate_T_tchem(self, self.PS.strR{1}, 1.01325, 3000)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_dT">
+<span class="sig-name descname"><span class="pre">equilibrium_dT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">J</span></em>, <em class="sig-param"><span class="pre">N0</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">ind_nswt</span></em>, <em class="sig-param"><span class="pre">ind_swt</span></em>, <em class="sig-param"><span class="pre">ind_elem</span></em>, <em class="sig-param"><span class="pre">H0RT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_dT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
+respect to temperature from a given composition [moles] at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>J</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Matrix J to solve the linear system J*x = b</p></li>
+<li><p class="sd-card-text"><strong>N0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_elem</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>H0RT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless enthalpy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float):  Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[dNi_T, dN_T] = equilibrium_dT(J, N0, A0, NE, ind, ind_nswt, ind_swt, ind_elem, H0RT)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_dT_large">
+<span class="sig-name descname"><span class="pre">equilibrium_dT_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NG</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">ind</span></em>, <em class="sig-param"><span class="pre">ind_nswt</span></em>, <em class="sig-param"><span class="pre">ind_swt</span></em>, <em class="sig-param"><span class="pre">ind_E</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_dT_large" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
+respect to temperature from a given composition [moles] at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>NG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of gaseous species</p></li>
+<li><p class="sd-card-text"><strong>NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of species</p></li>
+<li><p class="sd-card-text"><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float):  Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[dNi_T, dN_T] = equilibrium_dT_large(self, moles, T, A0, NG, NS, NE, ind, ind_nswt, ind_swt, ind_E)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_dp">
+<span class="sig-name descname"><span class="pre">equilibrium_dp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">J</span></em>, <em class="sig-param"><span class="pre">N0</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">ind_nswt</span></em>, <em class="sig-param"><span class="pre">ind_swt</span></em>, <em class="sig-param"><span class="pre">ind_elem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_dp" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
+respect to pressure from a given composition [moles] at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>J</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Matrix J to solve the linear system J*x = b</p></li>
+<li><p class="sd-card-text"><strong>N0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_elem</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float):  Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[dNi_p, dN_p] = equilibrium_dp(J, N0, A0, NE, ind, ind_nswt, ind_swt, ind_elem)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_dp_large">
+<span class="sig-name descname"><span class="pre">equilibrium_dp_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">N0</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NG</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">ind</span></em>, <em class="sig-param"><span class="pre">ind_nswt</span></em>, <em class="sig-param"><span class="pre">ind_swt</span></em>, <em class="sig-param"><span class="pre">ind_E</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_dp_large" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
+respect to pressure from a given composition [moles] at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>N0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Equilibrium composition [moles]</p></li>
+<li><p class="sd-card-text"><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p class="sd-card-text"><strong>NG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of gaseous species</p></li>
+<li><p class="sd-card-text"><strong>NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of species</p></li>
+<li><p class="sd-card-text"><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_nswt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_swt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p class="sd-card-text"><strong>ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float):  Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[dNi_p, dN_p] = equilibrium_dp_large(self, N0, A0, NG, NS, NE, ind, ind_nswt, ind_swt, ind_E)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_gibbs">
+<span class="sig-name descname"><span class="pre">equilibrium_gibbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_gibbs" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and pressure.</p>
+<p class="sd-card-text">The algorithm implemented take advantage of the sparseness of the
+upper left submatrix obtaining a matrix J of size NE + NS - NG + 1.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Composition matrix [n_i, FLAG_CONDENSED_i] for the given temperature [K] and pressure [bar] at equilibrium</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">ind (float): List of chemical species indices</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_gibbs(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_gibbs(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_gibbs_eos">
+<span class="sig-name descname"><span class="pre">equilibrium_gibbs_eos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_gibbs_eos" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and pressure.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium_gibbs_eos(self, pP, TP, mix1, guess_moles)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_gibbs_large">
+<span class="sig-name descname"><span class="pre">equilibrium_gibbs_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">pP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_gibbs_large" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and pressure.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">ind (float): List of chemical species indices</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_gibbs_large(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_gibbs_large(self, 1.01325, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_helmholtz">
+<span class="sig-name descname"><span class="pre">equilibrium_helmholtz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">vP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_helmholtz" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and volume [m3].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and volume.</p>
+<p class="sd-card-text">The algorithm implemented take advantage of the sparseness of the
+upper left submatrix obtaining a matrix J of size NE + NS - NG.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>vP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume [m3]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">ind (float): List of chemical species indices</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_helmholtz(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_helmholtz(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_helmholtz_eos">
+<span class="sig-name descname"><span class="pre">equilibrium_helmholtz_eos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">vP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_helmholtz_eos" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and volume [m3].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and volume.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>vP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume [m3]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, STOP, STOP_ions] = equilibrium_helmholtz_eos(self, vP, TP, mix1, guess_moles)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.ct_equil.equilibrium_helmholtz_large">
+<span class="sig-name descname"><span class="pre">equilibrium_helmholtz_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">vP</span></em>, <em class="sig-param"><span class="pre">TP</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">guess_moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_equil.equilibrium_helmholtz_large" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Obtain equilibrium composition [moles] for the given temperature [K] and volume [m3].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and volume.</p>
+<p class="sd-card-text">This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>vP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume [m3]</p></li>
+<li><p class="sd-card-text"><strong>TP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>guess_moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 (float): Equilibrium composition [moles] for the given temperature [K] and pressure [bar]</p></li>
+<li><p class="sd-card-text">dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p class="sd-card-text">dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p class="sd-card-text">dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p class="sd-card-text">dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p class="sd-card-text">ind (float): List of chemical species indices</p></li>
+<li><p class="sd-card-text">STOP (float): Relative error in moles of species [-]</p></li>
+<li><p class="sd-card-text">STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">N0 = equilibrium_helmholtz_large(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+<li><p class="sd-card-text">[N0, dNi_T, dN_T, dNi_p, dN_p, ind, STOP, STOP_ions] = equilibrium_helmholtz_large(self, 0.0716, 3000, self.PS.strR{1}, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</div>
+</details><ol class="arabic simple">
+<li><p>McBride, Bonnie J. Computer program for calculation of complex chemical equilibrium compositions and applications. Vol. 2. NASA Lewis Research Center, 1996.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../ct_sd/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Shocks and detonations module</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../modules_self.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Initialization module</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2023, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Thermochemical equilibrium module</a><ul>
+<li><a class="reference internal" href="#thermodynamic-derivatives">Thermodynamic derivatives</a><ul>
+<li><a class="reference internal" href="#derivatives-with-respect-to-temperature">Derivatives with respect to temperature</a></li>
+<li><a class="reference internal" href="#derivatives-with-respect-to-pressure">Derivatives with respect to pressure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/scripts/furo.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
