@@ -148,3 +148,14 @@ a[href$=".pdf"]::after {
   vertical-align: middle;
   margin-left: 5px;
 }
+
+.announcement {
+  background-color: var(--color-brand-content);
+  color: #fff;
+  height: 45px;
+  font-weight: 400;
+}
+
+.no-underline {
+  text-decoration: none;
+}
