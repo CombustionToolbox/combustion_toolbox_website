@@ -150,10 +150,11 @@ a[href$=".pdf"]::after {
 }
 
 .announcement {
-  background-color: var(--color-brand-content);
+  background-color: var(--color-side-logo);
   color: #fff;
   height: 45px;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .no-underline {
