@@ -182,6 +182,7 @@ html_css_files = [
 # }
 
 html_theme_options = {
+    "announcement": '<a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a>',
     "sidebar_hide_name": True,
     'light_logo': 'img/logo_CT_version.svg',
     'dark_logo': 'img/logo_CT_version_dark.svg',
@@ -209,6 +210,7 @@ html_theme_options = {
     "navigation_with_keys": True,
     
     "light_css_variables": {
+        "color-side-logo": "#008080ff",
         "color-brand-primary": "#577A95",
         "color-brand-content": "#577A95",
         "color-problematic": "#1f8782",
@@ -236,6 +238,7 @@ html_theme_options = {
     },
     
     "dark_css_variables": {
+        "color-side-logo": "#44a79dff",
         "color-brand-primary": "#bac5e5ff",
         "color-brand-content": "#44a79dff",
         "color-problematic": "#44a79dff",
