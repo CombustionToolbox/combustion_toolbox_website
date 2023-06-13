@@ -210,7 +210,8 @@ html_theme_options = {
     "navigation_with_keys": True,
     
     "light_css_variables": {
-        "color-side-logo": "#008080ff",
+        "color-announcement-background": "#afe9ddff",
+        "color-announcement-text": "#008080ff",
         "color-brand-primary": "#577A95",
         "color-brand-content": "#577A95",
         "color-problematic": "#1f8782",
@@ -238,7 +239,8 @@ html_theme_options = {
     },
     
     "dark_css_variables": {
-        "color-side-logo": "#44a79dff",
+        "color-announcement-background": "#ecb365ff",
+        "color-announcement-text": "#0a192fff",
         "color-brand-primary": "#bac5e5ff",
         "color-brand-content": "#44a79dff",
         "color-problematic": "#44a79dff",
@@ -263,8 +265,7 @@ html_theme_options = {
         "sd-color-info": "#44a79dff",
         "sd-color-light": "rgb(0 0 0 / 0%)",
         "sd-color-light-text": "#bac5e5ff",
-    },  
-    # "announcement": "<em>Important</em> announcement!"
+    },
 }
 
 # Code block styling

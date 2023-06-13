@@ -150,11 +150,34 @@ a[href$=".pdf"]::after {
 }
 
 .announcement {
-  background-color: var(--color-side-logo);
-  color: #fff;
+  background-color: var(--color-announcement-background);
+  color: var(--color-announcement-text);
   height: 45px;
+  font-size: medium;
   font-weight: 600;
-  font-size: 16px;
+  border-radius: 4px;
+  animation: slideDown 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  opacity: 0;
+  transform: translateY(-100%);
+  position: relative;
+  z-index: 9999;
+}
+
+@media (max-width: 1072px) {
+  .announcement {
+    z-index: auto;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .no-underline {
