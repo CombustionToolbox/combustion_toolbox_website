@@ -52,8 +52,6 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### PhD, MSc & BSc thesis
 
-* Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. Universidad Carlos III de Madrid, Spain (PhD thesis - work in progress). Advisors: Marcos Vera & César Huete.
+* Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. Universidad Carlos III de Madrid, Spain (PhD thesis - work in progress). Advisors: Marcos Vera & César Huete.<a href="_static/files/cuadra2023_phd_thesis.pdf" class="pdf" target="_blank"></a>
 * Aguilar, C. (2022). CT-ROCKET: A MATLAB-GUI based thermochemical code to estimate rocket propellant performance. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisor: Alberto Cuadra.
-* Cuadra, A. (2019). Development of a GUI-based thermochemical code with teaching and research applications. Universidad Carlos III de Madrid, Spain (MSc thesis). Advisor: Marcos Vera.<a href="_static/files/cuadra2019_master_thesis.pdf" class="pdf" target="_blank"></a>
-
-
+* Cuadra, A. (2019). Development of a GUI-based thermochemical code with teaching and research applications. Universidad Carlos III de Madrid, Spain (MSc thesis). Advisor: Marcos Vera.<a href="_static/files/cuadra2019_msc_thesis.pdf" class="pdf" target="_blank"></a>
