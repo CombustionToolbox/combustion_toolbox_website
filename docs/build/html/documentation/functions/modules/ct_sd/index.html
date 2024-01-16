@@ -441,7 +441,7 @@ as in NASA’s CEA code (see Sec. 8.3 of [1])</p>
 <dt class="sig sig-object mat" id="src.modules.ct_sd.det_oblique_beta">
 <span class="sig-name descname"><span class="pre">det_oblique_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">drive_factor</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.ct_sd.det_oblique_beta" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Compute pre-shock and post-shock states of an oblique detonation wave
-given the wave angle (one solution)</p>
+given the wave angle (two solutions)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -460,8 +460,9 @@ given the wave angle (one solution)</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-shock state</p></li>
-<li><p class="sd-card-text">mix2 (struct): Properties of the mixture at the post-shock state</p></li>
+<li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-detonation state</p></li>
+<li><p class="sd-card-text">mix2_1 (struct): Properties of the mixture in the post-detonation state - weak detonation</p></li>
+<li><p class="sd-card-text">mix2_2 (struct): Properties of the mixture in the post-detonation state - strong detonation</p></li>
 </ul>
 </p>
 </dd>
@@ -469,8 +470,8 @@ given the wave angle (one solution)</p>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <ul class="simple">
-<li><p class="sd-card-text">[mix1, mix2] = det_oblique_theta(self, self.PS.strR{1}, 2, 60)</p></li>
-<li><p class="sd-card-text">[mix1, mix2] = det_oblique_theta(self, self.PS.strR{1}, 2, 60, self.PS.strP{1})</p></li>
+<li><p class="sd-card-text">[mix1, mix2_1, mix2_2] = det_oblique_beta(self, self.PS.strR{1}, 2, 60)</p></li>
+<li><p class="sd-card-text">[mix1, mix2_1, mix2_2] = det_oblique_beta(self, self.PS.strR{1}, 2, 60, self.PS.strP{1})</p></li>
 </ul>
 </div>
 </dd></dl>
@@ -508,9 +509,9 @@ given the deflection angle.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
 <ul class="simple">
-<li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-shock state</p></li>
-<li><p class="sd-card-text">mix2_1 (struct): Properties of the mixture in the post-shock state - weak detonation</p></li>
-<li><p class="sd-card-text">mix2_2 (struct): Properties of the mixture in the post-shock state - strong detonation</p></li>
+<li><p class="sd-card-text">mix1 (struct): Properties of the mixture in the pre-detonation state</p></li>
+<li><p class="sd-card-text">mix2_1 (struct): Properties of the mixture in the post-detonation state - weak detonation</p></li>
+<li><p class="sd-card-text">mix2_2 (struct): Properties of the mixture in the post-detonation state - strong detonation</p></li>
 </ul>
 </p>
 </dd>
@@ -814,6 +815,13 @@ given the deflection angle.</p>
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">[mix1, mix2, mix5_1, mix5_2] = shock_oblique_reflected_theta(self, mix1, u2, theta, mix2)</p></li>
+<li><p class="sd-card-text">[mix1, mix2, mix5_1, mix5_2] = shock_oblique_reflected_theta(self, mix1, u2, theta, mix2, mix5_1, mix5_2)</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat function">

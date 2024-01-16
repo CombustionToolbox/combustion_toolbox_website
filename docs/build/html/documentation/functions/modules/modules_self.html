@@ -358,7 +358,7 @@ Routines<div class="sd-summary-down docutils">
 <dt>Optional Args:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">LS (cell): List of species</p></li>
 <li><p class="sd-card-text">obj (class): Class combustion_toolbox_app (GUI)</p></li>
-<li><p class="sd-card-text">type (str): If value is fast initialize from the given Databases</p></li>
+<li><p class="sd-card-text">type (char): If value is ‘fast’ initialize from the given Databases</p></li>
 <li><p class="sd-card-text">DB_master (struct): Master database</p></li>
 <li><p class="sd-card-text">DB (struct): Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
 </ul>
@@ -367,6 +367,51 @@ Routines<div class="sd-summary-down docutils">
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture (initialization - empty), conditions, and databases</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>self = App() % This initialization will consider all all the possible species</dt><dd><p class="sd-card-text">that can appear depending on the elements of the reactant
+(see routine find products.m)</p>
+</dd>
+</dl>
+</li>
+<li><p class="sd-card-text">self = App(‘Air_ions’) % Specify predefined list of species (see routine list_species.m)</p></li>
+<li><p class="sd-card-text">self = App({‘N2’, ‘O2’, ‘NO’, ‘N’, ‘O’}) % Specify species to consider as possible products</p></li>
+<li><p class="sd-card-text">self = App(‘Complete’) % Complete combustion</p></li>
+<li><p class="sd-card-text">self = App(‘fast’, DB_master, DB) % Fast initialization that injects preloaded databases</p></li>
+<li><dl class="simple">
+<dt>self = App(‘fast’, DB_master, DB, {‘N2’, ‘O2’, ‘NO’, ‘N’, ‘O’}) % Fast initialization</dt><dd><p class="sd-card-text">that injects preloaded databases and considers the given list of species
+in the calculations</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self_2 = App(‘copy’, self, {‘N2’, ‘O2’, ‘NO’, ‘N’, ‘O’})  % Copy previous initialization</dt><dd><p class="sd-card-text">in another variable with a different set of species in the calculation</p>
+</dd>
+</dl>
+</li>
+<li><p class="sd-card-text">self = App(app) % Initialization for the GUI</p></li>
+<li><p class="sd-card-text">self = App(app, {‘N2’, ‘O2’, ‘NO’, ‘N’, ‘O’}) % Initialization for the GUI</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.modules.self.App.complete_initialize">
+<span class="sig-name descname"><span class="pre">complete_initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.self.App.complete_initialize" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Complete initialization process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of reactants</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
 </dd></dl>
