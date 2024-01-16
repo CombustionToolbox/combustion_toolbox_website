@@ -10,7 +10,7 @@ It can be handy the BibTeX format:
 
 ```bibtex
 @misc{combustiontoolbox,
-    author = "Cuadra, A and Huete, C and Vera, M",
+    author = "Cuadra, A. and Huete, C. and Vera, M.",
     title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year = 2023,
     note = "Version 1.0.2",
@@ -24,7 +24,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Journal articles
 
-* Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium **(work in progress)**.
+* Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium **(under review)**.
 * Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [https://doi.org/10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
 * Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. [https://doi.org/10.1063/5.0059948](https://doi.org/10.1063/5.0059948)<a href="https://www.researchgate.net/publication/354024089_Thermochemical_effects_on_hypersonic_shock_waves_interacting_with_weak_turbulence" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation discontinuities. Journal of Fluid Mechanics, 903, A30. [https://doi.org/10.1017/jfm.2020.651](https://doi.org/10.1017/jfm.2020.651)<a href="https://www.researchgate.net/publication/343384770_Effect_of_equivalence_ratio_fluctuations_on_planar_detonation_discontinuities" class="pdf" target="_blank"></a>
@@ -47,6 +47,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Seminars & Workshops
 
+* Cuadra, A., C. T. Williams, Di Renzo, M., Vera, M., \& Huete, C. (2023). Direct numerical simulations and linear analysis for hypersonic shock-turbulence interaction in air. In 4th Spanish HPC Combustion Workshop, Barcelona, Spain.
 * Cuadra, A., Huete, C. & Vera, M. (2023). Linear analysis on shock-turbulence interaction implemented with the Combustion Toolbox. Seminar presented during the research-stay with Prof. M. Di Renzo, Lecce, Italy
 * Cuadra, A., Huete, C. & Vera, M. (2021). Development of an open-source thermochemical code: Fundamentals and application to shock turbulence interaction problems in the hypersonic regime. Seminar presented as part of the PhD Programme in Mechatronics Engineering, Málaga, Spain
 
