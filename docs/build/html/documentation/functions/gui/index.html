@@ -404,8 +404,8 @@ predefined plots</p>
 <dt class="sig sig-object mat" id="src.gui.utils.gui_ReactantsValueChanged">
 <span class="sig-name descname"><span class="pre">gui_ReactantsValueChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_ReactantsValueChanged" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Update values of the UITable items with:
-- a given predefined set of reactants
-- the new species added in the finder</p>
+* a given predefined set of reactants
+* the new species added in the finder</p>
 </dd></dl>
 
 <dl class="mat function">
@@ -649,6 +649,11 @@ the UITree</p>
 <dt class="sig sig-object mat" id="src.gui.utils.gui_update_frozen">
 <span class="sig-name descname"><span class="pre">gui_update_frozen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_update_frozen" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Set frozen chemistry and update Listbox of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>app</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">object</span></code></span>) – Combustion Toolbox app object</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat function">
@@ -683,7 +688,24 @@ the UITree</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.gui.utils.gui_value2list">
 <span class="sig-name descname"><span class="pre">gui_value2list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">app</span></em>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">LS</span></em>, <em class="sig-param"><span class="pre">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.gui.utils.gui_value2list" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Add/remove (action) selected value to LS</p>
+<dd><p class="sd-card-text">Add/remove (action) selected value to/from the list of species (LS)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>app</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">object</span></code></span>) – Combustion Toolbox app object</p></li>
+<li><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array of char containing the selected species</p></li>
+<li><p class="sd-card-text"><strong>LS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array of char containing the list of species</p></li>
+<li><p class="sd-card-text"><strong>action</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – ‘add’ or ‘remove’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>LS (cell)</em> – Cell array of char containing the list of species after the action</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If value is empty, the function returns LS without any change</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">

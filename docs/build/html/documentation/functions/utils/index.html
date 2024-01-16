@@ -592,16 +592,28 @@ e.g., linear extrapolation of the polynomial fits is not allowed.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.check_update">
 <span class="sig-name descname"><span class="pre">check_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.check_update" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Check if there is a new release of Combustion Toolbox</p>
+<dd><p class="sd-card-text">Check if there is a new release of the Combustion Toolbox</p>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p class="sd-card-text">fig (uifigure): UIFigure class</p>
+<dt>Optional Args:</dt><dd><p class="sd-card-text">fig (object): UIFigure class</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><em>FLAG_UPDATE (bool)</em> – FLAG indicating true (false) if there is (not) an update of Combustion Toolbox</p>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">FLAG_UPDATE (bool): FLAG indicating true (false) if there is (not) an update of the Combustion Toolbox</p></li>
+<li><p class="sd-card-text">message (char): Message displayed</p></li>
+</ul>
+</p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">[FLAG_UPDATE, message] = check_update();</p></li>
+<li><p class="sd-card-text">[FLAG_UPDATE, message] = check_update(UIFigure);</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -939,6 +951,16 @@ the remaining moles from the equivalence relation.</p>
 <dt class="sig sig-object mat" id="src.utils.get_combustion_toolbox_version">
 <span class="sig-name descname"><span class="pre">get_combustion_toolbox_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.get_combustion_toolbox_version" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get Combustion Toolbox version</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">release (char): Release version</p></li>
+<li><p class="sd-card-text">date (char): Release date</p></li>
+</ul>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat function">
@@ -1156,6 +1178,41 @@ cryogenic liquid species, i.e., liquified gases.</p>
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.mixture">
+<span class="sig-name descname"><span class="pre">mixture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">p</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.mixture" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute the properties of a mixture at a given temperature and pressure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of moles of each species</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Name-Value Pairs Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">phi (float): Equivalence ratio [-]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>mix (struct)</em> – Mixture properties</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">mix = mixture(300, 1, {‘CH4’, ‘O2’, ‘N2’}, [1, 2, 7.52])</p></li>
+<li><p class="sd-card-text">mix = mixture(300, 1, {‘CH4’, ‘O2’, ‘N2’}, [1, 2, 7.52], ‘self’, self)</p></li>
+<li><p class="sd-card-text">mix = mixture(300, 1, {‘CH4’, ‘O2’, ‘N2’}, [1, 2, 7.52], ‘DB_master’, DB_master, ‘DB’, DB)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.post_results">
 <span class="sig-name descname"><span class="pre">post_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.post_results" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Postprocess all the results with predefined plots</p>
@@ -1276,12 +1333,12 @@ cryogenic liquid species, i.e., liquified gases.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.set_react_index">
 <span class="sig-name descname"><span class="pre">set_react_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.set_react_index" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Set index of no frozen (react) and frozen species</p>
+<dd><p class="sd-card-text">Set index of react (non-frozen) and frozen species</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Frozen species</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Frozen species</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1397,7 +1454,7 @@ properties_matrix = set_species(self, {‘N2’, ‘O2’}, [3.76, 1], 300, [1, 
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
-<li><p class="sd-card-text"><strong>ProblemType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Tag of the problem to solve</p></li>
+<li><p class="sd-card-text"><strong>ProblemType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Tag of the problem to solve</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1712,7 +1769,7 @@ of a diatomic species only considering dissociation.</p>
 the chemical species</p>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><p class="sd-card-text">FLAG_REDUCED_DB (bool): Flag indicating reduced database (default: false)
-thermoFile (char): File name of NASA’s thermodynamic database (default: thermo.inp)</p>
+thermoFile (char): File name of NASA’s thermodynamic database (default: thermo_CT.inp)</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -1724,7 +1781,7 @@ thermoFile (char): File name of NASA’s thermodynamic database (default: thermo
 <p class="admonition-title">Examples</p>
 <ul class="simple">
 <li><p class="sd-card-text">DB_master = generate_DB_master(false)</p></li>
-<li><p class="sd-card-text">DB_master = generate_DB_master(false, ‘thermo.inp’)</p></li>
+<li><p class="sd-card-text">DB_master = generate_DB_master(false, ‘thermo_CT.inp’)</p></li>
 </ul>
 </div>
 </dd></dl>
@@ -2542,14 +2599,14 @@ using NASA’s 9 polynomials</p>
 </dd></dl>
 
 <dl class="mat function">
-<dt class="sig sig-object mat" id="src.utils.databases.thermo_millenium_2_thermoNASA9">
-<span class="sig-name descname"><span class="pre">thermo_millenium_2_thermoNASA9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.thermo_millenium_2_thermoNASA9" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.utils.databases.thermo_millennium_2_thermoNASA9">
+<span class="sig-name descname"><span class="pre">thermo_millennium_2_thermoNASA9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.thermo_millennium_2_thermoNASA9" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Read Extended Third Millennium Thermodynamic Database of New NASA
 Polynomials with Active Thermochemical Tables update and write a new
 file compatible with thermo NASA 9 format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Filename of the thermo_millenium data</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Filename of the thermo_millennium data</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2656,6 +2713,11 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.utils.display.interpreter_label">
 <span class="sig-name descname"><span class="pre">interpreter_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">property</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.display.interpreter_label" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Interpreter label for properties - returns property name</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The ‘interpreter_label.m’ routine considers that the properties
+are in mass basis. This will be fixed in a future patch.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Property name</p>
@@ -2676,6 +2738,11 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat" id="src.utils.display.plot_figure">
 <span class="sig-name descname"><span class="pre">plot_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_field</span></em>, <em class="sig-param"><span class="pre">x_var</span></em>, <em class="sig-param"><span class="pre">y_field</span></em>, <em class="sig-param"><span class="pre">y_var</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.display.plot_figure" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Plot figure with customizable settings</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The ‘interpreter_label.m’ routine considers that the properties
+are in mass basis. This will be fixed in a future patch.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2717,6 +2784,44 @@ Routines<div class="sd-summary-down docutils">
 </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.display.plot_figure_set">
+<span class="sig-name descname"><span class="pre">plot_figure_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">range_name</span></em>, <em class="sig-param"><span class="pre">range</span></em>, <em class="sig-param"><span class="pre">properties</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.display.plot_figure_set" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot a set of properties in a tiled layout figure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>range_name</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Variable name of the x-axis parameter</p></li>
+<li><p class="sd-card-text"><strong>range</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector x-axis values</p></li>
+<li><p class="sd-card-text"><strong>properties</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array of properties to plot</p></li>
+<li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Mixture</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">ax (handle): Handle to the main axis</p></li>
+<li><p class="sd-card-text">config (struct): Configuration settings for the figure</p></li>
+<li><p class="sd-card-text">basis (cell): Cell array with the basis for each property</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text">** main_ax (obj)* – Handle to the main axis</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">plot_figure_set(‘T’, 300:100:1000, {‘cp’, ‘cv’, ‘h’, ‘s’}, mix)</p></li>
+<li><p class="sd-card-text">plot_figure_set(‘T’, 300:100:1000, {‘cp’, ‘cv’, ‘h’, ‘s’}, mix, ‘config’, config)</p></li>
+<li><p class="sd-card-text">plot_figure_set(‘T’, 300:100:1000, {‘cp’, ‘cv’, ‘h’, ‘s’}, mix, ‘config’, config, ‘basis’, {‘’, ‘’, ‘mi’, ‘mi’});</p></li>
+<li><p class="sd-card-text">plot_figure_set(‘T’, 300:100:1000, {‘cp’, ‘cv’, ‘h’, ‘s’}, mix, ‘config’, config, ‘basis’, {‘’, ‘’, ‘mi’, ‘mi’}, ‘ax’, ax);</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat function">
