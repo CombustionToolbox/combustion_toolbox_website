@@ -38,3 +38,8 @@ validations
 documentation/databases
 documentation/api/index
 ```
+
+```{bibliography}
+:filter: docname in docnames
+:style: unsrt
+```
