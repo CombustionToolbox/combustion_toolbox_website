@@ -1,6 +1,8 @@
 # Databases
 
-Combustion Toolbox generates its own databases taking into account the NASA-9 polynomials fitting to evaluate the dimensionless thermodynamic functions of the species for the specific heat, enthalpy, and entropy as function of temperature, namely
+
+
+Combustion Toolbox generates its own databases using an up-to-date version of NASA's 9-coefficient polynomial fits {cite:p}`Mcbride2002` that incorporates the Third Millennium database {cite:p}`burcat2005`, including the available values from Active Thermochemical Tables. This fitting allows to evaluate the dimensionless thermodynamic functions of the species for the specific heat at constant pressure, enthalpy, and entropy as a function of temperature, namely
 
 ```{eval-rst}
 .. math::
@@ -15,7 +17,7 @@ Combustion Toolbox generates its own databases taking into account the NASA-9 po
     \end{eqnarray}
 ```
 
-where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and $i =8, 9$ are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K [1]. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/databases/thermo_CT.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
+where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and $i =8, 9$ are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K {cite:p}`Mcbride2002`. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/databases/thermo_CT.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
 
 To compute the dimensionless Gibbs energy, $g_i^\circ (T) / RT$, from NASA's polynomials we use the next expression 
 ```{eval-rst}
@@ -38,13 +40,13 @@ or equivalently
     \end{eqnarray}
 ```
 
+This data is collected from the `thermo_CT.inp` file and next formatted into a more accessible structure (\textit{DB\_master}) with the built-in function `generate_DB_master.m`. Then, for faster data access, we generate a new database `DB` using griddedInterpolant objects that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980`. This allows the evaluation of the thermodynamic functions at a given temperature with ease. The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1** obtaining the same results as seen  in **Figure 2**.
 
-This data is collected and formatted into a more accessible structure. We can distinguish from:
+```{note}
+For temperatures outside the bounds, we avoid the higher order terms of the polynomials by linear extrapolation, similar to {cite:t}`stock2018`, extending the range of validity of the thermodynamic data available. It should be emphasized that this extension is limited to a narrow temperature range and may not apply to temperatures significantly outside of this range.
+```
 
-* `DB_master`: structured database from NASA's thermo file.
-* `DB`: structured database with piecewise cubic Hermite interpolating polynomials and linear extrapolation for faster data access.
-
-The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in **Figure 1** obtaining the same results as seen  in **Figure 2**. To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
+To evaluate the thermodynamic functions, e.g., the Gibbs energy [kJ/mol] function, or the thermal enthalpy [kJ/mol] of $\text{CO}_2$ at $T = 2000 \text{ K}$ is as simple as using these callbacks
 
 ```matlab
 g0_CO2  = species_g0('CO2', 2000, DB)
@@ -182,5 +184,3 @@ Transpose stoichiometric matrix:
     BR    0      2      1 
     H     2      0      1 
  ```
-
-1. McBride, Bonnie J. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, John H. Glenn Research Center at Lewis Field, 2002.

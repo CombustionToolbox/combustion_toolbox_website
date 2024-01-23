@@ -8,6 +8,7 @@ sphinx-copybutton
 sphinx_design
 sphinx-inline-tabs
 sphinxext-opengraph
+sphinxcontrib-bibtex
 nbsphinx
 furo
 myst-parser

@@ -22,7 +22,7 @@ publications
     :maxdepth: 1
 
 install
-tutorial
+tutorials
 examples
 validations
 ```
@@ -36,5 +36,6 @@ validations
     :maxdepth: 2
 
 documentation/databases
-documentation/functions/index
+documentation/api/index
+references
 ```

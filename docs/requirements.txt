@@ -4,6 +4,7 @@
 #
 #    pip-compile docs/requirements.in
 #
+sphinxcontrib-bibtex
 alabaster==0.7.12
     # via sphinx
 apeye==1.2.0

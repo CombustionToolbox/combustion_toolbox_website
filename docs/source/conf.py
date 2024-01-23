@@ -28,14 +28,14 @@ matlab_src_dir = os.path.abspath('../..')
 
 project = 'Combustion Toolbox'
 project_acronym = 'CT'
-copyright = '2022-2023, Alberto Cuadra Lara'
+copyright = '2022-2024, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
 url = 'https://github.com/AlbertoCuadra/combustion_toolbox/releases/latest'
 r = requests.get(url)
 release = r.url.split('/')[-1]
-# release = 'v0.9.99'
+# release = 'v1.0.03'
 
 # -- General configuration ---------------------------------------------------
 
@@ -60,6 +60,7 @@ extensions = [
     'sphinx_design',
     # "sphinxext.opengraph",
     # "sphinx_inline_tabs",
+    'sphinxcontrib.bibtex',    # support for bibtex
 ]
 
 myst_enable_extensions = [
@@ -76,6 +77,9 @@ myst_substitutions = {
 }
 
 # Other settings
+bibtex_bibfiles = ['refs.bib']
+bibtex_reference_style = 'author_year'
+
 default_role = 'obj'
 numfig = True
 highlight_language = 'matlab'
