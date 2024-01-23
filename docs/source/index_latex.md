@@ -37,5 +37,4 @@ validations
 
 documentation/databases
 documentation/api/index
-references
 ```
