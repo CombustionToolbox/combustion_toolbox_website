@@ -1,4 +1,4 @@
-# API documentation
+# API Documentation
 
 ```{note}
 Please note that the documentation is currently under development.
