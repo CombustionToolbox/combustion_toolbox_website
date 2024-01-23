@@ -13,13 +13,23 @@ The CT-EQUIL module facilitates the computation of chemical equilibrium composit
 Additionally, Combustion Toolbox enables the computation of chemical equilibrium under various assumptions regarding the final gas mixture, including calorically perfect gas, calorically imperfect gas with frozen chemistry, or calorically imperfect gas with equilibrium chemistry, including dissociation and ionization.
 
 In many practical applications, the equilibrium temperature of a system is not initially determined, thereby necessitating the provision of supplementary information to close the problem. This additional information may be obtained from an enthalpy, internal energy, or entropy conservation equation, subject to the requirement that the corresponding state function $f$ remains unchanged, namely
-$$
-\Delta f\left(T\right) \equiv f_{\rm F}\left(T\right) - f_{\rm I}\left(T_{\rm I}\right) = 0,
-$$
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      \Delta f\left(T\right) \equiv f_{\rm F}\left(T\right) - f_{\rm I}\left(T_{\rm I}\right) = 0,
+    \end{equation}
+```
 where the subscripts F and I refer here to the final and initial states of the mixture, respectively. Unlike in NASA's CEA code, we have increased the flexibility of the CT-EQUIL module by decoupling this additional equation and retrieved the new condition by using a second-order NR method
-$$
-T_{k+1} = T_k-\frac{f\left(T_k\right)}{f^\prime\left(T_k\right)}.
-$$
+```{eval-rst}
+.. math::
+    :nowrap:
+
+    \begin{equation}
+      T_{k+1} = T_k-\frac{f\left(T_k\right)}{f^\prime\left(T_k\right)}.
+    \end{equation}
+```
 
 ```{toctree}
     :caption: Contents
