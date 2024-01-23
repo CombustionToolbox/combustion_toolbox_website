@@ -103,6 +103,7 @@ nitpick_ignore = [
     ('mat:obj', 'object'),
     ('mat:obj', 'char'),
     ('mat:obj', 'empty'),
+    ('mat:class', 'matlab.apps.AppBase')
 ]
 
 # Define routine to link functions to their files on GitHub
@@ -347,6 +348,8 @@ _PREAMBLE = r"""
 \usepackage{amsmath}
 \usepackage[breaklinks]{hyperref}
 \usepackage{graphicx}
+\usepackage[english]{babel}
+\renewcommand{\bibname}{References}
 """
 
 latex_elements = {
