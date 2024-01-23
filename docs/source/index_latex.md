@@ -37,10 +37,5 @@ validations
 
 documentation/databases
 documentation/api/index
-```
-
-# References
-```{bibliography}
-:filter: docname in docnames
-:style: unsrt
+references
 ```

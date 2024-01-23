@@ -116,5 +116,3 @@ with $\eta_j = \text{ln } n_j$ and $\delta_j = 1 $ for $j=1,\dots,NG$ (non-conde
    :members:
 ```
 :::
-
-1. McBride, Bonnie J. Computer program for calculation of complex chemical equilibrium compositions and applications. Vol. 2. NASA Lewis Research Center, 1996.

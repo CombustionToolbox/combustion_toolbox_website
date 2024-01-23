@@ -25,7 +25,7 @@ Routines to generate the app, add-ons, assets, and all the necessary functions t
 
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.gui
+.. autoclass:: src.gui.combustion_toolbox
    :members:
 ```
 :::
@@ -46,7 +46,7 @@ A collection of functions for Combustion Toolbox GUI.
 ## Add-ons
 
 The Add-ons included in CT are:
-* ```uielements```: to select and analyse the species in the database. The species from Third Millenium Database [1] are denoted with suffix _M (see Fig. 1).
+* ```uielements```: to select and analyse the species in the database. The species from Third Millenium Database {cite:p}`burcat2005` are denoted with suffix _M (see Fig. 1).
 * ```uipreferences```: to set all the preferences of Combustion Toolbox (see Fig. 2).
 * ```uifeedback```: to report bug/inquiries of Combustion Toolbox (see Fig. 3).
 * ```uivalidations```: to reproduce all the validations of Combustion Toolbox (see Fig. 4).
@@ -60,11 +60,29 @@ The Add-ons included in CT are:
 
 **Figure 1:** *Add-on uielements.*
 
+:::{dropdown} Routines
+```{eval-rst}
+.. autoclass:: src.gui.addons.uielements
+   :members:
+```
+:::
+
+***
+
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uipreferences.svg" width="800">
 </p>
 
 **Figure 2:** *Add-on uipreferences.*
+
+:::{dropdown} Routines
+```{eval-rst}
+.. autoclass:: src.gui.addons.uipreferences
+   :members:
+```
+:::
+
+***
 
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uifeedback.svg" width="400">
@@ -72,11 +90,22 @@ The Add-ons included in CT are:
 
 **Figure 3:** *Add-on uifeedback.*
 
+***
+
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uivalidation.svg" width="800">
 </p>
 
 **Figure 4:** *Add-on uivalidations.*
+
+:::{dropdown} Routines
+```{eval-rst}
+.. autoclass:: src.gui.addons.uivalidations
+   :members:
+```
+:::
+
+***
 
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uiabout.svg" width="800">
@@ -84,13 +113,9 @@ The Add-ons included in CT are:
 
 **Figure 5:** *Add-on uiabout.*
 
-***
-
 :::{dropdown} Routines
 ```{eval-rst}
-.. automodule:: src.gui.addons
+.. autoclass:: src.gui.addons.uiabout
    :members:
 ```
 :::
-
-1. Burcat, A., & Ruscic, B. (2005). Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables) (No. ANL-05/20). Argonne National Lab.(ANL), Argonne, IL (United States).
