@@ -5,20 +5,20 @@ Routines to generate the app, add-ons, assets, and all the necessary functions t
 ## Combustion Toolbox GUI
 
 <p align="center">
-    <img src="../../../_static/img/cuadra2022/gui_1.svg" width="400">
+    <img src="../../../_static/img/cuadra2022/gui_1_labels.svg" width="500">
 </p>
 
 **Figure 1:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 1].*
 
 
 <p align="center">
-    <img src="../../../_static/img/cuadra2022/gui_2_labels.svg" width="400">
+    <img src="../../../_static/img/cuadra2022/gui_2_labels.svg" width="500">
 </p>
 
 **Figure 2:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 2].*
 
 <p align="center">
-    <img src="../../../_static/img/cuadra2022/gui_34.svg" width="800">
+    <img src="../../../_static/img/cuadra2022/gui_34_vertical_labels.svg" width="500">
 </p>
 
 **Figure 3:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 3].*
