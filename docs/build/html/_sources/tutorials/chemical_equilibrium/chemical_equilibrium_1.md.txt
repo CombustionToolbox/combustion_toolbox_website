@@ -242,7 +242,7 @@ post_results(self);
 will reproduce **Figure 1**, which represents the variation of the molar fraction with the equivalence ratio for lean to rich CH$_4$-ideal air mixtures at 3000 [K] and 1.01325 [bar]. 
 
 <p align="center">
-    <img src="_static/img/Tutorial_1.svg" width="1000">
+    <img src="../../_static/img/Tutorial_1.svg" width="1000">
 </p>
 
 **Figure 1:** *Example TP: variation of molar fraction for lean to rich CH$_4$-ideal air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 2.39 seconds using a Intel(R) Core(TM) i7-11800H CPU @ 2.30GHz.*
