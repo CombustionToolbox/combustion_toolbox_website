@@ -21,7 +21,7 @@ Home <self>
     :titlesonly:
 
 install
-tutorial
+tutorials
 examples
 validations
 publications
@@ -42,5 +42,6 @@ publications
     :titlesonly:
 
 documentation/databases
-documentation/functions/index
+documentation/api/index
+references
 ```

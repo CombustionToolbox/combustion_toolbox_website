@@ -1,8 +1,12 @@
 # Validations
  
-A set of the results obtained using Combustion Toolbox, [CEA-NASA](https://cearun.grc.nasa.gov/), [Cantera](https://cantera.org/) & [Caltech's SD-Toolbox](https://shepherd.caltech.edu/EDL/PublicResources/sdt/)<sup>1</sup>, and [TEA](https://github.com/dzesmin/TEA).
+A set of the results obtained using Combustion Toolbox, [NASA's CEA](https://cearun.grc.nasa.gov/) {cite:p}`gordon1994`, [Cantera](https://cantera.org/) {cite:p}`cantera`, [Caltech's SD-Toolbox](https://shepherd.caltech.edu/EDL/PublicResources/sdt/) {cite:p}`Browne2008SDT, Browne2008`, and [TEA](https://github.com/dzesmin/TEA) {cite:p}`blecic2016`.
 
-<sup>1</sup> The Shock & Detonation Toolbox uses the Cantera software package as kernel for the thermochemical calculations.
+```{note}
+Caltech's SD-Toolbox uses the Cantera software package as kernel for the thermochemical calculations.
+```
+
+ 
 
 ***
 **_For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions._**
