@@ -136,7 +136,7 @@ This MATLAB-GUI thermochemical code represents the core of an ongoing research w
 :gutter: 1
 
 :::{grid-item-card} {octicon}`tasklist` Tutorial
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorial.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials.html
 
 New to Combustion Toolbox?
 :::
@@ -148,7 +148,7 @@ See examples of Combustion Toolbox applications.
 :::
 
 :::{grid-item-card} {octicon}`repo` Documentation
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/index.html
 
 Let's check the documentation of almost (every) functions.
 :::
