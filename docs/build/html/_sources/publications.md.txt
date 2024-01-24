@@ -3,7 +3,7 @@
 ## Citing Combustion Toolbox
 
 ```{note}
-The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2023_thesis` (see Chapter 2 and Appendixes A-B).
+The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2023_thesis` (see Chapter 2 and Appendices A-B).
 ```
 
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
