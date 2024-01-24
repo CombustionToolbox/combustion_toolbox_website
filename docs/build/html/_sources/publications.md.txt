@@ -2,21 +2,38 @@
 
 ## Citing Combustion Toolbox
 
-If you use the Combustion Toolbox in a publication, please cite it using the following reference:
+```{note}
+The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2023_thesis` (see Chapter 2 and Appendixes A-B).
+```
+
+If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
 * *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v1.0.3). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
-
+* *Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. PhD thesis, Universidad Carlos III de Madrid. Available at [http://hdl.handle.net/10016/38179](http://hdl.handle.net/10016/38179).*
+  
 It can be handy the BibTeX format:
 
 ```bibtex
 @misc{combustiontoolbox,
-    author = "Cuadra, A. and Huete, C. and Vera, M.",
-    title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
-    year = 2024,
-    note = "Version 1.0.3",
-    doi = {https://doi.org/10.5281/zenodo.5554911}
+    author           = "Cuadra, A. and Huete, C. and Vera, M.",
+    title            = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
+    year             = 2024,
+    note             = "Version 1.0.3",
+    doi              = {https://doi.org/10.5281/zenodo.5554911}
+}
+
+@phdthesis{cuadra2023_thesis,
+    title            = {Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks},
+    author           = {Cuadra, A.},
+    year             = 2023,
+    month            = {May},
+    address          = {Madrid, Spain},
+    note             = {Available at \url{http://hdl.handle.net/10016/38179}},
+    school           = {Universidad Carlos III de Madrid},
+    type             = {PhD thesis}
 }
 ```
+
 
 ## Contributions
 
