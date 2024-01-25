@@ -19,7 +19,7 @@ Subsequently, save the <tt>self.DB</tt> variable in the `databases` folder as <t
 ````
 
 
-## Finding specific chemical species
+## Finding specific chemical species
 
 The thermodynamic data of the species, e.g., C<sub>gr</sub>, can be accessed as follows:
 
@@ -71,7 +71,7 @@ These details offer comprehensive insights into the thermodynamic properties of 
 * `a`: coefficients of the polynomial.
 * `b`: coefficients of the polynomial.
 
-## Finding list of chemical species with given chemical elements
+## Finding list of chemical species with given chemical elements
 
 To find the list of species that contain only some chemical elements, e.g., O and H, we can use the following command:
 
@@ -201,3 +201,7 @@ Chemical species from the Third Millennium database (Burcat) are indicated with 
 ```
 
 `````
+
+```{tip}
+The primary purpose of the find_products.m routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.
+```
