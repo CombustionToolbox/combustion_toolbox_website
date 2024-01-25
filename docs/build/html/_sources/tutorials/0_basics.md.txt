@@ -4,7 +4,7 @@ In this section we will cover the basic functionalities of the Combustion Toolbo
 
 ```{toctree}
     :caption: Contents
-    :maxdepth: 2
+    :maxdepth: 1
     :titlesonly:
     
 basics/basics_1

@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -327,7 +327,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -348,7 +348,8 @@
 </div>
 <p>Subsequently, save the <tt>self.DB</tt> variable in the <code class="docutils literal notranslate"><span class="pre">databases</span></code> folder as <tt>DB.mat</tt> to be loaded in the remaining sessions.</p>
 </div>
-<p>## Finding specific chemical species</p>
+<section id="finding-specific-chemical-species">
+<h2>Finding specific chemical species<a class="headerlink" href="#finding-specific-chemical-species" title="Permalink to this heading">#</a></h2>
 <p>The thermodynamic data of the species, e.g., C<sub>gr</sub>, can be accessed as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">DB</span><span class="p">.</span><span class="n">Cbgrb</span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -395,7 +396,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: coefficients of the polynomial.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>: coefficients of the polynomial.</p></li>
 </ul>
-<p>## Finding list of chemical species with given chemical elements</p>
+</section>
+<section id="finding-list-of-chemical-species-with-given-chemical-elements">
+<h2>Finding list of chemical species with given chemical elements<a class="headerlink" href="#finding-list-of-chemical-species-with-given-chemical-elements" title="Permalink to this heading">#</a></h2>
 <p>To find the list of species that contain only some chemical elements, e.g., O and H, we can use the following command:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -510,6 +513,11 @@ Both and ionized species</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The primary purpose of the find_products.m routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.</p>
+</div>
+</section>
 </section>
 
         </article>
@@ -567,8 +575,28 @@ Both and ionized species</label><div class="sd-tab-content docutils">
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Accessing the databases</a><ul>
+<li><a class="reference internal" href="#finding-specific-chemical-species">Finding specific chemical species</a></li>
+<li><a class="reference internal" href="#finding-list-of-chemical-species-with-given-chemical-elements">Finding list of chemical species with given chemical elements</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
