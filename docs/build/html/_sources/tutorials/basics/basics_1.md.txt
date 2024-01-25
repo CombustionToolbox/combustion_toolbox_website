@@ -4,12 +4,12 @@ To begin, start MATLAB and navigate to the folder where you have downloaded the 
 INSTALL()
 ```
 
-First, using the Combustion Toolbox, you have to initialize the tool (load databases, set default variables, etc.). To do that, type the following at the prompt:
+First, using the Combustion Toolbox (CT), you have to initialize the tool (load databases, set default variables, etc.). To do that, type the following at the prompt:
 ```matlab
 self = App()
 ```
 
-If files contained in the Combustion Toolbox are correctly defined, you should see something like this:
+If files contained in CT are correctly defined, you should see something like this:
 ```matlab
 self = 
 

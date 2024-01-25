@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Framework initialization" href="basics_1.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Defining initial state of a mixture" href="basics_3.html" /><link rel="prev" title="Framework initialization" href="basics_1.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Accessing the databases - Combustion Toolbox v1.0.3</title>
@@ -232,6 +232,8 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basics_1.html">Framework initialization</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -404,7 +406,7 @@
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 NASA database</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">})</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
@@ -429,7 +431,7 @@ NASA database</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
@@ -462,7 +464,7 @@ Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Both and ionized species</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&#39;flag_ion&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&#39;flag_ion&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
@@ -525,12 +527,12 @@ Both and ionized species</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../1_chemical_equilibrium.html">
+          <a class="next-page" href="basics_3.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Chemical equilibrium</div>
+                <div class="title">Defining initial state of a mixture</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
