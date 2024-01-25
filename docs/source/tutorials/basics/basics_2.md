@@ -203,5 +203,5 @@ Chemical species from the Third Millennium database (Burcat) are indicated with 
 `````
 
 ```{tip}
-The primary purpose of the find_products.m routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.
+The primary purpose of the <tt>find_products.m</tt> routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.
 ```
