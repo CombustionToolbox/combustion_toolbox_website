@@ -1,7 +1,5 @@
 # Databases
 
-
-
 Combustion Toolbox generates its own databases using an up-to-date version of NASA's 9-coefficient polynomial fits {cite:p}`Mcbride2002` that incorporates the Third Millennium database {cite:p}`burcat2005`, including the available values from Active Thermochemical Tables. This fitting allows to evaluate the dimensionless thermodynamic functions of the species for the specific heat at constant pressure, enthalpy, and entropy as a function of temperature, namely
 
 ```{eval-rst}

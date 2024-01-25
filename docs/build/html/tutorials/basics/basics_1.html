@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Basics" href="../0_basics.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Accessing the databases" href="basics_2.html" /><link rel="prev" title="Basics" href="../0_basics.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Framework initialization - Combustion Toolbox v1.0.3</title>
@@ -231,6 +231,7 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_2.html">Accessing the databases</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -285,7 +286,7 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases.html">Databases</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/modules_self.html">Initialization module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
@@ -358,6 +359,24 @@
 <span class="w">           </span><span class="n">DB</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
+<p>This <code class="docutils literal notranslate"><span class="pre">self</span></code> variable encapsulates essential shared data necessary for calculations and typically serves as the first argument in most CT routines. Thus, the data passed between the functions has been organized in a hierarchical tree structure (except for the GUI, which is based on OOP) as shown in Fig.1, namely:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">(App)</span></code>: parent node; contains all the data of the code, e.g., databases, input values, and results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Constants</span> <span class="pre">(C)</span></code>: contains constant values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Elements</span> <span class="pre">(E)</span></code>: contains data of the chemical elements in the problem (names and indices for fast data access).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Species</span> <span class="pre">(S)</span></code>: contains data of the chemical species in the problem (names and indices for fast data access), as well as lists (cells) with the species for complete combustion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span> <span class="pre">Description</span> <span class="pre">(PD)</span></code>: contains data of the problem to solve, e.g., initial mixture (composition, temperature, pressure), problem type, and its configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span> <span class="pre">Solution</span> <span class="pre">(PS)</span></code>: contains results (mixtures).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuning</span> <span class="pre">Properties</span> <span class="pre">(TN)</span></code>: contains parameters that control the numerical error of the algorithms implemented in the different modules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Miscellaneous</span> <span class="pre">(Misc)</span></code>: contains values that configure the auto-generated plots and export setup, as well as flags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">master</span> <span class="pre">(DB_master)</span></code>: a structured thermochemical database including data from <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>], Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">(DB)</span></code>: a structured thermochemical database with <em>griddedInterpolant</em> objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) <span id="id2">[<a class="reference internal" href="../../references.html#id335" title="F. N. Fritsch and R. E. Carlson. Monotone piecewise cubic interpolation. SIAM Journal on Numerical Analysis, 17(2):238–246, 1980. doi:10.1137/0717021.">Fritsch and Carlson, 1980</a>]</span> for faster data access.</p></li>
+</ul>
+   <br>
+<p align="center">
+    <img src="../../_static/img/cuadra2022/sketch_tree_structure.svg" width="250">
+</p>
+<p><strong>Figure 1:</strong> <em>Combustion Toolbox hierarchical data tree structure, where</em> <tt> <code class="docutils literal notranslate"><span class="pre">App.m</span></code> </tt> <em>is the initialization function.</em></p>
 </section>
 
         </article>
@@ -365,12 +384,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../1_chemical_equilibrium.html">
+          <a class="next-page" href="basics_2.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Chemical equilibrium</div>
+                <div class="title">Accessing the databases</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

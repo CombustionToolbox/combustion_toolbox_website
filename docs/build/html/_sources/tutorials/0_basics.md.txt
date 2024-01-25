@@ -8,4 +8,5 @@ In this section we will cover the basic functionalities of the Combustion Toolbo
     :titlesonly:
     
 basics/basics_1
+basics/basics_2
 ```
