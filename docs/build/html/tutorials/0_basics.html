@@ -232,6 +232,7 @@
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="basics/basics_1.html">Framework initialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics/basics_3.html">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -335,12 +336,23 @@
         <article role="main">
           <section id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h1>
-<p>In this section we will cover the basic functionalities of the Combustion Toolbox.</p>
+<p>In this section we will cover the basic functionalities of the Combustion Toolbox (CT).</p>
+<p>A brief summary of the main steps required to solve a problem with CT:</p>
+<ol class="arabic simple">
+<li><p>Initialize CT (load databases, set default variables, etc.).</p></li>
+<li><p>Define the initial state (temperature, pressure, composition).</p></li>
+<li><p>Set chemical system (species that can appear in the chemical transformations).</p></li>
+<li><p>Select the problem type (e.g., an adibatic isobaric combustion).</p></li>
+<li><p>Define additional parameters (depends on the problem selected).</p></li>
+<li><p>Solve the problem.</p></li>
+<li><p>Plot the results.</p></li>
+</ol>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="basics/basics_1.html">Framework initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics/basics_3.html">Defining initial state of a mixture</a></li>
 </ul>
 </div>
 </section>

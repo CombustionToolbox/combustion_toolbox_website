@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Accessing the databases" href="basics_2.html" /><link rel="prev" title="Basics" href="../0_basics.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Defining initial state of a mixture" href="basics_3.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Framework initialization - Combustion Toolbox v1.0.3</title>
+        <title>Defining chemical system - Combustion Toolbox v1.0.3</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -230,9 +230,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_1.html">Framework initialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial chemical species</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining chemical system</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -334,50 +335,33 @@
           </label>
         </div>
         <article role="main">
-          <section id="framework-initialization">
-<h1>Framework initialization<a class="headerlink" href="#framework-initialization" title="Permalink to this heading">#</a></h1>
-<p>To begin, start MATLAB and navigate to the folder where you have downloaded the Combustion Toolbox. To include files in <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, run this command in the command window:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALL</span><span class="p">()</span><span class="w"></span>
+          <section id="defining-chemical-system">
+<h1>Defining chemical system<a class="headerlink" href="#defining-chemical-system" title="Permalink to this heading">#</a></h1>
+<p>Following the previous example, we will now define a chemical system for the complete combustion of a stoichiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture. This system is represented by the global reaction</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+    \text{CH}_4 + 2 (\text{O}_2 + 79/21 \text{N}_2) \rightleftharpoons \text{CO}_2 + 2 \text{H}_2\text{O} + 7.52 \text{N}_2.
+\end{equation}</div></div>
+<p>The chemical system refer to the chemical species that may be involved in the problem. In this case, given the global reaction we have: CH<span class="math notranslate nohighlight">\(_4\)</span>, O<span class="math notranslate nohighlight">\(_2\)</span>, N<span class="math notranslate nohighlight">\(_2\)</span>, CO<span class="math notranslate nohighlight">\(_2\)</span>, and H<span class="math notranslate nohighlight">\(_2\)</span>O. We can define the chemical species in the following way:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-<p>First, using the Combustion Toolbox (CT), you have to initialize the tool (load databases, set default variables, etc.). To do that, type the following at the prompt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">()</span><span class="w"></span>
+<p>That is all we need to define the chemical system. However, typical combustion problems involve a large number of chemical species, and sometimes we do not have prior knowledge of all the relevant species in the problem. In such cases, we can recall in a routine <tt>find_products.m</tt> introduced in <span class="xref myst"><em>Accessing the databases</em></span>. This routine allows us to identify all the possible products after a chemical transformation, given a set of chemical species (reactants). For this example, we can write at the prompt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
-<p>If files contained in CT are correctly defined, you should see something like this:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span>
-
-<span class="w">  </span><span class="nb">struct</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">fields</span><span class="p">:</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">E</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="n">S</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="n">C</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">         </span><span class="n">Misc</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">           </span><span class="n">PD</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">           </span><span class="n">PS</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">           </span><span class="n">TN</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">DB_master</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
-<span class="w">           </span><span class="n">DB</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">struct</span><span class="p">]</span><span class="w"></span>
+<p>which will yield the following output:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>This <code class="docutils literal notranslate"><span class="pre">self</span></code> variable encapsulates essential shared data necessary for calculations and typically serves as the first argument in most CT routines. Thus, the data passed between the functions has been organized in a hierarchical tree structure (except for the GUI, which is based on OOP) as shown in Fig.1, namely:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">(App)</span></code>: parent node; contains all the data of the code, e.g., databases, input values, and results.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Constants</span> <span class="pre">(C)</span></code>: contains constant values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Elements</span> <span class="pre">(E)</span></code>: contains data of the chemical elements in the problem (names and indices for fast data access).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Species</span> <span class="pre">(S)</span></code>: contains data of the chemical species in the problem (names and indices for fast data access), as well as lists (cells) with the species for complete combustion.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span> <span class="pre">Description</span> <span class="pre">(PD)</span></code>: contains data of the problem to solve, e.g., initial mixture (composition, temperature, pressure), problem type, and its configuration.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span> <span class="pre">Solution</span> <span class="pre">(PS)</span></code>: contains results (mixtures).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Tuning</span> <span class="pre">Properties</span> <span class="pre">(TN)</span></code>: contains parameters that control the numerical error of the algorithms implemented in the different modules.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Miscellaneous</span> <span class="pre">(Misc)</span></code>: contains values that configure the auto-generated plots and export setup, as well as flags.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">master</span> <span class="pre">(DB_master)</span></code>: a structured thermochemical database including data from <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>], Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">(DB)</span></code>: a structured thermochemical database with <em>griddedInterpolant</em> objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) <span id="id2">[<a class="reference internal" href="../../references.html#id335" title="F. N. Fritsch and R. E. Carlson. Monotone piecewise cubic interpolation. SIAM Journal on Numerical Analysis, 17(2):238–246, 1980. doi:10.1137/0717021.">Fritsch and Carlson, 1980</a>]</span> for faster data access.</p></li>
-</ul>
-   <br>
-<p align="center">
-    <img src="../../_static/img/cuadra2022/sketch_tree_structure.svg" width="250">
-</p>
-<p><strong>Figure 1:</strong> <em>Combustion Toolbox hierarchical data tree structure, where</em> <tt> <code class="docutils literal notranslate"><span class="pre">App.m</span></code> </tt> <em>is the initialization function.</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When we have prior knowledge of the chemical species involved in the problem, we can streamline the initialization of CT by directly specifying those species. Consequently, we only need to include these specific chemical species in our problem, writing at the prompt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 </section>
 
         </article>
@@ -385,23 +369,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="basics_2.html">
+          <a class="next-page" href="../1_chemical_equilibrium.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Accessing the databases</div>
+                <div class="title">Chemical equilibrium</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../0_basics.html">
+          <a class="prev-page" href="basics_3.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Basics</div>
+                <div class="title">Defining initial state of a mixture</div>
                 
               </div>
             </a>
@@ -457,5 +441,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

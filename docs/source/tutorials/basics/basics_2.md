@@ -79,7 +79,7 @@ To find the list of species that contain only some chemical elements, e.g., O an
 ````{tab-item} NASA database
 
 ```matlab
-list_species = LS = find_products(self, {'O', 'H'})
+list_species = find_products(self, {'O', 'H'})
 ```
 
 which will yield the following output:
@@ -109,7 +109,7 @@ By default, the <tt>find_products.m</tt> function looks for species in the NASA 
 ````{tab-item} Third Millennium database (Burcat)
 
 ```matlab
-list_species = LS = find_products(self, {'O', 'H'}, 'flag_burcat', true)
+list_species = find_products(self, {'O', 'H'}, 'flag_burcat', true)
 ```
 
 which will yield the following output:
@@ -147,7 +147,7 @@ Chemical species from the Third Millennium database (Burcat) are indicated with 
 ````{tab-item} Both and ionized species
 
 ```matlab
-list_species = LS = find_products(self, {'O', 'H'}, 'flag_burcat', true, , 'flag_ion', true)
+list_species = find_products(self, {'O', 'H'}, 'flag_burcat', true, , 'flag_ion', true)
 ```
 
 which will yield the following output:
