@@ -193,3 +193,8 @@ a[href$=".pdf"]::after {
   text-align-last: start !important;
   font-weight: bold;
 }
+
+.citation {
+  display: flex;
+  align-items: baseline; /* Align items at the baseline */
+}
