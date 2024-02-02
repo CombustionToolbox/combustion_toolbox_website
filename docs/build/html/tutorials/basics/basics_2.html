@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="basics_1.html">Framework initialization</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -424,7 +425,7 @@ NASA database</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
+<p>By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
@@ -457,7 +458,7 @@ Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
@@ -510,13 +511,13 @@ Both and ionized species</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
 </div>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The primary purpose of the <tt>find_products.m</tt> routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.</p>
+<p>The same procedure can be used to identify all possible products after a chemical transformation given a set of chemical species (reactants), as described in <span class="xref myst"><em>Defining chemical system</em></span>.</p>
 </div>
 </section>
 </section>

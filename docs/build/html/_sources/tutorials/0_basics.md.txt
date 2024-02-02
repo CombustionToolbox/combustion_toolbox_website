@@ -3,7 +3,7 @@
 In this section we will cover the basic functionalities of the Combustion Toolbox (CT). 
 
 
-A brief summary of the main steps required to solve a problem with CT:
+Briefly, the main steps required to solve a problem with CT are as follows:
 1. Initialize CT (load databases, set default variables, etc.).
 2. Define the initial state (temperature, pressure, composition).
 3. Set chemical system (species that can appear in the chemical transformations).
@@ -20,4 +20,5 @@ A brief summary of the main steps required to solve a problem with CT:
 basics/basics_1
 basics/basics_2
 basics/basics_3
+basics/basics_4
 ```
