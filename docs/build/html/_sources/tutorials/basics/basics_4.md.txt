@@ -27,7 +27,7 @@ self = App({'N2', 'CO2', 'H2O'});
 
 ## Identifying all possible products
 
-Combustion problems typically entail numerous chemical species, and occasionally we lack prior knowledge of all relevant species in the system. In such cases, we can recall in <tt>[find_products.m](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products)</tt> routine introduced in [*Accessing the databases*](docs/source/tutorials/basics/basics_2.md#accessing-the-databases). This routine allows us to identify all potential chemical species resulting from a chemical transformation (products), given a set of species (reactants). For this example, we can write at the prompt:
+Combustion problems typically entail numerous chemical species, and occasionally we lack prior knowledge of all relevant species in the system. In such cases, we can recall in <tt>[find_products.m](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products)</tt> routine introduced in [*Accessing the databases*](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_2.html#.md#accessing-the-databases). This routine allows us to identify all potential chemical species resulting from a chemical transformation (products), given a set of species (reactants). For this example, we can write at the prompt:
 
 ```matlab
 self.S.LS = find_products(self, {'CH4', 'O2', 'N2'})
