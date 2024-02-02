@@ -101,7 +101,7 @@ list_species =
 ```
 
 ```{note}
-By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat's database and include ionized species, set `flag_burcat` and `flag_ion` options to `true`. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`.
+By default, the <tt>[find_products.m](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products)</tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat's database and include ionized species, set `flag_burcat` and `flag_ion` options to `true`. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`.
 ```
 
 ````
@@ -139,7 +139,7 @@ list_species =
 ```
 
 ```{note}
-Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat's database, we have enabled the `flag_burcat` option, setting it to `true`. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.
+Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the <tt>[find_products.m](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products)</tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat's database, we have enabled the `flag_burcat` option, setting it to `true`. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.
 ```
 
 ````
@@ -197,11 +197,11 @@ list_species =
 ```
 
 ```{note}
-Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the <tt>find_products.m</tt> function looks for species in the NASA database and does not consider ionized species. To search for species in Burcat's database and include ionized species, we have enabled the `flag_burcat` and `flag_ion` options, setting both to `true`. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.
+Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the <tt>[find_products.m](https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products)</tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat's database and include ionized species, we have enabled the `flag_burcat` and `flag_ion` options, setting both to `true`. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.
 ```
 
 `````
 
 ```{tip}
-The primary purpose of the <tt>find_products.m</tt> routine is to identify all potential chemical species within the database corresponding to a given set of input species. This is useful when we have a set of reactants and want to find all possible products after a chemical transformation.
+The same procedure can be used to identify all possible products after a chemical transformation given a set of chemical species (reactants), as described in [*Defining chemical system*](basics_4#defining-chemical-system).
 ```
