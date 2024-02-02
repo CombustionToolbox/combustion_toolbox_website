@@ -203,5 +203,5 @@ Chemical species from the Third Millennium database (Burcat) are indicated with 
 `````
 
 ```{tip}
-The same procedure can be used to identify all possible products after a chemical transformation given a set of chemical species (reactants), as described in [*Defining chemical system*](basics_4#defining-chemical-system).
+The same procedure can be used to identify all possible products after a chemical transformation given a set of chemical species (reactants), as described in [*Defining chemical system*](docs/source/tutorials/basics/basics_4.md#defining-chemical-system).
 ```
