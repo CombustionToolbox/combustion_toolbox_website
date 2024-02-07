@@ -256,5 +256,65 @@ This section is under development. Stay tuned!
 
 ```````
 
+## Summary
+
+`````{tab-set}
+
+````{tab-item} Individual study
+
+```matlab
+% Initialize CT and define chemical system
+self = App('Soot formation');
+
+% Define initial chemical composition
+self.PD.S_Fuel     = {'CH4'};
+self.PD.S_Oxidizer = {'N2', 'O2'};
+self.PD.ratio_oxidizers_O2 = [79, 21]/21;
+self = set_prop(self, 'phi', 1);
+
+% Define initial thermochemical state
+self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
+
+% Set chemical transformation
+self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 3000);
+
+% Perform chemical calculations
+self = solve_problem(self, 'TP');
+
+
+```
+
+````
+
+````{tab-item} Parametric study
+
+```matlab
+% Initialize CT and define chemical system
+self = App('Soot formation');
+
+% Define initial chemical composition
+self.PD.S_Fuel     = {'CH4'};
+self.PD.S_Oxidizer = {'N2', 'O2'};
+self.PD.ratio_oxidizers_O2 = [79, 21]/21;
+self = set_prop(self, 'phi', 0.5:0.01:4);
+
+% Define initial thermochemical state
+self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
+
+% Set chemical transformation
+self = set_prop(self, 'pP', self.PD.pR.value, 'TP', 3000);
+
+% Perform chemical calculations
+self = solve_problem(self, 'TP');
+
+% Postprocess results
+post_results(self);
+```
+
+````
+
+`````
+
+
 ## Congratulations!
 Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
