@@ -37,4 +37,5 @@ where the subscripts F and I refer here to the final and initial states of the m
     :titlesonly:
     
 chemical_equilibrium/chemical_equilibrium_1
+chemical_equilibrium/chemical_equilibrium_2
 ```
