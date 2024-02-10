@@ -20,7 +20,7 @@ Similar to the preceding case, we will consider a set of 23 species involved in 
 This set, referred to as 'Soot formation,' is defined in the routine list_species.m and includes Ar.
 
 ```{tip}
-TThe Combustion Toolbox offers various predefined list of species. To explore the complete list, type <tt>help list_species</tt> at the MATLAB prompt or refer to the [Using predefined chemical systems](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems) tutorial section.
+The Combustion Toolbox offers various predefined list of species. To explore the complete list, type <tt>help list_species</tt> at the MATLAB prompt or refer to the [Using predefined chemical systems](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems) tutorial section.
 ```
 
 Let's start by initializing the Combustion Toolbox and defining the chemical system and the initial state of the mixture (chemical composition, temperature, and pressure):
