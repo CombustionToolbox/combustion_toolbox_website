@@ -1,15 +1,14 @@
 # Chemical equilibrium at constant temperature and pressure
 
-As a first example, let's compute the equilibrium composition of a stoichiometric CH$_4$-ideal air mixture at 3000 K and 1.01325 bar (1 atm). To obtain the equilibrium composition, we have to define the chemical species that can appear in the final state. The combustion of typical hydrocarbon fuels, such as methane, is a complex process that involves hundreds of chemical species. However, the number of species that have a significant impact on the properties of the final mixture is much smaller. Combustion Toolbox provides a list of predefined species that can be used to compute the equilibrium composition of a mixture. The list of predefined species can be found in the routine `list_species.m`.
+As a first example, let's compute the equilibrium composition of a stoichiometric CH$_4$-ideal air mixture at 3000 K and 1.01325 bar (1 atm). To obtain the equilibrium composition, we have to define the chemical species that can appear in the final state. The combustion of typical hydrocarbon fuels, such as methane, is a complex process that involves hundreds of chemical species. However, the number of species that have a significant impact on the properties of the final mixture is much smaller. Combustion Toolbox provides a list of predefined species that can be used to compute the equilibrium composition of a mixture. The list of predefined species can be found in the routine <tt>list_species.m</tt>. Alternatively, refer to the [Using predefined chemical systems](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems) tutorial section.
 
-For a preliminary analysis, we will consider a set of 24 species:
+For a preliminary analysis, we will consider a set of 23 species:
 
 * CO$_2$, CO, H$_2$O, H$_2$, O$_2$, N$_2$, C<sub>gr</sub>,
-* C$_2$, C$_2$H$_4$, CH, CH, CH$_3$, CH$_4$, CN, H,
+* C$_2$, C$_2$H$_4$, CH, CH$_3$, CH$_4$, CN, H,
 * HCN, HCO, N, NH, NH$_2$, NH$_3$, NO, O, OH,
   
-which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine `list_species.m` as `Soot formation`, which also includes He and Ar. 
-
+which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine <tt>list_species.m</tt> as `Soot formation`, which also includes Ar.
 
 ## Defining chemical system
 
@@ -28,7 +27,7 @@ self = App('Soot formation');
 ````{tab-item} Specifiying a custom list of species
 ```matlab
 self = App({'CO2', 'CO', 'H2O', 'H2', 'O2', 'N2', 'Cbgrb', ...
-            'C2', 'C2H4', 'CH', 'CH', 'CH3', 'CH4', 'CN', 'H', ...
+            'C2', 'C2H4', 'CH', 'CH3', 'CH4', 'CN', 'H', ...
             'HCN', 'HCO', 'N', 'NH', 'NH2', 'NH3', 'NO', 'O', 'OH'});
 ```
 ````

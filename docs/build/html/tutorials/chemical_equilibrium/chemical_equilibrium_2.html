@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Examples" href="../../examples.html" /><link rel="prev" title="Chemical equilibrium at constant temperature and pressure" href="chemical_equilibrium_1.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>&lt;no title&gt; - Combustion Toolbox v1.0.5</title>
+        <title>Chemical equilibrium at constant enthalpy and pressure - Combustion Toolbox v1.0.5</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -226,9 +226,9 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
 </ul>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../basics/basics_1.html">Framework initialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../basics/basics_2.html">Accessing the databases</a></li>
@@ -236,8 +236,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../basics/basics_4.html">Defining chemical system</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Chemical equilibrium at constant enthalpy and pressure</a></li>
 </ul>
 </li>
 </ul>
@@ -329,20 +330,187 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
+          <section id="chemical-equilibrium-at-constant-enthalpy-and-pressure">
+<h1>Chemical equilibrium at constant enthalpy and pressure<a class="headerlink" href="#chemical-equilibrium-at-constant-enthalpy-and-pressure" title="Permalink to this heading">#</a></h1>
+<p>Let’s consider the adiabatic combustion of acetylene (C<span class="math notranslate nohighlight">\(_2\)</span>H<span class="math notranslate nohighlight">\(_2\)</span>) with ideal air (79% N<span class="math notranslate nohighlight">\(_2\)</span>, 21% O<span class="math notranslate nohighlight">\(_2\)</span> in volume) at constant pressure with <span class="math notranslate nohighlight">\(p = 1.01325\)</span> bar (1 atm) and an equivalence ratio <span class="math notranslate nohighlight">\(\phi \in (0.5, 5)\)</span>. In this scenario, the equilibrium temperature of the system, denoted as <span class="math notranslate nohighlight">\(T\)</span>, is not initially determined, and we need to provide supplementary information to close the problem. For an adiabatic isobaric process, the enthalpy of the system remains constant, thus</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\begin{equation}
+  \Delta f\left(T\right) \equiv h_{\rm F}\left(T\right) - h_{\rm I}\left(T_{\rm I}\right) = 0,
+\end{equation}</div></div>
+<p>where the subscripts F and I refer here to the final (products) and initial (reactants) states of the mixture, respectively.</p>
+<p>Similar to the preceding case, we will consider a set of 23 species involved in the combustion of hydrocarbon fuels with air, namely:</p>
+<ul class="simple">
+<li><p>CO<span class="math notranslate nohighlight">\(_2\)</span>, CO, H<span class="math notranslate nohighlight">\(_2\)</span>O, H<span class="math notranslate nohighlight">\(_2\)</span>, O<span class="math notranslate nohighlight">\(_2\)</span>, N<span class="math notranslate nohighlight">\(_2\)</span>, C<sub>gr</sub>,</p></li>
+<li><p>C<span class="math notranslate nohighlight">\(_2\)</span>, C<span class="math notranslate nohighlight">\(_2\)</span>H<span class="math notranslate nohighlight">\(_4\)</span>, CH, CH<span class="math notranslate nohighlight">\(_3\)</span>, CH<span class="math notranslate nohighlight">\(_4\)</span>, CN, H,</p></li>
+<li><p>HCN, HCO, N, NH, NH<span class="math notranslate nohighlight">\(_2\)</span>, NH<span class="math notranslate nohighlight">\(_3\)</span>, NO, O, OH.</p></li>
+</ul>
+<p>This set, referred to as ‘Soot formation,’ is defined in the routine list_species.m and includes Ar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>TThe Combustion Toolbox offers various predefined list of species. To explore the complete list, type <tt>help list_species</tt> at the MATLAB prompt or refer to the <a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems">Using predefined chemical systems</a> tutorial section.</p>
+</div>
+<p>Let’s start by initializing the Combustion Toolbox and defining the chemical system and the initial state of the mixture (chemical composition, temperature, and pressure):</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial chemical composition</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;C2H2_acetylene&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="o">/</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial thermochemical state</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state; however, we must specify the pressure of the final state using the pP property:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Set chemical transformation</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pP&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">pR</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All parameters defining the problem are stored within the <code class="docutils literal notranslate"><span class="pre">PD</span></code> property of the <code class="docutils literal notranslate"><span class="pre">self</span></code> structure. While we consistently refer to self for ease of understanding, you may rename it to any other name as needed.</p>
+</div>
+<p>Finally, we can solve the problem and visualize the results:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Perform chemical calculations</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HP&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Postprocess results</span><span class="w"></span>
+<span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If everything goes well, the last promt should display the following message:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">*****************************************************</span><span class="w"></span>
+<span class="o">-----------------------------------------------------</span><span class="w"></span>
+<span class="n">Problem</span><span class="w"> </span><span class="s">type:</span><span class="w"> </span><span class="s">HP</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.5000</span><span class="w"></span>
+<span class="o">-----------------------------------------------------</span><span class="w"></span>
+<span class="w">               </span><span class="o">|</span><span class="w">    </span><span class="n">REACTANTS</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="n">PRODUCTS</span><span class="w"></span>
+<span class="n">T</span><span class="w"> </span><span class="s">[K]</span><span class="w">          </span><span class="o">|</span><span class="w">       </span><span class="mf">300.0000</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="mf">1776.8223</span><span class="w"></span>
+<span class="n">p</span><span class="w"> </span><span class="s">[bar]</span><span class="w">        </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0132</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0132</span><span class="w"></span>
+<span class="n">r</span><span class="w"> </span><span class="s">[kg/m3]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.1674</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">0.2011</span><span class="w"></span>
+<span class="n">h</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">       </span><span class="mf">321.9941</span><span class="w">  </span><span class="o">|</span><span class="w">       </span><span class="mf">321.9941</span><span class="w"></span>
+<span class="n">e</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">       </span><span class="mf">235.1950</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">181.7992</span><span class="w"></span>
+<span class="n">g</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">     </span><span class="o">-</span><span class="mf">1768.9710</span><span class="w">  </span><span class="o">|</span><span class="w">    </span><span class="o">-</span><span class="mf">15487.8789</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">6.9699</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">8.8978</span><span class="w"></span>
+<span class="n">W</span><span class="w"> </span><span class="s">[g/mol]</span><span class="w">      </span><span class="o">|</span><span class="w">        </span><span class="mf">28.7369</span><span class="w">  </span><span class="o">|</span><span class="w">        </span><span class="mf">29.3242</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlp</span><span class="p">)</span><span class="n">T</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0000</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlT</span><span class="p">)</span><span class="n">p</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0017</span><span class="w"></span>
+<span class="n">cp</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0364</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3539</span><span class="w"></span>
+<span class="nb">gamma</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3873</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.2660</span><span class="w"></span>
+<span class="n">gamma_s</span><span class="w"> </span><span class="s">[-]</span><span class="w">    </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3873</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">1.2660</span><span class="w"></span>
+<span class="nb">sound</span><span class="w"> </span><span class="n">vel</span><span class="w"> </span><span class="p">[</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">]</span><span class="o">|</span><span class="w">       </span><span class="mf">347.0091</span><span class="w">  </span><span class="o">|</span><span class="w">       </span><span class="mf">798.6200</span><span class="w"></span>
+<span class="o">-----------------------------------------------------</span><span class="w"></span>
+<span class="n">REACTANTS</span><span class="w">               </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
+<span class="n">N2</span><span class="w">                   </span><span class="s">7.5816e-01</span><span class="w"></span>
+<span class="n">O2</span><span class="w">                   </span><span class="s">2.0154e-01</span><span class="w"></span>
+<span class="n">C2H2_acetylene</span><span class="w">       </span><span class="s">4.0307e-02</span><span class="w"></span>
+<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">22</span><span class="p">]</span><span class="w">          </span><span class="mf">0.0000e+00</span><span class="w"></span>
+
+<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
+<span class="o">-----------------------------------------------------</span><span class="w"></span>
+<span class="n">PRODUCTS</span><span class="w">                </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
+<span class="n">N2</span><span class="w">                   </span><span class="s">7.7233e-01</span><span class="w"></span>
+<span class="n">O2</span><span class="w">                   </span><span class="s">1.0142e-01</span><span class="w"></span>
+<span class="n">CO2</span><span class="w">                  </span><span class="s">8.2220e-02</span><span class="w"></span>
+<span class="n">H2O</span><span class="w">                  </span><span class="s">4.0942e-02</span><span class="w"></span>
+<span class="n">NO</span><span class="w">                   </span><span class="s">2.6404e-03</span><span class="w"></span>
+<span class="n">OH</span><span class="w">                   </span><span class="s">3.6588e-04</span><span class="w"></span>
+<span class="n">CO</span><span class="w">                   </span><span class="s">4.1312e-05</span><span class="w"></span>
+<span class="n">O</span><span class="w">                    </span><span class="s">3.0818e-05</span><span class="w"></span>
+<span class="n">H2</span><span class="w">                   </span><span class="s">5.5206e-06</span><span class="w"></span>
+<span class="n">H</span><span class="w">                    </span><span class="s">6.8730e-07</span><span class="w"></span>
+<span class="n">N</span><span class="w">                    </span><span class="s">2.1015e-11</span><span class="w"></span>
+<span class="n">NH</span><span class="w">                   </span><span class="s">7.3010e-13</span><span class="w"></span>
+<span class="n">NH3</span><span class="w">                  </span><span class="s">3.5644e-13</span><span class="w"></span>
+<span class="n">NH2</span><span class="w">                  </span><span class="s">1.4186e-13</span><span class="w"></span>
+<span class="n">HCO</span><span class="w">                  </span><span class="s">1.7907e-14</span><span class="w"></span>
+<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span><span class="w">          </span><span class="mf">0.0000e+00</span><span class="w"></span>
+
+<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
+<span class="o">-----------------------------------------------------</span><span class="w"></span>
+<span class="o">*****************************************************</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Two plots should also appear, illustrating the equilibrium composition of the system as a function of the equivalence ratio <span class="math notranslate nohighlight">\(\phi\)</span>, and various properties (temperature, pressure, density, enthalpy, internal energy, Gibbs free energy, entropy, and adiabatic index) of the products as a function of <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<p align="center">
+    <img src="../../_static/img/chemical_equilibrium_2_fig1.svg" width="1000">
+</p>
+<p align="center">
+    <img src="../../_static/img/chemical_equilibrium_2_fig2.svg" width="1000">
+</p>
+<p>Combustion Toolbox performs the calculations from the last case to the first one, and the results are stored in the <code class="docutils literal notranslate"><span class="pre">PS</span></code> property of the <code class="docutils literal notranslate"><span class="pre">self</span></code> structure.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The convergence tolerances for various algorithms are stored in the TN (tuning) property within the self structure. Default values are specified in <tt>TuningProperties.m</tt>. For instance, the default tolerance for molar composition is <span class="math notranslate nohighlight">\(10^{-14}\)</span>, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is <span class="math notranslate nohighlight">\(10^{-5}\)</span>, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to <span class="math notranslate nohighlight">\(10^{-4}\)</span>.</p>
+<p>These parameters ca be easily adjusted by setting the corresponding property in the <code class="docutils literal notranslate"><span class="pre">TN</span></code> structure. For example, to increase the tolerance (increase precision) for molar composition to <span class="math notranslate nohighlight">\(10^{-32}\)</span>, type</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">TN</span><span class="p">.</span><span class="n">tolN</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1e-32</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>prior to solving the problem. To visualize these changes (command window and default plots), execute:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">mintol_display</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1e-32</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial chemical composition</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;C2H2_acetylene&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="o">/</span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial thermochemical state</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Set chemical transformation</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pP&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">pR</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Perform chemical calculations</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HP&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Postprocess results</span><span class="w"></span>
+<span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../../examples.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Examples</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="chemical_equilibrium_1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Chemical equilibrium at constant temperature and pressure</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -373,8 +541,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Chemical equilibrium at constant enthalpy and pressure</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -395,5 +582,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

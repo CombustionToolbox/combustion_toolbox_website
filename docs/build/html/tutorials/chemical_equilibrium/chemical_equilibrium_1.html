@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Examples" href="../../examples.html" /><link rel="prev" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium at constant enthalpy and pressure" href="chemical_equilibrium_2.html" /><link rel="prev" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Chemical equilibrium at constant temperature and pressure - Combustion Toolbox v1.0.5</title>
@@ -238,6 +238,7 @@
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
 </ul>
 </li>
 </ul>
@@ -337,14 +338,14 @@
         <article role="main">
           <section id="chemical-equilibrium-at-constant-temperature-and-pressure">
 <h1>Chemical equilibrium at constant temperature and pressure<a class="headerlink" href="#chemical-equilibrium-at-constant-temperature-and-pressure" title="Permalink to this heading">#</a></h1>
-<p>As a first example, let’s compute the equilibrium composition of a stoichiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture at 3000 K and 1.01325 bar (1 atm). To obtain the equilibrium composition, we have to define the chemical species that can appear in the final state. The combustion of typical hydrocarbon fuels, such as methane, is a complex process that involves hundreds of chemical species. However, the number of species that have a significant impact on the properties of the final mixture is much smaller. Combustion Toolbox provides a list of predefined species that can be used to compute the equilibrium composition of a mixture. The list of predefined species can be found in the routine <code class="docutils literal notranslate"><span class="pre">list_species.m</span></code>.</p>
-<p>For a preliminary analysis, we will consider a set of 24 species:</p>
+<p>As a first example, let’s compute the equilibrium composition of a stoichiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture at 3000 K and 1.01325 bar (1 atm). To obtain the equilibrium composition, we have to define the chemical species that can appear in the final state. The combustion of typical hydrocarbon fuels, such as methane, is a complex process that involves hundreds of chemical species. However, the number of species that have a significant impact on the properties of the final mixture is much smaller. Combustion Toolbox provides a list of predefined species that can be used to compute the equilibrium composition of a mixture. The list of predefined species can be found in the routine <tt>list_species.m</tt>. Alternatively, refer to the <a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems">Using predefined chemical systems</a> tutorial section.</p>
+<p>For a preliminary analysis, we will consider a set of 23 species:</p>
 <ul class="simple">
 <li><p>CO<span class="math notranslate nohighlight">\(_2\)</span>, CO, H<span class="math notranslate nohighlight">\(_2\)</span>O, H<span class="math notranslate nohighlight">\(_2\)</span>, O<span class="math notranslate nohighlight">\(_2\)</span>, N<span class="math notranslate nohighlight">\(_2\)</span>, C<sub>gr</sub>,</p></li>
-<li><p>C<span class="math notranslate nohighlight">\(_2\)</span>, C<span class="math notranslate nohighlight">\(_2\)</span>H<span class="math notranslate nohighlight">\(_4\)</span>, CH, CH, CH<span class="math notranslate nohighlight">\(_3\)</span>, CH<span class="math notranslate nohighlight">\(_4\)</span>, CN, H,</p></li>
+<li><p>C<span class="math notranslate nohighlight">\(_2\)</span>, C<span class="math notranslate nohighlight">\(_2\)</span>H<span class="math notranslate nohighlight">\(_4\)</span>, CH, CH<span class="math notranslate nohighlight">\(_3\)</span>, CH<span class="math notranslate nohighlight">\(_4\)</span>, CN, H,</p></li>
 <li><p>HCN, HCO, N, NH, NH<span class="math notranslate nohighlight">\(_2\)</span>, NH<span class="math notranslate nohighlight">\(_3\)</span>, NO, O, OH,</p></li>
 </ul>
-<p>which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine <code class="docutils literal notranslate"><span class="pre">list_species.m</span></code> as <code class="docutils literal notranslate"><span class="pre">Soot</span> <span class="pre">formation</span></code>, which also includes He and Ar.</p>
+<p>which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine <tt>list_species.m</tt> as <code class="docutils literal notranslate"><span class="pre">Soot</span> <span class="pre">formation</span></code>, which also includes Ar.</p>
 <section id="defining-chemical-system">
 <h2>Defining chemical system<a class="headerlink" href="#defining-chemical-system" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
@@ -364,7 +365,7 @@ Predefined list of species</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
 Specifiying a custom list of species</label><div class="sd-tab-content docutils">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">            </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">            </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
 <span class="w">            </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
@@ -673,12 +674,12 @@ Parametric study</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../examples.html">
+          <a class="next-page" href="chemical_equilibrium_2.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Examples</div>
+                <div class="title">Chemical equilibrium at constant enthalpy and pressure</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
