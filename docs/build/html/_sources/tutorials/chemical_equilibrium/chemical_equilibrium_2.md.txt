@@ -130,9 +130,9 @@ Two plots should also appear, illustrating the equilibrium composition of the sy
 Combustion Toolbox performs the calculations from the last case to the first one, and the results are stored in the `PS` property of the `self` structure.
 
 ````{tip}
-The convergence tolerances for various algorithms are stored in the TN (tuning) property within the self structure. Default values are specified in <tt>TuningProperties.m</tt>. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-4}$.
+The convergence tolerances for all the algorithms implemented in the Combustion Toolbox are stored in the TN (tuning) property within the self structure. Default values are specified in <tt>TuningProperties.m</tt>. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-4}$.
 
-These parameters ca be easily adjusted by setting the corresponding property in the `TN` structure. For example, to increase the tolerance (increase precision) for molar composition to $10^{-32}$, type
+These parameters ca be easily adjusted by setting the corresponding property in the `TN` structure. For example, to decrease the tolerance (increase precision) for molar composition to $10^{-32}$, type
 ```matlab
 self.TN.tolN = 1e-32;
 ```
