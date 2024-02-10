@@ -166,3 +166,6 @@ self = solve_problem(self, 'HP');
 % Postprocess results
 post_results(self);
 ```
+
+## Congratulations!
+Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
