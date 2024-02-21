@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP.html">Example_HP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -1798,7 +1799,7 @@ Routines<div class="sd-summary-down docutils">
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.modules.self.Species.list_species">
 <span class="sig-name descname"><span class="pre">list_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.modules.self.Species.list_species" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Set list of species in the mixture (reactants and products)</p>
+<dd><p class="sd-card-text">Set list of species in the mixture (products)</p>
 <dl class="simple">
 <dt>Predefined list of species:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">SOOT FORMATION (default)</p></li>
@@ -1817,13 +1818,6 @@ Routines<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">SI/HC/O2/N2 PROPELLANTS</p></li>
 </ul>
 </dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>empty</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">none</span></code></span>) – return default list of species (soot formation)</p>
-</dd>
-</dl>
-<dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
 <li><p class="sd-card-text">self (struct): Data of the mixture, conditions, and databases</p></li>
 <li><p class="sd-card-text">LS (cell): Name list species / list of species</p></li>
@@ -1842,6 +1836,14 @@ Routines<div class="sd-summary-down docutils">
 </p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">LS = list_species(‘soot formation’);</p></li>
+<li><p class="sd-card-text">[self, LS] = list_species(self, ‘soot formation’);</p></li>
+<li><p class="sd-card-text">[self, LS] = list_species(self, ‘complete’, 1.5, 2.5);</p></li>
+</ul>
+</div>
 </dd></dl>
 
 </div>

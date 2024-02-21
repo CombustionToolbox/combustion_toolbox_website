@@ -10,6 +10,7 @@ examples_plain_TP
 examples_plain_TV
 examples_plain_HP
 examples_plain_HP_COMPLETE_INCOMPLETE
+examples_plain_HP_HUMID_AIR
 examples_plain_HP_PRESSURE
 examples_plain_HP_MIXTEMP
 examples_plain_HP_PROPELLANTS
