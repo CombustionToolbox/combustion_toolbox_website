@@ -238,21 +238,21 @@ It can be handy the BibTeX format:
 
 ```bibtex
 @misc{combustiontoolbox,
-    author = "Cuadra, A and Huete, C and Vera, M",
-    title = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
-    year = 2024,
-    note = "Version 1.0.5",
-    doi = {https://doi.org/10.5281/zenodo.5554911}
+    author  = "Cuadra, A. and Huete, C. and Vera, M.",
+    title   = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
+    year    = 2024,
+    note    = "Version 1.0.5",
+    doi     = {https://doi.org/10.5281/zenodo.5554911}
 }
 
 @phdthesis{cuadra2023_thesis,
-    title            = {Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks},
-    author           = {Cuadra, A.},
-    year             = 2023,
-    month            = {May},
-    address          = {Madrid, Spain},
-    note             = {Available at \url{http://hdl.handle.net/10016/38179}},
-    school           = {Universidad Carlos III de Madrid},
-    type             = {PhD thesis}
+    title   = {Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks},
+    author  = {Cuadra, A.},
+    year    = 2023,
+    month   = {May},
+    address = {Madrid, Spain},
+    note    = {Available at \url{http://hdl.handle.net/10016/38179}},
+    school  = {Universidad Carlos III de Madrid},
+    type    = {PhD thesis}
 }
 ```
