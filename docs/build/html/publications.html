@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP.html">Example_HP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -351,22 +352,22 @@
 </ul>
 <p>It can be handy the BibTeX format:</p>
 <div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">combustiontoolbox</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">author</span><span class="w">           </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Cuadra, A. and Huete, C. and Vera, M.&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">title</span><span class="w">            </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">year</span><span class="w">             </span><span class="p">=</span><span class="w"> </span><span class="m">2024</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">note</span><span class="w">             </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Version 1.0.5&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">doi</span><span class="w">              </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.5554911}</span><span class="w"></span>
+<span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Cuadra, A. and Huete, C. and Vera, M.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">title</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">year</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="m">2024</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">note</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Version 1.0.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">doi</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.5554911}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="nc">@phdthesis</span><span class="p">{</span><span class="nl">cuadra2023_thesis</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">title</span><span class="w">            </span><span class="p">=</span><span class="w"> </span><span class="s">{Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">author</span><span class="w">           </span><span class="p">=</span><span class="w"> </span><span class="s">{Cuadra, A.}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">year</span><span class="w">             </span><span class="p">=</span><span class="w"> </span><span class="m">2023</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">month</span><span class="w">            </span><span class="p">=</span><span class="w"> </span><span class="s">{May}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">address</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{Madrid, Spain}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">note</span><span class="w">             </span><span class="p">=</span><span class="w"> </span><span class="s">{Available at \url{http://hdl.handle.net/10016/38179}}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">school</span><span class="w">           </span><span class="p">=</span><span class="w"> </span><span class="s">{Universidad Carlos III de Madrid}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">type</span><span class="w">             </span><span class="p">=</span><span class="w"> </span><span class="s">{PhD thesis}</span><span class="w"></span>
+<span class="w">    </span><span class="na">title</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">{Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{Cuadra, A.}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">year</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="m">2023</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">month</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">{May}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">address</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Madrid, Spain}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">note</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{Available at \url{http://hdl.handle.net/10016/38179}}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">school</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{Universidad Carlos III de Madrid}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">type</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{PhD thesis}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
