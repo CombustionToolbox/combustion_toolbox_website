@@ -26,7 +26,7 @@
 :gutter: 1
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/modules/ct_equil/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/modules/ct_equil/index.html
 `Robust`, `modular`, and `fast` chemical equilibrium computations.
 :::
 
@@ -57,7 +57,7 @@ Completely open source, GUI included!<br>
 :gutter: 1
 
 :::{grid-item-card} {octicon}`cpu` Robust chemical equilibrium computations
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/modules/ct_equil/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/modules/ct_equil/index.html
 
 {bdg-light}`TP` {bdg-light}`HP` {bdg-light}`SP` {bdg-light}`TV` {bdg-light}`EV` {bdg-light}`SV` {bdg-light}`frozen` {bdg-light}`plasma state`
 
@@ -70,7 +70,7 @@ Over 10K lines of code encapsulated in a `user-friendly` GUI with tons of capabi
 :::
 
 :::{grid-item-card} {octicon}`tab` Shocks and detonations pre- and post-shock states 
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/modules/ct_sd/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/modules/ct_sd/index.html
 {bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Shock polar` {bdg-light}`Detonations polar` {bdg-light}`Regular Reflections` 
 :::
 
@@ -87,7 +87,7 @@ Completely open source, GUI included!
 :gutter: 1
 
 :::{grid-item-card} {octicon}`rocket` Rocket propellant performance
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/modules/ct_rocket/index.html
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/modules/ct_rocket/index.html
 {bdg-light}`Infinite-Chamber-Area` {bdg-light}`Finite-Chamber-Area`
 :::
 
@@ -101,11 +101,11 @@ Completely open source, GUI included!
 :::
 
 :::{grid-item-card} {octicon}`graph` Predefined plots
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/utils/index.html#display-functions
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#display-functions
 :::
 
 :::{grid-item-card} {octicon}`download` Export results
-:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/functions/utils/index.html#export-functions
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#export-functions
 {bdg-light}`.xls` {bdg-light}`.mat`
 :::
 
