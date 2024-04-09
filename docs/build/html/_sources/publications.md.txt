@@ -8,7 +8,7 @@ The scientific paper on the Combustion Toolbox is currently under review. In the
 
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
-* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v1.0.5). Zenodo. [https://doi.org/10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
+* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. (v1.0.5). Zenodo. doi: [10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 * *Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. PhD thesis, Universidad Carlos III de Madrid. Available at [http://hdl.handle.net/10016/38179](http://hdl.handle.net/10016/38179).*
   
 It can be handy the BibTeX format:
@@ -41,18 +41,21 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Journal articles
 
+* Chang, X., Hongting, M., & Xiaohui, Y. (2024). Comprehensive performance evaluation method of working fluids for high temperature heat pump based on multi-objective optimization. Applied Thermal Engineering, 123102. doi: [10.1016/j.applthermaleng.2024.123102](https://doi.org/10.1016/j.applthermaleng.2024.123102).
+* Chen, J., Sun, M., Li, P., An, B., Jiaoru, W., & Li, M. (2024). Effects of excess oxidizer coefficient on RBCC engine performance in ejector mode: A theoretical investigation. Energy, 289, 130070. doi: [10.1016/j.energy.2023.130070](https://doi.org/10.1016/j.energy.2023.130070).
 * Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium **(under review)**.
-* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [https://doi.org/10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
-* Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. [https://doi.org/10.1063/5.0059948](https://doi.org/10.1063/5.0059948)<a href="https://www.researchgate.net/publication/354024089_Thermochemical_effects_on_hypersonic_shock_waves_interacting_with_weak_turbulence" class="pdf" target="_blank"></a>
-* Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation discontinuities. Journal of Fluid Mechanics, 903, A30. [https://doi.org/10.1017/jfm.2020.651](https://doi.org/10.1017/jfm.2020.651)<a href="https://www.researchgate.net/publication/343384770_Effect_of_equivalence_ratio_fluctuations_on_planar_detonation_discontinuities" class="pdf" target="_blank"></a>
+* Dahake, A., Singh, R. K., & Singh, A. V. (2023). Dual behavior of hydrogen peroxide in gaseous detonations. Shock Waves, 33(5), 401-414. doi: [10.1007/s00193-023-01142-5](https://doi.org/10.1007/s00193-023-01142-5).
+* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. doi: [10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
+* Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. doi: [10.1063/5.0059948](https://doi.org/10.1063/5.0059948). <a href="https://www.researchgate.net/publication/354024089_Thermochemical_effects_on_hypersonic_shock_waves_interacting_with_weak_turbulence" class="pdf" target="_blank"></a>
+* Cuadra, A., Huete, C., & Vera, M. (2020). Effect of equivalence ratio fluctuations on planar detonation discontinuities. Journal of Fluid Mechanics, 903, A30. doi: [10.1017/jfm.2020.651](https://doi.org/10.1017/jfm.2020.651). <a href="https://www.researchgate.net/publication/343384770_Effect_of_equivalence_ratio_fluctuations_on_planar_detonation_discontinuities" class="pdf" target="_blank"></a>
 
 ### Other codes that use the Combustion Toolbox
 
-* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [https://doi.org/10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
+* Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. doi: [10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
 
 ### Conference contributions
 
-* Cuadra, A., Vera, M., Di Renzo, M. & Huete, C. (2023). Linear Theory of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA SciTech Forum,  National Harbor, USA. [https://doi.org/10.2514/6.2023-0075](https://doi.org/10.2514/6.2023-0075)<a href="https://www.researchgate.net/publication/367318599_Linear_Theory_of_Hypersonic_Shocks_Interacting_with_Turbulence_in_Air" class="pdf" target="_blank"></a>
+* Cuadra, A., Vera, M., Di Renzo, M. & Huete, C. (2023). Linear Theory of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA SciTech Forum,  National Harbor, USA. doi: [10.2514/6.2023-0075](https://doi.org/10.2514/6.2023-0075). <a href="https://www.researchgate.net/publication/367318599_Linear_Theory_of_Hypersonic_Shocks_Interacting_with_Turbulence_in_Air" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2022). Desarrollo de un código termoquímico para la evaluación de las propiedades teóricas de explosivos (CT-EXPLO) y la estimación del rendimiento de motores cohete (CT-ROCKET). In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain.<a href="https://www.researchgate.net/publication/363186314_Desarrollo_de_un_codigo_termoquimico_para_la_evaluacion_de_las_propiedades_teoricas_de_explosivos_CT-EXPLO_y_la_estimacion_del_rendimiento_de_motores_cohete_CT-ROCKET" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2022). Amplificación de la turbulencia a través de una onda de choque en régimen hipersónico. In IX Congreso Nacional de I+D en Defensa y Seguridad, Pontevedra, Spain.<a href="https://www.researchgate.net/publication/363173724_Amplificacion_de_la_turbulencia_a_traves_de_una_onda_de_choque_en_regimen_hipersonico" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2022). Combustion Toolbox: a MATLAB-GUI based open-source tool for solving combustion problems. In 12th National and 3rd International Conference on Engineering Thermodynamics (CNIT), Madrid, Spain.
