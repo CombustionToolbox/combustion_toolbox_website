@@ -106,14 +106,14 @@ nitpick_ignore = [
     ('mat:obj', 'empty'),
     ('mat:class', 'matlab.apps.AppBase')
 ]
-
+    
 # Define routine to link functions to their files on GitHub
 def linkcode_resolve(domain, info):
     return github_linkcode_resolve(
             domain=domain,
             info=info,
             allowed_module_names=[],
-            github_org_id='AlbertoCuadra',
+            github_org_id='CombustionToolbox',
             github_repo_id='combustion_toolbox',
             branch='master')
             # source_prefix='')
@@ -135,7 +135,14 @@ napoleon_type_aliases = None
 napoleon_attr_annotations = True
 
 # Autodoc settings
-autodoc_default_options = {'members': True, 'show-inheritance': True}
+autodoc_default_options = {
+    'members': True,
+    'autodoc_member_order': 'groupwise',
+    'show-inheritance': True,
+    'autoclass_content': 'class',
+    'private-members': True
+}
+
 autosummary_generate = True
 
 # remove path in function names

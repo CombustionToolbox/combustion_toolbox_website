@@ -1,0 +1,1023 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Core classes" href="../core/index.html" /><link rel="prev" title="Common functions" href="../common/index.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Databases - Combustion Toolbox v1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-announcement-background: #afe9ddff;
+  --color-announcement-text: #008080ff;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples_gui.html">Examples GUI</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/examples_plain.html">Examples desktop environment</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TP.html">Example_TP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TV.html">Example_TV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP.html">Example_HP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EV.html">Example_EV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SP.html">Example_SP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV.html">Example_SV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV_FROZEN.html">Example_SV_FROZEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I.html">Example_SHOCK_I.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I_IONIZATION.html">Example_SHOCK_I_IONIZATION.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_R.html">Example_SHOCK_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_BETA.html">Example_SHOCK_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_THETA.html">Example_SHOCK_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_R.html">Example_SHOCK_OBLIQUE_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR.html">Example_SHOCK_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR_R.html">Example_SHOCK_POLAR_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET.html">Example_DET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_R.html">Example_DET_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="databases">
+<h1>Databases<a class="headerlink" href="#databases" title="Permalink to this heading">#</a></h1>
+<p>Combustion Toolbox generates its own databases using an up-to-date version of NASA’s 9-coefficient polynomial fits <span id="id1">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>. This information is stored in the <code class="docutils literal notranslate"><span class="pre">Database</span></code> abstract class. Three main databases are used in the code:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code>: contains data extracted from NASA’s database <span id="id2">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BurcatDatabase</span></code>: extracts data from the Third Millennium database <span id="id3">[<a class="reference internal" href="../../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>]</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SolarAbundances</span></code>: stores the solar abundances of the elements <span id="id4">[<a class="reference internal" href="../../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">Asplund <em>et al.</em>, 2009</a>]</span>.</p></li>
+</ul>
+<section id="module-src.+combustiontoolbox.+databases.&#64;Database">
+<span id="database"></span><h2>Database<a class="headerlink" href="#module-src.+combustiontoolbox.+databases.@Database" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Database</span></code></a> abstract class contains the common methods between database objects.
+This class is used as a base class for the <code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code> and <code class="xref mat mat-class docutils literal notranslate"><span class="pre">BurcatDatabase</span></code> classes.</p>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">NasaDatabase()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">BurcatDatabase()</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.Database">
+<span class="sig-name descname"><span class="pre">Database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.Database" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.getProperty">
+<span class="sig-name descname"><span class="pre">getProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.getProperty" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the vector of the defined property for the given
+set of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Property name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>value (float)</em> – Property vector</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>value = getProperty(obj, {‘H2O’, ‘CO2’}, ‘hf’)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.load" title="Permalink to this definition">#</a></dt>
+<dd><p>Load database from file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – Database object</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>filename (char): Filename of the database</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>obj (Database)</em> – Database object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.save" title="Permalink to this definition">#</a></dt>
+<dd><p>Save database to a <a href="#id1"><span class="problematic" id="id2">*</span></a>.mat file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – Database object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.+combustiontoolbox.+databases.&#64;NasaDatabase">
+<span id="nasadatabase"></span><h2>NasaDatabase<a class="headerlink" href="#module-src.+combustiontoolbox.+databases.@NasaDatabase" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">NasaDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.databases.Database</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">NasaDatabase()</span></code></a> class is used to store thermodynamic data from NASA’s database
+using NASA’s 9 coefficient polynomial fits.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">NasaDatabase()</span></code></a> object can be initialized as follows:</p>
+<blockquote>
+<div><p>database = NasaDatabase()</p>
+</div></blockquote>
+<p>This creates an instance of the <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">NasaDatabase()</span></code></a> class and initializes it with the
+chemical species contained in NASA’s database.</p>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">BurcatDatabase()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Database()</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.NasaDatabase">
+<span class="sig-name descname"><span class="pre">NasaDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.NasaDatabase" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>varargin (optional): key-value pairs to initialize the database</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>obj (NasaDatabase)</em> – Object with NASA’s database</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>db = combustiontoolbox.databases.NasaDatabase();</p></li>
+<li><p>db = combustiontoolbox.databases.NasaDatabase(‘filename’, ‘DB.mat’);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.fullname2name">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fullname2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.fullname2name" title="Permalink to this definition">#</a></dt>
+<dd><p>Get full name of the given species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>name (char)</em> – Full name of the given species</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.generateDatabase">
+<span class="sig-name descname"><span class="pre">generateDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB_master</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabase" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate Database with thermochemical interpolation curves
+for the species contained in DB_master</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.generateDatabaseMaster">
+<span class="sig-name descname"><span class="pre">generateDatabaseMaster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabaseMaster" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate Master Database (DB_master) with the thermodynamic
+data of the chemical species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></span>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DB_master (struct)</em> – Database with the thermodynamic data of the chemical species</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>DB_master = generate_DB_master(‘thermo_CT.inp’)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getChangeMolesGasReaction">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getChangeMolesGasReaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">elements</span></em>, <em class="sig-param"><span class="pre">elementMatrix</span></em>, <em class="sig-param"><span class="pre">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getChangeMolesGasReaction" title="Permalink to this definition">#</a></dt>
+<dd><p>In order to compute the internal energy of formation from the enthalpy of
+formation of a given species, we must determine the change in moles of
+gases during the formation reaction of a mole of that species starting
+from the elements in their reference state.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The only elements that are stable as diatomic gases are elements
+1 (H), 8 (N), 9 (O), 10 (F), and 18 (Cl). The remaining elements that
+are stable as (monoatomic) gases are the noble gases He (3), Ne (11),
+Ar (19), Kr (37), Xe (55), and Rn (87), which do not form any compound.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Elements</span></code></span>) – Elements object</p></li>
+<li><p><strong>elementMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Element matrix of the species</p></li>
+<li><p><strong>phase</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 0 or 1 indicating gas or condensed species</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>elements (Elements): Elements object</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Delta_n (float)</em> – Change in moles of gases during the formation reaction of a mole of that species starting from the elements in their reference state</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Delta_n = getChangeMolesGasReaction(elements, element_matrix, phase)</p>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getCoefficients">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getCoefficients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getCoefficients" title="Permalink to this definition">#</a></dt>
+<dd><p>Unpack NASA’s polynomials coefficients from database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>a (cell): Temperature coefficients</p></li>
+<li><p>b (cell): Integration constants</p></li>
+<li><p>Trange (cell): Ranges of temperatures [K]</p></li>
+<li><p>Texponents (cell): Exponent coefficients</p></li>
+<li><p>Tintervals (float): Number of intervals of temperatures</p></li>
+<li><p>phase (float): 0 or 1 indicating gas or condensed phase, respectively</p></li>
+<li><p>hf0 (float): Enthalpy of formation [J/mol]</p></li>
+<li><p>W (float): Molecular weight [kg/mol]</p></li>
+<li><p>FLAG_REFERENCE (bool): Flag indicating species is a reference element/species</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[a, b, Trange, Texponents, Tintervals, phase, hf0, W, FLAG_REFERENCE] = getCoefficients(‘H2O’, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getDatabaseMaster">
+<span class="sig-name descname"><span class="pre">getDatabaseMaster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">thermoFile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getDatabaseMaster" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate Master Database (DB_master) with the thermodynamic
+data of the chemical species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thermoFile</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – path of thermoFile</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DB_master (struct)</em> – Database with the thermodynamic data of the chemical species</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getIndexTempereratureInterval">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getIndexTempereratureInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getIndexTempereratureInterval" title="Permalink to this definition">#</a></dt>
+<dd><p>Get interval of the NASA’s polynomials from the Database (DB) for the
+given species and temperature [K].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tinterval (float)</em> – Index of the interval of temperatures</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getSpeciesThermo">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getSpeciesThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">units</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermo" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the thermodynamic properties of any species included in the NASA database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>units</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Label indicating mass [kg] or molar [mol] units</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>cP0 (float): Specific heat at constant pressure [J/(mol-k)]</p></li>
+<li><p>hf0 (float): Enthalpy of formation [J/mol]</p></li>
+<li><p>h0 (float):  Enthalpy [J/mol]</p></li>
+<li><p>ef0 (float): Internal energy of formation [J/mol]</p></li>
+<li><p>s0 (float):  Entropy [J/(mol-k)]</p></li>
+<li><p>Dg0 (float): Gibbs energy [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>[formula, mm, cP0, hf0, h0, ef0, s0, g0] = getSpeciesThermo(obj, DB, ‘CO’, 1000, ‘molar’)</p></li>
+<li><p>formula = ‘C   1.00O   1.00    0.00    0.00    0.00’</p></li>
+<li><p>mm  = 28.0101</p></li>
+<li><p>cP0 = 33.1788</p></li>
+<li><p>hf0 = -1.1054e+05</p></li>
+<li><p>h0  = -8.8848e+04</p></li>
+<li><p>ef0 = -1.1177e+05</p></li>
+<li><p>s0  = 234.5409</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getSpeciesThermoFull">
+<span class="sig-name descname"><span class="pre">getSpeciesThermoFull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">units</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermoFull" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermodynamic function using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p><strong>units</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Label indicating mass [kg] or molar [mol] units</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>cp  (float): Specific heat at constant pressure in units basis [J/(units-K)]</p></li>
+<li><p>cv  (float): Specific heat at constant volume in units basis   [J/(units-K)]</p></li>
+<li><p>h0  (float): Enthalpy in units basis [J/units]</p></li>
+<li><p>DhT (float): Thermal enthalpy in units basis [J/units]</p></li>
+<li><p>e0  (float): Internal energy in units basis [J/units]</p></li>
+<li><p>DeT (float): Thermal internal energy in units basis [J/units]</p></li>
+<li><p>s0  (float): Entropy in units basis [J/(units-K)]</p></li>
+<li><p>g0  (float): Gibbs energy in units basis [J/units]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[cp, cv, h0, DhT, e0, DeT, s0, g0] = speciesThermoFull(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_DeT_NASA">
+<span class="sig-name descname"><span class="pre">species_DeT_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_DeT_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermal internal energy [J/mol] of the species at the given
+temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DeT (float)</em> – Thermal internal energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>DeT = species_DeT_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_DhT_NASA">
+<span class="sig-name descname"><span class="pre">species_DhT_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_DhT_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermal enthalpy [J/mol] of the species at the given
+temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DhT (float)</em> – Thermal enthalpy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>DhT = species_DhT_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_cP_NASA">
+<span class="sig-name descname"><span class="pre">species_cP_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_cP_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute specific heats at constant pressure and at constant volume
+[J/(mol-K)] of the species at the given temperature [K] using NASA’s
+9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></span>) – NasaDatabase object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>cp (float): Specific heat at constant pressure in molar basis [J/(mol-K)]</p></li>
+<li><p>cv (float): Specific heat at constant volume in molar basis   [J/(mol-K)]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[cp, cv] = species_cP_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_cV_NASA">
+<span class="sig-name descname"><span class="pre">species_cV_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_cV_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute specific heat at constant volume [J/(mol-K)] of the species
+at the given temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>cV (float)</em> – Specific heat at constant volume in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>cV = species_cV_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_e0_NASA">
+<span class="sig-name descname"><span class="pre">species_e0_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_e0_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute internal energy and the thermal internal energy [J/mol] of
+the species at the given temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>e0 (float): Internal energy in molar basis [J/mol]</p></li>
+<li><p>DeT (float): Thermal internal energy in molar basis [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[e0, DeT] = species_e0_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_gamma_NASA">
+<span class="sig-name descname"><span class="pre">species_gamma_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_gamma_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute adiabatic index of the species [-] at the given temperature
+[K] using piecewise cubic Hermite interpolating polynomials and
+linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>gamma (float)</em> – Adiabatic index [-]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>gamma = species_gamma_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_h0_NASA">
+<span class="sig-name descname"><span class="pre">species_h0_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_h0_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute enthalpy and thermal enthalpy [kJ/mol] of the species at the
+given temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>h0 (float): Enthalpy in molar basis [J/mol]</p></li>
+<li><p>DhT (float): Thermal enthalpy in molar basis [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[h0, DhT] = species_h0_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_s0_NASA">
+<span class="sig-name descname"><span class="pre">species_s0_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_s0_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute entropy [J/(mol-K)] of the species at the given temperature [K]
+using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>s0 (float)</em> – Entropy in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>s0 = species_s0_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_thermo_NASA">
+<span class="sig-name descname"><span class="pre">species_thermo_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_thermo_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermodynamic function using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+<li><p><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>cP  (float): Specific heat at constant pressure in molar basis [J/(mol-K)]</p></li>
+<li><p>cV  (float): Specific heat at constant volume in molar basis   [J/(mol-K)]</p></li>
+<li><p>h0  (float): Enthalpy in molar basis [J/mol]</p></li>
+<li><p>DhT (float): Thermal enthalpy in molar basis [J/mol]</p></li>
+<li><p>e0  (float): Internal energy in molar basis [J/mol]</p></li>
+<li><p>DeT (float): Thermal internal energy in molar basis [J/mol]</p></li>
+<li><p>s0  (float): Entropy in molar basis [J/(mol-K)]</p></li>
+<li><p>g0  (float): Gibbs energy in molar basis [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[cP, cV, h0, DhT, e0, DeT, s0, g0] = species_thermo_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="burcatdatabase">
+<h2>BurcatDatabase<a class="headerlink" href="#burcatdatabase" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="solarabundances">
+<h2>SolarAbundances<a class="headerlink" href="#solarabundances" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../core/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Core classes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../common/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Common functions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2024, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Databases</a><ul>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+databases.&#64;Database">Database</a></li>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+databases.&#64;NasaDatabase">NasaDatabase</a></li>
+<li><a class="reference internal" href="#burcatdatabase">BurcatDatabase</a></li>
+<li><a class="reference internal" href="#solarabundances">SolarAbundances</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1294 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Shocks and detonations module" href="../shockdetonation/index.html" /><link rel="prev" title="Core classes" href="../core/index.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Thermochemical equilibrium module - Combustion Toolbox v1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-announcement-background: #afe9ddff;
+  --color-announcement-text: #008080ff;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples_gui.html">Examples GUI</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/examples_plain.html">Examples desktop environment</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TP.html">Example_TP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TV.html">Example_TV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP.html">Example_HP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EV.html">Example_EV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SP.html">Example_SP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV.html">Example_SV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV_FROZEN.html">Example_SV_FROZEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I.html">Example_SHOCK_I.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I_IONIZATION.html">Example_SHOCK_I_IONIZATION.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_R.html">Example_SHOCK_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_BETA.html">Example_SHOCK_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_THETA.html">Example_SHOCK_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_R.html">Example_SHOCK_OBLIQUE_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR.html">Example_SHOCK_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR_R.html">Example_SHOCK_POLAR_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET.html">Example_DET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_R.html">Example_DET_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="thermochemical-equilibrium-module">
+<h1>Thermochemical equilibrium module<a class="headerlink" href="#thermochemical-equilibrium-module" title="Permalink to this heading">#</a></h1>
+<p>In this section, you will find the documentation of the kernel of the code, which is used to obtain the chemical equilibrium composition for a desired thermochemical transformation, e.g., constant enthalpy and pressure. It also includes routines to compute chemical equilibrium assuming a complete combustion and the calculation of the thermodynamic derivates. The code stems from the minimization of the free energy of the system by using Lagrange multipliers combined with a Newton-Raphson method, upon condition that initial gas properties are defined by two functions of states, e.g., temperature and pressure.</p>
+<section id="module-src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver">
+<span id="equilibriumsolver"></span><h2>EquilibriumSolver<a class="headerlink" href="#module-src.+combustiontoolbox.+equilibrium.@EquilibriumSolver" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">EquilibriumSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code></a> class is used to compute the composition at the equilibrium
+of multi-component gas mixtures that undergo canonical thermochemical transformations from
+an initial state (reactants), defined by its initial composition, temperature, and pressure,
+to a final state (products), defined by a set of chemical species (in gaseous—included
+ions—or pure condensed phase).</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EquilibriumSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
+<dl class="simple">
+<dt>Problem types:</dt><dd><ul class="simple">
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">TP</span></code>: Equilibrium composition at defined temperature and pressure</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">TV</span></code>: Equilibrium composition at defined temperature and specific volume</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HP</span></code>: Equilibrium composition at defined enthalpy and pressure</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EV</span></code>: Equilibrium composition at defined internal energy and specific volume</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">SP</span></code>: Equilibrium composition at defined entropy and pressure</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">SV</span></code>: Equilibrium composition at defined entropy and specific volume</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solve" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solveArray" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.report" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.EquilibriumSolver">
+<span class="sig-name descname"><span class="pre">EquilibriumSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.EquilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_EOS">
+<span class="sig-name descname"><span class="pre">FLAG_EOS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_EOS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to use non-ideal Equation of States (EoS)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_EXTRAPOLATE">
+<span class="sig-name descname"><span class="pre">FLAG_EXTRAPOLATE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_EXTRAPOLATE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag indicating linear extrapolation of the polynomials fits</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_FAST">
+<span class="sig-name descname"><span class="pre">FLAG_FAST</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_FAST" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag indicating use guess composition of the previous computation</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_FROZEN">
+<span class="sig-name descname"><span class="pre">FLAG_FROZEN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_FROZEN" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to consider a calorically imperfect gas with frozen chemistry</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to postprocess all the results with predefined plots</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_TCHEM_FROZEN">
+<span class="sig-name descname"><span class="pre">FLAG_TCHEM_FROZEN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_TCHEM_FROZEN" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to consider a thermochemically frozen gas (calorically perfect gas)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print elapsed time</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getGpoint">
+<span class="sig-name descname"><span class="pre">getGpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getGpoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Get fixed point of a function based on the chemical transformation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>attributeName</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
+<li><p><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>gpoint (float): Fixed point of the function [J] (HP, EV) or [J/K] (SP, SV)</p></li>
+<li><p>gpointRelative (float): Fixed relative point of the function [J] (HP, EV) or [J/K] (SP, SV)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getPartialDerivative">
+<span class="sig-name descname"><span class="pre">getPartialDerivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPartialDerivative" title="Permalink to this definition">#</a></dt>
+<dd><p>Get value of the partial derivative for the set problem type [J/K] (HP, EV) or [J/K^2] (SP, SV)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>value (float)</em> – Value of the partial derivative for the set problem type [J/K] (HP, EV) or [J/K^2] (SP, SV)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getPoint">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_vector</span></em>, <em class="sig-param"><span class="pre">f_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Get point using the regula falsi method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Guess temperature [K]</p></li>
+<li><p><strong>f_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – evaluated functions [J] (HP, EV) or [J/K] (SP, SV)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>point (float)</em> – Point of the function [K]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getPointAitken">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getPointAitken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">g_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPointAitken" title="Permalink to this definition">#</a></dt>
+<dd><p>Get fixed point of a function based on the chemical transformation using the Aitken acceleration method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for temperature [K]</p></li>
+<li><p><strong>g_vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Fixed points of the function [J] (HP, EV) or [J/K] (SP, SV)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>point (float)</em> – Point of the function [K]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getRatioNewton">
+<span class="sig-name descname"><span class="pre">getRatioNewton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getRatioNewton" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the residual of f, its derivative with temperature, and the
+relative value of the residual</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'30'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - root finding method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.itMaxGibbs">
+<span class="sig-name descname"><span class="pre">itMaxGibbs</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'70'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxGibbs" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - Gibbs/Helmholtz minimization method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.itMaxIons">
+<span class="sig-name descname"><span class="pre">itMaxIons</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'30'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxIons" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - charge balance (ions)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.newton">
+<span class="sig-name descname"><span class="pre">newton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.newton" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the temperature [K] (root) for the set chemical transformation at equilibrium using the second-order Newton-Raphson method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>pP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p><strong>attributeName</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Attribute name of the problem type</p></li>
+<li><p><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for temperature [K]</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for moles in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>x (float): Temperature at equilibrium [K]</p></li>
+<li><p>STOP (float): Relative error [-]</p></li>
+<li><p>molesGuess (float): Updated guess for moles in the final mixture</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.nsteff">
+<span class="sig-name descname"><span class="pre">nsteff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.nsteff" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the temperature [K] (root) for the set chemical transformation at equilibrium using the third-order Newton-Steffensen method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>attributeName</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Attribute name of the problem type</p></li>
+<li><p><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for temperature [K]</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for moles in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>x (float): Temperature at equilibrium [K]</p></li>
+<li><p>STOP (float): Relative error [-]</p></li>
+<li><p>molesGuess (float): Updated guess for moles in the final mixture</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ax2 (Axes)</em> – Axes object with properties of the mixtures</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>plot(EquilibriumSolver(), mixArray);</p></li>
+<li><p>plot(EquilibriumSolver(), mixArray, mixArray2);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.plotConfig">
+<span class="sig-name descname"><span class="pre">plotConfig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.plotConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>PlotConfig object</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.printError">
+<span class="sig-name descname"><span class="pre">printError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">it</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">STOP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.printError" title="Permalink to this definition">#</a></dt>
+<dd><p>Print error of the method if the number of iterations is greater than maximum iterations allowed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>it</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of iterations executed in the method</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>STOP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Relative error [-]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.printTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Print execution time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.problemType" title="Permalink to this definition">#</a></dt>
+<dd><p>Problem type [TP, TV, HP, EV, SP, SV]</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.regulaGuess">
+<span class="sig-name descname"><span class="pre">regulaGuess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.regulaGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Find a estimate of the temperature for the set chemical equilibrium
+transformation using the regula falsi method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>attributeName</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Attribute name of the problem type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>x0 (float)</em> – Initial guess for temperature [K]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.relaxFactor">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">relaxFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">ni</span></em>, <em class="sig-param"><span class="pre">eta</span></em>, <em class="sig-param"><span class="pre">Delta_ln_NP</span></em>, <em class="sig-param"><span class="pre">NG</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.relaxFactor" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute relaxation factor</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.removeElements">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">removeElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">NatomE</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">ind_E</span></em>, <em class="sig-param"><span class="pre">tol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.removeElements" title="Permalink to this definition">#</a></dt>
+<dd><p>Find zero sum elements and remove them from stoichiometrix matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>NatomE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of atoms of each element</p></li>
+<li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometrix matrix</p></li>
+<li><p><strong>ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of electron element</p></li>
+<li><p><strong>tol</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Tolerance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>** A0 (float)* – Stoichiometrix matrix updated
+* indexRemoveSpecies (float): Index of species to be removed
+* ind_E (float): Index of electron element updated
+* NatomE (float): Number of atoms of each element updated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.report" title="Permalink to this definition">#</a></dt>
+<dd><p>Postprocess all the results with predefined plots</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ax (Axes)</em> – Axes object with properties of the mixtures</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>ax = report(EquilibriumSolver(), mixArray);</p></li>
+<li><p>ax = report(EquilibriumSolver(), mixArray, mixArray2);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.rootMethod">
+<span class="sig-name descname"><span class="pre">rootMethod</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'&#64;newton'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.rootMethod" title="Permalink to this definition">#</a></dt>
+<dd><p>Root finding method [newton (2nd order), steff (2nd order), or nsteff (3rd order)]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.root_T0">
+<span class="sig-name descname"><span class="pre">root_T0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'3000'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0" title="Permalink to this definition">#</a></dt>
+<dd><p>Temperature guess [K] if it’s outside previous range - root finding method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.root_T0_l">
+<span class="sig-name descname"><span class="pre">root_T0_l</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1000'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0_l" title="Permalink to this definition">#</a></dt>
+<dd><p>First temperature guess [K] left branch - root finding method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.root_T0_r">
+<span class="sig-name descname"><span class="pre">root_T0_r</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'3000'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0_r" title="Permalink to this definition">#</a></dt>
+<dd><p>First temperature guess [K] right branch - root finding method</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain chemical equilibrium composition and thermodynamic properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture object containing initial state</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixGuess (Mixture): Mixture object from previous calculation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>mix (Mixture)</em> – Mixture object updated with equilibrium composition and properties</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>mix = solve(EquilibriumSolver(), mix);</p></li>
+<li><p>mix = solve(EquilibriumSolver(), mix, mixGuess);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solveArray">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.solveArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain chemical equilibrium composition and thermodynamic properties for an array of mixture values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span> <span class="pre">of</span> <span class="pre">Mixture</span></code></span>) – Array of Mixture objects containing initial states</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>mixArray (array of Mixture)</em> – Array of Mixture objects updated with equilibrium compositions and properties</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>mixArray = solveArray(EquilibriumSolver(), mixArray);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.steff">
+<span class="sig-name descname"><span class="pre">steff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.steff" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the temperature [K] (root) for the set chemical transformation at equilibrium using the Steffenson-Aitken method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>attributeName</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Attribute name of the problem type</p></li>
+<li><p><strong>x0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for temperature [K]</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Initial guess for moles in the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>x (float): Temperature at equilibrium [K]</p></li>
+<li><p>STOP (float): Relative error [-]</p></li>
+<li><p>molesGuess (float): Updated guess for moles in the final mixture</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tempValues">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">tempValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">NatomE</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tempValues" title="Permalink to this definition">#</a></dt>
+<dd><p>List of indices with nonzero values and lengths</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.temperatureIons">
+<span class="sig-name descname"><span class="pre">temperatureIons</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'0'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.temperatureIons" title="Permalink to this definition">#</a></dt>
+<dd><p>Minimum temperature [K] to consider ionized species</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.time" title="Permalink to this definition">#</a></dt>
+<dd><p>Elapsed time [s]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the root finding algorithm</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolE">
+<span class="sig-name descname"><span class="pre">tolE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-6'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolE" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the mass balance</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolGibbs">
+<span class="sig-name descname"><span class="pre">tolGibbs</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-6'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolGibbs" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the Gibbs/Helmholtz minimization method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolMoles">
+<span class="sig-name descname"><span class="pre">tolMoles</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-14'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMoles" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the composition of the mixture</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolMolesGuess">
+<span class="sig-name descname"><span class="pre">tolMolesGuess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-6'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMolesGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the molar composition of the mixture (guess)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolMultiplierIons">
+<span class="sig-name descname"><span class="pre">tolMultiplierIons</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMultiplierIons" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the dimensionless Lagrangian multiplier - ions</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.tolTau">
+<span class="sig-name descname"><span class="pre">tolTau</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-25'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolTau" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of the slack variables for condensed species</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.updateTemp">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">updateTemp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexIons</span></em>, <em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">NG</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">SIZE</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.updateTemp" title="Permalink to this definition">#</a></dt>
+<dd><p>Update temporal values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibrate">
+<span class="sig-name descname"><span class="pre">equilibrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrate" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain properties at equilibrium for the given thermochemical transformation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture considering a thermochemical frozen gas</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2Guess (Mixture): Mixture object of a previous calculation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>mix2 (Mixture)</em> – Mixture at chemical equilibrium for the given thermochemical transformation</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>mix2 = equilibrate(EquilibriumSolver(), mix2)</p></li>
+<li><p>mix2 = equilibrate(EquilibriumSolver(), mix2, mix2Guess)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibrateT">
+<span class="sig-name descname"><span class="pre">equilibrateT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrateT" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain equilibrium properties and composition for the given
+temperature [K] and pressure [bar] / specific volume [m3/kg]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the final mixture</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>molesGuess (float): Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>mix2 (Mixture)</em> – Properties of the final mixture</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p>mix2 = equilibrateT(EquilibriumSolver(), mix1, mix2, 3000)
+mix2 = equilibrateT(EquilibriumSolver(), mix1, mix2, 3000, molesGuess)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumCheckCondensed">
+<span class="sig-name descname"><span class="pre">equilibriumCheckCondensed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">pi_i</span></em>, <em class="sig-param"><span class="pre">W</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">muRT</span></em>, <em class="sig-param"><span class="pre">NC_max</span></em>, <em class="sig-param"><span class="pre">FLAG_ONE</span></em>, <em class="sig-param"><span class="pre">FLAG_RULE</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumCheckCondensed" title="Permalink to this definition">#</a></dt>
+<dd><p>Check condensed species that may appear at chemical equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p><strong>pi_i</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless Lagrange multiplier vector</p></li>
+<li><p><strong>W</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Molecular mass [kg/mol] vector</p></li>
+<li><p><strong>indexCondensed</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index condensed species to be considered</p></li>
+<li><p><strong>muRT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">flaot</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
+<li><p><strong>NC_max</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum number of condensed species (Gibbs phase rule)</p></li>
+<li><p><strong>FLAG_ONE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating to include condensed species in the system one by one</p></li>
+<li><p><strong>FLAG_RULE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating to include condensed species in the system up to the maximum number of condensed species that satisfy the Gibbs phase rule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>indexCondensed (float): Index condensed species that may appear at chemical equilibrium</p></li>
+<li><p>FLAG_CONDENSED (bool): Flag indicating additional condensed species that may appear at chemical equilibrium</p></li>
+<li><p>dL_dnj (float): Vapor pressure test vector of the species that may appear at chemical equilibrium</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumCheckIons">
+<span class="sig-name descname"><span class="pre">equilibriumCheckIons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">ind_E</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexIons</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumCheckIons" title="Permalink to this definition">#</a></dt>
+<dd><p>Check convergence of ionized species in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>N</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol]</p></li>
+<li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p><strong>ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of electron element</p></li>
+<li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">flaot</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
+<li><p><strong>indexIons</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – List of ionized chemical species indices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>N (float): Mixture composition [mol]</p></li>
+<li><p>STOP (float): Relative error in charge balance [-]</p></li>
+<li><p>FLAG_ION (bool): Flag indicating if ionized species are present in the mixture</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumDerivatives">
+<span class="sig-name descname"><span class="pre">equilibriumDerivatives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">J</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">indexElements</span></em>, <em class="sig-param"><span class="pre">H0RT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumDerivatives" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
+respect to temperature and pressure from a given composition [moles] at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>J</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Matrix J to solve the linear system J*x = b</p></li>
+<li><p><strong>N</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol]</p></li>
+<li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
+<li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
+<li><p><strong>indexCondensed</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
+<li><p><strong>indexElements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
+<li><p><strong>H0RT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless enthalpy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p>dN_T (float):  Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p>dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p>dN_p (float):  Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[dNi_T, dN_T, dNi_p, dN_p] = equilibriumDerivatives(J, N, A0, NE, ind, indexGas, indexCondensed, indexElements, H0RT)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumGibbs">
+<span class="sig-name descname"><span class="pre">equilibriumGibbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">p</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGibbs" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain equilibrium composition [moles] for the given temperature [K] and pressure [bar].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and pressure.</p>
+<p>The algorithm implemented take advantage of the sparseness of the
+upper left submatrix obtaining a matrix J of size NE + NS - NG + 1.</p>
+<p>This function is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311 and in Leal, A. M., Kulik, D. A.,
+Kosakowski, G., &amp; Saar, M. O. (2016). Computational methods for reactive transport
+modeling: An extended law of mass-action, xLMA, method for multiphase equilibrium
+calculations. Advances in Water Resources, 96, 405-422.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – Equilibrium solver object</p></li>
+<li><p><strong>system</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></span>) – Chemical system object</p></li>
+<li><p><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>N (float): Mixture composition [mol]</p></li>
+<li><p>dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p>dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p>dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p>dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p>index (float): List of chemical species indices</p></li>
+<li><p>STOP (float): Relative error in moles of species [-]</p></li>
+<li><p>STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+<li><p>h0 (float): Molar enthalpy [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>N = EquilibriumSolver().equilibriumGibbs(system, 1.01325, 3000, mix, [])</p></li>
+<li><p>[N, dNi_T, dN_T, dNi_p, dN_p, index, STOP, STOP_ions, h0] = EquilibriumSolver().equilibriumGibbs(system, 1.01325, 3000, mix, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumGuess">
+<span class="sig-name descname"><span class="pre">equilibriumGuess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">muRT</span></em>, <em class="sig-param"><span class="pre">b0</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexIons</span></em>, <em class="sig-param"><span class="pre">NG</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize molar composition from a previous calculation or using the simplex algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol]</p></li>
+<li><p><strong>NP</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Total moles of gaseous species [mol]</p></li>
+<li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
+<li><p><strong>muRT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless chemical potentials</p></li>
+<li><p><strong>b0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of each element</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of chemical species</p></li>
+<li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of gaseous species</p></li>
+<li><p><strong>indexIons</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of ionized species</p></li>
+<li><p><strong>NG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of gaseous species</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>N (float): Mixture composition [mol]</p></li>
+<li><p>NP (float): Total moles of gaseous species [mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[N, NP] = equilibriumGuess(N, NP, A0, muRT, b0, index, indexGas, indexIons, NG, molesGuess)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumHelmholtz">
+<span class="sig-name descname"><span class="pre">equilibriumHelmholtz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">v</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumHelmholtz" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain equilibrium composition [moles] for the given temperature [K] and volume [m3].
+The code stems from the minimization of the free energy of the system by using Lagrange
+multipliers combined with a Newton-Raphson method, upon condition that initial gas
+properties are defined by temperature and volume.</p>
+<p>The algorithm implemented take advantage of the sparseness of the
+upper left submatrix obtaining a matrix J of size NE + NS - NG.</p>
+<p>This function is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311 and in Leal, A. M., Kulik, D. A.,
+Kosakowski, G., &amp; Saar, M. O. (2016). Computational methods for reactive transport
+modeling: An extended law of mass-action, xLMA, method for multiphase equilibrium
+calculations. Advances in Water Resources, 96, 405-422.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – Equilibrium solver object</p></li>
+<li><p><strong>system</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></span>) – Chemical system object</p></li>
+<li><p><strong>v</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Volume [m3]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>molesGuess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol] of a previous computation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>N (float): Mixture composition [moles]</p></li>
+<li><p>dNi_T (float): Thermodynamic derivative of the moles of the species respect to temperature</p></li>
+<li><p>dN_T (float): Thermodynamic derivative of the moles of the mixture respect to temperature</p></li>
+<li><p>dNi_p (float): Thermodynamic derivative of the moles of the species respect to pressure</p></li>
+<li><p>dN_p (float): Thermodynamic derivative of the moles of the mixture respect to pressure</p></li>
+<li><p>index (float): List of chemical species indices</p></li>
+<li><p>STOP (float): Relative error in moles of species [-]</p></li>
+<li><p>STOP_ions (float): Relative error in moles of ionized species [-]</p></li>
+<li><p>h0 (float): Molar enthalpy [J/mol]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>N = EquilibriumSolver().equilibriumHelmholtz(system, 1, 3000, mix, [])</p></li>
+<li><p>[N, dNi_T, dN_T, dNi_p, dN_p, index, STOP, STOP_ions] = EquilibriumSolver().equilibriumHelmholtz(system, 1, 3000, mix, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../shockdetonation/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Shocks and detonations module</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../core/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Core classes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2024, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Thermochemical equilibrium module</a><ul>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver">EquilibriumSolver</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>

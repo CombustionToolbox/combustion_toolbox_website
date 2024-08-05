@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium at constant enthalpy and pressure" href="chemical_equilibrium_2.html" /><link rel="prev" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Chemical equilibrium at constant temperature and pressure - Combustion Toolbox v1.0.5</title>
+        <title>Chemical equilibrium at constant temperature and pressure - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP.html">Example_HP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -290,15 +291,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases.html">Databases</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_rocket/index.html">Rocket module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/gui/index.html">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
@@ -346,31 +344,20 @@
 <li><p>HCN, HCO, N, NH, NH<span class="math notranslate nohighlight">\(_2\)</span>, NH<span class="math notranslate nohighlight">\(_3\)</span>, NO, O, OH,</p></li>
 </ul>
 <p>which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine <tt>list_species.m</tt> as <code class="docutils literal notranslate"><span class="pre">Soot</span> <span class="pre">formation</span></code>, which also includes Ar.</p>
-<section id="defining-chemical-system">
-<h2>Defining chemical system<a class="headerlink" href="#defining-chemical-system" title="Permalink to this heading">#</a></h2>
+<section id="define-database">
+<h2>Define database<a class="headerlink" href="#define-database" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Plain code</label><div class="sd-tab-content docutils">
-<p>To initialize the Combustion Toolbox (CT) with this set of species, type the following at the MATLAB prompt:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
-Predefined list of species</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
+<p>To define the database with this set of species, type the following at the MATLAB prompt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import package</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="c">% Load Nasa&#39;s database </span><span class="w"></span>
+<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
-Specifiying a custom list of species</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">            </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">            </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">});</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Here DB is a <tt>NasaDatabase</tt> object that inherits from the superclass  <tt>Databese</tt>.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -382,19 +369,55 @@ GUI</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
-<section id="setting-the-initial-thermodynamic-state">
-<h2>Setting the initial thermodynamic state<a class="headerlink" href="#setting-the-initial-thermodynamic-state" title="Permalink to this heading">#</a></h2>
+<section id="defining-chemical-system">
+<h2>Defining chemical system<a class="headerlink" href="#defining-chemical-system" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Plain code</label><div class="sd-tab-content docutils">
+<p>To initialize the Combustion Toolbox (CT) with this set of species, type the following at the MATLAB prompt:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-4">
+Predefined list of species</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Specifiying a custom list of species</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">            </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">            </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+GUI</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is under development. Stay tuned!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-the-initial-thermodynamic-state">
+<h2>Setting the initial thermodynamic state<a class="headerlink" href="#setting-the-initial-thermodynamic-state" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Plain code</label><div class="sd-tab-content docutils">
 <p>To indicate the temperature [K] and pressure [bar] of the initial mixture, type:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 GUI</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -406,13 +429,13 @@ GUI</label><div class="sd-tab-content docutils">
 <section id="setting-the-initial-chemical-composition">
 <h2>Setting the initial chemical composition<a class="headerlink" href="#setting-the-initial-chemical-composition" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-6">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Plain code</label><div class="sd-tab-content docutils">
 <p>To indicate the species and chemical composition in the initial mixture:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-8">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 Individual study</label><div class="sd-tab-content docutils">
 <p>For a stochiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">};</span><span class="w"></span>
@@ -430,8 +453,8 @@ Individual study</label><div class="sd-tab-content docutils">
 </div>
 <p>The last two lines of code establish the proportion of the oxidizers species over O<span class="math notranslate nohighlight">\(_2\)</span> and the equivalence ratio, respectively. The number of moles are calculated considering that the number of moles of fuel is one by default.</p>
 </div>
-<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 Parametric study</label><div class="sd-tab-content docutils">
 <p>For a lean-to-rich CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixtures:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">};</span><span class="w"></span>
@@ -444,8 +467,8 @@ Parametric study</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-7">
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 GUI</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -457,8 +480,8 @@ GUI</label><div class="sd-tab-content docutils">
 <section id="set-chemical-transformation">
 <h2>Set chemical transformation<a class="headerlink" href="#set-chemical-transformation" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-10">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Plain code</label><div class="sd-tab-content docutils">
 <p>Depending on the problem you want to solve, you may need to configure additional inputs. In this case, to compute the equilibrium composition at the defined temperature and pressure (TP), we have to set these values as</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pP&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">pR</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TP&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">);</span><span class="w"></span>
@@ -467,27 +490,6 @@ Plain code</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here, the pressure of the final state has been defined using the defined value of the initial state, <code class="docutils literal notranslate"><span class="pre">self.PD.pR.value</span></code>.</p>
-</div>
-</div>
-<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
-GUI</label><div class="sd-tab-content docutils">
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section is under development. Stay tuned!</p>
-</div>
-</div>
-</div>
-</section>
-<section id="perform-chemical-calculations">
-<h2>Perform chemical calculations<a class="headerlink" href="#perform-chemical-calculations" title="Permalink to this heading">#</a></h2>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-12">
-Plain code</label><div class="sd-tab-content docutils">
-<p>To solve the aforementioned problem, run</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TP&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
 </div>
 </div>
 <input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
@@ -500,11 +502,32 @@ GUI</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
-<section id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<section id="perform-chemical-calculations">
+<h2>Perform chemical calculations<a class="headerlink" href="#perform-chemical-calculations" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-14">
+Plain code</label><div class="sd-tab-content docutils">
+<p>To solve the aforementioned problem, run</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TP&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+GUI</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is under development. Stay tuned!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 Plain code</label><div class="sd-tab-content docutils">
 <p>The results are contained in <code class="docutils literal notranslate"><span class="pre">self.PS</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">solve_problem.m</span></code> prints the results through the command window, which gives for the stoichiometric case (phi=1):</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">COMPUTING</span><span class="w"> </span><span class="s">Nº</span><span class="w"> </span><span class="s">MOLES</span><span class="w"> </span><span class="s">FROM</span><span class="w"> </span><span class="s">EQUIVALENCE</span><span class="w"> </span><span class="s">RATIO</span><span class="w"> </span><span class="s">(PHI).</span><span class="w"></span>
@@ -573,8 +596,8 @@ Plain code</label><div class="sd-tab-content docutils">
 <p>or modify its default value directly in <code class="docutils literal notranslate"><span class="pre">miscellaneous.m</span></code>.</p>
 </div>
 </div>
-<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-15">
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 GUI</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -586,8 +609,8 @@ GUI</label><div class="sd-tab-content docutils">
 <section id="postprocessed-results-predefined-plots-for-several-cases">
 <h2>Postprocessed results (predefined plots for several cases)<a class="headerlink" href="#postprocessed-results-predefined-plots-for-several-cases" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-16">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 Plain code</label><div class="sd-tab-content docutils">
 <p>There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the routine</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
@@ -599,8 +622,8 @@ Plain code</label><div class="sd-tab-content docutils">
 </p>
 <p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH$_4$-ideal air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 2.39 seconds using a Intel(R) Core(TM) i7-11800H CPU &#64; 2.30GHz.</em></p>
 </div>
-<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-17">
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 GUI</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -612,8 +635,8 @@ GUI</label><div class="sd-tab-content docutils">
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-18">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 Individual study</label><div class="sd-tab-content docutils">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
 <span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
@@ -635,8 +658,8 @@ Individual study</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-19">
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 Parametric study</label><div class="sd-tab-content docutils">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
 <span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Soot formation&#39;</span><span class="p">);</span><span class="w"></span>
@@ -733,6 +756,7 @@ Parametric study</label><div class="sd-tab-content docutils">
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Chemical equilibrium at constant temperature and pressure</a><ul>
+<li><a class="reference internal" href="#define-database">Define database</a></li>
 <li><a class="reference internal" href="#defining-chemical-system">Defining chemical system</a></li>
 <li><a class="reference internal" href="#setting-the-initial-thermodynamic-state">Setting the initial thermodynamic state</a></li>
 <li><a class="reference internal" href="#setting-the-initial-chemical-composition">Setting the initial chemical composition</a></li>

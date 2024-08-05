@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/><title>Index - Combustion Toolbox v1.0.5</title>
+    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/><title>Index - Combustion Toolbox v1.1.0</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -187,7 +187,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -228,7 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_1.html">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_4.html">Defining chemical system</a></li>
@@ -289,15 +289,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="documentation/databases.html">Databases</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_rocket/index.html">Rocket module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="documentation/api/utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="documentation/api/gui/index.html">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -343,29 +340,21 @@
   <h2>A</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.A0">A0 (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.a">a (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.abundances2moles">abundances2moles() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.AddButton2Pushed">AddButton2Pushed() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.adiabaticIndex">adiabaticIndex() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.adiabaticIndex_sound">adiabaticIndex_sound() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.App.App">App() (in module src.modules.self.App)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.areaRatio">areaRatio (Mixture attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.append_cells">append_cells() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.areaRatioChamber">areaRatioChamber (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.append_structs">append_structs() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.assign_values_elements">assign_values_elements() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.Aratio">Aratio (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.atm2bar">atm2bar (Units attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.Aratio_c">Aratio_c (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.ask_problem">ask_problem() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.assign_vector2cell">assign_vector2cell() (in module src.utils)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.atm2Pa">atm2Pa (Units attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -375,11 +364,25 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.b">b (Species attribute)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.background_color">background_color (uipreferences attribute)</a>
+</li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.bar2atm">bar2atm (Units attribute)</a>
+</li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.bar2Pa">bar2Pa (Units attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.beta">beta (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.beta">beta (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.betaMax">betaMax (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.betaMin">betaMin (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.betaSonic">betaSonic (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.burcatValueChanged">burcatValueChanged() (uielements method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -389,115 +392,187 @@
   <h2>C</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.C">C (combustion_toolbox attribute)</a>
-
-        <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.C">(uielements attribute)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.CalculateButtonPushed">CalculateButtonPushed() (combustion_toolbox method)</a>
 </li>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.C">(uipreferences attribute)</a>
-</li>
-        </ul></li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.caller_app">caller_app (uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.cell2vector">cell2vector() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.callerApp">callerApp (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.check_DB">check_DB() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.callerAppTag">callerAppTag (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.check_FOI">check_FOI() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.cancel_button_pushed">cancel_button_pushed() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.check_inputs">check_inputs() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.cf">cf (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.check_temperature_range">check_temperature_range() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.checkCompleteReaction">checkCompleteReaction() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.check_update">check_update() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.checkSpecies">checkSpecies() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem">ChemicalSystem (class in src.combustiontoolbox.core.@ChemicalSystem)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.chemicalSystem">chemicalSystem (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.chemicalSystem">(Mixture attribute)</a>
+</li>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.chemicalSystem">(uielements attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ChemicalSystem">ChemicalSystem() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.cjSpeed">cjSpeed (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.clean">clean() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.cleanMoles">cleanMoles() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ClearButtonPushed">ClearButtonPushed() (combustion_toolbox method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.color_lamp_done">color_lamp_done (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.color_lamp_done">(uivalidations attribute)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.color_lamp_error">color_lamp_error (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.color_lamp_error">(uivalidations attribute)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.color_lamp_nothing">color_lamp_nothing (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.color_lamp_working">color_lamp_working (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.color_lamp_working">(uivalidations attribute)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.color_splash">color_splash (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox">combustion_toolbox (class in src.gui)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.complete_combustion">complete_combustion() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.comments">comments (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.App.complete_initialize">complete_initialize() (in module src.modules.self.App)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.compute_entropy_mixing">compute_entropy_mixing() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.composition_units">composition_units (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.computeEquivalenceRatio">computeEquivalenceRatio() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.compressibility_factor">compressibility_factor() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.computeEquivalenceRatioSoot">computeEquivalenceRatioSoot() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.compute_chamber_IAC">compute_chamber_IAC() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.computeMeanMolecularWeight">computeMeanMolecularWeight() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.compute_change_moles_gas_reaction">compute_change_moles_gas_reaction() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.computeProperties">computeProperties() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.Compute_density">Compute_density() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.computeRatiosFuelOxidizer">computeRatiosFuelOxidizer() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.compute_error_moles_CEA">compute_error_moles_CEA() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.condensedValueChanged">condensedValueChanged() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.compute_error_prop_CEA">compute_error_prop_CEA() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants">Constants (class in src.combustiontoolbox.common.@Constants)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.compute_exit">compute_exit() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.constants">constants (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.constants">(uielements attribute)</a>
+</li>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.constants">(uipreferences attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.convert">convert() (Units static method)</a>
+</li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.convertWeightPercentage2moles">convertWeightPercentage2moles() (Units static method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.CopyButtonPushed">CopyButtonPushed() (uielements method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.compute_FAC">compute_FAC() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.cp">cp (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_first_derivative">compute_first_derivative() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.cpcurve">cpcurve (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_Gammas">compute_Gammas() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_cancel_button">create_cancel_button() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_Gammas_frozen">compute_Gammas_frozen() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_combustion_toolbox_node">create_combustion_toolbox_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.compute_heatrelease">compute_heatrelease() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.create_components">create_components() (combustion_toolbox method)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_components">(uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.compute_interval_NASA">compute_interval_NASA() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_constants_node">create_constants_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_phi_c">compute_phi_c() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_detonationSolver_flags_node">create_detonationSolver_flags_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_properties">compute_properties() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_detonationSolver_module1_node">create_detonationSolver_module1_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_ratio_oxidizers_O2">compute_ratio_oxidizers_O2() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_detonationSolver_node">create_detonationSolver_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.compute_sound">compute_sound() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_equilibriumSolver_flags_node">create_equilibriumSolver_flags_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.compute_temperature_mixture">compute_temperature_mixture() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_equilibriumSolver_module1_node">create_equilibriumSolver_module1_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.compute_throat_IAC">compute_throat_IAC() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_equilibriumSolver_module2_node">create_equilibriumSolver_module2_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.Compute_YFuel">Compute_YFuel() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_equilibriumSolver_node">create_equilibriumSolver_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.config">config (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_general_node">create_general_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.Constants">Constants() (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_label_version">create_label_version() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.App.contained_elements">contained_elements() (in module src.modules.self.App)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_miscellaneous_export_node">create_miscellaneous_export_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.convert_atm_to_bar">convert_atm_to_bar() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_ok_button">create_ok_button() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.convert_bar_to_atm">convert_bar_to_atm() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_panel">create_panel() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.convert_bar_to_Pa">convert_bar_to_Pa() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_panel_checkbox">create_panel_checkbox() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.convert_Pa_to_bar">convert_Pa_to_bar() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_panel_dropdown">create_panel_dropdown() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.convert_weight_percentage_to_moles">convert_weight_percentage_to_moles() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_panel_edit_field">create_panel_edit_field() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.cp_mass">cp_mass() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_panel_label">create_panel_label() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.cp_mole">cp_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_plotConfig_axes_node">create_plotConfig_axes_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.create_cell_ntimes">create_cell_ntimes() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_plotConfig_node">create_plotConfig_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_plotConfig_plots_node">create_plotConfig_plots_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_rocketSolver_flags_node">create_rocketSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_rocketSolver_module1_node">create_rocketSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_rocketSolver_node">create_rocketSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_shockSolver_flags_node">create_shockSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_shockSolver_module1_node">create_shockSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_shockSolver_node">create_shockSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_solvers_node">create_solvers_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_title">create_title() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.create_tree">create_tree() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.createComponents">createComponents() (combustion_toolbox method)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uiabout.createComponents">(uiabout method)</a>
+</li>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.createComponents">(uielements method)</a>
+</li>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.createComponents">(uivalidations method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.cstar">cstar (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.current_history">current_history (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.cv_mass">cv_mass() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.cv_mole">cv_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.cv">cv (Mixture attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -507,31 +582,23 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.date">date (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@Database.Database">Database (class in src.combustiontoolbox.databases.@Database)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.DB">DB (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.database">database (combustion_toolbox attribute)</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.DB">(uielements attribute)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.database">(uielements attribute)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.DB_master">DB_master (combustion_toolbox attribute)</a>
-
-        <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.DB_master">(uielements attribute)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@Database.Database.Database">Database() (Database method)</a>
 </li>
-        </ul></li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.debug_plot_error">debug_plot_error() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.date">date (Constants attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.default">default (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.define_F">define_F() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.defineF">defineF() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.define_FOI">define_FOI() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.define_I">define_I() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.define_O">define_O() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.defineO">defineO() (Mixture method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.delete">delete() (combustion_toolbox method)</a>
 
@@ -549,45 +616,83 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.delta_y">delta_y (uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.density">density() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.DeT">DeT (Mixture attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.description">description (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationCJ">detonationCJ() (DetonationSolver method)</a>
 
         <ul>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.description">(in module src.modules.self.Elements)</a>
-</li>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.description">(in module src.modules.self.Miscellaneous)</a>
-</li>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.description">(in module src.modules.self.ProblemDescription)</a>
-</li>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.description">(in module src.modules.self.Species)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationCJ">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_cj">det_cj() (in module src.modules.ct_sd)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationGuess">detonationGuess() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationGuess">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_compute_guess">det_compute_guess() (in module src.modules.ct_sd)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationObliqueBeta">detonationObliqueBeta() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationObliqueBeta">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_compute_guess_CEA">det_compute_guess_CEA() (in module src.modules.ct_sd)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationObliqueTheta">detonationObliqueTheta() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationObliqueTheta">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_oblique_beta">det_oblique_beta() (in module src.modules.ct_sd)</a>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationOverdriven">detonationOverdriven() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationOverdriven">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_oblique_theta">det_oblique_theta() (in module src.modules.ct_sd)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationPolar">detonationPolar() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationPolar">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_overdriven">det_overdriven() (in module src.modules.ct_sd)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationPolarLimitRR">detonationPolarLimitRR() (DetonationSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_polar">det_polar() (in module src.modules.ct_sd)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationReflected">detonationReflected() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationReflected">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.det_underdriven">det_underdriven() (in module src.modules.ct_sd)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver">DetonationSolver (class in src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.detect_location_of_phase_specifier">detect_location_of_phase_specifier() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.detonationSolver">detonationSolver (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.detonationSolver">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.display_species">display_species (in module src.modules.self.Miscellaneous)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.DetonationSolver">DetonationSolver() (DetonationSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.displaysweepresults">displaysweepresults() (in module src.utils.display)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationUnderdriven">detonationUnderdriven() (DetonationSolver method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationUnderdriven">(in module src.combustiontoolbox.shockdetonation.@DetonationSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.docs_CT">docs_CT() (in module src.utils)</a>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.DhT">DhT (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.DiscussionsMenuSelected">DiscussionsMenuSelected() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.displaySpecies">displaySpecies (combustion_toolbox attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.driveFactor">driveFactor (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.Ds">Ds (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.dVdp_T">dVdp_T (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.dVdT_p">dVdT_p (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.dynamic_components">dynamic_components (combustion_toolbox attribute)</a>
 
@@ -603,72 +708,74 @@
   <h2>E</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.E">E (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.e">e (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.ef">ef (Mixture attribute)</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.E">(uielements attribute)</a>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.ef">(Species attribute)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.elements">elements (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.element_1ImageClicked">element_1ImageClicked() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.Elements">Elements() (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements">Elements (class in src.combustiontoolbox.core.@Elements)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.enthalpy_formation_mass">enthalpy_formation_mass() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.elements">elements (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.enthalpy_formation_mole">enthalpy_formation_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.enableremoveMenuSelected">enableremoveMenuSelected() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.enthalpy_mass">enthalpy_mass() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.equationOfState">equationOfState (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.enthalpy_mole">enthalpy_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrate">equilibrate() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.entropy_mass">entropy_mass() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrateT">equilibrateT() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.entropy_mole">entropy_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumCheckCondensed">equilibriumCheckCondensed() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.EOS">EOS (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumCheckIons">equilibriumCheckIons() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.eos_ideal">eos_ideal() (in module src.utils.eos)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumDerivatives">equilibriumDerivatives() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.eos_ideal_p">eos_ideal_p() (in module src.utils.eos)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGibbs">equilibriumGibbs() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.eos_PengRobinson">eos_PengRobinson() (in module src.utils.eos)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.eos_VanderWaals">eos_VanderWaals() (in module src.utils.eos)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGuess">equilibriumGuess() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrate">equilibrate() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumHelmholtz">equilibriumHelmholtz() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrate_T">equilibrate_T() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver">EquilibriumSolver (class in src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrate_T_tchem">equilibrate_T_tchem() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.equilibriumSolver">equilibriumSolver (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.equilibriumSolver">(DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.equilibriumSolver">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_dp">equilibrium_dp() (in module src.modules.ct_equil)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_dp_large">equilibrium_dp_large() (in module src.modules.ct_equil)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_dT">equilibrium_dT() (in module src.modules.ct_equil)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.equilibriumSolver">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_dT_large">equilibrium_dT_large() (in module src.modules.ct_equil)</a>
+        </ul></li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.EquilibriumSolver">EquilibriumSolver() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_gibbs">equilibrium_gibbs() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.equivalenceRatio">equivalenceRatio (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_gibbs_eos">equilibrium_gibbs_eos() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.equivalenceRatioSoot">equivalenceRatioSoot (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_gibbs_large">equilibrium_gibbs_large() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.errorMoles">errorMoles (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_helmholtz">equilibrium_helmholtz() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.errorMolesIons">errorMolesIons (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_helmholtz_eos">equilibrium_helmholtz_eos() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.errorProblem">errorProblem (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#src.modules.ct_equil.equilibrium_helmholtz_large">equilibrium_helmholtz_large() (in module src.modules.ct_equil)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.export">export (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.export">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.equivalenceRatio">equivalenceRatio() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.export_results">export_results (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.export.export_results">export_results() (in module src.utils.export)</a>
-</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -679,57 +786,85 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.fig">fig (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.find_ind">find_ind() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.figure_settingsButtonPushed">figure_settingsButtonPushed() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.find_products">find_products() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.filename">filename (uivalidations attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.find_species_LS">find_species_LS() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_combustion_toolbox_node">fill_combustion_toolbox_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_ADDED_SPECIES">FLAG_ADDED_SPECIES (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_constants_node">fill_constants_node() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.FLAG_BURCAT">FLAG_BURCAT (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_detonationSolver_flags_node">fill_detonationSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_detonationSolver_module1_node">fill_detonationSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_detonationSolver_node">fill_detonationSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_equilibriumSolver_flags_node">fill_equilibriumSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_equilibriumSolver_module1_node">fill_equilibriumSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_equilibriumSolver_module2_node">fill_equilibriumSolver_module2_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_equilibriumSolver_node">fill_equilibriumSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_general_node">fill_general_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_miscellaneous_export_node">fill_miscellaneous_export_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_plotConfig_axes_node">fill_plotConfig_axes_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_plotConfig_node">fill_plotConfig_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_plotConfig_plots_node">fill_plotConfig_plots_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_rocketSolver_flags_node">fill_rocketSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_rocketSolver_module1_node">fill_rocketSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_rocketSolver_node">fill_rocketSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_shockSolver_flags_node">fill_shockSolver_flags_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_shockSolver_module1_node">fill_shockSolver_module1_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_shockSolver_node">fill_shockSolver_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_solvers_node">fill_solvers_node() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.fill_tuning_parameters">fill_tuning_parameters() (uipreferences method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrix">fillPropertiesMatrix() (ChemicalSystem static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFast">fillPropertiesMatrixFast() (ChemicalSystem static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFastH0">fillPropertiesMatrixFastH0() (ChemicalSystem static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.findProducts">findProducts() (in module src.combustiontoolbox.core.@ChemicalSystem)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.findSpecies">findSpecies() (uielements method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_BURCAT">FLAG_BURCAT (ChemicalSystem attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.FLAG_CALLER">FLAG_CALLER (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_CHECK_INPUTS">FLAG_CHECK_INPUTS (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.FLAG_COMPLETE">FLAG_COMPLETE (in module src.modules.self.Species)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_EOS">FLAG_EOS (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.FLAG_EXTRAPOLATE">FLAG_EXTRAPOLATE (in module src.modules.self.TuningProperties)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.FLAG_FAST">FLAG_FAST (in module src.modules.self.TuningProperties)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_FIRST">FLAG_FIRST (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_FOI">FLAG_FOI (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_FROZEN">FLAG_FROZEN (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_GUI">FLAG_GUI (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_IAC">FLAG_IAC (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_INITIALIZE">FLAG_INITIALIZE (in module src.modules.self.Miscellaneous)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_ION">FLAG_ION (in module src.modules.self.ProblemDescription)</a>
-
-        <ul>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.FLAG_ION">(in module src.modules.self.Species)</a>
-</li>
-        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_LABELS">FLAG_LABELS (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_COMPLETE">FLAG_COMPLETE (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_LENGTH">FLAG_LENGTH (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_CONDENSED">FLAG_CONDENSED (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_N_Fuel">FLAG_N_Fuel (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_EOS">FLAG_EOS (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_N_Inert">FLAG_N_Inert (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_EXTRAPOLATE">FLAG_EXTRAPOLATE (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_N_Oxidizer">FLAG_N_Oxidizer (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_FAST">FLAG_FAST (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_FROZEN">FLAG_FROZEN (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_ION">FLAG_ION (ChemicalSystem attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.FLAG_LAST_CLICK">FLAG_LAST_CLICK (uielements attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.flag_phi">flag_phi (combustion_toolbox attribute)</a>
 </li>
@@ -743,19 +878,49 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.flag_PR3">flag_PR3 (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_PROP">FLAG_PROP (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT">FLAG_REPORT (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_REPORT">(EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_RESULTS">FLAG_RESULTS (in module src.modules.self.Miscellaneous)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_SUBSONIC">FLAG_SUBSONIC (in module src.modules.self.ProblemDescription)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.FLAG_TCHEM_FROZEN">FLAG_TCHEM_FROZEN (in module src.modules.self.ProblemDescription)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_RESULTS">FLAG_RESULTS (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_RESULTS">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_RESULTS">(EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.FLAG_WEIGHT">FLAG_WEIGHT (in module src.modules.self.Miscellaneous)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_RESULTS">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_RESULTS">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.Fuel">Fuel (in module src.modules.self.ProblemDescription)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS">[1]</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.FullName2name">FullName2name() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC">FLAG_SUBSONIC (RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC">[1]</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_TCHEM_FROZEN">FLAG_TCHEM_FROZEN (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME">FLAG_TIME (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_TIME">(EquilibriumSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.formula">formula (Species attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.FrozenchemistryCheckBoxValueChanged">FrozenchemistryCheckBoxValueChanged() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.fuelOxidizerMassRatio">fuelOxidizerMassRatio (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.fullname">fullname (Species attribute)</a>
+</li>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.fullname2name">fullname2name() (NasaDatabase static method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -765,76 +930,58 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.generate_DB">generate_DB() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.G">G (Constants attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.generate_DB_master">generate_DB_master() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.g">g (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.generate_DB_master_reduced">generate_DB_master_reduced() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.g0curve">g0curve (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.generate_DB_Theo">generate_DB_Theo() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.gamma">gamma (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_combustion_toolbox_version">get_combustion_toolbox_version() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.gamma_s">gamma_s (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.export.get_excel_cell">get_excel_cell() (in module src.utils.export)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabase">generateDatabase() (NasaDatabase method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_FLAG_N">get_FLAG_N() (in module src.utils)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabaseMaster">generateDatabaseMaster() (NasaDatabase method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.steffenson.get_gpoint">get_gpoint() (in module src.utils.root_finding.steffenson)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.get_width_height_string">get_width_height_string() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.get_ind_elements">get_ind_elements() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getChangeMolesGasReaction">getChangeMolesGasReaction() (NasaDatabase static method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.get_index_ions">get_index_ions() (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getCoefficients">getCoefficients() (NasaDatabase static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_index_phase_species">get_index_phase_species() (in module src.utils)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getDatabaseMaster">getDatabaseMaster() (NasaDatabase method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.get_interval">get_interval() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.getElementMatrix">getElementMatrix() (Species method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_latest_version_github">get_latest_version_github() (in module src.utils)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getGpoint">getGpoint() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.get_mixtures">get_mixtures() (in module src.utils.display)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getIndexIons">getIndexIons() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_monitor_positions">get_monitor_positions() (in module src.utils)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getIndexTempereratureInterval">getIndexTempereratureInterval() (NasaDatabase static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_monitor_positions_MATLAB">get_monitor_positions_MATLAB() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.getMass">getMass() (Mixture static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_order">get_order() (in module src.utils)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPartialDerivative">getPartialDerivative() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_oxidizer_reference">get_oxidizer_reference() (in module src.utils)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPoint">getPoint() (EquilibriumSolver static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_partial_derivative">get_partial_derivative() (in module src.utils)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPointAitken">getPointAitken() (EquilibriumSolver static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.steffenson.get_point">get_point() (in module src.utils.root_finding.steffenson)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@Database.Database.getProperty">getProperty() (Database method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.steffenson.get_point_aitken">get_point_aitken() (in module src.utils.root_finding.steffenson)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getRatioNewton">getRatioNewton() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.get_problems_solved">get_problems_solved() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermo">getSpeciesThermo() (NasaDatabase static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.get_reference_elements_with_T_intervals">get_reference_elements_with_T_intervals() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermoFull">getSpeciesThermoFull() (NasaDatabase method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.get_speciesProperties">get_speciesProperties() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getSystemProducts">getSystemProducts() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_title">get_title() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_transformation">get_transformation() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.get_typeSpecies">get_typeSpecies() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.gibbs_mass">gibbs_mass() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.gibbs_mole">gibbs_mole() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.GPL">GPL() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.gravity">gravity (in module src.modules.self.Constants)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.guess_pressure_exit_IAC">guess_pressure_exit_IAC() (in module src.modules.ct_rocket)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.guess_pressure_IAC_model">guess_pressure_IAC_model() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.getTypeSpecies">getTypeSpecies() (Mixture method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_add_nodes">gui_add_nodes() (in module src.gui.utils)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_add_nodes_validations">gui_add_nodes_validations() (in module src.gui.utils)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_CalculateButtonPushed">gui_CalculateButtonPushed() (in module src.gui.utils)</a>
@@ -845,6 +992,8 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_compute_mach_or_velocity">gui_compute_mach_or_velocity() (in module src.gui.utils)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_compute_propReactants">gui_compute_propReactants() (in module src.gui.utils)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_ConsoleValueChanged">gui_ConsoleValueChanged() (in module src.gui.utils)</a>
@@ -866,6 +1015,8 @@
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_generate_panel_rocket">gui_generate_panel_rocket() (in module src.gui.utils)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_get_parameters">gui_get_parameters() (in module src.gui.utils)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_get_prop">gui_get_prop() (in module src.gui.utils)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_get_reactants">gui_get_reactants() (in module src.gui.utils)</a>
 </li>
@@ -895,6 +1046,8 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_update_frozen">gui_update_frozen() (in module src.gui.utils)</a>
 </li>
+        <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_update_ions">gui_update_ions() (in module src.gui.utils)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_update_phi">gui_update_phi() (in module src.gui.utils)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.utils.gui_update_terminal">gui_update_terminal() (in module src.gui.utils)</a>
@@ -913,6 +1066,10 @@
   <h2>H</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.h">h (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.h0curve">h0curve (Species attribute)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.height_box">height_box (uipreferences attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.height_panel_0">height_panel_0 (uipreferences attribute)</a>
@@ -921,7 +1078,13 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.height_text">height_text (uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.humidity_specific">humidity_specific() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.hf">hf (Mixture attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.hf">(Species attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.hftoh0">hftoh0 (Species attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -931,74 +1094,92 @@
   <h2>I</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.i">i (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.I_sp">I_sp (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_C">ind_C (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.I_vac">I_vac (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_cryogenic">ind_cryogenic (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_cpi">ind_cpi (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_E">ind_E (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_efi">ind_efi (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_frozen">ind_frozen (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_hfi">ind_hfi (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ind_Fuel">ind_Fuel (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_hi">ind_hi (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_H">ind_H (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_ni">ind_ni (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ind_Inert">ind_Inert (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_phase">ind_phase (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_ions">ind_ions (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_S">ind_S (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_N">ind_N (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_Si">ind_Si (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_nswt">ind_nswt (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_si">ind_si (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_O">ind_O (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.ind_W">ind_W (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_ox_ref">ind_ox_ref (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexCondensed">indexCondensed (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ind_Oxidizer">ind_Oxidizer (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexCryogenic">indexCryogenic (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_react">ind_react (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.indexElementsDatabase">indexElementsDatabase (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_S">ind_S (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexFrozen">indexFrozen (ChemicalSystem attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.indexFuel">indexFuel (combustion_toolbox attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexGas">indexGas (ChemicalSystem attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.indexInert">indexInert (combustion_toolbox attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.ind_Si">ind_Si (in module src.modules.self.Elements)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexIons">indexIons (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.ind_swt">ind_swt (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.indexMax">indexMax (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.index_LS_original">index_LS_original (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.indexMin">indexMin (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.App.initialize">initialize() (in module src.modules.self.App)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.indexOxidizer">indexOxidizer (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.intEnergy_mass">intEnergy_mass() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexReact">indexReact (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.intEnergy_mole">intEnergy_mole() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.indexSonic">indexSonic (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.interpreter_label">interpreter_label() (in module src.utils.display)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.init">init() (uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.isRefElm">isRefElm() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.initialization">initialization() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_eos">it_eos (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.ionizedValueChanged">ionizedValueChanged() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_guess_det">it_guess_det (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itGuess">itGuess (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itGuess">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_limitRR">it_limitRR (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itLimitRR">itLimitRR (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itLimitRR">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itLimitRR">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itLimitRR">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_oblique">it_oblique (in module src.modules.self.TuningProperties)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itMax">itMax (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itMax">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMax">(EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_rocket">it_rocket (in module src.modules.self.TuningProperties)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.itMax">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.itMax">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.it_shocks">it_shocks (in module src.modules.self.TuningProperties)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itMax">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itMax">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.itMax">itMax (in module src.modules.self.TuningProperties)</a>
+        </ul></li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxGibbs">itMaxGibbs (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.itMax_gibbs">itMax_gibbs (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxIons">itMaxIons (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.itMax_ions">itMax_ions (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itOblique">itOblique (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itOblique">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itOblique">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itOblique">[1]</a>
 </li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -1007,39 +1188,31 @@
   <h2>L</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.l_phi">l_phi (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.listbox_LS_DBClicked">listbox_LS_DBClicked() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.LE_omit">LE_omit (uielements attribute)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.listbox_LSClicked">listbox_LSClicked() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.LE_selected">LE_selected (uielements attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listElements">listElements (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.list_phase_species">list_phase_species() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.listElementsOmitted">listElementsOmitted (uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.list_species">list_species() (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpecies">listSpecies (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.load_struct">load_struct() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpeciesLean">listSpeciesLean (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.LS">LS (combustion_toolbox attribute)</a>
-
-        <ul>
-          <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS">(in module src.modules.self.Species)</a>
-</li>
-        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS_DB">LS_DB (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpeciesRich">listSpeciesRich (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS_formula">LS_formula (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpeciesSoot">listSpeciesSoot (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS_lean">LS_lean (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@Database.Database.load">load() (Database method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.LS">LS (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.LS_products">LS_products (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.LS_reactants">LS_reactants (combustion_toolbox attribute)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS_rich">LS_rich (in module src.modules.self.Species)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.LS_soot">LS_soot (in module src.modules.self.Species)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1049,49 +1222,33 @@
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.M0">M0 (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.mach">mach (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.Mach_thermo">Mach_thermo (in module src.modules.self.TuningProperties)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.mass">mass() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.massFractions">massFractions() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.MassorMolar">MassorMolar (in module src.modules.self.Constants)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.meanMolecularWeight">meanMolecularWeight() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.mintol_display">mintol_display (in module src.modules.self.Constants)</a>
-</li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.Misc">Misc (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.machThermo">machThermo (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.machThermo">[1]</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.Misc">(uielements attribute)</a>
-</li>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.Misc">(uipreferences attribute)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.machThermo">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.machThermo">[1]</a>
 </li>
         </ul></li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.matMenuSelected">matMenuSelected() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.maxRelativeError">maxRelativeError (combustion_toolbox attribute)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.Miscellaneous">Miscellaneous() (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.mi">mi (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.mixture">mixture() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture">Mixture (class in src.combustiontoolbox.core.@Mixture)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.MolecularWeight">MolecularWeight() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.mixture">mixture (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.mixture">(uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.moleFractions">moleFractions() (in module src.utils.thermo)</a>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.Mixture">Mixture() (Mixture method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.moles">moles() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.molesGas">molesGas() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.mu_ex_eos">mu_ex_eos() (in module src.utils.eos)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.mu_ex_ideal">mu_ex_ideal() (in module src.utils.eos)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.mu_ex_vanderwaals">mu_ex_vanderwaals() (in module src.utils.eos)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.eos.mu_ex_virial">mu_ex_virial() (in module src.utils.eos)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.MW">MW (Mixture attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1101,39 +1258,41 @@
   <h2>N</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.N0">N0 (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.N">N (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.N_flags">N_flags (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.N_Fuel">N_Fuel (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.NA">NA (Constants attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.N_Inert">N_Inert (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.name">name (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.N_Oxidizer">N_Oxidizer (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase">NasaDatabase (class in src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.N_points_polar">N_points_polar (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.NasaDatabase">NasaDatabase() (NasaDatabase method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.N_prop">N_prop (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.natomElements">natomElements (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.name_with_parenthesis">name_with_parenthesis() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.natomElementsReact">natomElementsReact (Mixture attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.NE">NE (in module src.modules.self.Elements)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.newton.newton">newton() (in module src.utils.root_finding.newton)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.newton_2">newton_2() (in module src.utils.root_finding)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.NG">NG (in module src.modules.self.Species)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.NS">NS (in module src.modules.self.Species)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.NS_DB">NS_DB (in module src.modules.self.Species)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.newton">newton() (EquilibriumSolver method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.NS_display">NS_display (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.NS_products">NS_products (combustion_toolbox attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.nsteff">nsteff() (EquilibriumSolver method)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.numPointsPolar">numPointsPolar (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.numPointsPolar">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.numProperties">numProperties (ChemicalSystem attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.numSpecies">numSpecies (ChemicalSystem attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1143,7 +1302,11 @@
   <h2>O</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.overdriven">overdriven (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.ok_button_pushed">ok_button_pushed() (uipreferences method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.oxidizerFuelMassRatio">oxidizerFuelMassRatio (Mixture attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1153,37 +1316,53 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PD">PD (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.p">p (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.Pa2atm">Pa2atm (Units attribute)</a>
+</li>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.Pa2bar">Pa2bar (Units attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.percentageFuel">percentageFuel (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.phase">phase (Mixture attribute)</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.PD">(uielements attribute)</a>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.phase">(Species attribute)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.phi">phi (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plot">plot() (DetonationSolver method)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plot">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.plot">(EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.plot_figure">plot_figure() (in module src.utils.display)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot">(RocketSolver method)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot">[1]</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.plot_figure_set">plot_figure_set() (in module src.utils.display)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.plot">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.plot_hugoniot">plot_hugoniot() (in module src.utils.display)</a>
+        </ul></li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.plot_property">plot_property() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.plot_molar_fractions">plot_molar_fractions() (in module src.utils.display)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.plotButtonPushed">plotButtonPushed() (uielements method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.plot_molar_fractions_validation">plot_molar_fractions_validation() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.plotConfig">plotConfig (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plotConfig">(DetonationSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.plot_properties_validation">plot_properties_validation() (in module src.utils.validations)</a>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.plotConfig">(EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.plot_shock_polar">plot_shock_polar() (in module src.utils.display)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plotConfig">(RocketSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.plot_thermo_validation">plot_thermo_validation() (in module src.utils.validations)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.plotConfig">(ShockSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.plot_validation_shock_polar_SDToolbox">plot_validation_shock_polar_SDToolbox() (in module src.utils.validations)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.plotConfig">(uielements attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.polynomial_regression">polynomial_regression() (in module src.utils.display)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.plotConfig">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.post_results">post_results() (in module src.utils)</a>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.plus">plus() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.pP">pP (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.polar">polar (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PP1_var_name">PP1_var_name (combustion_toolbox attribute)</a>
 </li>
@@ -1193,13 +1372,19 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PP2_vector">PP2_vector (combustion_toolbox attribute)</a>
 </li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PP3ValueChanging">PP3ValueChanging() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PP4ValueChanging">PP4ValueChanging() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PP5ValueChanging">PP5ValueChanging() (combustion_toolbox method)</a>
+</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.pR">pR (in module src.modules.self.ProblemDescription)</a>
-</li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR1_var_name">PR1_var_name (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR1_vector">PR1_vector (combustion_toolbox attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR1ValueChanged">PR1ValueChanged() (combustion_toolbox method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR2_var_name">PR2_var_name (combustion_toolbox attribute)</a>
 </li>
@@ -1209,28 +1394,50 @@
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR3_vector">PR3_vector (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.pressure">pressure() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR3ValueChanged">PR3ValueChanged() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.print_error">print_error() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR3ValueChanging">PR3ValueChanging() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.print_error_root">print_error_root() (in module src.utils.root_finding)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR4ValueChanged">PR4ValueChanged() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.print_mixture">print_mixture() (in module src.utils.display)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR4ValueChanging">PR4ValueChanging() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.print_stoichiometric_matrix">print_stoichiometric_matrix() (in module src.utils.display)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PR5ValueChanging">PR5ValueChanging() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.ProblemDescription">ProblemDescription() (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.print">print() (in module src.combustiontoolbox.core.@Mixture)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemSolution.ProblemSolution">ProblemSolution() (in module src.modules.self.ProblemSolution)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.printError">printError() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.ProblemType">ProblemType (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.PS">PS (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.printTime">printTime() (DetonationSolver method)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.printTime">[1]</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.PS">(uielements attribute)</a>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.printTime">(EquilibriumSolver method)</a>
+</li>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime">(RocketSolver method)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.printTime">(ShockSolver method)</a>
 </li>
         </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.problemType">problemType (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.problemType">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.problemType">(EquilibriumSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ProblemTypeValueChanged">ProblemTypeValueChanged() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.ProductsValueChanged">ProductsValueChanged() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.propertiesMatrix">propertiesMatrix (ChemicalSystem attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.property_inspector_menuSelected">property_inspector_menuSelected() (combustion_toolbox method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.propertyVector">propertyVector (ChemicalSystem attribute)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.public_get_current_history">public_get_current_history() (combustion_toolbox method)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.public_ProductsValueChanged">public_ProductsValueChanged() (combustion_toolbox method)</a>
@@ -1243,45 +1450,69 @@
   <h2>R</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.R0">R0 (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.R0">R0 (Constants attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.R_Fuel">R_Fuel (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.refCode">refCode (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.R_Inert">R_Inert (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.regulaGuess">regulaGuess() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.R_Oxidizer">R_Oxidizer (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.relaxFactor">relaxFactor() (EquilibriumSolver static method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.ratio_inerts_O2">ratio_inerts_O2 (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.release">release (Constants attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.ratio_oxidizers_O2">ratio_oxidizers_O2 (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.RemoveButton2Pushed">RemoveButton2Pushed() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.read_abundances">read_abundances() (in module src.utils)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.removeElements">removeElements() (EquilibriumSolver static method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.read_CEA">read_CEA() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.report">report() (DetonationSolver method)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.report">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.report">(EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.regula_guess">regula_guess() (in module src.utils.root_finding)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report">(RocketSolver method)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.report">(ShockSolver method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.rho">rho (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketChamberIAC">rocketChamberIAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
+</li>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketExit">rocketExit() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Constants.release">release (in module src.modules.self.Constants)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketFAC">rocketFAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.reorganize_index_phase_species">reorganize_index_phase_species() (in module src.utils)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessExitIAC">rocketGuessExitIAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.results">results() (in module src.utils.display)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessInjectorFAC">rocketGuessInjectorFAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.rocket_parameters">rocket_parameters() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessThroatIAC">rocketGuessThroatIAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.rocket_performance">rocket_performance() (in module src.modules.ct_rocket)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketIAC">rocketIAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.root_method">root_method (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketParameters">rocketParameters() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.root_T0">root_T0 (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver">RocketSolver (class in src.combustiontoolbox.rocket.@RocketSolver)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.root_T0_l">root_T0_l (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.rocketSolver">rocketSolver (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.rocketSolver">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.root_T0_r">root_T0_r (in module src.modules.self.TuningProperties)</a>
+        </ul></li>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.RocketSolver">RocketSolver() (RocketSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.run_CT">run_CT() (in module src.utils.validations)</a>
+        <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.rocketThroatIAC">rocketThroatIAC() (in module src.combustiontoolbox.rocket.@RocketSolver)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0">root_T0 (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0_l">root_T0_l (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0_r">root_T0_r (EquilibriumSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.rootMethod">rootMethod (EquilibriumSolver attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1291,179 +1522,199 @@
   <h2>S</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.S">S (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.s">s (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.s0">s0 (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.s0curve">s0curve (Species attribute)</a>
+</li>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@Database.Database.save">save() (Database method)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uiabout.select_action">select_action() (uiabout method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setContainedElements">setContainedElements() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements.setElements">setElements() (Elements static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setEquivalenceRatio">setEquivalenceRatio() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setIndexPhaseSpecies">setIndexPhaseSpecies() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements.setIndexStableElements">setIndexStableElements() (Elements method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.setListSpecies">setListSpecies() (in module src.combustiontoolbox.core.@ChemicalSystem)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.setMixtureShockPolar">setMixtureShockPolar() (DetonationSolver static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setOxidizerReference">setOxidizerReference() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setPressure">setPressure() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setProperties">setProperties() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrix">setPropertiesMatrix() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrixInitialize">setPropertiesMatrixInitialize() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setReactIndex">setReactIndex() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setStoichiometricMatrix">setStoichiometricMatrix() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setTemperature">setTemperature() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setVolume">setVolume() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockIncident">shockIncident() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.S">(uielements attribute)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockIncident">(ShockSolver method)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.S_Fuel">S_Fuel (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockIncidentIdeal">shockIncidentIdeal() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockIncidentIdeal">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.S_Inert">S_Inert (in module src.modules.self.ProblemDescription)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueBeta">shockObliqueBeta() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueBeta">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.S_Oxidizer">S_Oxidizer (in module src.modules.self.ProblemDescription)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueReflectedTheta">shockObliqueReflectedTheta() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueReflectedTheta">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_air">set_air() (in module src.utils)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueTheta">shockObliqueTheta() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueTheta">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_cP">set_cP() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockPolar">shockPolar() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockPolar">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.App.set_DB">set_DB() (in module src.modules.self.App)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockPolarLimitRR">shockPolarLimitRR() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockPolarLimitRR">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_DhT">set_DhT() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockReflected">shockReflected() (in module src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockReflected">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_e0">set_e0() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver">ShockSolver (class in src.combustiontoolbox.shockdetonation.@ShockSolver)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_element_matrix">set_element_matrix() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.shockSolver">shockSolver (combustion_toolbox attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.shockSolver">(uipreferences attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Elements.set_elements">set_elements() (in module src.modules.self.Elements)</a>
+        </ul></li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solve">solve() (DetonationSolver method)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solve">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.solve">(EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.set_figure">set_figure() (in module src.utils.display)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve">(RocketSolver method)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve">[1]</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_g0">set_g0() (in module src.utils.databases)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.solve">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_h0">set_h0() (in module src.utils.databases)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.validations.set_inputs_thermo_validations">set_inputs_thermo_validations() (in module src.utils.validations)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.set_legends">set_legends() (in module src.utils.display)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_prop">set_prop() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_prop_DB">set_prop_DB() (in module src.utils.databases)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_react_index">set_react_index() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.set_s0">set_s0() (in module src.utils.databases)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_species">set_species() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_species_initilize">set_species_initilize() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.set_title">set_title() (in module src.utils.display)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.set_transformation">set_transformation() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.setup_segregated_solver">setup_segregated_solver() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_ideal_gas">shock_ideal_gas() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_incident">shock_incident() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_incident_2">shock_incident_2() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_oblique_beta">shock_oblique_beta() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_oblique_reflected_theta">shock_oblique_reflected_theta() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_oblique_theta">shock_oblique_theta() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_polar">shock_polar() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_polar_limitRR">shock_polar_limitRR() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#src.modules.ct_sd.shock_reflected">shock_reflected() (in module src.modules.ct_sd)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.smooth_data">smooth_data() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#src.modules.ct_rocket.solve_model_rocket">solve_model_rocket() (in module src.modules.ct_rocket)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.solve_problem">solve_problem() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.soundspeed">soundspeed() (in module src.utils.thermo)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.soundspeed_eq">soundspeed_eq() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Species.Species">Species() (in module src.modules.self.Species)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.display.species2latex">species2latex() (in module src.utils.display)</a>
-</li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_cP">species_cP() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray">solveArray() (DetonationSolver method)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.solveArray">(EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_cP_NASA">species_cP_NASA() (in module src.utils.databases)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray">(RocketSolver method)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray">[1]</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_cV">species_cV() (in module src.utils.databases)</a>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.solveArray">(ShockSolver method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_cV_NASA">species_cV_NASA() (in module src.utils.databases)</a>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.sortIndexPhaseSpecies">sortIndexPhaseSpecies() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_DeT">species_DeT() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.sortListSpecies">sortListSpecies() (ChemicalSystem method)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_DeT_NASA">species_DeT_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.sound">sound (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_DhT">species_DhT() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.species">species (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_DhT_NASA">species_DhT_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species">Species (class in src.combustiontoolbox.core.@Species)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_e0">species_e0() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_cP_NASA">species_cP_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_e0_NASA">species_e0_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_cV_NASA">species_cV_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_g0">species_g0() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_DeT_NASA">species_DeT_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_g0_NASA">species_g0_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_DhT_NASA">species_DhT_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_gamma">species_gamma() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_e0_NASA">species_e0_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_gamma_NASA">species_gamma_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_gamma_NASA">species_gamma_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_h0">species_h0() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_h0_NASA">species_h0_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_h0_NASA">species_h0_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_s0_NASA">species_s0_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_s0">species_s0() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.species_thermo_NASA">species_thermo_NASA() (in module src.combustiontoolbox.databases.@NasaDatabase)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_s0_NASA">species_s0_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/common/index.html#module-src.+combustiontoolbox.+common.@Constants">src.combustiontoolbox.common.@Constants (module)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.species_thermo_NASA">species_thermo_NASA() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/common/index.html#module-src.+combustiontoolbox.+common.@Units">src.combustiontoolbox.common.@Units (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@ChemicalSystem">src.combustiontoolbox.core.@ChemicalSystem (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@Elements">src.combustiontoolbox.core.@Elements (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@EquationState">src.combustiontoolbox.core.@EquationState (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@Mixture">src.combustiontoolbox.core.@Mixture (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@Species">src.combustiontoolbox.core.@Species (module)</a>
+</li>
+        <li><a href="documentation/api/databases/index.html#module-src.+combustiontoolbox.+databases.@Database">src.combustiontoolbox.databases.@Database (module)</a>
+</li>
+        <li><a href="documentation/api/databases/index.html#module-src.+combustiontoolbox.+databases.@NasaDatabase">src.combustiontoolbox.databases.@NasaDatabase (module)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#module-src.+combustiontoolbox.+equilibrium.@EquilibriumSolver">src.combustiontoolbox.equilibrium.@EquilibriumSolver (module)</a>
+</li>
+        <li><a href="documentation/api/rocket/index.html#module-src.+combustiontoolbox.+rocket.@RocketSolver">src.combustiontoolbox.rocket.@RocketSolver (module)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#module-src.+combustiontoolbox.+shockdetonation.@DetonationSolver">src.combustiontoolbox.shockdetonation.@DetonationSolver (module)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#module-src.+combustiontoolbox.+shockdetonation.@ShockSolver">src.combustiontoolbox.shockdetonation.@ShockSolver (module)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#module-src.gui.utils">src.gui.utils (module)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_equil/index.html#module-src.modules.ct_equil">src.modules.ct_equil (module)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.startupFcn">startupFcn() (combustion_toolbox method)</a>
+
+        <ul>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uiabout.startupFcn">(uiabout method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_rocket/index.html#module-src.modules.ct_rocket">src.modules.ct_rocket (module)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.startupFcn">(uipreferences method)</a>
 </li>
-        <li><a href="documentation/api/modules/ct_sd/index.html#module-src.modules.ct_sd">src.modules.ct_sd (module)</a>
+          <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.startupFcn">(uivalidations method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.App">src.modules.self.App (module)</a>
+        </ul></li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.steff">steff() (EquilibriumSolver method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.Constants">src.modules.self.Constants (module)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.stoichiometricMatrix">stoichiometricMatrix (ChemicalSystem attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.Elements">src.modules.self.Elements (module)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.stoichiometricMoles">stoichiometricMoles (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.Miscellaneous">src.modules.self.Miscellaneous (module)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.ProblemDescription">src.modules.self.ProblemDescription (module)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.ProblemSolution">src.modules.self.ProblemSolution (module)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.Species">src.modules.self.Species (module)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#module-src.modules.self.TuningProperties">src.modules.self.TuningProperties (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils">src.utils (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.databases">src.utils.databases (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.display">src.utils.display (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.eos">src.utils.eos (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.export">src.utils.export (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.root_finding">src.utils.root_finding (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.root_finding.newton">src.utils.root_finding.newton (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.root_finding.steffenson">src.utils.root_finding.steffenson (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.thermo">src.utils.thermo (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#module-src.utils.validations">src.utils.validations (module)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.root_finding.steffenson.steff">steff() (in module src.utils.root_finding.steffenson)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.stoich_prop_matrix">stoich_prop_matrix() (in module src.utils)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations.system">system (uivalidations attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1473,65 +1724,85 @@
   <h2>T</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.T_Fuel">T_Fuel (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.T">T (Mixture attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.T">(Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.T_Inert">T_Inert (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.T_ions">T_ions (in module src.modules.self.TuningProperties)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.T_Oxidizer">T_Oxidizer (in module src.modules.self.ProblemDescription)</a>
-</li>
+        </ul></li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.temp_index">temp_index (combustion_toolbox attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.temp_results">temp_results (combustion_toolbox attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.temperature">temperature() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.temperatureIons">temperatureIons (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.thermo_millennium_2_thermoNASA9">thermo_millennium_2_thermoNASA9() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tempValues">tempValues() (EquilibriumSolver static method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.theta">theta (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.Texponents">Texponents (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.timer_0">timer_0 (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.theta">theta (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.Miscellaneous.timer_loop">timer_loop (in module src.modules.self.Miscellaneous)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.thetaMax">thetaMax (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.TN">TN (combustion_toolbox attribute)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.thetaMin">thetaMin (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.thetaSonic">thetaSonic (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.time">time (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.time">[1]</a>
 
         <ul>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements.TN">(uielements attribute)</a>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.time">(EquilibriumSolver attribute)</a>
 </li>
-          <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.TN">(uipreferences attribute)</a>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.Tintervals">Tintervals (Species attribute)</a>
+</li>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tol0">tol0 (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tol0">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tol0">(EquilibriumSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0">(RocketSolver attribute)</a>, <a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0">[1]</a>
+</li>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tol0">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tol0">[1]</a>
 </li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol0">tol0 (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolE">tolE (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_eos">tol_eos (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolGibbs">tolGibbs (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_gibbs">tol_gibbs (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolLimitRR">tolLimitRR (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolLimitRR">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolLimitRR">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolLimitRR">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_limitRR">tol_limitRR (in module src.modules.self.TuningProperties)</a>
+        </ul></li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMoles">tolMoles (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_oblique">tol_oblique (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMolesGuess">tolMolesGuess (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_pi_e">tol_pi_e (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolMultiplierIons">tolMultiplierIons (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_rocket">tol_rocket (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolOblique">tolOblique (DetonationSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolOblique">[1]</a>
+
+        <ul>
+          <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolOblique">(ShockSolver attribute)</a>, <a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolOblique">[1]</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tol_shocks">tol_shocks (in module src.modules.self.TuningProperties)</a>
+        </ul></li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.tolTau">tolTau (EquilibriumSolver attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tolE">tolE (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.Trange">Trange (Species attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tolN">tolN (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.Tree_variable_xCheckedNodesChanged">Tree_variable_xCheckedNodesChanged() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.tolN_guess">tolN_guess (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.Tree_variable_yCheckedNodesChanged">Tree_variable_yCheckedNodesChanged() (combustion_toolbox method)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.TP">TP (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.TR">TR (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.TuningProperties.TuningProperties">TuningProperties() (in module src.modules.self.TuningProperties)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.Tref">Tref (Species attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1541,19 +1812,27 @@
   <h2>U</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.u1">u1 (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.u">u (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uiabout">uiabout (class in src.gui.addons)</a>
 </li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uielements">uielements (class in src.gui.addons)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.UIFigureKeyPress">UIFigureKeyPress() (combustion_toolbox method)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences">uipreferences (class in src.gui.addons)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uivalidations">uivalidations (class in src.gui.addons)</a>
 </li>
-        <li><a href="documentation/api/utils/index.html#src.utils.databases.unpack_NASA_coefficients">unpack_NASA_coefficients() (in module src.utils.databases)</a>
+        <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units">Units (class in src.combustiontoolbox.common.@Units)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.uNormal">uNormal (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.updateTemp">updateTemp() (EquilibriumSolver static method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.uShock">uShock (Mixture attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1563,15 +1842,13 @@
   <h2>V</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.vector2cell">vector2cell() (in module src.utils)</a>
-</li>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.velocity_relative">velocity_relative() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.v">v (Mixture attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.thermo.volume">volume() (in module src.utils.thermo)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.vSpecific">vSpecific (Mixture attribute)</a>
 </li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.vP_vR">vP_vR (in module src.modules.self.ProblemDescription)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.vSpecific2vMolar">vSpecific2vMolar() (Mixture method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1581,17 +1858,17 @@
   <h2>W</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="documentation/api/utils/index.html#src.utils.website_CT">website_CT() (in module src.utils)</a>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.W">W (Mixture attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.Species.W">(Species attribute)</a>
 </li>
-        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.width_box">width_box (uipreferences attribute)</a>
-</li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.width_box">width_box (uipreferences attribute)</a>
+</li>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.width_right">width_right (uipreferences attribute)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.wt_ratio_inerts">wt_ratio_inerts (in module src.modules.self.ProblemDescription)</a>
-</li>
-        <li><a href="documentation/api/modules/modules_self.html#src.modules.self.ProblemDescription.wt_ratio_oxidizers">wt_ratio_oxidizers (in module src.modules.self.ProblemDescription)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1604,6 +1881,12 @@
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.x0_panel_right">x0_panel_right (uipreferences attribute)</a>
 </li>
     </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.Xi">Xi (Mixture attribute)</a>
+</li>
+        <li><a href="documentation/api/gui/index.html#src.gui.combustion_toolbox.xlsMenuSelected">xlsMenuSelected() (combustion_toolbox method)</a>
+</li>
+    </ul></td>
   </tr></table>
 </section>
 
@@ -1612,6 +1895,10 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/gui/index.html#src.gui.addons.uipreferences.y0_panel_right">y0_panel_right (uipreferences attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.Yi">Yi (Mixture attribute)</a>
 </li>
     </ul></td>
   </tr></table>

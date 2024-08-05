@@ -1,0 +1,1077 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="References" href="../../../references.html" /><link rel="prev" title="Shocks and detonations module" href="../shockdetonation/index.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Rocket module - Combustion Toolbox v1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-announcement-background: #afe9ddff;
+  --color-announcement-text: #008080ff;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples_gui.html">Examples GUI</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/examples_plain.html">Examples desktop environment</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TP.html">Example_TP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_TV.html">Example_TV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP.html">Example_HP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EV.html">Example_EV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SP.html">Example_SP.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV.html">Example_SV.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SV_FROZEN.html">Example_SV_FROZEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I.html">Example_SHOCK_I.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_I_IONIZATION.html">Example_SHOCK_I_IONIZATION.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_R.html">Example_SHOCK_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_BETA.html">Example_SHOCK_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_THETA.html">Example_SHOCK_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_OBLIQUE_R.html">Example_SHOCK_OBLIQUE_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR.html">Example_SHOCK_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_SHOCK_POLAR_R.html">Example_SHOCK_POLAR_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET.html">Example_DET.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_R.html">Example_DET_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN.html">Example_DET_OVERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_R.html">Example_DET_OVERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN.html">Example_DET_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_UNDERDRIVEN_R.html">Example_DET_UNDERDRIVEN_R.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Example_DET_OVERDRIVEN_AND_UNDERDRIVEN.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_BETA.html">Example_DET_OBLIQUE_BETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_OBLIQUE_THETA.html">Example_DET_OBLIQUE_THETA.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR.html">Example_DET_POLAR.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_DET_POLAR_SONIC_AND_MAX.html">Example_DET_POLAR_SONIC_AND_MAX.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_IAC.html">Example_ROCKET_IAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_ROCKET_FAC.html">Example_ROCKET_FAC.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/examples_plain_EXOPLANET_WASP43b_1.html">Example_EXOPLANET_WASP43b_1.m</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Rocket module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="rocket-module">
+<h1>Rocket module<a class="headerlink" href="#rocket-module" title="Permalink to this heading">#</a></h1>
+<p>In this section, you will find the documentation of the routines implemented to obtain the rocket propellant performance under ideal conditions.
+Currently, there are two models implemented in the Combustion Toolbox:</p>
+<ul class="simple">
+<li><p>IAC: Infinite-Area-Chamber,</p></li>
+<li><p>FAC: Finite-Area-Chamber.</p></li>
+</ul>
+<section id="module-src.+combustiontoolbox.+rocket.&#64;RocketSolver">
+<span id="rocketsolver"></span><h2>RocketSolver<a class="headerlink" href="#module-src.+combustiontoolbox.+rocket.@RocketSolver" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RocketSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>RocketSolver class to solve rocket problems</p>
+<dl class="simple">
+<dt>Problem types:</dt><dd><ul class="simple">
+<li><p>ROCKET_IAC: Get the performance of a rocket using the Infinite Area Chamber (IAC) model</p></li>
+<li><p>ROCKET_FAC: Get the performance of a rocket using the Finite Area Chamber (FAC) model</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType" title="Permalink to this definition">#</a></dt>
+<dd><p>Problem type [ROCKET_IAC or ROCKET_FAC]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>char</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>EquilibriumSolver object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EquilibriumSolver</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance rocket performance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - rocket performance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_SUBSONIC">
+<span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to indicate subsonic Area ratio</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print elapsed time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time" title="Permalink to this definition">#</a></dt>
+<dd><p>Elapsed time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve rocket problems</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve a set of rocket problems</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Print execution time</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot results</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report" title="Permalink to this definition">#</a></dt>
+<dd><p>Postprocess all the results with predefined plots</p>
+</dd></dl>
+
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>solver = RocketSolver();</p></li>
+<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_IAC’);</p></li>
+<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’);</p></li>
+<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’, ‘tolMoles’, 1e-30);</p></li>
+<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’, ‘tolMoles’, 1e-30, ‘FLAG_FROZEN’, true);</p></li>
+</ul>
+</div>
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
+<dd><p>Flag to print predefined plots</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dd><p>Flag to print results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
+<dd><ul class="simple">
+<li><p>Flags</p></li>
+</ul>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dd><p>Flag to print elapsed time</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.RocketSolver">
+<span class="sig-name descname"><span class="pre">RocketSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.RocketSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dd><p>EquilibriumSolver object</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em></dt>
+<dd><p>Max number of iterations - rocket performance</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Plot results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (initial state)</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>plot(RocketSolver(), mixArray1, mixArray2, mixArray3);</p></li>
+<li><p>plot(RocketSolver(), mixArray1, mixArray2, mixArray3, mixArray4);</p></li>
+<li><p>plot(RocketSolver(), mixArray1, mixArray2, mixArray3, mixArray4, mixArray5);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.plotConfig">
+<span class="sig-name descname"><span class="pre">plotConfig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plotConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>PlotConfig object</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Print execution time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dd><p>Problem type</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Postprocess all the results with predefined plots</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></span>) – DetonationSolver object</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (pre-shock state)</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (post-shock state)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>report(DetonationSolver(), mixArray1, mixArray2);</p></li>
+<li><p>report(DetonationSolver(), mixArray1, mixArray2, mixArray3);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Solve rocket problems</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – initial Mixture object</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2_inj_guess (Mixture): Initial guess for the injector Mixture object</p></li>
+<li><p>mix2_c_guess (Mixture): Initial guess for the chamber Mixture object</p></li>
+<li><p>mix3_guess (Mixture): Initial guess for the throat Mixture object</p></li>
+<li><p>mix4_guess (Mixture): Initial guess for the exit Mixture object</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>varargout</em> – Updated Mixture objects depending on the problem type</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2_c, mix3] = solve(RocketSolver(), mix1); % Rocket IAC</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = solve(RocketSolver(), mix1); % Rocket IAC</p></li>
+<li><p>[mix1, mix2_c, mix3] = solve(RocketSolver(), mix1, mix2Guess, mix3Guess); % Rocket IAC</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = solve(RocketSolver(), mix1, mix2Guess, mix3Guess, mix4Guess); % Rocket IAC</p></li>
+<li><p>[mix1, mix2_inj, mix2_c, mix3] = solve(RocketSolver(), mix1); % Rocket FAC</p></li>
+<li><p>[mix1, mix2_inj, mix2_c, mix3, mix4] = solve(RocketSolver(), mix1); % Rocket FAC</p></li>
+<li><p>[mix1, mix2_inj, mix2_c, mix3] = solve(RocketSolver(), mix1, mix2Guess, mix3Guess); % Rocket FAC</p></li>
+<li><p>[mix1, mix2_inj, mix2_c, mix3] = solve(RocketSolver(), mix1, mix2Guess, mix3Guess, mix4Guess); % Rocket FAC</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Solve a set of rocket problems</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1Array</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>varargout</em> – Updated arrays of Mixture objects depending on the shock problem type</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1Array, mix2Array, mix3Array] = solveArray(RocketSolver(), mix1Array); % Rocket IAC</p></li>
+<li><p>[mix1Array, mix2Array, mix3Array, mix4Array] = solveArray(RocketSolver(), mix1Array); % Rocket IAC</p></li>
+<li><p>[mix1Array, mix2Array, mix3Array, mix4Array] = solveArray(RocketSolver(), mix1Array); % Rocket FAC</p></li>
+<li><p>[mix1Array, mix2Array, mix3Array, mix4Array, mix5Array] = solveArray(RocketSolver(), mix1Array); % Rocket FAC</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dd><ul class="simple">
+<li><p>Miscellaneous</p></li>
+</ul>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em></dt>
+<dd><ul class="simple">
+<li><p>Rocket propellant performance (CT-ROCKET module)</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketChamberIAC">
+<span class="sig-name descname"><span class="pre">rocketChamberIAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">mix_guess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketChamberIAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute chemical equilibria at the exit of the chamber (HP) using
+the Infinite-Area-Chamber (IAC) model</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p><strong>mix_guess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>mix (Mixture)</em> – Properties of the mixture at the outlet of the chamber</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>mix = rocketChamberIAC(obj, mix, mix_guess)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketExit">
+<span class="sig-name descname"><span class="pre">rocketExit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">mix4_guess</span></em>, <em class="sig-param"><span class="pre">areaRatio</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketExit" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermochemical composition for a given areaRatio</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p><strong>mix4</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the exit (previous calculation)</p></li>
+<li><p><strong>areaRatio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio area_exit / area_throat</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2_in (Mixture): Properties of the mixture at the inlet of the chamber</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>mix3 (Mixture)</em> – Properties of the mixture at the throat</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>mix4 = rocketExit(RocketSolver(), mix2, mix3, mix4)</p></li>
+<li><p>mix4 = rocketExit(RocketSolver(), mix2, mix3, mix4, mix2_in)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketFAC">
+<span class="sig-name descname"><span class="pre">rocketFAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketFAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute chemical equilibria at the injector, outlet of the chamber and at the throat
+using the Finite-Area-Chamber (FAC) model</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2_inj (Mixture): Properties of the mixture at the injector of the chamber (previous calculation)</p></li>
+<li><p>mix2_c (Mixture): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+<li><p>mix3 (Mixture): Properties of the mixture at the throat (previous calculation)</p></li>
+<li><p>mix4 (Mixture): Properties of the mixture at the given exit points (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix2_inj (Mixture): Properties of the mixture at the injector of the chamber</p></li>
+<li><p>mix2_c (Mixture): Properties of the mixture at the outlet of the chamber</p></li>
+<li><p>mix3 (Mixture): Properties of the mixture at the throat</p></li>
+<li><p>mix4 (Mixture): Array of mixtures objects at the given exit points</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[mix2_inj, mix2_c, mix3] = rocketFAC(obj, mix1, mix2_inj, mix2_c, mix3)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketGuessExitIAC">
+<span class="sig-name descname"><span class="pre">rocketGuessExitIAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">areaRatio</span></em>, <em class="sig-param"><span class="pre">FLAG_SUBSONIC</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessExitIAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute guess logarithm of the ratio pressure_inf / pressure_exit
+[-] for the given Area ratio [-] and indicanting if the point of
+interest is in the subsonic area ratios or the supersonic area ratios</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the throat</p></li>
+<li><p><strong>areaRatio</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio area_exit / area_throat</p></li>
+<li><p><strong>FLAG_SUBSONIC</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating if the areaRatio refer to the subsonic region or the supersonic region</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>log_P (float)</em> – Log pressure ratio [-]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>log_P = rocketGuessExitIAC(mix2, mix3, 3, false)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketGuessInjectorFAC">
+<span class="sig-name descname"><span class="pre">rocketGuessInjectorFAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pressure_inj</span></em>, <em class="sig-param"><span class="pre">areaRatioChamber</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessInjectorFAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pressure guess [bar] assuming an Infinite-Area-Chamber (IAC)
+for the Finite-Area-Chamber model (FAC)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure_inj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure at the injector [bar]</p></li>
+<li><p><strong>areaRatioChamber</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Area chamber / Area throat</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>pressure (float)</em> – Pressure at the throat [bar]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>pressure = rocketGuessInjectorFAC(pressure_inj, areaRatioChamber)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketGuessThroatIAC">
+<span class="sig-name descname"><span class="pre">rocketGuessThroatIAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketGuessThroatIAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pressure guess [bar] at the throat considering an Infinite-Area-Chamber (IAC)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>pressure (float)</em> – Pressure at the throat [bar]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>pressure = rocketGuessThroatIAC(mix)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketIAC">
+<span class="sig-name descname"><span class="pre">rocketIAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketIAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Routine that computes the propellant rocket performance using the Infinite-Area-Chamber (IAC) model</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the initial mixture</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2_c (Mixture): Properties of the mixture at the outlet of the chamber (previous calculation)</p></li>
+<li><p>mix3 (Mixture): Properties of the mixture at the throat (previous calculation)</p></li>
+<li><p>mix4 (Mixture): Properties of the mixture at the given exit points (previous calculation)</p></li>
+<li><p>FLAG_PERFORMANCE (bool): Flag to compute rocket parameters (default = true)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the initial mixture</p></li>
+<li><p>mix2_c (Mixture): Properties of the mixture at the outlet of the chamber</p></li>
+<li><p>mix3 (Mixture): Properties of the mixture at the throat</p></li>
+<li><p>mix4 (Mixture): Array of mixtures objects at the given exit points</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2_c, mix3, mix4] = rocketIAC(obj, mix1)</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = rocketIAC(obj, mix1)</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = rocketIAC(obj, mix1, mix2_c)</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = rocketIAC(obj, mix1, mix2_c, mix3)</p></li>
+<li><p>[mix1, mix2_c, mix3, mix4] = rocketIAC(obj, mix1, mix2_c, mix3, mix4)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketParameters">
+<span class="sig-name descname"><span class="pre">rocketParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketParameters" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute Rocket performance parameters at the throat</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p><strong>mix3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the throat</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixi (Mixture): Properties of the mixture at the the exit (obj.FLAG_SUBSONIC = false) or at the combustion chamber (obj.FLAG_SUBSONIC = true)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>mix3 (Mixture)</em> – Properties of the mixture at the throat</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.rocketThroatIAC">
+<span class="sig-name descname"><span class="pre">rocketThroatIAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">mix3_guess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.rocketThroatIAC" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute thermochemical composition for the Infinite-Area-Chamber (IAC) model</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">RocketSolver</span></code></a></span>) – RocketSolver object</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the outlet of the chamber</p></li>
+<li><p><strong>mix3_guess</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the throat (previous calculation)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>mix3 (Mixture)</em> – Properties of the mixture at the throat</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>mix3 = rocketThroatIAC(RocketSolver(), mix2, mix3_guess)</p></li>
+<li><p>mix3 = rocketThroatIAC(RocketSolver(), mix2, [])</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../../references.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">References</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../shockdetonation/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Shocks and detonations module</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2024, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Rocket module</a><ul>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+rocket.&#64;RocketSolver">RocketSolver</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>

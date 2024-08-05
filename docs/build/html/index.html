@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="install.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Combustion Toolbox v1.0.5</title>
+        <title>Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="#"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -230,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_1.html">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_4.html">Defining chemical system</a></li>
@@ -291,15 +291,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="documentation/databases.html">Databases</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="documentation/api/modules/ct_rocket/index.html">Rocket module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="documentation/api/utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="documentation/api/gui/index.html">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -507,7 +504,7 @@
 </div>
 </div>
 </div>
-<p>Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id2" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2024. Version 1.0.5. doi:10.5281/zenodo.5554911.">Cuadra <em>et al.</em>, 2024</a>]</span> is a GUI-based thermochemical code written in MATLAB with an equilibrium kernel based on the mathematical formulation set forth by NASA in its CEA code <span id="id2">[<a class="reference internal" href="references.html#id7" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>. The thermodynamic properties of the gaseous species are modeled with the ideal gas equation of state (EoS), and an up-to-date version of NASA’s 9-coefficient polynomial fits from <span id="id3">[<a class="reference internal" href="references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>, <a class="reference internal" href="references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>, <a class="reference internal" href="references.html#id252" title="B. Ruscic, R. E. Pinzon, G. Von Laszewski, D. Kodeboyina, A. Burcat, D. Leahy, D. Montoy, and A. F. Wagner. Active Thermochemical Tables: thermochemistry for the 21st century. In Journal of Physics: Conference Series, volume 16, 078. IOP Publishing, 2005. doi:10.1088/1742-6596/16/1/078.">Ruscic <em>et al.</em>, 2005</a>]</span>. CT is a new thermochemical code written from scratch in a modular architectural format composed of three main modules: CT-EQUIL, CT-SD, and CT-ROCKET.</p>
+<p>Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id2" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2024. Version 1.1.0. doi:10.5281/zenodo.5554911.">Cuadra <em>et al.</em>, 2024</a>]</span> is a GUI-based thermochemical code written in MATLAB with an equilibrium kernel based on the mathematical formulation set forth by NASA in its CEA code <span id="id2">[<a class="reference internal" href="references.html#id7" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>. The thermodynamic properties of the gaseous species are modeled with the ideal gas equation of state (EoS), and an up-to-date version of NASA’s 9-coefficient polynomial fits from <span id="id3">[<a class="reference internal" href="references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>, <a class="reference internal" href="references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>, <a class="reference internal" href="references.html#id252" title="B. Ruscic, R. E. Pinzon, G. Von Laszewski, D. Kodeboyina, A. Burcat, D. Leahy, D. Montoy, and A. F. Wagner. Active Thermochemical Tables: thermochemistry for the 21st century. In Journal of Physics: Conference Series, volume 16, 078. IOP Publishing, 2005. doi:10.1088/1742-6596/16/1/078.">Ruscic <em>et al.</em>, 2005</a>]</span>. CT is a new thermochemical code written from scratch in a modular architectural format composed of three main modules: CT-EQUIL, CT-SD, and CT-ROCKET.</p>
 <ul class="simple">
 <li><p><strong>CT-EQUIL:</strong> computes the composition at the equilibrium of multi-component gas mixtures that undergo canonical thermochemical transformations from an initial state (reactants), defined by its initial composition, temperature, and pressure, to a final state (products), defined by a set of chemical species (in gaseous—included ions—or pure condensed phase) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.</p></li>
 <li><p><strong>CT-SD:</strong> solves steady-state shock and detonation waves in either normal or oblique incidence.</p></li>
@@ -623,7 +620,7 @@
 <span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Cuadra, A. and Huete, C. and Vera, M.&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">title</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">year</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="m">2024</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">note</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Version 1.0.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">note</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Version 1.1.0&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">doi</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.5554911}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 

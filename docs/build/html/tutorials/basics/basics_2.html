@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Defining initial state of a mixture" href="basics_3.html" /><link rel="prev" title="Framework initialization" href="basics_1.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Defining initial state of a mixture" href="basics_3.html" /><link rel="prev" title="Importing packages and classes" href="basics_1.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Accessing the databases - Combustion Toolbox v1.0.5</title>
+        <title>Accessing the databases - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -230,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="basics_1.html">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP.html">Example_HP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -290,15 +291,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases.html">Databases</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/api/modules/ct_rocket/index.html">Rocket module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/gui/index.html">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
@@ -338,80 +336,95 @@
         <article role="main">
           <section id="accessing-the-databases">
 <h1>Accessing the databases<a class="headerlink" href="#accessing-the-databases" title="Permalink to this heading">#</a></h1>
-<p>In the preceding section, we stated that to initialize the Combustion Toolbox (load databases, default parameters, etc.), we have to run the following command:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">();</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Now, let’s delve into how we can access the databases incorporated within the Combustion Toolbox (CT). There are two main types of databases: <code class="docutils literal notranslate"><span class="pre">DB_master</span></code> and <code class="docutils literal notranslate"><span class="pre">DB</span></code>. The former comprises all data from from <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>], Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>, while the latter contains the same data in a more optimized format, ensuring faster data access.</p>
+<p>In the preceding section, we stated how to import some of the necessary classes and packages that comprise the Combustion Toolbox (CT). In this section, we will delve into how to access the databases incorporated within CT.</p>
+<p>There are two main types of databases: <code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code> and <code class="docutils literal notranslate"><span class="pre">BurcatDatabase</span></code>. The former comprises all data from NASA’s database <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>]</span>. The latter extracts data from the Third Millennium database <span id="id2">Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>. There is an additional third database, <code class="docutils literal notranslate"><span class="pre">SolarAbundances</span></code>, which stores the solar abundances of the elements <span id="id3">Asplund <em>et al.</em> [<a class="reference internal" href="../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">2009</a>]</span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Distinguishing between <code class="docutils literal notranslate"><span class="pre">DB_master</span></code> and <code class="docutils literal notranslate"><span class="pre">DB</span></code> is crucial because the latter, due to the utilization of <em>griddedInterpolant</em> objects, has a significantly larger size (~36 MB). A streamlined version of <code class="docutils literal notranslate"><span class="pre">DB</span></code> can be generated to conserve memory and reduce loading time (~1 second for 3603 species) when initializing CT. To achieve this, execute:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">generate_DB</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">DB_master</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">});</span><span class="w"></span>
+<p>By default, the stored NasaDatabase object contains all the species from NASA’s database <span id="id4">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>]</span> and the Third Millennium database <span id="id5">Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>. The size of this database is approximately 36 MB. To reduce memory usage and loading time, a streamlined version of the database can be generated by selecting only the species of interest. To generate this streamlined version, execute the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">generateDatabase</span><span class="p">(</span><span class="n">NasaDatabase</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Subsequently, save the <tt>self.DB</tt> variable in the <code class="docutils literal notranslate"><span class="pre">databases</span></code> folder as <tt>DB.mat</tt> to be loaded in the remaining sessions.</p>
+<p>Subsequently, save the <tt>DB</tt> variable in the <code class="docutils literal notranslate"><span class="pre">databases</span></code> folder as <tt>DB.mat</tt> to be loaded in the remaining sessions.
+This can be done by the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">save</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 <section id="finding-specific-chemical-species">
 <h2>Finding specific chemical species<a class="headerlink" href="#finding-specific-chemical-species" title="Permalink to this heading">#</a></h2>
-<p>The thermodynamic data of the species, e.g., C<sub>gr</sub>, can be accessed as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">DB</span><span class="p">.</span><span class="n">Cbgrb</span><span class="p">;</span><span class="w"></span>
+<p>The thermodynamic data are defined through Species objects and they are stored in the database’s species property. For example, to access to the carbon soot species C<sub>gr</sub>, we can use the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">DB</span><span class="p">.</span><span class="n">species</span><span class="p">.</span><span class="n">Cbgrb</span><span class="w"></span>
 </pre></div>
 </div>
-<p>This command will yield information similar to the following:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="n">FullName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C(gr)&#39;</span><span class="w"></span>
+<p>This command will yield the following information:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">Species</span><span class="w"> </span><span class="s">with</span><span class="w"> </span><span class="s">properties:</span><span class="w"></span>
+
 <span class="w">          </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="n">fullname</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C(gr)&#39;</span><span class="w"></span>
+<span class="w">       </span><span class="n">refCode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n 4/83&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="n">comments</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Graphite. Ref-Elm. TRC(4/83) vc,uc,tc1000-1002.               &#39;</span><span class="w"></span>
-<span class="w">     </span><span class="n">txFormula</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C   1.00    0.00    0.00    0.00    0.00&#39;</span><span class="w"></span>
-<span class="w">            </span><span class="n">mm</span><span class="p">:</span><span class="w"> </span><span class="mf">12.0107</span><span class="w"></span>
+<span class="w">       </span><span class="n">formula</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C   1.00    0.00    0.00    0.00    0.00&#39;</span><span class="w"></span>
+<span class="w">             </span><span class="n">W</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0120</span><span class="w"></span>
 <span class="w">            </span><span class="n">hf</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">            </span><span class="n">ef</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">         </span><span class="n">phase</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">             </span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">200</span><span class="w"> </span><span class="mf">229.1457</span><span class="w"> </span><span class="mf">258.2915</span><span class="w"> </span><span class="mf">287.4372</span><span class="w"> </span><span class="mf">316.5829</span><span class="w"> </span><span class="mf">345.7286</span><span class="w"> </span>…<span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span>×<span class="mi">200</span><span class="w"> </span><span class="nb">double</span><span class="p">)</span><span class="w"></span>
-<span class="w">       </span><span class="n">cPcurve</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">griddedInterpolant</span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="n">hftoh0</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mf">1.0535e+03</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">1.0535e+03</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">1.0535e+03</span><span class="p">]}</span><span class="w"></span>
+<span class="w">            </span><span class="n">ef</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="w">         </span><span class="n">phase</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
+<span class="w">             </span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">200</span><span class="w"> </span><span class="mf">229.1457</span><span class="w"> </span><span class="mf">258.2915</span><span class="w"> </span><span class="mf">287.4372</span><span class="w"> </span><span class="mf">316.5829</span><span class="w"> </span><span class="mf">345.7286</span><span class="w"> </span><span class="mf">374.8744</span><span class="w"> </span><span class="mf">404.0201</span><span class="w"> </span><span class="mf">433.1658</span><span class="w"> </span><span class="mf">462.3116</span><span class="w"> </span>…<span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span>×<span class="mi">200</span><span class="w"> </span><span class="nb">double</span><span class="p">)</span><span class="w"></span>
+<span class="w">          </span><span class="n">Tref</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">298.1500</span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="n">Trange</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mi">200</span><span class="w"> </span><span class="mi">600</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">600</span><span class="w"> </span><span class="mi">2000</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">2000</span><span class="w"> </span><span class="mi">6000</span><span class="p">]}</span><span class="w"></span>
+<span class="w">    </span><span class="n">Tintervals</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">Texponents</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]}</span><span class="w"></span>
+<span class="w">             </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mf">1.1329e+05</span><span class="w"> </span><span class="o">-</span><span class="mf">1.9804e+03</span><span class="w"> </span><span class="mf">13.6538</span><span class="w"> </span><span class="o">-</span><span class="mf">0.0464</span><span class="w"> </span><span class="mf">1.0213e-04</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0829e-07</span><span class="w"> </span><span class="mf">4.4723e-11</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">8</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">8</span><span class="w"> </span><span class="nb">double</span><span class="p">]}</span><span class="w"></span>
+<span class="w">             </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mf">8.9439e+03</span><span class="w"> </span><span class="o">-</span><span class="mf">72.9582</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">1.3984e+04</span><span class="w"> </span><span class="o">-</span><span class="mf">44.7718</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">5.8481e+03</span><span class="w"> </span><span class="o">-</span><span class="mf">23.5093</span><span class="p">]}</span><span class="w"></span>
+<span class="w">       </span><span class="n">cpcurve</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">griddedInterpolant</span><span class="p">]</span><span class="w"></span>
 <span class="w">       </span><span class="n">h0curve</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">griddedInterpolant</span><span class="p">]</span><span class="w"></span>
 <span class="w">       </span><span class="n">s0curve</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">griddedInterpolant</span><span class="p">]</span><span class="w"></span>
 <span class="w">       </span><span class="n">g0curve</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">griddedInterpolant</span><span class="p">]</span><span class="w"></span>
-<span class="w">        </span><span class="n">ctTInt</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
-<span class="w">        </span><span class="n">tRange</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mi">200</span><span class="w"> </span><span class="mi">600</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">600</span><span class="w"> </span><span class="mi">2000</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">2000</span><span class="w"> </span><span class="mi">6000</span><span class="p">]}</span><span class="w"></span>
-<span class="w">    </span><span class="n">tExponents</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="p">]}</span><span class="w"></span>
-<span class="w">             </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mi">1</span>×<span class="mi">8</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">8</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mi">1</span>×<span class="mi">8</span><span class="w"> </span><span class="nb">double</span><span class="p">]}</span><span class="w"></span>
-<span class="w">             </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="p">{[</span><span class="mf">8.9439e+03</span><span class="w"> </span><span class="o">-</span><span class="mf">72.9582</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">1.3984e+04</span><span class="w"> </span><span class="o">-</span><span class="mf">44.7718</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="mf">5.8481e+03</span><span class="w"> </span><span class="o">-</span><span class="mf">23.5093</span><span class="p">]}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>These details offer comprehensive insights into the thermodynamic properties of the specified species in the Combustion Toolbox database. We have the following fields:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FullName</span></code>: full name of the species.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: short name of the species as defined in the database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fullname</span></code>: full name of the species.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refCode</span></code>: reference code.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">comments</span></code>: comments about the species.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">txFormula</span></code>: chemical formula of the species.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mm</span></code>: molar mass [g/mol].</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hf</span></code>: standard enthalpy of formation [J/mol].</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formula</span></code>: chemical formula of the species.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code>: molar mass [kg/mol].</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hf</span></code>: enthalpy of formation at Tref from its reference species in their standard state [J/mol]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hftoh0</span></code>: enthalpy of formation at Tref relative to molar enthalpy at 0 K for standard state [J/mol]</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ef</span></code>: standard internal energy of formation [J/mol].</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code>: phase of the species (0: gas, 1: liquid or solid).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: temperature vector [K].</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cPcurve</span></code>: <em>griddedInterpolant</em> object containing the standard specific heat capacity at constant pressure [J/mol-K].</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tref</span></code>: reference temperature [K].</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Trange</span></code>: temperature range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tintervals</span></code>: number of temperature intervals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Texponents</span></code>: temperature exponents for the standard specific heat capacity at constant pressure, standard enthalpy, and standard entropy, respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpcurve</span></code>: <em>griddedInterpolant</em> object containing the standard specific heat capacity at constant pressure [J/mol-K].</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">h0curve</span></code>: <em>griddedInterpolant</em> object containing the standard enthalpy [J/mol].</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s0curve</span></code>: <em>griddedInterpolant</em> object containing the standard entropy [J/mol-K].</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">g0curve</span></code>: <em>griddedInterpolant</em> object containing the standard Gibbs free energy [J/mol].</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ctTInt</span></code>: number of temperature intervals.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tRange</span></code>: temperature intervals.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tExponents</span></code>: temperature exponents for the standard specific heat capacity at constant pressure, standard enthalpy, and standard entropy, respectively.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: coefficients of the polynomial.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>: coefficients of the polynomial.</p></li>
 </ul>
 </section>
 <section id="finding-list-of-chemical-species-with-given-chemical-elements">
 <h2>Finding list of chemical species with given chemical elements<a class="headerlink" href="#finding-list-of-chemical-species-with-given-chemical-elements" title="Permalink to this heading">#</a></h2>
-<p>To find the list of species that contain only some chemical elements, e.g., O and H, we can use the following command:</p>
+<p>To find the list of species that contain only some chemical elements, we first have to define a chemical system. Briefly, because this will be explained in more detail in the next sections, this can be done as:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+
+<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>After defining the chemical system, we can use the <code class="docutils literal notranslate"><span class="pre">findProducts</span></code> function to find the list of species that contain only the specified chemical elements. For example, to find all species that contain oxygen (O) and hydrogen (H), we can use the following command:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 NASA database</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">})</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">findProducts</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
 
 <span class="w">  </span><span class="mi">1</span>×<span class="mi">15</span><span class="w"> </span><span class="nb">cell</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
 
@@ -426,13 +439,13 @@ NASA database</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
+<p>By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">findProducts</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
@@ -459,13 +472,13 @@ Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Both and ionized species</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&#39;flag_ion&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">findProducts</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;flag_ion&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
@@ -512,7 +525,7 @@ Both and ionized species</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
 </div>
 </div>
 </div>
@@ -544,7 +557,7 @@ Both and ionized species</label><div class="sd-tab-content docutils">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Framework initialization</div>
+                <div class="title">Importing packages and classes</div>
                 
               </div>
             </a>
