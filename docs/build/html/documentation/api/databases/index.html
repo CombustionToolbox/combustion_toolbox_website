@@ -467,9 +467,25 @@ chemical species contained in NASA’s database.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.generateDatabase">
-<span class="sig-name descname"><span class="pre">generateDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB_master</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabase" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generateDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.generateDatabase" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate Database with thermochemical interpolation curves
-for the species contained in DB_master</p>
+from the data extracted from the thermoFile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></span>) – NasaDatabase object</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>listSpecies (cell): List of species to generate the database</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>DB (struct)</em> – Database with thermochemical interpolation curves</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat method">
@@ -479,7 +495,7 @@ for the species contained in DB_master</p>
 data of the chemical species</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></span>) – </p>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></span>) – NasaDatabase object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DB_master (struct)</em> – Database with the thermodynamic data of the chemical species</p>
@@ -488,7 +504,7 @@ data of the chemical species</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <ul class="simple">
-<li><p>DB_master = generate_DB_master(‘thermo_CT.inp’)</p></li>
+<li><p>DB_master = generateDatabaseMaster(‘thermo_CT.inp’)</p></li>
 </ul>
 </div>
 </dd></dl>
@@ -800,6 +816,29 @@ the species at the given temperature [K] using NASA’s 9 polynomials</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>[e0, DeT] = species_e0_NASA(‘H2O’, 300:100:6000, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.species_g0_NASA">
+<span class="sig-name descname"><span class="pre">species_g0_NASA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.species_g0_NASA" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute Compute Gibbs energy [J/mol] of the species at the given
+temperature [K] using NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></span>) – NasaDatabase object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Range of temperatures to evaluate [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>g0 (float)</em> – Gibbs energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>g0 = species_g0_NASA(NasaDatabase(), ‘H2O’, 300:100:6000)</p>
 </div>
 </dd></dl>
 
