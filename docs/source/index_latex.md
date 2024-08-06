@@ -35,7 +35,8 @@ validations
     :hidden:
     :maxdepth: 2
 
-documentation/databases
 documentation/api/index
+documentation/databases/index
+documentation/gui/index
 references
 ```

@@ -4,10 +4,11 @@ The initial state of a mixture (`reactants`) is defined by its chemical composit
 
 
 ````{tip}
-Remember, that initializing the Combustion Toolbox (CT) is the first step to start working with the code. To do that, type the following at the prompt:
+Remember, importing the Combustion Toolbox (CT) subpackages is the first step to start working with the code. To do that, type the following at the prompt:
 
 ```matlab
-self = App();
+import combustiontoolbox.databases.NasaDatabase
+import combustiontoolbox.core.*
 ```
 ````
 

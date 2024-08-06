@@ -8,7 +8,7 @@ The scientific paper on the Combustion Toolbox is currently under review. In the
 
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
-* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.0.5. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
+* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.1.0. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 * *Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. PhD thesis, Universidad Carlos III de Madrid. Available at [http://hdl.handle.net/10016/38179](http://hdl.handle.net/10016/38179).*
   
 It can be handy the BibTeX format:
@@ -18,7 +18,7 @@ It can be handy the BibTeX format:
     author  = "Cuadra, A. and Huete, C. and Vera, M.",
     title   = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year    = 2024,
-    note    = "Version 1.0.5",
+    note    = "Version 1.1.0",
     doi     = {https://doi.org/10.5281/zenodo.5554911}
 }
 

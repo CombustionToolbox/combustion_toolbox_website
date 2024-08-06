@@ -8,6 +8,7 @@ Here we can find the documentation for the routines implemented in the Combustio
 
 ```
 .combustion_toolbox
+|-- +combustiontoolbox
 |-- databases
 |-- examples
 |-- gui
@@ -27,11 +28,11 @@ Here we can find the documentation for the routines implemented in the Combustio
 
 These top-layer folders contain the following:
 
+* ```+combustiontoolbox```: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.
 * ```databases```: encompasses all databases utilized by CT.
 * ```examples```: contains examples showcasing the usage of CT modules.
 * ```gui```: houses functions and assets required to generate the app (GUI), add-ons, and extend the functionality of the plain code to the GUI.
 * ```installer```: hosts installation files (toolbox and royalty-free stand-alone version).
-* ```modules```: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.
 * ```utils```: accommodates utility functions with different purposes.
 * ```validations```: includes routines used to validate CT with the results obtained with other codes, unit testing files for ensuring correct code functionality, and all graphs generated from these verification processes.
 
@@ -42,7 +43,10 @@ Regarding the files in the main source folder, we have the following: the file `
     :caption: 'Contents:'
     :maxdepth: 2
 
-modules/index
-utils/index
-gui/index
+common/index
+databases/index
+core/index
+equilibrium/index
+shockdetonation/index
+rocket/index
 ```

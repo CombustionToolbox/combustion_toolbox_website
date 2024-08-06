@@ -1,55 +1,30 @@
-# Framework initialization
-To begin, start MATLAB and navigate to the folder where you have downloaded the Combustion Toolbox. To include files in `PATH`, run this command in the command window:
+# Importing packages and classes
+The Combustion Toolbox (CT) is organized using namespaces (**starting from version 1.1.0**). The main namespace is `combustiontoolbox`. The classes and methods included in CT's modules (described in detail later) rely on several `core` and `database` classes, namely:
+   * <tt>Elements</tt>: stores the list of elements that may appear in the database.
+   * <tt>Species</tt>: object containing the properties of a chemical species.
+   * <tt>ChemicalSystem</tt>: object that defines the chemical system.
+   * <tt>EquationState</tt>: object that defines the equation of state.
+   * <tt>Mixture</tt>: object that defines a multicomponent mixture.
+   * <tt>Database</tt>: abstract class that contains common methods for the databases.
+   * <tt>NasaDatabase</tt>: a structured thermochemical database including data from {cite:t}`Mcbride2002, burcat2005` with *griddedInterpolant* objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980` for faster data access.
+
+Let's start by importing one of the subpackages of the Combustion Toolbox, the `databases` package. This package contains the classes that define the databases used in CT. To import the `databases` package, we can use the following command:
 ```matlab
-INSTALL()
+import combustiontoolbox.databases.*
 ```
-
-First, using the Combustion Toolbox (CT), you have to initialize the tool (load databases, set default variables, etc.). To do that, type the following at the prompt:
+or we can import a specific class from the `databases` package:
 ```matlab
-self = App()
+import combustiontoolbox.databases.NasaDatabase
 ```
+to import only the `NasaDatabase` class.
 
-If files contained in CT are correctly defined, you should see something like this:
+In addition to the classes described above, there are other essential classes in the Combustion Toolbox, for example:
+   * <tt>equilibriumSolver</tt>: solver class for equilibrium calculations,
+   * <tt>shockSolver</tt>: solver class for shock calculations,
+   * <tt>detonationSolver</tt>: solver class for detonation calculations,
+   * <tt>Rocket</tt>: solver class for rocket calculations,
+
+which are part of the `equilibrium`, `shockdetonation`, and `rocket` modules, respectively. All the classes and subpackages are imported as shown before. Thus, to import, e.g., the `equilibriumSolver` class this will be done as follows:
 ```matlab
-self = 
-
-  struct with fields:
-
-            E: [1×1 struct]
-            S: [1×1 struct]
-            C: [1×1 struct]
-         Misc: [1×1 struct]
-           PD: [1×1 struct]
-           PS: [1×1 struct]
-           TN: [1×1 struct]
-    DB_master: [1×1 struct]
-           DB: [1×1 struct]
+import combustiontoolbox.equilibrium.equilibriumSolver
 ```
-
-This `self` variable encapsulates essential shared data necessary for calculations and typically serves as the first argument in most CT routines. Thus, the data passed between the functions has been organized in a hierarchical tree structure (except for the GUI, which is based on OOP) as shown in Fig.1, namely:
-   * `self (App)`: parent node; contains all the data of the code, e.g., databases, input values, and results.
-   * `Constants (C)`: contains constant values.
-   * `Elements (E)`: contains data of the chemical elements in the problem (names and indices for fast data access).
-   * `Species (S)`: contains data of the chemical species in the problem (names and indices for fast data access), as well as lists (cells) with the species for complete combustion.
-   * `Problem Description (PD)`: contains data of the problem to solve, e.g., initial mixture (composition, temperature, pressure), problem type, and its configuration.
-   * `Problem Solution (PS)`: contains results (mixtures).
-   * `Tuning Properties (TN)`: contains parameters that control the numerical error of the algorithms implemented in the different modules.
-   * `Miscellaneous (Misc)`: contains values that configure the auto-generated plots and export setup, as well as flags.
-   * `Database master (DB_master)`: a structured thermochemical database including data from {cite:t}`Mcbride2002, burcat2005`.
-   * `Database (DB)`: a structured thermochemical database with *griddedInterpolant* objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980` for faster data access. 
-
-   <br>
-   
-<p align="center">
-    <img src="../../_static/img/cuadra2022/sketch_tree_structure.svg" width="250">
-</p>
-
-```{eval-rst}
-.. only:: latex
-
-    .. image:: ../../_static/img/cuadra2022/sketch_tree_structure.pdf
-        :width: 150px
-        :align: center
-```
-
-**Figure 1:** *Combustion Toolbox hierarchical data tree structure, where* <tt> `App.m` </tt> *is the initialization function.*
