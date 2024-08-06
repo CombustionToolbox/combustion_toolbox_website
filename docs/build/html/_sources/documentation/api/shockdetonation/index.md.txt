@@ -2,7 +2,7 @@
 
 In this section, you will find the documentation of the routines implemented to solves processes that involve strong changes in dynamic pressure, such as steady state shock and detonation waves in either normal or oblique stream configurations within the limits of regular shock reflections.
 
-## ShockSolver
+<!-- ## ShockSolver
 
 ```{eval-rst}
 .. currentmodule:: src.+combustiontoolbox.+shockdetonation
@@ -20,4 +20,4 @@ In this section, you will find the documentation of the routines implemented to 
 .. automodule:: src.+combustiontoolbox.+shockdetonation.@DetonationSolver
    :show-inheritance:
    :members:
-```
+``` -->

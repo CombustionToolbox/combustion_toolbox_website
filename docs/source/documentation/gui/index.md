@@ -23,14 +23,14 @@ Routines to generate the app, add-ons, assets, and all the necessary functions t
 
 **Figure 3:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 3].*
 
-:::{dropdown} Routines
+<!-- :::{dropdown} Routines
 ```{eval-rst}
 .. autoclass:: src.gui.combustion_toolbox
    :members:
 ```
-:::
+::: -->
 
-## Utility functions
+<!-- ## Utility functions
 
 A collection of functions for Combustion Toolbox GUI.
 
@@ -41,7 +41,7 @@ A collection of functions for Combustion Toolbox GUI.
 .. automodule:: src.gui.utils
    :members:
 ```
-:::
+::: -->
 
 ## Add-ons
 
@@ -60,14 +60,14 @@ The Add-ons included in CT are:
 
 **Figure 1:** *Add-on uielements.*
 
-:::{dropdown} Routines
+<!-- :::{dropdown} Routines
 ```{eval-rst}
 .. autoclass:: src.gui.addons.uielements
    :members:
 ```
 :::
 
-***
+*** -->
 
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uipreferences.svg" width="800">
@@ -75,14 +75,14 @@ The Add-ons included in CT are:
 
 **Figure 2:** *Add-on uipreferences.*
 
-:::{dropdown} Routines
+<!-- :::{dropdown} Routines
 ```{eval-rst}
 .. autoclass:: src.gui.addons.uipreferences
    :members:
 ```
 :::
 
-***
+*** -->
 
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uifeedback.svg" width="400">
@@ -98,14 +98,14 @@ The Add-ons included in CT are:
 
 **Figure 4:** *Add-on uivalidations.*
 
-:::{dropdown} Routines
+<!-- :::{dropdown} Routines
 ```{eval-rst}
 .. autoclass:: src.gui.addons.uivalidations
    :members:
 ```
 :::
 
-***
+*** -->
 
 <p align="center">
     <img src="../../../_static/img/cuadra2022/gui_uiabout.svg" width="800">
@@ -113,9 +113,9 @@ The Add-ons included in CT are:
 
 **Figure 5:** *Add-on uiabout.*
 
-:::{dropdown} Routines
+<!-- :::{dropdown} Routines
 ```{eval-rst}
 .. autoclass:: src.gui.addons.uiabout
    :members:
 ```
-:::
+::: -->
