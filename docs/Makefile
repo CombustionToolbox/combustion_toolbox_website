@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
-SPHINXOPTS    =
+SPHINXOPTS    = --keep-going -n
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = sphinxcontrib-matlabdomain
 SOURCEDIR     = source
