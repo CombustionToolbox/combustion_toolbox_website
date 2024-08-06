@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Example_SHOCK_R.m" href="examples_plain_SHOCK_R.html" /><link rel="prev" title="Example_SHOCK_I.m" href="examples_plain_SHOCK_I.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Example_SHOCK_I_IONIZATION.m - Combustion Toolbox v1.0.5</title>
+        <title>Example_SHOCK_I_IONIZATION.m - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -230,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/basics/basics_1.html">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/basics/basics_4.html">Defining chemical system</a></li>
@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_TV.html">Example_TV.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP.html">Example_HP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_COMPLETE_INCOMPLETE.html">Example_HP_COMPLETE_INCOMPLETE.m</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_HUMID_AIR.html">Example_HP_HUMID_AIR.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_PRESSURE.html">Example_HP_PRESSURE.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_MIXTEMP.html">Example_HP_MIXTEMP.m</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples_plain_HP_PROPELLANTS.html">Example_HP_PROPELLANTS.m</a></li>
@@ -288,19 +289,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/databases.html">Databases</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/api/modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../documentation/api/modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../documentation/api/modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../documentation/api/modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../documentation/api/modules/ct_rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/api/utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/api/gui/index.html">GUI</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
@@ -343,7 +342,7 @@
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
 <span class="linenos"> 4</span><span class="c">% Compute pre-shock and post-shock state for a planar incident shock wave</span><span class="w"></span>
 <span class="linenos"> 5</span><span class="c">% at standard conditions, a set of 51 species considered and a set of</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="c">% initial shock front velocities (u1) contained in (360, 13000) [m/s]</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="c">% pre-shock Mach numbers (M1) contained in (1, 40)</span><span class="w"></span>
 <span class="linenos"> 7</span><span class="c">%    </span><span class="w"></span>
 <span class="linenos"> 8</span><span class="c">% Air_ions == {&#39;eminus&#39;, &#39;Ar&#39;, &#39;Arplus&#39;, &#39;C&#39;, &#39;Cplus&#39;, &#39;Cminus&#39;, ...</span><span class="w"></span>
 <span class="linenos"> 9</span><span class="c">%              &#39;CN&#39;, &#39;CNplus&#39;, &#39;CNminus&#39;, &#39;CNN&#39;, &#39;CO&#39;, &#39;COplus&#39;, ...</span><span class="w"></span>
@@ -355,28 +354,51 @@
 <span class="linenos">15</span><span class="c">%              &#39;N2O5&#39;, &#39;N3&#39;, &#39;O&#39;, &#39;Oplus&#39;, &#39;Ominus&#39;, &#39;O2&#39;, &#39;O2plus&#39;, ...</span><span class="w"></span>
 <span class="linenos">16</span><span class="c">%              &#39;O2minus&#39;, &#39;O3&#39;}</span><span class="w"></span>
 <span class="linenos">17</span><span class="c">%   </span><span class="w"></span>
-<span class="linenos">18</span><span class="c">% See wiki or list_species() for more predefined sets of species</span><span class="w"></span>
-<span class="linenos">19</span><span class="c">%</span><span class="w"></span>
-<span class="linenos">20</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
-<span class="linenos">21</span><span class="c">%          PhD Candidate - Group Fluid Mechanics</span><span class="w"></span>
-<span class="linenos">22</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
-<span class="linenos">23</span><span class="c">%                 </span><span class="w"></span>
-<span class="linenos">24</span><span class="c">% Last update July 22 2022</span><span class="w"></span>
-<span class="linenos">25</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="c">%% INITIALIZE</span><span class="w"></span>
-<span class="linenos">28</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;Air_ions&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">29</span><span class="c">%% INITIAL CONDITIONS</span><span class="w"></span>
-<span class="linenos">30</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">31</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">32</span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">78.084</span><span class="p">,</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9365</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0319</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">33</span><span class="c">%% ADDITIONAL INPUTS (DEPENDS OF THE PROBLEM SELECTED)</span><span class="w"></span>
-<span class="linenos">34</span><span class="n">u1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">logspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="n">u1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">u1</span><span class="p">(</span><span class="n">u1</span><span class="o">&lt;</span><span class="mi">20000</span><span class="p">);</span><span class="w"> </span><span class="n">u1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">u1</span><span class="p">(</span><span class="n">u1</span><span class="o">&gt;=</span><span class="mf">347.25</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">35</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;u1&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">u1</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">36</span><span class="c">%% SOLVE PROBLEM</span><span class="w"></span>
-<span class="linenos">37</span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solve_problem</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SHOCK_I&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">38</span><span class="c">%% DISPLAY RESULTS (PLOTS)</span><span class="w"></span>
-<span class="linenos">39</span><span class="n">post_results</span><span class="p">(</span><span class="n">self</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">18</span><span class="c">% See wiki or setListspecies method from ChemicalSystem class for more</span><span class="w"></span>
+<span class="linenos">19</span><span class="c">% predefined sets of species</span><span class="w"></span>
+<span class="linenos">20</span><span class="c">%</span><span class="w"></span>
+<span class="linenos">21</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
+<span class="linenos">22</span><span class="c">%          Postdoctoral researcher - Group Fluid Mechanics</span><span class="w"></span>
+<span class="linenos">23</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
+<span class="linenos">24</span><span class="c">%                 </span><span class="w"></span>
+<span class="linenos">25</span><span class="c">% Last update April 02 2024</span><span class="w"></span>
+<span class="linenos">26</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="c">% Import packages</span><span class="w"></span>
+<span class="linenos">29</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="linenos">30</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">31</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">shockdetonation</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">32</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c">% Get Nasa database</span><span class="w"></span>
+<span class="linenos">35</span><span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="c">% Define chemical system</span><span class="w"></span>
+<span class="linenos">38</span><span class="nb">system</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;air ions&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c">% Initialize mixture</span><span class="w"></span>
+<span class="linenos">41</span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="nb">system</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c">% Define chemical state</span><span class="w"></span>
+<span class="linenos">44</span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mf">78.084</span><span class="p">,</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9365</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0319</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="c">% Define properties</span><span class="w"></span>
+<span class="linenos">47</span><span class="n">mixArray1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;M1&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">40</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="c">% Initialize solver</span><span class="w"></span>
+<span class="linenos">50</span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SHOCK_I&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">51</span>
+<span class="linenos">52</span><span class="c">% Solve problem</span><span class="w"></span>
+<span class="linenos">53</span><span class="p">[</span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">solveArray</span><span class="p">(</span><span class="n">mixArray1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="c">% Plot Hugoniot curve</span><span class="w"></span>
+<span class="linenos">56</span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;\rho_1 / \rho_2&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">rho</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2</span><span class="p">.</span><span class="n">rho</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;p_2 / p_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2</span><span class="p">.</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">p</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;xScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;yScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c">% Plot post-shock temperature</span><span class="w"></span>
+<span class="linenos">59</span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;M1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">mach</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2</span><span class="p">.</span><span class="n">T</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="c">% Plot molar fractions</span><span class="w"></span>
+<span class="linenos">62</span><span class="n">plotComposition</span><span class="p">(</span><span class="n">mixArray2</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mach&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Xi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mintol&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;y_var&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -424,7 +446,7 @@
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>

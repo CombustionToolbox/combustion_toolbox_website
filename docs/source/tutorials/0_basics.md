@@ -4,10 +4,10 @@ In this section we will cover the basic functionalities of the Combustion Toolbo
 
 
 Briefly, the main steps required to solve a problem with CT are as follows:
-1. Initialize CT (load databases, set default variables, etc.).
-2. Define the initial state (temperature, pressure, composition).
-3. Set chemical system (species that can appear in the chemical transformations).
-4. Select the problem type (e.g., an adibatic isobaric combustion).
+1. Define database.
+2. Set chemical system (species that can appear in the chemical transformations).
+3. Define the initial mixture (temperature, pressure, and composition).
+4. Select the solver depending of the problem type (e.g., for an adibatic isobaric combustion this is EquilibriumSolver).
 5. Define additional parameters (depends on the problem selected).
 6. Solve the problem.
 7. Plot the results.

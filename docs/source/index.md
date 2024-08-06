@@ -41,7 +41,8 @@ publications
     :maxdepth: 2
     :titlesonly:
 
-documentation/databases
 documentation/api/index
+documentation/databases/index
+documentation/gui/index
 references
 ```

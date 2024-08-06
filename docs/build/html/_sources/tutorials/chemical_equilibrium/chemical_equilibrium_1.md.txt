@@ -10,6 +10,29 @@ For a preliminary analysis, we will consider a set of 23 species:
   
 which typically appear in the combustion of hydrocarbon fuels with air. This set of species is defined in the routine <tt>list_species.m</tt> as `Soot formation`, which also includes Ar.
 
+## Define database
+
+```````{tab-set}
+``````{tab-item} Plain code
+To define the database with this set of species, type the following at the MATLAB prompt:
+
+```matlab
+% Import package
+import combustiontoolbox.database.NasaDatabase
+% Load Nasa's database 
+DB = NasaDatabase()
+```
+
+Here DB is a <tt>NasaDatabase</tt> object that inherits from the superclass  <tt>Databese</tt>.
+``````
+
+``````{tab-item} GUI
+`````{note}
+This section is under development. Stay tuned!
+`````
+
+```````
+
 ## Defining chemical system
 
 ```````{tab-set}

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Modules" href="modules/index.html" /><link rel="prev" title="Databases" href="../databases.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Common functions" href="common/index.html" /><link rel="prev" title="Publications" href="../../publications.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>API Documentation - Combustion Toolbox v1.0.5</title>
+        <title>API Documentation - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.0.5</div></a>
+      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -230,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/basics/basics_1.html">Framework initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
@@ -289,19 +289,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../databases.html">Databases</a></li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules/ct_rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common/index.html">Common functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gui/index.html">GUI</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 
@@ -345,6 +343,7 @@
 </div>
 <p>Here we can find the documentation for the routines implemented in the Combustion Toolbox (CT). The source code contains the following folders and files in the main directory:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">combustion_toolbox</span><span class="w"></span>
+<span class="o">|--</span><span class="w"> </span><span class="o">+</span><span class="n">combustiontoolbox</span><span class="w"></span>
 <span class="o">|--</span><span class="w"> </span><span class="n">databases</span><span class="w"></span>
 <span class="o">|--</span><span class="w"> </span><span class="n">examples</span><span class="w"></span>
 <span class="o">|--</span><span class="w"> </span><span class="n">gui</span><span class="w"></span>
@@ -364,11 +363,11 @@
 </div>
 <p>These top-layer folders contain the following:</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+combustiontoolbox</span></code>: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">databases</span></code>: encompasses all databases utilized by CT.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: contains examples showcasing the usage of CT modules.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gui</span></code>: houses functions and assets required to generate the app (GUI), add-ons, and extend the functionality of the plain code to the GUI.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">installer</span></code>: hosts installation files (toolbox and royalty-free stand-alone version).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">modules</span></code>: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">utils</span></code>: accommodates utility functions with different purposes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">validations</span></code>: includes routines used to validate CT with the results obtained with other codes, unit testing files for ensuring correct code functionality, and all graphs generated from these verification processes.</p></li>
 </ul>
@@ -376,29 +375,37 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules/modules_self.html">Initialization module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/ct_equil/index.html">Thermochemical equilibrium module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/ct_sd/index.html">Shocks and detonations module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/ct_rocket/index.html">Rocket module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/index.html">Common functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="common/index.html#module-src.+combustiontoolbox.+common.&#64;Constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common/index.html#module-src.+combustiontoolbox.+common.&#64;Units">Units</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utils/index.html">Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#unclasified-utility-functions">Unclasified utility functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#database-functions">Database functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#display-functions">Display functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#equation-of-state-functions">Equation of State functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#export-functions">Export functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#extensions-functions">Extensions functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#root-finding-algorithms">Root finding algorithms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#thermodynamic-properties">Thermodynamic properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/index.html#validations-functions">Validations functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases/index.html">Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases/index.html#module-src.+combustiontoolbox.+databases.&#64;Database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases/index.html#module-src.+combustiontoolbox.+databases.&#64;NasaDatabase">NasaDatabase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases/index.html#module-src.+combustiontoolbox.+databases.&#64;BurcatDatabase">BurcatDatabase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases/index.html#module-src.+combustiontoolbox.+databases.&#64;SolarAbundances">SolarAbundances</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="gui/index.html">GUI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gui/index.html#combustion-toolbox-gui">Combustion Toolbox GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gui/index.html#utility-functions">Utility functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gui/index.html#add-ons">Add-ons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core/index.html">Core classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;Elements">Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;Species">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;ChemicalSystem">ChemicalSystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;Mixture">Mixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;EquationState">EquationState</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="equilibrium/index.html">Thermochemical equilibrium module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="equilibrium/index.html#module-src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver">EquilibriumSolver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shockdetonation/index.html">Shocks and detonations module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shockdetonation/index.html#module-src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver">ShockSolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shockdetonation/index.html#module-src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver">DetonationSolver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rocket/index.html">Rocket module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rocket/index.html#module-src.+combustiontoolbox.+rocket.&#64;RocketSolver">RocketSolver</a></li>
 </ul>
 </li>
 </ul>
@@ -410,23 +417,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="modules/index.html">
+          <a class="next-page" href="common/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Modules</div>
+                <div class="title">Common functions</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../databases.html">
+          <a class="prev-page" href="../../publications.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Databases</div>
+                <div class="title">Publications</div>
                 
               </div>
             </a>
@@ -448,7 +455,7 @@
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>
