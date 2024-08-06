@@ -8,6 +8,8 @@ Combustion Toolbox generates its own databases using an up-to-date version of NA
 ## Database
 
 ```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+databases
+
 .. automodule:: src.+combustiontoolbox.+databases.@Database
    :show-inheritance:
    :members:
@@ -16,6 +18,8 @@ Combustion Toolbox generates its own databases using an up-to-date version of NA
 ## NasaDatabase
 
 ```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+databases
+
 .. automodule:: src.+combustiontoolbox.+databases.@NasaDatabase
    :show-inheritance:
    :members:
@@ -24,7 +28,9 @@ Combustion Toolbox generates its own databases using an up-to-date version of NA
 ## BurcatDatabase
 
 ```{eval-rst}
-.. automodule:: src.+combustiontoolbox.+core.@BurcatDatabase
+.. currentmodule:: src.+combustiontoolbox.+databases
+
+.. automodule:: src.+combustiontoolbox.+databases.@BurcatDatabase
    :show-inheritance:
    :members:
 ```
@@ -32,7 +38,9 @@ Combustion Toolbox generates its own databases using an up-to-date version of NA
 ## SolarAbundances
 
 ```{eval-rst}
-.. automodule:: src.+combustiontoolbox.+core.@SolarAbundances
+.. currentmodule:: src.+combustiontoolbox.+databases
+
+.. automodule:: src.+combustiontoolbox.+databases.@SolarAbundances
    :show-inheritance:
    :members:
 ```

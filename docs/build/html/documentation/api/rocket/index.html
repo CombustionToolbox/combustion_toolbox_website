@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="References" href="../../../references.html" /><link rel="prev" title="Shocks and detonations module" href="../shockdetonation/index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Databases" href="../../databases/index.html" /><link rel="prev" title="Shocks and detonations module" href="../shockdetonation/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Rocket module - Combustion Toolbox v1.1.0</title>
@@ -289,7 +289,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
@@ -299,6 +298,8 @@
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Rocket module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
 </ul>
 
@@ -348,176 +349,46 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RocketSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p>RocketSolver class to solve rocket problems</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RocketSolver()</span></code></a> class is used to solve rocket problems. The class provides methods
+to compute the performance of a rocket using the Infinite Area Chamber (IAC) and Finite Area
+Chamber (FAC) models.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">RocketSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">RocketSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
 <dl class="simple">
 <dt>Problem types:</dt><dd><ul class="simple">
-<li><p>ROCKET_IAC: Get the performance of a rocket using the Infinite Area Chamber (IAC) model</p></li>
-<li><p>ROCKET_FAC: Get the performance of a rocket using the Finite Area Chamber (FAC) model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROCKET_IAC</span></code>: Get the performance of a rocket using the Infinite Area Chamber (IAC) model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROCKET_FAC</span></code>: Get the performance of a rocket using the Finite Area Chamber (FAC) model</p></li>
 </ul>
 </dd>
 </dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a></p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.problemType">
-<span class="sig-name descname"><span class="pre">problemType</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType" title="Permalink to this definition">#</a></dt>
-<dd><p>Problem type [ROCKET_IAC or ROCKET_FAC]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>char</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.equilibriumSolver">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
-<dd><p>EquilibriumSolver object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>EquilibriumSolver</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.tol0">
-<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance rocket performance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.itMax">
-<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.itMax" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - rocket performance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_SUBSONIC">
-<span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to indicate subsonic Area ratio</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_RESULTS">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print results</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_TIME">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_REPORT">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print predefined plots</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.time">
-<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time" title="Permalink to this definition">#</a></dt>
-<dd><p>Elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve rocket problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve a set of rocket problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.printTime">
-<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime" title="Permalink to this definition">#</a></dt>
-<dd><p>Print execution time</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot" title="Permalink to this definition">#</a></dt>
-<dd><p>Plot results</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report" title="Permalink to this definition">#</a></dt>
-<dd><p>Postprocess all the results with predefined plots</p>
-</dd></dl>
-
-<div class="admonition-examples admonition">
-<p class="admonition-title">Examples</p>
-<ul class="simple">
-<li><p>solver = RocketSolver();</p></li>
-<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_IAC’);</p></li>
-<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’);</p></li>
-<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’, ‘tolMoles’, 1e-30);</p></li>
-<li><p>solver = RocketSolver(‘problemType’, ‘ROCKET_FAC’, ‘tolMoles’, 1e-30, ‘FLAG_FROZEN’, true);</p></li>
-</ul>
-</div>
-<dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
-<dd><p>Flag to print predefined plots</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print results</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_SUBSONIC">
+<span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Flags</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print elapsed time</p>
 </dd></dl>
 
@@ -528,20 +399,20 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>EquilibriumSolver object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.itMax" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - rocket performance</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot results</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -575,8 +446,8 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Print execution time</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -586,14 +457,14 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType" title="Permalink to this definition">#</a></dt>
 <dd><p>Problem type</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report" title="Permalink to this definition">#</a></dt>
 <dd><p>Postprocess all the results with predefined plots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -620,8 +491,8 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve rocket problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -661,8 +532,8 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a set of rocket problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -687,16 +558,16 @@ Currently, there are two models implemented in the Combustion Toolbox:</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Miscellaneous</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Rocket propellant performance (CT-ROCKET module)</p></li>
 </ul>
@@ -982,12 +853,12 @@ B. J. (1994). NASA reference publication, 1311.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../../references.html">
+          <a class="next-page" href="../../databases/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">References</div>
+                <div class="title">Databases</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1020,7 +891,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>

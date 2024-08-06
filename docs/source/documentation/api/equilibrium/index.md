@@ -5,6 +5,8 @@ In this section, you will find the documentation of the kernel of the code, whic
 ## EquilibriumSolver
 
 ```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+equilibrium
+
 .. automodule:: src.+combustiontoolbox.+equilibrium.@EquilibriumSolver
    :show-inheritance:
    :members:

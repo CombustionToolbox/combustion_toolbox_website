@@ -289,7 +289,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
@@ -299,6 +298,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
 </ul>
 
@@ -343,311 +344,81 @@
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ShockSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p>The ShockSolver class is used to solve shock waves problems</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> class is used to solve shock waves problems under different
+flow configurations. The class provides methods to compute the post-shock state of the gas
+mixture, including incident and reflected shocks, oblique shocks, and shock polar diagrams.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
 <dl class="simple">
 <dt>Problem types:</dt><dd><ul class="simple">
-<li><p>SHOCK_I: Incident shock</p></li>
-<li><p>SHOCK_R: Reflected shock</p></li>
-<li><p>SHOCK_OBLIQUE: Oblique shock</p></li>
-<li><p>SHOCK_OBLIQUE_R: Oblique reflected shock</p></li>
-<li><p>SHOCK_POLAR: Shock polar diagrams</p></li>
-<li><p>SHOCK_POLAR_R: Shock polar diagrams for incident and reflected states</p></li>
-<li><p>SHOCK_POLAR_LIMITRR: Shock polar within the limit of regular reflection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_I</span></code>: Incident shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_R</span></code>: Reflected shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_OBLIQUE</span></code>: Oblique shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_OBLIQUE_R</span></code>: Oblique reflected shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR</span></code>: Shock polar diagrams</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_R</span></code>: Shock polar diagrams for incident and reflected states</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_LIMITRR</span></code>: Shock polar within the limit of regular reflection</p></li>
 </ul>
 </dd>
 </dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.problemType">
-<span class="sig-name descname"><span class="pre">problemType</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType" title="Permalink to this definition">#</a></dt>
-<dd><p>Problem type [SHOCK_I, SHOCK_R, SHOCK_OBLIQUE, SHOCK_OBLIQUE_R, SHOCK_POLAR, SHOCK_POLAR_R, SHOCK_POLAR_LIMITRR]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>char</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.equilibriumSolver">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
-<dd><p>EquilibriumSolver object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>EquilibriumSolver</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tol0">
-<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tol0" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of shocks/detonations kernel</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itMax">
-<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itMax" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - shocks and detonations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.machThermo">
-<span class="sig-name descname"><span class="pre">machThermo</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.machThermo" title="Permalink to this definition">#</a></dt>
-<dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolOblique">
-<span class="sig-name descname"><span class="pre">tolOblique</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolOblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance oblique shocks algorithm</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itOblique">
-<span class="sig-name descname"><span class="pre">itOblique</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itOblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - oblique shocks</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.numPointsPolar">
-<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
-<dd><p>Number of points to compute shock/detonation polar curves</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolLimitRR">
-<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance to calculate the limit of regular reflections</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itLimitRR">
-<span class="sig-name descname"><span class="pre">itLimitRR</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - limit of regular reflections</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_RESULTS">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print results</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_TIME">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_REPORT">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print predefined plots</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.time">
-<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time" title="Permalink to this definition">#</a></dt>
-<dd><p>Elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockIncident">
-<span class="sig-name descname"><span class="pre">shockIncident</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockIncident" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve incident shock</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockReflected">
-<span class="sig-name descname"><span class="pre">shockReflected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockReflected" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve reflected shock</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockObliqueBeta">
-<span class="sig-name descname"><span class="pre">shockObliqueBeta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueBeta" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve oblique shock with beta angle</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockObliqueTheta">
-<span class="sig-name descname"><span class="pre">shockObliqueTheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueTheta" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve oblique shock with theta angle</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockObliqueReflectedTheta">
-<span class="sig-name descname"><span class="pre">shockObliqueReflectedTheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockObliqueReflectedTheta" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve oblique reflected shock with theta angle</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockPolar">
-<span class="sig-name descname"><span class="pre">shockPolar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockPolar" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve shock polar diagrams</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockPolarLimitRR">
-<span class="sig-name descname"><span class="pre">shockPolarLimitRR</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockPolarLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve shock polar within the limit of regular reflection</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.shockIncidentIdeal">
-<span class="sig-name descname"><span class="pre">shockIncidentIdeal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.shockIncidentIdeal" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve incident shock for ideal gas</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.solve" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve shock waves problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.solveArray">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.solveArray" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve a set of shock waves problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.printTime">
-<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.printTime" title="Permalink to this definition">#</a></dt>
-<dd><p>Print execution time</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.plot" title="Permalink to this definition">#</a></dt>
-<dd><p>Plot results</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.report">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.report" title="Permalink to this definition">#</a></dt>
-<dd><p>Postprocess all the results with predefined plots</p>
-</dd></dl>
-
-<div class="admonition-examples admonition">
-<p class="admonition-title">Examples</p>
-<ul class="simple">
-<li><p>solver = ShockSolver();</p></li>
-<li><p>solver = ShockSolver(‘problemType’, ‘SHOCK_I’);</p></li>
-</ul>
-</div>
-<dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
-<dd><p>Flag to print predefined plots</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Flags</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print elapsed time</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>EquilibriumSolver object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itLimitRR">
+<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - limit of regular reflections</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itMax" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - shocks and detonations</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itOblique">
+<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itOblique" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - oblique shocks</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.machThermo">
+<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.machThermo" title="Permalink to this definition">#</a></dt>
 <dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.numPointsPolar">
+<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of points to compute shock/detonation polar curves</p>
 </dd></dl>
 
@@ -658,36 +429,36 @@
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType" title="Permalink to this definition">#</a></dt>
 <dd><p>Problem type</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Miscellaneous</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tol0" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Shocks and detonations (CT-SD module)</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolLimitRR">
+<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
 <dd><p>Tolerance to calculate the limit of regular reflections</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolOblique">
+<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolOblique" title="Permalink to this definition">#</a></dt>
 <dd><p>Tolerance oblique shocks algorithm</p>
 </dd></dl>
 
@@ -1005,278 +776,32 @@ B. J. (1994). NASA reference publication, 1311.</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DetonationSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p>The DetonationSolver class is used to solve detonation problems.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code></a> class is used to solve detonation waves problems under different
+flow configurations. The class provides methods to compute the post-detonation state of the gas
+mixture, including incident and reflected detonations in over-driven and under-driven conditions,
+oblique detonations, and detonation polar diagrams.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">DetonationSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
 <dl class="simple">
 <dt>Problem types:</dt><dd><ul class="simple">
-<li><p>DET: Chapman-Jouguet detonation</p></li>
-<li><p>DET_R: Reflected Chapman-Jouguet detonation</p></li>
-<li><p>DET_OVERDRIVEN: Over-driven detonation</p></li>
-<li><p>DET_OVERDRIVEN_R: Over-driven reflected detonation</p></li>
-<li><p>DET_UNDERDRIVEN: Under-driven detonation</p></li>
-<li><p>DET_UNDERDRIVEN_R: Under-driven reflected detonation</p></li>
-<li><p>DET_OBLIQUE: Oblique detonation</p></li>
-<li><p>DET_OBLIQUE_R: Oblique reflected detonation</p></li>
-<li><p>DET_POLAR: Detonation polar diagrams</p></li>
-<li><p>DET_POLAR_R: Detonation polar diagrams for incident and reflected states</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET</span></code>: Chapman-Jouguet detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_R</span></code>: Chapman-Jouguet reflected detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN</span></code>: Over-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN_R</span></code>: Reflected over-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN</span></code>: Under-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN_R</span></code>: Reflected under-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OBLIQUE</span></code>: Oblique detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OBLIQUE_R</span></code>: Oblique reflected detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_POLAR</span></code>: Detonation polar diagrams</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_POLAR_R</span></code>: Detonation polar diagrams for incident and reflected states</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.problemType">
-<span class="sig-name descname"><span class="pre">problemType</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.problemType" title="Permalink to this definition">#</a></dt>
-<dd><p>Problem type [‘DET’, ‘DET_R’, ‘DET_OVERDRIVEN’, ‘DET_OVERDRIVEN_R’, ‘DET_UNDERDRIVEN’, ‘DET_UNDERDRIVEN_R’, ‘DET_OBLIQUE’, ‘DET_OBLIQUE_R’, ‘DET_POLAR’, ‘DET_POLAR_R’]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>char</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.equilibriumSolver">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
-<dd><p>EquilibriumSolver object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>EquilibriumSolver</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tol0">
-<span class="sig-name descname"><span class="pre">tol0</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tol0" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance of shocks/detonations kernel</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itMax">
-<span class="sig-name descname"><span class="pre">itMax</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itMax" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - shocks and detonations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.machThermo">
-<span class="sig-name descname"><span class="pre">machThermo</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.machThermo" title="Permalink to this definition">#</a></dt>
-<dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolOblique">
-<span class="sig-name descname"><span class="pre">tolOblique</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolOblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance oblique shocks algorithm</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itOblique">
-<span class="sig-name descname"><span class="pre">itOblique</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itOblique" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - oblique shocks</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.numPointsPolar">
-<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
-<dd><p>Number of points to compute shock/detonation polar curves</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolLimitRR">
-<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Tolerance to calculate the limit of regular reflections</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itLimitRR">
-<span class="sig-name descname"><span class="pre">itLimitRR</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - limit of regular reflections</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itGuess">
-<span class="sig-name descname"><span class="pre">itGuess</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itGuess" title="Permalink to this definition">#</a></dt>
-<dd><p>Max number of iterations - guess detonation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_RESULTS">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print results</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_TIME">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_REPORT">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to print predefined plots</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.time">
-<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.time" title="Permalink to this definition">#</a></dt>
-<dd><p>Elapsed time</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationGuess">
-<span class="sig-name descname"><span class="pre">detonationGuess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationGuess" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the initial guess for the detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationCJ">
-<span class="sig-name descname"><span class="pre">detonationCJ</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationCJ" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the CJ state for the detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationOverdriven">
-<span class="sig-name descname"><span class="pre">detonationOverdriven</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationOverdriven" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the overdriven detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationUnderdriven">
-<span class="sig-name descname"><span class="pre">detonationUnderdriven</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationUnderdriven" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the underdriven detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationReflected">
-<span class="sig-name descname"><span class="pre">detonationReflected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationReflected" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the reflected detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationObliqueBeta">
-<span class="sig-name descname"><span class="pre">detonationObliqueBeta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationObliqueBeta" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the oblique detonation problem (beta)</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationObliqueTheta">
-<span class="sig-name descname"><span class="pre">detonationObliqueTheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationObliqueTheta" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the oblique detonation problem (theta)</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationPolar">
-<span class="sig-name descname"><span class="pre">detonationPolar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationPolar" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the polar curve of the detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.detonationPolarLimitRR">
-<span class="sig-name descname"><span class="pre">detonationPolarLimitRR</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.detonationPolarLimitRR" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the limit of regular reflections of the detonation problem</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solve" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve detonations problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve a set of detonation problems</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.printTime">
-<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.printTime" title="Permalink to this definition">#</a></dt>
-<dd><p>Print execution time</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plot" title="Permalink to this definition">#</a></dt>
-<dd><p>Plot results</p>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.report" title="Permalink to this definition">#</a></dt>
-<dd><p>Postprocess all the results with predefined plots</p>
-</dd></dl>
-
-<div class="admonition-examples admonition">
-<p class="admonition-title">Examples</p>
-<ul class="simple">
-<li><p>solver = DetonationSolver();</p></li>
-<li><p>solver = DetonationSolver(‘problemType’, ‘DET_R’);</p></li>
-</ul>
-</div>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a></p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.DetonationSolver">
 <span class="sig-name descname"><span class="pre">DetonationSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.DetonationSolver" title="Permalink to this definition">#</a></dt>
@@ -1284,70 +809,70 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print predefined plots</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Flags</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print elapsed time</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
 <dd><p>EquilibriumSolver object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itGuess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'5'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itGuess">
+<span class="sig-name descname"><span class="pre">itGuess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itGuess" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - guess detonation</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itLimitRR">
+<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - limit of regular reflections</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itMax" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - shocks and detonations</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itOblique">
+<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itOblique" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - oblique shocks</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.machThermo">
+<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.machThermo" title="Permalink to this definition">#</a></dt>
 <dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.numPointsPolar">
+<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of points to compute shock/detonation polar curves</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot results</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1380,8 +905,8 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.printTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Print execution time</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1391,14 +916,14 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.problemType" title="Permalink to this definition">#</a></dt>
 <dd><p>Problem type</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.report" title="Permalink to this definition">#</a></dt>
 <dd><p>Postprocess all the results with predefined plots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1431,8 +956,8 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve detonations problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1464,8 +989,8 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a set of detonation problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1488,30 +1013,30 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.time" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Miscellaneous</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tol0" title="Permalink to this definition">#</a></dt>
 <dd><ul class="simple">
 <li><p>Shocks and detonations (CT-SD module)</p></li>
 </ul>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolLimitRR">
+<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
 <dd><p>Tolerance to calculate the limit of regular reflections</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolOblique">
+<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolOblique" title="Permalink to this definition">#</a></dt>
 <dd><p>Tolerance oblique shocks algorithm</p>
 </dd></dl>
 
@@ -1871,7 +1396,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>

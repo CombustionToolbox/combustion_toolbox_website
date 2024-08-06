@@ -5,6 +5,8 @@ In this section, you will find the documentation of the routines implemented to 
 ## ShockSolver
 
 ```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+shockdetonation
+
 .. automodule:: src.+combustiontoolbox.+shockdetonation.@ShockSolver
    :show-inheritance:
    :members:
@@ -13,6 +15,8 @@ In this section, you will find the documentation of the routines implemented to 
 ## DetonationSolver
 
 ```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+shockdetonation
+
 .. automodule:: src.+combustiontoolbox.+shockdetonation.@DetonationSolver
    :show-inheritance:
    :members:

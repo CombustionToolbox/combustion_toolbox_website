@@ -289,7 +289,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
@@ -299,6 +298,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
 </ul>
 
@@ -1277,6 +1278,34 @@ products for the given list of reactants</p>
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.computeEntropyMixing">
+<span class="sig-name descname"><span class="pre">computeEntropyMixing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Ni</span></em>, <em class="sig-param"><span class="pre">N_gas</span></em>, <em class="sig-param"><span class="pre">R0</span></em>, <em class="sig-param"><span class="pre">FLAG_NONZERO</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.computeEntropyMixing" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute entropy of mixing [J/K]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture class</p></li>
+<li><p><strong>Ni</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector of moles of each species [mol]</p></li>
+<li><p><strong>N_gas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Total moles of gas species [mol]</p></li>
+<li><p><strong>R0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Universal gas constant [J/(mol-K)]</p></li>
+<li><p><strong>FLAG_NONZERO</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Vector of nonzero species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DS (float)</em> – Entropy of mixing [J/K]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>only nonzero for gaseous species</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Ds = computeEntropyMixing(mix, Ni, N_gas, R0, FLAG_NONZERO)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.computeEquivalenceRatio">
 <span class="sig-name descname"><span class="pre">computeEquivalenceRatio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.computeEquivalenceRatio" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute equivalence ratio [-]</p>
@@ -1350,34 +1379,6 @@ and temperature T [K]</p>
 <dd class="field-even"><p><em>obj (Mixture)</em> – Mixture object with updated properties</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.compute_entropy_mixing">
-<span class="sig-name descname"><span class="pre">compute_entropy_mixing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Ni</span></em>, <em class="sig-param"><span class="pre">N_gas</span></em>, <em class="sig-param"><span class="pre">R0</span></em>, <em class="sig-param"><span class="pre">FLAG_NONZERO</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.compute_entropy_mixing" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute entropy of mixing [J/K]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture class</p></li>
-<li><p><strong>Ni</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">moles</span></code></span>) – Vector of moles of each species [mol]</p></li>
-<li><p><strong>N_gas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">moles</span></code></span>) – Total moles of gas species [mol]</p></li>
-<li><p><strong>R0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Universal gas constant [J/(mol-K)]</p></li>
-<li><p><strong>FLAG_NONZERO</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Vector of nonzero species</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>DS (float)</em> – Entropy of mixing [J/K]</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>only nonzero for gaseous species</p>
-</div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>Ds = compute_entropy_mixing(mix, Ni, N_gas, R0, FLAG_NONZERO)</p>
-</div>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1870,6 +1871,78 @@ window</p>
 </section>
 <section id="module-src.+combustiontoolbox.+core.&#64;EquationState">
 <span id="equationstate"></span><h2>EquationState<a class="headerlink" href="#module-src.+combustiontoolbox.+core.@EquationState" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">EquationState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">equationOfState</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;EquationState.EquationState" title="src.+combustiontoolbox.+core.&#64;EquationState.EquationState"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquationState()</span></code></a> class is used to compute the pressure and molar volume of a mixture using the equation of state specified by the user.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;EquationState.EquationState" title="src.+combustiontoolbox.+core.&#64;EquationState.EquationState"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquationState()</span></code></a> object can be initialized as follows:</p>
+<blockquote>
+<div><p>equationState = EquationState(‘idealgas’)</p>
+</div></blockquote>
+<p>This creates an instance of the <a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;EquationState.EquationState" title="src.+combustiontoolbox.+core.&#64;EquationState.EquationState"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquationState()</span></code></a> class and initializes it with the
+equation of state specified by the user.</p>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.EquationState">
+<span class="sig-name descname"><span class="pre">EquationState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">equationOfState</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.EquationState" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.getPressure">
+<span class="sig-name descname"><span class="pre">getPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">molarVolume</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.getPressure" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pressure [Pa] using the defined equation of state</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.getPressureIdeal">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getPressureIdeal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">molarVolume</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.getPressureIdeal" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pressure considering ideal Equation of State (EoS)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p><strong>molarVolume</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Molar volume of the mixture [m3/mol_gas]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>pressure (float)</em> – Pressure of the mixture [Pa]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.getVolume">
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">pressure</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.getVolume" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute molar volume [m3/mol_gas] using the defined equation of state</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.getVolumeIdeal">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getVolumeIdeal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">pressure</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.getVolumeIdeal" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute molar volume considering ideal Equation of State (EoS)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture [K]</p></li>
+<li><p><strong>pressure</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure of the mixture [Pa]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>molarVolume (float)</em> – Molar volume of the mixture [m3/mol_gas]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;EquationState.EquationState.setEquationState">
+<span class="sig-name descname"><span class="pre">setEquationState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@EquationState.EquationState.setEquationState" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pressure using the equation of state specified by the user</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -1916,7 +1989,7 @@ window</p>
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>

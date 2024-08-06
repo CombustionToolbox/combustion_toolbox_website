@@ -289,7 +289,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../databases.html">Databases</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
@@ -299,6 +298,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
 </ul>
 
@@ -356,12 +357,12 @@ ions—or pure condensed phase).</p>
 Additional optional parameters can be provided to customize the solver’s behavior.</p>
 <dl class="simple">
 <dt>Problem types:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">TP</span></code>: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">TV</span></code>: Equilibrium composition at defined temperature and specific volume</p></li>
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HP</span></code>: Equilibrium composition at defined enthalpy and pressure</p></li>
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EV</span></code>: Equilibrium composition at defined internal energy and specific volume</p></li>
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">SP</span></code>: Equilibrium composition at defined entropy and pressure</p></li>
-<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">SV</span></code>: Equilibrium composition at defined entropy and specific volume</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TP</span></code>: Equilibrium composition at defined temperature and pressure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TV</span></code>: Equilibrium composition at defined temperature and specific volume</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HP</span></code>: Equilibrium composition at defined enthalpy and pressure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EV</span></code>: Equilibrium composition at defined internal energy and specific volume</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SP</span></code>: Equilibrium composition at defined entropy and pressure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SV</span></code>: Equilibrium composition at defined entropy and specific volume</p></li>
 </ul>
 </dd>
 </dl>
@@ -791,11 +792,11 @@ transformation using the regula falsi method</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a></span>) – EquilibriumSolver object</p></li>
-<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span> <span class="pre">of</span> <span class="pre">Mixture</span></code></span>) – Array of Mixture objects containing initial states</p></li>
+<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects containing initial states</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>mixArray (array of Mixture)</em> – Array of Mixture objects updated with equilibrium compositions and properties</p>
+<dd class="field-even"><p><em>mixArray (Mixture)</em> – Array of Mixture objects updated with equilibrium compositions and properties</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -977,7 +978,7 @@ mix2 = equilibrateT(EquilibriumSolver(), mix1, mix2, 3000, molesGuess)</p>
 <li><p><strong>pi_i</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless Lagrange multiplier vector</p></li>
 <li><p><strong>W</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Molecular mass [kg/mol] vector</p></li>
 <li><p><strong>indexCondensed</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index condensed species to be considered</p></li>
-<li><p><strong>muRT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">flaot</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
+<li><p><strong>muRT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
 <li><p><strong>NC_max</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum number of condensed species (Gibbs phase rule)</p></li>
 <li><p><strong>FLAG_ONE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating to include condensed species in the system one by one</p></li>
 <li><p><strong>FLAG_RULE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating to include condensed species in the system up to the maximum number of condensed species that satisfy the Gibbs phase rule</p></li>
@@ -1006,7 +1007,7 @@ mix2 = equilibrateT(EquilibriumSolver(), mix1, mix2, 3000, molesGuess)</p>
 <li><p><strong>N</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Mixture composition [mol]</p></li>
 <li><p><strong>A0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Stoichiometric matrix</p></li>
 <li><p><strong>ind_E</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Index of electron element</p></li>
-<li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">flaot</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
+<li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – List of chemical species indices in gaseous phase</p></li>
 <li><p><strong>indexIons</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – List of ionized chemical species indices</p></li>
 </ul>
 </dd>
@@ -1237,7 +1238,7 @@ calculations. Advances in Water Resources, 96, 405-422.</p>
                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
                 </svg>
             </a>
-              <a class="muted-link " href="https://github.com/AlbertoCuadra/combustion_toolbox" aria-label="GitHub">
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>
