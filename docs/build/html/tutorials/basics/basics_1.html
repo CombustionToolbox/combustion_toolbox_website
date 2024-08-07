@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -232,8 +232,8 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -294,6 +294,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases/index.html">Databases</a></li>
@@ -327,7 +329,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -335,36 +337,88 @@
         <article role="main">
           <section id="importing-packages-and-classes">
 <h1>Importing packages and classes<a class="headerlink" href="#importing-packages-and-classes" title="Permalink to this heading">#</a></h1>
-<p>The Combustion Toolbox (CT) is organized using namespaces (<strong>starting from version 1.1.0</strong>). The main namespace is <code class="docutils literal notranslate"><span class="pre">combustiontoolbox</span></code>. The classes and methods included in CT’s modules (described in detail later) rely on several <code class="docutils literal notranslate"><span class="pre">core</span></code> and <code class="docutils literal notranslate"><span class="pre">database</span></code> classes, namely:</p>
+<p>The Combustion Toolbox (CT) is organized using namespaces (<strong>starting from version 1.1.0</strong>). The main namespace is <tt>combustiontoolbox</tt>. The classes and methods included in CT’s modules (described in detail later) rely on several <tt>core</tt> and <tt>database</tt> classes, including:</p>
 <ul class="simple">
-<li><p><tt>Elements</tt>: stores the list of elements that may appear in the database.</p></li>
-<li><p><tt>Species</tt>: object containing the properties of a chemical species.</p></li>
-<li><p><tt>ChemicalSystem</tt>: object that defines the chemical system.</p></li>
-<li><p><tt>EquationState</tt>: object that defines the equation of state.</p></li>
-<li><p><tt>Mixture</tt>: object that defines a multicomponent mixture.</p></li>
-<li><p><tt>Database</tt>: abstract class that contains common methods for the databases.</p></li>
-<li><p><tt>NasaDatabase</tt>: a structured thermochemical database including data from <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>], Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span> with <em>griddedInterpolant</em> objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) <span id="id2">[<a class="reference internal" href="../../references.html#id335" title="F. N. Fritsch and R. E. Carlson. Monotone piecewise cubic interpolation. SIAM Journal on Numerical Analysis, 17(2):238–246, 1980. doi:10.1137/0717021.">Fritsch and Carlson, 1980</a>]</span> for faster data access.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Elements.Elements" title="src.+combustiontoolbox.+core.&#64;Elements.Elements"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Elements</span></code></a>: stores the list of elements that may appear in the database.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Species.Species" title="src.+combustiontoolbox.+core.&#64;Species.Species"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Species</span></code></a>: object containing the properties of a chemical species.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a>: object that defines the chemical system.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;EquationState.EquationState" title="src.+combustiontoolbox.+core.&#64;EquationState.EquationState"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">EquationState</span></code></a>: object that defines the equation of state.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a>: object that defines a multicomponent mixture.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Database</span></code></a>: an abstract class that contains common methods for the databases.</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a>: a structured thermochemical database including data from <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>], Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span> with <em>griddedInterpolant</em> objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) <span id="id2">[<a class="reference internal" href="../../references.html#id335" title="F. N. Fritsch and R. E. Carlson. Monotone piecewise cubic interpolation. SIAM Journal on Numerical Analysis, 17(2):238–246, 1980. doi:10.1137/0717021.">Fritsch and Carlson, 1980</a>]</span> for faster data access.</p></li>
 </ul>
-<p>Let’s start by importing one of the subpackages of the Combustion Toolbox, the <code class="docutils literal notranslate"><span class="pre">databases</span></code> package. This package contains the classes that define the databases used in CT. To import the <code class="docutils literal notranslate"><span class="pre">databases</span></code> package, we can use the following command:</p>
+<p>To get started, let’s import one of the subpackages of the Combustion Toolbox, the <code class="docutils literal notranslate"><span class="pre">databases</span></code> package. This package contains the classes that define the databases used in CT. To import the <code class="docutils literal notranslate"><span class="pre">databases</span></code> package, use the following command:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="o">.*</span><span class="w"></span>
 </pre></div>
 </div>
-<p>or we can import a specific class from the <code class="docutils literal notranslate"><span class="pre">databases</span></code> package:</p>
+<p>For importing a specific class, such as <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a>, use:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
 </pre></div>
 </div>
-<p>to import only the <code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code> class.</p>
 <p>In addition to the classes described above, there are other essential classes in the Combustion Toolbox, for example:</p>
 <ul class="simple">
-<li><p><tt>equilibriumSolver</tt>: solver class for equilibrium calculations,</p></li>
-<li><p><tt>shockSolver</tt>: solver class for shock calculations,</p></li>
-<li><p><tt>detonationSolver</tt>: solver class for detonation calculations,</p></li>
-<li><p><tt>Rocket</tt>: solver class for rocket calculations,</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>: solver class for equilibrium calculations,</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ShockSolver</span></code></a>: solver class for shock calculations,</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a>: solver class for detonation calculations,</p></li>
+<li><p><a class="reference internal" href="../../documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">RocketSolver</span></code></a>: solver class for rocket calculations,</p></li>
 </ul>
-<p>which are part of the <code class="docutils literal notranslate"><span class="pre">equilibrium</span></code>, <code class="docutils literal notranslate"><span class="pre">shockdetonation</span></code>, and <code class="docutils literal notranslate"><span class="pre">rocket</span></code> modules, respectively. All the classes and subpackages are imported as shown before. Thus, to import, e.g., the <code class="docutils literal notranslate"><span class="pre">equilibriumSolver</span></code> class this will be done as follows:</p>
+<p>These classes are part of the CT-EQUIL (<tt>equilibrium</tt>), CT-SD (<tt>shockdetonation</tt>), and CT-ROCKET (<tt>rocket</tt>) modules (subpackages), respectively. All the classes and subpackages are imported as shown below:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">equilibrium</span><span class="p">.</span><span class="n">equilibriumSolver</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">shockdetonation</span><span class="p">.</span><span class="n">shockSolver</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">rocket</span><span class="p">.</span><span class="n">Rocket</span><span class="w"></span>
 </pre></div>
 </div>
+<p>For typical tasks, in addition to the solvers required, you will often need the following subpackages:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="o">.*</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This setup will ensure that you have access to the key components of the Combustion Toolbox for most of your tasks.</p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Database and core classes</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Equilibrum solver</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">equilibrium</span><span class="o">.*</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Shock and Detonation solvers</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">shockdetonation</span><span class="o">.*</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Rocket solver</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">rocket</span><span class="o">.*</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -422,8 +476,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Importing packages and classes</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

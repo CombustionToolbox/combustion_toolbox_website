@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Defining initial state of a mixture" href="basics_3.html" /><link rel="prev" title="Importing packages and classes" href="basics_1.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Defining chemical system" href="basics_3.html" /><link rel="prev" title="Importing packages and classes" href="basics_1.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Accessing the databases - Combustion Toolbox v1.1.0</title>
@@ -232,8 +232,8 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -294,6 +294,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases/index.html">Databases</a></li>
@@ -335,8 +337,8 @@
         <article role="main">
           <section id="accessing-the-databases">
 <h1>Accessing the databases<a class="headerlink" href="#accessing-the-databases" title="Permalink to this heading">#</a></h1>
-<p>In the preceding section, we stated how to import some of the necessary classes and packages that comprise the Combustion Toolbox (CT). In this section, we will delve into how to access the databases incorporated within CT.</p>
-<p>There are two main types of databases: <code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code> and <code class="docutils literal notranslate"><span class="pre">BurcatDatabase</span></code>. The former comprises all data from NASA’s database <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>]</span>. The latter extracts data from the Third Millennium database <span id="id2">Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>. There is an additional third database, <code class="docutils literal notranslate"><span class="pre">SolarAbundances</span></code>, which stores the solar abundances of the elements <span id="id3">Asplund <em>et al.</em> [<a class="reference internal" href="../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">2009</a>]</span>.</p>
+<p>In the preceding section, we discussed how to import some of the necessary classes and packages that comprise the Combustion Toolbox (CT). In this section, we will delve into how to access the databases incorporated within CT.</p>
+<p>There are two main types of databases: <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a> and <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase" title="src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">BurcatDatabase</span></code></a>. The former comprises all data from NASA’s database <span id="id1">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>]</span>. The latter extracts data from the Third Millennium database <span id="id2">Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>. There is an additional third database, <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances" title="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SolarAbundances</span></code></a>, which stores the solar abundances of the elements <span id="id3">Asplund <em>et al.</em> [<a class="reference internal" href="../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">2009</a>]</span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>By default, the stored NasaDatabase object contains all the species from NASA’s database <span id="id4">McBride [<a class="reference internal" href="../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">2002</a>]</span> and the Third Millennium database <span id="id5">Burcat and Ruscic [<a class="reference internal" href="../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">2005</a>]</span>. The size of this database is approximately 36 MB. To reduce memory usage and loading time, a streamlined version of the database can be generated by selecting only the species of interest. To generate this streamlined version, execute the following command:</p>
@@ -414,7 +416,7 @@ This can be done by the following command:</p>
 <span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>After defining the chemical system, we can use the <code class="docutils literal notranslate"><span class="pre">findProducts</span></code> function to find the list of species that contain only the specified chemical elements. For example, to find all species that contain oxygen (O) and hydrogen (H), we can use the following command:</p>
+<p>After defining the chemical system, we can use the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">findProducts()</span></code></a> function to find the list of species that contain only the specified chemical elements. For example, to find all species that contain oxygen (O) and hydrogen (H), we can use the following command:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -438,7 +440,7 @@ NASA database</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
+<p>By default, the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">findProducts()</span></code></a> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, set <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>.</p>
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
@@ -448,7 +450,7 @@ Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
 
 <span class="w">  </span><span class="mi">1</span>×<span class="mi">25</span><span class="w"> </span><span class="nb">cell</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
 
@@ -471,7 +473,7 @@ Third Millennium database (Burcat)</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default value in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">findProducts()</span></code></a> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> option, setting it to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
@@ -481,7 +483,7 @@ Both and ionized species</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>which will yield the following output:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">list_species</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">listSpecies</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
 
 <span class="w">  </span><span class="mi">1</span>×<span class="mi">52</span><span class="w"> </span><span class="nb">cell</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
 
@@ -524,7 +526,7 @@ Both and ionized species</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">findProducts.m</a></tt> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
+<p>Chemical species from the Third Millennium database (Burcat) are indicated with the subscript <code class="docutils literal notranslate"><span class="pre">_M</span></code>. By default, the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.findProducts"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">findProducts()</span></code></a> function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have enabled the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
 </div>
 </div>
 </div>
@@ -545,7 +547,7 @@ Both and ionized species</label><div class="sd-tab-content docutils">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Defining initial state of a mixture</div>
+                <div class="title">Defining chemical system</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

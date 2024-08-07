@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Defining chemical system" href="basics_3.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Defining initial state of a mixture - Combustion Toolbox v1.1.0</title>
@@ -226,14 +226,13 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
 </ul>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining chemical system</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_4.html">Defining chemical system</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -338,22 +337,14 @@
           <section id="defining-initial-state-of-a-mixture">
 <h1>Defining initial state of a mixture<a class="headerlink" href="#defining-initial-state-of-a-mixture" title="Permalink to this heading">#</a></h1>
 <p>The initial state of a mixture (<code class="docutils literal notranslate"><span class="pre">reactants</span></code>) is defined by its chemical composition, temperature, and pressure. For this example, let’s assume that we have a stoichiometric mixture of methane (CH<span class="math notranslate nohighlight">\(_4\)</span>) and ideal-air (79% N<span class="math notranslate nohighlight">\(_2\)</span> and 21% O<span class="math notranslate nohighlight">\(_2\)</span> in volume) at 300 K and 1 bar.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Importing the Combustion Toolbox (CT) subpackages and defining the database and chemical system are the first steps to start working with the code. To do that, type the following at the prompt:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember, importing the Combustion Toolbox (CT) subpackages is the first step to start working with the code. To do that, type the following at the prompt:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
 <span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
-
-<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
-<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<p>To define a mixture we need to create an instance of the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> class. This class contains the properties and methods to define the state of the mixture and requires the chemical system as input, thus</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>is used to create the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> object <tt>mix</tt>.</p>
 <section id="defining-initial-chemical-species">
 <h2>Defining initial chemical species<a class="headerlink" href="#defining-initial-chemical-species" title="Permalink to this heading">#</a></h2>
 <p>In the Combustion Toolbox (CT), the chemical species of the initial mixture are categorized as follows:</p>
@@ -364,8 +355,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Unknown</span></code>: chemical species that are not classified.</p></li>
 </ul>
 <p>Considering that all the species react, we can write at the prompt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -388,85 +379,36 @@
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Number of moles</label><div class="sd-tab-content docutils">
 <p>For a stoichiometric mixture of methane and ideal-air, we have <span class="math notranslate nohighlight">\(n_{\rm CH_4} = 1\)</span>, <span class="math notranslate nohighlight">\(n_{\rm O_2} = 2\)</span>, and <span class="math notranslate nohighlight">\(n_{\rm N_2} = 2 \cdot 79/21\)</span>. This can be defined as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">];</span><span class="w"></span>
 </pre></div>
 </div>
-<p>where the factor 2 in front of the oxidizer moles represents the stoichiometric coefficient of the reaction.</p>
+<p>where the factor 2 in front of the oxidizer is due to the stoichiometric coefficients of the reaction.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Equivalence ratio</label><div class="sd-tab-content docutils">
-<p>For a stoichiometric mixture of methane and ideal-air, we have <span class="math notranslate nohighlight">\(\phi = 1\)</span>. Note, that to define the composition properly we have to specify the number of oxidizers moles relative to O<span class="math notranslate nohighlight">\(_2\)</span>. This can be done as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-<span class="n">setEquivalenceRatio</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<p>For a stoichiometric mixture of methane and ideal-air, we have <span class="math notranslate nohighlight">\(\phi = 1\)</span>. However, we have to specify the number of moles of oxidizers relative to O<span class="math notranslate nohighlight">\(_2\)</span> to define the composition properly, thus</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>where the vector [79/21, 1] represents the ratio of oxidizers moles relative to O<span class="math notranslate nohighlight">\(_2\)</span> when the equivalence ratio is defined.</p>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>There are calculations in which is not necessary to differentiate between fuel, oxidizer, and inert species. In those cases, we can just define them as:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]);</span><span class="w"></span>
-</pre></div>
-</div>
+<p>There are chemical calculations in which is not necessary to differentiate between fuel, oxidizer, and inert species. In those cases, we can just consider all the species as fuel and provide their corresponding number of moles.</p>
 </div>
 </section>
 <section id="defining-initial-temperature-and-pressure">
 <h2>Defining initial temperature and pressure<a class="headerlink" href="#defining-initial-temperature-and-pressure" title="Permalink to this heading">#</a></h2>
-<p>To define the initial temperature and pressure of the mixture, we can use the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setProperties" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setProperties"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setProperties()</span></code></a> method within the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> class, namely:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>or using the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setTemperature" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setTemperature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setTemperature()</span></code></a> and <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setPressure" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setPressure"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setPressure()</span></code></a> methods:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">setTemperature</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
-<span class="n">setpressure</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<p>To define the initial temperature and pressure of the mixture, we can use the <tt>set_prop.m</tt> function as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">units</span></code> for temperature and pressure are <code class="docutils literal notranslate"><span class="pre">K</span></code> and <code class="docutils literal notranslate"><span class="pre">bar</span></code>, respectively.</p>
-</div>
-</section>
-<section id="printing-the-state-of-the-mixture">
-<h2>Printing the state of the mixture<a class="headerlink" href="#printing-the-state-of-the-mixture" title="Permalink to this heading">#</a></h2>
-<p>To print the state of the mixture, we can use the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.print" title="src.+combustiontoolbox.+core.&#64;Mixture.print"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">print()</span></code></a> method:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>which will yield the following output:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">***************************************</span><span class="w"></span>
-<span class="o">---------------------------------------</span><span class="w"></span>
-<span class="n">Equivalence</span><span class="w"> </span><span class="s">ratio</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.0000</span><span class="w"></span>
-<span class="o">---------------------------------------</span><span class="w"></span>
-<span class="w">               </span><span class="o">|</span><span class="w">    </span><span class="n">MIXTURE</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">T</span><span class="w"> </span><span class="s">[K]</span><span class="w">          </span><span class="o">|</span><span class="w">       </span><span class="mf">300.0000</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="s">[bar]</span><span class="w">        </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0000</span><span class="w"></span>
-<span class="n">r</span><span class="w"> </span><span class="s">[kg/m3]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.1078</span><span class="w"></span>
-<span class="n">h</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">254.5297</span><span class="w"></span>
-<span class="n">e</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">344.7954</span><span class="w"></span>
-<span class="n">g</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">     </span><span class="o">-</span><span class="mf">2429.5892</span><span class="w"></span>
-<span class="n">s</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">7.2502</span><span class="w"></span>
-<span class="n">W</span><span class="w"> </span><span class="s">[g/mol]</span><span class="w">      </span><span class="o">|</span><span class="w">        </span><span class="mf">27.6333</span><span class="w"></span>
-<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlp</span><span class="p">)</span><span class="n">T</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0000</span><span class="w"></span>
-<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlT</span><span class="p">)</span><span class="n">p</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0000</span><span class="w"></span>
-<span class="n">cp</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0786</span><span class="w"></span>
-<span class="nb">gamma</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3869</span><span class="w"></span>
-<span class="n">gamma_s</span><span class="w"> </span><span class="s">[-]</span><span class="w">    </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3869</span><span class="w"></span>
-<span class="nb">sound</span><span class="w"> </span><span class="n">vel</span><span class="w"> </span><span class="p">[</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">]</span><span class="o">|</span><span class="w">       </span><span class="mf">353.8198</span><span class="w"></span>
-<span class="o">---------------------------------------</span><span class="w"></span>
-<span class="n">MIXTURE</span><span class="w"> </span><span class="s">1</span><span class="w">               </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
-<span class="n">N2</span><span class="w">                   </span><span class="s">7.1493e-01</span><span class="w"></span>
-<span class="n">O2</span><span class="w">                   </span><span class="s">1.9005e-01</span><span class="w"></span>
-<span class="n">CH4</span><span class="w">                  </span><span class="s">9.5023e-02</span><span class="w"></span>
-<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">212</span><span class="p">]</span><span class="w">         </span><span class="mf">0.0000e+00</span><span class="w"></span>
-
-<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
-<span class="o">---------------------------------------</span><span class="w"></span>
-<span class="o">***************************************</span><span class="w"></span>
-</pre></div>
 </div>
 </section>
 <section id="summary">
@@ -475,56 +417,32 @@ Equivalence ratio</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Number of moles</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
-<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
-<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
-
-<span class="c">% Define database</span><span class="w"></span>
-<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
-
-<span class="c">% Initialize chemical system</span><span class="w"></span>
-<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Initialize mixture</span><span class="w"></span>
-<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
-
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">();</span><span class="w"></span>
 <span class="c">% Define initial chemical species</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="c">% Define initial composition (in moles)</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Fuel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">N_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">];</span><span class="w"></span>
 <span class="c">% Define initial temperature and pressure</span><span class="w"></span>
-<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Print the state of the mixture</span><span class="w"></span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
 Equivalence ratio</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
-<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
-<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
-
-<span class="c">% Define database</span><span class="w"></span>
-<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
-
-<span class="c">% Initialize chemical system</span><span class="w"></span>
-<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Initialize mixture</span><span class="w"></span>
-<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
-
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">();</span><span class="w"></span>
 <span class="c">% Define initial chemical species</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-
-<span class="c">% Define initial temperature, pressure, and equivalence ratio</span><span class="w"></span>
-<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Print the state of the mixture</span><span class="w"></span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Fuel</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">S_Oxidizer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="c">% Define initial composition (with equivalence ratio)</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">self</span><span class="p">.</span><span class="n">PD</span><span class="p">.</span><span class="n">ratio_oxidizers_O2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Define initial temperature and pressure</span><span class="w"></span>
+<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">set_prop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -537,26 +455,8 @@ Equivalence ratio</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../1_chemical_equilibrium.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Chemical equilibrium</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="basics_3.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Defining chemical system</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -603,7 +503,6 @@ Equivalence ratio</label><div class="sd-tab-content docutils">
 <li><a class="reference internal" href="#defining-initial-chemical-species">Defining initial chemical species</a></li>
 <li><a class="reference internal" href="#defining-initial-composition">Defining initial composition</a></li>
 <li><a class="reference internal" href="#defining-initial-temperature-and-pressure">Defining initial temperature and pressure</a></li>
-<li><a class="reference internal" href="#printing-the-state-of-the-mixture">Printing the state of the mixture</a></li>
 <li><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>

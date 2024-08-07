@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Rocket module" href="../rocket/index.html" /><link rel="prev" title="Thermochemical equilibrium module" href="../equilibrium/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Shocks and detonations module - Combustion Toolbox v1.1.0</title>
@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -232,8 +232,8 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -288,12 +288,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
@@ -327,7 +329,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -336,33 +338,1033 @@
           <section id="shocks-and-detonations-module">
 <h1>Shocks and detonations module<a class="headerlink" href="#shocks-and-detonations-module" title="Permalink to this heading">#</a></h1>
 <p>In this section, you will find the documentation of the routines implemented to solves processes that involve strong changes in dynamic pressure, such as steady state shock and detonation waves in either normal or oblique stream configurations within the limits of regular shock reflections.</p>
-<!-- ## ShockSolver
+<section id="module-src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver">
+<span id="shocksolver"></span><h2>ShockSolver<a class="headerlink" href="#module-src.+combustiontoolbox.+shockdetonation.@ShockSolver" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ShockSolver</span></span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> class is used to solve shock waves problems under different
+flow configurations. The class provides methods to compute the post-shock state of the gas
+mixture, including incident and reflected shocks, oblique shocks, and shock polar diagrams.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
+<dl class="simple">
+<dt>Problem types:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_I</span></code>: Incident shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_R</span></code>: Reflected shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_OBLIQUE</span></code>: Oblique shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_OBLIQUE_R</span></code>: Oblique reflected shock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR</span></code>: Shock polar diagrams</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_R</span></code>: Shock polar diagrams for incident and reflected states</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_LIMITRR</span></code>: Shock polar within the limit of regular reflection</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
+</dd></dl>
 
-```{eval-rst}
-.. currentmodule:: src.+combustiontoolbox.+shockdetonation
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print results</p>
+</dd></dl>
 
-.. automodule:: src.+combustiontoolbox.+shockdetonation.@ShockSolver
-   :show-inheritance:
-   :members:
-```
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print elapsed time</p>
+</dd></dl>
 
-## DetonationSolver
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>EquilibriumSolver object</p>
+</dd></dl>
 
-```{eval-rst}
-.. currentmodule:: src.+combustiontoolbox.+shockdetonation
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itLimitRR">
+<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - limit of regular reflections</p>
+</dd></dl>
 
-.. automodule:: src.+combustiontoolbox.+shockdetonation.@DetonationSolver
-   :show-inheritance:
-   :members:
-``` --></section>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - shocks and detonations</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.itOblique">
+<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.itOblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - oblique shocks</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.machThermo">
+<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.machThermo" title="Permalink to this definition">#</a></dt>
+<dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.numPointsPolar">
+<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points to compute shock/detonation polar curves</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.plotConfig">
+<span class="sig-name descname"><span class="pre">plotConfig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.plotConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>PlotConfig object</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType" title="Permalink to this definition">#</a></dt>
+<dd><p>Problem type</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time" title="Permalink to this definition">#</a></dt>
+<dd><p>Elapsed time</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of shocks/detonations kernel</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolLimitRR">
+<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance to calculate the limit of regular reflections</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.tolOblique">
+<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.tolOblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance oblique shocks algorithm</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockIncident">
+<span class="sig-name descname"><span class="pre">shockIncident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockIncident" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a planar incident shock wave</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = shockIncident(ShockSolver(), mix1, u1)</p></li>
+<li><p>[mix1, mix2] = shockIncident(ShockSolver(), mix1, u1, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockIncidentIdeal">
+<span class="sig-name descname"><span class="pre">shockIncidentIdeal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">M1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockIncidentIdeal" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute jump conditions assuming a thermochemically frozen gas (calorically perfect gas)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>gamma</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Adiabatic index [-]</p></li>
+<li><p><strong>M1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock Mach number [-]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>R (float): Density ratio [-]</p></li>
+<li><p>P (float): Pressure ratio [-]</p></li>
+<li><p>T (float): Temperature ratio [-]</p></li>
+<li><p>Gammas (float): Rankine-Hugoniot slope parameter [-]</p></li>
+<li><p>M1 (float): Pre-shock Mach number [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[R, P, T, Gammas, M1] = shockIncidentIdeal(ShockSolver(), 1.4, 2.0)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockObliqueBeta">
+<span class="sig-name descname"><span class="pre">shockObliqueBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueBeta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique shock wave
+given the wave angle (one solution)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Wave angle [deg] of the incident oblique shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture at the post-shock state</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = shockObliqueBeta(ShockSolver(), mix1, u1, beta)</p></li>
+<li><p>[mix1, mix2] = shockObliqueBeta(ShockSolver(), mix1, u1, beta, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockObliqueReflectedTheta">
+<span class="sig-name descname"><span class="pre">shockObliqueReflectedTheta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u2</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueReflectedTheta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique reflected shock wave
+given the deflection angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak shock</p></li>
+<li><p>Strong shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p><strong>u2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock velocity [m/s] of the incident shock</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the post-shock state of the incident shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix5_1 (Mixture): Properties of the mixture in the post-shock state of the reflected shock - weak shock (previous calculation)</p></li>
+<li><p>mix5_2 (Mixture): Properties of the mixture in the post-shock state of the reflected shock - strong shock (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state of the incident shock</p></li>
+<li><p>mix5_1 (Mixture): Properties of the mixture in the post-shock state of the reflected shock - weak shock</p></li>
+<li><p>mix5_2 (Mixture): Properties of the mixture in the post-shock state of the reflected shock - strong shock</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2, mix5_1, mix5_2] = shockObliqueReflectedTheta(ShockSolver(), mix1, u2, theta, mix2)</p></li>
+<li><p>[mix1, mix2, mix5_1, mix5_2] = shockObliqueReflectedTheta(ShockSolver(), mix1, u2, theta, mix2, mix5_1, mix5_2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockObliqueTheta">
+<span class="sig-name descname"><span class="pre">shockObliqueTheta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockObliqueTheta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique shock wave
+given the deflection angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak shock</p></li>
+<li><p>Strong shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-shock state - weak shock (previous calculation)</p></li>
+<li><p>mix2_2 (Mixture): Properties of the mixture in the post-shock state - strong shock (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-shock state - weak shock</p></li>
+<li><p>mix2_2 (Mixture): Properties of the mixture in the post-shock state - strong shock</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2_1, mix2_2] = shockObliqueTheta(ShockSolver(), mix1, u1, theta)</p></li>
+<li><p>[mix1, mix2_1, mix2_2] = shockObliqueTheta(ShockSolver(), mix1, u1, theta, mix2_1, mix2_2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockPolar">
+<span class="sig-name descname"><span class="pre">shockPolar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockPolar" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute shock polar diagrams</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture at the post-shock state with the shock polar results</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = shockPolar(ShockSolver(), mix1, u1)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockPolarLimitRR">
+<span class="sig-name descname"><span class="pre">shockPolarLimitRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockPolarLimitRR" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain polar curves for the given pre-shock conditions using
+Broyden’s method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock velocity [m/s]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state - polar diagrams from mix1 (incident)</p></li>
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-shock state - weak shock</p></li>
+<li><p>mix3 (Mixture): Properties of the mixture in the post-shock state - polar diagrams from mix2_1 (reflected)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[mix1, mix2, mix2_1, mix3] = shockPolarLimitRR(ShockSolver(), mix1, u1)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockReflected">
+<span class="sig-name descname"><span class="pre">shockReflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockReflected" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a planar reflected shock wave</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the post-shock state of the incident shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix5 (Mixture): Properties of the mixture in the post-shock state of the reflected shock (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture at the post-shock state of the incident shock</p></li>
+<li><p>mix5 (Mixture): Properties of the mixture in the post-shock state of the reflected shock</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2, mix5] = shockReflected(ShockSolver(), mix1, mix2)</p></li>
+<li><p>[mix1, mix2, mix5] = shockReflected(ShockSolver(), mix1, mix2, mix5)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver">
+<span id="detonationsolver"></span><h2>DetonationSolver<a class="headerlink" href="#module-src.+combustiontoolbox.+shockdetonation.@DetonationSolver" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DetonationSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code></a> class is used to solve detonation waves problems under different
+flow configurations. The class provides methods to compute the post-detonation state of the gas
+mixture, including incident and reflected detonations in over-driven and under-driven conditions,
+oblique detonations, and detonation polar diagrams.</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">DetonationSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">problemType</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">problemType</span></code> represents the acronym of the problem to be solved (see below).
+Additional optional parameters can be provided to customize the solver’s behavior.</p>
+<dl class="simple">
+<dt>Problem types:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DET</span></code>: Chapman-Jouguet detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_R</span></code>: Chapman-Jouguet reflected detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN</span></code>: Over-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN_R</span></code>: Reflected over-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN</span></code>: Under-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN_R</span></code>: Reflected under-driven detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OBLIQUE</span></code>: Oblique detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OBLIQUE_R</span></code>: Oblique reflected detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_POLAR</span></code>: Detonation polar diagrams</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_POLAR_R</span></code>: Detonation polar diagrams for incident and reflected states</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.DetonationSolver">
+<span class="sig-name descname"><span class="pre">DetonationSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.DetonationSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print elapsed time</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>EquilibriumSolver object</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itGuess">
+<span class="sig-name descname"><span class="pre">itGuess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - guess detonation</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itLimitRR">
+<span class="sig-name descname"><span class="pre">itLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'10'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itLimitRR" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - limit of regular reflections</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itMax">
+<span class="sig-name descname"><span class="pre">itMax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'50'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itMax" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - shocks and detonations</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.itOblique">
+<span class="sig-name descname"><span class="pre">itOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'20'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.itOblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of iterations - oblique shocks</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.machThermo">
+<span class="sig-name descname"><span class="pre">machThermo</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.machThermo" title="Permalink to this definition">#</a></dt>
+<dd><p>Pre-shock Mach number above which T2_guess will be computed considering h2 = h1 + u1^2 / 2</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.numPointsPolar">
+<span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points to compute shock/detonation polar curves</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (pre-shock state)</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (post-shock state)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>plot(DetonationSolver(), mixArray1, mixArray2);</p></li>
+<li><p>plot(DetonationSolver(), mixArray1, mixArray2, mixArray3);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.plotConfig">
+<span class="sig-name descname"><span class="pre">plotConfig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.plotConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>PlotConfig object</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.printTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Print execution time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – Object of the class EquilibriumSolver</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.problemType" title="Permalink to this definition">#</a></dt>
+<dd><p>Problem type</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.report" title="Permalink to this definition">#</a></dt>
+<dd><p>Postprocess all the results with predefined plots</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (pre-shock state)</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects (post-shock state)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional args:</dt><dd><ul class="simple">
+<li><p>mixArray_i (Mixture): Array of Mixture objects</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>report(DetonationSolver(), mixArray1, mixArray2);</p></li>
+<li><p>report(DetonationSolver(), mixArray1, mixArray2, mixArray3);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.setMixtureShockPolar">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">setMixtureShockPolar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">mixPolar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.setMixtureShockPolar" title="Permalink to this definition">#</a></dt>
+<dd><p>Assign values from the polar curves</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve detonations problems</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – initial Mixture object</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mixGuess_i (Mixture): Mixture object from previous calculation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>varargout (Mixture)</em> – Updated Mixture objects depending on the problem type</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = solve(DetonationSolver(), mix1);</p></li>
+<li><p>[mix1, mix2] = solve(DetonationSolver(), mix1, mix2Guess);</p></li>
+<li><p>[mix1, mix2, mix3] = solve(DetonationSolver(), mix1, mix2Guess, mix3Guess);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray">
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve a set of detonation problems</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
+<li><p><strong>mix1Array</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>varargout (Mixture)</em> – Updated arrays of Mixture objects depending on the shock problem type</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1Array, mix2Array] = solveArray(DetonationSolver(), mix1Array);</p></li>
+<li><p>[mix1Array, mix2Array, mix3Array] = solveArray(DetonationSolver(), mix1Array);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.time" title="Permalink to this definition">#</a></dt>
+<dd><p>Elapsed time [s]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tol0">
+<span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tol0" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance of shocks/detonations kernel</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolLimitRR">
+<span class="sig-name descname"><span class="pre">tolLimitRR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolLimitRR" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance to calculate the limit of regular reflections</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.tolOblique">
+<span class="sig-name descname"><span class="pre">tolOblique</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.tolOblique" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance oblique shocks algorithm</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationCJ">
+<span class="sig-name descname"><span class="pre">detonationCJ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationCJ" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a Chapman-Jouguet detonation</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = detonationCJ(DetonationSolver(), mix1)</p></li>
+<li><p>[mix1, mix2] = detonationCJ(DetonationSolver(), mix1, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationGuess">
+<span class="sig-name descname"><span class="pre">detonationGuess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain guess of the jump conditions for a Chapman-Jouguet detonation
+as in NASA’s CEA code (see Sec. 8.3 of [1])</p>
+<p>[1] Gordon, S., &amp; McBride, B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>P (float): Pressure ratio [-]</p></li>
+<li><p>T (float): Temperature ratio [-]</p></li>
+<li><p>STOP (float): Relative error [-]</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[P, T, STOP] = detonationGuess(obj, mix1)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationObliqueBeta">
+<span class="sig-name descname"><span class="pre">detonationObliqueBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">driveFactor</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationObliqueBeta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
+given the wave angle.</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Underdriven detonation</p></li>
+<li><p>Overdriven detonation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – Detonation solver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>driveFactor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Driven factor [-]</p></li>
+<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Wave angle [deg] of the incident oblique detonation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-detonation state</p></li>
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-detonation state - underdriven detonation</p></li>
+<li><p>mix2_2 (Mixture): Properties of the mixture in the post-detonation state - overdriven detonation</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2_1, mix2_2] = detonationObliqueBeta(DetonationSolver(), mix1, 2, 60)</p></li>
+<li><p>[mix1, mix2_1, mix2_2] = detonationObliqueBeta(DetonationSolver(), mix1, 2, 60, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationObliqueTheta">
+<span class="sig-name descname"><span class="pre">detonationObliqueTheta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">driveFactor</span></em>, <em class="sig-param"><span class="pre">theta</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationObliqueTheta" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an oblique detonation wave
+given the deflection angle (only overdriven solution).</p>
+<dl class="simple">
+<dt>Two solutions:</dt><dd><ul class="simple">
+<li><p>Weak detonation</p></li>
+<li><p>Strong detonation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – Detonation solver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>driveFactor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Drive factor [-]</p></li>
+<li><p><strong>theta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-shock state - weak detonation (previous calculation)</p></li>
+<li><p>mix2_2 (Mixture): Properties of the mixture in the post-shock state - strong detonation (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-detonation state</p></li>
+<li><p>mix2_1 (Mixture): Properties of the mixture in the post-detonation state - weak detonation</p></li>
+<li><p>mix2_2 (Mixture): Properties of the mixture in the post-detonation state - strong detonation</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2_1, mix2_2] = detonationObliqueTheta(DetonationSolver(), mix1, 2, 30)</p></li>
+<li><p>[mix1, mix2_1, mix2_2] = detonationObliqueTheta(DetonationSolver(), mix1, 2, 30, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationOverdriven">
+<span class="sig-name descname"><span class="pre">detonationOverdriven</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">driveFactor</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationOverdriven" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an overdriven planar detonation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>driveFactor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Overdriven factor [-]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = detonationOverdriven(DetonationSolver(), mix1, 1.5)</p></li>
+<li><p>[mix1, mix2] = detonationOverdriven(DetonationSolver(), mix1, 1.5, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationPolar">
+<span class="sig-name descname"><span class="pre">detonationPolar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">driveFactor</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationPolar" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute detonation polar diagrams</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>driveFactor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Driven factor</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture at the post-shock state with the shock polar results</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = detonationPolar(DetonationSolver(), mix1, 3000)</p></li>
+<li><p>[mix1, mix2] = detonationPolar(DetonationSolver(), mix1, 3000, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationReflected">
+<span class="sig-name descname"><span class="pre">detonationReflected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationReflected" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of a planar reflected shock wave</p>
+<p>This method is based on the method outlined in Gordon, S., &amp; McBride,
+B. J. (1994). NASA reference publication, 1311.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture at the post-shock state of the incident shock</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix5 (Mixture): Properties of the mixture in the post-shock state of the reflected shock (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state of the incident shock</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture at the post-shock state of the incident shock</p></li>
+<li><p>mix5 (Mixture): Properties of the mixture in the post-shock state of the reflected shock</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2, mix5] = detonationReflected(ShockSolver(), mix1, mix2)</p></li>
+<li><p>[mix1, mix2, mix5] = detonationReflected(ShockSolver(), mix1, mix2, mix5)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.detonationUnderdriven">
+<span class="sig-name descname"><span class="pre">detonationUnderdriven</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">driveFactor</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.detonationUnderdriven" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute pre-shock and post-shock states of an overdriven planar detonation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">DetonationSolver</span></code></a></span>) – DetonationSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-shock state</p></li>
+<li><p><strong>driveFactor</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Underdriven factor [-]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p>mix2 (Mixture): Properties of the mixture in the post-shock state (previous calculation)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the mixture in the pre-shock state</p></li>
+<li><p>mix2 (Mixture): Properties of the mixture in the post-shock state</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[mix1, mix2] = detonationUnderdriven(DetonationSolver(), mix1, 1.5)</p></li>
+<li><p>[mix1, mix2] = detonationUnderdriven(DetonationSolver(), mix1, 1.5, mix2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../rocket/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Rocket module</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../equilibrium/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Thermochemical equilibrium module</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -393,8 +1395,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Shocks and detonations module</a><ul>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver">ShockSolver</a></li>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver">DetonationSolver</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
