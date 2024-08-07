@@ -58,7 +58,7 @@ The Add-ons included in CT are:
     <img src="../../../_static/img/cuadra2022/gui_uielements.svg" width="800">
 </p>
 
-**Figure 1:** *Add-on uielements.*
+**Figure 4:** *Add-on uielements.*
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}
@@ -73,7 +73,7 @@ The Add-ons included in CT are:
     <img src="../../../_static/img/cuadra2022/gui_uipreferences.svg" width="800">
 </p>
 
-**Figure 2:** *Add-on uipreferences.*
+**Figure 5:** *Add-on uipreferences.*
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}
@@ -88,7 +88,7 @@ The Add-ons included in CT are:
     <img src="../../../_static/img/cuadra2022/gui_uifeedback.svg" width="400">
 </p>
 
-**Figure 3:** *Add-on uifeedback.*
+**Figure 6:** *Add-on uifeedback.*
 
 ***
 
@@ -96,7 +96,7 @@ The Add-ons included in CT are:
     <img src="../../../_static/img/cuadra2022/gui_uivalidation.svg" width="800">
 </p>
 
-**Figure 4:** *Add-on uivalidations.*
+**Figure 7:** *Add-on uivalidations.*
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}
@@ -111,7 +111,7 @@ The Add-ons included in CT are:
     <img src="../../../_static/img/cuadra2022/gui_uiabout.svg" width="800">
 </p>
 
-**Figure 5:** *Add-on uiabout.*
+**Figure 8:** *Add-on uiabout.*
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}

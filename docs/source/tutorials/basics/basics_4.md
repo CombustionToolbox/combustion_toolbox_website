@@ -99,7 +99,8 @@ To define the initial temperature and pressure of the mixture, we can use the {m
 ```matlab
 mix = setProperties(mix, 'temperature', 300, 'pressure', 1);
 ```
-or using the {mat:func}`~src.+combustiontoolbox.+core.@Mixture.Mixture.setTemperature` and {mat:func}`~src.+combustiontoolbox.+core.@Mixture.Mixture.setPressure` methods:
+
+Alternatively, we can achieve the same result by using the {mat:func}`~src.+combustiontoolbox.+core.@Mixture.Mixture.setTemperature` and {mat:func}`~src.+combustiontoolbox.+core.@Mixture.Mixture.setPressure` methods:
 ```matlab
 setTemperature(mix, 300);
 setpressure(mix, 1);
