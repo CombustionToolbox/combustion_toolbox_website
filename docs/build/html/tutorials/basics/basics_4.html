@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Defining initial state of a mixture" href="basics_3.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical equilibrium" href="../1_chemical_equilibrium.html" /><link rel="prev" title="Defining chemical system" href="basics_3.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Defining chemical system - Combustion Toolbox v1.1.0</title>
+        <title>Defining initial state of a mixture - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -232,8 +232,8 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../0_basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining initial state of a mixture</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -335,261 +335,196 @@
           </label>
         </div>
         <article role="main">
-          <section id="defining-chemical-system">
-<h1>Defining chemical system<a class="headerlink" href="#defining-chemical-system" title="Permalink to this heading">#</a></h1>
-<p>The chemical system refer to the chemical species that may appear as products. Expanding upon the earlier example, we will now establish the chemical system for the complete combustion of a stoichiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture, represented by the global reaction</p>
+          <section id="defining-initial-state-of-a-mixture">
+<h1>Defining initial state of a mixture<a class="headerlink" href="#defining-initial-state-of-a-mixture" title="Permalink to this heading">#</a></h1>
+<p>The initial state of a mixture (<code class="docutils literal notranslate"><span class="pre">reactants</span></code>) is defined by its chemical composition, temperature, and pressure. For this example, let’s assume that we have a stoichiometric mixture of methane (CH<span class="math notranslate nohighlight">\(_4\)</span>) and ideal-air (79% N<span class="math notranslate nohighlight">\(_2\)</span> and 21% O<span class="math notranslate nohighlight">\(_2\)</span> in volume) at 300 K and 1 bar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Importing the Combustion Toolbox (CT) subpackages and defining the database and chemical system are the first steps to start working with the code. To do that, type the following at the prompt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+
+<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>To define a mixture we need to create an instance of the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> class. This class contains the properties and methods to define the state of the mixture and requires the chemical system as input, thus</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>is used to create the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> object <tt>mix</tt>.</p>
+<section id="defining-initial-chemical-species">
+<h2>Defining initial chemical species<a class="headerlink" href="#defining-initial-chemical-species" title="Permalink to this heading">#</a></h2>
+<p>In the Combustion Toolbox (CT), the chemical species of the initial mixture are categorized as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Fuel</span></code>: chemical species considered as fuel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Oxidizer</span></code>: chemical species that react with the fuel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Inert</span></code>: chemical species that remain inert and do not react with the fuel or oxidizer, maintaining a frozen composition.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Unknown</span></code>: chemical species that are not classified.</p></li>
+</ul>
+<p>Considering that all the species react, we can write at the prompt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="defining-initial-composition">
+<h2>Defining initial composition<a class="headerlink" href="#defining-initial-composition" title="Permalink to this heading">#</a></h2>
+<p>The above classification enables us to specify the chemical composition of a premixed combustion system using the equivalence ratio, defined as</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \begin{equation}
-    \underbrace{\text{CH}_4 + 2 (\text{O}_2 + 3.76 \text{N}_2)}_{\rm{reactants\ (initial\ state)}} \rightleftharpoons \underbrace{\text{CO}_2 + 2 \text{H}_2\text{O} + 7.52 \text{N}_2}_{\rm{products\ (final\ state)}}.
+    \phi = \dfrac{ \text{fuel-oxidizer-ratio} }{ (\text{fuel-oxidizer-ratio})_{\text{st}} } = \dfrac{ n_{\text{fuel}} / n_{\text{oxidizer}} }{ \left( n_{\text{fuel}} / n_{\text{oxidizer}} \right)_{\text{st}}}.
 \end{equation}</div></div>
-<p>Given the above global reaction, the products include CO<span class="math notranslate nohighlight">\(_2\)</span>, H<span class="math notranslate nohighlight">\(_2\)</span>O, and N<span class="math notranslate nohighlight">\(_2\)</span>, which we can define as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
+<p>Here, <span class="math notranslate nohighlight">\(n\)</span> represents the number of moles, and the subscript <code class="docutils literal notranslate"><span class="pre">st</span></code> denotes the stoichiometric value. When <span class="math notranslate nohighlight">\(\phi = 1\)</span>, the mixture is said to be stoichiometric, i.e., the fuel and oxidizer are present in the exact proportions required for complete combustion. If <span class="math notranslate nohighlight">\(\phi &lt; 1\)</span> the mixture is said to be fuel-lean, and if <span class="math notranslate nohighlight">\(\phi &gt; 1\)</span> the mixture is said to be fuel-rich.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of moles have to be specified in the same order as the corresponding set of species.</p>
 </div>
-<p>and that is all we need to define a chemical system in CT.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>When we have prior knowledge of the chemical species involved in the problem, we can streamline the initialization of CT by directly specifying those species. Consequently, we only need to include these specific chemical species in our problem, writing at the prompt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">});</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<section id="identifying-all-possible-products">
-<h2>Identifying all possible products<a class="headerlink" href="#identifying-all-possible-products" title="Permalink to this heading">#</a></h2>
-<p>Combustion problems typically entail numerous chemical species, and occasionally we lack prior knowledge of all relevant species in the system. In such cases, we can recall in <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> routine introduced in <a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_2.html#.md#accessing-the-databases"><em>Accessing the databases</em></a>. This routine allows us to identify all potential chemical species resulting from a chemical transformation (products), given a set of species (reactants). For this example, we can write at the prompt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">})</span><span class="w"></span>
-</pre></div>
-</div>
-<p>which will yield a list of +200 chemical species. By default, the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> function scans for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat’s database and include ionized species, we have to enable the <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code> and <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code> options, setting both to <code class="docutils literal notranslate"><span class="pre">true</span></code>, as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">find_products</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;flag_burcat&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;flag_ion&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>This modification generates a list of +1000 chemical species. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>In cases where no chemical system is defined, CT automatically identifies all potential products given a set of reactants, i.e., it uses the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#src.utils.databases.find_products">find_products.m</a></tt> routine to construct the chemical system, taking into account the default flag values <code class="docutils literal notranslate"><span class="pre">flag_burcat</span></code>, <code class="docutils literal notranslate"><span class="pre">flag_ion</span></code>, <code class="docutils literal notranslate"><span class="pre">flag_condensed</span></code> defined in <tt>Species.m</tt>.</p>
-</div>
-</section>
-<section id="using-predefined-chemical-systems">
-<h2>Using predefined chemical systems<a class="headerlink" href="#using-predefined-chemical-systems" title="Permalink to this heading">#</a></h2>
-<p>The Combustion Toolbox incorporates a range of predefined chemical systems, outlined in the <tt><a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/modules/modules_self.html#src.modules.self.Species.list_species">list_species.m</a></tt> routine. For example, some of the predefined chemical systems are defined below:</p>
+<p>The initial composition can be defined with the number of moles <span class="math notranslate nohighlight">\(n_j\)</span> of each chemical species in the mixture, or with the equivalence ratio <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
-Air</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for air.</p></li>
-<li><p>Neglects ionization of chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;air&#39;</span><span class="p">);</span><span class="w"></span>
+Number of moles</label><div class="sd-tab-content docutils">
+<p>For a stoichiometric mixture of methane and ideal-air, we have <span class="math notranslate nohighlight">\(n_{\rm CH_4} = 1\)</span>, <span class="math notranslate nohighlight">\(n_{\rm O_2} = 2\)</span>, and <span class="math notranslate nohighlight">\(n_{\rm N_2} = 2 \cdot 79/21\)</span>. This can be defined as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;air&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O3&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O3&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;N2O4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
+<p>where the factor 2 in front of the oxidizer moles represents the stoichiometric coefficient of the reaction.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-Air ions</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for air.</p></li>
-<li><p>Considers ionization of chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;air ions&#39;</span><span class="p">);</span><span class="w"></span>
+Equivalence ratio</label><div class="sd-tab-content docutils">
+<p>For a stoichiometric mixture of methane and ideal-air, we have <span class="math notranslate nohighlight">\(\phi = 1\)</span>. Note, that to define the composition properly we have to specify the number of oxidizers moles relative to O<span class="math notranslate nohighlight">\(_2\)</span>. This can be done as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<span class="n">setEquivalenceRatio</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;air ions&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
+<p>where the vector [79/21, 1] represents the ratio of oxidizers moles relative to O<span class="math notranslate nohighlight">\(_2\)</span> when the equivalence ratio is defined.</p>
 </div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;eminus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Arplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cminus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CNplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CNminus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CNN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;COplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2plus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2plus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2minus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CNC&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OCCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;Nplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Nminus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NOplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;NO2minus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO3minus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2plus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;N2minus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2Oplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O4&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;N2O5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Oplus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ominus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2plus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;O2minus&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O3&#39;</span><span class="p">};</span><span class="w"></span>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There are calculations in which is not necessary to differentiate between fuel, oxidizer, and inert species. In those cases, we can just define them as:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
-HC/O2/N2</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for hydrocarbon (HC) combustion in air.</p></li>
-<li><p>Neglects most dissociation chemical species and excludes ions.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;HC/O2/N2&#39;</span><span class="p">);</span><span class="w"></span>
+</section>
+<section id="defining-initial-temperature-and-pressure">
+<h2>Defining initial temperature and pressure<a class="headerlink" href="#defining-initial-temperature-and-pressure" title="Permalink to this heading">#</a></h2>
+<p>To define the initial temperature and pressure of the mixture, we can use the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setProperties" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setProperties"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setProperties()</span></code></a> method within the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> class, namely:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HC/O2/N2&#39;</span><span class="p">);</span><span class="w"></span>
+<p>Alternatively, we can achieve the same result by using the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setTemperature" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setTemperature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setTemperature()</span></code></a> and <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setPressure" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.setPressure"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setPressure()</span></code></a> methods:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">setTemperature</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<span class="n">setpressure</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">}</span><span class="w"></span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">units</span></code> for temperature and pressure are <code class="docutils literal notranslate"><span class="pre">K</span></code> and <code class="docutils literal notranslate"><span class="pre">bar</span></code>, respectively.</p>
+</div>
+</section>
+<section id="printing-the-state-of-the-mixture">
+<h2>Printing the state of the mixture<a class="headerlink" href="#printing-the-state-of-the-mixture" title="Permalink to this heading">#</a></h2>
+<p>To print the state of the mixture, we can use the <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;Mixture.print" title="src.+combustiontoolbox.+core.&#64;Mixture.print"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">print()</span></code></a> method:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
-Soot formation</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for hydrocarbon (HC) combustion in air.</p></li>
-<li><p>Considers soot formation and a small set of minor species.</p></li>
-<li><p>Excludes ionized chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;soot formation&#39;</span><span class="p">);</span><span class="w"></span>
+<p>which will yield the following output:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">***************************************</span><span class="w"></span>
+<span class="o">---------------------------------------</span><span class="w"></span>
+<span class="n">Equivalence</span><span class="w"> </span><span class="s">ratio</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.0000</span><span class="w"></span>
+<span class="o">---------------------------------------</span><span class="w"></span>
+<span class="w">               </span><span class="o">|</span><span class="w">    </span><span class="n">MIXTURE</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">T</span><span class="w"> </span><span class="s">[K]</span><span class="w">          </span><span class="o">|</span><span class="w">       </span><span class="mf">300.0000</span><span class="w"></span>
+<span class="n">p</span><span class="w"> </span><span class="s">[bar]</span><span class="w">        </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0000</span><span class="w"></span>
+<span class="n">r</span><span class="w"> </span><span class="s">[kg/m3]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.1078</span><span class="w"></span>
+<span class="n">h</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">254.5297</span><span class="w"></span>
+<span class="n">e</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">-</span><span class="mf">344.7954</span><span class="w"></span>
+<span class="n">g</span><span class="w"> </span><span class="s">[kJ/kg]</span><span class="w">      </span><span class="o">|</span><span class="w">     </span><span class="o">-</span><span class="mf">2429.5892</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="mf">7.2502</span><span class="w"></span>
+<span class="n">W</span><span class="w"> </span><span class="s">[g/mol]</span><span class="w">      </span><span class="o">|</span><span class="w">        </span><span class="mf">27.6333</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlp</span><span class="p">)</span><span class="n">T</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0000</span><span class="w"></span>
+<span class="p">(</span><span class="n">dlV</span><span class="o">/</span><span class="n">dlT</span><span class="p">)</span><span class="n">p</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0000</span><span class="w"></span>
+<span class="n">cp</span><span class="w"> </span><span class="s">[kJ/(kg-K)]</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mf">1.0786</span><span class="w"></span>
+<span class="nb">gamma</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="w">      </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3869</span><span class="w"></span>
+<span class="n">gamma_s</span><span class="w"> </span><span class="s">[-]</span><span class="w">    </span><span class="o">|</span><span class="w">         </span><span class="mf">1.3869</span><span class="w"></span>
+<span class="nb">sound</span><span class="w"> </span><span class="n">vel</span><span class="w"> </span><span class="p">[</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">]</span><span class="o">|</span><span class="w">       </span><span class="mf">353.8198</span><span class="w"></span>
+<span class="o">---------------------------------------</span><span class="w"></span>
+<span class="n">MIXTURE</span><span class="w"> </span><span class="s">1</span><span class="w">               </span><span class="s">Xi</span><span class="w"> </span><span class="s">[-]</span><span class="w"></span>
+<span class="n">N2</span><span class="w">                   </span><span class="s">7.1493e-01</span><span class="w"></span>
+<span class="n">O2</span><span class="w">                   </span><span class="s">1.9005e-01</span><span class="w"></span>
+<span class="n">CH4</span><span class="w">                  </span><span class="s">9.5023e-02</span><span class="w"></span>
+<span class="n">MINORS</span><span class="p">[</span><span class="o">+</span><span class="mi">212</span><span class="p">]</span><span class="w">         </span><span class="mf">0.0000e+00</span><span class="w"></span>
+
+<span class="n">TOTAL</span><span class="w">                </span><span class="s">1.0000e+00</span><span class="w"></span>
+<span class="o">---------------------------------------</span><span class="w"></span>
+<span class="o">***************************************</span><span class="w"></span>
 </pre></div>
-</div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;soot formation&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
-Soot formation extended</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for hydrocarbon (HC) combustion in air.</p></li>
-<li><p>Considers soot formation and a large set of minor species.</p></li>
-<li><p>Excludes ionized chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;soot formation extended&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;soot formation extended&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H2_acetylene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H2_vinylidene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2H3_vinyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H5OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H6&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H3_1_propynl&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H3_2_propynl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H4_allene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H4_propyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H5_allyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H6O_acetone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H6_propylene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H2_butadiyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H6&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C8H18_isooctane&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH2CO_ketene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CH2OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3CHO_ethanal&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CH3COOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;COOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;H2O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCHO_formaldehy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;HCOOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNC&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;NCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OCCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3CO_acetyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C4H6_butadiene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H6_1butyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H6_2butyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2H4O_ethylen_o&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3OCH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H8_1_butene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C4H8_cis2_buten&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H8_isobutene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C4H8_tr2_butene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H9_i_butyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H9_n_butyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C4H9_s_butyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H9_t_butyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H5OH_phenol&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C6H5O_phenoxy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H5_phenyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C7H7_benzyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C7H8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C8H8_styrene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C10H8_naphthale&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
-HC/O2/N2 propellants</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for hydrocarbon (HC) combustion (propellants) in air.</p></li>
-<li><p>Considers soot formation and a large set of minor species.</p></li>
-<li><p>Excludes ionized chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;HC/O2/N2 propellants&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HC/O2/N2 propellants&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H2_acetylene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H2_vinylidene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2H3_vinyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H5OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H6&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H3_1_propynl&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H3_2_propynl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H4_allene&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H4_propyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H5_allyl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H6O_acetone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3H6_propylene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C3H8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4H2_butadiyne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H6&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C8H18_isooctane&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH2CO_ketene&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CH2OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3CHO_ethanal&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;CH3COOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;COOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;H2O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCHO_formaldehy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;HCOOH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNC&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HNO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;NCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OCCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C3O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C4N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;RP_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2bLb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;O2bLb&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-6">
-Si/HC/O2/N2 propellants</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Calculations for Silicon (Si) combustion (propellants) in air.</p></li>
-<li><p>Considers soot formation and a minor set of minor species.</p></li>
-<li><p>Excludes ionized chemical species.</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="s">&#39;Si/HC/O2/N2 propellants&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>or equivalently</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Si/HC/O2/N2 propellants&#39;</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Chemical species included:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">LS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cbgrb&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;C2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C2H4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;H2O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HCO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OH&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;O2bLb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Si&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiH&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiH2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiH3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiH4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiO&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">             </span><span class="s">&#39;SibLb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SiO2bLb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Si2&#39;</span><span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-7">
-During initialization </label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
-<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">({</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">});</span><span class="w"></span>
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Number of moles</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+
+<span class="c">% Define database</span><span class="w"></span>
+<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Initialize chemical system</span><span class="w"></span>
+<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Initialize mixture</span><span class="w"></span>
+<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial chemical species</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c">% Define initial temperature and pressure</span><span class="w"></span>
+<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Print the state of the mixture</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-8">
-After initialization</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT</span><span class="w"></span>
-<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">();</span><span class="w"></span>
-<span class="c">% Define chemical system</span><span class="w"></span>
-<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">list_species</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CO2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">});</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
-Using predefined chemical systems</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize CT and define chemical system</span><span class="w"></span>
-<span class="n">self</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="s">&#39;HC/O2/N2&#39;</span><span class="p">);</span><span class="w"></span>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Equivalence ratio</label><div class="sd-tab-content docutils">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+
+<span class="c">% Define database</span><span class="w"></span>
+<span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Initialize chemical system</span><span class="w"></span>
+<span class="n">chemicalSystem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Initialize mixture</span><span class="w"></span>
+<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="n">chemicalSystem</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define initial chemical species</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;CH4&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;fuel&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;oxidizer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c">% Define initial temperature, pressure, and equivalence ratio</span><span class="w"></span>
+<span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Print the state of the mixture</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mix</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -618,7 +553,7 @@ Using predefined chemical systems</label><div class="sd-tab-content docutils">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Defining initial state of a mixture</div>
+                <div class="title">Defining chemical system</div>
                 
               </div>
             </a>
@@ -664,9 +599,11 @@ Using predefined chemical systems</label><div class="sd-tab-content docutils">
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Defining chemical system</a><ul>
-<li><a class="reference internal" href="#identifying-all-possible-products">Identifying all possible products</a></li>
-<li><a class="reference internal" href="#using-predefined-chemical-systems">Using predefined chemical systems</a></li>
+<li><a class="reference internal" href="#">Defining initial state of a mixture</a><ul>
+<li><a class="reference internal" href="#defining-initial-chemical-species">Defining initial chemical species</a></li>
+<li><a class="reference internal" href="#defining-initial-composition">Defining initial composition</a></li>
+<li><a class="reference internal" href="#defining-initial-temperature-and-pressure">Defining initial temperature and pressure</a></li>
+<li><a class="reference internal" href="#printing-the-state-of-the-mixture">Printing the state of the mixture</a></li>
 <li><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>

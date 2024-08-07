@@ -10,7 +10,7 @@ The CT-EQUIL module facilitates the computation of chemical equilibrium composit
 * `EV` (internal energy and volume),
 * `SV` (entropy and volume).
 
-Additionally, Combustion Toolbox enables the computation of chemical equilibrium under various assumptions regarding the final gas mixture, including calorically perfect gas, calorically imperfect gas with frozen chemistry, or calorically imperfect gas with equilibrium chemistry, including dissociation and ionization.
+Additionally, Combustion Toolbox enables the computation of chemical equilibrium under various assumptions regarding the final gas mixture, including calorically perfect gas, thermally perfect gas, or calorically imperfect gas (equilibrium chemistry, including dissociation and ionization).
 
 In many practical applications, the equilibrium temperature of a system is not initially determined, thereby necessitating the provision of supplementary information to close the problem. This additional information may be obtained from an enthalpy, internal energy, or entropy conservation equation, subject to the requirement that the corresponding state function $f$ remains unchanged, namely
 ```{eval-rst}

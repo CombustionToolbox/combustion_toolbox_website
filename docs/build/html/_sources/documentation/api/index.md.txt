@@ -13,7 +13,6 @@ Here we can find the documentation for the routines implemented in the Combustio
 |-- examples
 |-- gui
 |-- installer
-|-- modules
 |-- utils
 |-- validations
 |-- run_test.m
