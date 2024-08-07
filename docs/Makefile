@@ -3,13 +3,13 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
-SPHINXOPTS    = W--keep-going -n
+SPHINXOPTS    = --keep-going
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = sphinxcontrib-matlabdomain
 SOURCEDIR     = source
 BUILDDIR      = build
 
-#IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
+# IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
 IMAGEDIRS      = source/_static/img
 
 # SVG to PDF conversion
