@@ -232,8 +232,8 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining initial state of a mixture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -381,9 +381,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_SUBSONIC">
 <span class="sig-name descname"><span class="pre">FLAG_SUBSONIC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC" title="Permalink to this definition">#</a></dt>
-<dd><ul class="simple">
-<li><p>Flags</p></li>
-</ul>
+<dd><p>Flag to indicate subsonic Area ratio</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -513,7 +511,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>varargout</em> – Updated Mixture objects depending on the problem type</p>
+<dd class="field-odd"><p><em>varargout (Mixture)</em> – Updated Mixture objects depending on the problem type</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -543,7 +541,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>varargout</em> – Updated arrays of Mixture objects depending on the shock problem type</p>
+<dd class="field-even"><p><em>varargout (Mixture)</em> – Updated arrays of Mixture objects depending on the shock problem type</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -560,17 +558,13 @@ Additional optional parameters can be provided to customize the solver’s behav
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.time">
 <span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time" title="Permalink to this definition">#</a></dt>
-<dd><ul class="simple">
-<li><p>Miscellaneous</p></li>
-</ul>
+<dd><p>Elapsed time [s]</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.tol0">
 <span class="sig-name descname"><span class="pre">tol0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.tol0" title="Permalink to this definition">#</a></dt>
-<dd><ul class="simple">
-<li><p>Rocket propellant performance (CT-ROCKET module)</p></li>
-</ul>
+<dd><p>Tolerance rocket performance</p>
 </dd></dl>
 
 </dd></dl>

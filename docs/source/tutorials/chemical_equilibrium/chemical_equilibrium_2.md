@@ -20,78 +20,75 @@ Similar to the preceding case, we will consider a set of 23 species involved in 
 This set, referred to as 'Soot formation,' is defined in the routine list_species.m and includes Ar.
 
 ```{tip}
-The Combustion Toolbox offers various predefined list of species. To explore the complete list, type <tt>help list_species</tt> at the MATLAB prompt or refer to the [Using predefined chemical systems](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems) tutorial section.
+The Combustion Toolbox offers various predefined list of species. To explore the complete list, type <tt>help combustiontoolbox.core.ChemicalSystem.findProducts</tt> at the MATLAB prompt or refer to the [Using predefined chemical systems](https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems) tutorial section.
 ```
 
-Let's start by initializing the Combustion Toolbox and defining the chemical system and the initial state of the mixture (chemical composition, temperature, and pressure):
+Let's start by importing the Combustion Toolbox packages and defining the chemical system and initial state of the mixture (chemical composition, temperature, and pressure):
 
 ```matlab
-% Initialize CT and define chemical system
-self = App('Soot formation');
+% Import packages
+import combustiontoolbox.databases.NasaDatabase
+import combustiontoolbox.core.*
+import combustiontoolbox.equilibrium.*
+import combustiontoolbox.utils.display.*
 
-% Define initial chemical composition
-self.PD.S_Fuel     = {'C2H2_acetylene'};
-self.PD.S_Oxidizer = {'N2', 'O2'};
-self.PD.ratio_oxidizers_O2 = [79, 21]/21;
-self = set_prop(self, 'phi', 0.5:0.01:5);
+% Get Nasa database
+DB = NasaDatabase();
 
-% Define initial thermochemical state
-self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
+% Define chemical system
+system = ChemicalSystem(DB, 'soot formation');
+
+% Initialize mixture
+mix = Mixture(system);
+
+% Define chemical state
+set(mix, {'CH4'}, 'fuel', 1);
+set(mix, {'N2', 'O2'}, 'oxidizer', [79/21, 1]);
+
+% Define properties
+mixArray = setProperties(mix, 'temperature', 3000, 'pressure', 1 * 1.01325, 'equivalenceRatio', 0.5:0.01:5);
 ```
 
-To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state; however, we must specify the pressure of the final state using the pP property:
+To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state. Thus, to define the solver:
 
 ```matlab
-% Set chemical transformation
-self = set_prop(self, 'pP', self.PD.pR.value);
+% Initialize equilibrium solver
+solver = EquilibriumSolver('problemType', 'HP');
 ```
-
-````{note}
-All parameters defining the problem are stored within the `PD` property of the `self` structure. While we consistently refer to self for ease of understanding, you may rename it to any other name as needed.
-````
 
 Finally, we can solve the problem and visualize the results:
-
 ```matlab
 % Perform chemical calculations
-self = solve_problem(self, 'HP');
+solveArray(solver, mixArray);
 
 % Postprocess results
-post_results(self);
+report(solver, mixArray);
 ```
 
 If everything goes well, the last promt should display the following message:
 
 ```matlab
-*****************************************************
------------------------------------------------------
-Problem type: HP  | phi = 0.5000
------------------------------------------------------
-               |    REACTANTS    |      PRODUCTS
-T [K]          |       300.0000  |      1776.8223
-p [bar]        |         1.0132  |         1.0132
-r [kg/m3]      |         1.1674  |         0.2011
-h [kJ/kg]      |       321.9941  |       321.9941
-e [kJ/kg]      |       235.1950  |      -181.7992
-g [kJ/kg]      |     -1768.9710  |    -15487.8789
-s [kJ/(kg-K)]  |         6.9699  |         8.8978
-W [g/mol]      |        28.7369  |        29.3242
-(dlV/dlp)T [-] |                 |        -1.0000
-(dlV/dlT)p [-] |                 |         1.0017
-cp [kJ/(kg-K)] |         1.0364  |         1.3539
-gamma [-]      |         1.3873  |         1.2660
-gamma_s [-]    |         1.3873  |         1.2660
-sound vel [m/s]|       347.0091  |       798.6200
------------------------------------------------------
-REACTANTS               Xi [-]
-N2                   7.5816e-01
-O2                   2.0154e-01
-C2H2_acetylene       4.0307e-02
-MINORS[+22]          0.0000e+00
-
-TOTAL                1.0000e+00
------------------------------------------------------
-PRODUCTS                Xi [-]
+*******************************************************
+-------------------------------------------------------
+Problem type: HP  | Equivalence ratio = 0.5000
+-------------------------------------------------------
+               |    MIXTURE 1
+T [K]          |      1776.8223
+p [bar]        |         1.0132
+r [kg/m3]      |         0.2011
+h [kJ/kg]      |       321.9942
+e [kJ/kg]      |      -181.7991
+g [kJ/kg]      |    -15487.8841
+s [kJ/(kg-K)]  |         8.8978
+W [g/mol]      |        29.3242
+(dlV/dlp)T [-] |        -1.0000
+(dlV/dlT)p [-] |         1.0017
+cp [kJ/(kg-K)] |         1.3539
+gamma [-]      |         1.2660
+gamma_s [-]    |         1.2660
+sound vel [m/s]|       798.6200
+-------------------------------------------------------
+MIXTURE 1               Xi [-]
 N2                   7.7233e-01
 O2                   1.0142e-01
 CO2                  8.2220e-02
@@ -99,19 +96,19 @@ H2O                  4.0942e-02
 NO                   2.6404e-03
 OH                   3.6588e-04
 CO                   4.1312e-05
-O                    3.0818e-05
-H2                   5.5206e-06
-H                    6.8730e-07
+O                    3.0817e-05
+H2                   5.5205e-06
+H                    6.8729e-07
 N                    2.1015e-11
-NH                   7.3010e-13
+NH                   7.3009e-13
 NH3                  3.5644e-13
 NH2                  1.4186e-13
-HCO                  1.7907e-14
+HCO                  1.7906e-14
 MINORS[+10]          0.0000e+00
 
 TOTAL                1.0000e+00
------------------------------------------------------
-*****************************************************
+-------------------------------------------------------
+*******************************************************
 
 ```
 
@@ -127,44 +124,56 @@ Two plots should also appear, illustrating the equilibrium composition of the sy
 </p>
 
 
-Combustion Toolbox performs the calculations from the last case to the first one, and the results are stored in the `PS` property of the `self` structure.
+Combustion Toolbox performs the calculations from the last case to the first one.
 
 ````{tip}
-The convergence tolerances for all the algorithms implemented in the Combustion Toolbox are stored in the TN (tuning) property within the self structure. Default values are specified in <tt>TuningProperties.m</tt>. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-4}$.
+The convergence tolerances for the algorithms implemented in the Combustion Toolbox are properties of their respective solvers. Default values are specified at the beggining of the class. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-4}$.
 
-These parameters ca be easily adjusted by setting the corresponding property in the `TN` structure. For example, to decrease the tolerance (increase precision) for molar composition to $10^{-32}$, type
+These parameters can be easily adjusted by setting the corresponding property in the solver. For example, to decrease the tolerance (increase precision) for molar composition to $10^{-32}$, type
 ```matlab
-self.TN.tolN = 1e-32;
+set(solver, 'tolMoles', 1e-32);
 ```
 prior to solving the problem. To visualize these changes (command window and default plots), execute:
 ```matlab
-self.C.mintol_display = 1e-32;
+config = PlotConfig();
+config.tolMolesDisplay = 1e-32;
+set(solver, 'plotConfig', config);
 ```
 ````
 
 ## Summary
 
 ```matlab
-% Initialize CT and define chemical system
-self = App('Soot formation');
+% Import packages
+import combustiontoolbox.databases.NasaDatabase
+import combustiontoolbox.core.*
+import combustiontoolbox.equilibrium.*
+import combustiontoolbox.utils.display.*
 
-% Define initial chemical composition
-self.PD.S_Fuel     = {'C2H2_acetylene'};
-self.PD.S_Oxidizer = {'N2', 'O2'};
-self.PD.ratio_oxidizers_O2 = [79, 21]/21;
-self = set_prop(self, 'phi', 0.5:0.01:5);
+% Get Nasa database
+DB = NasaDatabase();
 
-% Define initial thermochemical state
-self = set_prop(self, 'TR', 300, 'pR', 1 * 1.01325);
+% Define chemical system
+system = ChemicalSystem(DB, 'soot formation');
 
-% Set chemical transformation
-self = set_prop(self, 'pP', self.PD.pR.value);
+% Initialize mixture
+mix = Mixture(system);
 
-% Perform chemical calculations
-self = solve_problem(self, 'HP');
+% Define chemical state
+set(mix, {'C2H2_acetylene'}, 'fuel', 1);
+set(mix, {'N2', 'O2'}, 'oxidizer', [79/21, 1]);
 
-% Postprocess results
-post_results(self);
+% Define properties
+mixArray = setProperties(mix, 'temperature', 300, 'pressure', 1 * 1.01325, 'equivalenceRatio', 0.5:0.01:5);
+
+% Initialize solver
+solver = EquilibriumSolver('problemType', 'HP');
+
+% Solve problem
+solver.solveArray(mixArray);
+
+% Automatically postprocess results
+report(solver, mixArray);
 ```
 
 ## Congratulations!
