@@ -1,4 +1,4 @@
 [submodule "src"]
 	path = src
-	url = https://github.com/AlbertoCuadra/combustion_toolbox.git
-	branch = oop
+	url = https://github.com/CombustionToolbox/combustion_toolbox.git
+	branch = master
