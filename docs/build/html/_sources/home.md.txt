@@ -27,7 +27,7 @@
 
 :::{grid-item-card} {octicon}`package` Robust modular kernel
 :link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/equilibrium/index.html
-`Robust`, `modular`, and `fast` chemical equilibrium computations.
+`Robust`, `object-oriented`, and `fast` chemical equilibrium computations.
 :::
 
 :::{grid-item-card} {octicon}`device-desktop` Interactive App
@@ -116,7 +116,7 @@ Completely open source, GUI included!
 
 ::::
 
-Combustion Toolbox {cite:p}`combustiontoolbox` is a GUI-based thermochemical code written in MATLAB with an equilibrium kernel based on the mathematical formulation set forth by NASA in its CEA code {cite:p}`gordon1994`. The thermodynamic properties of the gaseous species are modeled with the ideal gas equation of state (EoS), and an up-to-date version of NASA's 9-coefficient polynomial fits from {cite:p}`Mcbride2002,burcat2005,ruscic2005`. CT is a new thermochemical code written from scratch in a modular architectural format composed of three main modules: CT-EQUIL, CT-SD, and CT-ROCKET. 
+Combustion Toolbox {cite:p}`combustiontoolbox` is a GUI-based thermochemical code written in MATLAB with an equilibrium kernel based on the mathematical formulation set forth by NASA in its CEA code {cite:p}`gordon1994`. The thermodynamic properties of the gaseous species are modeled with the ideal gas equation of state (EoS), and an up-to-date version of NASA's 9-coefficient polynomial fits from {cite:p}`Mcbride2002,burcat2005,ruscic2005`. CT is a new object-oriented thermochemical code written from scratch in a modular architectural format composed of three main modules: CT-EQUIL, CT-SD, and CT-ROCKET. 
 
 * **CT-EQUIL:** computes the composition at the equilibrium of multi-component gas mixtures that undergo canonical thermochemical transformations from an initial state (reactants), defined by its initial composition, temperature, and pressure, to a final state (products), defined by a set of chemical species (in gaseous---included ions---or pure condensed phase) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.
 * **CT-SD:** solves steady-state shock and detonation waves in either normal or oblique incidence.
