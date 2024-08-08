@@ -290,12 +290,13 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/utils/index.html">Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases/index.html">Databases</a></li>
@@ -379,7 +380,7 @@
 <span class="n">mixArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state. Thus, to define the solver:</p>
+<p>To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state, so for this problem we do not need to specify additional parameters. Then, we can initialize the solver as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize equilibrium solver</span><span class="w"></span>
 <span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EquilibriumSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;HP&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -458,6 +459,7 @@
 </pre></div>
 </div>
 </div>
+<p>Here, <a class="reference internal" href="../../documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig" title="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></a> is a class from <code class="docutils literal notranslate"><span class="pre">utils.display</span> <span class="pre">subpacakge</span></code> with configuration data for plots.</p>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>

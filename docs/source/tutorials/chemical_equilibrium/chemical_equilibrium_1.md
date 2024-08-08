@@ -30,7 +30,7 @@ To define the database type the following at the MATLAB prompt:
 DB = NasaDatabase()
 ```
 
-Here DB is a <tt>NasaDatabase</tt> object that inherits from the superclass  <tt>Databese</tt>.
+Here DB is a {mat:class}`~src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase` object that inherits from the superclass {mat:class}`~src.+combustiontoolbox.+databases.@Database.Database`.
 ``````
 
 ``````{tab-item} GUI
@@ -138,7 +138,7 @@ This section is under development. Stay tuned!
 
 ```````{tab-set}
 ``````{tab-item} Plain code
-In this example, we have a constant temperature and pressure (TP) problem. To solve it, we need to use the `EquilibriumSolver` class, which is defined as follows:
+In this example, we have a constant temperature and pressure (TP) problem. To solve it, we need to use the {mat:class}`~src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver` class, which is defined as follows:
 ```matlab
 solver = EquilibriumSolver('TP');
 ```
@@ -156,7 +156,7 @@ This section is under development. Stay tuned!
 
 ```````{tab-set}
 ``````{tab-item} Plain code
-To solve parametrics studies, all the solvers implemented in CT have a method called `solveArray`, which allows you to solve a set of cases at once. To solve the parametric study defined above, run
+To solve parametrics studies, all the solvers implemented in CT have a method called {mat:func}`~src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.solveArray`, which allows you to solve a set of cases at once. To solve the parametric study defined above, run
 ```matlab
 solver.solveArray(mixArray);
 ```
@@ -251,7 +251,7 @@ This section is under development. Stay tuned!
 
 ```````{tab-set}
 ``````{tab-item} Plain code
-There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the solvers method
+There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the solvers method {mat:func}`~src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.report`, namely
 ```matlab
 report(solver, mixArray);
 ```

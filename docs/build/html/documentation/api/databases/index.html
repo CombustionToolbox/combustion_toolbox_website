@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Core classes" href="../core/index.html" /><link rel="prev" title="Common functions" href="../common/index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Core classes" href="../core/index.html" /><link rel="prev" title="Common classes" href="../common/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Databases - Combustion Toolbox v1.1.0</title>
+        <title>Database classes - Combustion Toolbox v1.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -290,12 +290,13 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common functions</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common classes</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils/index.html">Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
@@ -335,13 +336,13 @@
           </label>
         </div>
         <article role="main">
-          <section id="databases">
-<h1>Databases<a class="headerlink" href="#databases" title="Permalink to this heading">#</a></h1>
-<p>Combustion Toolbox generates its own databases using an up-to-date version of NASA’s 9-coefficient polynomial fits <span id="id1">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>. This information is stored in the <code class="docutils literal notranslate"><span class="pre">Database</span></code> abstract class. Three main databases are used in the code:</p>
+          <section id="database-classes">
+<h1>Database classes<a class="headerlink" href="#database-classes" title="Permalink to this heading">#</a></h1>
+<p>Combustion Toolbox generates its own databases using an up-to-date version of NASA’s 9-coefficient polynomial fits <span id="id1">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>. This information is stored in the <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Database</span></code></a> abstract class. Three main databases are used in the code:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code>: contains data extracted from NASA’s database <span id="id2">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BurcatDatabase</span></code>: extracts data from the Third Millennium database <span id="id3">[<a class="reference internal" href="../../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>]</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SolarAbundances</span></code>: stores the solar abundances of the elements <span id="id4">[<a class="reference internal" href="../../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">Asplund <em>et al.</em>, 2009</a>]</span>.</p></li>
+<li><p><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a>: contains data extracted from NASA’s database <span id="id2">[<a class="reference internal" href="../../../references.html#id187" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>.</p></li>
+<li><p><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase" title="src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">BurcatDatabase</span></code></a>: extracts data from the Third Millennium database <span id="id3">[<a class="reference internal" href="../../../references.html#id251" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>]</span>.</p></li>
+<li><p><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances" title="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SolarAbundances</span></code></a>: stores the solar abundances of the elements <span id="id4">[<a class="reference internal" href="../../../references.html#id277" title="Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. Annual Review of Astronomy and Astrophysics, 47:481–522, 2009. doi:10.1146/annurev.astro.46.060407.145222.">Asplund <em>et al.</em>, 2009</a>]</span>.</p></li>
 </ul>
 <section id="module-src.+combustiontoolbox.+databases.&#64;Database">
 <span id="database"></span><h2>Database<a class="headerlink" href="#module-src.+combustiontoolbox.+databases.@Database" title="Permalink to this heading">#</a></h2>
@@ -1084,7 +1085,7 @@ fractions in the mixture [-]</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Common functions</div>
+                <div class="title">Common classes</div>
                 
               </div>
             </a>
@@ -1130,7 +1131,7 @@ fractions in the mixture [-]</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Databases</a><ul>
+<li><a class="reference internal" href="#">Database classes</a><ul>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+databases.&#64;Database">Database</a></li>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+databases.&#64;NasaDatabase">NasaDatabase</a></li>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+databases.&#64;BurcatDatabase">BurcatDatabase</a></li>

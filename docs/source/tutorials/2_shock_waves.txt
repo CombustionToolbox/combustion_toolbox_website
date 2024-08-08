@@ -1,0 +1,11 @@
+# Shock waves
+
+In this section, we will cover how to solve 
+
+```{toctree}
+    :caption: Contents
+    :maxdepth: 2
+    :titlesonly:
+    
+shock_waves/shock_waves_1
+```

@@ -1,4 +1,4 @@
-# Common functions
+# Common classes
 
 Here we can find the documentation for the common functions and classes implemented in the Combustion Toolbox (CT).
 

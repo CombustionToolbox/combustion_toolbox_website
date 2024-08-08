@@ -48,4 +48,5 @@ core/index
 equilibrium/index
 shockdetonation/index
 rocket/index
+utils/index
 ```
