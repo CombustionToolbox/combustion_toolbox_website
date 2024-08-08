@@ -290,12 +290,13 @@
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/common/index.html">Common classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../documentation/api/rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/api/utils/index.html">Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../documentation/databases/index.html">Databases</a></li>
@@ -364,7 +365,7 @@ Plain code</label><div class="sd-tab-content docutils">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Here DB is a <tt>NasaDatabase</tt> object that inherits from the superclass  <tt>Databese</tt>.</p>
+<p>Here DB is a <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase" title="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a> object that inherits from the superclass <a class="reference internal" href="../../documentation/api/databases/index.html#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Database</span></code></a>.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -486,7 +487,7 @@ GUI</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-12">
 Plain code</label><div class="sd-tab-content docutils">
-<p>In this example, we have a constant temperature and pressure (TP) problem. To solve it, we need to use the <code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code> class, which is defined as follows:</p>
+<p>In this example, we have a constant temperature and pressure (TP) problem. To solve it, we need to use the <a class="reference internal" href="../../documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> class, which is defined as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EquilibriumSolver</span><span class="p">(</span><span class="s">&#39;TP&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -507,7 +508,7 @@ GUI</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-14">
 Plain code</label><div class="sd-tab-content docutils">
-<p>To solve parametrics studies, all the solvers implemented in CT have a method called <code class="docutils literal notranslate"><span class="pre">solveArray</span></code>, which allows you to solve a set of cases at once. To solve the parametric study defined above, run</p>
+<p>To solve parametrics studies, all the solvers implemented in CT have a method called <a class="reference internal" href="../../documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solveArray" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, which allows you to solve a set of cases at once. To solve the parametric study defined above, run</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="p">.</span><span class="n">solveArray</span><span class="p">(</span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -605,7 +606,7 @@ GUI</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-18">
 Plain code</label><div class="sd-tab-content docutils">
-<p>There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the solvers method</p>
+<p>There are some predefined charts based on the selected problem, in case you have calculated multiple cases. Just calling the solvers method <a class="reference internal" href="../../documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.report" title="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a>, namely</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">report</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>

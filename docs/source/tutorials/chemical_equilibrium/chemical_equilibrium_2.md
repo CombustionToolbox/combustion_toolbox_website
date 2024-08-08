@@ -49,7 +49,7 @@ set(mix, {'N2', 'O2'}, 'oxidizer', [79/21, 1]);
 mixArray = setProperties(mix, 'temperature', 3000, 'pressure', 1 * 1.01325, 'equivalenceRatio', 0.5:0.01:5);
 ```
 
-To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state. Thus, to define the solver:
+To close the problem, we maintain constant enthalpy and pressure. This problem type is denoted as HP in the Combustion Toolbox. By default, the code ensures that the enthalpy of the final state equals that of the initial state, so for this problem we do not need to specify additional parameters. Then, we can initialize the solver as follows:
 
 ```matlab
 % Initialize equilibrium solver
@@ -140,6 +140,8 @@ config.tolMolesDisplay = 1e-32;
 set(solver, 'plotConfig', config);
 ```
 ````
+
+Here, {mat:class}`~src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig` is a class from `utils.display subpacakge` with configuration data for plots.
 
 ## Summary
 
