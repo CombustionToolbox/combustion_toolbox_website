@@ -375,6 +375,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_CACHE">
+<span class="sig-name descname"><span class="pre">FLAG_CACHE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_CACHE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to clear cache after calculations</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.FLAG_EOS">
 <span class="sig-name descname"><span class="pre">FLAG_EOS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_EOS" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to use non-ideal Equation of States (EoS)</p>
@@ -670,9 +676,15 @@ transformation using the regula falsi method</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.relaxFactor">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">relaxFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">ni</span></em>, <em class="sig-param"><span class="pre">eta</span></em>, <em class="sig-param"><span class="pre">Delta_ln_NP</span></em>, <em class="sig-param"><span class="pre">NG</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.relaxFactor" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute relaxation factor</p>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.relaxFactorCondensed">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">relaxFactorCondensed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">psi_j</span></em>, <em class="sig-param"><span class="pre">Delta_nj</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">NG</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">SIZE</span></em>, <em class="sig-param"><span class="pre">tau</span></em>, <em class="sig-param"><span class="pre">RT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.relaxFactorCondensed" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute and apply relaxation factor for condensed species</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.relaxFactorGas">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">relaxFactorGas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">NP</span></em>, <em class="sig-param"><span class="pre">nj_gas</span></em>, <em class="sig-param"><span class="pre">Delta_ln_nj</span></em>, <em class="sig-param"><span class="pre">Delta_ln_NP</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.relaxFactorGas" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute relaxation factor for gas species</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
@@ -751,6 +763,12 @@ transformation using the regula falsi method</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.root_T0_r">
 <span class="sig-name descname"><span class="pre">root_T0_r</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'3000'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.root_T0_r" title="Permalink to this definition">#</a></dt>
 <dd><p>First temperature guess [K] right branch - root finding method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.slackGuess">
+<span class="sig-name descname"><span class="pre">slackGuess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-14'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.slackGuess" title="Permalink to this definition">#</a></dt>
+<dd><p>Initial guess of the slack variables for condensed species</p>
 </dd></dl>
 
 <dl class="mat method">

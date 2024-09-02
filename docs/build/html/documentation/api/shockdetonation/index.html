@@ -368,6 +368,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dl>
 <p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">DetonationSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></p>
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_CACHE">
+<span class="sig-name descname"><span class="pre">FLAG_CACHE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_CACHE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to clear cache after calculations</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.FLAG_REPORT">
 <span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print predefined plots</p>
@@ -803,6 +809,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_CACHE">
+<span class="sig-name descname"><span class="pre">FLAG_CACHE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_CACHE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to clear cache after calculations</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.FLAG_REPORT">
 <span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print predefined plots</p>
@@ -945,6 +957,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.setMixtureShockPolar">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">setMixtureShockPolar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">mixPolar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.setMixtureShockPolar" title="Permalink to this definition">#</a></dt>
 <dd><p>Assign values from the polar curves</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.shockSolver">
+<span class="sig-name descname"><span class="pre">shockSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.shockSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>ShockSolver object</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -1296,8 +1314,8 @@ B. J. (1994). NASA reference publication, 1311.</p>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <ul class="simple">
-<li><p>[mix1, mix2, mix5] = detonationReflected(ShockSolver(), mix1, mix2)</p></li>
-<li><p>[mix1, mix2, mix5] = detonationReflected(ShockSolver(), mix1, mix2, mix5)</p></li>
+<li><p>[mix1, mix2, mix5] = detonationReflected(DetonationSolver(), mix1, mix2)</p></li>
+<li><p>[mix1, mix2, mix5] = detonationReflected(DetonationSolver(), mix1, mix2, mix5)</p></li>
 </ul>
 </div>
 </dd></dl>

@@ -368,6 +368,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dl>
 <p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">Mixture()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solveArray()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a></p>
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_CACHE">
+<span class="sig-name descname"><span class="pre">FLAG_CACHE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_CACHE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to clear cache after calculations</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.FLAG_REPORT">
 <span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to print predefined plots</p>
@@ -613,7 +619,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>mix2_in (Mixture): Properties of the mixture at the inlet of the chamber</p>
+<dt>Optional Args:</dt><dd><p>mix2_inj (Mixture): Properties of the mixture at the injector of the chamber</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -625,7 +631,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
 <p class="admonition-title">Examples</p>
 <ul class="simple">
 <li><p>mix4 = rocketExit(RocketSolver(), mix2, mix3, mix4)</p></li>
-<li><p>mix4 = rocketExit(RocketSolver(), mix2, mix3, mix4, mix2_in)</p></li>
+<li><p>mix4 = rocketExit(RocketSolver(), mix2, mix3, mix4, mix2_inj)</p></li>
 </ul>
 </div>
 </dd></dl>
