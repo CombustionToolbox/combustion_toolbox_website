@@ -538,13 +538,13 @@ Additional optional parameters can be provided to customize the solver’s behav
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver.solveArray">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solveArray" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a set of rocket problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
-<li><p><strong>mix1Array</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -554,10 +554,10 @@ Additional optional parameters can be provided to customize the solver’s behav
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <ul class="simple">
-<li><p>[mix1Array, mix2Array, mix3Array] = solveArray(RocketSolver(), mix1Array); % Rocket IAC</p></li>
-<li><p>[mix1Array, mix2Array, mix3Array, mix4Array] = solveArray(RocketSolver(), mix1Array); % Rocket IAC</p></li>
-<li><p>[mix1Array, mix2Array, mix3Array, mix4Array] = solveArray(RocketSolver(), mix1Array); % Rocket FAC</p></li>
-<li><p>[mix1Array, mix2Array, mix3Array, mix4Array, mix5Array] = solveArray(RocketSolver(), mix1Array); % Rocket FAC</p></li>
+<li><p>[mixArray1, mixArray2, mixArray3] = solveArray(RocketSolver(), mixArray1); % Rocket IAC</p></li>
+<li><p>[mixArray1, mixArray2, mixArray3, mixArray4] = solveArray(RocketSolver(), mixArray1); % Rocket IAC</p></li>
+<li><p>[mixArray1, mixArray2, mixArray3, mixArray4] = solveArray(RocketSolver(), mixArray1); % Rocket FAC</p></li>
+<li><p>[mixArray1, mixArray2, mixArray3, mixArray4, mixArray5] = solveArray(RocketSolver(), mixArray1); % Rocket FAC</p></li>
 </ul>
 </div>
 </dd></dl>

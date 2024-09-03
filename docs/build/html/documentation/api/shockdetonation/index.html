@@ -1000,13 +1000,13 @@ Additional optional parameters can be provided to customize the solver’s behav
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver.DetonationSolver.solveArray">
-<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1Array</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">solveArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a set of detonation problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – EquilibriumSolver object</p></li>
-<li><p><strong>mix1Array</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of initial Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1016,8 +1016,8 @@ Additional optional parameters can be provided to customize the solver’s behav
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <ul class="simple">
-<li><p>[mix1Array, mix2Array] = solveArray(DetonationSolver(), mix1Array);</p></li>
-<li><p>[mix1Array, mix2Array, mix3Array] = solveArray(DetonationSolver(), mix1Array);</p></li>
+<li><p>[mixArray1, mixArray2] = solveArray(DetonationSolver(), mixArray1);</p></li>
+<li><p>[mixArray1, mixArray2, mixArray3] = solveArray(DetonationSolver(), mixArray1);</p></li>
 </ul>
 </div>
 </dd></dl>
