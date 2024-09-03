@@ -1,5 +1,5 @@
 [submodule "src"]
 	path = src
 	url = https://github.com/CombustionToolbox/combustion_toolbox.git
-	branch = develop
+	branch = master
 
