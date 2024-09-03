@@ -212,7 +212,7 @@ html_css_files = [
 # }
 
 html_theme_options = {
-    "announcement": '<a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a>',
+    "announcement": '<a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a>',
     "sidebar_hide_name": True,
     'light_logo': 'img/logo_CT_version.svg',
     'dark_logo': 'img/logo_CT_version_dark.svg',

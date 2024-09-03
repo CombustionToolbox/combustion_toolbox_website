@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -447,7 +447,7 @@
 <p>Combustion Toolbox performs the calculations from the last case to the first one.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The convergence tolerances for the algorithms implemented in the Combustion Toolbox are properties of their respective solvers. Default values are specified at the beggining of the class. For instance, the default tolerance for molar composition is <span class="math notranslate nohighlight">\(10^{-14}\)</span>, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is <span class="math notranslate nohighlight">\(10^{-5}\)</span>, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to <span class="math notranslate nohighlight">\(10^{-4}\)</span>.</p>
+<p>The convergence tolerances for the algorithms implemented in the Combustion Toolbox are properties of their respective solvers. Default values are specified at the beggining of the class. For instance, the default tolerance for molar composition is <span class="math notranslate nohighlight">\(10^{-14}\)</span>, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is <span class="math notranslate nohighlight">\(10^{-5}\)</span>, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to <span class="math notranslate nohighlight">\(10^{-3}\)</span>.</p>
 <p>These parameters can be easily adjusted by setting the corresponding property in the solver. For example, to decrease the tolerance (increase precision) for molar composition to <span class="math notranslate nohighlight">\(10^{-32}\)</span>, type</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tolMoles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-32</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -459,7 +459,7 @@
 </pre></div>
 </div>
 </div>
-<p>Here, <a class="reference internal" href="../../documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig" title="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></a> is a class from <code class="docutils literal notranslate"><span class="pre">utils.display</span> <span class="pre">subpacakge</span></code> with configuration data for plots.</p>
+<p>Here, <a class="reference internal" href="../../documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig" title="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></a> is a class from <code class="docutils literal notranslate"><span class="pre">utils.display</span></code> subpacakge with configuration data for plots.</p>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>

@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox article is available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -360,6 +360,24 @@ This class is used as a base class for the <code class="xref mat mat-class docut
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.addSpecies">
+<span class="sig-name descname"><span class="pre">addSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">speciesName</span></em>, <em class="sig-param"><span class="pre">DB_master</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.addSpecies" title="Permalink to this definition">#</a></dt>
+<dd><p>Add species to the database</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.extrapolationMethod">
+<span class="sig-name descname"><span class="pre">extrapolationMethod</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.extrapolationMethod" title="Permalink to this definition">#</a></dt>
+<dd><p>Extrapolation method for the griddedInterpolant objects</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.filename" title="Permalink to this definition">#</a></dt>
+<dd><p>Database filename</p>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.getProperty">
 <span class="sig-name descname"><span class="pre">getProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.getProperty" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the vector of the defined property for the given
@@ -382,6 +400,12 @@ set of species</p>
 </div>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.interpolationMethod">
+<span class="sig-name descname"><span class="pre">interpolationMethod</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.interpolationMethod" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpolation method for the griddedInterpolant objects</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.load" title="Permalink to this definition">#</a></dt>
@@ -402,6 +426,18 @@ set of species</p>
 </dl>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.name" title="Permalink to this definition">#</a></dt>
+<dd><p>Database name</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.pointsTemperature">
+<span class="sig-name descname"><span class="pre">pointsTemperature</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.pointsTemperature" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points to use in the interpolation of the thermodynamic data</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.save" title="Permalink to this definition">#</a></dt>
@@ -411,6 +447,30 @@ set of species</p>
 <dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – Database object</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.species">
+<span class="sig-name descname"><span class="pre">species</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.species" title="Permalink to this definition">#</a></dt>
+<dd><p>Struct with Species objects</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.temperatureReference">
+<span class="sig-name descname"><span class="pre">temperatureReference</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.temperatureReference" title="Permalink to this definition">#</a></dt>
+<dd><p>Default temperature of reference</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.thermoFile">
+<span class="sig-name descname"><span class="pre">thermoFile</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.thermoFile" title="Permalink to this definition">#</a></dt>
+<dd><p>Name with path for the thermodynamic database file (raw data)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.units">
+<span class="sig-name descname"><span class="pre">units</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.units" title="Permalink to this definition">#</a></dt>
+<dd><p>Units thermodynamic data [molar or mass]</p>
 </dd></dl>
 
 </dd></dl>
@@ -485,9 +545,16 @@ from the data extracted from the thermoFile</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>DB (struct)</em> – Database with thermochemical interpolation curves</p>
+<dd class="field-odd"><p><em>obj (NasaDatabase)</em> – NasaDatabase object with thermochemical interpolation curves</p>
 </dd>
 </dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>DB = generateDatabase(NasaDatabase());</p></li>
+<li><p>DB = generateDatabase(NasaDatabase(), {‘N2’, ‘O2’, ‘NO’, ‘O’, ‘N’});</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat method">
@@ -618,9 +685,9 @@ given species and temperature [K].</p>
 </dl>
 </dd></dl>
 
-<dl class="mat staticmethod">
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;NasaDatabase.NasaDatabase.getSpeciesThermo">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getSpeciesThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">units</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermo" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getSpeciesThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">temperature</span></em>, <em class="sig-param"><span class="pre">units</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getSpeciesThermo" title="Permalink to this definition">#</a></dt>
 <dd><p>Calculates the thermodynamic properties of any species included in the NASA database</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -647,10 +714,8 @@ given species and temperature [K].</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <ul class="simple">
-<li><p>[formula, mm, cP0, hf0, h0, ef0, s0, g0] = getSpeciesThermo(obj, DB, ‘CO’, 1000, ‘molar’)</p></li>
-<li><p>formula = ‘C   1.00O   1.00    0.00    0.00    0.00’</p></li>
-<li><p>mm  = 28.0101</p></li>
-<li><p>cP0 = 33.1788</p></li>
+<li><p>[cp0, hf0, h0, ef0, s0, g0] = getSpeciesThermo(obj, DB, ‘CO’, 1000, ‘molar’)</p></li>
+<li><p>cp0 = 33.1788</p></li>
 <li><p>hf0 = -1.1054e+05</p></li>
 <li><p>h0  = -8.8848e+04</p></li>
 <li><p>ef0 = -1.1177e+05</p></li>

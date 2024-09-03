@@ -127,7 +127,7 @@ Two plots should also appear, illustrating the equilibrium composition of the sy
 Combustion Toolbox performs the calculations from the last case to the first one.
 
 ````{tip}
-The convergence tolerances for the algorithms implemented in the Combustion Toolbox are properties of their respective solvers. Default values are specified at the beggining of the class. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-4}$.
+The convergence tolerances for the algorithms implemented in the Combustion Toolbox are properties of their respective solvers. Default values are specified at the beggining of the class. For instance, the default tolerance for molar composition is $10^{-14}$, for the multi-dimensional Newton-Raphson solver (where temperature is known) it is $10^{-5}$, and for the Newton-Raphson solver (when temperature is not known) used to satisfy conservation equation for enthalpy, internal energy, or entropy, the tolerance is set to $10^{-3}$.
 
 These parameters can be easily adjusted by setting the corresponding property in the solver. For example, to decrease the tolerance (increase precision) for molar composition to $10^{-32}$, type
 ```matlab
@@ -141,7 +141,7 @@ set(solver, 'plotConfig', config);
 ```
 ````
 
-Here, {mat:class}`~src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig` is a class from `utils.display subpacakge` with configuration data for plots.
+Here, {mat:class}`~src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig` is a class from `utils.display` subpacakge with configuration data for plots.
 
 ## Summary
 

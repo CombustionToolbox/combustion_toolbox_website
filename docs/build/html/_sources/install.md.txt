@@ -42,7 +42,7 @@ INSTALL('install', 'gui')
 
 Alternatively, you can execute the `combustion_toolbox_app.mlappinstall` file in the MATLAB Command Window to install the GUI, which will be available through the MATLAB Apps Toolbar.
 
-To install the standalone version, simply execute `combustion_toolbox_standalone_windows.exe` for Windows or `combustion_toolbox_standalone_macos.app` for macOS, both found in the installer folder. This royalty-free version requires MATLAB Runtime framework (automatically installed during installation, **requires an internet connection**).
+To install the standalone version, locate the installer folder and run the appropriate file for your operating system: `combustion_toolbox_standalone_windows.exe` for Windows, `combustion_toolbox_standalone_macos.app` for macOS, or `combustion_toolbox_standalone_linux.install` for Linux. This royalty-free version requires MATLAB Runtime framework (automatically installed during installation, **requires an internet connection**).
 
 ## Using the Combustion Toolbox
 
