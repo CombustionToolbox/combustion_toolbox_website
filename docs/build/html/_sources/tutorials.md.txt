@@ -9,4 +9,5 @@ Combustion Toolbox can be used in two different ways: as a GUI-based application
     
 tutorials/0_basics
 tutorials/1_chemical_equilibrium
+tutorials/2_shock_waves
 ```
