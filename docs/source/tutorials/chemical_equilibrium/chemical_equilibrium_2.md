@@ -177,6 +177,3 @@ solver.solveArray(mixArray);
 % Automatically postprocess results
 report(solver, mixArray);
 ```
-
-## Congratulations!
-Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
