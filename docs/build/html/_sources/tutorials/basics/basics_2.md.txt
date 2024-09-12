@@ -214,7 +214,7 @@ listSpecies =
 ```
 
 ```{note}
-Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the {mat:func}`~src.+combustiontoolbox.+core.@ChemicalSystem.findProducts` function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat's database and include ionized species, we have enabled the `flag_burcat` and `flag_ion` options, setting both to `true`. Alternatively, we can modify the default flag values in the <tt>Species.m</tt> file.
+Chemical species from the Third Millennium database (Burcat) are indicated with the subscript `_M`. By default, the {mat:func}`~src.+combustiontoolbox.+core.@ChemicalSystem.findProducts` function looks for species in the NASA database, includes condensed species, and excludes ionized species. To search for species in Burcat's database and include ionized species, we have enabled the `flag_burcat` and `flag_ion` options, setting both to `true`. Alternatively, we can modify the default flag values in the <tt>ChemicalSystem</tt> object.
 ```
 
 `````
