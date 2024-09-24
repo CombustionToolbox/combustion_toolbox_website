@@ -3,34 +3,35 @@
 ## Citing Combustion Toolbox
 
 ```{note}
-The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2023_thesis` (see Chapter 2 and Appendices A-B).
+The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2024a_preprint`.
 ```
 
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
+* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. [arXiv:2409.15086v1](https://doi.org/10.48550/arXiv.2409.15086).*
 * *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.1.0. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
-* *Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. PhD thesis, Universidad Carlos III de Madrid. Available at [http://hdl.handle.net/10016/38179](http://hdl.handle.net/10016/38179).*
-  
+
+
 It can be handy the BibTeX format:
 
 ```bibtex
+@article{cuadra2024a_preprint,
+    title            = {Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium},
+    author           = {Cuadra, Alberto and Huete, C{\'e}sar and Vera, Marcos},
+    year             = {2024},
+    eprint           = {2409.15086},
+    archivePrefix    = {arXiv},
+    primaryClass     = {physics.chem-ph},
+    url              = {https://arxiv.org/abs/2409.15086},
+    doi              = {10.48550/arXiv.2409.15086}
+}
+
 @misc{combustiontoolbox,
     author  = "Cuadra, A. and Huete, C. and Vera, M.",
     title   = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
     year    = 2024,
     note    = "Version 1.1.0",
     doi     = {https://doi.org/10.5281/zenodo.5554911}
-}
-
-@phdthesis{cuadra2023_thesis,
-    title   = {Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks},
-    author  = {Cuadra, A.},
-    year    = 2023,
-    month   = {May},
-    address = {Madrid, Spain},
-    note    = {Available at \url{http://hdl.handle.net/10016/38179}},
-    school  = {Universidad Carlos III de Madrid},
-    type    = {PhD thesis}
 }
 ```
 
