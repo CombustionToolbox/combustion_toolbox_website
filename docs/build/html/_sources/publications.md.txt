@@ -16,7 +16,7 @@ It can be handy the BibTeX format:
 ```bibtex
 @article{cuadra2024a_preprint,
     title         = {{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}},
-    author        = {Cuadra, A. and Huete, C. and Vera, M., Marcos},
+    author        = {Cuadra, A. and Huete, C. and Vera, M.},
     journal       = {{arXiv preprint arXiv:2409.15086}},
     year          = {2024},
     eprint        = {2409.15086},
