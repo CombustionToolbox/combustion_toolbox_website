@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Publications" href="publications.html" /><link rel="prev" title="Example_EXOPLANET_WASP43b_1.m" href="examples/examples_plain_EXOPLANET_WASP43b_1.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Validations - Combustion Toolbox v1.1.0</title>
+        <title>Validations - Combustion Toolbox v1.1.2</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Combustion Toolbox v1.1.0</div></a>
+      <a href="index.html"><div class="brand">Combustion Toolbox v1.1.2</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -241,7 +241,8 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/shock_waves/shock_waves_1.html">Incident shock waves</a></li>
 </ul>
 </li>
 </ul>
@@ -341,7 +342,7 @@
         <article role="main">
           <section id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
-<p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">NASA’s CEA</a> <span id="id1">[<a class="reference internal" href="references.html#id7" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>, <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id2">[<a class="reference internal" href="references.html#id24" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span>, <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a> <span id="id3">[<a class="reference internal" href="references.html#id188" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id23" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a> <span id="id4">[<a class="reference internal" href="references.html#id19" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span>.</p>
+<p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">NASA’s CEA</a> <span id="id1">[<a class="reference internal" href="references.html#id8" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>, <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id2">[<a class="reference internal" href="references.html#id25" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span>, <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a> <span id="id3">[<a class="reference internal" href="references.html#id189" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id24" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a> <span id="id4">[<a class="reference internal" href="references.html#id20" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Caltech’s SD-Toolbox uses the Cantera software package as kernel for the thermochemical calculations.</p>
