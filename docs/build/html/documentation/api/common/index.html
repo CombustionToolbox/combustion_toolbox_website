@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Database classes" href="../databases/index.html" /><link rel="prev" title="API Documentation" href="../index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Common classes - Combustion Toolbox v1.1.3</title>
+        <title>Common classes - Combustion Toolbox v1.2.0</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.1.3</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -300,6 +300,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils/index.html">Utilities</a></li>
 </ul>
 </li>
@@ -420,6 +421,18 @@
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.HBAR">
+<span class="sig-name descname"><span class="pre">HBAR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'6.626070041e-34'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.HBAR" title="Permalink to this definition">#</a></dt>
+<dd><p>Planck constant [J-s]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.KB">
+<span class="sig-name descname"><span class="pre">KB</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.38064852e-23'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.KB" title="Permalink to this definition">#</a></dt>
+<dd><p>Boltzmann constant [J/K]</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">NA</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'6.0221415e23'</span></em></dt>
 <dd><p>Avogadro’s number [molecule/mol]</p>
@@ -433,13 +446,13 @@
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">date</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'29</span> <span class="pre">Aug</span> <span class="pre">2024'&quot;</span></em></dt>
+<span class="sig-name descname"><span class="pre">date</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'16</span> <span class="pre">March</span> <span class="pre">2025'&quot;</span></em></dt>
 <dd><p>Release date</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">release</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'v1.1.0'&quot;</span></em></dt>
+<span class="sig-name descname"><span class="pre">release</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'v1.2.0'&quot;</span></em></dt>
 <dd><p>Release version</p>
 </dd></dl>
 
@@ -454,39 +467,75 @@
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
 <p>Class with conversion factors between different units</p>
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.C2K">
+<span class="sig-name descname"><span class="pre">C2K</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'&#64;(x)</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">273.15'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.C2K" title="Permalink to this definition">#</a></dt>
+<dd><p>Degrees Celsius to Kelvin</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.F2C">
+<span class="sig-name descname"><span class="pre">F2C</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'&#64;(x)</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">32)</span> <span class="pre">*</span> <span class="pre">5/9'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.F2C" title="Permalink to this definition">#</a></dt>
+<dd><p>Fahrenheit to degrees Celsius</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.K2C">
+<span class="sig-name descname"><span class="pre">K2C</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'&#64;(x)</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">273.15'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.K2C" title="Permalink to this definition">#</a></dt>
+<dd><p>Temperature conversion factors</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.K2F">
+<span class="sig-name descname"><span class="pre">K2F</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'&#64;(x)</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">273.15)</span> <span class="pre">*</span> <span class="pre">9/5</span> <span class="pre">+</span> <span class="pre">32'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.K2F" title="Permalink to this definition">#</a></dt>
+<dd><p>Kelvin to Fahrenheit</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.L2ft3">
+<span class="sig-name descname"><span class="pre">L2ft3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'28.3168^-1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.L2ft3" title="Permalink to this definition">#</a></dt>
+<dd><p>Liters to cubic feet</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.L2m3">
+<span class="sig-name descname"><span class="pre">L2m3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.L2m3" title="Permalink to this definition">#</a></dt>
+<dd><p>Liters to cubic meters</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.Pa2atm">
 <span class="sig-name descname"><span class="pre">Pa2atm</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'101325^-1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.Pa2atm" title="Permalink to this definition">#</a></dt>
-<dd><p>Conversion factor from Pa to atm</p>
+<dd><p>Pascales to atmospheres</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.Pa2bar">
 <span class="sig-name descname"><span class="pre">Pa2bar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.Pa2bar" title="Permalink to this definition">#</a></dt>
-<dd><p>Conversion factor from Pa to bar</p>
+<dd><p>Pascals to bar</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.atm2Pa">
 <span class="sig-name descname"><span class="pre">atm2Pa</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'101325'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.atm2Pa" title="Permalink to this definition">#</a></dt>
-<dd><p>Conversion factor from atm to Pa</p>
+<dd><p>Atmospheres to Pascales</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.atm2bar">
 <span class="sig-name descname"><span class="pre">atm2bar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.01325'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.atm2bar" title="Permalink to this definition">#</a></dt>
-<dd><p>Pressure</p>
+<dd><p>Pressure conversion factors</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.bar2Pa">
 <span class="sig-name descname"><span class="pre">bar2Pa</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e5'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.bar2Pa" title="Permalink to this definition">#</a></dt>
-<dd><p>Conversion factor from bar to Pa</p>
+<dd><p>Bar to Pascals</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.bar2atm">
 <span class="sig-name descname"><span class="pre">bar2atm</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.01325^-1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.bar2atm" title="Permalink to this definition">#</a></dt>
-<dd><p>Conversion factor from bar to atm</p>
+<dd><p>Bar to atmospheres</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
@@ -505,10 +554,30 @@
 <dd class="field-even"><p><em>value_out</em> – Value converted to the output unit</p>
 </dd>
 </dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>Units.convert(1, ‘atm’, ‘bar’)</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>Units.convert(1, ‘atm’, ‘bar’)</p></li>
+<li><p>Units.convert(273.15, ‘K’, ‘C’)</p></li>
+<li><p>Units.convert(1, ‘kg’, ‘lbs’)</p></li>
+<li><p>Units.convert(1, ‘m3’, ‘ft3’)</p></li>
+<li><p>Units.convert(1, ‘m3’, ‘L’)</p></li>
+</ul>
 </div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.convertData2VelocityField">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">convertData2VelocityField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.convertData2VelocityField" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert the input to a VelocityField object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Either a VelocityField object, a struct, or a 4D matrix</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>velocity (VelocityField)</em> – VelocityField object</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat staticmethod">
@@ -531,6 +600,54 @@
 <p class="admonition-title">Example</p>
 <p>moles = Units.WeightPercentage2moles({‘H2O’, ‘CO2’}, [50, 50], database)</p>
 </div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.ft32L">
+<span class="sig-name descname"><span class="pre">ft32L</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'28.3168'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.ft32L" title="Permalink to this definition">#</a></dt>
+<dd><p>Cubic feet to liters</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.ft32m3">
+<span class="sig-name descname"><span class="pre">ft32m3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'35.3147^-1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.ft32m3" title="Permalink to this definition">#</a></dt>
+<dd><p>Cubic feet to cubic meters</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.g2kg">
+<span class="sig-name descname"><span class="pre">g2kg</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.g2kg" title="Permalink to this definition">#</a></dt>
+<dd><p>Grams to kilograms</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.kg2g">
+<span class="sig-name descname"><span class="pre">kg2g</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.kg2g" title="Permalink to this definition">#</a></dt>
+<dd><p>Kilograms to grams</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.kg2lbs">
+<span class="sig-name descname"><span class="pre">kg2lbs</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2.20462'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.kg2lbs" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass conversion factors</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.lbs2kg">
+<span class="sig-name descname"><span class="pre">lbs2kg</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'0.453592'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.lbs2kg" title="Permalink to this definition">#</a></dt>
+<dd><p>Pounds to kilograms</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.m32L">
+<span class="sig-name descname"><span class="pre">m32L</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e3'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.m32L" title="Permalink to this definition">#</a></dt>
+<dd><p>Cubic meters to liters</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Units.Units.m32ft3">
+<span class="sig-name descname"><span class="pre">m32ft3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'35.3147'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Units.Units.m32ft3" title="Permalink to this definition">#</a></dt>
+<dd><p>Volume conversion factors</p>
 </dd></dl>
 
 </dd></dl>

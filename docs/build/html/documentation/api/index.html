@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Common classes" href="common/index.html" /><link rel="prev" title="Publications" href="../../publications.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>API Documentation - Combustion Toolbox v1.1.3</title>
+        <title>API Documentation - Combustion Toolbox v1.2.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.1.3</div></a>
+      <a href="../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -300,6 +300,7 @@
 <li class="toctree-l2"><a class="reference internal" href="equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils/index.html">Utilities</a></li>
 </ul>
 </li>
@@ -367,7 +368,7 @@
 </div>
 <p>These top-layer folders contain the following:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+combustiontoolbox</span></code>: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+combustiontoolbox</span></code>: contains functions for the different modules, including CT-EQUIL, CT-SD, CT-ROCKET, and CT-TURBULENCE, along with routines for initializing CT.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">databases</span></code>: encompasses all databases utilized by CT.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: contains examples showcasing the usage of CT modules.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gui</span></code>: houses functions and assets required to generate the app (GUI), add-ons, and extend the functionality of the plain code to the GUI.</p></li>
@@ -396,7 +397,9 @@
 <li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;Species">Species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;ChemicalSystem">ChemicalSystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;Mixture">Mixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;MixtureConfig">MixtureConfig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;EquationState">EquationState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/index.html#module-src.+combustiontoolbox.+core.&#64;EquationStateIdealGas">EquationStateIdealGas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="equilibrium/index.html">Thermochemical equilibrium module</a><ul>
@@ -410,6 +413,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rocket/index.html">Rocket module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rocket/index.html#module-src.+combustiontoolbox.+rocket.&#64;RocketSolver">RocketSolver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence/index.html">Turbulence module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="turbulence/index.html#module-src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver">HelmholtzSolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turbulence/index.html#module-src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra">TurbulenceSpectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turbulence/index.html#module-src.+combustiontoolbox.+turbulence.&#64;VelocityField">VelocityField</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utils/index.html">Utilities</a><ul>
