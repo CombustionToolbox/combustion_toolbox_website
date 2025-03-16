@@ -27,7 +27,7 @@ Here we can find the documentation for the routines implemented in the Combustio
 
 These top-layer folders contain the following:
 
-* ```+combustiontoolbox```: contains functions for the different modules, including CT-EQUIL, CT-SD, and CT-ROCKET, along with routines for initializing CT.
+* ```+combustiontoolbox```: contains functions for the different modules, including CT-EQUIL, CT-SD, CT-ROCKET, and CT-TURBULENCE, along with routines for initializing CT.
 * ```databases```: encompasses all databases utilized by CT.
 * ```examples```: contains examples showcasing the usage of CT modules.
 * ```gui```: houses functions and assets required to generate the app (GUI), add-ons, and extend the functionality of the plain code to the GUI.
@@ -48,5 +48,6 @@ core/index
 equilibrium/index
 shockdetonation/index
 rocket/index
+turbulence/index
 utils/index
 ```

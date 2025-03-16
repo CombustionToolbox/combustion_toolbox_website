@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Databases" href="../../databases/index.html" /><link rel="prev" title="Rocket module" href="../rocket/index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Databases" href="../../databases/index.html" /><link rel="prev" title="Turbulence module" href="../turbulence/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Utilities - Combustion Toolbox v1.1.3</title>
+        <title>Utilities - Combustion Toolbox v1.2.0</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.1.3</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -300,6 +300,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Utilities</a></li>
 </ul>
 </li>
@@ -813,6 +814,12 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.displaySpecies">
+<span class="sig-name descname"><span class="pre">displaySpecies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.displaySpecies" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Display species</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">fontsize</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'22'</span></em></dt>
 <dd><p class="sd-card-text">Set fontsize</p>
@@ -903,6 +910,12 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.mintolDisplay">
+<span class="sig-name descname"><span class="pre">mintolDisplay</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-6'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.mintolDisplay" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Minimum tolerance to display species</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">orange</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'[212,</span> <span class="pre">85,</span> <span class="pre">0]/255'</span></em></dt>
 <dd><p class="sd-card-text">Default colorline</p>
@@ -912,6 +925,18 @@ Routines<div class="sd-summary-down docutils">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">outerposition</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'[0.05</span> <span class="pre">0.05</span> <span class="pre">0.9</span> <span class="pre">0.9]'</span></em></dt>
 <dd><p class="sd-card-text">Set figure outer position [normalized]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.plotProperties">
+<span class="sig-name descname"><span class="pre">plotProperties</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;{'T',</span> <span class="pre">'p',</span> <span class="pre">'rho',</span> <span class="pre">'h',</span> <span class="pre">'e',</span> <span class="pre">'g',</span> <span class="pre">'cp',</span> <span class="pre">'s',</span> <span class="pre">'gamma_s',</span> <span class="pre">'sound'}&quot;</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.plotProperties" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot properties</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.plotPropertiesBasis">
+<span class="sig-name descname"><span class="pre">plotPropertiesBasis</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;{[],</span> <span class="pre">[],</span> <span class="pre">[],</span> <span class="pre">'mi',</span> <span class="pre">'mi',</span> <span class="pre">'mi',</span> <span class="pre">'mi',</span> <span class="pre">'mi',</span> <span class="pre">[],</span> <span class="pre">[]}&quot;</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.plotPropertiesBasis" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot properties basis</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1390,6 +1415,90 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 
 <dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.fftfreq">
+<span class="sig-name descname"><span class="pre">fftfreq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.fftfreq" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Return the Discrete Fourier Transform sample frequencies</p>
+<p class="sd-card-text">The returned float array <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">f</span></code> contains the frequency bin centers in cycles
+per unit of the sample spacing (with zero at the start). For instance, if
+the sample spacing is in seconds, then the frequency unit is cycles/second.</p>
+<p class="sd-card-text">Given a window length <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">n</span></code> and a sample spacing <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">d</span></code>:</p>
+<p class="sd-card-text">f = [0, 1, …,   n/2-1,     -n/2, …, -1] / (d*n)   if n is even
+f = [0, 1, …, (n-1)/2, -(n-1)/2, …, -1] / (d*n)   if n is odd</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>n</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Window length</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">d (float): Sample spacing (inverse of the sampling rate) [default: 1]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>value (float)</em> – Array of length <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">n//2</span> <span class="pre">+</span> <span class="pre">1</span></code> containing the sample frequencies</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.floorDiv">
+<span class="sig-name descname"><span class="pre">floorDiv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">a</span></em>, <em class="sig-param"><span class="pre">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.floorDiv" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Round the result of division toward negative infinity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>a</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Value a</p></li>
+<li><p class="sd-card-text"><strong>b</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Value b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>x (float)</em> – Floor division</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">x = floorDiv(5, 2);</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.getAlignment">
+<span class="sig-name descname"><span class="pre">getAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">field1</span></em>, <em class="sig-param"><span class="pre">field2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.getAlignment" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Computes the local cosine of the angle (alignment) between two vector fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>field1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D vector field</p></li>
+<li><p class="sd-card-text"><strong>field2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D vector field</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>cosTheta (float)</em> – 3D array representing the pointwise cosine of the angle between two vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.getGradientAlignment">
+<span class="sig-name descname"><span class="pre">getGradientAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">field1</span></em>, <em class="sig-param"><span class="pre">field2</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.getGradientAlignment" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute the alignment between two gradient fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>field1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D scalar field for which the gradient is computed</p></li>
+<li><p class="sd-card-text"><strong>field2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D scalar field for which the gradient is computed</p></li>
+<li><p class="sd-card-text"><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the x-coordinate of the grid</p></li>
+<li><p class="sd-card-text"><strong>y</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the y-coordinate of the grid</p></li>
+<li><p class="sd-card-text"><strong>z</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the z-coordinate of the grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>cosTheta (float)</em> – 3D array with the cosine of the angle between gradients</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.getOrder">
 <span class="sig-name descname"><span class="pre">getOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.getOrder" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Get order of magnitude of a number in base 10</p>
@@ -1404,6 +1513,32 @@ Routines<div class="sd-summary-down docutils">
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p class="sd-card-text">order = getOrder(0.0001)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+math.gradientPeriodic">
+<span class="sig-name descname"><span class="pre">gradientPeriodic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">phi</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+math.gradientPeriodic" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Computes the gradient of a three-dimensional scalar field using
+second-order central finite differences considering a periodic box</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>phi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Scalar field to compute the gradient of</p></li>
+<li><p class="sd-card-text"><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the x-coordinate of the grid</p></li>
+<li><p class="sd-card-text"><strong>y</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the y-coordinate of the grid</p></li>
+<li><p class="sd-card-text"><strong>z</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the z-coordinate of the grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>grad_x (float)</em> – 3D array with the gradient of phi over x
+grad_y (float): 3D array with the gradient of phi over y
+grad_z (float): 3D array with the gradient of phi over z</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[grad_x, grad_y, grad_z] = gradientPeriodic(phi, x, y, z);</p>
 </div>
 </dd></dl>
 
@@ -1723,6 +1858,519 @@ Routines<div class="sd-summary-down docutils">
 
 </div>
 </details></section>
+<section id="htrdataaverage">
+<h3>HTRDataAverage<a class="headerlink" href="#htrdataaverage" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a> class is designed for postprocessing and statistical analysis of simulation data from the <a class="reference external" href="https://github.com/stanfordhpccenter/HTR-solver"><strong>HTR solver</strong></a>. It provides utilities to compute spatial and temporal averages of key flow properties, such as velocity, temperature, pressure, and species concentrations.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.&#64;HTRDataAverage"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTRDataAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.utils.HTRDataReader</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">HTRDataAverage()</span></code></a> class provides methods to process averaged
+data from the HTR solver [1] output files, which are stored in the
+Hierarchical Data Format (HDF) file format.</p>
+<p class="sd-card-text">The Hypersonic Task-based Research (HTR) solver [1] is an open-source
+exascale-oriented task-based multi-GPU high-order code for hypersonics
+aerothermodynamics. The HTR solver is available at the GitHub repository [2].</p>
+<p class="sd-card-text">Note: The root-mean-square (rms) values from the HTR solver output files
+are not the true rms values, they are the square of the rms values.</p>
+<p class="rubric">References</p>
+<dl class="simple">
+<dt>[1] Di Renzo, M., Fu, L., and Urzay, J., HTR solver: An open-source</dt><dd><p class="sd-card-text">exascale-oriented task-based multi-GPU high-order code for
+hypersonics aerothermodynamics, Comput. Phys. Commun, Vol. 255,
+2020, p. 107262</p>
+</dd>
+</dl>
+<p class="sd-card-text">[2] <a class="reference external" href="https://github.com/stanfordhpccenter/HTR-solver">https://github.com/stanfordhpccenter/HTR-solver</a></p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.FLAG_K0">
+<span class="sig-name descname"><span class="pre">FLAG_K0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.FLAG_K0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Flag to normalize the grid coordinate</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.FLAG_SHIFT">
+<span class="sig-name descname"><span class="pre">FLAG_SHIFT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.FLAG_SHIFT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Flag to shift the grid coordinate to the shock location</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.HTRDataAverage">
+<span class="sig-name descname"><span class="pre">HTRDataAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.HTRDataAverage" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor for HTRDataAverage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>filepath</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the .hdf file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.applyWeight">
+<span class="sig-name descname"><span class="pre">applyWeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.applyWeight" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Apply weight to the raw data</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.averages">
+<span class="sig-name descname"><span class="pre">averages</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.averages" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Struct holding computed averages and derived data</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.axis">
+<span class="sig-name descname"><span class="pre">axis</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'x'&quot;</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.axis" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Axis for cross-plane averaging (‘x’, ‘y’, or ‘z’)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.eta">
+<span class="sig-name descname"><span class="pre">eta</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.eta" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Ratio of dilatational to solenoidal turbulent kinetic energy</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.filepath">
+<span class="sig-name descname"><span class="pre">filepath</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.filepath" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Path to the .hdf file</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getAverages">
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getAverages" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Complet averaging of the raw data</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getCorrelations">
+<span class="sig-name descname"><span class="pre">getCorrelations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getCorrelations" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute two-point statistics of the data (correlations)</p>
+<p class="sd-card-text">Note: The correlations are normalized by the pre-shock values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>correlations (float)</em> – Correlations of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getDissipation">
+<span class="sig-name descname"><span class="pre">getDissipation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getDissipation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute dissipation rate from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>dissipation (float)</em> – Dissipation rate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getFarfieldLocation">
+<span class="sig-name descname"><span class="pre">getFarfieldLocation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getFarfieldLocation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get far-field location from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>indexFarfield (float)</em> – Index of the far-field location</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getFavreRMS">
+<span class="sig-name descname"><span class="pre">getFavreRMS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getFavreRMS" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute Favre root-mean-square (rms) of the data</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getGrid">
+<span class="sig-name descname"><span class="pre">getGrid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getGrid" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get grid coordinate in the axis for cross-plane averaging and find shock location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>x (float)</em> – 1D array with the grid coordinate in the axis for cross-plane averaging
+dx (float): 1D array with the grid spacing in the axis for cross-plane averaging</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getKolmogorovLength">
+<span class="sig-name descname"><span class="pre">getKolmogorovLength</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getKolmogorovLength" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute Kolmogorov length scale from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>lengthKolmogorov (float)</em> – Kolmogorov length scale
+ratioGridLengthKolmogorov (float): Ratio of the grid length to the Kolmogorov length scale</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getLocalTurbulentMachNumber">
+<span class="sig-name descname"><span class="pre">getLocalTurbulentMachNumber</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getLocalTurbulentMachNumber" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute local turbulent Mach number from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>Mt (float)</em> – Local turbulent Mach number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getRMS">
+<span class="sig-name descname"><span class="pre">getRMS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getRMS" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute Reynolds root-mean-square (rms) of the data</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getShockLocation">
+<span class="sig-name descname"><span class="pre">getShockLocation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getShockLocation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Identify the mean shock location based on velocity gradients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>xShock (float)</em> – Shock location
+indexShock (float): Index of the mean shock location</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getTurbulentKineticEnergy">
+<span class="sig-name descname"><span class="pre">getTurbulentKineticEnergy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getTurbulentKineticEnergy" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute turbulent kinetic energy (TKE) amplification ratio from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>TKE_f (float)</em> – Turbulent kinetic energy (TKE)
+R11_f (float): Reynolds stress R11
+R22_f (float): Reynolds stress R22
+R33_f (float): Reynolds stress R33
+RTT_f (float): Reynolds stress RTT (mean of R22 and R33)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.getVariances">
+<span class="sig-name descname"><span class="pre">getVariances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getVariances" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute one-point statistics of the data</p>
+<p class="sd-card-text">Note: The correlations are normalized by the pre-shock values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>variances (float)</em> – Variances of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.indexFarfield">
+<span class="sig-name descname"><span class="pre">indexFarfield</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.indexFarfield" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Index of the far-field location to compare with LIA results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.indexPostShock">
+<span class="sig-name descname"><span class="pre">indexPostShock</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.indexPostShock" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Index of the post-shock location</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.indexPreShock">
+<span class="sig-name descname"><span class="pre">indexPreShock</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.indexPreShock" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Index of the pre-shock location</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.indexShock">
+<span class="sig-name descname"><span class="pre">indexShock</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.indexShock" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Index of the mean shock location</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.k0">
+<span class="sig-name descname"><span class="pre">k0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.k0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Energy-peak wavenumber</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.listProperties">
+<span class="sig-name descname"><span class="pre">listProperties</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.listProperties" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">List of properties in the raw data</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.listProperties_favg">
+<span class="sig-name descname"><span class="pre">listProperties_favg</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.listProperties_favg" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">List of properties in the raw data with Favre average</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.listProperties_frms">
+<span class="sig-name descname"><span class="pre">listProperties_frms</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.listProperties_frms" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">List of properties in the raw data with Favre rms</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.listProperties_rms">
+<span class="sig-name descname"><span class="pre">listProperties_rms</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.listProperties_rms" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">List of properties in the raw data with rms</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.load" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Load raw data from the HTR solver output file</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.numProperties">
+<span class="sig-name descname"><span class="pre">numProperties</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.numProperties" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of properties in the raw data</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.numProperties_favg">
+<span class="sig-name descname"><span class="pre">numProperties_favg</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.numProperties_favg" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of properties in the raw data with Favre average</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.numProperties_frms">
+<span class="sig-name descname"><span class="pre">numProperties_frms</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.numProperties_frms" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of properties in the raw data with Favre rms</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.numProperties_rms">
+<span class="sig-name descname"><span class="pre">numProperties_rms</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.numProperties_rms" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of properties in the raw data with rms</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xField</span></em>, <em class="sig-param"><span class="pre">yField</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.plot" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot the average data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p></li>
+<li><p class="sd-card-text"><strong>xField</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the x-coordinate property</p></li>
+<li><p class="sd-card-text"><strong>yField</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the y-coordinate property</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Additional key-value arguments:</dt><dd><p class="sd-card-text">ax (matlab.graphics.axis.Axes): Axes object to plot the data</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>ax (matlab.graphics.axis.Axes)</em> – Axes object with the plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.plotConfig">
+<span class="sig-name descname"><span class="pre">plotConfig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.plotConfig" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">PlotConfig object</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.plotYaxisScale">
+<span class="sig-name descname"><span class="pre">plotYaxisScale</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'[0.9,</span> <span class="pre">1.3]'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.plotYaxisScale" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Factor to scale the y-axis in the plot</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.print" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Print summary of the average data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">HTRDataAverage</span></code></a></span>) – HTRDataAverage object</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">print(obj);</p>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.rawData">
+<span class="sig-name descname"><span class="pre">rawData</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.rawData" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Struct holding raw data from the .hdf file</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.sliceDim">
+<span class="sig-name descname"><span class="pre">sliceDim</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.sliceDim" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Slicing dimension</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.tolShock">
+<span class="sig-name descname"><span class="pre">tolShock</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.tolShock" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Relative tolerance for shock detection</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.weight" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Data weighting factor</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
+<section id="htrdatareader">
+<h3>HTRDataReader<a class="headerlink" href="#htrdatareader" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader" title="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">HTRDataReader</span></code></a> class is responsible for reading and parsing raw simulation data produced by the <a class="reference external" href="https://github.com/stanfordhpccenter/HTR-solver"><strong>HTR solver</strong></a>. It enables efficient data extraction for further analysis and visualization.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.&#64;HTRDataReader"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTRDataReader</span></span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader" title="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">HTRDataReader()</span></code></a> class provides static methods to read 3D fields,
+coordinates, and general data from HTR solver [1] output files, which are
+stored in the Hierarchical Data Format (HDF) file format.</p>
+<p class="sd-card-text">The Hypersonic Task-based Research (HTR) solver [1] is an open-source
+exascale-oriented task-based multi-GPU high-order code for hypersonics
+aerothermodynamics. The HTR solver is available at the GitHub repository [2].</p>
+<p class="rubric">References</p>
+<dl class="simple">
+<dt>[1] Di Renzo, M., Fu, L., and Urzay, J., HTR solver: An open-source</dt><dd><p class="sd-card-text">exascale-oriented task-based multi-GPU high-order code for
+hypersonics aerothermodynamics, Comput. Phys. Commun, Vol. 255,
+2020, p. 107262</p>
+</dd>
+</dl>
+<p class="sd-card-text">[2] <a class="reference external" href="https://github.com/stanfordhpccenter/HTR-solver">https://github.com/stanfordhpccenter/HTR-solver</a></p>
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader.read">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.read" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read general data from the .hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>filepath</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the .hdf file</p></li>
+<li><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the property to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Data array for the specified property</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader.read3D">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">read3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.read3D" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read a 3D property field from the .hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>filepath</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the .hdf file</p></li>
+<li><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the property to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>x, y, z (float)</em> – 3D arrays with the x, y, z components
+sz (float): Size of the 3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader.readAverage">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">readAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.readAverage" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read general data from the .hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>filepath</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the .hdf file</p></li>
+<li><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the property to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Data array for the specified property</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader.readCoordinates">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">readCoordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepathNodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.readCoordinates" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read coordinates and domain length from the .hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>filepathNodes</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the nodes file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>x, y, z (float)</em> – 1D arrays of coordinates
+L (float): Domain length</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader.readVelocityField">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">readVelocityField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.readVelocityField" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Read a 3D property field from the .hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>filepath</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Path to the .hdf file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>velocity (VelocityField)</em> – Velocity field object
+sz (float): Size of the 3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
 <section id="uncategoized">
 <h3>Uncategoized<a class="headerlink" href="#uncategoized" title="Permalink to this heading">#</a></h3>
 <p>Uncategorized utility functions and classes that do not fit into any of the specific subpackages are included here.</p>
@@ -1892,14 +2540,14 @@ on the input character array</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../rocket/index.html">
+          <a class="prev-page" href="../turbulence/index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Rocket module</div>
+                <div class="title">Turbulence module</div>
                 
               </div>
             </a>
@@ -1957,6 +2605,8 @@ on the input character array</p>
 <li><a class="reference internal" href="#other-functions-and-classes">Other functions and classes</a><ul>
 <li><a class="reference internal" href="#export">Export</a></li>
 <li><a class="reference internal" href="#systemutils">SystemUtils</a></li>
+<li><a class="reference internal" href="#htrdataaverage">HTRDataAverage</a></li>
+<li><a class="reference internal" href="#htrdatareader">HTRDataReader</a></li>
 <li><a class="reference internal" href="#uncategoized">Uncategoized</a></li>
 </ul>
 </li>

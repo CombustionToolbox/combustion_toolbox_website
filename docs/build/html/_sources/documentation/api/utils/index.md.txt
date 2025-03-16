@@ -91,6 +91,30 @@ The {mat:class}`~src.+combustiontoolbox.+utils.@SystemUtils.SystemUtils` class c
 ```
 :::
 
+### HTRDataAverage
+
+The {mat:class}`~src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage` class is designed for postprocessing and statistical analysis of simulation data from the [**HTR solver**](https://github.com/stanfordhpccenter/HTR-solver). It provides utilities to compute spatial and temporal averages of key flow properties, such as velocity, temperature, pressure, and species concentrations.
+
+:::{dropdown} Routines
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+utils.@HTRDataAverage
+   :show-inheritance:
+   :members:
+```
+:::
+
+### HTRDataReader
+
+The {mat:class}`~src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader` class is responsible for reading and parsing raw simulation data produced by the [**HTR solver**](https://github.com/stanfordhpccenter/HTR-solver). It enables efficient data extraction for further analysis and visualization.
+
+:::{dropdown} Routines
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+utils.@HTRDataReader
+   :show-inheritance:
+   :members:
+```
+:::
+
 ### Uncategoized
 
 Uncategorized utility functions and classes that do not fit into any of the specific subpackages are included here.

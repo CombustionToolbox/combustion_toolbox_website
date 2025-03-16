@@ -116,20 +116,18 @@ Completely open source, GUI included!
 
 ::::
 
-Combustion Toolbox {cite:p}`cuadra2024a_preprint` is a GUI-based thermochemical code written in MATLAB with an equilibrium kernel based on the mathematical formulation set forth by NASA in its CEA code {cite:p}`gordon1994`. The thermodynamic properties of the gaseous species are modeled with the ideal gas equation of state (EoS), and an up-to-date version of NASA's 9-coefficient polynomial fits from {cite:p}`Mcbride2002,burcat2005,ruscic2005`. CT is a new object-oriented thermochemical code written from scratch in a modular architectural format composed of three main modules: CT-EQUIL, CT-SD, and CT-ROCKET. 
+The Combustion Toolbox {cite:p}`cuadra2024a_preprint` is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:
 
-* **CT-EQUIL:** computes the composition at the equilibrium of multi-component gas mixtures that undergo canonical thermochemical transformations from an initial state (reactants), defined by its initial composition, temperature, and pressure, to a final state (products), defined by a set of chemical species (in gaseous---included ions---or pure condensed phase) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.
-* **CT-SD:** solves steady-state shock and detonation waves in either normal or oblique incidence.
-* **CT-ROCKET:** computes the theoretical performance of rocket engines under highly idealized conditions.
+- **CT-EQUIL** computes the equilibrium composition of multi-component gas mixtures undergoing thermochemical transformations. The final equilibrium state is determined by a predefined set of chemical species (gaseous—including ions—or condensed phases) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.
+- **CT-SD** solves steady-state shock and detonation wave problems for both normal and oblique incidence.  
+- **CT-ROCKET** estimates the theoretical performance of rocket engines under highly idealized conditions.
+- **CT-TURBULENCE** performs detailed analyses of turbulent flows, including turbulent statistics computations, Helmholtz decomposition, and spectral analyses.
 
-Even though all modules are enclosed in a user-friendly GUI, they can also be accessed from MATLAB's command line (in plain code mode). 
+The framework also includes an intuitive **graphical user interface (GUI)**, with a **royalty-free standalone version** available for Windows, macOS, and Linux.
 
-There is a fourth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx {cite:p}`simex2022` subject to a proprietary license. Further details on this module will be provided elsewhere. 
-
-This MATLAB-GUI thermochemical code represents the core of an ongoing research work the has been used to investigate a series of problems during the last few years {cite:p}`Cuadra2020,huete2021,simex2022,cuadra2023_aiaa`.
+There is a fifth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx {cite:p}`simex2022` subject to a proprietary license. Further details on this module will be provided elsewhere. 
 
 # Start here!
-
 
 ::::{grid} 1 2 2 3
 :margin: 4 4 0 0
@@ -198,55 +196,3 @@ Here we show some results obtained using the Combustion Toolbox.
 </p>
 
 **Figure 4:** *Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79\% N2, 21\% O2) at pre-shock temperature $T_1 = 300$ K and pressure $p_1 = 1$ atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with Cantera {cite:p}`cantera` within Caltech’s SD-Toolbox {cite:p}`Browne2008SDT, Browne2008`; diamonds: maximum deflection angle* $\theta_{\rm max}$.
-
-# Contributing
-
-Please send feedback or inquiries to [acuadra@ing.uc3m.es](mailto:acuadra@ing.uc3m.es)
-
-Thank you for testing the Combustion Toolbox!
-
-# Acknowledgements
-* Combustion Toolbox's color palette is obtained from the following repository: Stephen (2021). ColorBrewer: Attractive and Distinctive Colormaps (https://github.com/DrosteEffect/BrewerMap), GitHub. Retrieved December 3, 2021.
-* For validations, Combustion Toolbox uses CPU Info from the following repository: Ben Tordoff (2022). CPU Info (https://github.com/BJTor/CPUInfo/releases/tag/v1.3), GitHub. Retrieved March 22, 2022.
-* Combustion Toolbox's splash screen is based on a routine from the following repository: Ben Tordoff (2022). SplashScreen (https://www.mathworks.com/matlabcentral/fileexchange/30508-splashscreen), MATLAB Central File Exchange. Retrieved October 15, 2022.
-* Combustion Toolbox's periodic table layout is based in the following repository: Bruno Salcedo (2018). latex-periodic-table (https://github.com/brunosalcedo/latex-periodic-table), Github. Retrieved October 15, 2022.
-
-# People
-
-* **[Alberto Cuadra-Lara](https://acuadralara.com/)** - *Lead developer*
-* **César Huete** - *Advisor*
-* **Marcos Vera** - *Advisor*
-
-Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain
-
-See also the list of [contributors](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/CONTRIBUTORS.md) who participated in this project.
-
-# Citing Combustion Toolbox
-
-If you use the Combustion Toolbox in a publication, please cite it using the following references:
-
-* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. [arXiv:2409.15086](https://doi.org/10.48550/arXiv.2409.15086).*
-* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.1.3. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
-
-It can be handy the BibTeX format:
-
-```bibtex
-@article{cuadra2024a_preprint,
-    title         = {{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}},
-    author        = {Cuadra, A. and Huete, C. and Vera, M.},
-    journal       = {{arXiv preprint arXiv:2409.15086}},
-    year          = {2024},
-    eprint        = {2409.15086},
-    archivePrefix = {arXiv},
-    primaryClass  = {physics.chem-ph},
-    doi           = {10.48550/arXiv.2409.15086}
-}
-
-@misc{combustiontoolbox,
-    author  = "Cuadra, A. and Huete, C. and Vera, M.",
-    title   = "{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}",
-    year    = 2024,
-    note    = "Version 1.1.3",
-    doi     = {https://doi.org/10.5281/zenodo.5554911}
-}
-```

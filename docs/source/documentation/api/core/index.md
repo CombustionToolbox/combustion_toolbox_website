@@ -34,10 +34,26 @@ Combustion Toolbox relies on several core classes to perform its calculations. T
    :members:
 ```
 
+## MixtureConfig
+
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+core.@MixtureConfig
+   :show-inheritance:
+   :members:
+```
+
 ## EquationState
 
 ```{eval-rst}
 .. automodule:: src.+combustiontoolbox.+core.@EquationState
+   :show-inheritance:
+   :members:
+```
+
+## EquationStateIdealGas
+
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+core.@EquationStateIdealGas
    :show-inheritance:
    :members:
 ```
