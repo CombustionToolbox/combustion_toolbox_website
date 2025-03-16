@@ -28,7 +28,7 @@ matlab_src_dir = os.path.abspath('../..')
 
 project = 'Combustion Toolbox'
 project_acronym = 'CT'
-copyright = '2022-2024, Alberto Cuadra Lara'
+copyright = '2022-2025, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
