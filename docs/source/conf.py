@@ -71,7 +71,7 @@ myst_enable_extensions = [
 myst_substitutions = {
     'author': author,
     'version': release,
-    'copyright': 'Copyright © 2022-2024',
+    'copyright': 'Copyright © 2022-2025',
     'project': project,
     'affiliation': 'Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain',
 }
