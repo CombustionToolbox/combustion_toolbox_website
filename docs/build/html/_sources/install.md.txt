@@ -42,7 +42,7 @@ INSTALL('install', 'gui')
 
 Alternatively, you can execute the `combustion_toolbox_app.mlappinstall` file in the MATLAB Command Window to install the GUI, which will be available through the MATLAB Apps Toolbar.
 
-To install the standalone version, locate the installer folder and run the INSTALL_STANDALONE.sh script as follows:
+To install the standalone version, locate the installer folder and run the `INSTALL_STANDALONE.sh` script as follows:
 
 ```bash
 sh INSTALL_STANDALONE.sh
