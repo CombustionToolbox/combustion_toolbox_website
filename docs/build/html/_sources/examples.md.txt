@@ -9,12 +9,25 @@ Combustion Toolbox can be used through:
 * the user-friendly Graphic User Interface (GUI),
 * the desktop environment (plain code mode).
 
+Here we have a collection of examples included in the Combustion Toolbox using the desktop environment.
+
+```{toctree}
+    :caption: Contents
+    :maxdepth: 2
+examples/desktop/chemicalEquilibrium/examples_plain_chemicalEquilibrium
+examples/desktop/shock/examples_plain_shock
+examples/desktop/detonation/examples_plain_detonation
+examples/desktop/rocket/examples_plain_rocket
+examples/desktop/turbulence/examples_plain_turbulence
+```
+
+<!-- 
 ```{toctree}
     :caption: Contents
     :maxdepth: 2
     :titlesonly:
     
-examples/examples_gui
-examples/examples_plain
-```
-
+examples/gui/examples_gui
+examples/desktop/examples_plain 
+``` 
+-->
