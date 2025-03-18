@@ -5,7 +5,6 @@ Here we have a collection of examples included in the Combustion Toolbox for che
 ```{toctree}
     :caption: Contents
     :maxdepth: 2
-
 examples_plain_TP
 examples_plain_TV
 examples_plain_HP

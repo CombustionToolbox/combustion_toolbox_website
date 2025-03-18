@@ -5,7 +5,6 @@ Here we have a collection of examples included in the Combustion Toolbox for det
 ```{toctree}
     :caption: Contents
     :maxdepth: 2
-
 examples_plain_DET
 examples_plain_DET_R
 examples_plain_DET_OVERDRIVEN
