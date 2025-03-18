@@ -1,0 +1,513 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Incident and reflected shock waves for a given deflection angle" href="examples_plain_SHOCK_OBLIQUE_R.html" /><link rel="prev" title="Incident shock waves for different wave angles" href="examples_plain_SHOCK_OBLIQUE_BETA.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Incident shock waves for different deflection angles - Combustion Toolbox v1.2.0</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-announcement-background: #afe9ddff;
+  --color-announcement-text: #008080ff;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shock_waves/shock_waves_1.html">Incident shock waves</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_chemicalEquilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_TP.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_TV.html">Chemical equilibrium at constant temperature and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP_COMPLETE_INCOMPLETE.html">Chemical equilibrium at constant enthalpy and pressure for complete and incomplete combustion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP_HUMID_AIR.html">Chemical equilibrium at constant enthalpy and pressure for humid air</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP_NATURAL_GAS.html">Chemical equilibrium at constant enthalpy and pressure for natural gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP_MIXTEMP.html">Chemical equilibrium at constant enthalpy and pressure with different species temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_HP_PROPELLANTS.html">Chemical equilibrium at constant enthalpy and pressure for LH2/LOX propellants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_EV.html">Chemical equilibrium at constant internal energy and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_SP.html">Chemical equilibrium at constant entropy and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_SV.html">Chemical equilibrium at constant entropy and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chemicalEquilibrium/examples_plain_EXOPLANET_WASP43b_1.html">Chemical equilibrium composition of WASP-43b atmosphere</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="examples_plain_shock.html">Shock waves</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I.html">Incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I_IONIZATION.html">Incident shock waves with ionization effects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I_MACH.html">Incident shock waves for different Mach numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_I_THERMO.html">Incident shock waves for different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_R.html">Incident and reflected shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_OBLIQUE_BETA.html">Incident shock waves for different wave angles</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Incident shock waves for different deflection angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_OBLIQUE_R.html">Incident and reflected shock waves for a given deflection angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_POLAR.html">Incident shock polar diagrams for different pre-shock Mach numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET.html">Chapman Jouguet detonations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_R.html">Incident and reflected Champman-Jouguet detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_OVERDRIVEN.html">Overdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_OVERDRIVEN_R.html">Incident and reflected overdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_UNDERDRIVEN.html">Underdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_UNDERDRIVEN_R.html">Incident and reflected underdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Overdriven and underdrive detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_OBLIQUE_BETA.html">Oblique detonation waves for different wave angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_OBLIQUE_THETA.html">Oblique detonation waves for different deflection angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../detonation/examples_plain_DET_POLAR.html">Incident detonation polar diagrams for different drive factors</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rocket/examples_plain_rocket.html">Rockets</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rocket/examples_plain_ROCKET_IAC.html">Rocket performance considering the infinite-area-chamber approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra of a turbulent field</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/common/index.html">Common classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/databases/index.html">Database classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/turbulence/index.html">Turbulence module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../documentation/api/utils/index.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation/databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation/gui/index.html">GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="incident-shock-waves-for-different-deflection-angles">
+<h1>Incident shock waves for different deflection angles<a class="headerlink" href="#incident-shock-waves-for-different-deflection-angles" title="Permalink to this heading">#</a></h1>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: SHOCK_OBLIQUE_THETA</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="c">% Compute pre-shock and post-shock state for a oblique incident shock wave</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="c">% at standard conditions, a set of 51 species considered, a pre-shock Mach</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="c">% number M1 = 10, and a set of deflection angle theta = [5:1:40] [deg]</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="c">%    </span><span class="w"></span>
+<span class="linenos"> 8</span><span class="c">% Air_ions == {&#39;eminus&#39;, &#39;Ar&#39;, &#39;Arplus&#39;, &#39;C&#39;, &#39;Cplus&#39;, &#39;Cminus&#39;, ...</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="c">%              &#39;CN&#39;, &#39;CNplus&#39;, &#39;CNminus&#39;, &#39;CNN&#39;, &#39;CO&#39;, &#39;COplus&#39;, ...</span><span class="w"></span>
+<span class="linenos">10</span><span class="c">%              &#39;CO2&#39;, &#39;CO2plus&#39;, &#39;C2&#39;, &#39;C2plus&#39;, &#39;C2minus&#39;, &#39;CCN&#39;, ...</span><span class="w"></span>
+<span class="linenos">11</span><span class="c">%              &#39;CNC&#39;, &#39;OCCN&#39;, &#39;C2N2&#39;, &#39;C2O&#39;, &#39;C3&#39;, &#39;C3O2&#39;, &#39;N&#39;, ...</span><span class="w"></span>
+<span class="linenos">12</span><span class="c">%              &#39;Nplus&#39;, &#39;Nminus&#39;, &#39;NCO&#39;, &#39;NO&#39;, &#39;NOplus&#39;, &#39;NO2&#39;, ...</span><span class="w"></span>
+<span class="linenos">13</span><span class="c">%              &#39;NO2minus&#39;, &#39;NO3&#39;, &#39;NO3minus&#39;, &#39;N2&#39;, &#39;N2plus&#39;, ...</span><span class="w"></span>
+<span class="linenos">14</span><span class="c">%              &#39;N2minus&#39;, &#39;NCN&#39;, &#39;N2O&#39;, &#39;N2Oplus&#39;, &#39;N2O3&#39;, &#39;N2O4&#39;, ...</span><span class="w"></span>
+<span class="linenos">15</span><span class="c">%              &#39;N2O5&#39;, &#39;N3&#39;, &#39;O&#39;, &#39;Oplus&#39;, &#39;Ominus&#39;, &#39;O2&#39;, &#39;O2plus&#39;, ...</span><span class="w"></span>
+<span class="linenos">16</span><span class="c">%              &#39;O2minus&#39;, &#39;O3&#39;}</span><span class="w"></span>
+<span class="linenos">17</span><span class="c">%   </span><span class="w"></span>
+<span class="linenos">18</span><span class="c">% See wiki or setListspecies method from ChemicalSystem class for more</span><span class="w"></span>
+<span class="linenos">19</span><span class="c">% predefined sets of species</span><span class="w"></span>
+<span class="linenos">20</span><span class="c">%</span><span class="w"></span>
+<span class="linenos">21</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
+<span class="linenos">22</span><span class="c">%          Postdoctoral researcher - Group Fluid Mechanics</span><span class="w"></span>
+<span class="linenos">23</span><span class="c">%          Universidad Carlos III de Madrid</span><span class="w"></span>
+<span class="linenos">24</span><span class="c">%                 </span><span class="w"></span>
+<span class="linenos">25</span><span class="c">% Last update April 02 2024</span><span class="w"></span>
+<span class="linenos">26</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="c">% Import packages</span><span class="w"></span>
+<span class="linenos">29</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
+<span class="linenos">30</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">31</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">shockdetonation</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">32</span><span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="o">.*</span><span class="w"></span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c">% Get Nasa database</span><span class="w"></span>
+<span class="linenos">35</span><span class="n">DB</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NasaDatabase</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="c">% Define chemical system</span><span class="w"></span>
+<span class="linenos">38</span><span class="nb">system</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">DB</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;air ions&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c">% Initialize mixture</span><span class="w"></span>
+<span class="linenos">41</span><span class="n">mix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Mixture</span><span class="p">(</span><span class="nb">system</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c">% Define chemical state</span><span class="w"></span>
+<span class="linenos">44</span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CO2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mf">78.084</span><span class="p">,</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9365</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0319</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">20.9476</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="c">% Define properties</span><span class="w"></span>
+<span class="linenos">47</span><span class="n">mixArray1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;M1&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">40</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="c">% Initialize solver</span><span class="w"></span>
+<span class="linenos">50</span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SHOCK_OBLIQUE&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">51</span>
+<span class="linenos">52</span><span class="c">% Solve problem</span><span class="w"></span>
+<span class="linenos">53</span><span class="p">[</span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">solveArray</span><span class="p">(</span><span class="n">mixArray1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="c">% Plot Hugoniot curve</span><span class="w"></span>
+<span class="linenos">56</span><span class="n">ax1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;\rho_1 / \rho_2&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">rho</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_1</span><span class="p">.</span><span class="n">rho</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;p_2 / p_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_1</span><span class="p">.</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">p</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;xScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;yScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;auto&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">57</span><span class="n">ax1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;\rho_1 / \rho_2&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">rho</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_2</span><span class="p">.</span><span class="n">rho</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;p_2 / p_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_2</span><span class="p">.</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">p</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;xScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;yScale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;auto&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;ax&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ax1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="c">% Plot post-shock temperature</span><span class="w"></span>
+<span class="linenos">60</span><span class="n">ax2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">theta</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_1</span><span class="p">.</span><span class="n">T</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;auto&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">61</span><span class="n">ax2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotFigure</span><span class="p">(</span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray1</span><span class="p">.</span><span class="n">theta</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">mixArray2_2</span><span class="p">.</span><span class="n">T</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;auto&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;ax&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ax2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="c">% Plot molar fractions</span><span class="w"></span>
+<span class="linenos">64</span><span class="n">plotComposition</span><span class="p">(</span><span class="n">mixArray2_1</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Xi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mintol&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;y_var&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">65</span><span class="n">plotComposition</span><span class="p">(</span><span class="n">mixArray2_2</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Xi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mintol&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;y_var&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="c">% Plot properties</span><span class="w"></span>
+<span class="linenos">68</span><span class="k">properties</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;rho&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;h&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;s&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gamma_s&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">69</span><span class="n">propertiesBasis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{[],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="s">&#39;mi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mi&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[]};</span><span class="w"></span>
+<span class="linenos">70</span><span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotProperties</span><span class="p">(</span><span class="n">repmat</span><span class="p">({</span><span class="s">&#39;theta&#39;</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">properties</span><span class="p">)),</span><span class="w"> </span><span class="n">mixArray2_1</span><span class="p">,</span><span class="w"> </span><span class="n">properties</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;basis&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">propertiesBasis</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;linestyle&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;-&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">71</span><span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">plotProperties</span><span class="p">(</span><span class="n">repmat</span><span class="p">({</span><span class="s">&#39;theta&#39;</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">properties</span><span class="p">)),</span><span class="w"> </span><span class="n">mixArray2_2</span><span class="p">,</span><span class="w"> </span><span class="n">properties</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2_2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;basis&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">propertiesBasis</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="s">&#39;linestyle&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;--&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;ax&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ax</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="examples_plain_SHOCK_OBLIQUE_R.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Incident and reflected shock waves for a given deflection angle</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="examples_plain_SHOCK_OBLIQUE_BETA.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Incident shock waves for different wave angles</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>
