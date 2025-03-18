@@ -4,8 +4,7 @@ Here we have a collection of examples included in the Combustion Toolbox for est
 
 ```{toctree}
     :caption: Contents
-    :maxdepth: 0
-
+    :maxdepth: 2
 examples_plain_ROCKET_IAC
 examples_plain_ROCKET_FAC
 ```

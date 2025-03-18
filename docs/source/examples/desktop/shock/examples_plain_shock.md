@@ -5,7 +5,6 @@ Here we have a collection of examples included in the Combustion Toolbox for sho
 ```{toctree}
     :caption: Contents
     :maxdepth: 2
-
 examples_plain_SHOCK_I
 examples_plain_SHOCK_I_IONIZATION
 examples_plain_SHOCK_I_MACH
