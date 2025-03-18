@@ -1,7 +1,7 @@
 # Example_HP_MIXTEMP.m
 
-<!-- ```{eval-rst}
+```{eval-rst}
 .. literalinclude:: ../../../src/examples/Example_HP_MIXTEMP.m
    :language: matlab
    :linenos:
-``` -->
+```
