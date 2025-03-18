@@ -1,6 +1,6 @@
 # Shock waves
 
-Here we have a collection of examples included in the Combustion Toolbox for detonation wave calculations. 
+Here we have a collection of examples included in the Combustion Toolbox for shock wave calculations. 
 
 ```{toctree}
     :caption: Contents
