@@ -41,7 +41,8 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Journal articles
 
-* Cuadra, A., Di Renzo, M., Hoste, J., Williams, C. T., Vera, M., & Huete, C. (2025). Review of Shock-Turbulence Interaction with a Focus on Hypersonic Flow. Physics of Fluids 37 (accepted). [doi:10.1063/5.0255816](https://doi.org/10.1063/5.0255816).
+* Elmeknassi, Y. He, W., Adam, A., Han, D., & Shuo, D. (2025). Integrated optimization of hydrogen-fueled gas turbine parameters: Balancing efficiency and economic viability. International Journal of Hydrogen Energy, 135, 111-120. [doi:10.1016/j.ijhydene.2025.04.528](https://doi.org/10.1016/j.ijhydene.2025.04.528).
+* Cuadra, A., Di Renzo, M., Hoste, J., Williams, C. T., Vera, M., & Huete, C. (2025). Review of Shock-Turbulence Interaction with a Focus on Hypersonic Flow. Physics of Fluids 37. [doi:10.1063/5.0255816](https://doi.org/10.1063/5.0255816).
 * Chang, X., Hongting, M., & Xiaohui, Y. (2024). Comprehensive performance evaluation method of working fluids for high temperature heat pump based on multi-objective optimization. Applied Thermal Engineering, 123102. [doi:10.1016/j.applthermaleng.2024.123102](https://doi.org/10.1016/j.applthermaleng.2024.123102).
 * Chen, J., Sun, M., Li, P., An, B., Jiaoru, W., & Li, M. (2024). Effects of excess oxidizer coefficient on RBCC engine performance in ejector mode: A theoretical investigation. Energy, 289, 130070. [doi:10.1016/j.energy.2023.130070](https://doi.org/10.1016/j.energy.2023.130070).
 * Cuadra, A., Huete, C., & Vera, M. (2023). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium **(under review)**.
