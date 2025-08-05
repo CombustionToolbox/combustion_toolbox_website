@@ -297,7 +297,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
 </ul>
@@ -363,12 +363,18 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
 </p>
 <!-- Intro -->
-<p><br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br></p>
+<p><br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, turbulence diagnostics, and spectral analysis.
+</b> </center> <br></p>
+<!-- 
+
+A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, shock–turbulence interaction, and turbulence analysis.
+
+-->
 <p class= "only-light" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2.svg" width="400"/>
 </p>
 <p class= "only-dark" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT_dark_v2.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2_dark.svg" width="400"/>
 </p>
 <!-- Grid -->
 <div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
@@ -409,108 +415,76 @@
     <img src="_static/gif/example_det_overdriven_gui.gif" width="345">&nbsp;
     <img src="_static/gif/example_det_overdriven.gif" width="360">
 </p>
-</section>
-<section id="combustion-toolbox-capabilities">
-<h1>Combustion Toolbox capabilities<a class="headerlink" href="#combustion-toolbox-capabilities" title="Permalink to this heading">#</a></h1>
-<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cpu" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5.75a.75.75 0 00-1.5 0V2H3.75A1.75 1.75 0 002 3.75V5H.75a.75.75 0 000 1.5H2v3H.75a.75.75 0 000 1.5H2v1.25c0 .966.784 1.75 1.75 1.75H5v1.25a.75.75 0 001.5 0V14h3v1.25a.75.75 0 001.5 0V14h1.25A1.75 1.75 0 0014 12.25V11h1.25a.75.75 0 000-1.5H14v-3h1.25a.75.75 0 000-1.5H14V3.75A1.75 1.75 0 0012.25 2H11V.75a.75.75 0 00-1.5 0V2h-3V.75zm5.75 11.75h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25zM5.75 5a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-4.5a.75.75 0 00-.75-.75h-4.5zm.75 4.5v-3h3v3h-3z"></path></svg> Robust chemical equilibrium computations</div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">TP</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">HP</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">SP</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">TV</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">EV</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">SV</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">frozen</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">plasma state</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/equilibrium/index.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-device-desktop" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2.5h12.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25zM14.25 1H1.75A1.75 1.75 0 000 2.75v7.5C0 11.216.784 12 1.75 12h3.727c-.1 1.041-.52 1.872-1.292 2.757A.75.75 0 004.75 16h6.5a.75.75 0 00.565-1.243c-.772-.885-1.193-1.716-1.292-2.757h3.727A1.75 1.75 0 0016 10.25v-7.5A1.75 1.75 0 0014.25 1zM9.018 12H6.982a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5z"></path></svg> Interactive App</div>
-<p class="sd-card-text">Over 10K lines of code encapsulated in a <code class="docutils literal notranslate"><span class="pre">user-friendly</span></code> GUI with tons of capabilities.
-<span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Toolbox</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Standalone (royalty-free)</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-tab" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.25a.75.75 0 00-1.5 0v15a.75.75 0 001.5 0v-15zm-9.72 14.28a.75.75 0 11-1.06-1.06l4.97-4.97H1.75a.75.75 0 010-1.5h14.44l-4.97-4.97a.75.75 0 011.06-1.06l6.25 6.25a.75.75 0 010 1.06l-6.25 6.25z"></path></svg> Shocks and detonations pre- and post-shock states </div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Incident</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Reflected</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Oblique</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Shock polar</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Detonations polar</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Regular Reflections</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/shockdetonation/index.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-globe" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.543 7.25h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.506 6.506 0 00-4.666 5.5zm2.733 1.5H1.543a6.506 6.506 0 004.666 5.5 11.13 11.13 0 01-.352-.552c-.715-1.192-1.437-2.874-1.581-4.948zm1.504 0h4.44a9.637 9.637 0 01-1.363 4.177c-.306.51-.612.919-.857 1.215a9.978 9.978 0 01-.857-1.215A9.637 9.637 0 015.78 8.75zm4.44-1.5H5.78a9.637 9.637 0 011.363-4.177c.306-.51.612-.919.857-1.215.245.296.55.705.857 1.215A9.638 9.638 0 0110.22 7.25zm1.504 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.506 6.506 0 004.666-5.5h-2.733zm2.733-1.5h-2.733c-.144-2.074-.866-3.756-1.58-4.948a11.738 11.738 0 00-.353-.552 6.506 6.506 0 014.666 5.5zM8 0a8 8 0 100 16A8 8 0 008 0z"></path></svg> Open source</div>
-<p class="sd-card-text">Completely open source, GUI included!
-<span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">GitHub</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">FileExchange</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Zenodo</span> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">GPLv3</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox"></a></div>
-</div>
-</div>
-</div>
-<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-rocket" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M14.064 0a8.75 8.75 0 00-6.187 2.563l-.459.458c-.314.314-.616.641-.904.979H3.31a1.75 1.75 0 00-1.49.833L.11 7.607a.75.75 0 00.418 1.11l3.102.954c.037.051.079.1.124.145l2.429 2.428c.046.046.094.088.145.125l.954 3.102a.75.75 0 001.11.418l2.774-1.707a1.75 1.75 0 00.833-1.49V9.485c.338-.288.665-.59.979-.904l.458-.459A8.75 8.75 0 0016 1.936V1.75A1.75 1.75 0 0014.25 0h-.186zM10.5 10.625c-.088.06-.177.118-.266.175l-2.35 1.521.548 1.783 1.949-1.2a.25.25 0 00.119-.213v-2.066zM3.678 8.116L5.2 5.766c.058-.09.117-.178.176-.266H3.309a.25.25 0 00-.213.119l-1.2 1.95 1.782.547zm5.26-4.493A7.25 7.25 0 0114.063 1.5h.186a.25.25 0 01.25.25v.186a7.25 7.25 0 01-2.123 5.127l-.459.458a15.21 15.21 0 01-2.499 2.02l-2.317 1.5-2.143-2.143 1.5-2.317a15.25 15.25 0 012.02-2.5l.458-.458h.002zM12 5a1 1 0 11-2 0 1 1 0 012 0zm-8.44 9.56a1.5 1.5 0 10-2.12-2.12c-.734.73-1.047 2.332-1.15 3.003a.23.23 0 00.265.265c.671-.103 2.273-.416 3.005-1.148z"></path></svg> Rocket propellant performance</div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Infinite-Chamber-Area</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Finite-Chamber-Area</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/rocket/index.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-server" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v4c0 .372.116.717.314 1a1.742 1.742 0 00-.314 1v4c0 .966.784 1.75 1.75 1.75h12.5A1.75 1.75 0 0016 12.75v-4c0-.372-.116-.717-.314-1 .198-.283.314-.628.314-1v-4A1.75 1.75 0 0014.25 1H1.75zm0 7.5a.25.25 0 00-.25.25v4c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-4a.25.25 0 00-.25-.25H1.75zM1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v4a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-4zm5.5 2A.75.75 0 017.75 4h4.5a.75.75 0 010 1.5h-4.5A.75.75 0 017 4.75zM7.75 10a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM3 4.75A.75.75 0 013.75 4h.5a.75.75 0 010 1.5h-.5A.75.75 0 013 4.75zM3.75 10a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5z"></path></svg> Extensive database with NASA’s 9-coefficient polynomial fits up to 20000 K</div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">NASA</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Burcat</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">ATcT</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/databases/index.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-verified" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M9.585.52a2.678 2.678 0 00-3.17 0l-.928.68a1.178 1.178 0 01-.518.215L3.83 1.59a2.678 2.678 0 00-2.24 2.24l-.175 1.14a1.178 1.178 0 01-.215.518l-.68.928a2.678 2.678 0 000 3.17l.68.928c.113.153.186.33.215.518l.175 1.138a2.678 2.678 0 002.24 2.24l1.138.175c.187.029.365.102.518.215l.928.68a2.678 2.678 0 003.17 0l.928-.68a1.17 1.17 0 01.518-.215l1.138-.175a2.678 2.678 0 002.241-2.241l.175-1.138c.029-.187.102-.365.215-.518l.68-.928a2.678 2.678 0 000-3.17l-.68-.928a1.179 1.179 0 01-.215-.518L14.41 3.83a2.678 2.678 0 00-2.24-2.24l-1.138-.175a1.179 1.179 0 01-.518-.215L9.585.52zM7.303 1.728c.415-.305.98-.305 1.394 0l.928.68c.348.256.752.423 1.18.489l1.136.174c.51.078.909.478.987.987l.174 1.137c.066.427.233.831.489 1.18l.68.927c.305.415.305.98 0 1.394l-.68.928a2.678 2.678 0 00-.489 1.18l-.174 1.136a1.178 1.178 0 01-.987.987l-1.137.174a2.678 2.678 0 00-1.18.489l-.927.68c-.415.305-.98.305-1.394 0l-.928-.68a2.678 2.678 0 00-1.18-.489l-1.136-.174a1.178 1.178 0 01-.987-.987l-.174-1.137a2.678 2.678 0 00-.489-1.18l-.68-.927a1.178 1.178 0 010-1.394l.68-.928c.256-.348.423-.752.489-1.18l.174-1.136c.078-.51.478-.909.987-.987l1.137-.174a2.678 2.678 0 001.18-.489l.927-.68zM11.28 6.78a.75.75 0 00-1.06-1.06L7 8.94 5.78 7.72a.75.75 0 00-1.06 1.06l1.75 1.75a.75.75 0 001.06 0l3.75-3.75z"></path></svg> Excellent agreement with <code class="docutils literal notranslate"><span class="pre">NASA's</span> <span class="pre">CEA</span></code>, <code class="docutils literal notranslate"><span class="pre">Cantera</span></code>, <code class="docutils literal notranslate"><span class="pre">Caltech's</span> <span class="pre">SD-Toolbox</span></code>, and <code class="docutils literal notranslate"><span class="pre">TEA</span></code></div>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/validations.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-graph" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 1.75a.75.75 0 00-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H1.5V1.75zm14.28 2.53a.75.75 0 00-1.06-1.06L10 7.94 7.53 5.47a.75.75 0 00-1.06 0L3.22 8.72a.75.75 0 001.06 1.06L7 7.06l2.47 2.47a.75.75 0 001.06 0l5.25-5.25z"></path></svg> Predefined plots</div>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#display-functions"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-download" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path></svg> Export results</div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">.xls</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">.mat</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#export-functions"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-versions" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.75 14A1.75 1.75 0 016 12.25v-8.5C6 2.784 6.784 2 7.75 2h6.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14h-6.5zm-.25-1.75c0 .138.112.25.25.25h6.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25h-6.5a.25.25 0 00-.25.25v8.5zM4.9 3.508a.75.75 0 01-.274 1.025.25.25 0 00-.126.217v6.5a.25.25 0 00.126.217.75.75 0 01-.752 1.298A1.75 1.75 0 013 11.25v-6.5c0-.649.353-1.214.874-1.516a.75.75 0 011.025.274zM1.625 5.533a.75.75 0 10-.752-1.299A1.75 1.75 0 000 5.75v4.5c0 .649.353 1.214.874 1.515a.75.75 0 10.752-1.298.25.25 0 01-.126-.217v-4.5a.25.25 0 01.126-.217z"></path></svg> Compatible</div>
-<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Windows</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Linux</span> <span class="sd-sphinx-override sd-badge sd-bg-light sd-bg-text-light">Mac</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox"></a></div>
-</div>
-</div>
-</div>
-<p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id2" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>]</span> is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:</p>
+<!--
+
+# Combustion Toolbox capabilities
+
+::::{grid} 1 2 2 2
+:margin: 4 4 0 0
+:gutter: 1
+
+:::{grid-item-card} {octicon}`cpu` Robust chemical equilibrium computations
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/equilibrium/index.html
+
+{bdg-light}`TP` {bdg-light}`HP` {bdg-light}`SP` {bdg-light}`TV` {bdg-light}`EV` {bdg-light}`SV` {bdg-light}`frozen` {bdg-light}`plasma state`
+
+:::
+
+:::{grid-item-card} {octicon}`device-desktop` Interactive App
+:link: https://github.com/AlbertoCuadra/combustion_toolbox/archive/refs/heads/master.zip
+Over 10K lines of code encapsulated in a `user-friendly` GUI with tons of capabilities.
+{bdg-light}`Toolbox` {bdg-light}`Standalone (royalty-free)`
+:::
+
+:::{grid-item-card} {octicon}`tab` Shocks and detonations pre- and post-shock states 
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/shockdetonation/index.html
+{bdg-light}`Incident` {bdg-light}`Reflected` {bdg-light}`Oblique` {bdg-light}`Shock polar` {bdg-light}`Detonations polar` {bdg-light}`Regular Reflections` 
+:::
+
+:::{grid-item-card} {octicon}`globe` Open source
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+Completely open source, GUI included!
+{bdg-light}`GitHub` {bdg-light}`FileExchange` {bdg-light}`Zenodo` {bdg-info}`GPLv3`
+:::
+
+::::
+
+::::{grid} 1 2 2 3
+:margin: 4 4 0 0
+:gutter: 1
+
+:::{grid-item-card} {octicon}`rocket` Rocket propellant performance
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/rocket/index.html
+{bdg-light}`Infinite-Chamber-Area` {bdg-light}`Finite-Chamber-Area`
+:::
+
+:::{grid-item-card} {octicon}`server` Extensive database with NASA’s 9-coefficient polynomial fits up to 20000 K
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/databases/index.html
+{bdg-light}`NASA` {bdg-light}`Burcat` {bdg-light}`ATcT`
+:::
+
+:::{grid-item-card} {octicon}`verified` Excellent agreement with `NASA's CEA`, `Cantera`, `Caltech's SD-Toolbox`, and `TEA`
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/validations.html
+:::
+
+:::{grid-item-card} {octicon}`graph` Predefined plots
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#display-functions
+:::
+
+:::{grid-item-card} {octicon}`download` Export results
+:link: https://combustion-toolbox-website.readthedocs.io/en/latest/documentation/api/utils/index.html#export-functions
+{bdg-light}`.xls` {bdg-light}`.mat`
+:::
+
+:::{grid-item-card} {octicon}`versions` Compatible
+:link: https://github.com/AlbertoCuadra/combustion_toolbox
+{bdg-light}`Windows` {bdg-light}`Linux` {bdg-light}`Mac`
+:::
+
+::::
+
+-->
+<p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id3" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>]</span> is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:</p>
 <ul class="simple">
 <li><p><strong>CT-EQUIL</strong> computes the equilibrium composition of multi-component gas mixtures undergoing thermochemical transformations. The final equilibrium state is determined by a predefined set of chemical species (gaseous—including ions—or condensed phases) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.</p></li>
 <li><p><strong>CT-SD</strong> solves steady-state shock and detonation wave problems for both normal and oblique incidence.</p></li>
@@ -518,7 +492,7 @@
 <li><p><strong>CT-TURBULENCE</strong> performs detailed analyses of turbulent flows, including turbulent statistics computations, Helmholtz decomposition, and spectral analyses.</p></li>
 </ul>
 <p>The framework also includes an intuitive <strong>graphical user interface (GUI)</strong>, with a <strong>royalty-free standalone version</strong> available for Windows, macOS, and Linux.</p>
-<p>There is a fifth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx <span id="id2">[<a class="reference internal" href="references.html#id291" title="J. Sánchez-Monreal, A. Cuadra, C. Huete, and M. Vera. SimEx: A Tool for the Rapid Evaluation of the Effects of Explosions. Applied Sciences, 2022. doi:10.3390/app12189101.">Sánchez-Monreal <em>et al.</em>, 2022</a>]</span> subject to a proprietary license. Further details on this module will be provided elsewhere.</p>
+<p>There is a fifth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx <span id="id2">[<a class="reference internal" href="references.html#id292" title="J. Sánchez-Monreal, A. Cuadra, C. Huete, and M. Vera. SimEx: A Tool for the Rapid Evaluation of the Effects of Explosions. Applied Sciences, 2022. doi:10.3390/app12189101.">Sánchez-Monreal <em>et al.</em>, 2022</a>]</span> subject to a proprietary license. Further details on this module will be provided elsewhere.</p>
 </section>
 <section id="start-here">
 <h1>Start here!<a class="headerlink" href="#start-here" title="Permalink to this heading">#</a></h1>
@@ -563,28 +537,28 @@
 <p class= "only-dark" align="center">
     <img alt="TP with condensed species" style="border-width:0" src="_static/img/cuadra2022/TP_scoggins2015_wide_dark.svg" width="1200"/>
 </p>
-<p><strong>Figure 1:</strong> <em>Variation of the molar fractions $X_j$ for a TP transformation of a Silica-Phenolic mixture at atmospheric pressure $(p = 1$ atm$)$ with $T \in [200, 5000]$; line: numerical results obtained with CT; symbols: numerical results obtained with NASA’s CEA <span id="id3">[<a class="reference internal" href="references.html#id8" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>.</em></p>
+<p><strong>Figure 1:</strong> <em>Variation of the molar fractions $X_j$ for a TP transformation of a Silica-Phenolic mixture at atmospheric pressure $(p = 1$ atm$)$ with $T \in [200, 5000]$; line: numerical results obtained with CT; symbols: numerical results obtained with NASA’s CEA <span id="id3">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>.</em></p>
 <p class= "only-light" align="center">
     <img alt="Hugoniot curves" style="border-width:0" src="_static/img/Hugoniot_benchmarking.svg" width="500"/>
 </p>
 <p class= "only-dark" align="center">
     <img alt="Hugoniot curves" style="border-width:0" src="_static/img/Hugoniot_benchmarking_dark.svg" width="500"/>
 </p>
-<p><strong>Figure 2:</strong> <em>Hugoniot curves for different molecular gases at pre-shock temperature $T_1 = 300$ K and pressure $p_{1} = 1$ atm [numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code <span id="id4">[<a class="reference internal" href="references.html#id8" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span> excluding ionization (symbols)]</em>.</p>
+<p><strong>Figure 2:</strong> <em>Hugoniot curves for different molecular gases at pre-shock temperature $T_1 = 300$ K and pressure $p_{1} = 1$ atm [numerical results obtained with Combustion Toolbox (lines) and contrasted with NASA’s Chemical Equilibrium with Applications (CEA) code <span id="id4">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span> excluding ionization (symbols)]</em>.</p>
 <p class= "only-light" align="center">
     <img alt="Chapman-Jouguet detonation" style="border-width:0" src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1200"/>
 </p>
 <p class= "only-dark" align="center">
     <img alt="Chapman-Jouguet detonation" style="border-width:0" src="_static/img/run_validation_DET_CEA_3_molar_dark.svg" width="1200"/>
 </p>
-<p><strong>Figure 3:</strong> <em>Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions $(T_1 = 300$ K and pressure $p_1 = 1$ atm$)$; line: numerical results obtained with Combustion Toolbox; circles: NASA’s Chemical Equilibrium with Applications code <span id="id5">[<a class="reference internal" href="references.html#id8" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU &#64; 3.20GHz for a set of 26 species considered and a total of 351 case studies.</em></p>
+<p><strong>Figure 3:</strong> <em>Variation of molar fraction for a CJ detonation for lean to rich CH4-air mixtures at standard conditions $(T_1 = 300$ K and pressure $p_1 = 1$ atm$)$; line: numerical results obtained with Combustion Toolbox; circles: NASA’s Chemical Equilibrium with Applications code <span id="id5">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>. The computational time was of 6.68 seconds using a Intel(R) Core(TM) i7-8700 CPU &#64; 3.20GHz for a set of 26 species considered and a total of 351 case studies.</em></p>
 <p class= "only-light" align="center">
     <img alt="Shock polar diagrams" style="border-width:0" src="_static/img/cuadra2022/shock_polar_all_4.svg" width="1000"/>
 </p>
 <p class= "only-dark" align="center">
     <img alt="Shock polar diagrams" style="border-width:0" src="_static/img/polar_shock_full_and_frozen_both_air_complete_dark.svg" width="1000"/>
 </p>
-<p><strong>Figure 4:</strong> <em>Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79% N2, 21% O2) at pre-shock temperature $T_1 = 300$ K and pressure $p_1 = 1$ atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with Cantera <span id="id6">[<a class="reference internal" href="references.html#id25" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span> within Caltech’s SD-Toolbox <span id="id7">[<a class="reference internal" href="references.html#id189" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id24" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>; diamonds: maximum deflection angle</em> <span class="math notranslate nohighlight">\(\theta_{\rm max}\)</span>.</p>
+<p><strong>Figure 4:</strong> <em>Pressure-deflection (a) and wave angle-deflection (b) shock polar diagrams for air (79% N2, 21% O2) at pre-shock temperature $T_1 = 300$ K and pressure $p_1 = 1$ atm, and a range of pre-shock Mach numbers M1 between 2 and 14; line: calorically imperfect gas with ionization/dissociation; dashed: calorically imperfect gas with frozen chemistry; circles: results obtained with Cantera <span id="id6">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span> within Caltech’s SD-Toolbox <span id="id7">[<a class="reference internal" href="references.html#id190" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id25" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>; diamonds: maximum deflection angle</em> <span class="math notranslate nohighlight">\(\theta_{\rm max}\)</span>.</p>
 </section>
 
         </article>

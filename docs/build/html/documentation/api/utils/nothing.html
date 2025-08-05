@@ -1,0 +1,2102 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Utilities - Combustion Toolbox v1.2.0</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-announcement-background: #afe9ddff;
+  --color-announcement-text: #008080ff;
+  --color-brand-primary: #577A95;
+  --color-brand-content: #577A95;
+  --color-problematic: #1f8782;
+  --color-foreground-primary: #323232ff;
+  --color-inline-code-background: #5fbcd399;
+  --sd-color-info: #264653ff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #323232ff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-announcement-background: #ecb365ff;
+  --color-announcement-text: #0a192fff;
+  --color-brand-primary: #bac5e5ff;
+  --color-brand-content: #44a79dff;
+  --color-problematic: #44a79dff;
+  --color-background-primary: #0a192fff;
+  --color-background-secondary: #172a46ff;
+  --color-foreground-primary: #bac5e5ff;
+  --color-foreground-secondary: #697796ff;
+  --color-background-hover: #bac5e54a;
+  --color-sidebar-caption-text: #44a79dff;
+  --color-background-item: #44a79dff;
+  --sd-color-info: #44a79dff;
+  --color-code-foreground: #697796ff;
+  --color-code-background: rgb(0 0 0 / 0%);
+  --color-background-border: rgb(0 0 0 / 0%);
+  --color-foreground-muted: #bac5e54a;
+  --color-card-background: #172a46ff;
+  --color-highlight-on-target: #bac5e54a;
+  --color-admonition-title--caution: #ecb365ff;
+  --color-admonition-title-background--caution: #ffffc02b;
+  --color-inline-code-background: #44475aff;
+  --sd-color-light: rgb(0 0 0 / 0%);
+  --sd-color-light-text: #bac5e5ff;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/img/logo_CT_version.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/img/logo_CT_version_dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/0_basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_1.html">Importing packages and classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_2.html">Accessing the databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_3.html">Defining chemical system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_1.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/chemical_equilibrium/chemical_equilibrium_2.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shock_waves/shock_waves_1.html">Incident shock waves</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_chemicalEquilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_TP.html">Chemical equilibrium at constant temperature and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_TV.html">Chemical equilibrium at constant temperature and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP.html">Chemical equilibrium at constant enthalpy and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP_COMPLETE_INCOMPLETE.html">Chemical equilibrium at constant enthalpy and pressure for complete and incomplete combustion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP_HUMID_AIR.html">Chemical equilibrium at constant enthalpy and pressure for humid air</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP_NATURAL_GAS.html">Chemical equilibrium at constant enthalpy and pressure for natural gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP_MIXTEMP.html">Chemical equilibrium at constant enthalpy and pressure with different species temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_HP_PROPELLANTS.html">Chemical equilibrium at constant enthalpy and pressure for LH2/LOX propellants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_EV.html">Chemical equilibrium at constant internal energy and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_SP.html">Chemical equilibrium at constant entropy and pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_SV.html">Chemical equilibrium at constant entropy and volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/chemicalEquilibrium/examples_plain_EXOPLANET_WASP43b_1.html">Chemical equilibrium composition of WASP-43b atmosphere</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_shock.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_I.html">Incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_I_IONIZATION.html">Incident shock waves with ionization effects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_I_MACH.html">Incident shock waves for different Mach numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves for different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_R.html">Incident and reflected shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_BETA.html">Incident shock waves for different wave angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_THETA.html">Incident shock waves for different deflection angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_R.html">Incident and reflected shock waves for a given deflection angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR.html">Incident shock polar diagrams for different pre-shock Mach numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET.html">Chapman Jouguet detonations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_R.html">Incident and reflected Champman-Jouguet detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_OVERDRIVEN.html">Overdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_OVERDRIVEN_R.html">Incident and reflected overdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_UNDERDRIVEN.html">Underdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_UNDERDRIVEN_R.html">Incident and reflected underdriven detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_OVERDRIVEN_AND_UNDERDRIVEN.html">Overdriven and underdrive detonation waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_OBLIQUE_BETA.html">Oblique detonation waves for different wave angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_OBLIQUE_THETA.html">Oblique detonation waves for different deflection angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_DET_POLAR.html">Incident detonation polar diagrams for different drive factors</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/rocket/examples_plain_rocket.html">Rockets</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/rocket/examples_plain_ROCKET_IAC.html">Rocket performance considering the infinite-area-chamber approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validations.html">Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Database classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../databases/index.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/index.html">GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this heading">#</a></h1>
+<p>A collection of routines with multiple purposes organized as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">unclasified</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">databases</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eos</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extensions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root_finding</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thermo</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validations</span></code></p></li>
+</ul>
+<section id="unclasified-utility-functions">
+<h2>Unclasified utility functions<a class="headerlink" href="#unclasified-utility-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of unclasified functions necessary to perform all the calculations in CT.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.utils"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.Compute_YFuel">
+<span class="sig-name descname"><span class="pre">Compute_YFuel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">mix_Fuel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.Compute_YFuel" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute fuel mass fraction [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture (fuel + oxidizer + inerts)</p></li>
+<li><p class="sd-card-text"><strong>mix_Fuel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture (fuel)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>Yi_Fuel (float)</em> – Mass fractions of the fuel mixture</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">Yi_Fuel = Compute_YFuel(mix, mix_Fuel)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.GPL">
+<span class="sig-name descname"><span class="pre">GPL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.GPL" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Return Combustion Toolbox license</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>license_content (char)</em> – The license text</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">license_content = GPL()</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.append_cells">
+<span class="sig-name descname"><span class="pre">append_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cell1</span></em>, <em class="sig-param"><span class="pre">cell2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.append_cells" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Append two or more cells in one common cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>cell1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Cell 1</p></li>
+<li><p class="sd-card-text"><strong>cell2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Cell 2</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">celli (struct): Additional cells</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>append_cell (struct)</em> – Merged cell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.append_structs">
+<span class="sig-name descname"><span class="pre">append_structs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s1</span></em>, <em class="sig-param"><span class="pre">s2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.append_structs" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Append two or more structs in one common struct</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>s1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct 1</p></li>
+<li><p class="sd-card-text"><strong>s2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct 2</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">si (struct): Additional structs</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>append_s (struct)</em> – Merged struct</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.ask_problem">
+<span class="sig-name descname"><span class="pre">ask_problem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ask_problem" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create a list selection dialog box (deprecated)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>PT (string)</em> – String with the problem selected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.assign_vector2cell">
+<span class="sig-name descname"><span class="pre">assign_vector2cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cell</span></em>, <em class="sig-param"><span class="pre">vector</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.assign_vector2cell" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Assign values of a vector into a cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>cell</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell in which the values of the given vector are going to be included</p></li>
+<li><p class="sd-card-text"><strong>vector</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">any</span></code></span>) – Vector with the values that are going to be included in the cell</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">ind (float): List of index positions to assign specific positions to the cell</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>cell (cell)</em> – Cell with the values of the given vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.cell2vector">
+<span class="sig-name descname"><span class="pre">cell2vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.cell2vector" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Convert values of an individual cell into a vector. If the value
+correspond with a struct it can return as a vector the values of a
+given fieldname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span> <span class="pre">or</span> <span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">field (char): Fieldname of the given value (only for struct or objects)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>vector (any)</em> – Vector with the values of the individual cell/fieldname (only for struct or objects)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.check_inputs">
+<span class="sig-name descname"><span class="pre">check_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.check_inputs" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Check that all the inputs are specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.check_temperature_range">
+<span class="sig-name descname"><span class="pre">check_temperature_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">FLAG</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.check_temperature_range" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Remove species indeces out of the temperature range if FLAG = true,
+e.g., linear extrapolation of the polynomial fits is not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>system</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></span>) – </p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature</p></li>
+<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the species indeces</p></li>
+<li><p class="sd-card-text"><strong>NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of species</p></li>
+<li><p class="sd-card-text"><strong>FLAG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating linear extrapolation of the polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">ind (float): Updated vector with the species indeces</p></li>
+<li><p class="sd-card-text">NS (float): Update number of species</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.convert_Pa_to_bar">
+<span class="sig-name descname"><span class="pre">convert_Pa_to_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.convert_Pa_to_bar" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Convert pressure in [Pa] units to [bar]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure value(s) in [bar]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Pressure value(s) in [bar]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">value = convert_Pa_to_bar(1e5)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.convert_atm_to_bar">
+<span class="sig-name descname"><span class="pre">convert_atm_to_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.convert_atm_to_bar" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Convert pressure in [atm] units to [bar]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure value(s) in [atm]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Pressure value(s) in [bar]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">value = convert_atm_to_bar(1)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.convert_bar_to_Pa">
+<span class="sig-name descname"><span class="pre">convert_bar_to_Pa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.convert_bar_to_Pa" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Convert pressure in [bar] units to [Pa]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure value(s) in [bar]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Pressure value(s) in [Pa]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">value = convert_bar_to_Pa(1)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.convert_bar_to_atm">
+<span class="sig-name descname"><span class="pre">convert_bar_to_atm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.convert_bar_to_atm" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Convert pressure in [bar] units to [atm]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure value(s) in [bar]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Pressure value(s) in [atm]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">value = convert_bar_to_atm(1.01325)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.getTypeSpecies">
+<span class="sig-name descname"><span class="pre">getTypeSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.getTypeSpecies" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create cell array with the type of species in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture class</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>typeSpecies (cell)</em> – Cell array with the type of species in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.get_FLAG_N">
+<span class="sig-name descname"><span class="pre">get_FLAG_N</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.get_FLAG_N" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Flag if the number of moles of fuel, oxidant and inert species
+is specified. If not, consider 1 mole for the fuel and calculate
+the remaining moles from the equivalence relation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.get_latest_version_github">
+<span class="sig-name descname"><span class="pre">get_latest_version_github</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">user</span></em>, <em class="sig-param"><span class="pre">repo_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.get_latest_version_github" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get latest version from a repository from Github</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>user</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Username of the owner of the repository</p></li>
+<li><p class="sd-card-text"><strong>repo_name</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the repository</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">release (char): Release tag (latest)</p></li>
+<li><p class="sd-card-text">git_data (struct): Body data of the request</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">[release, git_data] = get_latest_version_github(‘CombustionToolbox’, ‘combustion_toolbox’)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.post_results">
+<span class="sig-name descname"><span class="pre">post_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.post_results" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Postprocess all the results with predefined plots</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.print_error">
+<span class="sig-name descname"><span class="pre">print_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ME</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.print_error" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Print message error</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>ME</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">object</span></code></span>) – MException object that allows to identify the error</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Name-Value Pairs Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">type (char): Type of message (error, warning, or other)</p></li>
+<li><p class="sd-card-text">message_solution (char): Message solution</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>error_message (char)</em> – Message error</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">error_message = print_error(ME, ‘Type’, ‘Warning’)</p></li>
+<li><p class="sd-card-text">error_message = print_error(ME, ‘Type’, ‘Warning’, ‘Solution’, ‘Returning an empty index value.’)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.set_prop">
+<span class="sig-name descname"><span class="pre">set_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.set_prop" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Assign property values to the respective variables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">field (str): Fieldname in Problem Description (PD)</p></li>
+<li><p class="sd-card-text">value (float): Value/s to assing in the field in Problem Description (PD)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.set_transformation">
+<span class="sig-name descname"><span class="pre">set_transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.set_transformation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set the corresponding value of the field in Problem Description (PD)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Fieldname in Problem Description (PD)</p></li>
+<li><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Value/s to assign to the field</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.setup_segregated_solver">
+<span class="sig-name descname"><span class="pre">setup_segregated_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.setup_segregated_solver" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get additional inputs necessary to use the segregated model</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.smooth_data">
+<span class="sig-name descname"><span class="pre">smooth_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.smooth_data" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Smooth data using Fourier NonlinearLeastSquares method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – data in the x direction</p></li>
+<li><p class="sd-card-text"><strong>y</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – data in the y direction</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">start_point (float): initial point of the fit</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">x (float): smooth data in the x direction</p></li>
+<li><p class="sd-card-text">y (float): smooth data in the y direction</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.soundspeed_eq">
+<span class="sig-name descname"><span class="pre">soundspeed_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">mix</span></em>, <em class="sig-param"><span class="pre">P0</span></em>, <em class="sig-param"><span class="pre">T0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.soundspeed_eq" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute speed of sound at equilibrium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>self</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct mix with all the properties of the mixture</p></li>
+<li><p class="sd-card-text"><strong>P0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>T0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>sound (float)</em> – sound speed [m/s]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.vector2cell">
+<span class="sig-name descname"><span class="pre">vector2cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.vector2cell" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create cell array from vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">any</span></code></span>) – Vector with data of any type</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>c (cell)</em> – Cell with the values of the vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</details></section>
+<section id="database-functions">
+<h2>Database functions<a class="headerlink" href="#database-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of functions necessary to obtain generate the databases in CT.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.utils.databases"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.findSpecies">
+<span class="sig-name descname"><span class="pre">findSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">cond_with</span></em>, <em class="sig-param"><span class="pre">type_with</span></em>, <em class="sig-param"><span class="pre">cond_without</span></em>, <em class="sig-param"><span class="pre">type_without</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.findSpecies" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Find species in the given list that contain all/any
+elements of cond_with and that not include all/any elements of
+cond_without</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>cond_with</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of elements to include</p></li>
+<li><p class="sd-card-text"><strong>type_with</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Satisfy all or any of the elements in cond_with</p></li>
+<li><p class="sd-card-text"><strong>cond_without</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of elements to avoid</p></li>
+<li><p class="sd-card-text"><strong>type_without</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Satisfy all or any of the elements in cond_without</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>listSpecies (cell)</em> – List of species</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>listSpecies = findSpecies(listSpecies, {‘C’,’N’,’O’,’minus’,’plus’,’Ar’}, ‘any’,…</dt><dd><dl class="simple">
+<dt>{‘I’, ‘S’, ‘L’, ‘T’, ‘P’, ‘F’, ‘ab’, ‘W’,…</dt><dd><p class="sd-card-text">‘Z’,’X’,’R’,’Os’,’Cr’,’H’,’Br’,’G’,’K’,…
+‘U’,’Co’,’Cu’,’B’,’V’,’Ni’,’Na’,’Mg’,…
+‘Mo’,’Ag’,’Nb’,’Cb’,’Cl’,’D’,’T’,…
+‘Ca’,’Cs’,’Ne’,’Cd’,’Mn’}, ‘all’)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="sd-card-text">listSpecies = findSpecies(DB.listSpecies, {}, ‘any’, {‘_M’}, ‘all’)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.getIndexElements">
+<span class="sig-name descname"><span class="pre">getIndexElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">database</span></em>, <em class="sig-param"><span class="pre">elements</span></em>, <em class="sig-param"><span class="pre">MAX_ELEMENTS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.getIndexElements" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get element indeces of each species contained in listSpecies</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>database</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+<li><p class="sd-card-text"><strong>elements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Elements in the periodic table</p></li>
+<li><p class="sd-card-text"><strong>MAX_ELEMENTS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Maximum number of elements contained in one species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>indexElements (float)</em> – Matrix numel(listSpecies) x MAX_ELEMENTS with element indeces of the species contained in listSpecies</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">indexElements = getIndexElements(listSpecies, database, elements, MAX_ELEMENTS)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_DhT">
+<span class="sig-name descname"><span class="pre">set_DhT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_DhT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of thermal enthalpy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>DhT (float)</em> – Thermal enthalpy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">DhT = set_DhT({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_cP">
+<span class="sig-name descname"><span class="pre">set_cP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_cP" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of specific heats at constant
+pressure for the given set of species [J/(mol-K)]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>cP (float)</em> – Specific heat at constant pressure in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">cP = set_cP({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_e0">
+<span class="sig-name descname"><span class="pre">set_e0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_e0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of internal energy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>e0 (float)</em> – Internal energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">e0 = set_e0({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_g0">
+<span class="sig-name descname"><span class="pre">set_g0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_g0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of gibbs free energy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>g0 (float)</em> – Gibbs energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">g0 = set_g0({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_h0">
+<span class="sig-name descname"><span class="pre">set_h0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_h0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of enthalpies for the given set of
+species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>h0 (float)</em> – Enthalpy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">h0 = set_h0({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_prop_DB">
+<span class="sig-name descname"><span class="pre">set_prop_DB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">property</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_prop_DB" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that gets the vector of the defined property for the given
+set of species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Property to obtain from the database</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Property vector</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">value = set_prop_DB({‘H2O’, ‘CO2’}, ‘hf’, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.set_s0">
+<span class="sig-name descname"><span class="pre">set_s0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.set_s0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Function that computes the vector of entropy for the given
+set of species [J/(mol-K)]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>s0 (float)</em> – Entropy in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">s0 = set_s0({‘H2O’, ‘CO2’}, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_DeT">
+<span class="sig-name descname"><span class="pre">species_DeT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_DeT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute thermal internal energy [J/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>DeT (float)</em> – Thermal internal energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">DeT = species_DeT(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_DhT">
+<span class="sig-name descname"><span class="pre">species_DhT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_DhT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute thermal enthalpy [J/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>DhT (float)</em> – Thermal enthalpy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">DhT = species_DhT(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_cP">
+<span class="sig-name descname"><span class="pre">species_cP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_cP" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute specific heat at constant pressure [J/(mol-K)] of the species
+at the given temperature [K] using piecewise cubic Hermite
+interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>cp (float)</em> – Specific heat at constant pressure in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">cp = species_cP(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_cV">
+<span class="sig-name descname"><span class="pre">species_cV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_cV" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute specific heat at constant volume [J/(mol-K)] of the species
+at the given temperature [K] using piecewise cubic Hermite
+interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>cv (float)</em> – Specific heat at constant volume in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">cv = species_cv(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_e0">
+<span class="sig-name descname"><span class="pre">species_e0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_e0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute internal energy [J/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>e0 (float)</em> – Internal energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">e0 = species_e0(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_g0">
+<span class="sig-name descname"><span class="pre">species_g0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_g0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute Gibbs energy [J/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>g0 (float)</em> – Gibbs energy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">g0 = species_g0(‘H2O’, 298.15, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_gamma">
+<span class="sig-name descname"><span class="pre">species_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_gamma" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute adiabatic index of the species [-] at the given temperature
+[K] using piecewise cubic Hermite interpolating polynomials and
+linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>gamma (float)</em> – Adiabatic index [-]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">gamma = species_gamma(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_h0">
+<span class="sig-name descname"><span class="pre">species_h0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_h0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute enthalpy [J/mol] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>h0 (float)</em> – Enthalpy in molar basis [J/mol]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">h0 = species_h0(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.databases.species_s0">
+<span class="sig-name descname"><span class="pre">species_s0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">DB</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.databases.species_s0" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute entropy [J/(mol-K)] of the species at the given temperature [K]
+using piecewise cubic Hermite interpolating polynomials and linear extrapolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p></li>
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>s0 (float)</em> – Entropy in molar basis [J/(mol-K)]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">s0 = species_s0(‘H2O’, 300, DB)</p>
+</div>
+</dd></dl>
+
+</div>
+</details></section>
+<section id="display-functions">
+<h2>Display functions<a class="headerlink" href="#display-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of functions necessary to display the results (command window and plots).</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></section>
+<section id="equation-of-state-functions">
+<h2>Equation of State functions<a class="headerlink" href="#equation-of-state-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of Equation of States (EoS) implemented in CT.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></section>
+<section id="export-functions">
+<h2>Export functions<a class="headerlink" href="#export-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of functions to export results.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></section>
+<section id="extensions-functions">
+<h2>Extensions functions<a class="headerlink" href="#extensions-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of external functions from other repositories.</p>
+<ul class="simple">
+<li><p>Combustion Toolbox’s color palette is obtained from the following repository: Stephen (2021). ColorBrewer: Attractive and Distinctive Colormaps (https://github.com/DrosteEffect/BrewerMap), GitHub. Retrieved December 3, 2021.</p></li>
+<li><p>For validations, Combustion Toolbox uses CPU Info from the following repository: Ben Tordoff (2022). CPU Info (https://github.com/BJTor/CPUInfo/releases/tag/v1.3), GitHub. Retrieved March 22, 2022.</p></li>
+<li><p>Combustion Toolbox’s splash screen is based on a routine from the following repository: Ben Tordoff (2022). SplashScreen (https://www.mathworks.com/matlabcentral/fileexchange/30508-splashscreen), MATLAB Central File Exchange. Retrieved October 15, 2022.</p></li>
+</ul>
+</section>
+<section id="root-finding-algorithms">
+<h2>Root finding algorithms<a class="headerlink" href="#root-finding-algorithms" title="Permalink to this heading">#</a></h2>
+<p>Roots algorithm used to obtain the temperature at equilibrium for a given thermochemical transformation. The methods implemented are:</p>
+<ul class="simple">
+<li><p>Newton-Raphson method.</p></li>
+<li><p>Steffensen-Aitken method.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></section>
+<section id="thermodynamic-properties">
+<h2>Thermodynamic properties<a class="headerlink" href="#thermodynamic-properties" title="Permalink to this heading">#</a></h2>
+<p>Functions to obtain thermodynamic properties from a given mixture.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.utils.thermo"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.MolecularWeight">
+<span class="sig-name descname"><span class="pre">MolecularWeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.MolecularWeight" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the molecular weight [g/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Molecular weight [g/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.adiabaticIndex">
+<span class="sig-name descname"><span class="pre">adiabaticIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.adiabaticIndex" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the adiabatic index [-] of the mixture from the ratio of the specific heat capacities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Adiabatic index of the mixture [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.adiabaticIndex_sound">
+<span class="sig-name descname"><span class="pre">adiabaticIndex_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.adiabaticIndex_sound" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the adiabatic index [-] of the mixture from definition of sound velocity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Adiabatic index [-] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.compressibility_factor">
+<span class="sig-name descname"><span class="pre">compressibility_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.compressibility_factor" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute compressibility factor of the mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>Z (float)</em> – Compressibility factor [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.compute_heatrelease">
+<span class="sig-name descname"><span class="pre">compute_heatrelease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.compute_heatrelease" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute heat release [J/kg] of the chemical transformation of the mixture 1 to mixture 2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the initial mixture</p></li>
+<li><p class="sd-card-text"><strong>mix2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the final mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>q (float)</em> – heat release [J/kg] == [m^2/s^2]
+Q (float): dimensionless heat release</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.compute_sound">
+<span class="sig-name descname"><span class="pre">compute_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">p</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">composition</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.compute_sound" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Routine to compute sound velocity [m/s] for a given
+temperature-pressure profile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>composition</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – composition of species (mol)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Name-Value Pairs Args:</dt><dd><p class="sd-card-text">self (struct): Data of the mixtures, conditions, databases</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>sound (float)</em> – Sound velocity [m/s]</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p class="sd-card-text">sound = compute_sound(300, 1, {‘H2’, ‘O2’}, [1, 1])
+sound = compute_sound(300, 1, {‘H2’, ‘O2’}, [1, 1], ‘self’, self)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.cp_mass">
+<span class="sig-name descname"><span class="pre">cp_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.cp_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific heat at constant pressure [kJ/kg-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.cp_mole">
+<span class="sig-name descname"><span class="pre">cp_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.cp_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific heat at constant pressure [kJ/mol-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.cv_mass">
+<span class="sig-name descname"><span class="pre">cv_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.cv_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific heat at constant volume [kJ/kg-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.cv_mole">
+<span class="sig-name descname"><span class="pre">cv_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.cv_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific heat at constant volume [kJ/mol-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.density">
+<span class="sig-name descname"><span class="pre">density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.density" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the density [kg/m3] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – density [kg/m3] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.enthalpy_formation_mass">
+<span class="sig-name descname"><span class="pre">enthalpy_formation_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.enthalpy_formation_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass specific enthalpy formation [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific enthalpy formation [kJ/kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.enthalpy_formation_mole">
+<span class="sig-name descname"><span class="pre">enthalpy_formation_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.enthalpy_formation_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole specific enthalpy formation [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific enthalpy formation [kJ/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.enthalpy_mass">
+<span class="sig-name descname"><span class="pre">enthalpy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.enthalpy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass specific enthalpy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific enthalpy [kJ/kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.enthalpy_mole">
+<span class="sig-name descname"><span class="pre">enthalpy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.enthalpy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole specific enthalpy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific enthalpy [kJ/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.entropy_mass">
+<span class="sig-name descname"><span class="pre">entropy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.entropy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass specific entropy [kJ/kg-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific entropy [kJ/kg-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.entropy_mole">
+<span class="sig-name descname"><span class="pre">entropy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.entropy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole specific entropy [kJ/mol-K] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific entropy [kJ/mol-K] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.equivalenceRatio">
+<span class="sig-name descname"><span class="pre">equivalenceRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.equivalenceRatio" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the equivalence ratio of the initial mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Equivalence ratio of the initial mixture [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.gibbs_mass">
+<span class="sig-name descname"><span class="pre">gibbs_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.gibbs_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass specific gibbs free energy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific gibbs free energy [kJ/kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.gibbs_mole">
+<span class="sig-name descname"><span class="pre">gibbs_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.gibbs_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole specific gibbs free energy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific gibbs free energy [kJ/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.humiditySpecific">
+<span class="sig-name descname"><span class="pre">humiditySpecific</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">p</span></em>, <em class="sig-param"><span class="pre">humidityRelative</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.humiditySpecific" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the specific humidity of air [kg_w/kg_da] at a given temperature, pressure, and relative humidity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p class="sd-card-text"><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure [bar]</p></li>
+<li><p class="sd-card-text"><strong>humidityRelative</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Relative humidity [%]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Specific humidity of air [kg_w/kg_da]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.intEnergy_mass">
+<span class="sig-name descname"><span class="pre">intEnergy_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.intEnergy_mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass specific internal energy [kJ/kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass-basis specific internal energy [kJ/kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.intEnergy_mole">
+<span class="sig-name descname"><span class="pre">intEnergy_mole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.intEnergy_mole" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole specific internal energy [kJ/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole-basis specific internal energy [kJ/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.mass">
+<span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.mass" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass [kg] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – mass [kg] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.massFractions">
+<span class="sig-name descname"><span class="pre">massFractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.massFractions" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mass fractions of all the species in the mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mass fractions of all the species in the mixture [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.meanMolecularWeight">
+<span class="sig-name descname"><span class="pre">meanMolecularWeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.meanMolecularWeight" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mean molecular weight [g/mol] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mean molecular weight [g/mol] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.moleFractions">
+<span class="sig-name descname"><span class="pre">moleFractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.moleFractions" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the mole fractions of all the species in the mixture [-]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Mole fractions of all the species in the mixture [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.moles">
+<span class="sig-name descname"><span class="pre">moles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.moles" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the moles [mol] of all the species in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Moles [mol] of all the species in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.molesGas">
+<span class="sig-name descname"><span class="pre">molesGas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.molesGas" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the moles of the gases in the mixture [mol]</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.pressure">
+<span class="sig-name descname"><span class="pre">pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.pressure" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the pressure [bar] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Pressure [bar] in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.soundspeed">
+<span class="sig-name descname"><span class="pre">soundspeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.soundspeed" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the speed of sound [m/s] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Speed of sound [m/s] in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.temperature">
+<span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.temperature" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the temperature [K] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Temperature [K] in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.velocity_relative">
+<span class="sig-name descname"><span class="pre">velocity_relative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.velocity_relative" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the velocity of the gases relative to the shock front [m/s] in the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – Velocity of the gases relative to the shock front [m/s] in the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.thermo.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.thermo.volume" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get the volume [m3] of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>mix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Properties of the mixture</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>value (float)</em> – volume [m3] of the mixture</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</details></section>
+<section id="validations-functions">
+<h2>Validations functions<a class="headerlink" href="#validations-functions" title="Permalink to this heading">#</a></h2>
+<p>A collection of functions to generate the validations automatically.</p>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.utils.validations"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.compute_error_moles_CEA">
+<span class="sig-name descname"><span class="pre">compute_error_moles_CEA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">resultsCT</span></em>, <em class="sig-param"><span class="pre">resultsCEA</span></em>, <em class="sig-param"><span class="pre">varname_x</span></em>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">varname_y</span></em>, <em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">tolMoles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.compute_error_moles_CEA" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute max error of CT against CEA</p>
+<p class="sd-card-text">Args:</p>
+<p class="sd-card-text">Returns:</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.compute_error_prop_CEA">
+<span class="sig-name descname"><span class="pre">compute_error_prop_CEA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">resultsCT</span></em>, <em class="sig-param"><span class="pre">resultsCEA</span></em>, <em class="sig-param"><span class="pre">varsname_x</span></em>, <em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">varsname_y</span></em>, <em class="sig-param"><span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.compute_error_prop_CEA" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Compute max error of CT against CEA</p>
+<p class="sd-card-text">Args:</p>
+<p class="sd-card-text">Returns:</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.data_CEA">
+<span class="sig-name descname"><span class="pre">data_CEA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.data_CEA" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.debug_plot_error">
+<span class="sig-name descname"><span class="pre">debug_plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">it</span></em>, <em class="sig-param"><span class="pre">STOP</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.debug_plot_error" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Debug function that plots the error per iteration along with the
+value of the correction factor</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.get_problems_solved">
+<span class="sig-name descname"><span class="pre">get_problems_solved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.get_problems_solved" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get problems solved based on the length of the given variable</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.load_struct">
+<span class="sig-name descname"><span class="pre">load_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">variable_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.load_struct" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Load variable from a struct saved in a file</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.plot_molar_fractions_validation">
+<span class="sig-name descname"><span class="pre">plot_molar_fractions_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results1</span></em>, <em class="sig-param"><span class="pre">results2</span></em>, <em class="sig-param"><span class="pre">varname_x</span></em>, <em class="sig-param"><span class="pre">varname_y</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.plot_molar_fractions_validation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Default values</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.plot_properties_validation">
+<span class="sig-name descname"><span class="pre">plot_properties_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results1</span></em>, <em class="sig-param"><span class="pre">results2</span></em>, <em class="sig-param"><span class="pre">varsname_x</span></em>, <em class="sig-param"><span class="pre">varsname_y</span></em>, <em class="sig-param"><span class="pre">type</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.plot_properties_validation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot properties varname_y vs varname_x from CT (results1) against
+results obtained from other code (results2). The properties to plot
+are specified by varsname_x and varsname_y, which are cell arrays
+of strings.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.plot_thermo_validation">
+<span class="sig-name descname"><span class="pre">plot_thermo_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">property</span></em>, <em class="sig-param"><span class="pre">DB</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.plot_thermo_validation" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Validation custom thermodynamic polynomials with NASA’s 9 polynomials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Name of the thermodynamic property to check</p></li>
+<li><p class="sd-card-text"><strong>DB</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Database with custom thermodynamic polynomials functions generated from NASAs 9 polynomials fits</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">nfrec (float): Points frequency for NASA values</p></li>
+<li><p class="sd-card-text">range (float): Temperature range [K]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>ax (object)</em> – Axes of the plotted figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.plot_validation_shock_polar_SDToolbox">
+<span class="sig-name descname"><span class="pre">plot_validation_shock_polar_SDToolbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em>, <em class="sig-param"><span class="pre">results_SDToolbox</span></em>, <em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.plot_validation_shock_polar_SDToolbox" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot numerical results obtained with SDToolbox, which use CANTERA as a thermochemical kernel.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Pressure ratio with the deflection angle [deg]</p></li>
+<li><p class="sd-card-text">Wave angle [deg] with the deflection angle [deg]</p></li>
+</ul>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.read_CEA">
+<span class="sig-name descname"><span class="pre">read_CEA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.read_CEA" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">READ DATA FROM CEA AS TXT EXTENSION</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.run_CT">
+<span class="sig-name descname"><span class="pre">run_CT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.run_CT" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">A generalized function to run Combustion Toolbox for a given set of
+inputs. Otherwise, it will run the predefined case.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.utils.validations.set_inputs_thermo_validations">
+<span class="sig-name descname"><span class="pre">set_inputs_thermo_validations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">property</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.validations.set_inputs_thermo_validations" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set corresponding thermodynamic functions for NASA and Combustion
+Toolbox</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>property</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">str</span></code></span>) – Thermodynamic property name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">funname_NASA (function): Function to use NASA’s polynomials</p></li>
+<li><p class="sd-card-text">funname_CT (function): Function to use Combustion Toolbox polynomials</p></li>
+<li><p class="sd-card-text">y_labelname (str): Label y axis</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</details></section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="mailto:acuadra@ing.uc3m.es" aria-label="Email">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://github.com/CombustionToolbox/combustion_toolbox" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Utilities</a><ul>
+<li><a class="reference internal" href="#unclasified-utility-functions">Unclasified utility functions</a></li>
+<li><a class="reference internal" href="#database-functions">Database functions</a></li>
+<li><a class="reference internal" href="#display-functions">Display functions</a></li>
+<li><a class="reference internal" href="#equation-of-state-functions">Equation of State functions</a></li>
+<li><a class="reference internal" href="#export-functions">Export functions</a></li>
+<li><a class="reference internal" href="#extensions-functions">Extensions functions</a></li>
+<li><a class="reference internal" href="#root-finding-algorithms">Root finding algorithms</a></li>
+<li><a class="reference internal" href="#thermodynamic-properties">Thermodynamic properties</a></li>
+<li><a class="reference internal" href="#validations-functions">Validations functions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>
