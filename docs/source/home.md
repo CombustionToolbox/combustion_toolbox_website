@@ -8,15 +8,21 @@
 </p>
 
 <!-- Intro -->
-<br> <center> <b> A MATLAB-GUI based open-source tool for solving gaseous combustion problems </b> </center> <br>
-    
+<br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, turbulence diagnostics, and spectral analysis.
+</b> </center> <br>
+
+<!-- 
+
+A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, shock–turbulence interaction, and turbulence analysis.
+
+-->
 
 <p class= "only-light" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2.svg" width="400"/>
 </p>
 
 <p class= "only-dark" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/cuadra2022/modules_CT_dark_v2.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2_dark.svg" width="400"/>
 </p>
 
 
@@ -49,6 +55,8 @@ Completely open source, GUI included!<br>
     <img src="_static/gif/example_det_overdriven_gui.gif" width="345">&nbsp;
     <img src="_static/gif/example_det_overdriven.gif" width="360">
 </p>
+
+<!--
 
 # Combustion Toolbox capabilities
 
@@ -115,6 +123,8 @@ Completely open source, GUI included!
 :::
 
 ::::
+
+-->
 
 The Combustion Toolbox {cite:p}`cuadra2024a_preprint` is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:
 

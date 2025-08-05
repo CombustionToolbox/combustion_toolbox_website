@@ -21,3 +21,13 @@ In this section, you will find the documentation of the routines implemented to 
    :show-inheritance:
    :members:
 ```
+
+## JumpConditionsSolver
+
+```{eval-rst}
+.. currentmodule:: src.+combustiontoolbox.+shockdetonation
+
+.. automodule:: src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver
+   :show-inheritance:
+   :members:
+```
