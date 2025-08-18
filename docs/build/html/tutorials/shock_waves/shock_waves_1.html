@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Examples" href="../../examples.html" /><link rel="prev" title="Shock waves" href="../2_shock_waves.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Oblique shock waves" href="shock_waves_2.html" /><link rel="prev" title="Shock waves" href="../2_shock_waves.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Incident shock waves - Combustion Toolbox v1.2.0</title>
@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -243,6 +243,7 @@
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../2_shock_waves.html">Shock waves</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Incident shock waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shock_waves_2.html">Oblique shock waves</a></li>
 </ul>
 </li>
 </ul>
@@ -297,7 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
 </ul>
@@ -349,13 +350,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="incident-shock-waves">
+          <section class="tex2jax_ignore mathjax_ignore" id="incident-shock-waves">
 <h1>Incident shock waves<a class="headerlink" href="#incident-shock-waves" title="Permalink to this heading">#</a></h1>
 <p>In this tutorial, we will cover how to solve the Rankine-Hugoniot equations for a planar incident shock wave, namely</p>
 <div class="math-wrapper docutils container">
@@ -371,7 +372,7 @@ h_2 = h_1 + \dfrac{u_1^2}{2}\left[1- \left(\dfrac{\rho_1}{\rho_2}\right)^2\right
 p = \rho R T / W,
 \end{equation}</div></div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the universal gas constant, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(W\)</span> is the molecular weight of the gas.</p>
-<p>To solve these equations using the Combustion Toolbox, we will use the <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a>  class, part of the <code class="docutils literal notranslate"><span class="pre">+combustiontoolbox.+shockdetonation</span></code> (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air, with an initial temperature <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, pressure <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar, and a pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 \in [1, 10]\)</span>:</p>
+<p>To solve these equations using the Combustion Toolbox, we will use the <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a>  class, part of the <code class="docutils literal notranslate"><span class="pre">+combustiontoolbox.+shockdetonation</span></code> (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume), with an initial temperature <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, pressure <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar, and a pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 \in [1, 10]\)</span>:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
 <span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
 <span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
@@ -421,10 +422,6 @@ p = \rho R T / W,
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;FLAG_FROZEN&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="congratulations">
-<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this heading">#</a></h2>
-<p>Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder).</p>
-</section>
 </section>
 
         </article>
@@ -432,12 +429,12 @@ p = \rho R T / W,
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../examples.html">
+          <a class="next-page" href="shock_waves_2.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Examples</div>
+                <div class="title">Oblique shock waves</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -482,27 +479,8 @@ p = \rho R T / W,
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Incident shock waves</a><ul>
-<li><a class="reference internal" href="#congratulations">Congratulations!</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
@@ -522,8 +500,7 @@ p = \rho R T / W,
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

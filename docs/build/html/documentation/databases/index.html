@@ -243,6 +243,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/shock_waves/shock_waves_1.html">Incident shock waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/shock_waves/shock_waves_2.html">Oblique shock waves</a></li>
 </ul>
 </li>
 </ul>
@@ -297,7 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
 </ul>
@@ -355,7 +356,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="databases">
+          <section class="tex2jax_ignore mathjax_ignore" id="databases">
 <h1>Databases<a class="headerlink" href="#databases" title="Permalink to this heading">#</a></h1>
 <p>Combustion Toolbox generates its own databases using an up-to-date version of NASA’s 9-coefficient polynomial fits <span id="id1">[<a class="reference internal" href="../../references.html#id189" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span> that incorporates the Third Millennium database <span id="id2">[<a class="reference internal" href="../../references.html#id253" title="A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. doi:10.2172/925269.">Burcat and Ruscic, 2005</a>]</span>, including the available values from Active Thermochemical Tables. This fitting allows to evaluate the dimensionless thermodynamic functions of the species for the specific heat at constant pressure, enthalpy, and entropy as a function of temperature, namely</p>
 <div class="math-wrapper docutils container">
@@ -397,7 +398,7 @@
 <p class= "only-dark" align="center">
     <img alt="Performance thermo" style="border-width:0" src="..\_static\img\performance_thermo_dark.svg" width="800"/>
 </p>
-<p><strong>Figure 1:</strong> <em>Performance test, execution times for over $10^5$ calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as $c_p$, $h_0$, $g_0$, and $s_0$, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU &#64; 3.20GHz. Note: lower is better.</em></p>
+<p><strong>Figure 1:</strong> <em>Performance test, execution times for over <span class="math notranslate nohighlight">\(10^5\)</span> calculations of the specific heat at constant pressure, enthalpy, Gibbs energy, and entropy, denoted as <span class="math notranslate nohighlight">\(c_p\)</span>, <span class="math notranslate nohighlight">\(h_0\)</span>, <span class="math notranslate nohighlight">\(g_0\)</span>, and <span class="math notranslate nohighlight">\(s_0\)</span>, respectively, using the NASA’s 9 coefficient polynomials (dark blue) and the piecewise cubic Hermite interpolating polynomials (teal). The test has been carried out with an Intel(R) Core(TM) i7-8700 CPU &#64; 3.20GHz. Note: lower is better.</em></p>
 <p class= "only-light" align="center">
     <img alt="Validation thermo" style="border-width:0" src="..\..\_static\img\validation_thermo.svg" width="800"/>
 </p>
@@ -554,8 +555,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

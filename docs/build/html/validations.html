@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Publications" href="publications.html" /><link rel="prev" title="Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Publications" href="publications.html" /><link rel="prev" title="Helmholtz decomposition and energy spectra analysis of a turbulent field" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Validations - Combustion Toolbox v1.2.0</title>
@@ -243,6 +243,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/shock_waves/shock_waves_1.html">Incident shock waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/shock_waves/shock_waves_2.html">Oblique shock waves</a></li>
 </ul>
 </li>
 </ul>
@@ -297,7 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
 </ul>
@@ -355,7 +356,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="validations">
+          <section class="tex2jax_ignore mathjax_ignore" id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
 <p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">NASA’s CEA</a> <span id="id1">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>, <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id2">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span>, <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a> <span id="id3">[<a class="reference internal" href="references.html#id190" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id25" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a> <span id="id4">[<a class="reference internal" href="references.html#id21" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span>.</p>
 <div class="admonition note">
@@ -899,7 +900,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</div>
+                <div class="title">Helmholtz decomposition and energy spectra analysis of a turbulent field</div>
                 
               </div>
             </a>
@@ -996,8 +997,7 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

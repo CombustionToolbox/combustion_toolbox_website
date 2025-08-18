@@ -46,7 +46,7 @@ extensions = [
     'myst_parser',
     'sphinx.ext.autodoc',   # for enumeration of objects stuff
     # 'sphinx.ext.autosummary',
-    'nbsphinx',
+    # 'nbsphinx',
     'sphinx_togglebutton',
     # 'sphinxcontrib.fulltoc', # for sidebar TOC
     'sphinxcontrib.matlab',    # support for MATLAB
@@ -66,6 +66,7 @@ extensions = [
 myst_enable_extensions = [
     'colon_fence',
     'substitution',
+    'dollarmath',
 ]
 
 myst_substitutions = {

@@ -23,7 +23,7 @@ where $p$, $\rho$, $u$, and $h$ represent pressure, density, velocity, and speci
 ```
 where $R$ is the universal gas constant, $T$ is the temperature, and $W$ is the molecular weight of the gas. 
 
-To solve these equations using the Combustion Toolbox, we will use the {mat:func}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver`  class, part of the `+combustiontoolbox.+shockdetonation` (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air, with an initial temperature $T_1 = 300$ K, pressure $p_1 = 1$ bar, and a pre-shock Mach number $\mathcal{M}_1 \in [1, 10]$:
+To solve these equations using the Combustion Toolbox, we will use the {mat:func}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver`  class, part of the `+combustiontoolbox.+shockdetonation` (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air (79% $\text{N}_2$, 21% $\text{O}_2$ by volume), with an initial temperature $T_1 = 300$ K, pressure $p_1 = 1$ bar, and a pre-shock Mach number $\mathcal{M}_1 \in [1, 10]$:
 
 ```matlab
 % Import packages
@@ -81,6 +81,3 @@ For the calorically imperfect gas with frozen chemistry model, also known as the
 ```matlab
 solver = ShockSolver('FLAG_FROZEN', true);
 ````
-
-## Congratulations!
-Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
