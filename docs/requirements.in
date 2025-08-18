@@ -2,7 +2,6 @@ sphinx
 sphinxcontrib-matlabdomain
 texext
 sphinx-togglebutton
-sphinxcontrib-fulltoc
 sphinx-toolbox
 sphinx-copybutton
 sphinx_design

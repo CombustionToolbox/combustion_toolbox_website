@@ -243,6 +243,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_shock_waves.html">Shock waves</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../shock_waves/shock_waves_1.html">Incident shock waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shock_waves/shock_waves_2.html">Oblique shock waves</a></li>
 </ul>
 </li>
 </ul>
@@ -297,7 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz-Hodge decomposition and energy spectra analysis of a turbulent field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
 </ul>
@@ -355,7 +356,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="chemical-equilibrium-at-constant-temperature-and-pressure">
+          <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-at-constant-temperature-and-pressure">
 <h1>Chemical equilibrium at constant temperature and pressure<a class="headerlink" href="#chemical-equilibrium-at-constant-temperature-and-pressure" title="Permalink to this heading">#</a></h1>
 <p>Following the example used in the preciding section, let’s compute the equilibrium composition of a stoichiometric CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixture at 3000 K and 1.01325 bar (1 atm). To obtain the equilibrium composition, we have to define the chemical species that can appear in the final state. The combustion of typical hydrocarbon fuels, such as methane, is a complex process that involves hundreds of chemical species. However, the number of species that have a significant impact on the properties of the final mixture is much smaller. Combustion Toolbox provides a list of predefined species that can be used to compute the equilibrium composition of a mixture. The list of predefined species can be found in the routine <a class="reference internal" href="../../documentation/api/core/index.html#src.+combustiontoolbox.+core.&#64;ChemicalSystem.setListSpecies" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.setListSpecies"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">setListSpecies()</span></code></a>. Alternatively, refer to the <a class="reference external" href="https://combustion-toolbox-website.readthedocs.io/en/latest/tutorials/basics/basics_4.html#using-predefined-chemical-systems">Using predefined chemical systems</a> tutorial section.</p>
 <p>For a preliminary analysis, we will consider a set of 23 species:</p>
@@ -633,7 +634,7 @@ Plain code</label><div class="sd-tab-content docutils">
 <p align="center">
     <img src="../../_static/img/Tutorial_1.svg" width="1000">
 </p>
-<p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH$_4$-ideal air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 2.39 seconds using a Intel(R) Core(TM) i7-11800H CPU &#64; 2.30GHz.</em></p>
+<p><strong>Figure 1:</strong> <em>Example TP: variation of molar fraction for lean to rich CH<span class="math notranslate nohighlight">\(_4\)</span>-ideal air mixtures at 3000 [K] and 1.01325 [bar], a set of 26 species considered and a total of 451 case studies. The computational time was of 2.39 seconds using a Intel(R) Core(TM) i7-11800H CPU &#64; 2.30GHz.</em></p>
 </div>
 <input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-19">
@@ -825,8 +826,7 @@ Parametric study</label><div class="sd-tab-content docutils">
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

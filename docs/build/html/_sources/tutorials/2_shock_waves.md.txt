@@ -8,4 +8,5 @@ In this section, we will cover how to use the {mat:func}`~src.+combustiontoolbox
     :titlesonly:
     
 shock_waves/shock_waves_1
+shock_waves/shock_waves_2
 ```
