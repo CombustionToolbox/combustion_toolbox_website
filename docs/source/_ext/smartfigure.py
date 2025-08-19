@@ -6,9 +6,17 @@ def replace_figure_extensions(app, doctree, fromdocname):
     ext = '.svg' if builder == 'html' else '.pdf'
 
     for node in doctree.traverse(nodes.image):
-        basename, current_ext = os.path.splitext(node['uri'])
+        uri = node['uri']
+        basename, current_ext = os.path.splitext(uri)
+
         if current_ext.lower() in ['.svg', '.pdf', '.png']:
-            node['uri'] = basename + ext
+            new_uri = basename + ext
+
+            # For LaTeX builds, remove leading slash if present
+            if builder == 'latex' and new_uri.startswith('/_static'):
+                new_uri = new_uri[1:]  # remove leading "/"
+
+            node['uri'] = new_uri
 
 def setup(app):
     app.connect('doctree-resolved', replace_figure_extensions)
