@@ -52,7 +52,7 @@ DhT_CO2 = species_DhT('CO2', 2000, DB)
 ```
 
 
-:::{figure} ../../_static/img/performance_thermo.svg
+:::{figure} /_static/img/performance_thermo.svg
 :name: fig_performance_thermo
 :width: 800px
 :align: center
@@ -61,7 +61,7 @@ Performance test, execution times for over $10^5$ calculations of the specific h
 
 
 
-:::{figure} ../../_static/img/validation_thermo.svg
+:::{figure} /_static/img/validation_thermo.svg
 :name: fig_validation_thermo
 :width: 800px
 :align: center
