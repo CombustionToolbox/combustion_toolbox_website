@@ -202,3 +202,8 @@ a[href$=".pdf"]::after {
 .caption-number {
   font-weight: bold !important;  
 }
+
+figure, .myst-figure, .figure {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
