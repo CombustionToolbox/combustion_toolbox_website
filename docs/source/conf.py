@@ -81,6 +81,10 @@ myst_substitutions = {
     'affiliation': 'Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain',
 }
 
+myst_directives_aliases = {
+    "smartfigure": "figure"  # treat smartfigure like figure for MyST cross-ref and numbering
+}
+
 # Other settings
 myst_heading_anchors = 4
 bibtex_bibfiles = ['refs.bib']

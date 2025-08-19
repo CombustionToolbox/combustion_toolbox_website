@@ -4,24 +4,29 @@ Routines to generate the app, add-ons, assets, and all the necessary functions t
 
 ## Combustion Toolbox GUI
 
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_cuadra2024_labels_1.svg" width="500">
-</p>
+:::{figure} ../../_static/img/cuadra2022/gui_cuadra2024_labels_1.svg
+:name: gui_cuadra2024_labels_1
+:width: 500px
+:align: center
 
-**Figure 1:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 1].*
+Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 1].
+:::
 
+:::{figure} ../../_static/img/cuadra2022/gui_cuadra2024_labels_2.svg
+:name: gui_cuadra2024_labels_2
+:width: 500px
+:align: center
 
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_cuadra2024_labels_2.svg" width="500">
-</p>
+Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 2].
+:::
 
-**Figure 2:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 2].*
+:::{figure} ../../_static/img/cuadra2022/gui_cuadra2024_labels_34_vertical.svg
+:name: gui_cuadra2024_labels_34_vertical
+:width: 500px
+:align: center
+Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 3].
+:::
 
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_cuadra2024_labels_34_vertical.svg" width="500">
-</p>
-
-**Figure 3:** *Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene (C2H2)-air mixture at standard conditions (T1 = 300 K and p1 = 1 atm); labels: name of the different components of the GUI. In particular, the numerical results correspond to phi = 0.5 (selected case in the tree component) [part 3].*
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}
@@ -54,68 +59,37 @@ The Add-ons included in CT are:
 
 <br>
 
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_uielements.svg" width="800">
-</p>
-
-**Figure 4:** *Add-on uielements.*
-
-<!-- :::{dropdown} Routines
-```{eval-rst}
-.. autoclass:: src.gui.addons.uielements
-   :members:
-```
+:::{figure} ../../_static/img/cuadra2022/gui_uielements.svg
+:name: fig_gui_uielements
+:width: 800px
+:align: center
+Add-on uielements.
 :::
 
-*** -->
-
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_uipreferences.svg" width="800">
-</p>
-
-**Figure 5:** *Add-on uipreferences.*
-
-<!-- :::{dropdown} Routines
-```{eval-rst}
-.. autoclass:: src.gui.addons.uipreferences
-   :members:
-```
+:::{figure} ../../_static/img/cuadra2022/gui_uipreferences.svg
+:name: fig_gui_uipreferences
+:width: 800px
+:align: center
+Add-on uipreferences.
 :::
 
-*** -->
-
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_uifeedback.svg" width="400">
-</p>
-
-**Figure 6:** *Add-on uifeedback.*
-
-***
-
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_uivalidation.svg" width="800">
-</p>
-
-**Figure 7:** *Add-on uivalidations.*
-
-<!-- :::{dropdown} Routines
-```{eval-rst}
-.. autoclass:: src.gui.addons.uivalidations
-   :members:
-```
+:::{figure} ../../_static/img/cuadra2022/gui_uifeedback.svg
+:name: fig_gui_uifeedback
+:width: 400px
+:align: center
+Add-on uifeedback.
 :::
 
-*** -->
+:::{figure} ../../_static/img/cuadra2022/gui_uivalidation.svg
+:name: fig_gui_uivalidation
+:width: 800px
+:align: center
+Add-on uivalidation.
+:::
 
-<p align="center">
-    <img src="../../_static/img/cuadra2022/gui_uiabout.svg" width="800">
-</p>
-
-**Figure 8:** *Add-on uiabout.*
-
-<!-- :::{dropdown} Routines
-```{eval-rst}
-.. autoclass:: src.gui.addons.uiabout
-   :members:
-```
-::: -->
+:::{figure} ../../_static/img/cuadra2022/gui_uiabout.svg
+:name: fig_gui_uiabout
+:width: 800px
+:align: center
+Add-on uiabout.
+:::

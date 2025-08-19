@@ -2,10 +2,10 @@
 
 ## Introduction
 
-This tutorial presents the solution of the Rankine–Hugoniot equations for a planar incident shock wave in a supersonic flow. A schematic is shown in {numref}`fig:sketch_normal_shock`. The shock wave is characterized by the upstream velocity $u_1$ and thermodynamic state, which for an ideal gas is defined by its chemical composition ($\boldsymbol{n}_1$) and two independent state variables (e.g., temperature $T_1$ and pressure $p_1$). Across the shock, the flow undergoes an abrupt and irreversible change in state: the downstream properties $(u_2, p_2, T_2)$ follow from the conservation of mass, momentum, and energy, while the post-shock composition $\boldsymbol{n}_2$ is obtained according to the selected chemical model---either frozen or chemical equilibrium---applied at the downstream state.
+This tutorial presents the solution of the Rankine–Hugoniot equations for a planar incident shock wave in a supersonic flow. A schematic is shown in {numref}`fig_sketch_normal_shock`. The shock wave is characterized by the upstream velocity $u_1$ and thermodynamic state, which for an ideal gas is defined by its chemical composition ($\boldsymbol{n}_1$) and two independent state variables (e.g., temperature $T_1$ and pressure $p_1$). Across the shock, the flow undergoes an abrupt and irreversible change in state: the downstream properties $(u_2, p_2, T_2)$ follow from the conservation of mass, momentum, and energy, while the post-shock composition $\boldsymbol{n}_2$ is obtained according to the selected chemical model---either frozen or chemical equilibrium---applied at the downstream state.
 
 :::{figure} ../../_static/img/sketch_normal_shock.svg
-:name: fig:sketch_normal_shock
+:name: fig_sketch_normal_shock
 :width: 400px
 :align: center
 

@@ -114,14 +114,22 @@ TOTAL                1.0000e+00
 
 Two plots should also appear, illustrating the equilibrium composition of the system as a function of the equivalence ratio $\phi$, and various properties (temperature, pressure, density, enthalpy, internal energy, Gibbs free energy, entropy, and adiabatic index) of the products as a function of $\phi$.
 
+:::{figure} ../../_static/img/chemical_equilibrium_2_fig1.svg
+:name: fig_chemical_equilibrium_2_fig1
+:width: 1000px
+:align: center
 
-<p align="center">
-    <img src="../../_static/img/chemical_equilibrium_2_fig1.svg" width="1000">
-</p>
+Variation of molar fraction for an HP transformation in lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-ideal air mixtures at standard conditions ($T_1 = 300$ K, $p_1 = 1$ bar).
+:::
 
-<p align="center">
-    <img src="../../_static/img/chemical_equilibrium_2_fig2.svg" width="1000">
-</p>
+
+:::{figure} ../../_static/img/chemical_equilibrium_2_fig2.svg
+:name: fig_chemical_equilibrium_2_fig2
+:width: 1000px
+:align: center
+
+Variation of thermodynamic properties for an HP transformation in lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-ideal air mixtures at standard conditions ($T_1 = 300$ K, $p_1 = 1$ bar).
+:::
 
 
 Combustion Toolbox performs the calculations from the last case to the first one.
