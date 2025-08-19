@@ -5,7 +5,7 @@
 This tutorial extends the analysis of [normal shock waves](./shock_waves_1.md) to the case of **oblique shocks**, where the shock front is inclined relative to the incoming supersonic flow. In this configuration, the post-shock state can be determined by prescribing either the **shock wave angle** $\beta$ (angle between the upstream flow direction and the shock) or the **flow deflection angle** $\theta$ (turning of the flow across the shock), as illustrated below:
 
 
-:::{figure} ../../_static/img/sketch_oblique_shock.svg
+:::{figure} /_static/img/sketch_oblique_shock.svg
 :width: 400px
 :align: center
 
@@ -82,14 +82,14 @@ report(solver, mixArray1, mixArray2);
 
 This code snippet will generate two figures: Molar fraction of species in the mixture as a function of the wave angle $\beta$ and the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of $\beta$.
 
-:::{figure} ../../_static/img/shock_waves_2_fig1_beta.svg
+:::{figure} /_static/img/shock_waves_2_fig1_beta.svg
 :width: 1000px
 :align: center
 
 Molar fraction of chemical species downstream of an oblique shock as a function of the wave angle $\beta$, for a Mach 10 in air (79% $\text{N}_2$, 21% $\text{O}_2$ by volume) at standard upstream conditions $T_1 = 300$ K, $p_1 = 1$ bar.
 :::
 
-:::{figure} ../../_static/img/shock_waves_2_fig2_beta.svg
+:::{figure} /_static/img/shock_waves_2_fig2_beta.svg
 :width: 1000px
 :align: center
 
@@ -135,21 +135,21 @@ report(solver, mixArray1, mixArray2_1, mixArray2_2);
 
 This code snippet will generate three figures: Molar fraction of species in the mixture as a function of the deflection angle $\theta$ for the weak and strong solutions, as well as the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of $\theta$ for both branches.
 
-:::{figure} ../../_static/img/shock_waves_2_fig1_theta_weak.svg
+:::{figure} /_static/img/shock_waves_2_fig1_theta_weak.svg
 :width: 1000px
 :align: center
 
 Molar fraction of chemical species downstream of the weak oblique shock as a function of the flow deflection angle $\theta$, for a Mach 10 in air (79% $\text{N}_2$, 21% $\text{O}_2$ by volume) at standard upstream conditions $T_1 = 300$ K, $p_1 = 1$ bar.
 :::
 
-:::{figure} ../../_static/img/shock_waves_2_fig1_theta_strong.svg
+:::{figure} /_static/img/shock_waves_2_fig1_theta_strong.svg
 :width: 1000px
 :align: center
 
 Molar fraction of chemical species downstream of the strong oblique shock as a function of the flow deflection angle $\theta$, for a Mach 10 in air (79% $\text{N}_2$, 21% $\text{O}_2$ by volume) at standard upstream conditions $T_1 = 300$ K, $p_1 = 1$ bar.
 :::
 
-:::{figure} ../../_static/img/shock_waves_2_fig2_theta.svg
+:::{figure} /_static/img/shock_waves_2_fig2_theta.svg
 :width: 1000px
 :align: center
 

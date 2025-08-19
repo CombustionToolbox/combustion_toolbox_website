@@ -257,7 +257,7 @@ report(solver, mixArray);
 ```
 will reproduce {numref}`fig_molar_fraction_chemical_equilibrium_1`, which represents the variation of the molar fraction with the equivalence ratio for lean to rich CH$_4$-ideal air mixtures at 3000 K and 1.01325 bar. 
 
-:::{figure} ../../_static/img/Tutorial_1.svg
+:::{figure} /_static/img/Tutorial_1.svg
 :name: fig_molar_fraction_chemical_equilibrium_1
 :width: 1000px
 :align: center

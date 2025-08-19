@@ -4,7 +4,7 @@
 
 This tutorial presents the solution of the Rankine–Hugoniot equations for a planar incident shock wave in a supersonic flow. A schematic is shown in {numref}`fig_sketch_normal_shock`. The shock wave is characterized by the upstream velocity $u_1$ and thermodynamic state, which for an ideal gas is defined by its chemical composition ($\boldsymbol{n}_1$) and two independent state variables (e.g., temperature $T_1$ and pressure $p_1$). Across the shock, the flow undergoes an abrupt and irreversible change in state: the downstream properties $(u_2, p_2, T_2)$ follow from the conservation of mass, momentum, and energy, while the post-shock composition $\boldsymbol{n}_2$ is obtained according to the selected chemical model---either frozen or chemical equilibrium---applied at the downstream state.
 
-:::{figure} ../../_static/img/sketch_normal_shock.svg
+:::{figure} /_static/img/sketch_normal_shock.svg
 :name: fig_sketch_normal_shock
 :width: 400px
 :align: center
@@ -73,7 +73,7 @@ report(solver, mixArray1, mixArray2);
 
 This code snippet will generate two figures: Molar fraction of species in the mixture as a function of the pre-shock Mach number and the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of the pre-shock Mach number.
 
-:::{figure} ../../_static/img/shock_waves_1_fig1.svg
+:::{figure} /_static/img/shock_waves_1_fig1.svg
 :name: fig:molar_fraction_normal_shock
 :width: 1000px
 :align: center
@@ -81,7 +81,7 @@ This code snippet will generate two figures: Molar fraction of species in the mi
 Molar fraction of chemical species downstream of a normal shock in air (79% $\text{N}_2$, 21% $\text{O}_2$ by volume) as a function of the pre-shock Mach number $\mathcal{M}_1$, for standard upstream conditions $T_1 = 300$ K, $p_1 = 1$ bar.
 :::
 
-:::{figure} ../../_static/img/shock_waves_1_fig2.svg
+:::{figure} /_static/img/shock_waves_1_fig2.svg
 :name: fig:properties_normal_shock
 :width: 1000px
 :align: center
