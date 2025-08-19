@@ -382,6 +382,7 @@ _PREAMBLE = r"""
 \usepackage{amsmath}
 \usepackage[breaklinks]{hyperref}
 \usepackage{graphicx}
+\graphicspath{{_static/img/}{_static/img/cuadra2022/}}
 \usepackage[english]{babel}
 \renewcommand{\bibname}{References}
 """
