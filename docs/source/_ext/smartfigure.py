@@ -8,8 +8,8 @@ def replace_figure_extensions(app, doctree, fromdocname):
     for node in doctree.traverse(nodes.image):
         uri = node['uri']
 
-        # Remove extra braces and whitespace
-        uri = uri.strip().strip('{}')
+        # Remove braces if present
+        uri = uri.replace('{', '').replace('}', '').strip()
 
         # Check extension
         basename, current_ext = os.path.splitext(uri)
