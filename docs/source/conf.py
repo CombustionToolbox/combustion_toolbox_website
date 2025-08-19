@@ -24,6 +24,9 @@ sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
 # tell Sphinx matlab extension where to find matlab code.
 matlab_src_dir = os.path.abspath('../..')
 
+# add the path to the custom extension
+sys.path.append(os.path.abspath('./_ext'))
+
 # -- Project information -----------------------------------------------------
 
 project = 'Combustion Toolbox'
@@ -61,6 +64,7 @@ extensions = [
     # "sphinxext.opengraph",
     # "sphinx_inline_tabs",
     'sphinxcontrib.bibtex',    # support for bibtex
+    'smartfigure',             # custom directive for smart figures
 ]
 
 myst_enable_extensions = [
