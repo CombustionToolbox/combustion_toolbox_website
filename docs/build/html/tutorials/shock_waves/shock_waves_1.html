@@ -200,7 +200,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -350,7 +350,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -358,21 +358,36 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="incident-shock-waves">
 <h1>Incident shock waves<a class="headerlink" href="#incident-shock-waves" title="Permalink to this heading">#</a></h1>
-<p>In this tutorial, we will cover how to solve the Rankine-Hugoniot equations for a planar incident shock wave, namely</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>This tutorial presents the solution of the Rankine–Hugoniot equations for a planar incident shock wave in a supersonic flow. A schematic is shown in <a class="reference internal" href="#fig-sketch-normal-shock"><span class="std std-numref">Fig. 1</span></a>. The shock wave is characterized by the upstream velocity <span class="math notranslate nohighlight">\(u_1\)</span> and thermodynamic state, which for an ideal gas is defined by its chemical composition (<span class="math notranslate nohighlight">\(\boldsymbol{n}_1\)</span>) and two independent state variables (e.g., temperature <span class="math notranslate nohighlight">\(T_1\)</span> and pressure <span class="math notranslate nohighlight">\(p_1\)</span>). Across the shock, the flow undergoes an abrupt and irreversible change in state: the downstream properties <span class="math notranslate nohighlight">\((u_2, p_2, T_2)\)</span> follow from the conservation of mass, momentum, and energy, while the post-shock composition <span class="math notranslate nohighlight">\(\boldsymbol{n}_2\)</span> is obtained according to the selected chemical model—either frozen or chemical equilibrium—applied at the downstream state.</p>
+<figure class="align-center" id="fig-sketch-normal-shock">
+<a class="reference internal image-reference" href="../../_images/sketch_normal_shock.svg"><img alt="../../_images/sketch_normal_shock.svg" src="../../_images/sketch_normal_shock.svg" width="400px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic of a normal shock wave.</span><a class="headerlink" href="#fig-sketch-normal-shock" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="governing-equations">
+<h2>Governing equations<a class="headerlink" href="#governing-equations" title="Permalink to this heading">#</a></h2>
+<p>For a one-dimensional planar shock, the <strong>Rankine–Hugoniot relations</strong> express the conservation of mass, momentum, and energy across the shock front as:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \begin{equation}
   p_2 = p_1 + \rho_1 u_1^2 \left( 1-\dfrac{\rho_1}{\rho_2}\right) \quad \text{and} \quad
-h_2 = h_1 + \dfrac{u_1^2}{2}\left[1- \left(\dfrac{\rho_1}{\rho_2}\right)^2\right],
+  h_2 = h_1 + \dfrac{u_1^2}{2}\left[1- \left(\dfrac{\rho_1}{\rho_2}\right)^2\right],
 \end{equation}</div></div>
-<p>where <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, and <span class="math notranslate nohighlight">\(h\)</span> represent pressure, density, velocity, and specific enthalpy, respectively, and the subscripts 1 and 2 refer to the upstream and downstream states of the shock wave. This equation must be supplemented by the equation of state, which for an ideal gas reads</p>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> denotes specific enthalpy. This equation must be supplemented by the equation of state, which for an ideal gas reads</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \begin{equation}
 p = \rho R T / W,
 \end{equation}</div></div>
-<p>where <span class="math notranslate nohighlight">\(R\)</span> is the universal gas constant, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(W\)</span> is the molecular weight of the gas.</p>
-<p>To solve these equations using the Combustion Toolbox, we will use the <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a>  class, part of the <code class="docutils literal notranslate"><span class="pre">+combustiontoolbox.+shockdetonation</span></code> (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume), with an initial temperature <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, pressure <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar, and a pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 \in [1, 10]\)</span>:</p>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the universal gas constant and <span class="math notranslate nohighlight">\(W\)</span> is the molecular weight of the gas.</p>
+</section>
+<section id="numerical-example">
+<h2>Numerical example<a class="headerlink" href="#numerical-example" title="Permalink to this heading">#</a></h2>
+<p>We now illustrate how to solve the Rankine–Hugoniot equations in the Combustion Toolbox using the class <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a>  class, part of the <code class="docutils literal notranslate"><span class="pre">+combustiontoolbox.+shockdetonation</span></code> (CT-SD) subpackage (module). Below is an example that solves the Rankine-Hugoniot equations for a planar incident shock wave in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume), with an initial temperature <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, pressure <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar, and a pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 \in [1, 10]\)</span>:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import packages</span><span class="w"></span>
 <span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">databases</span><span class="p">.</span><span class="n">NasaDatabase</span><span class="w"></span>
 <span class="nb">import</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">core</span><span class="o">.*</span><span class="w"></span>
@@ -404,12 +419,18 @@ p = \rho R T / W,
 </pre></div>
 </div>
 <p>This code snippet will generate two figures: Molar fraction of species in the mixture as a function of the pre-shock Mach number and the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of the pre-shock Mach number.</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_1_fig1.svg" width="1000">
-</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_1_fig2.svg" width="1000">
-</p>
+<figure class="align-center" id="fig-molar-fraction-normal-shock">
+<a class="reference internal image-reference" href="../../_images/shock_waves_1_fig1.svg"><img alt="../../_images/shock_waves_1_fig1.svg" src="../../_images/shock_waves_1_fig1.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Molar fraction of chemical species downstream of a normal shock in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) as a function of the pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span>, for standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#fig-molar-fraction-normal-shock" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-properties-normal-shock">
+<a class="reference internal image-reference" href="../../_images/shock_waves_1_fig2.svg"><img alt="../../_images/shock_waves_1_fig2.svg" src="../../_images/shock_waves_1_fig2.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Thermodynamic properties downstream of a normal shock in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) as function of the pre-shock Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span>, for standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#fig-properties-normal-shock" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The Combustion Toolbox allows to consider different caloric models regarding the final gas mixture, including calorically perfect gas, calorically imperfect gas with frozen chemistry, or calorically imperfect gas with equilibrium chemistry, including dissociation and ionization.</p>
@@ -422,6 +443,7 @@ p = \rho R T / W,
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;FLAG_FROZEN&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </section>
 
         </article>
@@ -479,8 +501,29 @@ p = \rho R T / W,
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Incident shock waves</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#governing-equations">Governing equations</a></li>
+<li><a class="reference internal" href="#numerical-example">Numerical example</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

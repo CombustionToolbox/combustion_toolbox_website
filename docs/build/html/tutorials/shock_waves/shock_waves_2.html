@@ -358,18 +358,26 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="oblique-shock-waves">
 <h1>Oblique shock waves<a class="headerlink" href="#oblique-shock-waves" title="Permalink to this heading">#</a></h1>
-<p>This tutorial extends the analysis of <a class="reference internal" href="shock_waves_1.html"><span class="doc std std-doc">normal shock waves</span></a> to the case of oblique shocks, where the shock front is inclined relative to the incoming supersonic flow. In this configuration, the post-shock state can be determined by prescribing either the shock wave angle <span class="math notranslate nohighlight">\(\beta\)</span> or the flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span>, as illustrated below:</p>
-<p align="center">
-    <img src="../../_static/img/sketch_oblique_shock.svg" width="300">
-</p>
-<p>The governing Rankine–Hugoniot relations remain the same as for normal shocks, but it is convenient to write them in terms of the normal component of the upstream velocity:</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>This tutorial extends the analysis of <a class="reference internal" href="shock_waves_1.html"><span class="doc std std-doc">normal shock waves</span></a> to the case of <strong>oblique shocks</strong>, where the shock front is inclined relative to the incoming supersonic flow. In this configuration, the post-shock state can be determined by prescribing either the <strong>shock wave angle</strong> <span class="math notranslate nohighlight">\(\beta\)</span> (angle between the upstream flow direction and the shock) or the <strong>flow deflection angle</strong> <span class="math notranslate nohighlight">\(\theta\)</span> (turning of the flow across the shock), as illustrated below:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/sketch_oblique_shock.svg"><img alt="../../_images/sketch_oblique_shock.svg" src="../../_images/sketch_oblique_shock.svg" width="400px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Schematic of an oblique shock wave with wave angle <span class="math notranslate nohighlight">\(\beta\)</span> and flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="governing-equations">
+<h2>Governing equations<a class="headerlink" href="#governing-equations" title="Permalink to this heading">#</a></h2>
+<p>The Rankine–Hugoniot jump conditions across a planar, inviscid, adiabatic oblique shock are equivalent to those for a normal shock when written in terms of the <strong>normal component</strong> of the velocity. Specifically,</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \begin{equation}
   p_2 = p_1 + \rho_1 u_{n,1}^2 \left( 1-\dfrac{\rho_1}{\rho_2}\right) \quad \text{and} \quad
   h_2 = h_1 + \dfrac{u_{n,1}^2}{2}\left[1- \left(\dfrac{\rho_1}{\rho_2}\right)^2\right],
 \end{equation}</div></div>
-<p>with <span class="math notranslate nohighlight">\(u_{n,1} = \mathcal{M}_1 a_1 \sin\beta\)</span>, where <span class="math notranslate nohighlight">\(u_{n,1}\)</span> is the normal component of the upstream velocity, <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span> the upstream Mach number, and <span class="math notranslate nohighlight">\(a_1\)</span> the upstream speed of sound.</p>
+<p>where <span class="math notranslate nohighlight">\(u_{n,1} = \mathcal{M}_1 a_1 \sin\beta\)</span> is the upstream velocity component normal to the shock, with <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span> the upstream Mach number and <span class="math notranslate nohighlight">\(a_1\)</span> the upstream speed of sound. Note that the tangential velocity remains continuous across an inviscid shock in the absence of shear stress.</p>
 <p>The wave angle <span class="math notranslate nohighlight">\(\beta\)</span> and flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> are related through the oblique-shock trigonometric condition derived from tangential momentum conservation (<span class="math notranslate nohighlight">\(u_{1,t} = u_{2,t}\)</span>):</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -377,12 +385,18 @@
    \tan(\beta - \theta) = \frac{u_{2,n}}{u_{1,n}} \tan\beta
 \end{equation}</div></div>
 <p>where <span class="math notranslate nohighlight">\(u_{2,n} = u_2 \sin(\beta - \theta)\)</span> is the downstream velocity component normal to the shock, and <span class="math notranslate nohighlight">\(u_{2,t}\)</span> the tangential component.</p>
-<p>If the wave angle <span class="math notranslate nohighlight">\(\beta\)</span> is specified, the RH equations give a unique solution. However, if the deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is given, two solutions generally exist:</p>
+</section>
+<section id="solution-branches">
+<h2>Solution branches<a class="headerlink" href="#solution-branches" title="Permalink to this heading">#</a></h2>
+<p>If the wave angle <span class="math notranslate nohighlight">\(\beta\)</span> is prescribed, the Rankine–Hugoniot equations yield a unique post-shock solution. However, if the deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> is given, two physically admissible solutions may exist:</p>
 <ul class="simple">
 <li><p><strong>Weak solution</strong> (smaller <span class="math notranslate nohighlight">\(\beta\)</span>): the downstream flow remains supersonic.</p></li>
 <li><p><strong>Strong solution</strong> (larger <span class="math notranslate nohighlight">\(\beta\)</span>): the downstream flow becomes subsonic.
-These two branches meet at the maximum deflection angle <span class="math notranslate nohighlight">\(\theta_{\max}\)</span>, above which no physical solution exists for a given upstream Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span>. In practice, the weak-shock branch is usually observed in external aerodynamic flows, while the strong-shock branch is less common.</p></li>
+These two branches converge at the maximum deflection angle <span class="math notranslate nohighlight">\(\theta_{\max}\)</span>, above which no physical solution exists for a given upstream Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1\)</span>. In practice, the weak-shock branch is usually observed in external aerodynamic flows, while the strong-shock branch is less common.</p></li>
 </ul>
+</section>
+<section id="numerical-examples">
+<h2>Numerical examples<a class="headerlink" href="#numerical-examples" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -419,12 +433,18 @@ Wave angle <span class="math notranslate nohighlight">\(\beta\)</span></label><d
 </pre></div>
 </div>
 <p>This code snippet will generate two figures: Molar fraction of species in the mixture as a function of the wave angle <span class="math notranslate nohighlight">\(\beta\)</span> and the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_2_fig1_beta.svg" width="1000">
-</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_2_fig2_beta.svg" width="1000">
-</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/shock_waves_2_fig1_beta.svg"><img alt="../../_images/shock_waves_2_fig1_beta.svg" src="../../_images/shock_waves_2_fig1_beta.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Molar fraction of chemical species downstream of an oblique shock as a function of the wave angle <span class="math notranslate nohighlight">\(\beta\)</span>, for a Mach 10 in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) at standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/shock_waves_2_fig2_beta.svg"><img alt="../../_images/shock_waves_2_fig2_beta.svg" src="../../_images/shock_waves_2_fig2_beta.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Thermodynamic properties downstream of an oblique shock in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) as function of the wave angle <span class="math notranslate nohighlight">\(\beta\)</span>, for a fixed upstream Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 = 10\)</span>, and standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -461,17 +481,27 @@ Deflection angle <span class="math notranslate nohighlight">\(\theta\)</span></l
 </pre></div>
 </div>
 <p>This code snippet will generate three figures: Molar fraction of species in the mixture as a function of the deflection angle <span class="math notranslate nohighlight">\(\theta\)</span> for the weak and strong solutions, as well as the variation of the thermodynamic properties (e.g., temperature, pressure) as a function of <span class="math notranslate nohighlight">\(\theta\)</span> for both branches.</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_2_fig1_theta_weak.svg" width="1000">
-</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_2_fig1_theta_strong.svg" width="1000">
-</p>
-<p align="center">
-    <img src="../../_static/img/shock_waves_2_fig2_theta.svg" width="1000">
-</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/shock_waves_2_fig1_theta_weak.svg"><img alt="../../_images/shock_waves_2_fig1_theta_weak.svg" src="../../_images/shock_waves_2_fig1_theta_weak.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Molar fraction of chemical species downstream of the weak oblique shock as a function of the flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span>, for a Mach 10 in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) at standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/shock_waves_2_fig1_theta_strong.svg"><img alt="../../_images/shock_waves_2_fig1_theta_strong.svg" src="../../_images/shock_waves_2_fig1_theta_strong.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Molar fraction of chemical species downstream of the strong oblique shock as a function of the flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span>, for a Mach 10 in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) at standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/shock_waves_2_fig2_theta.svg"><img alt="../../_images/shock_waves_2_fig2_theta.svg" src="../../_images/shock_waves_2_fig2_theta.svg" width="1000px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Thermodynamic properties downstream of an oblique shock in air (79% <span class="math notranslate nohighlight">\(\text{N}_2\)</span>, 21% <span class="math notranslate nohighlight">\(\text{O}_2\)</span> by volume) as function of the flow deflection angle <span class="math notranslate nohighlight">\(\theta\)</span>, for a fixed upstream Mach number <span class="math notranslate nohighlight">\(\mathcal{M}_1 = 10\)</span>, and standard upstream conditions <span class="math notranslate nohighlight">\(T_1 = 300\)</span> K, <span class="math notranslate nohighlight">\(p_1 = 1\)</span> bar. The blue line corresponds to the weak solution, while the red line corresponds to the strong solution.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
+</section>
 <section id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this heading">#</a></h2>
 <p>Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder).</p>
@@ -546,6 +576,10 @@ Deflection angle <span class="math notranslate nohighlight">\(\theta\)</span></l
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Oblique shock waves</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#governing-equations">Governing equations</a></li>
+<li><a class="reference internal" href="#solution-branches">Solution branches</a></li>
+<li><a class="reference internal" href="#numerical-examples">Numerical examples</a></li>
 <li><a class="reference internal" href="#congratulations">Congratulations!</a></li>
 </ul>
 </li>

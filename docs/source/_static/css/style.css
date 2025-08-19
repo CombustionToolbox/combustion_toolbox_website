@@ -198,3 +198,7 @@ a[href$=".pdf"]::after {
   display: flex;
   align-items: baseline; /* Align items at the baseline */
 }
+
+.caption-number {
+  font-weight: bold !important;  
+}
