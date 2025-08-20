@@ -369,11 +369,11 @@
                 &amp;\phantom{{}={}}&amp; + a_7T^4/4 + a_9,
 \end{eqnarray}</div></div>
 <p>where <span class="math notranslate nohighlight">\(a_i\)</span> from <span class="math notranslate nohighlight">\(i=1, \dots, 7\)</span> are the temperature coefficients and <span class="math notranslate nohighlight">\(i =8, 9\)</span> are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K <span id="id3">[<a class="reference internal" href="../../references.html#id189" title="B. J. McBride. NASA Glenn coefficients for calculating thermodynamic properties of individual species. National Aeronautics and Space Administration, Glenn Research Center, 2002.">McBride, 2002</a>]</span>. These values are available in the <a class="reference external" href="https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/databases/thermo_CT.inp">source code</a> and can be also obtained from <a class="reference external" href="https://cearun.grc.nasa.gov/ThermoBuild/">NASA’s thermo build website</a>.</p>
-<p>To compute the dimensionless Gibbs energy, <span class="math notranslate nohighlight">\(g_i^\circ (T) / RT\)</span>, from NASA’s polynomials we use the next expression</p>
+<p>To compute the dimensionless Gibbs energy, <span class="math notranslate nohighlight">\(g^\circ (T) / RT\)</span>, from NASA’s polynomials we use the next expression</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \begin{equation}
-    g_i^\circ/RT = h^\circ/RT - s^\circ/R,
+    g^\circ/RT = h^\circ/RT - s^\circ/R,
 \end{equation}</div></div>
 <p>or equivalently</p>
 <div class="math-wrapper docutils container">
