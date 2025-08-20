@@ -14,9 +14,9 @@ The solver handles a variety of canonical shock problems, including:
 * **SHOCK_POLAR_R** – Shock polar diagrams including reflected states  
 * **SHOCK_POLAR_LIMITRR** – Shock polar diagrams in the limit of regular reflection  
 
-These cases can be solved using different formulations, depending on the available data (e.g., Mach number vs. velocity, pressure vs. density). For chemically reacting mixtures, the solver can seamlessly interface with the [CT-EQUIL module](./1_chemical_equilibrium.md) to compute thermodynamic state consistent with the chosen caloric model (calorically perfect, thermally perfect, or calorically imperfect gas).
+These cases can be solved using different formulations, depending on the available data (e.g., upstream Mach number, upstream velocity, deflection angle, or wave angle). For chemically reacting mixtures, the solver can seamlessly interface with the [CT-EQUIL module](./1_chemical_equilibrium.md) to compute thermodynamic state consistent with the chosen caloric model (calorically perfect, thermally perfect, or calorically imperfect gas).
 
-The governing jump conditions for a normal shock are:
+The governing jump conditions for a steady, one-dimensional shock wave are:
 
 ```{eval-rst}
 .. math::

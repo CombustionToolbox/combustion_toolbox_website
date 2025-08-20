@@ -17,13 +17,13 @@ Combustion Toolbox generates its own databases using an up-to-date version of NA
 
 where $a_i$ from $i=1, \dots, 7$ are the temperature coefficients and $i =8, 9$ are the integration constants, respectively. Depending of the species the polynomials fit up to 20000 K {cite:p}`Mcbride2002`. These values are available in the [source code](https://github.com/AlbertoCuadra/combustion_toolbox/blob/master/databases/thermo_CT.inp) and can be also obtained from [NASA's thermo build website](https://cearun.grc.nasa.gov/ThermoBuild/). 
 
-To compute the dimensionless Gibbs energy, $g_i^\circ (T) / RT$, from NASA's polynomials we use the next expression 
+To compute the dimensionless Gibbs energy, $g^\circ (T) / RT$, from NASA's polynomials we use the next expression 
 ```{eval-rst}
 .. math::
     :nowrap:
 
     \begin{equation}
-        g_i^\circ/RT = h^\circ/RT - s^\circ/R,
+        g^\circ/RT = h^\circ/RT - s^\circ/R,
     \end{equation}
 ```
 or equivalently 
