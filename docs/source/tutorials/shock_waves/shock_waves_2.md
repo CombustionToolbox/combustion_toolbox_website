@@ -42,6 +42,7 @@ where $u_{2,n} = u_2 \sin(\beta - \theta)$ is the downstream velocity component 
 If the wave angle $\beta$ is prescribed, the Rankine–Hugoniot equations yield a unique post-shock solution. However, if the deflection angle $\theta$ is given, two physically admissible solutions may exist:
 * **Weak solution** (smaller $\beta$): the downstream flow remains supersonic.
 * **Strong solution** (larger $\beta$): the downstream flow becomes subsonic.
+
 These two branches converge at the maximum deflection angle $\theta_{\max}$, above which no physical solution exists for a given upstream Mach number $\mathcal{M}_1$. In practice, the weak-shock branch is usually observed in external aerodynamic flows, while the strong-shock branch is less common.
 
 ## Numerical examples
