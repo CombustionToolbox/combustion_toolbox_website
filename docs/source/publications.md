@@ -89,7 +89,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 ### PhD, MSc & BSc thesis
 
 * Torremocha, A. (2024). Optimization of scramjet inlet geometry using the Lagrange multipliers method. Universidad Carlos III de Madrid, Spain (MSc thesis - ongoing). Advisors: Alberto Cuadra.
-* Martín, M. L. (2024). Development of a quasi-one-dimensional scramjet flow model using the Combustion Toolbox. Universidad Carlos III de Madrid, Spain (BSc thesis - ongoing). Advisors: Alberto Cuadra.
+* Martín, M. L. (2024). Development of a quasi-one-dimensional scramjet flow model using the Combustion Toolbox. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisors: Alberto Cuadra.
 * Atienza, F. (2024). Optimization of scramjet inlet design for calorically perfect gaseous mixtures. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisors: Alberto Cuadra.
 * Cuadra, A. (2023). Development of a wide-spectrum thermochemical code with application to planar reacting and non-reacting shocks. Universidad Carlos III de Madrid, Spain (PhD thesis). Advisors: Marcos Vera & César Huete.<a href="_static/files/cuadra2023_phd_thesis.pdf" class="pdf" target="_blank"></a>
 * Aguilar, C. (2022). CT-ROCKET: A MATLAB-GUI based thermochemical code to estimate rocket propellant performance. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisor: Alberto Cuadra.
