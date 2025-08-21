@@ -29,6 +29,10 @@ These models allow for rapid estimation of propulsion performance, including the
 Schematic of a chemically reacting rocket flow including chamber, throat, and expanding nozzle.
 :::
 
+
+## Congratulations!
+Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
+
 <!-- 
 
 See the following dedicated pages for usage examples and detailed implementation of each model.
