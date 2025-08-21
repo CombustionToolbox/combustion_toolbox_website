@@ -9,7 +9,7 @@ This tutorial presents the solution of the Rankine–Hugoniot equations for a pl
 :width: 400px
 :align: center
 
-Schematic of a normal shock wave.
+Schematic of a planar shock wave in the wave-fixed frame.
 :::
 
 

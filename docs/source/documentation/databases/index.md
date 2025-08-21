@@ -33,12 +33,12 @@ or equivalently
     :nowrap:
 
     \begin{eqnarray}
-        g_i^\circ/RT &=& -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
+        g^\circ/RT &=& -a_1T^{-2}/2 + a_2T^{-1} (1 + \ln{T}) + a_3(1 - \ln{T}) - a_4T/2 - a_5T^2/6 - a_6T^3/12 \\
                     &\phantom{{}={}}& - a_7T^4/20 + a_8/T - a_9.
     \end{eqnarray}
 ```
 
-This data is collected from the `thermo_CT.inp` file and next formatted into a more accessible structure (\textit{DB\_master}) with the built-in function `generate_DB_master.m`. Then, for faster data access, we generate a new database `DB` using griddedInterpolant objects that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980`. This allows the evaluation of the thermodynamic functions at a given temperature with ease. The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in {numref}`fig_performance_thermo` obtaining the same results as seen  in {numref}`fig_validation_thermo`.
+This data is collected from the `thermo_CT.inp` file and next formatted into a more accessible structure (*DB\_master*) with the built-in function `generate_DB_master.m`. Then, for faster data access, we generate a new database `DB` using griddedInterpolant objects that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980`. This allows the evaluation of the thermodynamic functions at a given temperature with ease. The use of piecewise cubic Hermite interpolating polynomials increments the performance of Combustion Toolbox in approximate 200% as shown in {numref}`fig_performance_thermo` obtaining the same results as seen  in {numref}`fig_validation_thermo`.
 
 ```{note}
 For temperatures outside the bounds, we avoid the higher order terms of the polynomials by linear extrapolation, similar to {cite:t}`stock2018`, extending the range of validity of the thermodynamic data available. It should be emphasized that this extension is limited to a narrow temperature range and may not apply to temperatures significantly outside of this range.
