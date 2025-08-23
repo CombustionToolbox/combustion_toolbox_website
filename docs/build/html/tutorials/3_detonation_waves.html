@@ -250,6 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="detonation_waves/detonation_waves_1.html">Chapman–Jouguet detonation waves</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="4_rockets.html">Rocket performance analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -366,14 +367,14 @@
 <p>Detonation waves are self-sustained shock-induced combustion waves, characterized by a leading shock front tightly coupled to an exothermic reaction zone. The CT-SD module computes the post-detonation state by solving the conservation equations across the wave along with thermochemical equilibrium calculations using the <a class="reference internal" href="1_chemical_equilibrium.html"><span class="doc std std-doc">CT-EQUIL module</span></a>. The solver supports both ideal Chapman–Jouguet detonations and more general overdriven and underdriven configurations.</p>
 <p>The following canonical detonation problems are available:</p>
 <ul class="simple">
-<li><p><strong>DET</strong> – Chapman–Jouguet detonation</p></li>
-<li><p><strong>DET_R</strong> – Reflected Chapman–Jouguet detonation</p></li>
-<li><p><strong>DET_OBLIQUE</strong> – Oblique detonation wave</p></li>
-<li><p><strong>DET_POLAR</strong> – Detonation polar diagrams</p></li>
-<li><p><strong>DET_OVERDRIVEN</strong> – Overdriven detonation</p></li>
-<li><p><strong>DET_OVERDRIVEN_R</strong> – Overdriven reflected detonation</p></li>
-<li><p><strong>DET_UNDERDRIVEN</strong> – Underdriven detonation</p></li>
-<li><p><strong>DET_UNDERDRIVEN_R</strong> – Underdriven reflected detonation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET</span></code> – Chapman–Jouguet detonation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_R</span></code> – Reflected Chapman–Jouguet detonation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OBLIQUE</span></code> – Oblique detonation wave.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_POLAR</span></code> – Detonation polar diagrams.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN</span></code> – Overdriven detonation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_OVERDRIVEN_R</span></code> – Overdriven reflected detonation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN</span></code> – Underdriven detonation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET_UNDERDRIVEN_R</span></code> – Underdriven reflected detonation.</p></li>
 </ul>
 <p>The chemical composition of detonation products is computed at equilibrium using the CT-EQUIL module, and the thermodynamic state is determined by solving the governing conservation laws across a one-dimensional steady detonation wave:</p>
 <div class="math-wrapper docutils container">

@@ -6,14 +6,14 @@ Detonation waves are self-sustained shock-induced combustion waves, characterize
 
 The following canonical detonation problems are available:
 
-* **DET** – Chapman–Jouguet detonation  
-* **DET_R** – Reflected Chapman–Jouguet detonation  
-* **DET_OBLIQUE** – Oblique detonation wave  
-* **DET_POLAR** – Detonation polar diagrams  
-* **DET_OVERDRIVEN** – Overdriven detonation  
-* **DET_OVERDRIVEN_R** – Overdriven reflected detonation  
-* **DET_UNDERDRIVEN** – Underdriven detonation  
-* **DET_UNDERDRIVEN_R** – Underdriven reflected detonation  
+* `DET` – Chapman–Jouguet detonation.
+* `DET_R` – Reflected Chapman–Jouguet detonation.
+* `DET_OBLIQUE` – Oblique detonation wave.
+* `DET_POLAR` – Detonation polar diagrams.
+* `DET_OVERDRIVEN` – Overdriven detonation.
+* `DET_OVERDRIVEN_R` – Overdriven reflected detonation.
+* `DET_UNDERDRIVEN` – Underdriven detonation.
+* `DET_UNDERDRIVEN_R` – Underdriven reflected detonation.
 
 The chemical composition of detonation products is computed at equilibrium using the CT-EQUIL module, and the thermodynamic state is determined by solving the governing conservation laws across a one-dimensional steady detonation wave:
 
