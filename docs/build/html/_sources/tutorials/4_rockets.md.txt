@@ -8,6 +8,14 @@ This section introduces the `CT-ROCKET` module for computing the performance of 
 - **Throat** (t), the location of minimum area $A_t$ where the flow becomes sonic.
 - **Diverging nozzle** section (t-e), with increasing area $A(x)$, which enables supersonic expansion and thrust generation.
 
+:::{figure} /_static/img/sketch_rocket.svg
+:name: fig_sketch_rocket
+:width: 600px
+:align: center
+
+Schematic of a chemically reacting rocket flow including chamber, throat, and expanding nozzle.
+:::
+
  The solver is implemented in the {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver` class and provides tools to evaluate the idealized performance of a propellant system under a set of simplifying assumptions:
 
 - One-dimensional flow.
@@ -28,15 +36,6 @@ Two limiting cases are supported through `RocketSolver`:
 - `ROCKET_FAC` - **Finite-area-chamber approximation (FAC):** Entropic combustion process.
 
 These models allow for rapid estimation of propulsion performance, including the **characteristic velocity** ($c^*$), **thrust coefficient** ($C_F$), and **specific impulse** ($I_{\text{sp}}$), while accounting for chemical equilibrium, composition-dependent thermodynamics, and finite expansion effects.
-
-:::{figure} /_static/img/sketch_rocket.svg
-:name: fig_sketch_rocket
-:width: 600px
-:align: center
-
-Schematic of a chemically reacting rocket flow including chamber, throat, and expanding nozzle.
-:::
-
 
 ## Congratulations!
 Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
