@@ -1,6 +1,14 @@
 # Rocket performance analysis
 
-This section introduces the `CT-ROCKET` module for computing the performance of chemical rocket propulsion systems, as depicted in {numref}`fig_sketch_rocket`. The core solver is implemented in the {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver` class and provides tools to evaluate the idealized performance of a propellant system under a set of simplifying assumptions:
+This section introduces the `CT-ROCKET` module for computing the performance of chemical rocket propulsion systems using a one-dimensional flow approximation. The schematic in {numref}`fig_sketch_rocket` depicts the physical components considered in this analysis:
+
+- **Injector** (inj), where propellants are introduced at negligible velocity.
+- **Combustion chamber** (c), a region of constant cross-sectional area $A_c$, bounded by an adiabatic wall.
+- **Converging nozzle** section (c-t), with decreasing area $A(x)$, which accelerates the subsonic flow toward the throat.
+- **Throat** (t), the location of minimum area $A_t$ where the flow becomes sonic.
+- **Diverging nozzle** section (t-e), with increasing area $A(x)$, which enables supersonic expansion and thrust generation.
+
+ The solver is implemented in the {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver` class and provides tools to evaluate the idealized performance of a propellant system under a set of simplifying assumptions:
 
 - One-dimensional flow.
 - Uniform cross-sectional area in the chamber.
@@ -16,8 +24,8 @@ Thermochemical states are handled through the [CT-EQUIL module](./1_chemical_equ
 
 Two limiting cases are supported through `RocketSolver`:
 
-- **Infinite-area-chamber approximation (IAC):** Isentropic combustion process.
-- **Finite-area-chamber approximation (FAC):** Entropic combustion process.
+- `ROCKET_IAC` - **Infinite-area-chamber approximation (IAC):** Isentropic combustion process.
+- `ROCKET_FAC` - **Finite-area-chamber approximation (FAC):** Entropic combustion process.
 
 These models allow for rapid estimation of propulsion performance, including the **characteristic velocity** ($c^*$), **thrust coefficient** ($C_F$), and **specific impulse** ($I_{\text{sp}}$), while accounting for chemical equilibrium, composition-dependent thermodynamics, and finite expansion effects.
 

@@ -6,13 +6,13 @@ Shock waves are discontinuities in pressure, density, temperature, and velocity 
 
 The solver handles a variety of canonical shock problems, including:
 
-* **SHOCK_I** – Planar incident shock wave  
-* **SHOCK_R** – Planar reflected shock wave  
-* **SHOCK_OBLIQUE** – Oblique incident shock wave  
-* **SHOCK_OBLIQUE_R** – Oblique incident and reflected states  
-* **SHOCK_POLAR** – Shock polar diagrams (incident states)  
-* **SHOCK_POLAR_R** – Shock polar diagrams including reflected states  
-* **SHOCK_POLAR_LIMITRR** – Shock polar diagrams in the limit of regular reflection  
+* `SHOCK_I` – Planar incident shock wave.
+* `SHOCK_R` – Planar reflected shock wave.
+* `SHOCK_OBLIQUE` – Oblique incident shock wave.
+* `SHOCK_OBLIQUE_R` – Oblique incident and reflected states.
+* `SHOCK_POLAR` – Shock polar diagrams (incident states).
+* `SHOCK_POLAR_R` – Shock polar diagrams including reflected states.
+* `SHOCK_POLAR_LIMITRR` – Shock polar diagrams in the limit of regular reflection  
 
 These cases can be solved using different formulations, depending on the available data (e.g., upstream Mach number, upstream velocity, deflection angle, or wave angle). For chemically reacting mixtures, the solver can seamlessly interface with the [CT-EQUIL module](./1_chemical_equilibrium.md) to compute thermodynamic state consistent with the chosen caloric model (calorically perfect, thermally perfect, or calorically imperfect gas).
 
