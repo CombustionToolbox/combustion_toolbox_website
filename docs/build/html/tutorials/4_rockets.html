@@ -371,6 +371,12 @@
 <li><p><strong>Throat</strong> (t), the location of minimum area <span class="math notranslate nohighlight">\(A_t\)</span> where the flow becomes sonic.</p></li>
 <li><p><strong>Diverging nozzle</strong> section (t-e), with increasing area <span class="math notranslate nohighlight">\(A(x)\)</span>, which enables supersonic expansion and thrust generation.</p></li>
 </ul>
+<figure class="align-center" id="fig-sketch-rocket">
+<a class="reference internal image-reference" href="../_images/sketch_rocket.svg"><img alt="../_images/sketch_rocket.svg" src="../_images/sketch_rocket.svg" width="600px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Schematic of a chemically reacting rocket flow including chamber, throat, and expanding nozzle.</span><a class="headerlink" href="#fig-sketch-rocket" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The solver is implemented in the <a class="reference internal" href="../documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">RocketSolver</span></code></a> class and provides tools to evaluate the idealized performance of a propellant system under a set of simplifying assumptions:</p>
 <ul class="simple">
 <li><p>One-dimensional flow.</p></li>
@@ -390,12 +396,6 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ROCKET_FAC</span></code> - <strong>Finite-area-chamber approximation (FAC):</strong> Entropic combustion process.</p></li>
 </ul>
 <p>These models allow for rapid estimation of propulsion performance, including the <strong>characteristic velocity</strong> (<span class="math notranslate nohighlight">\(c^*\)</span>), <strong>thrust coefficient</strong> (<span class="math notranslate nohighlight">\(C_F\)</span>), and <strong>specific impulse</strong> (<span class="math notranslate nohighlight">\(I_{\text{sp}}\)</span>), while accounting for chemical equilibrium, composition-dependent thermodynamics, and finite expansion effects.</p>
-<figure class="align-center" id="fig-sketch-rocket">
-<a class="reference internal image-reference" href="../_images/sketch_rocket.svg"><img alt="../_images/sketch_rocket.svg" src="../_images/sketch_rocket.svg" width="600px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Schematic of a chemically reacting rocket flow including chamber, throat, and expanding nozzle.</span><a class="headerlink" href="#fig-sketch-rocket" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
 <section id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this heading">#</a></h2>
 <p>Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder).</p>
