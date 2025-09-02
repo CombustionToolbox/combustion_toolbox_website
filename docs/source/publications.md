@@ -41,6 +41,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Journal articles
 
+* Shi, Y., Dai, W., Zhao, P., Wen, H., Wang, B., Ma, G., & Mou, H. (2025). Calculation model of wall heat flux in rotating detonation combustor and its experimental validation. Applied Thermal Engineering, 128100. [doi:10.1016/j.applthermaleng.2025.128100](https://doi.org/10.1016/j.applthermaleng.2025.128100)
 * Ingabire, C., Liang, D. L., & Li, L. X. (2025). Progress on Additive Manufacturing Technology of Solid Propellants. Energetic Materials Frontiers. [doi:10.1016/j.enmf.2025.06.001](https://doi.org/10.1016/j.enmf.2025.06.001).
 * Elmeknassi, Y. He, W., Adam, A., Han, D., & Shuo, D. (2025). Integrated optimization of hydrogen-fueled gas turbine parameters: Balancing efficiency and economic viability. International Journal of Hydrogen Energy, 135, 111-120. [doi:10.1016/j.ijhydene.2025.04.528](https://doi.org/10.1016/j.ijhydene.2025.04.528).
 * Cuadra, A., Di Renzo, M., Hoste, J., Williams, C. T., Vera, M., & Huete, C. (2025). Review of Shock-Turbulence Interaction with a Focus on Hypersonic Flow. Physics of Fluids 37. [doi:10.1063/5.0255816](https://doi.org/10.1063/5.0255816).

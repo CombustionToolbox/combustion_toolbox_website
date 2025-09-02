@@ -9,7 +9,7 @@ Chapman–Jouguet (CJ) detonation waves are computed by solving the Rankine–Hu
 :width: 400px
 :align: center
 
-Schematic of a planar detonation wave in the wave-fixed frame.
+Schematic of a planar detonation wave in the wave-fixed frame assuming the Chapman–Jouguet criterion.
 :::
 
 The upstream state is characterized by the velocity $u_1$, temperature $T_1$, pressure $p_1$, and chemical composition $\boldsymbol{n}_1$. The flow undergoes an abrupt thermodynamic transformation across the wave, driven by shock compression and chemical energy release. The downstream state $(u_2, p_2, T_2, \boldsymbol{n}_2)$ is obtained by solving the conservation equations for mass, momentum, and energy, assuming the products are in **chemical equilibrium**.
