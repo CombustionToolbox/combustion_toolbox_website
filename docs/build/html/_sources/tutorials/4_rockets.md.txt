@@ -1,4 +1,4 @@
-# Rocket performance analysis
+# Rockets
 
 This section introduces the `CT-ROCKET` module for computing the performance of chemical rocket propulsion systems using a one-dimensional flow approximation. The schematic in {numref}`fig_sketch_rocket` depicts the physical components considered in this analysis:
 
