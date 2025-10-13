@@ -40,7 +40,7 @@ It can be handy the BibTeX format:
 Here are some contributions, work-in-progress articles, and publications where the Combustion Toolbox has been used, as well as other codes that utilize this toolbox.
 
 ### Journal articles
-
+* Adam, A., Elmeknassi, Y., & Gibreel, M. (2025). Impact of Hydrogen Fraction and Operating Parameters on a Regenerative Gas Turbine's Thermodynamic and Emission Behavior. Results in Engineering, 107606. [doi:10.1016/j.rineng.2025.107606](https://doi.org/10.1016/j.rineng.2025.107606).
 * Qin, Q., Yang, Y., Liu, Y., & Li, J. (2025). Controlling the initiation of oblique detonation waves using a moving forward-facing step. International Communications in Heat and Mass Transfer, 169, 109604. [doi:10.1016/j.icheatmasstransfer.2025.109604](https://doi.org/10.1016/j.icheatmasstransfer.2025.109604)
 * Shi, Y., Dai, W., Zhao, P., Wen, H., Wang, B., Ma, G., & Mou, H. (2025). Calculation model of wall heat flux in rotating detonation combustor and its experimental validation. Applied Thermal Engineering, 128100. [doi:10.1016/j.applthermaleng.2025.128100](https://doi.org/10.1016/j.applthermaleng.2025.128100)
 * Ingabire, C., Liang, D. L., & Li, L. X. (2025). Progress on Additive Manufacturing Technology of Solid Propellants. Energetic Materials Frontiers. [doi:10.1016/j.enmf.2025.06.001](https://doi.org/10.1016/j.enmf.2025.06.001).
