@@ -1,5 +1,12 @@
 # Accessing the databases
 
+
+````{warning}
+**Combustion Toolbox v1.2.7 introduces an updated Burcat’s Third Millennium database** (latest public release, January 2023), which includes **new species entries and revised thermodynamic coefficients** for existing ones.
+
+To ensure full compatibility and avoid inconsistencies in thermodynamic lookups, it is strongly recommended to perform a **clean installation** of the toolbox so that the updated database is correctly loaded.
+````
+
 In the preceding section, we discussed how to import some of the necessary classes and packages that comprise the Combustion Toolbox (CT). In this section, we will delve into how to access the databases incorporated within CT.
 
 There are two main types of databases: {mat:class}`~src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase` and {mat:class}`~src.+combustiontoolbox.+databases.@BurcatDatabase.BurcatDatabase`. The former comprises all data from NASA's database {cite:t}`Mcbride2002`. The latter extracts data from the Third Millennium database {cite:t}`burcat2005`. There is an additional third database, {mat:class}`~src.+combustiontoolbox.+databases.@SolarAbundances.SolarAbundances`, which stores the solar abundances of the elements {cite:t}`asplund2009`.

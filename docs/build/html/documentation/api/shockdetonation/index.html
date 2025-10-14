@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Rocket module" href="../rocket/index.html" /><link rel="prev" title="Thermochemical equilibrium module" href="../equilibrium/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Shocks and detonations module - Combustion Toolbox v1.2.0</title>
+        <title>Shocks and detonations module - Combustion Toolbox v1.2.7</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.7</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -1382,8 +1382,542 @@ B. J. (1994). NASA reference publication, 1311.</p>
 </dd></dl>
 
 </section>
-<section id="jumpconditionssolver">
-<h2>JumpConditionsSolver<a class="headerlink" href="#jumpconditionssolver" title="Permalink to this heading">#</a></h2>
+<section id="module-src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver">
+<span id="jumpconditionssolver"></span><h2>JumpConditionsSolver<a class="headerlink" href="#module-src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">JumpConditionsSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">JumpConditionsSolver()</span></code></a> class computes the Rankine–Hugoniot
+jump conditions and associated amplification parameters for gas mixtures
+across a shock wave. It supports calorically perfect, thermally perfect, and
+calorically imperfect models. In addition to post-shock thermodynamic properties,
+the class evaluates the dimensionless slopes of the Hugoniot curve—<code class="docutils literal notranslate"><span class="pre">Gammas2</span></code>
+(<span class="math notranslate nohighlight">\(\Gamma\)</span>), <code class="docutils literal notranslate"><span class="pre">Gammas1</span></code> (<span class="math notranslate nohighlight">\(\Gamma_\rho\)</span>), and <code class="docutils literal notranslate"><span class="pre">Gammas3</span></code> (<span class="math notranslate nohighlight">\(\Gamma_p\)</span>)—which
+quantify the local sensitivity of the post-shock density to changes in downstream
+pressure (<span class="math notranslate nohighlight">\(\Gamma\)</span>), and the influence of upstream density and pressure
+perturbations on the post-shock state (<span class="math notranslate nohighlight">\(\Gamma_\rho\)</span>, <span class="math notranslate nohighlight">\(\Gamma_p\)</span>),
+as formalized in Ref. [1, 2].</p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">JumpConditionsSolver()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">JumpConditionsSolver</span><span class="p">(</span><span class="s">&#39;equilibriumSolver&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">eqSolver</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="c">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Optional name-value arguments can be specified to customize tolerances,
+interpolation settings, plotting options, and solver behavior. Default
+objects for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code>
+are created automatically if not provided.</p>
+<dl class="simple">
+<dt>Flags:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_FAST</span></code>: Use previous state as initial guess for equilibrium solver</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_INTERPOLATE</span></code>: Interpolate results on a reduced Mach number grid</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_PLOT</span></code>: Plot results</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_PAPER</span></code>: Apply the normalization and notation conventions described in Cuadra2025a</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_RESULTS</span></code>: Print computed values to console</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_TIME</span></code>: Print elapsed computation time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_REPORT</span></code>: Generate predefined plots for diagnostic analysis</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">EquilibriumSolver()</span></code>,
+<a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.solve" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.solve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">solve()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.report" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plot" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plot"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">plot()</span></code></a>, <a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plotGammas" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plotGammas"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">plotGammas()</span></code></a></p>
+<p class="rubric">References</p>
+<dl class="simple">
+<dt>[1] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
+DOI: 10.1063/5.0255816.</p>
+</dd>
+<dt>[2] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
+Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
+Stanford University.</p>
+</dd>
+</dl>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_FAST">
+<span class="sig-name descname"><span class="pre">FLAG_FAST</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_FAST" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to use fast equilibrium solver (guess from previous state)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_INTERPOLATE">
+<span class="sig-name descname"><span class="pre">FLAG_INTERPOLATE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_INTERPOLATE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to interpolate results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_PAPER">
+<span class="sig-name descname"><span class="pre">FLAG_PAPER</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_PAPER" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to apply the normalization and notation conventions described in Cuadra2025a</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_PLOT">
+<span class="sig-name descname"><span class="pre">FLAG_PLOT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_PLOT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to plot results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_REPORT">
+<span class="sig-name descname"><span class="pre">FLAG_REPORT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_REPORT" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print predefined plots</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_RESULTS">
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print results</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.FLAG_TIME">
+<span class="sig-name descname"><span class="pre">FLAG_TIME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_TIME" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to print elapsed time</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.JumpConditionsSolver">
+<span class="sig-name descname"><span class="pre">JumpConditionsSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.JumpConditionsSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor</p>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>param1 (type): Description of param1</p></li>
+<li><p>param2 (type): Description of param2</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>obj (JumpConditionsSolver)</em> – Instance of the solver</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>obj = JumpConditionsSolver(‘param1’, value1, ‘param2’, value2, …);</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.cleanInstabilities">
+<span class="sig-name descname"><span class="pre">cleanInstabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.cleanInstabilities" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove the values that are prone to numerical instabilities</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.equilibriumSolver">
+<span class="sig-name descname"><span class="pre">equilibriumSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.equilibriumSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>EquilibriumSolver object</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.evaluateGriddedInterpolant">
+<span class="sig-name descname"><span class="pre">evaluateGriddedInterpolant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">griddedCurves</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.evaluateGriddedInterpolant" title="Permalink to this definition">#</a></dt>
+<dd><p>Evaluate the gridded interpolant</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>griddedCurves</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span> <span class="pre">array</span></code></span>) – Cell array of gridded interpolants</p></li>
+<li><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Points at which to evaluate the interpolants</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>value (float)</em> – Interpolated values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getDensityRatioPerfect">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDensityRatioPerfect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">mach</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getDensityRatioPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the density ratio for a calorically perfect gas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gamma</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Adiabatic index</p></li>
+<li><p><strong>mach</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mach number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Rratio (float)</em> – Density ratio</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getGammas1">
+<span class="sig-name descname"><span class="pre">getGammas1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getGammas1" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the dimensionless slope of the Hugoniot curve Gammas1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Gammas1 (float)</em> – Dimensionless slope of the Hugoniot curve (partial derivative at constant rho2, p1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getGammas2">
+<span class="sig-name descname"><span class="pre">getGammas2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getGammas2" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the dimensionless slope of the Hugoniot curve Gammas2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Gammas2 (float)</em> – Dimensionless slope of the Hugoniot curve (partial derivative at constant rho1, p1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getGammas3">
+<span class="sig-name descname"><span class="pre">getGammas3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getGammas3" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the dimensionless slope of the Hugoniot curve Gammas3</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Gammas3 (float)</em> – Dimensionless slope of the Hugoniot curve (partial derivative at constant rho1, rho2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getGammasPerfect">
+<span class="sig-name descname"><span class="pre">getGammasPerfect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">mach</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getGammasPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the dimensionless slope of the Hugoniot curve for a calorically perfect gas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gamma</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Adiabatic index</p></li>
+<li><p><strong>mach</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mach number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Gammas1 (float)</em> – Dimensionless slope of the Hugoniot curve (partial derivative at constant rho2, p1)
+Gammas2 (float): Dimensionless slope of the Hugoniot curve (partial derivative at constant rho1, p1)
+Gammas3 (float): Dimensionless slope of the Hugoniot curve (partial derivative at constant rho1, rho2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getJumpData">
+<span class="sig-name descname"><span class="pre">getJumpData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getJumpData" title="Permalink to this definition">#</a></dt>
+<dd><p>Get jump conditions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture object for the pre-shock state</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Mixture object for the post-shock state</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>jumpConditions (struct)</em> – Structure containing the jump conditions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getPressureRatioPerfect">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getPressureRatioPerfect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">gamma</span></em>, <em class="sig-param"><span class="pre">mach</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getPressureRatioPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the pressure ratio for a calorically perfect gas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gamma</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Adiabatic index</p></li>
+<li><p><strong>mach</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mach number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Pratio (float)</em> – Pressure ratio</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.getTurningPoints">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getTurningPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parameter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getTurningPoints" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the turning points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>turningPoints (array)</em> – Turning points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.interpolationMethod">
+<span class="sig-name descname"><span class="pre">interpolationMethod</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'spline'&quot;</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.interpolationMethod" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpolation method</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.mach">
+<span class="sig-name descname"><span class="pre">mach</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.mach" title="Permalink to this definition">#</a></dt>
+<dd><p>Mach number array of the array of Mixture objects</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.mix">
+<span class="sig-name descname"><span class="pre">mix</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.mix" title="Permalink to this definition">#</a></dt>
+<dd><p>Mixture object for initialization</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.mixArray">
+<span class="sig-name descname"><span class="pre">mixArray</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.mixArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Mixture objects</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.numPointsInterp">
+<span class="sig-name descname"><span class="pre">numPointsInterp</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.numPointsInterp" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points for interpolation</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.numTurningPoints">
+<span class="sig-name descname"><span class="pre">numTurningPoints</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.numTurningPoints" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of turning points</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>plot(JumpConditionsSolver(), results);</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.plotGammas">
+<span class="sig-name descname"><span class="pre">plotGammas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.plotGammas" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot dimensionless slopes of the Hugoniot curve</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ax (axes)</em> – Axes handle for the plot</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>plotGammas(JumpConditionsSolver(), jumpConditions);</p>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.pressure">
+<span class="sig-name descname"><span class="pre">pressure</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.pressure" title="Permalink to this definition">#</a></dt>
+<dd><p>Pressure array of the array of Mixture objects</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.printTime">
+<span class="sig-name descname"><span class="pre">printTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.printTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Print execution time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></span>) – Object of the class EquilibriumSolver</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.reduceSize">
+<span class="sig-name descname"><span class="pre">reduceSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.reduceSize" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpolate data in a smaller grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>jumpConditions (struct)</em> – Structure containing the jump conditions with reduced size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.report" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate report for the jump conditions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>report(JumpConditionsSolver(), jumpConditions);</p>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.reshapeVector">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">reshapeVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.reshapeVector" title="Permalink to this definition">#</a></dt>
+<dd><p>Reshape vectors to be column vectors of the form</p>
+<blockquote>
+<div><p>[x(1), y(1), x(2), y(2), …]</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – First vector</p></li>
+<li><p><strong>y</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Second vector</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>varargin (float): Additional vectors</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.setTurningPoints">
+<span class="sig-name descname"><span class="pre">setTurningPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parameter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.setTurningPoints" title="Permalink to this definition">#</a></dt>
+<dd><p>Set turning points for interpolation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure containing the jump conditions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.shockSolver">
+<span class="sig-name descname"><span class="pre">shockSolver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.shockSolver" title="Permalink to this definition">#</a></dt>
+<dd><p>ShockSolver object</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve the jump conditions for the given mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Array of Mixture objects</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (JumpConditionsSolver)</em> – JumpConditionsSolver object with updated properties</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>jumpConditions = solve(JumpConditionsSolver(), mixArray);</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.solveShock">
+<span class="sig-name descname"><span class="pre">solveShock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T1</span></em>, <em class="sig-param"><span class="pre">p1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.solveShock" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve shock problem for the given temperature and pressure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">JumpConditionsSolver</span></code></a></span>) – JumpConditionsSolver object</p></li>
+<li><p><strong>T1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature of the mixture</p></li>
+<li><p><strong>p1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pressure of the mixture</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>p2Gridded (cell array)</em> – Cell array of gridded interpolants
+p2 (float): Pressure of the mixture
+mixArray1 (Mixture): Mixture object for the pre-shock state
+mixArray2 (Mixture): Mixture object for the post-shock state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.temperature">
+<span class="sig-name descname"><span class="pre">temperature</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.temperature" title="Permalink to this definition">#</a></dt>
+<dd><p>Temperature array of the array of Mixture objects</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.time" title="Permalink to this definition">#</a></dt>
+<dd><p>Elapsed time</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.tolGammas1">
+<span class="sig-name descname"><span class="pre">tolGammas1</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.tolGammas1" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance for the calculation of the dimensionless RH slope Gammas1</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.tolGammas2">
+<span class="sig-name descname"><span class="pre">tolGammas2</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.tolGammas2" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance for the calculation of the dimensionless RH slope Gammas2</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.tolGammas3">
+<span class="sig-name descname"><span class="pre">tolGammas3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-4'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.tolGammas3" title="Permalink to this definition">#</a></dt>
+<dd><p>Tolerance for the calculation of the dimensionless RH slope Gammas3</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.tolInstabilities">
+<span class="sig-name descname"><span class="pre">tolInstabilities</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1e-2'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.tolInstabilities" title="Permalink to this definition">#</a></dt>
+<dd><p>Values of Gammas below this threshold are considered prone to instabilities</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver.JumpConditionsSolver.turningPoints">
+<span class="sig-name descname"><span class="pre">turningPoints</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.turningPoints" title="Permalink to this definition">#</a></dt>
+<dd><p>Turning points for interpolation</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -1457,7 +1991,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
 <li><a class="reference internal" href="#">Shocks and detonations module</a><ul>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver">ShockSolver</a></li>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+shockdetonation.&#64;DetonationSolver">DetonationSolver</a></li>
-<li><a class="reference internal" href="#jumpconditionssolver">JumpConditionsSolver</a></li>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+shockdetonation.&#64;JumpConditionsSolver">JumpConditionsSolver</a></li>
 </ul>
 </li>
 </ul>
@@ -1484,5 +2018,7 @@ B. J. (1994). NASA reference publication, 1311.</p>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

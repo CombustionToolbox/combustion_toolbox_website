@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Utilities" href="../utils/index.html" /><link rel="prev" title="Rocket module" href="../rocket/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Turbulence module - Combustion Toolbox v1.2.0</title>
+        <title>Turbulence module - Combustion Toolbox v1.2.7</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.0</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.7</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -415,6 +415,12 @@ Available: <a class="reference external" href="http://math.mit.edu/~stevenj/fft-
 <dd><p>Flag to print elapsed time</p>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver.FLAG_WEIGHTED">
+<span class="sig-name descname"><span class="pre">FLAG_WEIGHTED</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@HelmholtzSolver.HelmholtzSolver.FLAG_WEIGHTED" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to compute weighted velocity field as u * sqrt(rho)</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver.HelmholtzSolver">
 <span class="sig-name descname"><span class="pre">HelmholtzSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@HelmholtzSolver.HelmholtzSolver.HelmholtzSolver" title="Permalink to this definition">#</a></dt>
@@ -535,23 +541,30 @@ KZ (float): 3D array with the wave number in the z-direction</p>
 </dl>
 <dl class="simple">
 <dt>Optional Args:</dt><dd><ul class="simple">
-<li><p>rho (float): Density field</p></li>
+<li><p>density (float): Density field</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>solenoidal (VelocityField)</em> – Struct with fields (u, v, w) containing the solenoidal velocity components (fluctuations)
-dilatational (VelocityField): Struct with fields (u, v, w) containing the dilatational velocity components (fluctuations)
-velocity (VelocityField): Struct with fields (u, v, w) containing the velocity components (fluctuations)
+<dd class="field-odd"><p><em>solenoidal (VelocityField)</em> – VelocityField object with fields (u, v, w) containing the solenoidal velocity components (fluctuations)
+dilatational (VelocityField): VelocityField with fields (u, v, w) containing the dilatational velocity components (fluctuations)
+velocity (VelocityField): VelocityField with fields (u, v, w) containing the velocity components (fluctuations)
 STOP (float): Relative error doing the decomposition</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Shortcuts:</dt><dd><ul class="simple">
+<li><p>[solenoidal, dilatational, velocity, STOP] = solve(obj, velocity, rho)</p></li>
+</ul>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <ul class="simple">
 <li><p>[solenoidal, dilatational, velocity, STOP] = solve(obj, velocity)</p></li>
-<li><p>[solenoidal, dilatational, velocity, STOP] = solve(obj, velocity, ‘rho’, rho)</p></li>
+<li><p>[solenoidal, dilatational, velocity, STOP] = solve(obj, velocity, rho)</p></li>
+<li><p>[solenoidal, dilatational, velocity, STOP] = solve(obj, velocity, ‘density’, rho)</p></li>
 </ul>
 </div>
 </dd></dl>
@@ -596,7 +609,7 @@ turbulence spectra. Supports spherical and cross-plane averaging.</p>
 <span class="sig-name descname"><span class="pre">TurbulenceSpectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.TurbulenceSpectra" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor for TurbulenceSpectra</p>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>averaging (char): Type of averaging (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)
+<dt>Optional Args:</dt><dd><p>averaging (char): Type of averaging (‘spherical’, ‘spherical2D’, ‘spherical2dPerp’, ‘crossplane’, ‘crossplane2D’)
 axis (char): Axis for cross-plane averaging (‘x’, ‘y’, ‘z’)</p>
 </dd>
 </dl>
@@ -609,7 +622,7 @@ axis (char): Axis for cross-plane averaging (‘x’, ‘y’, ‘z’)</p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra.TurbulenceSpectra.averaging">
 <span class="sig-name descname"><span class="pre">averaging</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'spherical'&quot;</span></em><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.averaging" title="Permalink to this definition">#</a></dt>
-<dd><p>Type of averaging (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)</p>
+<dd><p>Type of averaging (‘spherical’, ‘spherical2D’, ‘spherical2dPerp’, ‘crossplane’, ‘crossplane2D’)</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -745,12 +758,17 @@ inhomogeneous axis.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>EK_avg (float)</em> – Averaged energy spectra
-k (float): Wavenumber along the homogeneous direction</p>
+k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)
+kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)
+kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p>
 </dd>
 </dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>[EK_avg, k] = getEnergySpectra(TurbulenceSpectra(), fluctuation);</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[EK_avg, k] = getEnergySpectra(TurbulenceSpectra(), fluctuation);</p></li>
+<li><p>[EK_avg, kParallel, kPerp] = getEnergySpectra(TurbulenceSpectra(‘averaging’, ‘spherical2dPerp’), fluctuation);</p></li>
+</ul>
 </div>
 </dd></dl>
 
@@ -767,12 +785,17 @@ k (float): Wavenumber along the homogeneous direction</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>EK_avg (float)</em> – Averaged energy spectra
-k (float): Wavenumber along the homogeneous direction</p>
+k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)
+kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)
+kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p>
 </dd>
 </dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>[EK_avg, k] = getEnergySpectraVelocity(TurbulenceSpectra(), velocity);</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>[EK_avg, k] = getEnergySpectraVelocity(TurbulenceSpectra(), velocity);</p></li>
+<li><p>[EK_avg, kParallel, kPerp] = getEnergySpectraVelocity(TurbulenceSpectra(‘averaging’, ‘spherical2dPerp’), velocity);</p></li>
+</ul>
 </div>
 </dd></dl>
 
@@ -873,6 +896,31 @@ k (float): Wavenumber along the homogeneous direction</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>[EK_avg2D, k] = getSphericallyAveragedSpectra2D(EK);</p>
+</div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra.TurbulenceSpectra.getSphericallyAveragedSpectra2DPerp">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getSphericallyAveragedSpectra2DPerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">EK</span></em>, <em class="sig-param"><span class="pre">axisType</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.getSphericallyAveragedSpectra2DPerp" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the 2D spherical average of a 3D energy spectrum as a function
+of kParalell and kPerp, where kPerp = sqrt(k2^2 + k3^2) is calculated
+from the two dimensions orthogonal to the specified axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>EK</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D energy spectra</p></li>
+<li><p><strong>axisType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for cross-plane averaging (‘x’, ‘y’, ‘z’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>EK_avg2D (float)</em> – Spherically averaged 2D energy spectra E(kParalell, kPerp)
+kParalell (float): Wavenumber along the parallel direction
+kPerp (float): Wavenumber along the perpendicular direction</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[EK_avg2D, kParalell, kPerp] = getSphericallyAveragedSpectra2DPerp(EK, ‘x’);</p>
 </div>
 </dd></dl>
 
@@ -1026,21 +1074,89 @@ properties of a velocity field.</p>
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.checkGridDefined">
+<span class="sig-name descname"><span class="pre">checkGridDefined</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.checkGridDefined" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the grid is defined</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – If the grid is not defined</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.defaultLenght">
+<span class="sig-name descname"><span class="pre">defaultLenght</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'2</span> <span class="pre">*</span> <span class="pre">pi'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.defaultLenght" title="Permalink to this definition">#</a></dt>
+<dd><p>Default length of the domain in each direction</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getAngularWaveNumbers">
+<span class="sig-name descname"><span class="pre">getAngularWaveNumbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getAngularWaveNumbers" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute angular wave numbers for FFT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Size of the 3D array</p></li>
+<li><p><strong>Lx</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the x-direction</p></li>
+<li><p><strong>Ly</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the y-direction</p></li>
+<li><p><strong>Lz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the z-direction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>KX (float)</em> – 3D array with the angular wave number in the x-direction
+KY (float): 3D array with the angular wave number in the y-direction
+KZ (float): 3D array with the angular wave number in the z-direction</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[KX, KY, KZ] = getAngularWaveNumbers(velocity)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getCrossplaneFluctuations">
-<span class="sig-name descname"><span class="pre">getCrossplaneFluctuations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">rho</span></em>, <em class="sig-param"><span class="pre">axisType</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getCrossplaneFluctuations" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCrossplaneFluctuations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">axisType</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getCrossplaneFluctuations" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute fluctuating velocity components</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField instance with fields (u, v, w) containing the velocity components</p></li>
-<li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density field</p></li>
-<li><p><strong>axisType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for cross-plane averaging (‘x’, ‘y’, or ‘z’)</p></li>
+<li><p><strong>axis</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for cross-plane averaging (‘x’, ‘y’, or ‘z’)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>velocity (VelocityField)</em> – Struct with fields (u, v, w) containing the fluctuating velocity components (fluctuations)</p>
+</dl>
+<dl class="simple">
+<dt>Optional Name-Pair Args:</dt><dd><ul class="simple">
+<li><p>density (float): Density field</p></li>
+<li><p>weighted (bool): Flag to indicate if the velocity should be weighted by sqrt(density)</p></li>
+</ul>
 </dd>
 </dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>velocity (VelocityField)</em> – Struct with fields (u, v, w) containing the fluctuating velocity components (fluctuations)</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<ul class="simple">
+<li><p>The velocity field is assumed to be periodic in the direction perpendicular to the axis.</p></li>
+<li><p>By default, the velocity is weighted by density, if provided.</p></li>
+</ul>
+</div>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>velocity = getCrossplaneFluctuations(obj, ‘x’);</p></li>
+<li><p>velocity = getCrossplaneFluctuations(obj, ‘x’, ‘density’, rho);</p></li>
+<li><p>velocity = getCrossplaneFluctuations(obj, ‘x’, ‘density’, rho, ‘weighted’, true);</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat method">
@@ -1065,20 +1181,102 @@ properties of a velocity field.</p>
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getDivergence">
+<span class="sig-name descname"><span class="pre">getDivergence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getDivergence" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute both divergence using FFT-based spectral differentiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>div_u (float)</em> – 3D Array with the divergence of the velocity field</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>div_u = getDivergence(velocity)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getDomainLengths">
+<span class="sig-name descname"><span class="pre">getDomainLengths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getDomainLengths" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the lengths of the domain in each direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Lx (float)</em> – Length in the x-direction
+Ly (float): Length in the y-direction
+Lz (float): Length in the z-direction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getFFT">
+<span class="sig-name descname"><span class="pre">getFFT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getFFT" title="Permalink to this definition">#</a></dt>
+<dd><p>Get velocity FFTs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>U (float)</em> – FFT of the u component
+V (float): FFT of the v component
+W (float): FFT of the w component</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[U, V, W] = getFFT(obj)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getFluctuations">
-<span class="sig-name descname"><span class="pre">getFluctuations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">rho</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getFluctuations" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getFluctuations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getFluctuations" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute fluctuating velocity components</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField instance with fields (u, v, w) containing the velocity components</p></li>
-<li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density field</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>velocity (VelocityField)</em> – Struct with fields (u, v, w) containing the fluctuating velocity components (fluctuations)</p>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField instance with fields (u, v, w) containing the velocity components</p>
 </dd>
 </dl>
+<dl class="simple">
+<dt>Optional Name-Pair Args:</dt><dd><ul class="simple">
+<li><p>density (float): Density field</p></li>
+<li><p>weighted (bool): Flag to indicate if the velocity should be weighted by sqrt(density)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>velocity (VelocityField)</em> – Struct with fields (u, v, w) containing the fluctuating velocity components (fluctuations)</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<ul class="simple">
+<li><p>The velocity field is assumed to be periodic in all three dimensions.</p></li>
+<li><p>By default, the velocity is weighted by density, if provided.</p></li>
+</ul>
+</div>
+<dl class="simple">
+<dt>Shortcuts:</dt><dd><ul class="simple">
+<li><p>velocity = getFluctuations(obj, rho);</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>velocity = getFluctuations(obj);</p></li>
+<li><p>velocity = getFluctuations(obj, rho);</p></li>
+<li><p>velocity = getFluctuations(obj, ‘density’, rho);</p></li>
+<li><p>velocity = getFluctuations(obj, ‘density’, rho, ‘weighted’, true);</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="mat method">
@@ -1139,6 +1337,43 @@ properties of a velocity field.</p>
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getVorticity">
+<span class="sig-name descname"><span class="pre">getVorticity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getVorticity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute vorticity using FFT-based spectral differentiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>omega_mag (float)</em> – 3D Array with the vorticity field</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>omega_mag = getVorticity(velocity)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.getVorticityDivergence">
+<span class="sig-name descname"><span class="pre">getVorticityDivergence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.getVorticityDivergence" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute both vorticity and divergence using FFT-based spectral differentiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>omega_mag (float)</em> – 3D Array with the vorticity field
+div_u (float): 3D Array with the divergence of the velocity field</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[omega_mag, div_u] = getVorticityDivergence(velocity)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.globalMagnitude">
 <span class="sig-name descname"><span class="pre">globalMagnitude</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.globalMagnitude" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the global magnitude (Frobenius norm) of the velocity field</p>
@@ -1156,6 +1391,12 @@ properties of a velocity field.</p>
 </div>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.gridChecked">
+<span class="sig-name descname"><span class="pre">gridChecked</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.gridChecked" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag to check if the grid is defined</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.normalize">
 <span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.normalize" title="Permalink to this definition">#</a></dt>
@@ -1167,14 +1408,93 @@ properties of a velocity field.</p>
 </dl>
 </dd></dl>
 
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.plotContour">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">plotContour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">field</span></em>, <em class="sig-param"><span class="pre">axisType</span></em>, <em class="sig-param"><span class="pre">slices</span></em>, <em class="sig-param"><span class="pre">cLabel</span></em>, <em class="sig-param"><span class="pre">climits</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.plotContour" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot contour of a 2D slice of the velocity field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D array with the field to plot</p></li>
+<li><p><strong>axisType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for slicing (‘x’, ‘y’, or ‘z’)</p></li>
+<li><p><strong>slices</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">vector</span></code></span>) – Slices to plot</p></li>
+<li><p><strong>cLabel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Label for the colorbar</p></li>
+<li><p><strong>climits</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">vector</span></code></span>) – Color limits for the plot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ax</em> – Axes handle of the plot</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>ax = VelocityField.plotContour(omega_mag, ‘x’, 1:10, ‘<span class="math notranslate nohighlight">\(\nabla \times \mathbf{u}\)</span>’, [0, 10]);</p></li>
+<li><p>ax = VelocityField.plotContour(div_u, ‘x’, 1:10, ‘<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u}\)</span>, [-3, 3]);</p></li>
+</ul>
+</div>
+</dd></dl>
+
 <dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.plus">
-<span class="sig-name descname"><span class="pre">plus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.plus" title="Permalink to this definition">#</a></dt>
-<dd><p>Overload the plus operator to add the velocity field from two VelocityField objects</p>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.plotDivergence">
+<span class="sig-name descname"><span class="pre">plotDivergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">axisType</span></em>, <em class="sig-param"><span class="pre">slices</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.plotDivergence" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot divergence</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p></li>
+<li><p><strong>axisType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for slicing (‘x’, ‘y’, or ‘z’)</p></li>
+<li><p><strong>slices</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">vector</span></code></span>) – Slices to plot</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>div_u (float): 3D array with the divergence field</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ax</em> – Axes handle of the plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.plotVorticity">
+<span class="sig-name descname"><span class="pre">plotVorticity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">axisType</span></em>, <em class="sig-param"><span class="pre">slices</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.plotVorticity" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot vorticity magnitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p></li>
+<li><p><strong>axisType</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Axis for slicing (‘x’, ‘y’, or ‘z’)</p></li>
+<li><p><strong>slices</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">vector</span></code></span>) – Slices to plot</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>omega_mag (float): 3D array with the vorticity magnitude</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ax</em> – Axes handle of the plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField.plus">
+<span class="sig-name descname"><span class="pre">plus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj1</span></em>, <em class="sig-param"><span class="pre">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField.plus" title="Permalink to this definition">#</a></dt>
+<dd><p>Overload the plus operator to add the velocity field from two VelocityField objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj1</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p></li>
 <li><p><strong>obj2</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p></li>
 </ul>
 </dd>
@@ -1360,5 +1680,7 @@ properties of a velocity field.</p>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
