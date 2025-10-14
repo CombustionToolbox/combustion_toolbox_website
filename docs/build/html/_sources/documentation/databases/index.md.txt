@@ -1,5 +1,11 @@
 # Databases
 
+````{warning}
+**Combustion Toolbox v1.2.7 introduces an updated Burcat’s Third Millennium database** (latest public release, January 2023), which includes **new species entries and revised thermodynamic coefficients** for existing ones.
+
+To ensure full compatibility and avoid inconsistencies in thermodynamic lookups, it is strongly recommended to perform a **clean installation** of the toolbox so that the updated database is correctly loaded.
+````
+
 Combustion Toolbox generates its own databases using an up-to-date version of NASA's 9-coefficient polynomial fits {cite:p}`Mcbride2002` that incorporates the Third Millennium database {cite:p}`burcat2005`, including the available values from Active Thermochemical Tables. This fitting allows to evaluate the dimensionless thermodynamic functions of the species for the specific heat at constant pressure, enthalpy, and entropy as a function of temperature, namely
 
 ```{eval-rst}
