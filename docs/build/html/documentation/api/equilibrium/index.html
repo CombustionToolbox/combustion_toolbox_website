@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -454,6 +457,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getAttribute">
+<span class="sig-name descname"><span class="pre">getAttribute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getAttribute" title="Permalink to this definition">#</a></dt>
+<dd><p>Get attribute of the problem type</p>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getGpoint">
 <span class="sig-name descname"><span class="pre">getGpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">mix2</span></em>, <em class="sig-param"><span class="pre">attributeName</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">molesGuess</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getGpoint" title="Permalink to this definition">#</a></dt>
 <dd><p>Get fixed point of a function based on the chemical transformation</p>
@@ -481,7 +490,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.getPartialDerivative">
 <span class="sig-name descname"><span class="pre">getPartialDerivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getPartialDerivative" title="Permalink to this definition">#</a></dt>
-<dd><p>Get value of the partial derivative for the set problem type [J/K] (HP, EV) or [J/K^2] (SP, SV)</p>
+<dd><p>Get value of the partial derivative for the set problem type [J/kg-K] (HP, EV) or [J/kg-K^2] (SP, SV)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -490,7 +499,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>value (float)</em> – Value of the partial derivative for the set problem type [J/K] (HP, EV) or [J/K^2] (SP, SV)</p>
+<dd class="field-even"><p><em>value (float)</em> – Value of the partial derivative for the set problem type [J/kg-K] (HP, EV) or [J/kg-K^2] (SP, SV)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -552,6 +561,12 @@ relative value of the residual</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.itMaxIons">
 <span class="sig-name descname"><span class="pre">itMaxIons</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'30'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxIons" title="Permalink to this definition">#</a></dt>
 <dd><p>Max number of iterations - charge balance (ions)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.EquilibriumSolver.itMaxRecursion">
+<span class="sig-name descname"><span class="pre">itMaxRecursion</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'30'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.itMaxRecursion" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of recursion iterations - e.g., re-check condendensed species</p>
 </dd></dl>
 
 <dl class="mat method">

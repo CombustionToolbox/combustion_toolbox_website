@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -936,6 +939,12 @@ Routines<div class="sd-summary-down docutils">
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.numPlotProperties">
+<span class="sig-name descname"><span class="pre">numPlotProperties</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.numPlotProperties" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of properties to plot</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">orange</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'[212,</span> <span class="pre">85,</span> <span class="pre">0]/255'</span></em></dt>
 <dd><p class="sd-card-text">Default colorline</p>
@@ -962,7 +971,7 @@ Routines<div class="sd-summary-down docutils">
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">position</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em></dt>
-<dd><p class="sd-card-text">Default figure position [pixels]</p>
+<dd><p class="sd-card-text">Figure position [pixels]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -2462,14 +2471,13 @@ Routines<div class="sd-summary-down docutils">
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.generateID">
 <span class="sig-name descname"><span class="pre">generateID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.generateID" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Generate a deterministic UUID (Universally Unique Identifier) based
-on the input character array</p>
+<dd><p class="sd-card-text">Generate a deterministic numeric identifier from input data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Input character array used to generate the UUID</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>value</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Input character array used to generate the ID</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><em>id (char)</em> – UUID generated from the input character array</p>
+<dd class="field-even"><p class="sd-card-text"><em>id (double)</em> – Deterministic 32-bit numeric identifier</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2495,6 +2503,30 @@ on the input character array</p>
 </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.prettyHeader">
+<span class="sig-name descname"><span class="pre">prettyHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">txt</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.prettyHeader" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Display a formatted header in the command window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>txt</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Text to be displayed</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">% style (char): Style of the header (‘unicode’, ‘ascii’, ‘banner’). Default is ‘unicode’.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>header (char)</em> – Formatted header string</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">prettyHeader(‘My Header’, ‘style’, ‘ascii’)</p>
+</div>
 </dd></dl>
 
 <dl class="mat function">
@@ -2530,6 +2562,7 @@ on the input character array</p>
 <ul class="simple">
 <li><p class="sd-card-text">tMean (float): Average evaluation time</p></li>
 <li><p class="sd-card-text">tArray (float): Array with the evaluation times</p></li>
+<li><p class="sd-card-text">varargout: Output of the function f</p></li>
 </ul>
 </p>
 </dd>
@@ -2537,7 +2570,7 @@ on the input character array</p>
 <p class="sd-card-text">Note: The function needs at least one input</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p class="sd-card-text">[tMean, tArray] = timeFunction(&#64;Example_TP_scoggins2015, 10)</p>
+<p class="sd-card-text">[tMean, tArray, varargout] = timeFunction(&#64;Example_TP_scoggins2015, 10)</p>
 </div>
 </dd></dl>
 

@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -794,6 +797,12 @@ that typically appear in hydrocarbon combustion systems.</p>
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.FLAG_INITIALIZE">
+<span class="sig-name descname"><span class="pre">FLAG_INITIALIZE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_INITIALIZE" title="Permalink to this definition">#</a></dt>
+<dd><p>Flag indicating if the chemical system is initialized</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.FLAG_ION">
 <span class="sig-name descname"><span class="pre">FLAG_ION</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_ION" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag indicating to include ionized species in the automatic finder of species</p>
@@ -824,104 +833,30 @@ given equivalence ratio (phi)</p>
 <dd><p>Set temperature-dependent matrix properties to zero</p>
 </dd></dl>
 
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.fillPropertiesMatrix">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fillPropertiesMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">propertiesMatrix</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrix" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.getChargeIons">
+<span class="sig-name descname"><span class="pre">getChargeIons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getChargeIons" title="Permalink to this definition">#</a></dt>
+<dd><p>Get charges of the ion species in the chemical system</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
-<li><p><strong>propertiesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Properties matrix</p></li>
-<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
-<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
-<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-</ul>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>propertiesMatrix (float)</em> – Properties matrix filled</p>
+<dd class="field-even"><p><em>chargeIons (float)</em> – Charges of the ion species in the chemical system</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.fillPropertiesMatrixComposition">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fillPropertiesMatrixComposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">propertiesMatrix</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixComposition" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.getCharges">
+<span class="sig-name descname"><span class="pre">getCharges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getCharges" title="Permalink to this definition">#</a></dt>
+<dd><p>Get charges of the species in the chemical system</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
-<li><p><strong>propertiesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Properties matrix</p></li>
-<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
-<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
-</ul>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>propertiesMatrix (float)</em> – Properties matrix filled</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.fillPropertiesMatrixCompositionFast">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fillPropertiesMatrixCompositionFast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">propertiesMatrix</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixCompositionFast" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill properties matrix with the data of the mixture</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
-<li><p><strong>propertiesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Properties matrix</p></li>
-<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
-<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
-<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to fill the properties matrix</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>propertiesMatrix (float)</em> – Properties matrix filled</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFast">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fillPropertiesMatrixFast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">propertiesMatrix</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFast" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill properties matrix with the data of the mixture</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
-<li><p><strong>propertiesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Properties matrix</p></li>
-<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
-<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
-<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to fill the properties matrix</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>propertiesMatrix (float)</em> – Properties matrix filled</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFastH0">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fillPropertiesMatrixFastH0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">propertiesMatrix</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">h0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.fillPropertiesMatrixFastH0" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill properties matrix with the data of the mixture</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
-<li><p><strong>propertiesMatrix</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Properties matrix</p></li>
-<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
-<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
-<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to fill the properties matrix</p></li>
-<li><p><strong>h0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Enthalpy of formation vector [J/mol]</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>propertiesMatrix (float)</em> – Properties matrix filled</p>
+<dd class="field-even"><p><em>charges (float)</em> – Charges of the species in the chemical system</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1048,6 +983,20 @@ given equivalence ratio (phi)</p>
 <dd><p>Initialize chemical system</p>
 </dd></dl>
 
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.isIonized">
+<span class="sig-name descname"><span class="pre">isIonized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.isIonized" title="Permalink to this definition">#</a></dt>
+<dd><p>Get boolean value indicating if the species is ionized</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Chemical species</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>value (bool)</em> – Boolean value indicating if the species is ionized</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.listElements">
 <span class="sig-name descname"><span class="pre">listElements</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listElements" title="Permalink to this definition">#</a></dt>
@@ -1058,6 +1007,12 @@ given equivalence ratio (phi)</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.listSpecies">
 <span class="sig-name descname"><span class="pre">listSpecies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpecies" title="Permalink to this definition">#</a></dt>
 <dd><p>List of species</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.listSpeciesFormula">
+<span class="sig-name descname"><span class="pre">listSpeciesFormula</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.listSpeciesFormula" title="Permalink to this definition">#</a></dt>
+<dd><p>List of species formulas</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1168,7 +1123,7 @@ given equivalence ratio (phi)</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.setPropertiesMatrix">
 <span class="sig-name descname"><span class="pre">setPropertiesMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrix" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dd><p>Update the properties matrix with the data of the mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1180,12 +1135,12 @@ given equivalence ratio (phi)</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>index (float): Vector with the indexes of the species to fill the properties matrix</p>
+<dt>Optional Args:</dt><dd><p>index (float): Vector with the indexes of the species to update the properties matrix</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with the properties matrix filled</p>
+<dd class="field-odd"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -1200,7 +1155,7 @@ given equivalence ratio (phi)</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.setPropertiesMatrixComposition">
 <span class="sig-name descname"><span class="pre">setPropertiesMatrixComposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrixComposition" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dd><p>Update the properties matrix with the data of the mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1212,12 +1167,12 @@ given equivalence ratio (phi)</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Optional Args:</dt><dd><p>index (float): Vector with the indexes of the species to fill the properties matrix</p>
+<dt>Optional Args:</dt><dd><p>index (float): Vector with the indexes of the species to update the properties matrix</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with the properties matrix filled</p>
+<dd class="field-odd"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -1232,7 +1187,7 @@ given equivalence ratio (phi)</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.setPropertiesMatrixCompositionInitialIndex">
 <span class="sig-name descname"><span class="pre">setPropertiesMatrixCompositionInitialIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrixCompositionInitialIndex" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dd><p>Update the properties matrix with the data of the mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1240,11 +1195,11 @@ given equivalence ratio (phi)</p>
 <li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
 <li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
 <li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to fill the properties matrix</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with the properties matrix filled</p>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1256,7 +1211,7 @@ given equivalence ratio (phi)</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.setPropertiesMatrixInitialIndex">
 <span class="sig-name descname"><span class="pre">setPropertiesMatrixInitialIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setPropertiesMatrixInitialIndex" title="Permalink to this definition">#</a></dt>
-<dd><p>Fill the properties matrix with the data of the mixture</p>
+<dd><p>Update the properties matrix with the data of the mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1264,11 +1219,11 @@ given equivalence ratio (phi)</p>
 <li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
 <li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
 <li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
-<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to fill the properties matrix</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with the properties matrix filled</p>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -1370,6 +1325,102 @@ cryogenic liquid species, i.e., liquified gases.</p>
 <dd><p>Stoichiometric matrix</p>
 </dd></dl>
 
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.updatePropertiesMatrix">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.updatePropertiesMatrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Update the properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.updatePropertiesMatrixComposition">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrixComposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.updatePropertiesMatrixComposition" title="Permalink to this definition">#</a></dt>
+<dd><p>Update the properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.updatePropertiesMatrixCompositionFast">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrixCompositionFast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.updatePropertiesMatrixCompositionFast" title="Permalink to this definition">#</a></dt>
+<dd><p>Update properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.updatePropertiesMatrixFast">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrixFast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.updatePropertiesMatrixFast" title="Permalink to this definition">#</a></dt>
+<dd><p>Update properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.updatePropertiesMatrixFastH0">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrixFastH0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">moles</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">h0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.updatePropertiesMatrixFastH0" title="Permalink to this definition">#</a></dt>
+<dd><p>Update properties matrix with the data of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>species</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Species contained in the system</p></li>
+<li><p><strong>moles</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Moles of the species in the mixture [mol]</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
+<li><p><strong>h0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Enthalpy of formation vector [J/mol]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="mat function">
@@ -1467,6 +1518,31 @@ products for the given list of reactants</p>
 <li><p>[obj, listSpecies, listSpeciesFormula] = setListSpecies(chemicalSystem, ‘soot formation’);</p></li>
 <li><p>[obj, listSpecies, listSpeciesFormula] = setListSpecies(chemicalSystem, ‘complete’, 1.5, 2.5);</p></li>
 </ul>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.updatePropertiesMatrixThermo">
+<span class="sig-name descname"><span class="pre">updatePropertiesMatrixThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">listSpecies</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">FLAG_H0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.updatePropertiesMatrixThermo" title="Permalink to this definition">#</a></dt>
+<dd><p>Function that computes the vector of enthalpy for the given
+set of species [J/mol]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – ChemicalSystem object</p></li>
+<li><p><strong>listSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – List of species</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature [K]</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the indexes of the species to update the properties matrix</p></li>
+<li><p><strong>FLAG_H0</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Boolean to indicate if the enthalpy must be computed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ChemicalSystem)</em> – ChemicalSystem object with updated properties matrix</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>obj = updatePropertiesMatrixThermo(obj, {‘H2O’, ‘CO2’}, 298.15, index, true)</p>
 </div>
 </dd></dl>
 
@@ -1799,6 +1875,18 @@ temperature. A Newton-Raphson method is used to iteratively adjust the temperatu
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cpSpecific">
+<span class="sig-name descname"><span class="pre">cpSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cpSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific heat at constant pressure [J/(kg-K)]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cp_r">
+<span class="sig-name descname"><span class="pre">cp_r</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cp_r" title="Permalink to this definition">#</a></dt>
+<dd><p>Reactive component of the specific heat at constant pressure</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cstar">
 <span class="sig-name descname"><span class="pre">cstar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cstar" title="Permalink to this definition">#</a></dt>
 <dd><p>Characteristic velocity [m/s]</p>
@@ -1808,6 +1896,18 @@ temperature. A Newton-Raphson method is used to iteratively adjust the temperatu
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cv">
 <span class="sig-name descname"><span class="pre">cv</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cv" title="Permalink to this definition">#</a></dt>
 <dd><p>Specific heat at constant volume [J/K]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cvSpecific">
+<span class="sig-name descname"><span class="pre">cvSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cvSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific heat at constant volume [J/(kg-K)]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.cv_r">
+<span class="sig-name descname"><span class="pre">cv_r</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.cv_r" title="Permalink to this definition">#</a></dt>
+<dd><p>Reactive component of the specific heat at constant volume</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1863,6 +1963,12 @@ temperature. A Newton-Raphson method is used to iteratively adjust the temperatu
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.eSpecific">
+<span class="sig-name descname"><span class="pre">eSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.eSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific internal energy [J/kg]</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.ef">
 <span class="sig-name descname"><span class="pre">ef</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.ef" title="Permalink to this definition">#</a></dt>
 <dd><p>Internal energy of formation [J]</p>
@@ -1911,9 +2017,21 @@ temperature. A Newton-Raphson method is used to iteratively adjust the temperatu
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.gSpecific">
+<span class="sig-name descname"><span class="pre">gSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.gSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific Gibbs energy [J/kg]</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.gamma">
 <span class="sig-name descname"><span class="pre">gamma</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.gamma" title="Permalink to this definition">#</a></dt>
 <dd><p>Adiabatic index [-]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.gamma_f">
+<span class="sig-name descname"><span class="pre">gamma_f</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.gamma_f" title="Permalink to this definition">#</a></dt>
+<dd><p>Frozen adiabatic index [-]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1922,10 +2040,141 @@ temperature. A Newton-Raphson method is used to iteratively adjust the temperatu
 <dd><p>Adiabatic index [-]</p>
 </dd></dl>
 
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getDebyeLength">
+<span class="sig-name descname"><span class="pre">getDebyeLength</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getDebyeLength" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute Debye length of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>lengthDebye (float)</em> – Debye length of the mixture [m]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getDegreeIonization">
+<span class="sig-name descname"><span class="pre">getDegreeIonization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getDegreeIonization" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute degree of ionization of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>degreeIonization (float)</em> – Degree of ionization of the mixture [-]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>A degree of ionization &lt;&lt; 1 indicates a weakly ionized plasma, while a degree of ionization close to 1 indicates a fully ionized plasma.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getElectronNumberDensity">
+<span class="sig-name descname"><span class="pre">getElectronNumberDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getElectronNumberDensity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute electron number density of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>electronNumberDensity (float)</em> – Electron number density of the mixture [1/m3]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getElectronsDebyeSphere">
+<span class="sig-name descname"><span class="pre">getElectronsDebyeSphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getElectronsDebyeSphere" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute number of electrons in Debye sphere</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>electronsDebyeSphere (float)</em> – Number of electrons in Debye sphere [-]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getIonNumberDensity">
+<span class="sig-name descname"><span class="pre">getIonNumberDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getIonNumberDensity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute ion number density of the mixture of charged heavy species (ions) excluding electrons</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ionNumberDensity (float)</em> – Ion number density of the mixture [1/m3]</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="mat staticmethod">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getMass">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getMass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">propertiesMatrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getMass" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute mass mixture [kg]</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getNeutralNumberDensity">
+<span class="sig-name descname"><span class="pre">getNeutralNumberDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getNeutralNumberDensity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute neutral number density of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>neutralNumberDensity (float)</em> – Neutral number density of the mixture [1/m3]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getNumberDensity">
+<span class="sig-name descname"><span class="pre">getNumberDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getNumberDensity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute total number density of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>numberDensity (float)</em> – Total number density of the mixture [1/m3]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getPlasmaCoupling">
+<span class="sig-name descname"><span class="pre">getPlasmaCoupling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getPlasmaCoupling" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the plasma coupling parameter of the mixture.</p>
+<p>The plasma coupling parameter <span class="math notranslate nohighlight">\(\Gamma\)</span> is a dimensionless
+measure of the strength of Coulomb interactions relative to the
+average thermal energy of particles in the plasma. It is defined as:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma = \frac{e^2}{4 \pi \epsilon_0 a k_B T},\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(e\)</span> is the elementary charge, <span class="math notranslate nohighlight">\(\epsilon_0\)</span> the
+vacuum permittivity, <span class="math notranslate nohighlight">\(a\)</span> the average inter-particle distance,
+<span class="math notranslate nohighlight">\(k_B\)</span> the Boltzmann constant, and <span class="math notranslate nohighlight">\(T\)</span> the temperature.</p>
+<p>Note: A plasma coupling parameter much less than 1 indicates a weakly coupled plasma, whereas
+a plasma coupling parameter close to or greater than 1 indicates a strongly coupled plasma.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>plasmaCoupling (float)</em> – Plasma coupling of the mixture [-]
+plasmaCouplingSpecies (float): Plasma coupling of each species in the mixture [-]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat method">
@@ -1953,6 +2202,25 @@ as a vector, each species is evaluated at its corresponding temperature.</p></li
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getSpeciesNumberDensity">
+<span class="sig-name descname"><span class="pre">getSpeciesNumberDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getSpeciesNumberDensity" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute species number density of the mixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>speciesNumberDensity (float)</em> – Species number density of the mixture [1/m3]
+numberDensity (float): Total number density of the mixture [1/m3]</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[speciesNumberDensity, numberDensity] = getSpeciesNumberDensity(obj)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.getTypeSpecies">
 <span class="sig-name descname"><span class="pre">getTypeSpecies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.getTypeSpecies" title="Permalink to this definition">#</a></dt>
 <dd><p>Create cell array with the type of species in the mixture</p>
@@ -1970,6 +2238,12 @@ as a vector, each species is evaluated at its corresponding temperature.</p></li
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.h">
 <span class="sig-name descname"><span class="pre">h</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.h" title="Permalink to this definition">#</a></dt>
 <dd><p>Enthalpy [J]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.hSpecific">
+<span class="sig-name descname"><span class="pre">hSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.hSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific enthalpy [J/kg]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -2006,6 +2280,21 @@ as a vector, each species is evaluated at its corresponding temperature.</p></li
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.indexSpecies">
 <span class="sig-name descname"><span class="pre">indexSpecies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.indexSpecies" title="Permalink to this definition">#</a></dt>
 <dd><p>Index of the species (initial mixture)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.isWeaklyCoupledPlasma">
+<span class="sig-name descname"><span class="pre">isWeaklyCoupledPlasma</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.isWeaklyCoupledPlasma" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the mixture is weakly coupled plasma</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;Mixture.Mixture" title="src.+combustiontoolbox.+core.&#64;Mixture.Mixture"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></a></span>) – Mixture object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>value (bool)</em> – True if the mixture is weakly coupled plasma, false otherwise
+plasmaCoupling (float): Plasma coupling of the mixture [-]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -2078,6 +2367,12 @@ as a vector, each species is evaluated at its corresponding temperature.</p></li
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.s0">
 <span class="sig-name descname"><span class="pre">s0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.s0" title="Permalink to this definition">#</a></dt>
 <dd><p>Entropy (frozen) [J/K]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;Mixture.Mixture.sSpecific">
+<span class="sig-name descname"><span class="pre">sSpecific</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@Mixture.Mixture.sSpecific" title="Permalink to this definition">#</a></dt>
+<dd><p>Mass specific entropy [J/(kg-K)]</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -2787,5 +3082,7 @@ the pressure and molar volume of a mixture assuming ideal gas behavior.</p>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

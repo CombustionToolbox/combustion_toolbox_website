@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -405,6 +408,50 @@
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.KB">
+<span class="sig-name descname"><span class="pre">KB</span></span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.KB" title="Permalink to this definition">#</a></dt>
+<dd><p>Boltzmann constant [J/K]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.HBAR">
+<span class="sig-name descname"><span class="pre">HBAR</span></span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.HBAR" title="Permalink to this definition">#</a></dt>
+<dd><p>Planck constant [J-s]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.E">
+<span class="sig-name descname"><span class="pre">E</span></span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.E" title="Permalink to this definition">#</a></dt>
+<dd><p>Electron charge [C]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.E0">
+<span class="sig-name descname"><span class="pre">E0</span></span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.E0" title="Permalink to this definition">#</a></dt>
+<dd><p>Vacuum permittivity [F/m]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.release">
 <span class="sig-name descname"><span class="pre">release</span></span><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.release" title="Permalink to this definition">#</a></dt>
 <dd><p>Release of the Combustion Toolbox</p>
@@ -436,20 +483,38 @@
 </div>
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">E</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.602176634e-19'</span></em></dt>
+<dd><p>Electron charge [C]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">E0</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'8.854187818e-12'</span></em></dt>
+<dd><p>Vacuum permittivity [F/m]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
 <span class="sig-name descname"><span class="pre">G</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'9.80665'</span></em></dt>
 <dd><p>Standard gravity [m/s2]</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.HBAR">
-<span class="sig-name descname"><span class="pre">HBAR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'6.626070041e-34'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.HBAR" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">HBAR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'6.626070041e-34'</span></em></dt>
 <dd><p>Planck constant [J-s]</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.KB">
-<span class="sig-name descname"><span class="pre">KB</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.38064852e-23'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.KB" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">KB</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1.38064852e-23'</span></em></dt>
 <dd><p>Boltzmann constant [J/K]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+common.&#64;Constants.Constants.ME">
+<span class="sig-name descname"><span class="pre">ME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'9.10938356e-31'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+common.@Constants.Constants.ME" title="Permalink to this definition">#</a></dt>
+<dd><p>Electron mass [kg]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -466,13 +531,13 @@
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">date</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'8</span> <span class="pre">Oct</span> <span class="pre">2025'&quot;</span></em></dt>
+<span class="sig-name descname"><span class="pre">date</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'16</span> <span class="pre">Oct</span> <span class="pre">2025'&quot;</span></em></dt>
 <dd><p>Release date</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">release</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'v1.2.3'&quot;</span></em></dt>
+<span class="sig-name descname"><span class="pre">release</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;'v1.2.8'&quot;</span></em></dt>
 <dd><p>Release version</p>
 </dd></dl>
 
