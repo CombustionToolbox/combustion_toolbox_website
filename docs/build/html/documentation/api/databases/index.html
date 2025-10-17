@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -374,7 +377,7 @@
 <dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">matlab.mixin.Copyable</span></code></p>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Database</span></code></a> abstract class contains the common methods between database objects.
 This class is used as a base class for the <code class="xref mat mat-class docutils literal notranslate"><span class="pre">NasaDatabase</span></code> and <code class="xref mat mat-class docutils literal notranslate"><span class="pre">BurcatDatabase</span></code> classes.</p>
 <p>See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">NasaDatabase()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">BurcatDatabase()</span></code></p>
@@ -455,6 +458,35 @@ set of species</p>
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.name">
 <span class="sig-name descname"><span class="pre">name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.name" title="Permalink to this definition">#</a></dt>
 <dd><p>Database name</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;Database.Database.plus">
+<span class="sig-name descname"><span class="pre">plus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">DB1</span></em>, <em class="sig-param"><span class="pre">DB2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@Database.Database.plus" title="Permalink to this definition">#</a></dt>
+<dd><p>Overload + operator to merge two databases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DB1</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – First database</p></li>
+<li><p><strong>DB2</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;Database.Database" title="src.+combustiontoolbox.+databases.&#64;Database.Database"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Database</span></code></a></span>) – Second database</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional name-pairs:</dt><dd><ul class="simple">
+<li><p>conflictPolicy (char): Policy to handle species name conflicts. Options are: (1: prefer DB1, 2: prefer DB2)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>obj (Database)</em> – Merged database</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>DB = NasaDatabase() + BurcatDatabase()</p>
+</div>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -1070,8 +1102,8 @@ chemical species contained in Burcat’s database.</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase.thermoMillennium_2_thermoNASA9">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">thermoMillennium_2_thermoNASA9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filenameInput</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@BurcatDatabase.BurcatDatabase.thermoMillennium_2_thermoNASA9" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;BurcatDatabase.BurcatDatabase.thermoMillennium2thermoNASA9">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">thermoMillennium2thermoNASA9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filenameInput</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@BurcatDatabase.BurcatDatabase.thermoMillennium2thermoNASA9" title="Permalink to this definition">#</a></dt>
 <dd><p>Read Extended Third Millennium Thermodynamic Database of New NASA
 Polynomials with Active Thermochemical Tables update and write a new
 file compatible with thermo NASA 9 format</p>
@@ -1083,6 +1115,20 @@ file compatible with thermo NASA 9 format</p>
 </ul>
 </dd>
 </dl>
+<dl class="simple">
+<dt>Optional args:</dt><dd><ul class="simple">
+<li><p>outDir (char): Output directory (default: ‘databases’)</p></li>
+<li><p>suffix (char): Suffix to add to species names (default: ‘_M’)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p>BurcatDatabase.thermoMillennium2thermoNASA9(‘thermo_millennium.inp’)</p></li>
+<li><p>BurcatDatabase.thermoMillennium2thermoNASA9(‘thermo_millennium.inp’, ‘filenameOutput’, ‘thermo_millennium_2_thermoNASA9.inp’, ‘outDir’, ‘databases’, ‘suffix’, ‘_M’)</p></li>
+</ul>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1093,7 +1139,8 @@ file compatible with thermo NASA 9 format</p>
 <dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SolarAbundances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+databases.@SolarAbundances.SolarAbundances" title="Permalink to this definition">#</a></dt>
-<dd><p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances" title="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SolarAbundances</span></code></a> class is used to read solar abundances and compute the
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances" title="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SolarAbundances</span></code></a> class is used to read solar abundances and compute the
 initial molar composition of the mixture</p>
 <p>See also: <a class="reference internal" href="#src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances.abundances2moles" title="src.+combustiontoolbox.+databases.&#64;SolarAbundances.SolarAbundances.abundances2moles"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">abundances2moles()</span></code></a></p>
 <dl class="mat method">

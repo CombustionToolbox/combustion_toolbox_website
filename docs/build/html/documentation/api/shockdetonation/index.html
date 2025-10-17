@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -388,6 +391,7 @@ Additional optional parameters can be provided to customize the solver’s behav
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR</span></code>: Shock polar diagrams</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_R</span></code>: Shock polar diagrams for incident and reflected states</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_LIMITRR</span></code>: Shock polar within the limit of regular reflection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_PRANDTL_MEYER</span></code>: Prandtl-Meyer expansion wave</p></li>
 </ul>
 </dd>
 </dl>
@@ -450,6 +454,12 @@ Additional optional parameters can be provided to customize the solver’s behav
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.numPointsPolar">
 <span class="sig-name descname"><span class="pre">numPointsPolar</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPolar" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of points to compute shock/detonation polar curves</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver.numPointsPrandtlMeyer">
+<span class="sig-name descname"><span class="pre">numPointsPrandtlMeyer</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'100'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.numPointsPrandtlMeyer" title="Permalink to this definition">#</a></dt>
+<dd><p>Number of points to compute Prandtl-Meyer curves</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -752,6 +762,51 @@ Broyden’s method</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>[mix1, mix2, mix2_1, mix3] = shockPolarLimitRR(ShockSolver(), mix1, u1)</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.shockPrandtlMeyer">
+<span class="sig-name descname"><span class="pre">shockPrandtlMeyer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em>, <em class="sig-param"><span class="pre">mix1</span></em>, <em class="sig-param"><span class="pre">u1</span></em>, <em class="sig-param"><span class="pre">theta2</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockdetonation.@ShockSolver.shockPrandtlMeyer" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes the downstream state associated with an isentropic expansion
+through a given deflection angle theta2 by marching along the SV (defined
+entropy and specific volume) expansion path. The objective function
+thetaGuess - theta2 = 0 is solved using a Newton-Raphson method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockSolver</span></code></a></span>) – ShockSolver object</p></li>
+<li><p><strong>mix1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Properties of the mixture in the pre-expansion state</p></li>
+<li><p><strong>u1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-expansion velocity [m/s]</p></li>
+<li><p><strong>theta2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Deflection angle [deg]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><ul class="simple">
+<li><p>mix2 (Mixture): Properties of the mixture in the post-expansion state (previous calculation)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Tuple containing</p>
+<ul class="simple">
+<li><p>mix1 (Mixture): Properties of the initial state</p></li>
+<li><p>mix2 (Mixture): Properties of the final state after expansion</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<ul class="simple">
+<li><p>mix2.polar stores the path history (states along the expansion)</p></li>
+</ul>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>[mix1, mix2] = shockPrandtlMeyer(ShockSolver(), mix1, 15.0)</p>
 </div>
 </dd></dl>
 

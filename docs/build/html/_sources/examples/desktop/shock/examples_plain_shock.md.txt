@@ -17,4 +17,7 @@ examples_plain_SHOCK_POLAR
 examples_plain_SHOCK_POLAR_R
 examples_plain_SHOCK_POLAR_LIMIT_RR
 examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE
+examples_plain_SHOCK_PRANDTL_MEYER
+examples_plain_JUMPCONDITIONS
+examples_plain_JUMPCONDITIONS_THERMO
 ```
