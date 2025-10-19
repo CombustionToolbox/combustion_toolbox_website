@@ -100,3 +100,20 @@ Molar fraction of chemical species downstream of a Chapman–Jouguet detonation 
 
 Thermodynamic and flow properties downstream of a Chapman–Jouguet detonation in methane–air mixtures as a function of equivalence ratio $\phi$, at $T_1 = 300$ K and $p_1 = 1$ bar.
 :::
+
+
+```{only} latex
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{_static/img/detonation_waves_1_fig1.pdf}
+    \caption{Molar fraction of chemical species downstream of a Chapman–Jouguet detonation in methane–air mixtures as a function of equivalence ratio $\phi$, at $T_1 = 300$ K and $p_1 = 1$ bar.}
+    \label{fig:molar_fraction_normal_detonation}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{_static/img/detonation_waves_1_fig2.pdf}
+    \caption{Thermodynamic and flow properties downstream of a Chapman–Jouguet detonation in methane–air mixtures as a function of equivalence ratio $\phi$, at $T_1 = 300$ K and $p_1 = 1$ bar.}
+    \label{fig:properties_normal_detonation}
+\end{figure}
+```

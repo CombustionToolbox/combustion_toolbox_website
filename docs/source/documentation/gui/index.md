@@ -27,6 +27,29 @@ Post-process of results using the GUI of the adiabatic combustion for a lean-to-
 Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 3].
 :::
 
+```{only} latex
+\begin{figure}
+   \centering
+   \includegraphics[width=0.5\textwidth]{_static/img/cuadra2022/gui_cuadra2024_labels_1.pdf}
+   \caption{Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 1].}
+   \label{fig_gui_cuadra2024_labels_1}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.5\textwidth]{_static/img/cuadra2022/gui_cuadra2024_labels_2.pdf}
+   \caption{Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 2].}
+   \label{fig_gui_cuadra2024_labels_2}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.5\textwidth]{_static/img/cuadra2022/gui_cuadra2024_labels_34_vertical.pdf}
+   \caption{Post-process of results using the GUI of the adiabatic combustion for a lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-air mixture at standard conditions ($T_1 = 300$ K and $p_1 = 1$ bar); labels: name of the different components of the GUI. In particular, the numerical results correspond to $\phi = 0.5$ (selected case in the tree component) [part 3].}
+   \label{fig_gui_cuadra2024_labels_34_vertical}
+\end{figure}
+```
+
 
 <!-- :::{dropdown} Routines
 ```{eval-rst}
@@ -93,3 +116,40 @@ Add-on uivalidation.
 :align: center
 Add-on uiabout.
 :::
+
+```{only} latex
+\begin{figure}
+   \centering
+   \includegraphics[width=0.95\textwidth]{_static/img/cuadra2022/gui_uielements.pdf}
+   \caption{Add-on uielements.}
+   \label{fig_gui_uielements}
+\end{figure}   
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.95\textwidth]{_static/img/cuadra2022/gui_uipreferences.pdf}
+   \caption{Add-on uipreferences.}
+   \label{fig_gui_uipreferences}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.5\textwidth]{_static/img/cuadra2022/gui_uifeedback.pdf}
+   \caption{Add-on uifeedback.}
+   \label{fig_gui_uifeedback}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.95\textwidth]{_static/img/cuadra2022/gui_uivalidation.pdf}
+   \caption{Add-on uivalidation.}
+   \label{fig_gui_uivalidation}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.95\textwidth]{_static/img/cuadra2022/gui_uiabout.pdf}
+   \caption{Add-on uiabout.}
+   \label{fig_gui_uiabout}
+\end{figure}
+```
