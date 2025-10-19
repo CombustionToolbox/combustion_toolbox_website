@@ -93,6 +93,7 @@ run_validations_CEA
     <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="1000">
 </p>
 
+
 ```{eval-rst}
 .. only:: latex
 
