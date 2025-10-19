@@ -131,6 +131,15 @@ Variation of molar fraction for an HP transformation in lean-to-rich acetylene (
 Variation of thermodynamic properties for an HP transformation in lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-ideal air mixtures at standard conditions ($T_1 = 300$ K, $p_1 = 1$ bar).
 :::
 
+```{only} latex
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{_static/img/chemical_equilibrium_2_fig2.pdf}
+    \caption{Variation of thermodynamic properties for an HP transformation in lean-to-rich acetylene ($\text{C}_2\text{H}_2$)-ideal air mixtures at standard conditions ($T_1 = 300$ K, $p_1 = 1$ bar).}
+    \label{fig_chemical_equilibrium_2_fig2}
+\end{figure}
+```
+
 
 Combustion Toolbox performs the calculations from the last case to the first one.
 

@@ -1,6 +1,6 @@
 # Validations
- 
-The Combustion Toolbox {cite:p}`cuadra2024a_preprint,combustiontoolbox` has been validated against established frameworks under a variety of problems. Below is a summary of **some of the validation** cases available, along with the reference codes used for comparison.
+
+The Combustion Toolbox {cite:p}`cuadra2024a_preprint,combustiontoolbox` has been rigorously benchmarked against several established reference codes across a range of thermochemical equilibrium problems. The table below summarizes the main external solvers considered for comparison together with their typical scopes of application.
 
 | Reference code                                  | Scope of application                                      |
 | ----------------------------------------------- | -------------------------------------------------- |
@@ -23,7 +23,7 @@ For the sake of clarity, we only show a reduced set of species in the validation
 - [Shock wave calculations](#shock-wave-calculations)
 - [Detonation wave calculations](#detonation-wave-calculations)
 - [Rocket calculations](#rocket-calculations)
-- [Exoplanet / TEA comparisons](#exoplanet-chemical-equilibrium-calculations)
+- [Exoplanet chemical equilibrium calculations](#exoplanet-chemical-equilibrium-calculations)
 
 ## Chemical equilibrium calculations
 
@@ -92,6 +92,7 @@ run_validations_CEA
     <img src="_static/img/run_validation_TP_CEA_2_molar.svg" width="1000">
     <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="1000">
 </p>
+
 
 ```{eval-rst}
 .. only:: latex

@@ -5,10 +5,12 @@ The Combustion Toolbox (CT) is organized using namespaces (**starting from versi
    * {mat:class}`~src.+combustiontoolbox.+core.@Elements.Elements`: stores the list of elements that may appear in the database.
    * {mat:class}`~src.+combustiontoolbox.+core.@Species.Species`: object containing the properties of a chemical species.
    * {mat:class}`~src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem`: object that defines the chemical system.
-   * {mat:class}`~src.+combustiontoolbox.+core.@EquationState.EquationState`: object that defines the equation of state.
+   * {mat:class}`~src.+combustiontoolbox.+core.@EquationState.EquationState`: an abstract class that contains common methods for the equation of state.
+   * {mat:class}`~src.+combustiontoolbox.+core.@EquationStateIdealGas.EquationStateIdealGas`: object that defines an ideal gas equation of state.
    * {mat:class}`~src.+combustiontoolbox.+core.@Mixture.Mixture`: object that defines a multicomponent mixture.
    * {mat:class}`~src.+combustiontoolbox.+databases.@Database.Database`: an abstract class that contains common methods for the databases.
    * {mat:class}`~src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase`: a structured thermochemical database including data from {cite:t}`Mcbride2002, burcat2005` with *griddedInterpolant* objects (see MATLAB built-in function <tt>griddedInterpolant.m</tt>) that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980` for faster data access.
+   * {mat:class}`~src.+combustiontoolbox.+databases.@BurcatDatabase.BurcatDatabase`: a structured thermochemical database including data from {cite:t}`burcat2005` with *griddedInterpolant* objects that contain piecewise cubic Hermite interpolating polynomials (PCHIP) {cite:p}`fritsch1980` for faster data access.
 
 To get started, let's import one of the subpackages of the Combustion Toolbox, the `databases` package. This package contains the classes that define the databases used in CT. To import the `databases` package, use the following command:
 ```matlab
