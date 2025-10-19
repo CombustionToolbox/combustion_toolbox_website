@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -363,524 +366,666 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
-<p>A set of the results obtained using Combustion Toolbox, <a class="reference external" href="https://cearun.grc.nasa.gov/">NASA’s CEA</a> <span id="id1">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>, <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id2">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span>, <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a> <span id="id3">[<a class="reference internal" href="references.html#id190" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>, <a class="reference internal" href="references.html#id25" title="S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. GALCIT report FM2006, 6:1–90, 2008.">Browne <em>et al.</em>, 2008</a>]</span>, and <a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a> <span id="id4">[<a class="reference internal" href="references.html#id21" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span>.</p>
+<p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id3" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>, <a class="reference internal" href="references.html#id4" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2025. Version 1.2.7. doi:10.5281/zenodo.5554911.">Cuadra <em>et al.</em>, 2025</a>]</span> has been validated against established frameworks under a variety of problems. Below is a summary of <strong>some of the validation</strong> cases available, along with the reference codes used for comparison.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reference code</p></th>
+<th class="head"><p>Scope of application</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><a class="reference external" href="https://cearun.grc.nasa.gov/">NASA CEA</a></strong> <span id="id2">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span></p></td>
+<td><p>Chemical equilibrium, combustion, propulsion performance</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="https://cantera.org/">Cantera</a></strong> <span id="id3">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span></p></td>
+<td><p>Chemical equilibrium, chemical kinetics, combustion, reactive flow simulations, transport, plasma and electrochemical systems</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a></strong> <span id="id4">[<a class="reference internal" href="references.html#id190" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>]</span></p></td>
+<td><p>Shock waves, detonations, high-enthalpy reactive flows</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a></strong> <span id="id5">[<a class="reference internal" href="references.html#id21" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span></p></td>
+<td><p>Thermochemical equilibrium of exoplanetary atmospheres</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Caltech’s SD-Toolbox uses the Cantera software package as kernel for the thermochemical calculations.</p>
+<p>Caltech’s SD-Toolbox internally uses the <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id6">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span> software packag for thermochemical calculations.</p>
 </div>
-<hr class="docutils" />
-<p><strong><em>For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions.</em></strong>
-To run all the validations contrasted with CEA at once, at the prompt type:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the sake of clarity, we only show a reduced set of species in the validation of the mole fractions.</p>
+</div>
+<p><strong>Contents</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#chemical-equilibrium-calculations"><span class="std std-doc">Chemical equilibrium calculations</span></a></p></li>
+<li><p><a class="reference internal" href="#shock-wave-calculations"><span class="std std-doc">Shock wave calculations</span></a></p></li>
+<li><p><a class="reference internal" href="#detonation-wave-calculations"><span class="std std-doc">Detonation wave calculations</span></a></p></li>
+<li><p><a class="reference internal" href="#rocket-calculations"><span class="std std-doc">Rocket calculations</span></a></p></li>
+<li><p><a class="reference internal" href="#exoplanet-chemical-equilibrium-calculations"><span class="std std-doc">Exoplanet / TEA comparisons</span></a></p></li>
+</ul>
+<section id="chemical-equilibrium-calculations">
+<h2>Chemical equilibrium calculations<a class="headerlink" href="#chemical-equilibrium-calculations" title="Permalink to this heading">#</a></h2>
+<p>Validations of the <code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code> for different problem types with <strong>NASA CEA</strong> as reference. The problem types covered are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TP</span></code> (defined temperature and pressure)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HP</span></code> (defined enthalpy and pressure)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TV</span></code> (defined temperature and volume)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EV</span></code> (defined internal energy and volume)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SP</span></code> (defined entropy and pressure)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SV</span></code> (defined entropy and volume)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Mixture definition</p></th>
+<th class="head"><p>Conditions</p></th>
+<th class="head"><p>Equivalence ratio</p></th>
+<th class="head"><p>Reference code</p></th>
+<th class="head"><p>MATLAB script</p></th>
+<th class="head"><p>Data source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-tp1"><span class="std std-ref">TP 1</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \dfrac{7.5}{\phi}(\text{O}_2 + 3.76\ \text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 2500\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_TP_CEA_1.m">run_validation_TP_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/tp">./validations/cea/data/tp</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-tp2"><span class="std std-ref">TP 2</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \dfrac{7.5}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 2500\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_TP_CEA_2.m">run_validation_TP_CEA_2</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/tp">./validations/cea/data/tp</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-tp3"><span class="std std-ref">TP 3</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_3\text{OH} + \dfrac{1.5}{\phi}(\text{O}_2 + 3.76\ \text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 2500\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_TP_CEA_3.m">run_validation_TP_CEA_3</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/tp">./validations/cea/data/tp</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-tp4"><span class="std std-ref">TP 4</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_3\text{OH} + \dfrac{1.5}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 2500\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_TP_CEA_4.m">run_validation_TP_CEA_4</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/tp">./validations/cea/data/tp</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-hp1"><span class="std std-ref">HP 1</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2 + \dfrac{2.5}{\phi}(\text{O}_2 + 3.76 \text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{initial} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_HP_CEA_1.m">run_validation_HP_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/hp">./validations/cea/data/hp</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-hp2"><span class="std std-ref">HP 2</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2 + \dfrac{2.5}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{initial} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_HP_CEA_2.m">run_validation_HP_CEA_2</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/hp">./validations/cea/data/hp</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-hp3"><span class="std std-ref">HP 3</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}(\text{O}_2 + 3.76 \text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{initial} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_HP_CEA_3.m">run_validation_HP_CEA_3</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/hp">./validations/cea/data/hp</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-hp4"><span class="std std-ref">HP 4</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{initial} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_HP_CEA_4.m">run_validation_HP_CEA_4</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/hp">./validations/cea/data/hp</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-hp5"><span class="std std-ref">HP 5</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{Natural gas} + \dfrac{2.05}{\phi}\text{Air}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{initial} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_HP_CEA_5.m">run_validation_HP_CEA_5</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/hp">./validations/cea/data/hp</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-tv1"><span class="std std-ref">TV 1</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}\text{Air}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 3000\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1.0132\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_TV_CEA_1.m">run_validation_TV_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/tv">./validations/cea/data/tv</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-ev1"><span class="std std-ref">EV 1</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}\text{Air}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1.0132\,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_EV_CEA_1.m">run_validation_EV_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/ev">./validations/cea/data/ev</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>Natural gas:</strong> <span class="math notranslate nohighlight">\(0.85\text{CH}_4 + 0.1\text{C}_2\text{H}_6 + 0.05\text{CO}_2\)</span></p></li>
+<li><p><strong>Air:</strong> <span class="math notranslate nohighlight">\(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\)</span></p></li>
+<li><p><strong>Ideal Air:</strong> <span class="math notranslate nohighlight">\(3.76 \text{N}_2 + \text{O}_2\)</span></p></li>
+</ul>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To run all the validations contrasted with CEA at once, write at the prompt:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validations_CEA</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="validation-tp-1">
-<h2>Validation TP 1<a class="headerlink" href="#validation-tp-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Temperature [K]   = 2500</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \frac{7.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
 </div>
+<section id="tp-1-c-6-h-6-air">
+<span id="sec-tp1"></span><h3>TP 1 - C<span class="math notranslate nohighlight">\(_{6}\)</span>H<span class="math notranslate nohighlight">\(_{6}\)</span> + Air<a class="headerlink" href="#tp-1-c-6-h-6-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_TP_CEA_1_molar.svg" width="1000">
-    <img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="600">
+    <img src="_static/img/run_validation_TP_CEA_1_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-tp-2">
-<h2>Validation TP 2<a class="headerlink" href="#validation-tp-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Temperature [K]   = 2500</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_6\text{H}_6 + \frac{7.5}{\phi} \text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="tp-2-c-6-h-6-o-2">
+<span id="sec-tp2"></span><h3>TP 2 - C<span class="math notranslate nohighlight">\(_{6}\)</span>H<span class="math notranslate nohighlight">\(_{6}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#tp-2-c-6-h-6-o-2" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_TP_CEA_2_molar.svg" width="1000">
-    <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="600">
+    <img src="_static/img/run_validation_TP_CEA_2_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-tp-3">
-<h2>Validation TP 3<a class="headerlink" href="#validation-tp-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Temperature [K]   = 2500</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="tp-3-ch-3-oh-air">
+<span id="sec-tp3"></span><h3>TP 3 - CH<span class="math notranslate nohighlight">\(_{3}\)</span>OH + Air<a class="headerlink" href="#tp-3-ch-3-oh-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_TP_CEA_3_molar.svg" width="1000">
-    <img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="600">
+    <img src="_static/img/run_validation_TP_CEA_3_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-tp-4">
-<h2>Validation TP 4<a class="headerlink" href="#validation-tp-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Temperature [K]   = 2500</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_3\text{OH} + \frac{1.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/tp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="tp-4-ch-3-oh-o-2">
+<span id="sec-tp4"></span><h3>TP 4 - CH<span class="math notranslate nohighlight">\(_{3}\)</span>OH + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#tp-4-ch-3-oh-o-2" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_TP_CEA_4_molar.svg" width="1000">
-    <img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="600">
+    <img src="_static/img/run_validation_TP_CEA_4_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-hp-1">
-<h2>Validation HP 1<a class="headerlink" href="#validation-hp-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="hp-1-c-2-h-2-air">
+<span id="sec-hp1"></span><h3>HP 1 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + Air<a class="headerlink" href="#hp-1-c-2-h-2-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_HP_CEA_1_molar.svg" width="1000">
-    <img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="600">
+    <img src="_static/img/run_validation_HP_CEA_1_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-hp-2">
-<h2>Validation HP 2<a class="headerlink" href="#validation-hp-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="hp-2-c-2-h-2-o-2">
+<span id="sec-hp2"></span><h3>HP 2 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#hp-2-c-2-h-2-o-2" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_HP_CEA_2_molar.svg" width="1000">
-    <img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="600">
+    <img src="_static/img/run_validation_HP_CEA_2_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-hp-3">
-<h2>Validation HP 3<a class="headerlink" href="#validation-hp-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="hp-3-ch-4-air">
+<span id="sec-hp3"></span><h3>HP 3 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air<a class="headerlink" href="#hp-3-ch-4-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_HP_CEA_3_molar.svg" width="1000">
-    <img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="600">
+    <img src="_static/img/run_validation_HP_CEA_3_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-hp-4">
-<h2>Validation HP 4<a class="headerlink" href="#validation-hp-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic temperature and composition at constant pressure</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_HP_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="hp-4-ch-4-o-2">
+<span id="sec-hp4"></span><h3>HP 4 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#hp-4-ch-4-o-2" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_HP_CEA_4_molar.svg" width="1000">
-    <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="600">
+    <img src="_static/img/run_validation_HP_CEA_4_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-tv-1">
-<h2>Validation TV 1<a class="headerlink" href="#validation-tv-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and volume</p></li>
-<li><p>Temperature [K]   = 3000</p></li>
-<li><p>Pressure    [bar] = 1.0132</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/tv</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="hp-5-natural-gas-air">
+<span id="sec-hp5"></span><h3>HP 5 - Natural Gas + Air<a class="headerlink" href="#hp-5-natural-gas-air" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_HP_CEA_5_molar.svg" width="1000">
+    <img src="_static/img/run_validation_HP_CEA_5_properties.svg" width="1000">
+</p>
+</section>
+<section id="tv-1-ch-4-air">
+<span id="sec-tv1"></span><h3>TV 1 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air<a class="headerlink" href="#tv-1-ch-4-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_TV_CEA_1_molar.svg" width="1000">
-    <img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="600">
+    <img src="_static/img/run_validation_TV_CEA_1_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-ev-1">
-<h2>Validation EV 1<a class="headerlink" href="#validation-ev-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Adiabatic temperature and composition at constant volume</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1.0132</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.73 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/ev</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_EV_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="ev-1-ch-4-air">
+<span id="sec-ev1"></span><h3>EV 1 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air<a class="headerlink" href="#ev-1-ch-4-air" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_EV_CEA_1_molar.svg" width="1000">
-    <img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="600">
+    <img src="_static/img/run_validation_EV_CEA_1_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-det-1">
-<h2>Validation DET 1<a class="headerlink" href="#validation-det-1" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="shock-wave-calculations">
+<h2>Shock wave calculations<a class="headerlink" href="#shock-wave-calculations" title="Permalink to this heading">#</a></h2>
+<p>Validations of the <code class="docutils literal notranslate"><span class="pre">ShockSolver</span></code> for different problem types with <strong>NASA CEA</strong> and <strong>Caltech’s SD-Toolbox</strong> as reference. The problem types covered are:</p>
 <ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouguet detonation</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/hp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK</span> <span class="pre">I</span></code> (planar shock waves)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK</span> <span class="pre">R</span></code> (reflected shock waves)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK</span> <span class="pre">OBLIQUE</span></code> (oblique shock waves)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK</span> <span class="pre">POLAR</span></code> (shock polar diagrams)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK</span> <span class="pre">PRANDTL</span> <span class="pre">MEYER</span></code> (Prandtl-Meyer expansion waves)</p></li>
 </ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Mixture</p></th>
+<th class="head"><p>Conditions</p></th>
+<th class="head"><p>Reference code</p></th>
+<th class="head"><p>MATLAB script</p></th>
+<th class="head"><p>Data source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-shock-i1"><span class="std std-ref">SHOCK I 1</span></a></p></td>
+<td><p>Air + ions</p></td>
+<td><p>T = 300 K<br>p = 1 bar</p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_SHOCK_IONIZATION_CEA_1.m">run_validation_SHOCK_IONIZATION_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/shocks">./validations/cea/shocks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-shock-r1"><span class="std std-ref">SHOCK R 1</span></a></p></td>
+<td><p>Air + ions</p></td>
+<td><p>T = 300 K<br>p = 1 bar</p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_SHOCK_R_IONIZATION_CEA_1.m">run_validation_SHOCK_R_IONIZATION_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/shocks">./validations/cea/shocks</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-shock-polar-sdtoolbox1"><span class="std std-ref">SHOCK POLAR 1</span></a></p></td>
+<td><p>Air (frozen)</p></td>
+<td><p>T = 300 K<br>p = 1.01325 bar</p></td>
+<td><p>SD-Toolbox + Cantera</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/sdtoolbox/run_validation_SHOCK_POLAR_SDToolbox_1.m">run_validation_SHOCK_POLAR_SDToolbox_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/sdtoolbox/data">./validations/sdtoolbox/data</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-shock-prandtl-meyer1"><span class="std std-ref">SHOCK PRANDTL MEYER 1</span></a></p></td>
+<td><p>Air + ions</p></td>
+<td><p>T = 3000 K<br>p = 1 bar</p></td>
+<td><p>SD-Toolbox + Cantera</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/sdtoolbox/run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_1.m">run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/sdtoolbox/data">./validations/sdtoolbox/data</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-shock-prandtl-meyer2"><span class="std std-ref">SHOCK PRANDTL MEYER 2</span></a></p></td>
+<td><p>Air (frozen)</p></td>
+<td><p>T = 3000 K<br>p = 1 bar</p></td>
+<td><p>SD-Toolbox + Cantera</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/sdtoolbox/run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_2.m">run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_2</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/sdtoolbox/data">./validations/sdtoolbox/data</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<section id="shock-i-air-with-ionization">
+<span id="sec-shock-i1"></span><h3>SHOCK I - Air with ionization<a class="headerlink" href="#shock-i-air-with-ionization" title="Permalink to this heading">#</a></h3>
 <p align="center">
-    <img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000">
-    <img src="_static/img/run_validation_DET_CEA_1_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="1000">
+    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="1000">
 </p>
 </section>
-<section id="validation-det-2">
-<h2>Validation DET 2<a class="headerlink" href="#validation-det-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouguet detonation</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2\text{acetylene} + \frac{2.5}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="shock-r-air-with-ionization">
+<span id="sec-shock-r1"></span><h3>SHOCK R - Air with ionization<a class="headerlink" href="#shock-r-air-with-ionization" title="Permalink to this heading">#</a></h3>
 <p align="center">
-    <img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000">
-    <img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="600">
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="1000">
+    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="1000">
 </p>
 </section>
-<section id="validation-det-3">
-<h2>Validation DET 3<a class="headerlink" href="#validation-det-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouguet detonation</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\left(3.76 \text{N}_2 + \text{O}_2\right)\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="shock-polar-1-air-with-ionization">
+<span id="sec-shock-polar-sdtoolbox1"></span><h3>SHOCK POLAR 1 - Air with ionization<a class="headerlink" href="#shock-polar-1-air-with-ionization" title="Permalink to this heading">#</a></h3>
 <p align="center">
-    <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000">
-    <img src="_static/img/run_validation_DET_CEA_3_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="600">
-</p>
-</section>
-<section id="validation-det-4">
-<h2>Validation DET 4<a class="headerlink" href="#validation-det-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Chapman-Jouguet detonation</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{C}\text{H}_4 + \frac{2}{\phi}\text{O}_2\)</span>, with equivalence ratio <span class="math notranslate nohighlight">\(\phi \in [0.5, 4]\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Soot</span> <span class="pre">formation</span> <span class="pre">Extended')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/det</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_DET_CEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-<p align="center">
-    <img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000">
-    <img src="_static/img/run_validation_DET_CEA_4_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="600">
-</p>
-</section>
-<section id="validation-shock-ionization-1">
-<h2>Validation SHOCK IONIZATION 1<a class="headerlink" href="#validation-shock-ionization-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Planar shock wave</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\)</span></p></li>
-<li><p>List of species considered = list_species(‘Air_ions’)</p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-<p align="center">
-    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_2.svg" width="600">
-    <img src="_static/img/run_validation_SHOCK_IONIZATION_CEA_1_properties_3.svg" width="600">
-</p>
-</section>
-<section id="validation-shock-reflected-ionization-1">
-<h2>Validation SHOCK REFLECTED IONIZATION 1<a class="headerlink" href="#validation-shock-reflected-ionization-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: Normal reflection of a planar shock wave from a parallel rigid wall</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7276 \text{N}_2 + \text{O}_2 + 0.0447\text{Ar} + 0.00152 \text{CO}_2\)</span></p></li>
-<li><p>List of species considered = <code class="docutils literal notranslate"><span class="pre">list_species('Air_ions')</span></code></p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/data/shocks</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_R_IONIZATION_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-<p align="center">
-    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_2.svg" width="600">
-    <img src="_static/img/run_validation_SHOCK_R_IONIZATION_CEA_1_properties_3.svg" width="600">
-</p>
-</section>
-<section id="validation-shock-polar-1">
-<h2>Validation SHOCK POLAR 1<a class="headerlink" href="#validation-shock-polar-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: Caltech’s SD Toolbox within Cantera</p></li>
-<li><p>Problem type: Shock polar diagrams</p></li>
-<li><p>Temperature [K]   = 300</p></li>
-<li><p>Pressure    [bar] = 1.01325</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(3.7619 \text{N}_2 + \text{O}_2\)</span></p></li>
-<li><p>List of species considered = Frozen</p></li>
-<li><p>URL Folder Results SDToolbox: ./validations/sdtoolbox/data</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_SHOCK_POLAR_SDToolbox_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-<p align="center">
+    <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_1.svg" width="400">
     <img src="_static/img/run_validation_SHOCK_POLAR_SDToolbox_1_properties_2.svg" width="400">
 </p>
 </section>
-<section id="validation-rocket-1">
-<h2>Validation ROCKET 1<a class="headerlink" href="#validation-rocket-1" title="Permalink to this heading">#</a></h2>
+<section id="shock-prandtl-meyer-1-air">
+<span id="sec-shock-prandtl-meyer1"></span><h3>SHOCK PRANDTL MEYER 1 - Air<a class="headerlink" href="#shock-prandtl-meyer-1-air" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_1_properties_1.svg" width="1000">
+</p>
+</section>
+<section id="shock-prandtl-meyer-2-air-frozen">
+<span id="sec-shock-prandtl-meyer2"></span><h3>SHOCK PRANDTL MEYER 2 - Air (frozen)<a class="headerlink" href="#shock-prandtl-meyer-2-air-frozen" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_SHOCK_PRANDTL_MEYER_SDToolbox_2_properties_1.svg" width="1000">
+</p>
+</section>
+</section>
+<section id="detonation-wave-calculations">
+<h2>Detonation wave calculations<a class="headerlink" href="#detonation-wave-calculations" title="Permalink to this heading">#</a></h2>
+<p>Validations of the <code class="docutils literal notranslate"><span class="pre">DetonationSolver</span></code> for different problem types with <strong>NASA CEA</strong> as reference. The problem type covered is:</p>
 <ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: ROCKET</p></li>
-<li><p>Description: Equilibrium composition at exit of the rocket nozzle</p></li>
-<li><p>Temperature Fuel [K] = 298.15</p></li>
-<li><p>Temperature Oxid [K] = 90.17</p></li>
-<li><p>Chamber pressure [bar] = 22</p></li>
-<li><p>Finite-Area-Chamber model (FAC)</p></li>
-<li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm chamber} / A_{\rm throat}\)</span> = 2</p></li>
-<li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = [1:2.6]</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{RP1} + \frac{0.6723}{\phi}\text{LOX}\)</span></p></li>
-<li><p>List of species considered = HC/O2/N2 PROPELLANTS</p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DET</span></code> (Chapman-Jouguet detonations)</p></li>
 </ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-<span class="n">run_validation_ROCKET_CEA_16</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
+<!-- - `DET_OVERDRIVEN` (Overdriven detonations)
+- `DET_UNDERDRIVEN` (Underdriven detonations)
+- `DET_REFLECTED` (Reflected detonations)
+- `DET_OBLIQUE` (Oblique detonations)
+- `DET_OVERDRIVEN_OBLIQUE` (Overdriven oblique detonations)
+- `DET_UNDERDRIVEN_OBLIQUE` (Underdriven oblique detonations)
+- `DET_POLAR` (Detonation shock polars) -->
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Mixture definition</p></th>
+<th class="head"><p>Conditions</p></th>
+<th class="head"><p>Equivalence ratio</p></th>
+<th class="head"><p>Reference code</p></th>
+<th class="head"><p>MATLAB script</p></th>
+<th class="head"><p>Data source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-det1"><span class="std std-ref">DET 1</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2 + \dfrac{2.5}{\phi}(\text{O}_2 + 3.76,\text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_DET_CEA_1.m">run_validation_DET_CEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/detonations">./validations/cea/detonations</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-det2"><span class="std std-ref">DET 2</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{C}_2\text{H}_2 + \dfrac{2.5}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_DET_CEA_2.m">run_validation_DET_CEA_2</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/detonations">./validations/cea/detonations</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-det3"><span class="std std-ref">DET 3</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}(\text{O}_2 + 3.76,\text{N}_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_DET_CEA_3.m">run_validation_DET_CEA_3</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/detonations">./validations/cea/detonations</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-det4"><span class="std std-ref">DET 4</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{CH}_4 + \dfrac{2}{\phi}\text{O}_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p = 1,\mathrm{bar}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_DET_CEA_4.m">run_validation_DET_CEA_4</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/detonations">./validations/cea/detonations</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<section id="det-1-c-2-h-2-air">
+<span id="sec-det1"></span><h3>DET 1 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + Air<a class="headerlink" href="#det-1-c-2-h-2-air" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_DET_CEA_1_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_1.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_1_properties_2.svg" width="1000">
+</p>
+</section>
+<section id="det-2-c-2-h-2-o-2">
+<span id="sec-det2"></span><h3>DET 2 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#det-2-c-2-h-2-o-2" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_DET_CEA_2_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_1.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_2_properties_2.svg" width="1000">
+</p>
+</section>
+<section id="det-3-ch-4-air">
+<span id="sec-det3"></span><h3>DET 3 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air<a class="headerlink" href="#det-3-ch-4-air" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_DET_CEA_3_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_1.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_3_properties_2.svg" width="1000">
+</p>
+</section>
+<section id="det-4-ch-4-o-2">
+<span id="sec-det4"></span><h3>DET 4 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#det-4-ch-4-o-2" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_DET_CEA_4_molar.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_1.svg" width="1000">
+    <img src="_static/img/run_validation_DET_CEA_4_properties_2.svg" width="1000">
+</p>
+</section>
+</section>
+<section id="rocket-calculations">
+<h2>Rocket calculations<a class="headerlink" href="#rocket-calculations" title="Permalink to this heading">#</a></h2>
+<p>Validations of the <code class="docutils literal notranslate"><span class="pre">RocketSolver</span></code> for different problem types with <strong>NASA CEA</strong> as reference. The problem type covered is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ROCKET</span> <span class="pre">IAC</span></code> (Infinite area chamber model)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROCKET</span> <span class="pre">FAC</span></code> (Finite area chamber model)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Propellants</p></th>
+<th class="head"><p>Conditions</p></th>
+<th class="head"><p>Equivalence ratio</p></th>
+<th class="head"><p>Reference code</p></th>
+<th class="head"><p>MATLAB script</p></th>
+<th class="head"><p>Data source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-rocket-iac1"><span class="std std-ref">ROCKET IAC 1</span></a></p></td>
+<td><p>LH<span class="math notranslate nohighlight">\(_2\)</span> + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 20.27\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 22,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_17.m">run_validation_ROCKET_CEA_17</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-rocket-iac2"><span class="std std-ref">ROCKET IAC 2</span></a></p></td>
+<td><p>LH<span class="math notranslate nohighlight">\(_2\)</span> + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 298.15\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_24.m">run_validation_ROCKET_CEA_24</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-rocket-fac1"><span class="std std-ref">ROCKET FAC 1</span></a></p></td>
+<td><p>RP-1 + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 298.15\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 22,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = [1:2.6]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_1.m">run_validation_ROCKET_CEA_1</a><br><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_16.m">run_validation_ROCKET_CEA_16</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-rocket-fac2"><span class="std std-ref">ROCKET FAC 2</span></a></p></td>
+<td><p>LH<span class="math notranslate nohighlight">\(_2\)</span> + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 20.27\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_18.m">run_validation_ROCKET_CEA_18</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-rocket-fac3"><span class="std std-ref">ROCKET FAC 3</span></a></p></td>
+<td><p>RP-1 + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 298.15\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_20.m">run_validation_ROCKET_CEA_20</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-rocket-fac4"><span class="std std-ref">ROCKET FAC 4</span></a></p></td>
+<td><p>LCH<span class="math notranslate nohighlight">\(_4\)</span> + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 111.66\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_21.m">run_validation_ROCKET_CEA_21</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-rocket-fac5"><span class="std std-ref">ROCKET FAC 5</span></a></p></td>
+<td><p>LH<span class="math notranslate nohighlight">\(_2\)</span> + LOX</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 20.27\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 90.17\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_22.m">run_validation_ROCKET_CEA_22</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-rocket-fac6"><span class="std std-ref">ROCKET FAC 6</span></a></p></td>
+<td><p>MMH + N<span class="math notranslate nohighlight">\(_2\)</span>O<span class="math notranslate nohighlight">\(_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_\text{fuel} = 298.15\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(T_\text{oxid} = 300\,\mathrm{K}\)</span><br><span class="math notranslate nohighlight">\(p_\text{chamber} = 101.325,\mathrm{bar}\)</span><br><span class="math notranslate nohighlight">\(A_\text{chamber}/A_\text{throat} = 2\)</span><br><span class="math notranslate nohighlight">\(A_\text{exit}/A_\text{throat} = 8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5 \le \phi \le 4\)</span></p></td>
+<td><p>NASA CEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/cea/run_validation_ROCKET_CEA_23.m">run_validation_ROCKET_CEA_23</a></p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/tree/master/validations/cea/data/rocket">./validations/cea/rocket</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="rocket-iac-1-lh2-lox">
+<span id="sec-rocket-iac1"></span><h3>ROCKET IAC 1 - LH2 + LOX<a class="headerlink" href="#rocket-iac-1-lh2-lox" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_17_properties.svg" width="1000">
+</p>
+</section>
+<section id="rocket-iac-2-lh2-lox">
+<span id="sec-rocket-iac2"></span><h3>ROCKET IAC 2 - LH2 + LOX<a class="headerlink" href="#rocket-iac-2-lh2-lox" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_24_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_24_properties.svg" width="1000">
+</p>
+</section>
+<section id="rocket-fac-1-rp1-lox">
+<span id="sec-rocket-fac1"></span><h3>ROCKET FAC 1 - RP1 + LOX<a class="headerlink" href="#rocket-fac-1-rp1-lox" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/gif/validation_rocket.gif" width="720">
 </p>
 </section>
-<section id="validation-rocket-2">
-<h2>Validation ROCKET 2<a class="headerlink" href="#validation-rocket-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: ROCKET</p></li>
-<li><p>Description: Equilibrium composition and performance parameters at exit of the rocket nozzle</p></li>
-<li><p>Temperature Fuel [K] = 20.27</p></li>
-<li><p>Temperature Oxid [K] = 90.17</p></li>
-<li><p>Chamber pressure [bar] = 22</p></li>
-<li><p>Infinite-Area-Chamber model (IAC)</p></li>
-<li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = 3</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{LH2} + \frac{0.5}{\phi}\text{LOX}\)</span></p></li>
-<li><p>List of species considered = HYDROGEN_L</p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_17</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-<p align="center">
-    <img src="_static/img/run_validation_ROCKET_CEA_17_molar.svg" width="1000">
-    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_2.svg" width="600">
-    <img src="_static/img/run_validation_ROCKET_CEA_17_properties_3.svg" width="600">
-</p>
-</section>
-<section id="validation-rocket-3">
-<h2>Validation ROCKET 3<a class="headerlink" href="#validation-rocket-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: NASA’s Chemical Equilibrium with Applications software</p></li>
-<li><p>Problem type: ROCKET</p></li>
-<li><p>Description: Equilibrium composition and performance parameters at exit of the rocket nozzle</p></li>
-<li><p>Temperature Fuel [K] = 20.27</p></li>
-<li><p>Temperature Oxid [K] = 90.17</p></li>
-<li><p>Chamber pressure [bar] = 22</p></li>
-<li><p>Finite-Area-Chamber model (FAC)</p></li>
-<li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm chamber} / A_{\rm throat}\)</span> = 2</p></li>
-<li><p>Area ratio <span class="math notranslate nohighlight">\(A_{\rm exit} / A_{\rm throat}\)</span> = 3</p></li>
-<li><p>Initial mixture [moles]: <span class="math notranslate nohighlight">\(\text{LH2} + \frac{0.5}{\phi}\text{LOX}\)</span></p></li>
-<li><p>List of species considered = HYDROGEN_L</p></li>
-<li><p>URL Folder Results CEA: ./validations/cea/rocket</p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_ROCKET_CEA_18</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="rocket-fac-2-lh2-lox">
+<span id="sec-rocket-fac2"></span><h3>ROCKET FAC 2 - LH2 + LOX<a class="headerlink" href="#rocket-fac-2-lh2-lox" title="Permalink to this heading">#</a></h3>
 <p align="center">
     <img src="_static/img/run_validation_ROCKET_CEA_18_molar.svg" width="1000">
-    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_1.svg" width="600">
-    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_2.svg" width="600">
-    <img src="_static/img/run_validation_ROCKET_CEA_18_properties_3.svg" width="600">
+    <img src="_static/img/run_validation_ROCKET_CEA_18_properties.svg" width="1000">
 </p>
 </section>
-<section id="validation-tea-1">
-<h2>Validation TEA 1<a class="headerlink" href="#validation-tea-1" title="Permalink to this heading">#</a></h2>
+<section id="rocket-fac-3-rp1-lox">
+<span id="sec-rocket-fac3"></span><h3>ROCKET FAC 3 - RP1 + LOX<a class="headerlink" href="#rocket-fac-3-rp1-lox" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_20_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_20_properties.svg" width="1000">
+</p>
+</section>
+<section id="rocket-fac-4-lch4-lox">
+<span id="sec-rocket-fac4"></span><h3>ROCKET FAC 4 - LCH4 + LOX<a class="headerlink" href="#rocket-fac-4-lch4-lox" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_21_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_21_properties.svg" width="1000">
+</p>
+</section>
+<section id="rocket-fac-5-lh2-lox">
+<span id="sec-rocket-fac5"></span><h3>ROCKET FAC 5 - LH2 + LOX<a class="headerlink" href="#rocket-fac-5-lh2-lox" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_22_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_22_properties.svg" width="1000">
+</p>
+</section>
+<section id="rocket-fac-6-mmh-n2o4">
+<span id="sec-rocket-fac6"></span><h3>ROCKET FAC 6 - MMH + N2O4<a class="headerlink" href="#rocket-fac-6-mmh-n2o4" title="Permalink to this heading">#</a></h3>
+<p align="center">
+    <img src="_static/img/run_validation_ROCKET_CEA_23_molar.svg" width="1000">
+    <img src="_static/img/run_validation_ROCKET_CEA_23_properties.svg" width="1000">
+</p>
+</section>
+</section>
+<section id="exoplanet-chemical-equilibrium-calculations">
+<h2>Exoplanet chemical equilibrium calculations<a class="headerlink" href="#exoplanet-chemical-equilibrium-calculations" title="Permalink to this heading">#</a></h2>
+<p>Validations of the <code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code> and <code class="docutils literal notranslate"><span class="pre">SolarAbundances</span></code> classes for different temperature and pressure profiles with <strong>Thermochemical Equilibrium Abundances of chemical species (TEA)</strong> software as reference. The problem type covered is:</p>
 <ul class="simple">
-<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Temperature [K]   = linspace(500, 5000)</p></li>
-<li><p>Pressure    [bar] = logspace(-5, 2)</p></li>
-<li><p>Initial mixture [moles]:</p>
-<ul>
-<li><p>H  = 1.0000000000e+00</p></li>
-<li><p>He = 8.5113803820e-02</p></li>
-<li><p>C  = 2.6915348039e-04</p></li>
-<li><p>N  = 6.7608297539e-05</p></li>
-<li><p>O  = 4.8977881937e-04</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TP</span></code> (defined temperature and pressure profiles)</p></li>
 </ul>
-</li>
-<li><p>List of species considered = {‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H’, ‘H2O’, ‘He’, ‘N2’, ‘N’, ‘NH3’, ‘O’}</p></li>
-<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea">https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea</a></p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_1</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Mixture / Scenario</p></th>
+<th class="head"><p>Temperature range</p></th>
+<th class="head"><p>Pressure range</p></th>
+<th class="head"><p>Reference code</p></th>
+<th class="head"><p>MATLAB script</p></th>
+<th class="head"><p>Data source / URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-tea1"><span class="std std-ref">TEA 1</span></a></p></td>
+<td><p>See note<span class="math notranslate nohighlight">\(^1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T \in [500, 5000]\)</span> K</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \in [10^{-5}, 10^{2}]\)</span> bar</p></td>
+<td><p>TEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/tea/run_validation_TP_TEA_1.m">run_validation_TP_TEA_1</a></p></td>
+<td><p><a class="reference external" href="https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea">https://github.com/dzesmin/TEA/blob/master/doc/examples/quick_example/results/quick_example.tea</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-tea2"><span class="std std-ref">TEA 2</span></a></p></td>
+<td><p>WASP-43b, <span class="math notranslate nohighlight">\(\text{metallicity} = 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T \in [958.36, 1811.89]\)</span> K</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \in [2.4\!\times\!10^{-6}, 31.62]\)</span> bar</p></td>
+<td><p>TEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/tea/run_validation_TP_TEA_2.m">run_validation_TP_TEA_2</a></p></td>
+<td><p><a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sec-tea3"><span class="std std-ref">TEA 3</span></a></p></td>
+<td><p>WASP-43b, <span class="math notranslate nohighlight">\(\text{metallicity} = 10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T \in [958.36, 1811.89]\)</span> K</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \in [2.4\!\times\!10^{-6}, 31.62]\)</span> bar</p></td>
+<td><p>TEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/tea/run_validation_TP_TEA_3.m">run_validation_TP_TEA_3</a></p></td>
+<td><p><a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sec-tea4"><span class="std std-ref">TEA 4</span></a></p></td>
+<td><p>WASP-43b, <span class="math notranslate nohighlight">\(\text{metallicity} = 50\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T \in [958.36, 1811.89]\)</span> K</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \in [2.4\!\times\!10^{-6}, 31.62]\)</span> bar</p></td>
+<td><p>TEA</p></td>
+<td><p><a class="reference external" href="https://github.com/CombustionToolbox/combustion_toolbox/blob/master/validations/tea/run_validation_TP_TEA_4.m">run_validation_TP_TEA_4</a></p></td>
+<td><p><a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(^1\)</span> Initial mixture: H  = 1.0000000000e+00, He = 8.5113803820e-02, C  = 2.6915348039e-04, N  = 6.7608297539e-05, O  = 4.8977881937e-04</p>
+</div></blockquote>
+<section id="tea-1">
+<span id="sec-tea1"></span><h3>TEA 1<a class="headerlink" href="#tea-1" title="Permalink to this heading">#</a></h3>
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_1_molar.svg" width="1000">
 </p> 
 </section>
-<section id="validation-tea-2">
-<h2>Validation TEA 2<a class="headerlink" href="#validation-tea-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 1\)</span> assumming a T-P profile</p></li>
-<li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
-<li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
-<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 1</p></li>
-<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
-<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-solar</a></p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_2</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="wasp-43b-metallicity-1">
+<span id="sec-tea2"></span><h3>WASP-43b metallicity 1<a class="headerlink" href="#wasp-43b-metallicity-1" title="Permalink to this heading">#</a></h3>
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_2_molar.svg" width="1000">
 </p> 
 </section>
-<section id="validation-tea-3">
-<h2>Validation TEA 3<a class="headerlink" href="#validation-tea-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 10\)</span> assumming a T-P profile</p></li>
-<li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
-<li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
-<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 10</p></li>
-<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
-<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-10xsolar</a></p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_3</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="wasp-43b-metallicity-10">
+<span id="sec-tea3"></span><h3>WASP-43b metallicity 10<a class="headerlink" href="#wasp-43b-metallicity-10" title="Permalink to this heading">#</a></h3>
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_3_molar.svg" width="1000">
 </p> 
 </section>
-<section id="validation-tea-4">
-<h2>Validation TEA 4<a class="headerlink" href="#validation-tea-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contrasted with: Thermochemical Equilibrium Abundances of chemical species software</p></li>
-<li><p>Problem type: Equilibrium composition at defined temperature and pressure</p></li>
-<li><p>Description: Thermochemical equilibrium vertical distribution of WASP-43b with a metallicity <span class="math notranslate nohighlight">\(\zeta = 50\)</span> assumming a T-P profile</p></li>
-<li><p>Temperature [K]   = [958.36, 1811.89]</p></li>
-<li><p>Pressure    [bar] = [2.3988e-06, 31.6230]</p></li>
-<li><p>Initial mixture: Computed from solar abundances assuming a metallicity zeta = 50</p></li>
-<li><p>List of species considered = {‘C2H2_acetylene’, ‘C2H4’, ‘C’, ‘CH4’, ‘CO2’, ‘CO’, ‘H2’, ‘H2O’, ‘H2S’, ‘H’, ‘HCN’, ‘He’, ‘SH’, ‘N2’, ‘N’, ‘NH3’, ‘O’, ‘S’}</p></li>
-<li><p>URL Results TEA: <a class="reference external" href="https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar">https://github.com/dzesmin/RRC-BlecicEtal-2015a-ApJS-TEA/tree/master/Fig6/WASP43b-50xsolar</a></p></li>
-</ul>
-<p>To repeat the results, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">run_validation_TP_TEA_4</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="wasp-43b-metallicity-50">
+<span id="sec-tea4"></span><h3>WASP-43b metallicity 50<a class="headerlink" href="#wasp-43b-metallicity-50" title="Permalink to this heading">#</a></h3>
 <p align="left">
     <img src="_static/img/run_validation_TP_TEA_4_molar.svg" width="1000">
 </p>
+</section>
 </section>
 </section>
 
@@ -952,30 +1097,53 @@ To run all the validations contrasted with CEA at once, at the prompt type:</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Validations</a><ul>
-<li><a class="reference internal" href="#validation-tp-1">Validation TP 1</a></li>
-<li><a class="reference internal" href="#validation-tp-2">Validation TP 2</a></li>
-<li><a class="reference internal" href="#validation-tp-3">Validation TP 3</a></li>
-<li><a class="reference internal" href="#validation-tp-4">Validation TP 4</a></li>
-<li><a class="reference internal" href="#validation-hp-1">Validation HP 1</a></li>
-<li><a class="reference internal" href="#validation-hp-2">Validation HP 2</a></li>
-<li><a class="reference internal" href="#validation-hp-3">Validation HP 3</a></li>
-<li><a class="reference internal" href="#validation-hp-4">Validation HP 4</a></li>
-<li><a class="reference internal" href="#validation-tv-1">Validation TV 1</a></li>
-<li><a class="reference internal" href="#validation-ev-1">Validation EV 1</a></li>
-<li><a class="reference internal" href="#validation-det-1">Validation DET 1</a></li>
-<li><a class="reference internal" href="#validation-det-2">Validation DET 2</a></li>
-<li><a class="reference internal" href="#validation-det-3">Validation DET 3</a></li>
-<li><a class="reference internal" href="#validation-det-4">Validation DET 4</a></li>
-<li><a class="reference internal" href="#validation-shock-ionization-1">Validation SHOCK IONIZATION 1</a></li>
-<li><a class="reference internal" href="#validation-shock-reflected-ionization-1">Validation SHOCK REFLECTED IONIZATION 1</a></li>
-<li><a class="reference internal" href="#validation-shock-polar-1">Validation SHOCK POLAR 1</a></li>
-<li><a class="reference internal" href="#validation-rocket-1">Validation ROCKET 1</a></li>
-<li><a class="reference internal" href="#validation-rocket-2">Validation ROCKET 2</a></li>
-<li><a class="reference internal" href="#validation-rocket-3">Validation ROCKET 3</a></li>
-<li><a class="reference internal" href="#validation-tea-1">Validation TEA 1</a></li>
-<li><a class="reference internal" href="#validation-tea-2">Validation TEA 2</a></li>
-<li><a class="reference internal" href="#validation-tea-3">Validation TEA 3</a></li>
-<li><a class="reference internal" href="#validation-tea-4">Validation TEA 4</a></li>
+<li><a class="reference internal" href="#chemical-equilibrium-calculations">Chemical equilibrium calculations</a><ul>
+<li><a class="reference internal" href="#tp-1-c-6-h-6-air">TP 1 - C<span class="math notranslate nohighlight">\(_{6}\)</span>H<span class="math notranslate nohighlight">\(_{6}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#tp-2-c-6-h-6-o-2">TP 2 - C<span class="math notranslate nohighlight">\(_{6}\)</span>H<span class="math notranslate nohighlight">\(_{6}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li><a class="reference internal" href="#tp-3-ch-3-oh-air">TP 3 - CH<span class="math notranslate nohighlight">\(_{3}\)</span>OH + Air</a></li>
+<li><a class="reference internal" href="#tp-4-ch-3-oh-o-2">TP 4 - CH<span class="math notranslate nohighlight">\(_{3}\)</span>OH + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li><a class="reference internal" href="#hp-1-c-2-h-2-air">HP 1 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#hp-2-c-2-h-2-o-2">HP 2 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li><a class="reference internal" href="#hp-3-ch-4-air">HP 3 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#hp-4-ch-4-o-2">HP 4 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li><a class="reference internal" href="#hp-5-natural-gas-air">HP 5 - Natural Gas + Air</a></li>
+<li><a class="reference internal" href="#tv-1-ch-4-air">TV 1 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#ev-1-ch-4-air">EV 1 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shock-wave-calculations">Shock wave calculations</a><ul>
+<li><a class="reference internal" href="#shock-i-air-with-ionization">SHOCK I - Air with ionization</a></li>
+<li><a class="reference internal" href="#shock-r-air-with-ionization">SHOCK R - Air with ionization</a></li>
+<li><a class="reference internal" href="#shock-polar-1-air-with-ionization">SHOCK POLAR 1 - Air with ionization</a></li>
+<li><a class="reference internal" href="#shock-prandtl-meyer-1-air">SHOCK PRANDTL MEYER 1 - Air</a></li>
+<li><a class="reference internal" href="#shock-prandtl-meyer-2-air-frozen">SHOCK PRANDTL MEYER 2 - Air (frozen)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#detonation-wave-calculations">Detonation wave calculations</a><ul>
+<li><a class="reference internal" href="#det-1-c-2-h-2-air">DET 1 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#det-2-c-2-h-2-o-2">DET 2 - C<span class="math notranslate nohighlight">\(_{2}\)</span>H<span class="math notranslate nohighlight">\(_{2}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li><a class="reference internal" href="#det-3-ch-4-air">DET 3 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + Air</a></li>
+<li><a class="reference internal" href="#det-4-ch-4-o-2">DET 4 - CH<span class="math notranslate nohighlight">\(_{4}\)</span> + O<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocket-calculations">Rocket calculations</a><ul>
+<li><a class="reference internal" href="#rocket-iac-1-lh2-lox">ROCKET IAC 1 - LH2 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-iac-2-lh2-lox">ROCKET IAC 2 - LH2 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-1-rp1-lox">ROCKET FAC 1 - RP1 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-2-lh2-lox">ROCKET FAC 2 - LH2 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-3-rp1-lox">ROCKET FAC 3 - RP1 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-4-lch4-lox">ROCKET FAC 4 - LCH4 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-5-lh2-lox">ROCKET FAC 5 - LH2 + LOX</a></li>
+<li><a class="reference internal" href="#rocket-fac-6-mmh-n2o4">ROCKET FAC 6 - MMH + N2O4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exoplanet-chemical-equilibrium-calculations">Exoplanet chemical equilibrium calculations</a><ul>
+<li><a class="reference internal" href="#tea-1">TEA 1</a></li>
+<li><a class="reference internal" href="#wasp-43b-metallicity-1">WASP-43b metallicity 1</a></li>
+<li><a class="reference internal" href="#wasp-43b-metallicity-10">WASP-43b metallicity 10</a></li>
+<li><a class="reference internal" href="#wasp-43b-metallicity-50">WASP-43b metallicity 50</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
