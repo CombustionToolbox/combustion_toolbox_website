@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -374,6 +377,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR</span></code> – Shock polar diagrams (incident states).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_R</span></code> – Shock polar diagrams including reflected states.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_POLAR_LIMITRR</span></code> – Shock polar diagrams in the limit of regular reflection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHOCK_PRANDTL_MEYER</span></code> – Prandtl-Meyer expansion wave</p></li>
 </ul>
 <p>These cases can be solved using different formulations, depending on the available data (e.g., upstream Mach number, upstream velocity, deflection angle, or wave angle). For chemically reacting mixtures, the solver can seamlessly interface with the <a class="reference internal" href="1_chemical_equilibrium.html"><span class="doc std std-doc">CT-EQUIL module</span></a> to compute thermodynamic state consistent with the chosen caloric model (calorically perfect, thermally perfect, or calorically imperfect gas).</p>
 <p>The governing jump conditions for a steady, one-dimensional shock wave are:</p>

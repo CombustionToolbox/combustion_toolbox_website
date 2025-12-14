@@ -90,17 +90,18 @@ Thermodynamic properties downstream of a normal shock in air (79% $\text{N}_2$, 
 :::
 
 ````{tip}
-The Combustion Toolbox allows to consider different caloric models regarding the final gas mixture, including calorically perfect gas, calorically imperfect gas with frozen chemistry, or calorically imperfect gas with equilibrium chemistry, including dissociation and ionization. 
+The Combustion Toolbox supports multiple caloric models for the final gas mixture through the {mat:func}`~src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel` class. 
+By default, CT uses the calorically imperfect gas model. To specify a different caloric model, set the property `caloricGasModel` when initializing the {mat:func}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver` class.
 ````
 
 For example, to consider the calorically perfect gas approximation, initialize the {mat:func}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver` class as follows
 
 ```matlab
-solver = ShockSolver('FLAG_TCHEM_FROZEN', true);
+solver = ShockSolver('problemType', 'SHOCK_I', 'caloricGasModel', CaloricGasModel.perfect);
 ````
 
-For the calorically imperfect gas with frozen chemistry model, also known as the thermally perfect gas model, use
+For the thermally perfect gas model, also known as the calorically imperfect gas with frozen chemistry model, use
 
 ```matlab
-solver = ShockSolver('FLAG_FROZEN', true);
+solver = ShockSolver('problemType', 'SHOCK_I', 'caloricGasModel', CaloricGasModel.thermallyPerfect);
 ````
