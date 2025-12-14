@@ -282,6 +282,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_SHOCK_POLAR_R.html">Incident and reflectect shock polar diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR.html">Limit regular reflection of shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -438,14 +441,15 @@ p = \rho R T / W,
 </figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The Combustion Toolbox allows to consider different caloric models regarding the final gas mixture, including calorically perfect gas, calorically imperfect gas with frozen chemistry, or calorically imperfect gas with equilibrium chemistry, including dissociation and ionization.</p>
+<p>The Combustion Toolbox supports multiple caloric models for the final gas mixture through the <code class="xref mat mat-func docutils literal notranslate"><span class="pre">CaloricGasModel()</span></code> class.
+By default, CT uses the calorically imperfect gas model. To specify a different caloric model, set the property <code class="docutils literal notranslate"><span class="pre">caloricGasModel</span></code> when initializing the <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> class.</p>
 </div>
 <p>For example, to consider the calorically perfect gas approximation, initialize the <a class="reference internal" href="../../documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver" title="src.+combustiontoolbox.+shockdetonation.&#64;ShockSolver.ShockSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockSolver()</span></code></a> class as follows</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;FLAG_TCHEM_FROZEN&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SHOCK_I&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">CaloricGasModel</span><span class="p">.</span><span class="n">perfect</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>For the calorically imperfect gas with frozen chemistry model, also known as the thermally perfect gas model, use</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;FLAG_FROZEN&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<p>For the thermally perfect gas model, also known as the calorically imperfect gas with frozen chemistry model, use</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SHOCK_I&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">CaloricGasModel</span><span class="p">.</span><span class="n">thermallyPerfect</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
