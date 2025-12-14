@@ -57,3 +57,11 @@ Combustion Toolbox relies on several core classes to perform its calculations. T
    :show-inheritance:
    :members:
 ```
+
+## CaloricGasModel
+
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+core.@CaloricGasModel
+   :show-inheritance:
+   :members:
+```

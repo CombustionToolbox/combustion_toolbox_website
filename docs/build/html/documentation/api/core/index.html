@@ -2994,6 +2994,133 @@ the pressure and molar volume of a mixture assuming ideal gas behavior.</p>
 </dd></dl>
 
 </section>
+<section id="module-src.+combustiontoolbox.+core.&#64;CaloricGasModel">
+<span id="caloricgasmodel"></span><h2>CaloricGasModel<a class="headerlink" href="#module-src.+combustiontoolbox.+core.@CaloricGasModel" title="Permalink to this heading">#</a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CaloricGasModel</span></span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">uint8</span></code></p>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel" title="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">CaloricGasModel</span></code></a> class is an enumeration that defines
+the available caloric gas models for thermodynamic property calculations.</p>
+<dl class="simple">
+<dt>The available caloric gas models are:</dt><dd><ul class="simple">
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">perfect</span></code>: Calorically perfect gas model</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">thermallyPerfect</span></code>: Thermally perfect gas model</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">imperfect</span></code>: Calorically imperfect gas model</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>model = CaloricGasModel.perfect;</p>
+</div>
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.fromFlag">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">fromFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">FLAG_TCHEM_FROZEN</span></em>, <em class="sig-param"><span class="pre">FLAG_FROZEN</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.fromFlag" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert legacy solver flags to CaloricGasModel enumeration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FLAG_TCHEM_FROZEN</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">logical</span></code></span>) – True if calorically perfect gas</p></li>
+<li><p><strong>FLAG_FROZEN</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">logical</span></code></span>) – True if thermally perfect gas</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>model (CaloricGasModel)</em> – Corresponding caloric gas model</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Legacy compatibility:</dt><dd><ul class="simple">
+<li><p>FLAG_TCHEM_FROZEN = true,  FLAG_FROZEN = false  — perfect</p></li>
+<li><p>FLAG_TCHEM_FROZEN = false, FLAG_FROZEN = true   — thermallyPerfect</p></li>
+<li><p>FLAG_TCHEM_FROZEN = false, FLAG_FROZEN = false  — imperfect</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>model = CaloricGasModel.fromFlag(true, false)</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.isImperfect">
+<span class="sig-name descname"><span class="pre">isImperfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isImperfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the caloric gas model is imperfect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>value (logical)</em> – True if the model is imperfect, false otherwise.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>isImperfect = model.isImperfect()</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.isPerfect">
+<span class="sig-name descname"><span class="pre">isPerfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the caloric gas model is perfect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>value (logical)</em> – True if the model is perfect, false otherwise.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>isPerfect = model.isPerfect()</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.isThermallyPerfect">
+<span class="sig-name descname"><span class="pre">isThermallyPerfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isThermallyPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the caloric gas model is thermally perfect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>value (logical)</em> – True if the model is thermally perfect, false otherwise.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>isThermallyPerfect = model.isThermallyPerfect()</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.setImperfect">
+<span class="sig-name descname"><span class="pre">setImperfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setImperfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the caloric gas model to imperfect.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>model = model.setImperfect()</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.setPerfect">
+<span class="sig-name descname"><span class="pre">setPerfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the caloric gas model to perfect.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>model = model.setPerfect()</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;CaloricGasModel.CaloricGasModel.setThermallyPerfect">
+<span class="sig-name descname"><span class="pre">setThermallyPerfect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setThermallyPerfect" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the caloric gas model to thermally perfect.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>model = model.setThermallyPerfect()</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
         </article>
@@ -3071,6 +3198,7 @@ the pressure and molar volume of a mixture assuming ideal gas behavior.</p>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+core.&#64;MixtureConfig">MixtureConfig</a></li>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+core.&#64;EquationState">EquationState</a></li>
 <li><a class="reference internal" href="#module-src.+combustiontoolbox.+core.&#64;EquationStateIdealGas">EquationStateIdealGas</a></li>
+<li><a class="reference internal" href="#module-src.+combustiontoolbox.+core.&#64;CaloricGasModel">CaloricGasModel</a></li>
 </ul>
 </li>
 </ul>

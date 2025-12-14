@@ -462,6 +462,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.C2K">C2K (Units attribute)</a>
 </li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel">CaloricGasModel (class in src.combustiontoolbox.core.@CaloricGasModel)</a>
+</li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.caloricGasModel">caloricGasModel (EquilibriumSolver attribute)</a>
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.cell2vector">cell2vector() (in module src.utils)</a>
@@ -892,6 +894,8 @@
 </li>
         <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.fps">fps (TurbulenceSpectra attribute)</a>
 </li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.fromFlag">fromFlag() (CaloricGasModel static method)</a>
+</li>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.ft32L">ft32L (Units attribute)</a>
 </li>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.ft32m3">ft32m3 (Units attribute)</a>
@@ -1258,10 +1262,10 @@
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexReact">indexReact (ChemicalSystem attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.indexShock">indexShock (HTRDataAverage attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.indexSonic">indexSonic (Mixture attribute)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexSpecies">indexSpecies (ChemicalSystem attribute)</a>
@@ -1288,7 +1292,13 @@
         </ul></li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.interpreterLabel">interpreterLabel() (in module src.combustiontoolbox.utils.display)</a>
 </li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isImperfect">isImperfect() (CaloricGasModel method)</a>
+</li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.isIonized">isIonized() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isPerfect">isPerfect() (CaloricGasModel method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.isThermallyPerfect">isThermallyPerfect() (CaloricGasModel method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.isWeaklyCoupledPlasma">isWeaklyCoupledPlasma() (Mixture method)</a>
 </li>
@@ -1878,6 +1888,8 @@
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.setFigure">setFigure() (in module src.combustiontoolbox.utils.display)</a>
 </li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setImperfect">setImperfect() (CaloricGasModel method)</a>
+</li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setIndexPhaseSpecies">setIndexPhaseSpecies() (ChemicalSystem method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements.setIndexStableElements">setIndexStableElements() (Elements method)</a>
@@ -1893,6 +1905,8 @@
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.setMixtureShockPolar">setMixtureShockPolar() (DetonationSolver static method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setOxidizerReference">setOxidizerReference() (ChemicalSystem method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setPerfect">setPerfect() (CaloricGasModel method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setPressure">setPressure() (Mixture method)</a>
 </li>
@@ -1917,6 +1931,8 @@
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setTemperature">setTemperature() (Mixture method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setTemperatureSpecies">setTemperatureSpecies() (Mixture method)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setThermallyPerfect">setThermallyPerfect() (CaloricGasModel method)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.setTitle">setTitle() (in module src.combustiontoolbox.utils.display)</a>
 </li>
@@ -2055,6 +2071,8 @@
         <li><a href="documentation/api/common/index.html#module-src.+combustiontoolbox.+common.@Constants">src.combustiontoolbox.common.@Constants (module)</a>
 </li>
         <li><a href="documentation/api/common/index.html#module-src.+combustiontoolbox.+common.@Units">src.combustiontoolbox.common.@Units (module)</a>
+</li>
+        <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@CaloricGasModel">src.combustiontoolbox.core.@CaloricGasModel (module)</a>
 </li>
         <li><a href="documentation/api/core/index.html#module-src.+combustiontoolbox.+core.@ChemicalSystem">src.combustiontoolbox.core.@ChemicalSystem (module)</a>
 </li>
