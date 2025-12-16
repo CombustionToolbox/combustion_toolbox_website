@@ -18,6 +18,7 @@ examples/desktop/chemicalEquilibrium/examples_plain_chemicalEquilibrium
 examples/desktop/shock/examples_plain_shock
 examples/desktop/detonation/examples_plain_detonation
 examples/desktop/rocket/examples_plain_rocket
+examples/desktop/shockTurbulence/examples_plain_shockTurbulence
 examples/desktop/turbulence/examples_plain_turbulence
 ```
 

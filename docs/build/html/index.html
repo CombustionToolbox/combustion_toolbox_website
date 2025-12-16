@@ -305,7 +305,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,13 +323,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/utils/index.html">Utilities</a></li>
 </ul>
@@ -387,18 +395,13 @@
     <img alt="UC3M" style="border-width:0" src="_static/img/logo_dark.svg" width="1500"/>
 </p>
 <!-- Intro -->
-<p><br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, turbulence diagnostics, and spectral analysis.
+<p><br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models and linear shock–turbulence interaction analysis.
 </b> </center> <br></p>
-<!-- 
-
-A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, shock–turbulence interaction, and turbulence analysis.
-
--->
 <p class= "only-light" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_3.svg" width="500"/>
 </p>
 <p class= "only-dark" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2_dark.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_3_dark.svg" width="500"/>
 </p>
 <!-- Grid -->
 <div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
@@ -510,13 +513,14 @@ Completely open source, GUI included!
 -->
 <p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id3" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>]</span> is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:</p>
 <ul class="simple">
-<li><p><strong>CT-EQUIL</strong> computes the equilibrium composition of multi-component gas mixtures undergoing thermochemical transformations. The final equilibrium state is determined by a predefined set of chemical species (gaseous—including ions—or condensed phases) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.</p></li>
+<li><p><strong>CT-EQUIL</strong> computes the thermochemical equilibrium composition of multi-component gas mixtures for prescribed set of chemical species (gaseous—including ions—or condensed phases) and thermodynamic constraints (e.g. pressure–enthalpy).</p></li>
 <li><p><strong>CT-SD</strong> solves steady-state shock and detonation wave problems for both normal and oblique incidence.</p></li>
 <li><p><strong>CT-ROCKET</strong> estimates the theoretical performance of rocket engines under highly idealized conditions.</p></li>
-<li><p><strong>CT-TURBULENCE</strong> performs detailed analyses of turbulent flows, including turbulent statistics computations, Helmholtz decomposition, and spectral analyses.</p></li>
+<li><p><strong>CT-LIA</strong> predicts shock-turbulence interaction statistics using linear theory, accounting for thermochemical effects.</p></li>
+<li><p><strong>CT-TURBULENCE</strong> performs spectral and statistical analysis of turbulent flows, including energy spectra, Helmholtz decomposition, and turbulence diagnostics.</p></li>
 </ul>
 <p>The framework also includes an intuitive <strong>graphical user interface (GUI)</strong>, with a <strong>royalty-free standalone version</strong> available for Windows, macOS, and Linux.</p>
-<p>There is a fifth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx <span id="id2">[<a class="reference internal" href="references.html#id292" title="J. Sánchez-Monreal, A. Cuadra, C. Huete, and M. Vera. SimEx: A Tool for the Rapid Evaluation of the Effects of Explosions. Applied Sciences, 2022. doi:10.3390/app12189101.">Sánchez-Monreal <em>et al.</em>, 2022</a>]</span> subject to a proprietary license. Further details on this module will be provided elsewhere.</p>
+<p>There is a sixth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx <span id="id2">[<a class="reference internal" href="references.html#id292" title="J. Sánchez-Monreal, A. Cuadra, C. Huete, and M. Vera. SimEx: A Tool for the Rapid Evaluation of the Effects of Explosions. Applied Sciences, 2022. doi:10.3390/app12189101.">Sánchez-Monreal <em>et al.</em>, 2022</a>]</span> subject to a proprietary license. Further details on this module will be provided elsewhere.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="start-here">
 <h1>Start here!<a class="headerlink" href="#start-here" title="Permalink to this heading">#</a></h1>

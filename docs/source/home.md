@@ -8,21 +8,15 @@
 </p>
 
 <!-- Intro -->
-<br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, turbulence diagnostics, and spectral analysis.
+<br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models and linear shock–turbulence interaction analysis.
 </b> </center> <br>
 
-<!-- 
-
-A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models, shock–turbulence interaction, and turbulence analysis.
-
--->
-
 <p class= "only-light" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_3.svg" width="500"/>
 </p>
 
 <p class= "only-dark" align="center">
-    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_2_dark.svg" width="400"/>
+    <img alt="CT layout" style="border-width:0" src="_static/img/modules_CTv1_3_dark.svg" width="500"/>
 </p>
 
 
@@ -128,14 +122,15 @@ Completely open source, GUI included!
 
 The Combustion Toolbox {cite:p}`cuadra2024a_preprint` is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:
 
-- **CT-EQUIL** computes the equilibrium composition of multi-component gas mixtures undergoing thermochemical transformations. The final equilibrium state is determined by a predefined set of chemical species (gaseous—including ions—or condensed phases) and two thermodynamic state functions, such as enthalpy and pressure, e.g., for isobaric combustion processes.
+- **CT-EQUIL** computes the thermochemical equilibrium composition of multi-component gas mixtures for prescribed set of chemical species (gaseous—including ions—or condensed phases) and thermodynamic constraints (e.g. pressure–enthalpy).
 - **CT-SD** solves steady-state shock and detonation wave problems for both normal and oblique incidence.  
 - **CT-ROCKET** estimates the theoretical performance of rocket engines under highly idealized conditions.
-- **CT-TURBULENCE** performs detailed analyses of turbulent flows, including turbulent statistics computations, Helmholtz decomposition, and spectral analyses.
+- **CT-LIA** predicts shock-turbulence interaction statistics using linear theory, accounting for thermochemical effects.
+- **CT-TURBULENCE** performs spectral and statistical analysis of turbulent flows, including energy spectra, Helmholtz decomposition, and turbulence diagnostics.
 
 The framework also includes an intuitive **graphical user interface (GUI)**, with a **royalty-free standalone version** available for Windows, macOS, and Linux.
 
-There is a fifth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx {cite:p}`simex2022` subject to a proprietary license. Further details on this module will be provided elsewhere. 
+There is a sixth closed-source (i.e., proprietary) module, CT-EXPLO, that estimates the theoretical properties of high explosive mixtures and multi-component propellants with non-ideal EoS. Although still under development, CT-EXPLO is distributed in its current form as the thermochemical module of SimEx {cite:p}`simex2022` subject to a proprietary license. Further details on this module will be provided elsewhere. 
 
 # Start here!
 

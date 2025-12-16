@@ -303,7 +303,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -314,13 +321,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/api/shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/utils/index.html">Utilities</a></li>
 </ul>
@@ -500,6 +508,8 @@
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.clearCache">clearCache() (in module src.combustiontoolbox.utils)</a>
 </li>
+        <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.clusteredMesh1D">clusteredMesh1D() (in module src.combustiontoolbox.utils)</a>
+</li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.cmap">cmap (PlotConfig attribute)</a>, <a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.cmap">[1]</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.colorline">colorline (PlotConfig attribute)</a>, <a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.colorline">[1]</a>
@@ -524,10 +534,10 @@
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.validations.compute_error_prop_CEA">compute_error_prop_CEA() (in module src.utils.validations)</a>
 </li>
-        <li><a href="documentation/api/utils/nothing.html#src.utils.thermo.compute_heatrelease">compute_heatrelease() (in module src.utils.thermo)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/utils/nothing.html#src.utils.thermo.compute_heatrelease">compute_heatrelease() (in module src.utils.thermo)</a>
+</li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.thermo.compute_sound">compute_sound() (in module src.utils.thermo)</a>
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.Compute_YFuel">Compute_YFuel() (in module src.utils)</a>
@@ -680,6 +690,30 @@
         </ul></li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements">Elements (class in src.combustiontoolbox.core.@Elements)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.enstrophy">enstrophy() (ShockTurbulenceModelAcoustic method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.enstrophy33">enstrophy33() (ShockTurbulenceModelVortical method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.enstrophy33">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.enstrophy33l">enstrophy33l() (ShockTurbulenceModelVortical method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.enstrophy33l">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.enstrophy33s">enstrophy33s() (ShockTurbulenceModelVortical method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.enstrophy33s">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.enstrophyl">enstrophyl() (ShockTurbulenceModelAcoustic method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.enstrophys">enstrophys() (ShockTurbulenceModelAcoustic method)</a>
+</li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.thermo.enthalpy_formation_mass">enthalpy_formation_mass() (in module src.utils.thermo)</a>
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.thermo.enthalpy_formation_mole">enthalpy_formation_mole() (in module src.utils.thermo)</a>
@@ -700,6 +734,8 @@
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrate">equilibrate() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibrateT">equilibrateT() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumCheckCondensed">equilibriumCheckCondensed() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
@@ -708,8 +744,6 @@
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumDerivatives">equilibriumDerivatives() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGibbs">equilibriumGibbs() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumGuess">equilibriumGuess() (in module src.combustiontoolbox.equilibrium.@EquilibriumSolver)</a>
@@ -728,6 +762,8 @@
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.equilibriumSolver">(RocketSolver attribute)</a>
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.equilibriumSolver">(ShockSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.equilibriumSolver">(ShockTurbulenceSolver attribute)</a>
 </li>
         </ul></li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.EquilibriumSolver">EquilibriumSolver() (EquilibriumSolver method)</a>
@@ -810,18 +846,24 @@
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_FAST">(JumpConditionsSolver attribute)</a>
 </li>
         </ul></li>
-        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_FROZEN">FLAG_FROZEN (EquilibriumSolver attribute)</a>
-</li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_INITIALIZE">FLAG_INITIALIZE (ChemicalSystem attribute)</a>
 </li>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_INTERPOLATE">FLAG_INTERPOLATE (JumpConditionsSolver attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_INTERPOLATE">(ShockTurbulenceSolver attribute)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.FLAG_ION">FLAG_ION (ChemicalSystem attribute)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.FLAG_K0">FLAG_K0 (HTRDataAverage attribute)</a>
 </li>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_PAPER">FLAG_PAPER (JumpConditionsSolver attribute)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_PAPER">(ShockTurbulenceSolver attribute)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.FLAG_PLOT">FLAG_PLOT (JumpConditionsSolver attribute)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@Export.Export.FLAG_PROMT">FLAG_PROMT (Export attribute)</a>
@@ -839,6 +881,8 @@
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_REPORT">(ShockSolver attribute)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_REPORT">(ShockTurbulenceSolver attribute)</a>
+</li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.FLAG_REPORT">(TurbulenceSpectra attribute)</a>
 </li>
         </ul></li>
@@ -855,12 +899,12 @@
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_RESULTS">(ShockSolver attribute)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_RESULTS">(ShockTurbulenceSolver attribute)</a>
+</li>
         </ul></li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.FLAG_SHIFT">FLAG_SHIFT (HTRDataAverage attribute)</a>
 </li>
         <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_SUBSONIC">FLAG_SUBSONIC (RocketSolver attribute)</a>
-</li>
-        <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.FLAG_TCHEM_FROZEN">FLAG_TCHEM_FROZEN (EquilibriumSolver attribute)</a>
 </li>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.FLAG_TIME">FLAG_TIME (DetonationSolver attribute)</a>
 
@@ -874,6 +918,8 @@
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.FLAG_TIME">(RocketSolver attribute)</a>
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.FLAG_TIME">(ShockSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_TIME">(ShockTurbulenceSolver attribute)</a>
 </li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.FLAG_TIME">(TurbulenceSpectra attribute)</a>
 </li>
@@ -953,7 +999,17 @@
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.getAttribute">getAttribute() (EquilibriumSolver method)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getAverages">getAverages() (HTRDataAverage method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages">(ShockTurbulenceModelAcoustic method)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages">(ShockTurbulenceModelCompressible method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
         <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@NasaDatabase.NasaDatabase.getChangeMolesGasReaction">getChangeMolesGasReaction() (NasaDatabase static method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getChargeIons">getChargeIons() (ChemicalSystem method)</a>
@@ -1032,10 +1088,10 @@
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.getHeatCapacityPressure">getHeatCapacityPressure() (in module src.combustiontoolbox.core.@Species)</a>
 </li>
-        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.getHeatCapacityVolume">getHeatCapacityVolume() (in module src.combustiontoolbox.core.@Species)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Species.getHeatCapacityVolume">getHeatCapacityVolume() (in module src.combustiontoolbox.core.@Species)</a>
+</li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.databases.getIndexElements">getIndexElements() (in module src.utils.databases)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getIndexIons">getIndexIons() (ChemicalSystem method)</a>
@@ -1053,7 +1109,11 @@
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.getJumpData">getJumpData() (JumpConditionsSolver method)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getKolmogorovLength">getKolmogorovLength() (HTRDataAverage method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength">(ShockTurbulenceSolver method)</a>
 </li>
+        </ul></li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.getLocalTurbulentMachNumber">getLocalTurbulentMachNumber() (HTRDataAverage method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.getMass">getMass() (Mixture static method)</a>
@@ -1344,6 +1404,8 @@
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.jumpConditionsSolver">jumpConditionsSolver (ShockTurbulenceSolver attribute)</a>
+</li>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.JumpConditionsSolver">JumpConditionsSolver() (JumpConditionsSolver method)</a>
 </li>
     </ul></td>
@@ -1354,11 +1416,15 @@
   <h2>K</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.K">K() (ShockTurbulenceModelAcoustic method)</a>
+</li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.k0">k0 (HTRDataAverage attribute)</a>
 </li>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.K2C">K2C (Units attribute)</a>
 </li>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.K2F">K2F (Units attribute)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.Ka">Ka() (ShockTurbulenceModelAcoustic method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
@@ -1367,6 +1433,10 @@
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.kg2g">kg2g (Units attribute)</a>
 </li>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Units.Units.kg2lbs">kg2lbs (Units attribute)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.Krl">Krl() (ShockTurbulenceModelAcoustic method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.Krs">Krs() (ShockTurbulenceModelAcoustic method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1621,6 +1691,8 @@
 </li>
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.plot">(RocketSolver method)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.plot">(ShockTurbulenceSolver method)</a>
+</li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.plot">(TurbulenceSpectra method)</a>
 </li>
         </ul></li>
@@ -1649,6 +1721,8 @@
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.plotConfig">(ShockSolver attribute)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.plotConfig">(ShockTurbulenceSolver attribute)</a>
+</li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.plotConfig">(TurbulenceSpectra attribute)</a>
 </li>
         </ul></li>
@@ -1666,12 +1740,12 @@
 </li>
         <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.plotPDF">plotPDF() (TurbulenceSpectra method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.plotPolar">plotPolar() (in module src.combustiontoolbox.utils.display)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.plotProperties">plotProperties (PlotConfig attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.plotProperties">plotProperties() (in module src.combustiontoolbox.utils.display)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig.plotPropertiesBasis">plotPropertiesBasis (PlotConfig attribute)</a>
@@ -1712,6 +1786,14 @@
         </ul></li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.print_error">print_error() (in module src.utils)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.printCheck">printCheck() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.printCheck">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.printCheck">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.printConvergence">printConvergence() (in module src.combustiontoolbox.utils)</a>
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.printError">printError() (EquilibriumSolver method)</a>
@@ -1727,6 +1809,8 @@
 </li>
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.printTime">(RocketSolver method)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.printTime">(ShockTurbulenceSolver method)</a>
+</li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.printTime">(TurbulenceSpectra method)</a>
 </li>
         </ul></li>
@@ -1738,6 +1822,8 @@
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.problemType">(RocketSolver attribute)</a>
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.problemType">(ShockSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.problemType">(ShockTurbulenceSolver attribute)</a>
 </li>
         </ul></li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.propertiesMatrix">propertiesMatrix (ChemicalSystem attribute)</a>
@@ -1754,6 +1840,44 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.R0">R0 (Constants attribute)</a>, <a href="documentation/api/common/index.html#src.+combustiontoolbox.+common.@Constants.Constants.R0">[1]</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.R11">R11() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.R11">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.R11">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.R11a">R11a() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.R11a">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.R11a">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.R11r">R11r() (ShockTurbulenceModelVortical method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.R11r">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.R11rl">R11rl() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.R11rl">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.R11rl">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.R11rs">R11rs() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.R11rs">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.R11rs">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage.rawData">rawData (HTRDataAverage attribute)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader.read">read() (HTRDataReader static method)</a>
@@ -1795,6 +1919,8 @@
 </li>
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.report">(RocketSolver method)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.report">(ShockTurbulenceSolver method)</a>
+</li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
@@ -1832,6 +1958,44 @@
 </li>
         <li><a href="documentation/api/equilibrium/index.html#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver.rootMethod">rootMethod (EquilibriumSolver attribute)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.RTT">RTT() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.RTT">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.RTT">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.RTTa">RTTa() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.RTTa">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.RTTa">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.RTTr">RTTr() (ShockTurbulenceModelVortical method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.RTTr">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.RTTrl">RTTrl() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.RTTrl">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.RTTrl">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.RTTrs">RTTrs() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.RTTrs">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.RTTrs">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.validations.run_CT">run_CT() (in module src.utils.validations)</a>
 </li>
     </ul></td>
@@ -1872,6 +2036,8 @@
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.set_transformation">set_transformation() (in module src.utils)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.setChiFunction">setChiFunction() (ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setContainedElements">setContainedElements() (ChemicalSystem method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Elements.Elements.setElements">setElements() (Elements static method)</a>
@@ -1906,6 +2072,16 @@
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.setOxidizerReference">setOxidizerReference() (ChemicalSystem method)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.setPDF">setPDF() (ShockTurbulenceModelAcoustic method)</a>
+
+        <ul>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.setPDF">(ShockTurbulenceModelCompressible method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.setPDF">(ShockTurbulenceModelVortical method)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.setPDF">(ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        </ul></li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@CaloricGasModel.CaloricGasModel.setPerfect">setPerfect() (CaloricGasModel method)</a>
 </li>
         <li><a href="documentation/api/core/index.html#src.+combustiontoolbox.+core.@Mixture.Mixture.setPressure">setPressure() (Mixture method)</a>
@@ -1967,7 +2143,31 @@
         <ul>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@JumpConditionsSolver.JumpConditionsSolver.shockSolver">(JumpConditionsSolver attribute)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.shockSolver">(ShockTurbulenceSolver attribute)</a>
+</li>
         </ul></li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.shockTurbulenceModel">shockTurbulenceModel (ShockTurbulenceSolver attribute)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic">ShockTurbulenceModelAcoustic (class in src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelAcoustic)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic">ShockTurbulenceModelAcoustic() (ShockTurbulenceModelAcoustic method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible">ShockTurbulenceModelCompressible (class in src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelCompressible)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible">ShockTurbulenceModelCompressible() (ShockTurbulenceModelCompressible method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical">ShockTurbulenceModelVortical (class in src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelVortical)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.ShockTurbulenceModelVortical">ShockTurbulenceModelVortical() (ShockTurbulenceModelVortical method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic">ShockTurbulenceModelVorticalEntropic (class in src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelVorticalEntropic)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic">ShockTurbulenceModelVorticalEntropic() (ShockTurbulenceModelVorticalEntropic method)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver">ShockTurbulenceSolver (class in src.combustiontoolbox.shockturbulence.@ShockTurbulenceSolver)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.ShockTurbulenceSolver">ShockTurbulenceSolver() (ShockTurbulenceSolver method)</a>
+</li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+optimization.simplex">simplex() (in module src.combustiontoolbox.utils.optimization)</a>
 </li>
         <li><a href="documentation/api/utils/index.html#src.+combustiontoolbox.+utils.+optimization.simplexCheck">simplexCheck() (in module src.combustiontoolbox.utils.optimization)</a>
@@ -1984,6 +2184,8 @@
 </li>
         <li><a href="documentation/api/utils/nothing.html#src.utils.smooth_data">smooth_data() (in module src.utils)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@SolarAbundances.SolarAbundances">SolarAbundances (class in src.combustiontoolbox.databases.@SolarAbundances)</a>
 </li>
         <li><a href="documentation/api/databases/index.html#src.+combustiontoolbox.+databases.@SolarAbundances.SolarAbundances.SolarAbundances">SolarAbundances() (SolarAbundances method)</a>
@@ -1999,9 +2201,9 @@
 </li>
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.solve">(RocketSolver method)</a>
 </li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.solve">(ShockTurbulenceSolver method)</a>
+</li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver.solveArray">solveArray() (DetonationSolver method)</a>
 
         <ul>
@@ -2106,6 +2308,16 @@
 </li>
         <li><a href="documentation/api/shockdetonation/index.html#module-src.+combustiontoolbox.+shockdetonation.@ShockSolver">src.combustiontoolbox.shockdetonation.@ShockSolver (module)</a>
 </li>
+        <li><a href="documentation/api/shockturbulence/index.html#module-src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic">src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelAcoustic (module)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#module-src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible">src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelCompressible (module)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#module-src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical">src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelVortical (module)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#module-src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic">src.combustiontoolbox.shockturbulence.@ShockTurbulenceModelVorticalEntropic (module)</a>
+</li>
+        <li><a href="documentation/api/shockturbulence/index.html#module-src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver">src.combustiontoolbox.shockturbulence.@ShockTurbulenceSolver (module)</a>
+</li>
         <li><a href="documentation/api/turbulence/index.html#module-src.+combustiontoolbox.+turbulence.@HelmholtzSolver">src.combustiontoolbox.turbulence.@HelmholtzSolver (module)</a>
 </li>
         <li><a href="documentation/api/turbulence/index.html#module-src.+combustiontoolbox.+turbulence.@TurbulenceSpectra">src.combustiontoolbox.turbulence.@TurbulenceSpectra (module)</a>
@@ -2204,6 +2416,8 @@
           <li><a href="documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver.time">(RocketSolver attribute)</a>
 </li>
           <li><a href="documentation/api/shockdetonation/index.html#src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver.time">(ShockSolver attribute)</a>
+</li>
+          <li><a href="documentation/api/shockturbulence/index.html#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.time">(ShockTurbulenceSolver attribute)</a>
 </li>
           <li><a href="documentation/api/turbulence/index.html#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra.time">(TurbulenceSpectra attribute)</a>
 </li>
