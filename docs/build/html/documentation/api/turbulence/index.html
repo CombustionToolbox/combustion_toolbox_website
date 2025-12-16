@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Utilities" href="../utils/index.html" /><link rel="prev" title="Rocket module" href="../rocket/index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Utilities" href="../utils/index.html" /><link rel="prev" title="Shock–Turbulence Interaction module" href="../shockturbulence/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Turbulence module - Combustion Toolbox v1.2.7</title>
@@ -305,7 +305,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,13 +323,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils/index.html">Utilities</a></li>
 </ul>
@@ -372,7 +380,7 @@
 <dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HelmholtzSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@HelmholtzSolver.HelmholtzSolver" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver" title="src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">HelmholtzSolver()</span></code></a> class computes the Helmholtz-Hodge
 decomposition of a 3D velocity field into its solenoidal and
 dilatational parts using fast Fourier transform [1].</p>
@@ -592,7 +600,7 @@ STOP (float): Relative error doing the decomposition</p>
 <dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra.TurbulenceSpectra">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TurbulenceSpectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@TurbulenceSpectra.TurbulenceSpectra" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra.TurbulenceSpectra" title="src.+combustiontoolbox.+turbulence.&#64;TurbulenceSpectra.TurbulenceSpectra"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">TurbulenceSpectra()</span></code></a> class provides methods for computing
 turbulence spectra. Supports spherical and cross-plane averaging.</p>
 <dl class="mat attribute">
@@ -1055,7 +1063,7 @@ kPerp (float): Wavenumber along the perpendicular direction</p>
 <dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VelocityField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">u</span></em>, <em class="sig-param"><span class="pre">v</span></em>, <em class="sig-param"><span class="pre">w</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@VelocityField.VelocityField" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">matlab.mixin.Copyable</span></code></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">matlab.mixin.Copyable</span></code></p>
 <p>This <a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">VelocityField()</span></code></a> class provides methods for computing
 properties of a velocity field.</p>
 <dl class="mat method">
@@ -1600,14 +1608,14 @@ div_u (float): 3D Array with the divergence of the velocity field</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../rocket/index.html">
+          <a class="prev-page" href="../shockturbulence/index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Rocket module</div>
+                <div class="title">Shock–Turbulence Interaction module</div>
                 
               </div>
             </a>

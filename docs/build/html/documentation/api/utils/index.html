@@ -305,7 +305,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,13 +323,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Utilities</a></li>
 </ul>
@@ -383,7 +391,7 @@ Routines<div class="sd-summary-down docutils">
 <span class="target" id="module-src.+combustiontoolbox.+utils.+display.&#64;PlotConfig"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PlotConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotConfig.PlotConfig" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p class="sd-card-text">Class to store plot configuration data</p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig.position">
@@ -1788,7 +1796,7 @@ Routines<div class="sd-summary-down docutils">
 <span class="target" id="module-src.+combustiontoolbox.+utils.&#64;Export"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Export.Export">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Export.Export" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p class="sd-card-text">Class to export and save data to different formats (Excel, CSV, and mat)</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Export.Export.Export">
@@ -1895,7 +1903,7 @@ Routines<div class="sd-summary-down docutils">
 <span class="target" id="module-src.+combustiontoolbox.+utils.&#64;SystemUtils"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;SystemUtils.SystemUtils">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SystemUtils</span></span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@SystemUtils.SystemUtils" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p class="sd-card-text">SystemUtils - A class containing utility functions for system operations</p>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
@@ -1959,7 +1967,7 @@ Routines<div class="sd-summary-down docutils">
 <span class="target" id="module-src.+combustiontoolbox.+utils.&#64;HTRDataAverage"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTRDataAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataAverage.HTRDataAverage" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.utils.HTRDataReader</span></code></p>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.utils.HTRDataReader</span></code></p>
 <p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage" title="src.+combustiontoolbox.+utils.&#64;HTRDataAverage.HTRDataAverage"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">HTRDataAverage()</span></code></a> class provides methods to process averaged
 data from the HTR solver [1] output files, which are stored in the
 Hierarchical Data Format (HDF) file format.</p>
@@ -2358,7 +2366,7 @@ Routines<div class="sd-summary-down docutils">
 <span class="target" id="module-src.+combustiontoolbox.+utils.&#64;HTRDataReader"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTRDataReader</span></span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@HTRDataReader.HTRDataReader" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
 <p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader" title="src.+combustiontoolbox.+utils.&#64;HTRDataReader.HTRDataReader"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">HTRDataReader()</span></code></a> class provides static methods to read 3D fields,
 coordinates, and general data from HTR solver [1] output files, which are
 stored in the Hierarchical Data Format (HDF) file format.</p>
@@ -2503,6 +2511,42 @@ Routines<div class="sd-summary-down docutils">
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p class="sd-card-text">clearCache()</p>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.clusteredMesh1D">
+<span class="sig-name descname"><span class="pre">clusteredMesh1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xDense</span></em>, <em class="sig-param"><span class="pre">xCoarse</span></em>, <em class="sig-param"><span class="pre">nDense</span></em>, <em class="sig-param"><span class="pre">nCoarse</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.clusteredMesh1D" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create a 1D nonuniform mesh with dense and coarse regions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>xDense</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dense region [xDense(1), xDense(2)]</p></li>
+<li><p class="sd-card-text"><strong>xCoarse</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Coarse region [xCoarse(1), xCoarse(2)]</p></li>
+<li><p class="sd-card-text"><strong>nDense</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of points in the dense region</p></li>
+<li><p class="sd-card-text"><strong>nCoarse</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of points in the coarse region</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional key-value pairs:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">‘SpacingDense’  : ‘log’ (default) or ‘linear’</p></li>
+<li><p class="sd-card-text">‘SpacingCoarse’ : ‘log’ (default) or ‘linear’</p></li>
+<li><p class="sd-card-text">‘Sort’          : true (default), sorts final mesh</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>x (float)</em> – 1D array of nonuniform mesh points</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">x = clusteredMesh1D([1, 1.2], [1.2, 10], 50, 50);</p></li>
+<li><p class="sd-card-text">x = clusteredMesh1D([1, 1.2], [1.2, 10], 50, 50, ‘SpacingDense’, ‘log’, ‘SpacingCoarse’, ‘linear’);</p></li>
+</ul>
 </div>
 </dd></dl>
 
