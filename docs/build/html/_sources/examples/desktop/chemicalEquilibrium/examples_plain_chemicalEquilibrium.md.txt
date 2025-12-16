@@ -16,6 +16,5 @@ examples_plain_HP_PROPELLANTS
 examples_plain_EV
 examples_plain_SP
 examples_plain_SV
-examples_plain_SV_FROZEN
 examples_plain_EXOPLANET_WASP43b_1
 ```

@@ -378,6 +378,366 @@
 <section id="display-subpackage">
 <h2>Display subpackage<a class="headerlink" href="#display-subpackage" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">display</span></code> subpackage contains functions and classes designed to assist with visualizing and presenting data. These utilities are useful for generating plots to aid in the analysis and interpretation of results obtained from the CT modules.</p>
+<section id="canvas">
+<h3>Canvas<a class="headerlink" href="#canvas" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> superclass manages figure creation and plotting layout configuration</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.+display.&#64;Canvas"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> class is an abstract base class used to manage
+figure creation and plotting layout configuration in the <a href="#id1"><span class="problematic" id="id2">:mat:pkg:`+display`</span></a> module.</p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> class standardizes figure and axis formatting,
+provides tiled layout management, and offers utilities for axis selection and cycling.</p>
+<p class="sd-card-text">A <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> subclass can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotConfig</span><span class="p">();</span><span class="w"></span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotFigure</span><span class="p">(</span><span class="n">config</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">See also: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotFigure</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotComposition</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.Canvas">
+<span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.Canvas" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.add" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Add a new axis to the figure
+This method is intended to be overridden in subclasses
+to add specific axes or plots.</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.ax" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Axis handle</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.config" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot configuration object</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.currentIndex">
+<span class="sig-name descname"><span class="pre">currentIndex</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.currentIndex" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Current index for sequential filling of axes</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.fig">
+<span class="sig-name descname"><span class="pre">fig</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.fig" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Figure handle</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.getAxis">
+<span class="sig-name descname"><span class="pre">getAxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.getAxis" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Return axis to use for plotting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">PlotFigure</span></code></span>) – Instance of the PlotFigure superclass</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Args:</dt><dd><p class="sd-card-text">index (vector): Index of the axis to use [row, col]
+FLAG_SEQUENTIAL (bool): If true, use sequential filling of axes</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><em>ax (Axes)</em> – Axis to use for plotting</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">ax = obj.getAxis();</p></li>
+<li><p class="sd-card-text">ax = obj.getAxis(‘index’, [1, 2]);</p></li>
+<li><p class="sd-card-text">ax = obj.getAxis(‘FLAG_SEQUENTIAL’, true);</p></li>
+<li><p class="sd-card-text">ax = obj.getAxis(‘index’, [1, 2], ‘FLAG_SEQUENTIAL’, true); % Start sequence at (1, 2)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.new">
+<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.new" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create and configure a new figure</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.newArray">
+<span class="sig-name descname"><span class="pre">newArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.newArray" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Create a figure with an nrows x ncols tiled layout
+and return an array of PlotFigure subclass instances</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.next" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Cycle to the next index</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.numAxis">
+<span class="sig-name descname"><span class="pre">numAxis</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.numAxis" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of axes in the figure</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.onFigureClose">
+<span class="sig-name descname"><span class="pre">onFigureClose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.onFigureClose" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Reset the axes and figure when the figure is closed</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.setFormat">
+<span class="sig-name descname"><span class="pre">setFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.setFormat" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set the format of the axes based on the configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">PlotFigure</span></code></span>) – Instance of the PlotFigure superclass</p></li>
+<li><p class="sd-card-text"><strong>ax</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Axes</span></code></span>) – Axes to format</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>ax (Axes)</em> – Formatted axes</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p class="sd-card-text">ax = obj.setFormat(gca);</p>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.setLegend">
+<span class="sig-name descname"><span class="pre">setLegend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">legendLabels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.setLegend" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set legend on the axis</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.setTitle">
+<span class="sig-name descname"><span class="pre">setTitle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">titleText</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.setTitle" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set figure title with LaTeX interpreter</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.size" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Size of the axis array</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas.tiled">
+<span class="sig-name descname"><span class="pre">tiled</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@Canvas.Canvas.tiled" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tiled layout for multiple axes</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
+<section id="plotfigure">
+<h3>PlotFigure<a class="headerlink" href="#plotfigure" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> class extends :mat:class:<code class="docutils literal notranslate"><span class="pre">Canvas</span></code> to provide a unified plotting interface for thermodynamic and transport properties (e.g., <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">Xi</span></code>) against an arbitrary independent variable.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.+display.&#64;PlotFigure"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PlotFigure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.utils.display.Canvas</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure" title="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotFigure</span></code></a> class extends <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code> to provide a unified
+plotting interface for thermodynamic and transport properties (e.g., <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cp</span></code>, <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">h</span></code>, <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Xi</span></code>)
+against an arbitrary independent variable.</p>
+<p class="sd-card-text">A <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure" title="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotFigure</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotConfig</span><span class="p">();</span><span class="w"></span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotFigure</span><span class="p">(</span><span class="n">config</span><span class="p">);</span><span class="w"></span>
+<span class="n">fig</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">This creates a formatted plot with consistent styling using <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code>.</p>
+<p class="sd-card-text">See also: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotComposition</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure.PlotFigure">
+<span class="sig-name descname"><span class="pre">PlotFigure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure.PlotFigure" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure.colorIndex">
+<span class="sig-name descname"><span class="pre">colorIndex</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'1'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure.colorIndex" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Index for color cycling</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure.nextColor">
+<span class="sig-name descname"><span class="pre">nextColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure.nextColor" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Cycle to the next color in the color palette</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_field</span></em>, <em class="sig-param"><span class="pre">x_var</span></em>, <em class="sig-param"><span class="pre">y_field</span></em>, <em class="sig-param"><span class="pre">y_var</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure.plot" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot method for scalar or multiple y_fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>x_field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Field name for x-axis</p></li>
+<li><p class="sd-card-text"><strong>x_var</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array of structures/objects with x_field</p></li>
+<li><p class="sd-card-text"><strong>y_fields</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span> <span class="pre">or</span> <span class="pre">cell</span></code></span>) – Field name(s) for y-axis</p></li>
+<li><p class="sd-card-text"><strong>y_var</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array with same length as x_var</p></li>
+<li><p class="sd-card-text"><strong>varargin</strong> – Optional key-value arguments</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Supported options:</dt><dd><p class="sd-card-text">‘config’, ‘legend’, ‘legend_location’, ‘linestyle’,
+‘linewidth’, ‘fontsize’, ‘title’, ‘xlabel’, ‘ylabel’,
+‘label_type’, ‘xscale’, ‘yscale’, ‘xdir’, ‘ydir’,
+‘color’, ‘basis’, ‘validation’, ‘nfrec’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotFigure.PlotFigure.plotArray">
+<span class="sig-name descname"><span class="pre">plotArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_field</span></em>, <em class="sig-param"><span class="pre">x_var</span></em>, <em class="sig-param"><span class="pre">y_field</span></em>, <em class="sig-param"><span class="pre">y_var</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure.plotArray" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot method for multiple y_fields in an array format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>x_field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Field name for x-axis</p></li>
+<li><p class="sd-card-text"><strong>x_var</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array of structures/objects with x_field</p></li>
+<li><p class="sd-card-text"><strong>y_fields</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span> <span class="pre">or</span> <span class="pre">cell</span></code></span>) – Field name(s) for y-axis</p></li>
+<li><p class="sd-card-text"><strong>y_var</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Cell array with same length as x_var</p></li>
+<li><p class="sd-card-text"><strong>varargin</strong> – Optional key-value arguments</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
+<section id="plotcomposition">
+<h3>PlotComposition<a class="headerlink" href="#plotcomposition" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas" title="src.+combustiontoolbox.+utils.+display.&#64;Canvas.Canvas"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code></a> class extends :mat:class:<code class="docutils literal notranslate"><span class="pre">Canvas</span></code> to generate species composition plots (e.g., molar fractions <code class="docutils literal notranslate"><span class="pre">Xi</span></code>) against an independent variable.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.+display.&#64;PlotComposition"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PlotComposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">combustiontoolbox.utils.display.Canvas</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition" title="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotComposition</span></code></a> class extends <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code> to generate
+species composition plots (e.g., molar fractions <code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Xi</span></code>) against an independent variable.</p>
+<p class="sd-card-text">A <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition" title="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotComposition</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotConfig</span><span class="p">();</span><span class="w"></span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">PlotComposition</span><span class="p">(</span><span class="n">config</span><span class="p">);</span><span class="w"></span>
+<span class="n">fig</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mixtureArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;equivalenceRatio&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Xi&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">This creates a formatted figure with species composition plotted over the selected parameter.</p>
+<p class="sd-card-text">See also: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Canvas</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotFigure</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition.FLAG_PLOT_VALIDATION">
+<span class="sig-name descname"><span class="pre">FLAG_PLOT_VALIDATION</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition.FLAG_PLOT_VALIDATION" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Flag to indicate to plot validation data</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition.PlotComposition">
+<span class="sig-name descname"><span class="pre">PlotComposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition.PlotComposition" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition.cleanDisplaySpecies">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">cleanDisplaySpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">molar_fractions</span></em>, <em class="sig-param"><span class="pre">species</span></em>, <em class="sig-param"><span class="pre">index_species</span></em>, <em class="sig-param"><span class="pre">mintolDisplay</span></em>, <em class="sig-param"><span class="pre">FLAG_PLOT_VALIDATION</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition.cleanDisplaySpecies" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Remove species that do not appear</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixture</span></em>, <em class="sig-param"><span class="pre">x_var</span></em>, <em class="sig-param"><span class="pre">x_field</span></em>, <em class="sig-param"><span class="pre">y_field</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition.plot" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Plot molar fractions againts any variable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition" title="src.+combustiontoolbox.+utils.+display.&#64;PlotComposition.PlotComposition"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">PlotComposition</span></code></a></span>) – Instance of the PlotComposition class</p></li>
+<li><p class="sd-card-text"><strong>mixture</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Data of the mixture, conditions, and databases</p></li>
+<li><p class="sd-card-text"><strong>x_var</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span></code></span>) – Properties of the mixture for all the cases</p></li>
+<li><p class="sd-card-text"><strong>x_field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Field name for the x-axis data</p></li>
+<li><p class="sd-card-text"><strong>y_field</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Field name for the y-axis data</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Optional Name-Value Pair Args:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">validation (struct): Struct that contains validations with (x_field, y_field)</p></li>
+<li><p class="sd-card-text">nfrec (float): Frequency points to plot validations</p></li>
+<li><p class="sd-card-text">mintol (float): Minimum limit i-axis with the composition of the mixture</p></li>
+<li><p class="sd-card-text">displaySpecies (cell): List of species to plot</p></li>
+<li><p class="sd-card-text">y_var (cell): Get y-axis data from a different mixture</p></li>
+<li><p class="sd-card-text">config (struct): Struct with the configuration for plots</p></li>
+<li><p class="sd-card-text">axis_x (char): Set x-axis limits</p></li>
+<li><p class="sd-card-text">axis_y (char): Set y-axis limits</p></li>
+<li><p class="sd-card-text">xscale (char): Set x-axis scale (linear or log)</p></li>
+<li><p class="sd-card-text">yscale (char): Set y-axis scale (linear or log)</p></li>
+<li><p class="sd-card-text">xdir (char): Set x-axis direction (normal or reverse)</p></li>
+<li><p class="sd-card-text">ydir (char): Set y-axis direction (normal or reverse)</p></li>
+<li><p class="sd-card-text">ax (object): Handle of the axes to plot on</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
+<ul class="simple">
+<li><p class="sd-card-text">ax (object): Handle of the axes</p></li>
+<li><p class="sd-card-text">fig (object): Handle of the figure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">[ax, fig] = plotComposition(mixArray(1), mixArray, ‘equivalenceRatio’, ‘Xi’)</p></li>
+<li><p class="sd-card-text">[ax, fig] = plotComposition(mixArray(1), mixArray, ‘equivalenceRatio’, ‘Xi’, ‘y_var’, mixArray2)</p></li>
+<li><p class="sd-card-text">[ax, fig] = plotComposition(mixArray(1), mixArray, ‘equivalenceRatio’, ‘Xi’, ‘y_var’, mixArray2, ‘validation’, resultsCEA)</p></li>
+<li><p class="sd-card-text">[ax, fig] = plotComposition(mixArray(1), mixArray, ‘equivalenceRatio’, ‘Xi’, ‘y_var’, mixArray2, ‘validation’, resultsCEA, ‘displaySpecies’, displaySpecies)</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
 <section id="plotconfig">
 <h3>PlotConfig<a class="headerlink" href="#plotconfig" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig" title="src.+combustiontoolbox.+utils.+display.&#64;PlotConfig.PlotConfig"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">PlotConfig</span></code></a> class provides a set of predefined plot configurations that can be used to customize the appearance of plots generated by the Combustion Toolbox.</p>
@@ -1783,6 +2143,241 @@ x_min (float): Minimum value of x</p>
 <section id="other-functions-and-classes">
 <h2>Other functions and classes<a class="headerlink" href="#other-functions-and-classes" title="Permalink to this heading">#</a></h2>
 <p>This section includes various other utility functions and classes that don’t fall under the specific subpackages mentioned above. These general-purpose tools support a wide range of tasks within the Combustion Toolbox.</p>
+<section id="benchmark">
+<h3>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this heading">#</a></h3>
+<p>The :mat:func:<code class="docutils literal notranslate"><span class="pre">Benchmark</span></code> class is used to perform a set of benchmark tests using the Combustion Toolbox code. It measures and reports the average computational time of selected functions over multiple iterations.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.&#64;Benchmark"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Benchmark()</span></code></a> class is used to perform a set of benchmark
+tests using the Combustion Toolbox code. It measures and reports the
+average computational time of selected functions over multiple
+iterations.</p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Benchmark()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">bench</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Benchmark</span><span class="p">(</span><span class="n">tests</span><span class="p">,</span><span class="w"> </span><span class="n">numIterations</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">Here <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.tests" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.tests"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">tests</span></code></a> is a cell array of function handles representing the
+benchmarked functions, and <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.numIterations" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.numIterations"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numIterations</span></code></a> specifies the number of
+times each function will be executed to compute the average execution
+time.</p>
+<dl>
+<dt>Example usage:</dt><dd><p class="sd-card-text">% Define benchmark tests as function handles
+tests = <a class="reference external" href="mailto:{&#37;&#52;&#48;run_validation_TP_CEA_6">{<span>&#64;</span>run_validation_TP_CEA_6</a>, &#64;another_test_function};</p>
+<p class="sd-card-text">% Create the Benchmark object with tests and number of iterations
+bench = Benchmark(tests, ‘numIterations’, 20);</p>
+<p class="sd-card-text">% Run the tests
+bench = bench.run();</p>
+<p class="sd-card-text">% Generate and display the report
+bench.report();</p>
+</dd>
+</dl>
+<p class="sd-card-text">See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">combustiontoolbox.utils.timeFunction()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">combustiontoolbox.utils.extensions.cpuinfo()</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.Benchmark">
+<span class="sig-name descname"><span class="pre">Benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.Benchmark" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.getDefaultTests">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDefaultTests</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.getDefaultTests" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get default tests</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.metadata" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">BenchmarkMetadata array storing metadata for each test</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.numIterations">
+<span class="sig-name descname"><span class="pre">numIterations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.numIterations" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of iterations for each test</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.numTest">
+<span class="sig-name descname"><span class="pre">numTest</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.numTest" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of tests</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.report" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.report" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.report"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">report()</span></code></a> method displays a formatted benchmark report, showing the
+average execution times for each test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Benchmark</span></code></a></span>) – Benchmark object containing recorded execution times.</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">bench.report();</p></li>
+</ul>
+</div>
+<p class="sd-card-text">See also: <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">Benchmark()</span></code></a>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">runTests()</span></code></p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.run" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.run" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.run"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run()</span></code></a> method executes the benchmark tests and records the average
+execution time for each test function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark" title="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Benchmark</span></code></a></span>) – Benchmark object containing the tests to be executed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text"><em>obj (Benchmark)</em> – Benchmark object updated with the execution times of each test.</p>
+</dd>
+</dl>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p class="sd-card-text">bench = bench.run();</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.system">
+<span class="sig-name descname"><span class="pre">system</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.system" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Struct storing CPU and system information</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;Benchmark.Benchmark.tests">
+<span class="sig-name descname"><span class="pre">tests</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@Benchmark.Benchmark.tests" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Cell array of function handles</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
+<section id="benchmarkmetadata">
+<h3>BenchmarkMetadata<a class="headerlink" href="#benchmarkmetadata" title="Permalink to this heading">#</a></h3>
+<p>The :mat:func:<code class="docutils literal notranslate"><span class="pre">BenchmarkMetadata</span></code> class class is used to store and manage metadata information for benchmark tests in the Combustion Toolbox.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Routines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="target" id="module-src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BenchmarkMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">solver</span></em>, <em class="sig-param"><span class="pre">mixtureArray</span></em>, <em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">sphinxcontrib.mat_types.handle</span></code></p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata" title="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BenchmarkMetadata()</span></code></a> class is used to store and manage metadata
+information for benchmark tests in the Combustion Toolbox.</p>
+<p class="sd-card-text">The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata" title="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">BenchmarkMetadata()</span></code></a> object can be initialized as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">BenchmarkMetadata</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="n">mixtureArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filename&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;run_validation_TP_CEA_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;testname&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C6H6_air1_TP&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">Here the parameters specify various metadata attributes such as the module name,
+problem type, filename, test name, number of cases, number of species, and tolerance.</p>
+<p class="sd-card-text">See also: <code class="xref mat mat-func docutils literal notranslate"><span class="pre">combustiontoolbox.utils.Benchmark()</span></code></p>
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.BenchmarkMetadata">
+<span class="sig-name descname"><span class="pre">BenchmarkMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">solver</span></em>, <em class="sig-param"><span class="pre">mixtureArray</span></em>, <em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.BenchmarkMetadata" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Constructor</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.asTable">
+<span class="sig-name descname"><span class="pre">asTable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.asTable" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Export metadata as a single-row MATLAB table</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.avgTime">
+<span class="sig-name descname"><span class="pre">avgTime</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.avgTime" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Average execution time for the benchmark</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.filename" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Name of the file containing benchmark data</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.getMetadata">
+<span class="sig-name descname"><span class="pre">getMetadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.getMetadata" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Get metadata</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.mixtureArray">
+<span class="sig-name descname"><span class="pre">mixtureArray</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.mixtureArray" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Array of mixture objects used in the benchmark</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.module">
+<span class="sig-name descname"><span class="pre">module</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.module" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Name of the module being benchmarked</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.numCases">
+<span class="sig-name descname"><span class="pre">numCases</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.numCases" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of cases in the benchmark</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.numSpecies">
+<span class="sig-name descname"><span class="pre">numSpecies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.numSpecies" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Number of species involved</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.print" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Display metadata information</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.problemType">
+<span class="sig-name descname"><span class="pre">problemType</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.problemType" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Type of problem (e.g., ‘TP’, ‘TV’, ‘HP’, etc.)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.setTime">
+<span class="sig-name descname"><span class="pre">setTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.setTime" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Set average execution time</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.solver">
+<span class="sig-name descname"><span class="pre">solver</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.solver" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Solver used in the benchmark</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+utils.&#64;BenchmarkMetadata.BenchmarkMetadata.tolerance">
+<span class="sig-name descname"><span class="pre">tolerance</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata.tolerance" title="Permalink to this definition">#</a></dt>
+<dd><p class="sd-card-text">Tolerance level for the benchmark</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</details></section>
 <section id="export">
 <h3>Export<a class="headerlink" href="#export" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+utils.&#64;Export.Export" title="src.+combustiontoolbox.+utils.&#64;Export.Export"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Export</span></code></a> class provides functionalities to export results into different formats.</p>
@@ -2751,6 +3346,9 @@ Routines<div class="sd-summary-down docutils">
             <ul>
 <li><a class="reference internal" href="#">Utilities</a><ul>
 <li><a class="reference internal" href="#display-subpackage">Display subpackage</a><ul>
+<li><a class="reference internal" href="#canvas">Canvas</a></li>
+<li><a class="reference internal" href="#plotfigure">PlotFigure</a></li>
+<li><a class="reference internal" href="#plotcomposition">PlotComposition</a></li>
 <li><a class="reference internal" href="#plotconfig">PlotConfig</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
@@ -2759,6 +3357,8 @@ Routines<div class="sd-summary-down docutils">
 <li><a class="reference internal" href="#optimization-subpackage">Optimization subpackage</a></li>
 <li><a class="reference internal" href="#extensions-subpackage">Extensions subpackage</a></li>
 <li><a class="reference internal" href="#other-functions-and-classes">Other functions and classes</a><ul>
+<li><a class="reference internal" href="#benchmark">Benchmark</a></li>
+<li><a class="reference internal" href="#benchmarkmetadata">BenchmarkMetadata</a></li>
 <li><a class="reference internal" href="#export">Export</a></li>
 <li><a class="reference internal" href="#systemutils">SystemUtils</a></li>
 <li><a class="reference internal" href="#htrdataaverage">HTRDataAverage</a></li>
