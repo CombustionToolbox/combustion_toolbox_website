@@ -27,7 +27,7 @@ For the sake of clarity, we only show a reduced set of species in the validation
 
 ## Chemical equilibrium calculations
 
-Validations of the `EquilibriumSolver` for different problem types with **NASA CEA** as reference. The problem types covered are:
+Validations of the {mat:class}`~src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver` for different problem types with **NASA CEA** as reference. The problem types covered are:
 - `TP` (defined temperature and pressure)
 - `HP` (defined enthalpy and pressure)
 - `TV` (defined temperature and volume)
@@ -289,7 +289,7 @@ run_validations_CEA
 
 ## Shock wave calculations
 
-Validations of the `ShockSolver` for different problem types with **NASA CEA** and **Caltech's SD-Toolbox** as reference. The problem types covered are:
+Validations of the {mat:class}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver` for different problem types with **NASA CEA** and **Caltech's SD-Toolbox** as reference. The problem types covered are:
 - `SHOCK I` (planar shock waves)
 - `SHOCK R` (reflected shock waves)
 - `SHOCK OBLIQUE` (oblique shock waves)
@@ -395,7 +395,7 @@ Validations of the `ShockSolver` for different problem types with **NASA CEA** a
 
 ## Detonation wave calculations
 
-Validations of the `DetonationSolver` for different problem types with **NASA CEA** as reference. The problem type covered is:
+Validations of the {mat:class}`~src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver` for different problem types with **NASA CEA** as reference. The problem type covered is:
 - `DET` (Chapman-Jouguet detonations)
 <!-- - `DET_OVERDRIVEN` (Overdriven detonations)
 - `DET_UNDERDRIVEN` (Underdriven detonations)
@@ -511,7 +511,7 @@ Validations of the `DetonationSolver` for different problem types with **NASA CE
 
 ## Rocket calculations
 
-Validations of the `RocketSolver` for different problem types with **NASA CEA** as reference. The problem type covered is:
+Validations of the {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver` for different problem types with **NASA CEA** as reference. The problem type covered is:
 - `ROCKET IAC` (Infinite area chamber model)
 - `ROCKET FAC` (Finite area chamber model)
 
@@ -673,7 +673,7 @@ Validations of the `RocketSolver` for different problem types with **NASA CEA** 
 
 ## Exoplanet chemical equilibrium calculations
 
-Validations of the `EquilibriumSolver` and `SolarAbundances` classes for different temperature and pressure profiles with **Thermochemical Equilibrium Abundances of chemical species (TEA)** software as reference. The problem type covered is:
+Validations of the {mat:class}`~src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.EquilibriumSolver` and {mat:class}`~src.+combustiontoolbox.+databases.@SolarAbundances.SolarAbundances` classes for different temperature and pressure profiles with **Thermochemical Equilibrium Abundances of chemical species (TEA)** software as reference. The problem type covered is:
 - `TP` (defined temperature and pressure profiles)
 
 

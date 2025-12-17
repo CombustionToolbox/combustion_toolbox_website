@@ -30,7 +30,7 @@ Schematic of a chemically reacting rocket flow including chamber, throat, and ex
   
 Thermochemical states are handled through the [CT-EQUIL module](./1_chemical_equilibrium.md). The formulation follows the methodology originally developed in NASA's CEA code {cite:p}`gordon1994`.
 
-Two limiting cases are supported through `RocketSolver`:
+Two limiting cases are supported through {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver`:
 
 - `ROCKET_IAC` - **Infinite-area-chamber approximation (IAC):** Isentropic combustion process.
 - `ROCKET_FAC` - **Finite-area-chamber approximation (FAC):** Entropic combustion process.

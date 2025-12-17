@@ -305,7 +305,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,7 +323,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../documentation/api/common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../documentation/api/core/index.html">Core classes</a></li>
@@ -394,7 +401,7 @@
 <li><p>Continuity of temperature and velocity between gaseous and condensed species.</p></li>
 </ul>
 <p>Thermochemical states are handled through the <a class="reference internal" href="1_chemical_equilibrium.html"><span class="doc std std-doc">CT-EQUIL module</span></a>. The formulation follows the methodology originally developed in NASA’s CEA code <span id="id1">[<a class="reference internal" href="../references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span>.</p>
-<p>Two limiting cases are supported through <code class="docutils literal notranslate"><span class="pre">RocketSolver</span></code>:</p>
+<p>Two limiting cases are supported through <a class="reference internal" href="../documentation/api/rocket/index.html#src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver" title="src.+combustiontoolbox.+rocket.&#64;RocketSolver.RocketSolver"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">RocketSolver</span></code></a>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ROCKET_IAC</span></code> - <strong>Infinite-area-chamber approximation (IAC):</strong> Isentropic combustion process.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ROCKET_FAC</span></code> - <strong>Finite-area-chamber approximation (FAC):</strong> Entropic combustion process.</p></li>
