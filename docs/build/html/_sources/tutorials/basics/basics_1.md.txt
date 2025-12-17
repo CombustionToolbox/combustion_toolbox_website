@@ -27,12 +27,14 @@ In addition to the classes described above, there are other essential classes in
    * {mat:class}`~src.+combustiontoolbox.+shockdetonation.@ShockSolver.ShockSolver`: solver class for shock calculations,
    * {mat:class}`~src.+combustiontoolbox.+shockdetonation.@DetonationSolver.DetonationSolver`: solver class for detonation calculations,
    * {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver`: solver class for rocket calculations,
+   * {mat:class}`~src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver`: solver class for shock-turbulence interaction calculations using linear theory.
 
-These classes are part of the CT-EQUIL (<tt>equilibrium</tt>), CT-SD (<tt>shockdetonation</tt>), and CT-ROCKET (<tt>rocket</tt>) modules (subpackages), respectively. All the classes and subpackages are imported as shown below:
+These classes are part of the CT-EQUIL (<tt>equilibrium</tt>), CT-SD (<tt>shockdetonation</tt>), CT-ROCKET (<tt>rocket</tt>), and CT-LIA (<tt>shockturbulence</tt>) modules (subpackages), respectively. All the classes and subpackages are imported as shown below:
 ```matlab
-import combustiontoolbox.equilibrium.equilibriumSolver
-import combustiontoolbox.shockdetonation.shockSolver
-import combustiontoolbox.rocket.Rocket
+import combustiontoolbox.equilibrium.EquilibriumSolver
+import combustiontoolbox.shockdetonation.ShockSolver
+import combustiontoolbox.rocket.RocketSolver
+import combustiontoolbox.shockturbulence.ShockTurbulenceSolver
 ```
 
 For typical tasks, in addition to the solvers required, you will often need the following subpackages:
@@ -90,5 +92,16 @@ import combustiontoolbox.rocket.*
 ```
 
 ````
+
+````{tab-item} Shock-Turbulence solver
+
+```matlab
+% Import packages
+import combustiontoolbox.databases.NasaDatabase
+import combustiontoolbox.core.*
+import combustiontoolbox.shockturbulence.*
+```
+
+````{/tab-item}
 
 `````
