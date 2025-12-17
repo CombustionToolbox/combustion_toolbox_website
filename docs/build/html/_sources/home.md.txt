@@ -8,7 +8,7 @@
 </p>
 
 <!-- Intro -->
-<br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models and linear shock–turbulence interaction analysis.
+<br> <center> <b> A modular MATLAB-based framework for solving combustion and high-speed flow problems, with integrated support for caloric models and linear shock-turbulence interaction analysis.
 </b> </center> <br>
 
 <p class= "only-light" align="center">
