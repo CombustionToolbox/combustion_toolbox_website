@@ -120,7 +120,7 @@ Completely open source, GUI included!
 
 -->
 
-The Combustion Toolbox {cite:p}`cuadra2025b` is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:
+The Combustion Toolbox {cite:p}`cuadra2026a` is a MATLAB-based thermochemical framework designed to solve problems involving chemical equilibrium for both gas- and condensed-phase species. The toolbox is composed of several modules, each of which is designed to solve a specific class of problems:
 
 - **CT-EQUIL** computes the thermochemical equilibrium composition of multi-component gas mixtures for prescribed set of chemical species (gaseous—including ions—or condensed phases) and thermodynamic constraints (e.g. pressure–enthalpy).
 - **CT-SD** solves steady-state shock and detonation wave problems for both normal and oblique incidence.  
