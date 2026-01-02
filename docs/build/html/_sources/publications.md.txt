@@ -10,7 +10,7 @@ If you use the Combustion Toolbox in a publication, please cite it using the fol
 It can be handy the BibTeX format:
 
 ```bibtex
-@article{cuadra2025b,
+@article{cuadra2026a,
     title   = {{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}},
     journal = {Computer Physics Communications},
     volume  = {320},
