@@ -31,7 +31,7 @@ sys.path.append(os.path.abspath('./_ext'))
 
 project = 'Combustion Toolbox'
 project_acronym = 'CT'
-copyright = '2022-2025, Alberto Cuadra Lara'
+copyright = '2022-2026, Alberto Cuadra Lara'
 author = 'Alberto Cuadra Lara'
 
 # The full version, including alpha/beta/rc tags
@@ -76,7 +76,7 @@ myst_enable_extensions = [
 myst_substitutions = {
     'author': author,
     'version': release,
-    'copyright': 'Copyright © 2022-2025',
+    'copyright': 'Copyright © 2022-2026',
     'project': project,
     'affiliation': 'Grupo de Mecánica de Fluidos, Universidad Carlos III, Av. Universidad 30, 28911, Leganés, Spain',
 }
@@ -221,7 +221,7 @@ html_css_files = [
 # }
 
 html_theme_options = {
-    "announcement": '<a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a>',
+    "announcement": '<a class="no-underline"; href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The article of the Combustion Toolbox is now available on ResearchGate!</a>',
     "sidebar_hide_name": True,
     'light_logo': 'img/logo_CT_version.svg',
     'dark_logo': 'img/logo_CT_version_dark.svg',

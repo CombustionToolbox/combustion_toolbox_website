@@ -2,31 +2,27 @@
 
 ## Citing Combustion Toolbox
 
-```{note}
-The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite {cite:t}`cuadra2024a_preprint`.
-```
-
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
-* *Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. [arXiv:2409.15086](https://doi.org/10.48550/arXiv.2409.15086).*
+* *Cuadra, A., Huete, C., & Vera, M. (2025). Combustion Toolbox: An open-source thermochemical code for gas-and condensed-phase problems involving chemical equilibrium. Computer Physics Communications 320, 110004. [doi:10.1016/j.cpc.2025.110004](https://doi.org/10.1016/j.cpc.2025.110004).*
 * *Cuadra, A., Huete, C., & Vera, M. (2025). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.2.7. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 
 It can be handy the BibTeX format:
 
 ```bibtex
-@article{cuadra2024a_preprint,
-    title         = {{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}},
-    author        = {Cuadra, A. and Huete, C. and Vera, M.},
-    journal       = {{arXiv preprint arXiv:2409.15086}},
-    year          = {2024},
-    eprint        = {2409.15086},
-    archivePrefix = {arXiv},
-    primaryClass  = {physics.chem-ph},
-    doi           = {10.48550/arXiv.2409.15086}
+@article{cuadra2025b,
+    title   = {{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}},
+    journal = {Computer Physics Communications},
+    volume  = {320},
+    pages   = {110004},
+    year    = {2026},
+    issn    = {0010-4655},
+    doi     = {https://doi.org/10.1016/j.cpc.2025.110004},
+    author  = {A. Cuadra and C. Huete and M. Vera},
 }
 
 @misc{combustiontoolbox,
-    author  = "Cuadra, A. and Huete, C. and Vera, M.",
+    author  = {A. Cuadra and C. Huete and M. Vera},
     title   = "{{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}}",
     year    = 2025,
     note    = "Version 1.2.7",

@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The article of the Combustion Toolbox is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_3.html">Defining chemical system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_5.html">Defining the caloric gas model</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -273,7 +274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I.html">Incident shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_IONIZATION.html">Incident shock waves with ionization effects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_MACH.html">Incident shock waves for different Mach numbers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves for different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves using different thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_R.html">Incident and reflected shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_BETA.html">Incident shock waves for different wave angles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_THETA.html">Incident shock waves for different deflection angles</a></li>
@@ -284,7 +285,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves using different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -305,7 +306,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,7 +324,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
@@ -369,29 +377,25 @@
 <h1>Publications<a class="headerlink" href="#publications" title="Permalink to this heading">#</a></h1>
 <section id="citing-combustion-toolbox">
 <h2>Citing Combustion Toolbox<a class="headerlink" href="#citing-combustion-toolbox" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The scientific paper on the Combustion Toolbox is currently under review. In the meantime, you can cite <span id="id1">Cuadra <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">2024</a>]</span>.</p>
-</div>
 <p>If you use the Combustion Toolbox in a publication, please cite it using the following references:</p>
 <ul class="simple">
-<li><p><em>Cuadra, A., Huete, C., &amp; Vera, M. (2024). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. <a class="reference external" href="https://doi.org/10.48550/arXiv.2409.15086">arXiv:2409.15086</a>.</em></p></li>
+<li><p><em>Cuadra, A., Huete, C., &amp; Vera, M. (2025). Combustion Toolbox: An open-source thermochemical code for gas-and condensed-phase problems involving chemical equilibrium. Computer Physics Communications 320, 110004. <a class="reference external" href="https://doi.org/10.1016/j.cpc.2025.110004">doi:10.1016/j.cpc.2025.110004</a>.</em></p></li>
 <li><p><em>Cuadra, A., Huete, C., &amp; Vera, M. (2025). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.2.7. Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.5554911">doi:10.5281/zenodo.5554911</a>.</em></p></li>
 </ul>
 <p>It can be handy the BibTeX format:</p>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">cuadra2024a_preprint</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">title</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">{{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">author</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{Cuadra, A. and Huete, C. and Vera, M.}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">journal</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{{arXiv preprint arXiv:2409.15086}}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">year</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">eprint</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{2409.15086}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">archivePrefix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{arXiv}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">primaryClass</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{physics.chem-ph}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">doi</span><span class="w">           </span><span class="p">=</span><span class="w"> </span><span class="s">{10.48550/arXiv.2409.15086}</span><span class="w"></span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">cuadra2025b</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">title</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">{{Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium}}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Computer Physics Communications}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">volume</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{320}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">pages</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">{110004}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">year</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{2026}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">issn</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{0010-4655}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">doi</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.1016/j.cpc.2025.110004}</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{A. Cuadra and C. Huete and M. Vera}</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="nc">@misc</span><span class="p">{</span><span class="nl">combustiontoolbox</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Cuadra, A. and Huete, C. and Vera, M.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="na">author</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">{A. Cuadra and C. Huete and M. Vera}</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">title</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;{{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}}&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">year</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="m">2025</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="na">note</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Version 1.2.7&quot;</span><span class="p">,</span><span class="w"></span>
@@ -510,7 +514,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+                Copyright &#169; 2022-2026, Alberto Cuadra Lara
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

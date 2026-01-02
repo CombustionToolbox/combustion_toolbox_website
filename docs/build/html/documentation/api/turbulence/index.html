@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The article of the Combustion Toolbox is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -500,6 +500,22 @@ chiVariance (float): Variance of the correlation</p>
 <p class="admonition-title">Example</p>
 <p>[chi, chiVariance] = getChi(obj, solenoidal, rho, pressure, sound_mean)</p>
 </div>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+turbulence.&#64;HelmholtzSolver.HelmholtzSolver.getVorticityDivergence">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getVorticityDivergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">velocity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+turbulence.@HelmholtzSolver.HelmholtzSolver.getVorticityDivergence" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute both vorticity and divergence using FFT-based
+spectral differentiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>velocity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></span>) – VelocityField object with fields u, v, w</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>omega_mag (float)</em> – 3D Array with the vorticity field
+div_u (float): 3D Array with the divergence of the velocity field</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat staticmethod">
@@ -1624,7 +1640,7 @@ div_u (float): 3D Array with the divergence of the velocity field</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+                Copyright &#169; 2022-2026, Alberto Cuadra Lara
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

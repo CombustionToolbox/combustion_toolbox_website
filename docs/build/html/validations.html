@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The article of the Combustion Toolbox is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_3.html">Defining chemical system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_5.html">Defining the caloric gas model</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -273,7 +274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I.html">Incident shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_IONIZATION.html">Incident shock waves with ionization effects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_MACH.html">Incident shock waves for different Mach numbers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves for different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves using different thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_R.html">Incident and reflected shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_BETA.html">Incident shock waves for different wave angles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_THETA.html">Incident shock waves for different deflection angles</a></li>
@@ -284,7 +285,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves using different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -374,7 +375,7 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="validations">
 <h1>Validations<a class="headerlink" href="#validations" title="Permalink to this heading">#</a></h1>
-<p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id3" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>, <a class="reference internal" href="references.html#id4" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2025. Version 1.2.7. doi:10.5281/zenodo.5554911.">Cuadra <em>et al.</em>, 2025</a>]</span> has been rigorously benchmarked against several established reference codes across a range of thermochemical equilibrium problems. The table below summarizes the main external solvers considered for comparison together with their typical scopes of application.</p>
+<p>The Combustion Toolbox <span id="id1">[<a class="reference internal" href="references.html#id4" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. arXiv preprint arXiv:2409.15086, 2024. arXiv:2409.15086, doi:10.48550/arXiv.2409.15086.">Cuadra <em>et al.</em>, 2024</a>, <a class="reference internal" href="references.html#id5" title="A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2025. Version 1.2.7. doi:10.5281/zenodo.5554911.">Cuadra <em>et al.</em>, 2025</a>]</span> has been rigorously benchmarked against several established reference codes across a range of thermochemical equilibrium problems. The table below summarizes the main external solvers considered for comparison together with their typical scopes of application.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -383,16 +384,16 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong><a class="reference external" href="https://cearun.grc.nasa.gov/">NASA CEA</a></strong> <span id="id2">[<a class="reference internal" href="references.html#id9" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span></p></td>
+<tr class="row-even"><td><p><strong><a class="reference external" href="https://cearun.grc.nasa.gov/">NASA CEA</a></strong> <span id="id2">[<a class="reference internal" href="references.html#id10" title="S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. No. NAS 1.61:1311, 1994.">Gordon and McBride, 1994</a>]</span></p></td>
 <td><p>Chemical equilibrium, combustion, propulsion performance</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong><a class="reference external" href="https://cantera.org/">Cantera</a></strong> <span id="id3">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span></p></td>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="https://cantera.org/">Cantera</a></strong> <span id="id3">[<a class="reference internal" href="references.html#id27" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span></p></td>
 <td><p>Chemical equilibrium, chemical kinetics, combustion, reactive flow simulations, transport, plasma and electrochemical systems</p></td>
 </tr>
-<tr class="row-even"><td><p><strong><a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a></strong> <span id="id4">[<a class="reference internal" href="references.html#id190" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>]</span></p></td>
+<tr class="row-even"><td><p><strong><a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt/">Caltech’s SD-Toolbox</a></strong> <span id="id4">[<a class="reference internal" href="references.html#id191" title="S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA, 2008. , https://shepherd.caltech.edu/EDL/PublicResources/sdt.">Browne <em>et al.</em>, 2008</a>]</span></p></td>
 <td><p>Shock waves, detonations, high-enthalpy reactive flows</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong><a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a></strong> <span id="id5">[<a class="reference internal" href="references.html#id21" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span></p></td>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="https://github.com/dzesmin/TEA">TEA</a></strong> <span id="id5">[<a class="reference internal" href="references.html#id22" title="J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. The Astrophysical Journal Supplement Series, 225(1):4 1–14, 2016. doi:10.3847/0067-0049/225/1/4.">Blecic <em>et al.</em>, 2016</a>]</span></p></td>
 <td><p>Thermochemical equilibrium of exoplanetary atmospheres</p></td>
 </tr>
 </tbody>
@@ -400,7 +401,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Caltech’s SD-Toolbox internally uses the <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id6">[<a class="reference internal" href="references.html#id26" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span> software packag for thermochemical calculations.</p>
+<p>Caltech’s SD-Toolbox internally uses the <a class="reference external" href="https://cantera.org/">Cantera</a> <span id="id6">[<a class="reference internal" href="references.html#id27" title="D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2021. Version 2.5.1. doi:10.5281/zenodo.4527812.">Goodwin <em>et al.</em>, 2021</a>]</span> software packag for thermochemical calculations.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1066,7 +1067,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+                Copyright &#169; 2022-2026, Alberto Cuadra Lara
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
