@@ -176,7 +176,7 @@
 
 <div class="announcement">
   <aside class="announcement-content">
-     <a class="no-underline"; href="https://www.researchgate.net/publication/371351094_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The preprint of the Combustion Toolbox v1.1.0 article is now available on ResearchGate!</a> 
+     <a class="no-underline"; href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium"; target="_blank"> The article of the Combustion Toolbox is now available on ResearchGate!</a> 
   </aside>
 </div>
 
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_2.html">Accessing the databases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_3.html">Defining chemical system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_4.html">Defining initial state of a mixture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basics/basics_5.html">Defining the caloric gas model</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tutorials/1_chemical_equilibrium.html">Chemical equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -273,7 +274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I.html">Incident shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_IONIZATION.html">Incident shock waves with ionization effects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_MACH.html">Incident shock waves for different Mach numbers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves for different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_I_THERMO.html">Incident shock waves using different thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_R.html">Incident and reflected shock waves for different pre-shock velocities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_BETA.html">Incident shock waves for different wave angles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_OBLIQUE_THETA.html">Incident shock waves for different deflection angles</a></li>
@@ -284,7 +285,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_POLAR_LIMIT_RR_ALTITUDE.html">Limit regular reflection of shock waves considering different altitudes and thermodynamic models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_SHOCK_PRANDTL_MEYER.html">Prandtl-Meyer expansion waves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS.html">Jump conditions for incident shock waves for different pre-shock velocities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves in different thermodynamic models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shock/examples_plain_JUMPCONDITIONS_THERMO.html">Jump conditions for incident shock waves using different thermodynamic models</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/detonation/examples_plain_detonation.html">Detonation waves</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -305,7 +306,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/rocket/examples_plain_ROCKET_FAC.html">Rocket performance considering the finite-area-chamber approximation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_shockTurbulence.html">Shock-turbulence interaction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL.html">Shock-Turbulence Interaction with vortical disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_VORTICAL_ENTROPIC.html">Shock-Turbulence Interaction with vortical and density-entropic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_ACOUSTIC.html">Shock-Turbulence Interaction with acoustic disturbances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/desktop/shockTurbulence/examples_plain_SHOCKTURBULENCE_COMPRESSIBLE.html">Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_turbulence.html">Turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/desktop/turbulence/examples_plain_TURBULENCE_HELMHOLTZ_DECOMPOSITION.html">Helmholtz decomposition and energy spectra analysis of a turbulent field</a></li>
 </ul>
 </li>
@@ -316,7 +324,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/common/index.html">Common classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/databases/index.html">Database classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation/api/core/index.html">Core classes</a></li>
@@ -370,58 +378,62 @@
 <div class="docutils container" id="id1">
 <div class="citation" id="id3" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<p>A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. <em>arXiv preprint arXiv:2409.15086</em>, 2024. <a class="reference external" href="https://arxiv.org/abs/2409.15086">arXiv:2409.15086</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2409.15086">doi:10.48550/arXiv.2409.15086</a>.</p>
+<p>A. Cuadra, C. Huete, and M. Vera. Combustion toolbox: an open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. <em>Computer Physics Communications</em>, 320:110004, 2026. <a class="reference external" href="https://doi.org/10.1016/j.cpc.2025.110004">doi:10.1016/j.cpc.2025.110004</a>.</p>
 </div>
-<div class="citation" id="id292" role="doc-biblioentry">
+<div class="citation" id="id293" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
 <p>J. Sánchez-Monreal, A. Cuadra, C. Huete, and M. Vera. SimEx: A Tool for the Rapid Evaluation of the Effects of Explosions. <em>Applied Sciences</em>, 2022. <a class="reference external" href="https://doi.org/10.3390/app12189101">doi:10.3390/app12189101</a>.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
+<div class="citation" id="id10" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
 <p>S. Gordon and B. J. McBride. Computer program for calculation of complex chemical equilibrium compositions and applications. Part 1: Analysis. <em>No. NAS 1.61:1311</em>, 1994.</p>
 </div>
-<div class="citation" id="id26" role="doc-biblioentry">
+<div class="citation" id="id27" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
 <p>D. G. Goodwin, R. L. Speth, H. K. Moffat, and B. W. Weber. Cantera: an object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. <a class="reference external" href="https://www.cantera.org">https://www.cantera.org</a>, 2021. Version 2.5.1. <a class="reference external" href="https://doi.org/10.5281/zenodo.4527812">doi:10.5281/zenodo.4527812</a>.</p>
 </div>
-<div class="citation" id="id190" role="doc-biblioentry">
+<div class="citation" id="id191" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
 <p>S. Browne, J. Ziegler, N. Bitter, B. Schmidt, J. Lawson, and J. E. Shepherd. SDToolbox - Numerical Tools for Shock and Detonation Wave Modeling. <em>GALCIT Technical Report FM2018.001 Revised January 2021, California Institute of Technology, Pasadena, CA</em>, 2008. , <a class="reference external" href="https://shepherd.caltech.edu/EDL/PublicResources/sdt">https://shepherd.caltech.edu/EDL/PublicResources/sdt</a>.</p>
 </div>
-<div class="citation" id="id25" role="doc-biblioentry">
+<div class="citation" id="id26" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
 <p>S. Browne, J. Ziegler, and J. E. Shepherd. Numerical solution methods for shock and detonation jump conditions. <em>GALCIT report FM2006</em>, 6:1–90, 2008.</p>
 </div>
-<div class="citation" id="id189" role="doc-biblioentry">
+<div class="citation" id="id190" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
 <p>B. J. McBride. <em>NASA Glenn coefficients for calculating thermodynamic properties of individual species</em>. National Aeronautics and Space Administration, Glenn Research Center, 2002.</p>
 </div>
-<div class="citation" id="id253" role="doc-biblioentry">
+<div class="citation" id="id254" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
 <p>A. Burcat and B. Ruscic. Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables). Technical Report, Argonne National Lab. (ANL), Argonne, IL (United States), 2005. <a class="reference external" href="https://doi.org/10.2172/925269">doi:10.2172/925269</a>.</p>
 </div>
-<div class="citation" id="id337" role="doc-biblioentry">
+<div class="citation" id="id338" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
 <p>F. N. Fritsch and R. E. Carlson. Monotone piecewise cubic interpolation. <em>SIAM Journal on Numerical Analysis</em>, 17(2):238–246, 1980. <a class="reference external" href="https://doi.org/10.1137/0717021">doi:10.1137/0717021</a>.</p>
 </div>
-<div class="citation" id="id279" role="doc-biblioentry">
+<div class="citation" id="id280" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
 <p>Martin Asplund, Nicolas Grevesse, A Jacques Sauval, and Pat Scott. The chemical composition of the sun. <em>Annual Review of Astronomy and Astrophysics</em>, 47:481–522, 2009. <a class="reference external" href="https://doi.org/10.1146/annurev.astro.46.060407.145222">doi:10.1146/annurev.astro.46.060407.145222</a>.</p>
 </div>
 <div class="citation" id="id4" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
+<p>A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. <em>arXiv preprint arXiv:2409.15086</em>, 2024. <a class="reference external" href="https://arxiv.org/abs/2409.15086">arXiv:2409.15086</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2409.15086">doi:10.48550/arXiv.2409.15086</a>.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
 <p>A. Cuadra, C. Huete, and M. Vera. Combustion Toolbox: A MATLAB-GUI based open-source tool for solving combustion problems. 2025. Version 1.2.7. <a class="reference external" href="https://doi.org/10.5281/zenodo.5554911">doi:10.5281/zenodo.5554911</a>.</p>
 </div>
-<div class="citation" id="id21" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<div class="citation" id="id22" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
 <p>J. Blecic, J. Harrington, and M. O. Bowman. TEA: A code calculating thermochemical equilibrium abundances. <em>The Astrophysical Journal Supplement Series</em>, 225(1):4 1–14, 2016. <a class="reference external" href="https://doi.org/10.3847/0067-0049/225/1/4">doi:10.3847/0067-0049/225/1/4</a>.</p>
 </div>
-<div class="citation" id="id12" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
+<div class="citation" id="id13" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
 <p>J. W. Stock, D. Kitzmann, A. B. C. Patzer, and E. Sedlmayr. FastChem: A computer program for efficient complex chemical equilibrium calculations in the neutral/ionized gas phase with applications to stellar and planetary atmospheres. <em>Monthly Notices of the Royal Astronomical Society</em>, 479(1):865–874, 2018. <a class="reference external" href="https://doi.org/10.1093/mnras/sty1531">doi:10.1093/mnras/sty1531</a>.</p>
 </div>
-<div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
 <p>B. J. McBride. <em>Computer program for Calculation of Complex Chemical Equilibrium Compositions and Applications</em>. Volume 2. NASA Lewis Research Center, 1996.</p>
 </div>
 </div>
@@ -449,7 +461,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022-2025, Alberto Cuadra Lara
+                Copyright &#169; 2022-2026, Alberto Cuadra Lara
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
