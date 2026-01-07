@@ -20,7 +20,7 @@ The {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` supercla
 
 ### PlotFigure
 
-The {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` class extends :mat:class:`Canvas` to provide a unified plotting interface for thermodynamic and transport properties (e.g., `cp`, `h`, `Xi`) against an arbitrary independent variable.
+The {mat:class}`~src.+combustiontoolbox.+utils.+display.@PlotFigure.PlotFigure` class extends {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` to provide a unified plotting interface for thermodynamic and transport properties (e.g., `cp`, `h`, `Xi`) against an arbitrary independent variable.
 
 :::{dropdown} Routines
 ```{eval-rst}
@@ -32,7 +32,7 @@ The {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` class ex
 
 ### PlotComposition
 
-The {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` class extends :mat:class:`Canvas` to generate species composition plots (e.g., molar fractions `Xi`) against an independent variable.
+The {mat:class}`~src.+combustiontoolbox.+utils.+display.@PlotComposition.PlotComposition` class extends {mat:class}`~src.+combustiontoolbox.+utils.+display.@Canvas.Canvas` to generate species composition plots (e.g., molar fractions `Xi`) against an independent variable.
 
 :::{dropdown} Routines
 ```{eval-rst}
@@ -105,7 +105,7 @@ This section includes various other utility functions and classes that don't fal
 
 ### Benchmark
 
-The :mat:func:`Benchmark` class is used to perform a set of benchmark tests using the Combustion Toolbox code. It measures and reports the average computational time of selected functions over multiple iterations.
+The {mat:class}`~src.+combustiontoolbox.+utils.@Benchmark.Benchmark` class is used to perform a set of benchmark tests using the Combustion Toolbox code. It measures and reports the average computational time of selected functions over multiple iterations.
 
 :::{dropdown} Routines
 ```{eval-rst}
@@ -117,7 +117,7 @@ The :mat:func:`Benchmark` class is used to perform a set of benchmark tests usin
 
 ### BenchmarkMetadata
 
-The :mat:func:`BenchmarkMetadata` class class is used to store and manage metadata information for benchmark tests in the Combustion Toolbox.
+The {mat:class}`~src.+combustiontoolbox.+utils.@BenchmarkMetadata.BenchmarkMetadata` class class is used to store and manage metadata information for benchmark tests in the Combustion Toolbox.
 
 :::{dropdown} Routines
 ```{eval-rst}
