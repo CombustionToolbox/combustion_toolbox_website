@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Turbulence module" href="../turbulence/index.html" /><link rel="prev" title="Rocket module" href="../rocket/index.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Shock–Turbulence Interaction module - Combustion Toolbox v1.2.7</title>
+        <title>Shock–Turbulence Interaction module - Combustion Toolbox v1.2.8</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.7</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.8</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -402,25 +402,39 @@ linear interaction analysis.</p>
 </ul>
 </dd>
 </dl>
-<p>These models are based on our previous theoretical work [1]
-and have been extended to multi-component mixtures [2-4] using the
-Combustion Toolbox [5].</p>
+<p>These models are based on our previous theoretical works [1-3]
+and have been extended to multi-component mixtures [4-7] using the
+Combustion Toolbox [8-9].</p>
 <p class="rubric">References</p>
 <dl class="simple">
 <dt>[1] Huete, C., Cuadra, A., Vera, M., Urzay, &amp; J. (2021). Thermochemical</dt><dd><p>effects on hypersonic shock waves interacting with weak turbulence.
 Physics of Fluids 33, 086111 (featured article). DOI: 10.1063/5.0059948.</p>
 </dd>
-<dt>[2] Cuadra, A., Vera, M., Di Renzo, M., &amp; Huete, C. (2023). Linear Theory</dt><dd><p>of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA
+<dt>[2] Huete, C., Velikovich, A. L., &amp; Wouchuk, J. G. (2011). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional
+random isotropic density field. Physical Review E—Statistical, Nonlinear, and
+Soft Matter Physics, 83(5), 056320. DOI: 10.1103/PhysRevE.83.056320.</p>
+</dd>
+<dt>[3] Huete, C., Wouchuk, J. G., &amp; Velikovich, A. L. (2012). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional random
+isotropic acoustic wave field. Physical Review E—Statistical, Nonlinear, and Soft
+Matter Physics, 85(2), 026312. DOI: 10.1063/5.0059948.</p>
+</dd>
+<dt>[4] Cuadra, A., Vera, M., Di Renzo, M., &amp; Huete, C. (2023). Linear Theory</dt><dd><p>of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA
 SciTech Forum, National Harbor, USA. DOI: 10.2514/6.2023-0075.</p>
 </dd>
-<dt>[3] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
+<dt>[5] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
 Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
 Stanford University.</p>
 </dd>
-<dt>[4] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
+<dt>[6] Cuadra, A., Williams, C. T., Di Renzo, M., &amp; Huete, C. The role of compressibility</dt><dd><p>and vibrational-excitation in hypersonic shock–turbulence interactions.
+Journal of Fluid Mechanics (under review).</p>
+</dd>
+<dt>[7] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
 DOI: 10.1063/5.0255816.</p>
 </dd>
-<dt>[5] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
+<dt>[8] Cuadra, A., Huete, C., &amp; Vera, M. (2026). Combustion Toolbox: An open-source</dt><dd><p>thermochemical code for gas-and condensed-phase problems involving chemical equilibrium.
+Computer Physics Communications 320, 110004. DOI:10.1016/j.cpc.2025.110004.</p>
+</dd>
+<dt>[9] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
 combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
@@ -466,9 +480,45 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dd><p>EquilibriumSolver object</p>
 </dd></dl>
 
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscosityPowerLawRatio">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDynamicViscosityPowerLawRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T1</span></em>, <em class="sig-param"><span class="pre">T2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscosityPowerLawRatio" title="Permalink to this definition">#</a></dt>
+<dd><p>Get dynamic viscosity ratio using a power-law model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock temperature [K]</p></li>
+<li><p><strong>T2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>muRatio (float)</em> – Dynamic viscosity ratio mu2/mu1</p>
+</dd>
+</dl>
+<p>Note: This is a temporal function and will be overriden with a specific TransportProperties class in future releases.</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscositySutherlandRatio">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDynamicViscositySutherlandRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T1</span></em>, <em class="sig-param"><span class="pre">T2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscositySutherlandRatio" title="Permalink to this definition">#</a></dt>
+<dd><p>Get dynamic viscosity ratio using Sutherland’s law model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock temperature [K]</p></li>
+<li><p><strong>T2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock temperature [K]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>muRatio (float)</em> – Dynamic viscosity ratio mu2/mu1</p>
+</dd>
+</dl>
+<p>Note: This is a temporal function and will be overriden with a specific TransportProperties class in future releases.</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength">
-<span class="sig-name descname"><span class="pre">getKolmogorovLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getKolmogorovLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength" title="Permalink to this definition">#</a></dt>
 <dd><p>Estimate Kolmogorov length scale ratio across the shock</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -477,14 +527,23 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <li><p><strong>results</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct with results from LIA</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>kolmogorovLengthRatio (float)</em> – Kolmogorov length scale ratio</p>
+</dl>
+<dl class="simple">
+<dt>Optional name-value pairs:</dt><dd><ul class="simple">
+<li><p>viscosityModel (char): Viscosity model to compute dynamic viscosity ratio across the shock (‘powerlaw’ or ‘sutherland’)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>kolmogorovLengthRatio (float)</em> – Kolmogorov length scale ratio</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>kolmogorovLengthRatio = getKolmogorovLength(ShockTurbulenceSolver(), results);</p>
 </div>
+<p>Note: The calculation of the dynamic viscosity ratio is based on temporal functions and will be overriden with a specific TransportProperties class in future releases.</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -613,8 +672,8 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 turbulence amplification across a shock wave interacting with weak turbulence
 comprised of vortical disturbances using linear theory.</p>
 <p>These models are based on our previous theoretical work [1]
-and have been extended to multi-component mixtures [2-4] using the
-Combustion Toolbox [5].</p>
+and have been extended to multi-component mixtures [2-5] using the
+Combustion Toolbox [6-7].</p>
 <p class="rubric">References</p>
 <dl class="simple">
 <dt>[1] Huete, C., Cuadra, A., Vera, M., Urzay, &amp; J. (2021). Thermochemical</dt><dd><p>effects on hypersonic shock waves interacting with weak turbulence.
@@ -627,10 +686,16 @@ SciTech Forum, National Harbor, USA. DOI: 10.2514/6.2023-0075.</p>
 Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
 Stanford University.</p>
 </dd>
-<dt>[4] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
+<dt>[4] Cuadra, A., Williams, C. T., Di Renzo, M., &amp; Huete, C. The role of compressibility</dt><dd><p>and vibrational-excitation in hypersonic shock–turbulence interactions.
+Journal of Fluid Mechanics (under review).</p>
+</dd>
+<dt>[5] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
 DOI: 10.1063/5.0255816.</p>
 </dd>
-<dt>[5] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
+<dt>[6] Cuadra, A., Huete, C., &amp; Vera, M. (2026). Combustion Toolbox: An open-source</dt><dd><p>thermochemical code for gas-and condensed-phase problems involving chemical equilibrium.
+Computer Physics Communications 320, 110004. DOI:10.1016/j.cpc.2025.110004.</p>
+</dd>
+<dt>[7] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
 combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
@@ -739,10 +804,7 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages">
 <span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages" title="Permalink to this definition">#</a></dt>
-<dd><p>getAverages Compute the amplification ratios.</p>
-<blockquote>
-<div><p>results = getAverages(obj, R, M2, Gammas)</p>
-</div></blockquote>
+<dd><p>Compute the post-shock turbulence statistics for vortical disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -753,7 +815,7 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with computed averages (K, L, T, etc.)</p>
+<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -795,22 +857,35 @@ wavenumber contributions in the post-shock turbulence model</p>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockTurbulenceModelVorticalEntropic()</span></code></a> class characterizes
 turbulence amplification across a shock wave interacting with weak turbulence
 comprised of vortical-entropic disturbances using linear theory.</p>
-<p>These models are based on our previous theoretical work [1]
-and have been extended to multi-component mixtures [2, 3] using the
-Combustion Toolbox [4].</p>
+<p>These models are based on our previous theoretical works [1-2]
+and have been extended to multi-component mixtures [3-6] using the
+Combustion Toolbox [7-8].</p>
 <p class="rubric">References</p>
 <dl class="simple">
 <dt>[1] Huete, C., Cuadra, A., Vera, M., Urzay, &amp; J. (2021). Thermochemical</dt><dd><p>effects on hypersonic shock waves interacting with weak turbulence.
 Physics of Fluids 33, 086111 (featured article). DOI: 10.1063/5.0059948.</p>
 </dd>
-<dt>[2] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
+<dt>[2] Huete, C., Velikovich, A. L., &amp; Wouchuk, J. G. (2011). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional
+random isotropic density field. Physical Review E—Statistical, Nonlinear, and
+Soft Matter Physics, 83(5), 056320. DOI: 10.1103/PhysRevE.83.056320.</p>
+</dd>
+<dt>[3] Cuadra, A., Vera, M., Di Renzo, M., &amp; Huete, C. (2023). Linear Theory</dt><dd><p>of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA
+SciTech Forum, National Harbor, USA. DOI: 10.2514/6.2023-0075.</p>
+</dd>
+<dt>[4] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
 Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
 Stanford University.</p>
 </dd>
-<dt>[3] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
+<dt>[5] Cuadra, A., Williams, C. T., Di Renzo, M., &amp; Huete, C. The role of compressibility</dt><dd><p>and vibrational-excitation in hypersonic shock–turbulence interactions.
+Journal of Fluid Mechanics (under review).</p>
+</dd>
+<dt>[6] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
 DOI: 10.1063/5.0255816.</p>
 </dd>
-<dt>[4] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
+<dt>[7] Cuadra, A., Huete, C., &amp; Vera, M. (2026). Combustion Toolbox: An open-source</dt><dd><p>thermochemical code for gas-and condensed-phase problems involving chemical equilibrium.
+Computer Physics Communications 320, 110004. DOI:10.1016/j.cpc.2025.110004.</p>
+</dd>
+<dt>[8] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
 combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
@@ -919,24 +994,21 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages">
 <span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">chi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages" title="Permalink to this definition">#</a></dt>
-<dd><p>getAverages Compute the amplification ratios.</p>
-<blockquote>
-<div><p>results = getAverages(obj, R, M2, Gammas, Gammas1, beta, chi)</p>
-</div></blockquote>
+<dd><p>Compute the post-shock turbulence statistics for vortical-entropic disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelVorticalEntropic</span></code></a></span>) – ShockTurbulenceModelVorticalEntropic object</p></li>
 <li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
 <li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope</p></li>
+<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
+<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
 <li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
 <li><p><strong>chi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mean correlation coefficient between the vortical and entropic modes</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with computed averages (K, L, T, etc.)</p>
+<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -993,8 +1065,8 @@ wavenumber contributions in the post-shock turbulence model</p>
 turbulence amplification across a shock wave interacting with weak turbulence
 comprised of acoustic disturbances using linear theory.</p>
 <p>These models are based on our previous theoretical work [1]
-and have been extended to multi-component mixtures [2] using the
-Combustion Toolbox [3].</p>
+and have been extended to multi-component mixtures [2-3] using the
+Combustion Toolbox [4-5].</p>
 <p class="rubric">References</p>
 <dl class="simple">
 <dt>[1] Huete, C., Wouchuk, J. G., &amp; Velikovich, A. L. (2012). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional random
@@ -1005,7 +1077,13 @@ Matter Physics, 85(2), 026312. DOI: 10.1063/5.0059948.</p>
 Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
 Stanford University.</p>
 </dd>
-<dt>[3] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
+<dt>[3] Cuadra, A., Williams, C. T., Di Renzo, M., &amp; Huete, C. The role of compressibility</dt><dd><p>and vibrational-excitation in hypersonic shock–turbulence interactions.
+Journal of Fluid Mechanics (under review).</p>
+</dd>
+<dt>[4] Cuadra, A., Huete, C., &amp; Vera, M. (2026). Combustion Toolbox: An open-source</dt><dd><p>thermochemical code for gas-and condensed-phase problems involving chemical equilibrium.
+Computer Physics Communications 320, 110004. DOI:10.1016/j.cpc.2025.110004.</p>
+</dd>
+<dt>[5] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
 combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
@@ -1126,23 +1204,20 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages">
 <span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">Gammas3</span></em>, <em class="sig-param"><span class="pre">beta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages" title="Permalink to this definition">#</a></dt>
-<dd><p>getAverages Compute the amplification ratios.</p>
-<blockquote>
-<div><p>results = getAverages(R, M2, Gammas, Gammas1, Gammas3, beta)</p>
-</div></blockquote>
+<dd><p>Compute the post-shock turbulence statistics for acoustic disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelAcoustic</span></code></a></span>) – ShockTurbulenceModelAcoustic object</p></li>
 <li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
 <li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope</p></li>
+<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
+<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
 <li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with computed averages (K, L, T, etc.)</p>
+<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1184,21 +1259,39 @@ wavenumber contributions in the post-shock turbulence model</p>
 <p>The <a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">ShockTurbulenceModelCompressible()</span></code></a> class characterizes
 turbulence amplification across a shock wave interacting with weak turbulence
 comprised of vortical-entropic and acoustic disturbances using linear theory.</p>
-<p>These models are based on our previous theoretical work [1]
-and have been extended to multi-component mixtures [2, 3] using the
-Combustion Toolbox [4].</p>
+<p>These models are based on our previous theoretical works [1-3]
+and have been extended to multi-component mixtures [4-7] using the
+Combustion Toolbox [8-9].</p>
 <p class="rubric">References</p>
 <dl class="simple">
 <dt>[1] Huete, C., Cuadra, A., Vera, M., Urzay, &amp; J. (2021). Thermochemical</dt><dd><p>effects on hypersonic shock waves interacting with weak turbulence.
 Physics of Fluids 33, 086111 (featured article). DOI: 10.1063/5.0059948.</p>
 </dd>
-<dt>[2] Cuadra, A., Vera, M., Di Renzo, M., &amp; Huete, C. (2023). Linear Theory</dt><dd><p>of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA
+<dt>[2] Huete, C., Velikovich, A. L., &amp; Wouchuk, J. G. (2011). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional
+random isotropic density field. Physical Review E—Statistical, Nonlinear, and
+Soft Matter Physics, 83(5), 056320. DOI: 10.1103/PhysRevE.83.056320.</p>
+</dd>
+<dt>[3] Huete, C., Wouchuk, J. G., &amp; Velikovich, A. L. (2012). Analytical linear theory</dt><dd><p>for the interaction of a planar shock wave with a two-or three-dimensional random
+isotropic acoustic wave field. Physical Review E—Statistical, Nonlinear, and Soft
+Matter Physics, 85(2), 026312. DOI: 10.1063/5.0059948.</p>
+</dd>
+<dt>[4] Cuadra, A., Vera, M., Di Renzo, M., &amp; Huete, C. (2023). Linear Theory</dt><dd><p>of Hypersonic Shocks Interacting with Turbulence in Air. In 2023 AIAA
 SciTech Forum, National Harbor, USA. DOI: 10.2514/6.2023-0075.</p>
 </dd>
-<dt>[3] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
+<dt>[5] Cuadra, A., Williams, C. T., Di Renzo, M. &amp; Huete, C. (2024). Compressibility</dt><dd><p>and vibrational-excitation effects in hypersonic shock-turbulence interaction.
+Tech. Rep. Summer Program Proceedings, Center for Turbulence Research,
+Stanford University.</p>
+</dd>
+<dt>[6] Cuadra, A., Williams, C. T., Di Renzo, M., &amp; Huete, C. The role of compressibility</dt><dd><p>and vibrational-excitation in hypersonic shock–turbulence interactions.
+Journal of Fluid Mechanics (under review).</p>
+</dd>
+<dt>[7] Cuadra, A., Di Renzo, M., Hoste, J. J. O., Williams, C. T., Vera, M., &amp; Huete, C. (2025).</dt><dd><p>Review of shock-turbulence interaction with a focus on hypersonic flow. Physics of Fluids, 37(4).
 DOI: 10.1063/5.0255816.</p>
 </dd>
-<dt>[4] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
+<dt>[8] Cuadra, A., Huete, C., &amp; Vera, M. (2026). Combustion Toolbox: An open-source</dt><dd><p>thermochemical code for gas-and condensed-phase problems involving chemical equilibrium.
+Computer Physics Communications 320, 110004. DOI:10.1016/j.cpc.2025.110004.</p>
+</dd>
+<dt>[9] Cuadra, A., Huete, C., Vera, M. (2022). Combustion Toolbox:</dt><dd><p>A MATLAB-GUI based open-source tool for solving gaseous
 combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
@@ -1228,32 +1321,30 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages">
-<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">Gammas3</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">eta</span></em>, <em class="sig-param"><span class="pre">chi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages" title="Permalink to this definition">#</a></dt>
-<dd><p>getAverages Compute the amplification ratios.</p>
-<blockquote>
-<div><p>results = getAverages(R, M2, Gammas, Gammas1, Gammas3, beta, eta, chi)</p>
-</div></blockquote>
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">Gammas3</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">eta</span></em>, <em class="sig-param"><span class="pre">chi</span></em>, <em class="sig-param"><span class="pre">etaVorticity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the post-shock turbulence statistics by superposing the contributions of acoustic and vortical-entropic fluctuations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelCompressible</span></code></a></span>) – ShockTurbulenceModelCompressible object</p></li>
 <li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
 <li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope</p></li>
-<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugonito slope</p></li>
+<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
+<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
+<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
 <li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
 <li><p><strong>eta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – square ratio of vortical to acoustic disturbances</p></li>
 <li><p><strong>chi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mean correlation coefficient between the vortical and entropic modes</p></li>
+<li><p><strong>etaVorticity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Downstream vorticity generated by acoustic disturbances across the shock normalized by the upstream rotational-entropic vorticity</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with computed averages (K, L, T, etc.)</p>
+<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>averages = getAverages(ShockTurbulenceModelCompressible(), R, M2, Gammas, Gammas1, Gammas3, beta, eta, chi);</p>
+<p>averages = getAverages(ShockTurbulenceModelCompressible(), R, M2, Gammas, Gammas1, Gammas3, beta, eta, chi, etaVorticity);</p>
 </div>
 </dd></dl>
 

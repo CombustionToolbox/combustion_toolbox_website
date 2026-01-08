@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Turbulence" href="../turbulence/examples_plain_turbulence.html" /><link rel="prev" title="Shock-Turbulence Interaction with acoustic disturbances" href="examples_plain_SHOCKTURBULENCE_ACOUSTIC.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances) - Combustion Toolbox v1.2.7</title>
+        <title>Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances) - Combustion Toolbox v1.2.8</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
@@ -189,7 +189,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.7</div></a>
+      <a href="../../../index.html"><div class="brand">Combustion Toolbox v1.2.8</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -462,7 +462,7 @@
 <span class="linenos">85</span><span class="n">shockTurbulence</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockTurbulenceSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;compressible&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">caloricGasModel</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">86</span>
 <span class="linenos">87</span><span class="c">% Solve LIA</span><span class="w"></span>
-<span class="linenos">88</span><span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;eta&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">88</span><span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;eta&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;etaVorticity&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;viscosityModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;sutherland&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">89</span>
 <span class="linenos">90</span><span class="c">% Report results</span><span class="w"></span>
 <span class="linenos">91</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">results</span><span class="p">);</span><span class="w"></span>
