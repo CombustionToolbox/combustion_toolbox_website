@@ -376,7 +376,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="shock-turbulence-interaction-with-compressible-turbulence-vortical-entropic-and-acoustic-disturbances">
 <h1>Shock-Turbulence Interaction with compressible turbulence (vortical, entropic, and acoustic disturbances)<a class="headerlink" href="#shock-turbulence-interaction-with-compressible-turbulence-vortical-entropic-and-acoustic-disturbances" title="Permalink to this heading">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="c">% Example of compressible Shock-Turbulence Interaction using LIA</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: SHOCKTURBULENCE_COMPRESSIBLE</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
 <span class="linenos"> 4</span><span class="c">% This example computes the Linear Interaction Analysis (LIA) solution for </span><span class="w"></span>
 <span class="linenos"> 5</span><span class="c">% a compressible shock–turbulence interaction involving upstream vortical</span><span class="w"></span>
@@ -430,7 +430,7 @@
 <span class="linenos">53</span><span class="c">%</span><span class="w"></span>
 <span class="linenos">54</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
 <span class="linenos">55</span><span class="c">%                 </span><span class="w"></span>
-<span class="linenos">56</span><span class="c">% Last update Dec 16 2025</span><span class="w"></span>
+<span class="linenos">56</span><span class="c">% Last update January 12, 2026</span><span class="w"></span>
 <span class="linenos">57</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
 <span class="linenos">58</span>
 <span class="linenos">59</span><span class="c">% Import packages</span><span class="w"></span>
@@ -455,17 +455,20 @@
 <span class="linenos">78</span><span class="c">% Define chemical state</span><span class="w"></span>
 <span class="linenos">79</span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 <span class="linenos">80</span>
-<span class="linenos">81</span><span class="c">% Define propertiescle</span><span class="w"></span>
-<span class="linenos">82</span><span class="n">mixArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mach&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mach</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">81</span><span class="c">% Define properties</span><span class="w"></span>
+<span class="linenos">82</span><span class="n">mixArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mach&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mach</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;eta&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">83</span>
 <span class="linenos">84</span><span class="c">% Invoke ShockTurbulenceSolver and select problem</span><span class="w"></span>
 <span class="linenos">85</span><span class="n">shockTurbulence</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockTurbulenceSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;compressible&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">caloricGasModel</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">86</span>
-<span class="linenos">87</span><span class="c">% Solve LIA</span><span class="w"></span>
-<span class="linenos">88</span><span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;eta&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chi&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;etaVorticity&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;viscosityModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;sutherland&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">87</span><span class="c">% Update viscosity model</span><span class="w"></span>
+<span class="linenos">88</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">shockTurbulenceModel</span><span class="p">.</span><span class="n">viscosityModel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;sutherland&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="linenos">89</span>
-<span class="linenos">90</span><span class="c">% Report results</span><span class="w"></span>
-<span class="linenos">91</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">results</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">90</span><span class="c">% Solve LIA</span><span class="w"></span>
+<span class="linenos">91</span><span class="p">[</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">92</span>
+<span class="linenos">93</span><span class="c">% Report results</span><span class="w"></span>
+<span class="linenos">94</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

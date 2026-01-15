@@ -376,7 +376,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="shock-turbulence-interaction-with-vortical-and-density-entropic-disturbances">
 <h1>Shock-Turbulence Interaction with vortical and density-entropic disturbances<a class="headerlink" href="#shock-turbulence-interaction-with-vortical-and-density-entropic-disturbances" title="Permalink to this heading">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="c">% Example of a vortical-entropic Shock-Turbulence Interaction using LIA</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: SHOCKTURBULENCE_VORTICAL_ENTROPIC</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
 <span class="linenos"> 4</span><span class="c">% This example computes the Linear Interaction Analysis (LIA) solution for</span><span class="w"></span>
 <span class="linenos"> 5</span><span class="c">% a shock–turbulence interaction involving upstream vortical–entropic</span><span class="w"></span>
@@ -420,7 +420,7 @@
 <span class="linenos">43</span><span class="c">%</span><span class="w"></span>
 <span class="linenos">44</span><span class="c">% @author: Alberto Cuadra Lara</span><span class="w"></span>
 <span class="linenos">45</span><span class="c">%</span><span class="w"></span>
-<span class="linenos">46</span><span class="c">% Last update: December 16, 2025</span><span class="w"></span>
+<span class="linenos">46</span><span class="c">% Last update: January 12, 2026</span><span class="w"></span>
 <span class="linenos">47</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
 <span class="linenos">48</span>
 <span class="linenos">49</span><span class="c">% Import packages</span><span class="w"></span>
@@ -431,7 +431,7 @@
 <span class="linenos">54</span>
 <span class="linenos">55</span><span class="c">% Definitions</span><span class="w"></span>
 <span class="linenos">56</span><span class="n">mach</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">combustiontoolbox</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">clusteredMesh1D</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">],</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span><span class="w"> </span><span class="n">mach</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
-<span class="linenos">57</span>
+<span class="linenos">57</span><span class="n">mach</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
 <span class="linenos">58</span><span class="c">% Define caloric gas model</span><span class="w"></span>
 <span class="linenos">59</span><span class="n">caloricGasModel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CaloricGasModel</span><span class="p">.</span><span class="n">imperfect</span><span class="p">;</span><span class="w"></span>
 <span class="linenos">60</span>
@@ -448,16 +448,16 @@
 <span class="linenos">71</span><span class="nb">set</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;O2&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="mi">79</span><span class="o">/</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 <span class="linenos">72</span>
 <span class="linenos">73</span><span class="c">% Define propertiescle</span><span class="w"></span>
-<span class="linenos">74</span><span class="n">mixArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mach&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mach</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">74</span><span class="n">mixArray</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">setProperties</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.01325</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mach&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mach</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chi&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">75</span>
 <span class="linenos">76</span><span class="c">% Invoke ShockTurbulenceSolver and select problem</span><span class="w"></span>
 <span class="linenos">77</span><span class="n">shockTurbulence</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockTurbulenceSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;vortical_entropic&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">caloricGasModel</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">78</span>
 <span class="linenos">79</span><span class="c">% Solve LIA</span><span class="w"></span>
-<span class="linenos">80</span><span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chi&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">80</span><span class="p">[</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">81</span>
 <span class="linenos">82</span><span class="c">% Report results</span><span class="w"></span>
-<span class="linenos">83</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">results</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">83</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

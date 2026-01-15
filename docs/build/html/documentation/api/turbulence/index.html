@@ -453,8 +453,12 @@ Available: <a class="reference external" href="http://math.mit.edu/~stevenj/fft-
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>STOP (float)</em> – Relative error doing the decomposition
-status (bool): Flag indicating if the checks passed</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>STOP (float): Relative error doing the decomposition</p></li>
+<li><p>status (bool): Flag indicating if the checks passed</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -468,8 +472,12 @@ status (bool): Flag indicating if the checks passed</p>
 <dd class="field-odd"><p><strong>velocity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></span>) – VelocityField instance with fields (u, v, w) containing the velocity components (fluctuations)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>solenoidal (VelocityField)</em> – VelocityField instance with fields (u, v, w) containing the solenoidal velocity components (fluctuations)
-dilatational (VelocityField): VelocityField instance with fields (u, v, w) containing the dilatational velocity components (fluctuations)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>solenoidal (VelocityField): VelocityField instance with fields (u, v, w) containing the solenoidal velocity components (fluctuations)</p></li>
+<li><p>dilatational (VelocityField): VelocityField instance with fields (u, v, w) containing the dilatational velocity components (fluctuations)</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -488,8 +496,12 @@ dilatational (VelocityField): VelocityField instance with fields (u, v, w) conta
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>chi (float)</em> – Correlation between the entropic density and the soleonidal part of the velocity field
-chiVariance (float): Variance of the correlation</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>chi (float): Correlation between the entropic density and the soleonidal part of the velocity field</p></li>
+<li><p>chiVariance (float): Variance of the correlation</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -512,8 +524,12 @@ spectral differentiation</p>
 <dd class="field-odd"><p><strong>velocity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></span>) – VelocityField object with fields u, v, w</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>omega_mag (float)</em> – 3D Array with the vorticity field
-div_u (float): 3D Array with the divergence of the velocity field</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>omega_mag (float): 3D Array with the vorticity field</p></li>
+<li><p>div_u (float): 3D Array with the divergence of the velocity field</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -527,9 +543,13 @@ div_u (float): 3D Array with the divergence of the velocity field</p>
 <dd class="field-odd"><p><strong>sz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Size of the 3D array</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>KX (float)</em> – 3D array with the wave number in the x-direction
-KY (float): 3D array with the wave number in the y-direction
-KZ (float): 3D array with the wave number in the z-direction</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>KX (float): 3D array with the wave number in the x-direction</p></li>
+<li><p>KY (float): 3D array with the wave number in the y-direction</p></li>
+<li><p>KZ (float): 3D array with the wave number in the z-direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -575,10 +595,14 @@ KZ (float): 3D array with the wave number in the z-direction</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>solenoidal (VelocityField)</em> – VelocityField object with fields (u, v, w) containing the solenoidal velocity components (fluctuations)
-dilatational (VelocityField): VelocityField with fields (u, v, w) containing the dilatational velocity components (fluctuations)
-velocity (VelocityField): VelocityField with fields (u, v, w) containing the velocity components (fluctuations)
-STOP (float): Relative error doing the decomposition</p>
+<dd class="field-odd"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>solenoidal (VelocityField): VelocityField object with fields (u, v, w) containing the solenoidal velocity components (fluctuations)</p></li>
+<li><p>dilatational (VelocityField): VelocityField with fields (u, v, w) containing the dilatational velocity components (fluctuations)</p></li>
+<li><p>velocity (VelocityField): VelocityField with fields (u, v, w) containing the velocity components (fluctuations)</p></li>
+<li><p>STOP (float): Relative error doing the decomposition</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -675,8 +699,12 @@ The homogeneous plane are the first two dimensions of the 3D field.</p>
 <dd class="field-odd"><p><strong>EK</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D energy spectra (combined from all velocity components)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>EK_avg (float)</em> – Radially averaged energy spectra for the slices
-k (float): Wavenumber along the homogeneous direction</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>EK_avg (float): Radially averaged energy spectra for the slices</p></li>
+<li><p>k (float): Wavenumber along the homogeneous direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -695,8 +723,12 @@ The homogeneous plane corresponds to the first two dimensions.</p>
 <dd class="field-odd"><p><strong>EK</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D energy spectra (combined from all velocity components)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>EK_avg2D (float)</em> – 2D radially averaged energy spectra
-k (float): Wavenumber along homogeneous directions</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>EK_avg2D (float): 2D radially averaged energy spectra</p></li>
+<li><p>k (float): Wavenumber along homogeneous directions</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -785,10 +817,14 @@ inhomogeneous axis.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>EK_avg (float)</em> – Averaged energy spectra
-k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)
-kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)
-kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>EK_avg (float): Averaged energy spectra</p></li>
+<li><p>k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)</p></li>
+<li><p>kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)</p></li>
+<li><p>kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -812,10 +848,14 @@ kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp�
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>EK_avg (float)</em> – Averaged energy spectra
-k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)
-kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)
-kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>EK_avg (float): Averaged energy spectra</p></li>
+<li><p>k (float): Wavenumber along the homogeneous direction (‘spherical’, ‘spherical2D’, ‘crossplane’, ‘crossplane2D’)</p></li>
+<li><p>kParalell (float): Wavenumber along the parallel direction (‘spherical2dPerp’)</p></li>
+<li><p>kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp’)</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -860,9 +900,13 @@ kPerp (float): Wavenumber along the perpendicular direction (‘spherical2dPerp�
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>pdf (float)</em> – Joint probability density function
-edgesX (float): Bin edges for fluctuationX
-edgesY (float): Bin edges for fluctuationY</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>pdf (float): Joint probability density function</p></li>
+<li><p>edgesX (float): Bin edges for fluctuationX</p></li>
+<li><p>edgesY (float): Bin edges for fluctuationY</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -880,8 +924,12 @@ edgesY (float): Bin edges for fluctuationY</p>
 <dd class="field-odd"><p><strong>fluctuation</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – 3D fluctuation field</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>pdf (float)</em> – Probability density function
-edges (float): Bin edges</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>pdf (float): Probability density function</p></li>
+<li><p>edges (float): Bin edges</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -941,9 +989,13 @@ from the two dimensions orthogonal to the specified axis.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>EK_avg2D (float)</em> – Spherically averaged 2D energy spectra E(kParalell, kPerp)
-kParalell (float): Wavenumber along the parallel direction
-kPerp (float): Wavenumber along the perpendicular direction</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>EK_avg2D (float): Spherically averaged 2D energy spectra E(kParalell, kPerp)</p></li>
+<li><p>kParalell (float): Wavenumber along the parallel direction</p></li>
+<li><p>kPerp (float): Wavenumber along the perpendicular direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1127,17 +1179,16 @@ properties of a velocity field.</p>
 <dd><p>Compute angular wave numbers for FFT</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Size of the 3D array</p></li>
-<li><p><strong>Lx</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the x-direction</p></li>
-<li><p><strong>Ly</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the y-direction</p></li>
-<li><p><strong>Lz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Length in the z-direction</p></li>
-</ul>
+<dd class="field-odd"><p><strong>sz</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Size of the 3D array</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>KX (float)</em> – 3D array with the angular wave number in the x-direction
-KY (float): 3D array with the angular wave number in the y-direction
-KZ (float): 3D array with the angular wave number in the z-direction</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>KX (float): 3D array with the angular wave number in the x-direction</p></li>
+<li><p>KY (float): 3D array with the angular wave number in the y-direction</p></li>
+<li><p>KZ (float): 3D array with the angular wave number in the z-direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1235,9 +1286,13 @@ KZ (float): 3D array with the angular wave number in the z-direction</p>
 <dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Lx (float)</em> – Length in the x-direction
-Ly (float): Length in the y-direction
-Lz (float): Length in the z-direction</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>Lx (float): Length in the x-direction</p></li>
+<li><p>Ly (float): Length in the y-direction</p></li>
+<li><p>Lz (float): Length in the z-direction</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1251,9 +1306,13 @@ Lz (float): Length in the z-direction</p>
 <dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>U (float)</em> – FFT of the u component
-V (float): FFT of the v component
-W (float): FFT of the w component</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>U (float): FFT of the u component</p></li>
+<li><p>V (float): FFT of the v component</p></li>
+<li><p>W (float): FFT of the w component</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1391,8 +1450,12 @@ W (float): FFT of the w component</p>
 <dd class="field-odd"><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField" title="src.+combustiontoolbox.+turbulence.&#64;VelocityField.VelocityField"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">VelocityField</span></code></a></span>) – VelocityField object with fields u, v, w</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>omega_mag (float)</em> – 3D Array with the vorticity field
-div_u (float): 3D Array with the divergence of the velocity field</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>omega_mag (float): 3D Array with the vorticity field</p></li>
+<li><p>div_u (float): 3D Array with the divergence of the velocity field</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">

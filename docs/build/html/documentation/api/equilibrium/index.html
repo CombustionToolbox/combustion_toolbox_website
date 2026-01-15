@@ -1085,7 +1085,7 @@ mix2 = equilibrateT(EquilibriumSolver(), mix1, mix2, 3000, molesGuess)</p>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+equilibrium.&#64;EquilibriumSolver.equilibriumDerivatives">
-<span class="sig-name descname"><span class="pre">equilibriumDerivatives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">J</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">indexElements</span></em>, <em class="sig-param"><span class="pre">H0RT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumDerivatives" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">equilibriumDerivatives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">J</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">A0</span></em>, <em class="sig-param"><span class="pre">NE</span></em>, <em class="sig-param"><span class="pre">indexGas</span></em>, <em class="sig-param"><span class="pre">indexCondensed</span></em>, <em class="sig-param"><span class="pre">H0RT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+equilibrium.@EquilibriumSolver.equilibriumDerivatives" title="Permalink to this definition">#</a></dt>
 <dd><p>Obtain thermodynamic derivative of the moles of the species and of the moles of the mixture
 respect to temperature and pressure from a given composition [moles] at equilibrium</p>
 <dl class="field-list simple">
@@ -1097,7 +1097,6 @@ respect to temperature and pressure from a given composition [moles] at equilibr
 <li><p><strong>NE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal total number of elements</p></li>
 <li><p><strong>indexGas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of gaseous species in the final mixture</p></li>
 <li><p><strong>indexCondensed</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of condensed species in the final mixture</p></li>
-<li><p><strong>indexElements</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temporal index of elements in the final mixture</p></li>
 <li><p><strong>H0RT</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Dimensionless enthalpy</p></li>
 </ul>
 </dd>
@@ -1114,7 +1113,7 @@ respect to temperature and pressure from a given composition [moles] at equilibr
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>[dNi_T, dN_T, dNi_p, dN_p] = equilibriumDerivatives(J, N, A0, NE, ind, indexGas, indexCondensed, indexElements, H0RT)</p>
+<p>[dNi_T, dN_T, dNi_p, dN_p] = equilibriumDerivatives(J, N, A0, NE, ind, indexGas, indexCondensed, H0RT)</p>
 </div>
 </dd></dl>
 
