@@ -439,12 +439,6 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 </dd>
 </dl>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_INTERPOLATE">
-<span class="sig-name descname"><span class="pre">FLAG_INTERPOLATE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_INTERPOLATE" title="Permalink to this definition">#</a></dt>
-<dd><p>Flag to interpolate data in a smaller grid</p>
-</dd></dl>
-
-<dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_PAPER">
 <span class="sig-name descname"><span class="pre">FLAG_PAPER</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_PAPER" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to compute Gammas_i as in Cuadra2024b</p>
@@ -458,7 +452,7 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_RESULTS">
-<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'false'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">FLAG_RESULTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'true'</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.FLAG_RESULTS" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag to show results in the command window</p>
 </dd></dl>
 
@@ -480,70 +474,27 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dd><p>EquilibriumSolver object</p>
 </dd></dl>
 
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscosityPowerLawRatio">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDynamicViscosityPowerLawRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T1</span></em>, <em class="sig-param"><span class="pre">T2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscosityPowerLawRatio" title="Permalink to this definition">#</a></dt>
-<dd><p>Get dynamic viscosity ratio using a power-law model</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>T1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock temperature [K]</p></li>
-<li><p><strong>T2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock temperature [K]</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>muRatio (float)</em> – Dynamic viscosity ratio mu2/mu1</p>
-</dd>
-</dl>
-<p>Note: This is a temporal function and will be overriden with a specific TransportProperties class in future releases.</p>
-</dd></dl>
-
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscositySutherlandRatio">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">getDynamicViscositySutherlandRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T1</span></em>, <em class="sig-param"><span class="pre">T2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getDynamicViscositySutherlandRatio" title="Permalink to this definition">#</a></dt>
-<dd><p>Get dynamic viscosity ratio using Sutherland’s law model</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>T1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Pre-shock temperature [K]</p></li>
-<li><p><strong>T2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock temperature [K]</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>muRatio (float)</em> – Dynamic viscosity ratio mu2/mu1</p>
-</dd>
-</dl>
-<p>Note: This is a temporal function and will be overriden with a specific TransportProperties class in future releases.</p>
-</dd></dl>
-
 <dl class="mat method">
-<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength">
-<span class="sig-name descname"><span class="pre">getKolmogorovLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getKolmogorovLength" title="Permalink to this definition">#</a></dt>
-<dd><p>Estimate Kolmogorov length scale ratio across the shock</p>
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.getJumpConditions">
+<span class="sig-name descname"><span class="pre">getJumpConditions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.getJumpConditions" title="Permalink to this definition">#</a></dt>
+<dd><p>Get jump conditions across the shock for an array of Mixture objects</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></a></span>) – ShockTurbulenceSolver object</p></li>
-<li><p><strong>results</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct with results from LIA</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Initial Mixture objects</p></li>
 </ul>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Optional name-value pairs:</dt><dd><ul class="simple">
-<li><p>viscosityModel (char): Viscosity model to compute dynamic viscosity ratio across the shock (‘powerlaw’ or ‘sutherland’)</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>jumpConditions (struct): Struct with jump conditions across the shock</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
 </ul>
+</p>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>kolmogorovLengthRatio (float)</em> – Kolmogorov length scale ratio</p>
-</dd>
-</dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>kolmogorovLengthRatio = getKolmogorovLength(ShockTurbulenceSolver(), results);</p>
-</div>
-<p>Note: The calculation of the dynamic viscosity ratio is based on temporal functions and will be overriden with a specific TransportProperties class in future releases.</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -554,21 +505,21 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.plot" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">averages</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot results</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></a></span>) – ShockTurbulenceSolver object</p></li>
-<li><p><strong>results</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Results from the Linear Interaction Analysis</p></li>
+<li><p><strong>averages</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct with averages from LIA</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<ul class="simple">
-<li><p>plot(ShockTurbulenceSolver(), results);</p></li>
-</ul>
+<p>plot(ShockTurbulenceSolver(), mixArray1, mixArray2);</p>
 </div>
 </dd></dl>
 
@@ -595,15 +546,23 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <dd><p>Problem type</p>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.problemTypeMixArray">
+<span class="sig-name descname"><span class="pre">problemTypeMixArray</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.problemTypeMixArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Accronym to set problemType in mixArray1 and mixArray2</p>
+</dd></dl>
+
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.report">
-<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">results</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.report" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">averages</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.report" title="Permalink to this definition">#</a></dt>
 <dd><p>Postprocess all the results with predefined plots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></a></span>) – ShockTurbulenceSolver object</p></li>
-<li><p><strong>results</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Results from the Linear Interaction Analysis</p></li>
+<li><p><strong>averages</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct with averages from LIA</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 </dl>
@@ -613,6 +572,23 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 <li><p>report(ShockTurbulenceSolver(), results);</p></li>
 </ul>
 </div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.setShockTurbulenceModel">
+<span class="sig-name descname"><span class="pre">setShockTurbulenceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">shockTurbulenceModel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.setShockTurbulenceModel" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the ShockTurbulenceModel object or the name of the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></a></span>) – ShockTurbulenceSolver object</p></li>
+<li><p><strong>shockTurbulenceModel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModel</span> <span class="pre">or</span> <span class="pre">char</span></code></span>) – ShockTurbulenceModel object or name of the model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>obj (ShockTurbulenceSolver)</em> – ShockTurbulenceSolver object with updated ShockTurbulenceModel</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -629,23 +605,29 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver.solve">
-<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.solve" title="Permalink to this definition">#</a></dt>
-<dd><p>Solve shock waves problems</p>
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceSolver.ShockTurbulenceSolver.solve" title="Permalink to this definition">#</a></dt>
+<dd><p>Solve array of shock waves problems</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceSolver.ShockTurbulenceSolver"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></a></span>) – ShockTurbulenceSolver object</p></li>
-<li><p><strong>mixArray</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Initial Mixture objects</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Initial Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>results (struct)</em> – Struct with results from LIA</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>averages (struct): Struct with averages from LIA</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <ul class="simple">
-<li><p>results = solve(ShockTurbulenceSolver(), mixArray);</p></li>
+<li><p>[averages, mixArray1, mixArray2] = solve(ShockTurbulenceSolver(), mixArray1);</p></li>
 </ul>
 </div>
 </dd></dl>
@@ -803,24 +785,30 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages">
-<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVortical.ShockTurbulenceModelVortical.getAverages" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the post-shock turbulence statistics for vortical disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVortical.ShockTurbulenceModelVortical" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVortical.ShockTurbulenceModelVortical"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelVortical</span></code></a></span>) – ShockTurbulenceModelVortical object</p></li>
-<li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio (rho2/rho1)</p></li>
-<li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure with jump conditions across the shock wave</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>averages (struct): Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>averages = getAverages(ShockTurbulenceModelVortical(), R, M2, Gammas);</p>
+<p>[averages, mixArray1, mixArray2] = getAverages(ShockTurbulenceModelVortical(), jumpConditions, mixArray1, mixArray2);</p>
 </div>
 </dd></dl>
 
@@ -993,27 +981,30 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages">
-<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">chi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic.getAverages" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the post-shock turbulence statistics for vortical-entropic disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelVorticalEntropic.ShockTurbulenceModelVorticalEntropic"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelVorticalEntropic</span></code></a></span>) – ShockTurbulenceModelVorticalEntropic object</p></li>
-<li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
-<li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
-<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
-<li><p><strong>chi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mean correlation coefficient between the vortical and entropic modes</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure with jump conditions across the shock wave</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>averages (struct): Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>averages = getAverages(ShockTurbulenceModelVorticalEntropic(), R, M2, Gammas, Gammas1, beta, chi);</p>
+<p>[averages, mixArray1, mixArray2] = getAverages(ShockTurbulenceModelVorticalEntropic(), jumpConditions, mixArray1, mixArray2);</p>
 </div>
 </dd></dl>
 
@@ -1203,27 +1194,55 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages">
-<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">Gammas3</span></em>, <em class="sig-param"><span class="pre">beta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getAverages" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the post-shock turbulence statistics for acoustic disturbances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelAcoustic</span></code></a></span>) – ShockTurbulenceModelAcoustic object</p></li>
-<li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
-<li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
-<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure with jump conditions across the shock wave</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>averages (struct): Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>averages = getAverages(ShockTurbulenceModelAcoustic(), R, M2, Gammas, Gammas3, beta);</p>
+<p>[averages, mixArray1, mixArray2] = getAverages(ShockTurbulenceModelAcoustic(), jumpConditions, mixArray1, mixArray2);</p>
 </div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getKolmogorovLength">
+<span class="sig-name descname"><span class="pre">getKolmogorovLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">averages</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelAcoustic.ShockTurbulenceModelAcoustic.getKolmogorovLength" title="Permalink to this definition">#</a></dt>
+<dd><p>Estimate Kolmogorov length scale ratio across the shock</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceSolver</span></code></span>) – ShockTurbulenceSolver object</p></li>
+<li><p><strong>averages</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Struct with averages from LIA</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture array</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>kolmogorovLengthRatio (float)</em> – Kolmogorov length scale ratio</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>kolmogorovLengthRatio = getKolmogorovLength(ShockTurbulenceSolver(), averages, mixArray1, mixArray2);</p>
+</div>
+<p>Note: For acoustic disturbances, the Kolmogorov length scale ratio is not defined</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -1321,30 +1340,30 @@ combustion problems. Zenodo. DOI: 10.5281/zenodo.5554911.</p>
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages">
-<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">R</span></em>, <em class="sig-param"><span class="pre">M2</span></em>, <em class="sig-param"><span class="pre">Gammas</span></em>, <em class="sig-param"><span class="pre">Gammas1</span></em>, <em class="sig-param"><span class="pre">Gammas3</span></em>, <em class="sig-param"><span class="pre">beta</span></em>, <em class="sig-param"><span class="pre">eta</span></em>, <em class="sig-param"><span class="pre">chi</span></em>, <em class="sig-param"><span class="pre">etaVorticity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAverages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jumpConditions</span></em>, <em class="sig-param"><span class="pre">mixArray1</span></em>, <em class="sig-param"><span class="pre">mixArray2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible.getAverages" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the post-shock turbulence statistics by superposing the contributions of acoustic and vortical-entropic fluctuations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible" title="src.+combustiontoolbox.+shockturbulence.&#64;ShockTurbulenceModelCompressible.ShockTurbulenceModelCompressible"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ShockTurbulenceModelCompressible</span></code></a></span>) – ShockTurbulenceModelCompressible object</p></li>
-<li><p><strong>R</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Density ratio rho_2 / rho_1</p></li>
-<li><p><strong>M2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Post-shock Mach number</p></li>
-<li><p><strong>Gammas</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope, see Eq. (22) in [1] (Eq. (4) in [2])</p></li>
-<li><p><strong>Gammas1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
-<li><p><strong>Gammas3</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Inverse normalized Hugoniot slope</p></li>
-<li><p><strong>beta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Ratio of speed of sound in the post-shock state to the pre-shock state</p></li>
-<li><p><strong>eta</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – square ratio of vortical to acoustic disturbances</p></li>
-<li><p><strong>chi</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – mean correlation coefficient between the vortical and entropic modes</p></li>
-<li><p><strong>etaVorticity</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Downstream vorticity generated by acoustic disturbances across the shock normalized by the upstream rotational-entropic vorticity</p></li>
+<li><p><strong>jumpConditions</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">struct</span></code></span>) – Structure with jump conditions across the shock wave</p></li>
+<li><p><strong>mixArray1</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Pre-shock Mixture objects</p></li>
+<li><p><strong>mixArray2</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Mixture</span></code></span>) – Post-shock Mixture objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>averages (struct)</em> – Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>averages (struct): Structure with averages of post-shock turbulence statistics (e.g., Reynolds stresses, turbulent kinetic energy, enstrophy, etc.)</p></li>
+<li><p>mixArray1 (Mixture): Pre-shock Mixture objects</p></li>
+<li><p>mixArray2 (Mixture): Post-shock Mixture objects</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>averages = getAverages(ShockTurbulenceModelCompressible(), R, M2, Gammas, Gammas1, Gammas3, beta, eta, chi, etaVorticity);</p>
+<p>[averages, mixArray1, mixArray2] = getAverages(ShockTurbulenceModelCompressible(), jumpConditions, mixArray1, mixArray2);</p>
 </div>
 </dd></dl>
 

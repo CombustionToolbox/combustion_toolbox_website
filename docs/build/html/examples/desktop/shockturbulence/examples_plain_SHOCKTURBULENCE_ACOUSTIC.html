@@ -376,7 +376,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="shock-turbulence-interaction-with-acoustic-disturbances">
 <h1>Shock-Turbulence Interaction with acoustic disturbances<a class="headerlink" href="#shock-turbulence-interaction-with-acoustic-disturbances" title="Permalink to this heading">#</a></h1>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% -------------------------------------------------------------------------</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="c">% Example of an acoustic Shock–Turbulence Interaction using LIA</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="c">% EXAMPLE: SHOCKTURBULENCE_ACOUSTIC</span><span class="w"></span>
 <span class="linenos"> 3</span><span class="c">%</span><span class="w"></span>
 <span class="linenos"> 4</span><span class="c">% This example computes the Linear Interaction Analysis (LIA) solution for</span><span class="w"></span>
 <span class="linenos"> 5</span><span class="c">% a shock–turbulence interaction involving upstream acoustic fluctuations</span><span class="w"></span>
@@ -439,10 +439,10 @@
 <span class="linenos">62</span><span class="n">shockTurbulence</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ShockTurbulenceSolver</span><span class="p">(</span><span class="s">&#39;problemType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;acoustic&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;caloricGasModel&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">caloricGasModel</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">63</span>
 <span class="linenos">64</span><span class="c">% Solve LIA</span><span class="w"></span>
-<span class="linenos">65</span><span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">65</span><span class="p">[</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">mixArray</span><span class="p">);</span><span class="w"></span>
 <span class="linenos">66</span>
 <span class="linenos">67</span><span class="c">% Report results</span><span class="w"></span>
-<span class="linenos">68</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">results</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">68</span><span class="n">shockTurbulence</span><span class="p">.</span><span class="n">report</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray1</span><span class="p">,</span><span class="w"> </span><span class="n">mixArray2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
