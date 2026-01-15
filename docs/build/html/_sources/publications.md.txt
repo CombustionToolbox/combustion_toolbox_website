@@ -5,7 +5,7 @@
 If you use the Combustion Toolbox in a publication, please cite it using the following references:
 
 * *Cuadra, A., Huete, C., & Vera, M. (2026). Combustion Toolbox: An open-source thermochemical code for gas-and condensed-phase problems involving chemical equilibrium. Computer Physics Communications 320, 110004. [doi:10.1016/j.cpc.2025.110004](https://doi.org/10.1016/j.cpc.2025.110004).*
-* *Cuadra, A., Huete, C., & Vera, M. (2026). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.2.8. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
+* *Cuadra, A., Huete, C., & Vera, M. (2026). Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems. Version 1.2.9. Zenodo. [doi:10.5281/zenodo.5554911](https://doi.org/10.5281/zenodo.5554911).*
 
 It can be handy the BibTeX format:
 
@@ -25,7 +25,7 @@ It can be handy the BibTeX format:
     title   = "{{Combustion Toolbox: A MATLAB-GUI based open-source tool for solving gaseous combustion problems}}",
     author  = {A. Cuadra and C. Huete and M. Vera},
     year    = {2026},
-    note    = {Version 1.2.8},
+    note    = {Version 1.2.9},
     doi     = {https://doi.org/10.5281/zenodo.5554911}
 }
 ```
@@ -36,6 +36,7 @@ It can be handy the BibTeX format:
 Here are some contributions, work-in-progress articles, and publications where the Combustion Toolbox has been used, as well as other codes that utilize this toolbox.
 
 ### Journal articles
+* Cuadra, A., Huete, C., & Vera, M. (2026). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. Computer Physics Communications, 320, 110004. [doi:10.1016/j.cpc.2025.110004](https://doi.org/10.1016/j.cpc.2025.110004).<a href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium" class="pdf" target="_blank"></a>
 * Liberatori, J., Cavalieri, D., Blandino, M., Simone, D., Liuzzi, D., Valorani, M., & Ciottoli, P. P. (2025). Modeling vaporization and combustion processes in staged and externally-ignited HTP/RP-1 green bipropellant systems. Acta Astronautica. [doi:10.1016/j.actaastro.2025.10.001](https://doi.org/10.1016/j.actaastro.2025.10.001).
 * Adam, A., Elmeknassi, Y., & Gibreel, M. (2025). Impact of Hydrogen Fraction and Operating Parameters on a Regenerative Gas Turbine's Thermodynamic and Emission Behavior. Results in Engineering, 107606. [doi:10.1016/j.rineng.2025.107606](https://doi.org/10.1016/j.rineng.2025.107606).
 * Qin, Q., Yang, Y., Liu, Y., & Li, J. (2025). Controlling the initiation of oblique detonation waves using a moving forward-facing step. International Communications in Heat and Mass Transfer, 169, 109604. [doi:10.1016/j.icheatmasstransfer.2025.109604](https://doi.org/10.1016/j.icheatmasstransfer.2025.109604).
@@ -46,7 +47,6 @@ Here are some contributions, work-in-progress articles, and publications where t
 * Chang, X., Hongting, M., & Xiaohui, Y. (2024). Comprehensive performance evaluation method of working fluids for high temperature heat pump based on multi-objective optimization. Applied Thermal Engineering, 123102. [doi:10.1016/j.applthermaleng.2024.123102](https://doi.org/10.1016/j.applthermaleng.2024.123102).
 * Chen, J., Sun, M., Li, P., An, B., Jiaoru, W., & Li, M. (2024). Effects of excess oxidizer coefficient on RBCC engine performance in ejector mode: A theoretical investigation. Energy, 289, 130070. [doi:10.1016/j.energy.2023.130070](https://doi.org/10.1016/j.energy.2023.130070).
 * Qin, Q., Li, L., Han, F., Yao, Q., Liu, Y., Yuan, M., Li, X., Ji, T., & Li, J. (2024). Expansion wave-reinforced initiation of the oblique detonation wave. Physics of Fluids, 36(8). [doi:10.1063/5.0220586](https://doi.org/10.1063/5.0220586).
-* Cuadra, A., Huete, C., & Vera, M. (2024). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium **(under review)**.
 * Dahake, A., Singh, R. K., & Singh, A. V. (2023). Dual behavior of hydrogen peroxide in gaseous detonations. Shock Waves, 33(5), 401-414. [doi:10.1007/s00193-023-01142-5](https://doi.org/10.1007/s00193-023-01142-5).
 * Sánchez, J., Cuadra, A., Huete, C., Vera, M. (2022). SimEx: A tool for rapid evaluation of the effects of explosions. Applied Sciences, 12(18), 9191. [doi:10.3390/app12189101](https://doi.org/10.3390/app12189101).<a href="_static/files/simex2022.pdf" class="pdf" target="_blank"></a>
 * Huete, C., Cuadra, A., Vera, M., & Urzay, J. (2021). Thermochemical effects on hypersonic shock waves interacting with weak turbulence. Physics of Fluids 33, 086111 (2021) **(featured article)**. [doi:10.1063/5.0059948](https://doi.org/10.1063/5.0059948). <a href="https://www.researchgate.net/publication/354024089_Thermochemical_effects_on_hypersonic_shock_waves_interacting_with_weak_turbulence" class="pdf" target="_blank"></a>
