@@ -7,12 +7,18 @@ version: 2
 
 # Set the version of Python and other tools you might need
 build:
-  os: ubuntu-24.04
+  os: ubuntu-22.04
   tools:
     python: "3.9"
-  jobs:
-    post_install:
-      - pip install setuptools
+
+# Install packages
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - setuptools
+    - requirements: docs/requirements.txt
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
