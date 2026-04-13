@@ -331,7 +331,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock-Turbulence Interaction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils/index.html">Utilities</a></li>
 </ul>
@@ -843,6 +843,32 @@ given equivalence ratio (phi)</p>
 </dd></dl>
 
 <dl class="mat method">
+<dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.filterSpeciesTemperatureRange">
+<span class="sig-name descname"><span class="pre">filterSpeciesTemperatureRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">numSpecies</span></em>, <em class="sig-param"><span class="pre">FLAG_EXTRAPOLATE</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.filterSpeciesTemperatureRange" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove species indices out of the temperature range if FLAG_EXTRAPOLATE = false,
+e.g., extrapolation of the polynomial fits is not allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span><a class="reference internal" href="#src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem" title="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a></span>) – Chemical system object</p></li>
+<li><p><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature</p></li>
+<li><p><strong>index</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the species indices</p></li>
+<li><p><strong>numSpecies</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of species</p></li>
+<li><p><strong>FLAG_EXTRAPOLATE</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating extrapolation of the polynomials fits is allowed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><em>Tuple containing</em> –</p>
+<ul class="simple">
+<li><p>index (float): Updated vector with the species indices</p></li>
+<li><p>numSpecies (float): Update number of species</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.getChargeIons">
 <span class="sig-name descname"><span class="pre">getChargeIons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.getChargeIons" title="Permalink to this definition">#</a></dt>
 <dd><p>Get charges of the ion species in the chemical system</p>
@@ -941,13 +967,13 @@ given equivalence ratio (phi)</p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexCondensed">
 <span class="sig-name descname"><span class="pre">indexCondensed</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexCondensed" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces condensed species</p>
+<dd><p>Indices condensed species</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexCryogenic">
 <span class="sig-name descname"><span class="pre">indexCryogenic</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexCryogenic" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces cryogenic liquified species</p>
+<dd><p>Indices cryogenic liquified species</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -959,25 +985,25 @@ given equivalence ratio (phi)</p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexFrozen">
 <span class="sig-name descname"><span class="pre">indexFrozen</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexFrozen" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces inert/frozen species</p>
+<dd><p>Indices inert/frozen species</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexGas">
 <span class="sig-name descname"><span class="pre">indexGas</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexGas" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces gaseous species</p>
+<dd><p>Indices gaseous species</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexIons">
 <span class="sig-name descname"><span class="pre">indexIons</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexIons" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces ionized species in species</p>
+<dd><p>Indices ionized species in species</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="src.+combustiontoolbox.+core.&#64;ChemicalSystem.ChemicalSystem.indexReact">
 <span class="sig-name descname"><span class="pre">indexReact</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#src.+combustiontoolbox.+core.@ChemicalSystem.ChemicalSystem.indexReact" title="Permalink to this definition">#</a></dt>
-<dd><p>Indeces react species</p>
+<dd><p>Indices react species</p>
 </dd></dl>
 
 <dl class="mat attribute">

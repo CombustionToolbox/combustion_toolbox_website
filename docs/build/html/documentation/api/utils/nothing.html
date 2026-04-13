@@ -331,7 +331,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/index.html">Thermochemical equilibrium module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shockdetonation/index.html">Shocks and detonations module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rocket/index.html">Rocket module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock–Turbulence Interaction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shockturbulence/index.html">Shock-Turbulence Interaction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../turbulence/index.html">Turbulence module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html">Utilities</a></li>
 </ul>
@@ -554,32 +554,6 @@ given fieldname.</p>
 </dd></dl>
 
 <dl class="mat function">
-<dt class="sig sig-object mat" id="src.utils.check_temperature_range">
-<span class="sig-name descname"><span class="pre">check_temperature_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">system</span></em>, <em class="sig-param"><span class="pre">T</span></em>, <em class="sig-param"><span class="pre">index</span></em>, <em class="sig-param"><span class="pre">NS</span></em>, <em class="sig-param"><span class="pre">FLAG</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.check_temperature_range" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Remove species indeces out of the temperature range if FLAG = true,
-e.g., linear extrapolation of the polynomial fits is not allowed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>system</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></span>) – </p></li>
-<li><p class="sd-card-text"><strong>T</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Temperature</p></li>
-<li><p class="sd-card-text"><strong>ind</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Vector with the species indeces</p></li>
-<li><p class="sd-card-text"><strong>NS</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Number of species</p></li>
-<li><p class="sd-card-text"><strong>FLAG</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Flag indicating linear extrapolation of the polynomials fits</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
-<ul class="simple">
-<li><p class="sd-card-text">ind (float): Updated vector with the species indeces</p></li>
-<li><p class="sd-card-text">NS (float): Update number of species</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="mat function">
 <dt class="sig sig-object mat" id="src.utils.convert_Pa_to_bar">
 <span class="sig-name descname"><span class="pre">convert_Pa_to_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.convert_Pa_to_bar" title="Permalink to this definition">#</a></dt>
 <dd><p class="sd-card-text">Convert pressure in [Pa] units to [bar]</p>
@@ -679,32 +653,6 @@ the remaining moles from the equivalence relation.</p>
 <dd class="field-even"><p class="sd-card-text"><em>self (struct)</em> – Data of the mixture, conditions, and databases</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="mat function">
-<dt class="sig sig-object mat" id="src.utils.get_latest_version_github">
-<span class="sig-name descname"><span class="pre">get_latest_version_github</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">user</span></em>, <em class="sig-param"><span class="pre">repo_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.get_latest_version_github" title="Permalink to this definition">#</a></dt>
-<dd><p class="sd-card-text">Get latest version from a repository from Github</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p class="sd-card-text"><strong>user</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Username of the owner of the repository</p></li>
-<li><p class="sd-card-text"><strong>repo_name</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">char</span></code></span>) – Name of the repository</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p class="sd-card-text"><p class="sd-card-text">Tuple containing</p>
-<ul class="simple">
-<li><p class="sd-card-text">release (char): Release tag (latest)</p></li>
-<li><p class="sd-card-text">git_data (struct): Body data of the request</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p class="sd-card-text">[release, git_data] = get_latest_version_github(‘CombustionToolbox’, ‘combustion_toolbox’)</p>
-</div>
 </dd></dl>
 
 <dl class="mat function">
