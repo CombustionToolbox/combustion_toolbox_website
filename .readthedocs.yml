@@ -24,6 +24,7 @@ python:
 sphinx:
   configuration: docs/source/conf.py
   fail_on_warning: false
+
 # If using Sphinx, optionally build your docs in additional formats such as PDF
 formats:
   - pdf
@@ -32,12 +33,3 @@ formats:
 # Include submodules
 submodules:
   include: all
-  
-# Optionally declare the Python requirements required to build your docs
-python:
-  install:
-    - requirements: docs/requirements.txt
-#     - method: pip
-#       path: .
-#       extra_requirements:
-#         - doc

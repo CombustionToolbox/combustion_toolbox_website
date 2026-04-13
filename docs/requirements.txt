@@ -285,6 +285,3 @@ webencodings==0.5.1
     #   tinycss2
 wheel==0.38.0
     # via sphinx-togglebutton
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
