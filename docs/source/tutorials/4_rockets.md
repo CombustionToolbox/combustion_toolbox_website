@@ -28,7 +28,7 @@ Schematic of a chemically reacting rocket flow including chamber, throat, and ex
 - Ideal gas equation of state.
 - Continuity of temperature and velocity between gaseous and condensed species.
   
-Thermochemical states are handled through the [CT-EQUIL module](./1_chemical_equilibrium.md). The formulation follows the methodology originally developed in NASA's CEA code {cite:p}`gordon1994`.
+Thermochemical states are handled through the [CT-EQUIL module](./1_chemical_equilibrium.md). The formulation follows the methodology originally developed in NASA's CEA code {cite:p}`gordon1994`, while the implementation and validation of `CT-ROCKET` within Combustion Toolbox are discussed in {cite:p}`cuadra2026a`.
 
 Two limiting cases are supported through {mat:class}`~src.+combustiontoolbox.+rocket.@RocketSolver.RocketSolver`:
 
@@ -37,20 +37,16 @@ Two limiting cases are supported through {mat:class}`~src.+combustiontoolbox.+ro
 
 These models allow for rapid estimation of propulsion performance, including the **characteristic velocity** ($c^*$), **thrust coefficient** ($C_F$), and **specific impulse** ($I_{\text{sp}}$), while accounting for chemical equilibrium, composition-dependent thermodynamics, and finite expansion effects.
 
-## Congratulations!
-Congratulations you have finished the Combustion Toolbox MATLAB tutorial! You should now be ready to begin using the Combustion Toolbox on your own (see the `examples` folder).
+The two formulations differ in how the combustion chamber is modeled:
 
-<!-- 
-
-See the following dedicated pages for usage examples and detailed implementation of each model.
+- In the **IAC model**, the chamber is treated as infinitely large. The combustion process is therefore modeled as an isobaric equilibrium transformation, followed by an isentropic acceleration toward the throat and nozzle exit.
+- In the **FAC model**, the chamber has a finite cross-sectional area. The flow accelerates inside the chamber, so the injector, chamber outlet, and throat states must be determined consistently.
 
 ```{toctree}
 :caption: Contents
 :maxdepth: 1
 :titlesonly:
 
-rockets/rockets_IAC
-rockets/rockets_FAC
-``` 
-
--->
+rockets/rockets_1
+rockets/rockets_2
+```
