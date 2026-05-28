@@ -21,9 +21,9 @@ The module supports vortical, entropic, and acoustic disturbances, as well as fu
 ```{eval-rst}
 .. currentmodule:: src.+combustiontoolbox.+shockturbulence
 
-    .. automodule:: src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModel
-    :show-inheritance:
-    :members:
+.. automodule:: src.+combustiontoolbox.+shockturbulence.@ShockTurbulenceModel
+   :show-inheritance:
+   :members:
 ```
 
 ## ShockTurbulenceModelVortical

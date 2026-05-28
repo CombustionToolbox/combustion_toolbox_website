@@ -102,6 +102,6 @@ import combustiontoolbox.core.*
 import combustiontoolbox.shockturbulence.*
 ```
 
-````{/tab-item}
+````
 
 `````

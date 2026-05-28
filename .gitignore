@@ -1,7 +1,8 @@
 # OSX
 *.DS_Store
 
-# Remove not neccesary folders from the source code 
+# Remove not neccesary folders
+docs/build/
 src/installer
 src/validations/figures
 src/validations/other stuff
