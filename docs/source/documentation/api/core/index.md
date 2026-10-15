@@ -58,6 +58,14 @@ Combustion Toolbox relies on several core classes to perform its calculations. T
    :members:
 ```
 
+## EquationStatePengRobinson
+
+```{eval-rst}
+.. automodule:: src.+combustiontoolbox.+core.@EquationStatePengRobinson
+   :show-inheritance:
+   :members:
+```
+
 ## CaloricGasModel
 
 ```{eval-rst}

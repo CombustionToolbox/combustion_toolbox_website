@@ -36,6 +36,11 @@ It can be handy the BibTeX format:
 Here are some contributions, work-in-progress articles, and publications where the Combustion Toolbox has been used, as well as other codes that utilize this toolbox.
 
 ### Journal articles
+* Yue, C., Chen, L., Ran, Q., Yin, R., Xu, R., & Xu, R. (2026). Numerical investigation on the dynamic response of underground tunnel subjected to oil–gas explosion. Tunnelling and Underground Space Technology, 177, 107961. [doi:10.1016/j.tust.2026.107961](https://doi.org/10.1016/j.tust.2026.107961).
+* Hernández-Sánchez, R., Martínez-Ruiz, D., & Huete, C. (2026). Water spray mitigation of hydrogen-air detonations: Steady-state regimes and detonability limits. International Journal of Hydrogen Energy, 275, 157334. [doi:10.1016/j.ijhydene.2026.157334](https://doi.org/10.1016/j.ijhydene.2026.157334).
+* Antón-Álvarez, A., & Lozano-Durán, A. (2026). HYMOR: An open-source package for modal, non-modal, and receptivity analysis in high-enthalpy hypersonic vehicles. Computer Physics Communications, 110340. [doi:10.1016/j.cpc.2026.110340](https://doi.org/10.1016/j.cpc.2026.110340).
+* Tcherak, A., Kbab, H., & Haddad, A. (2026). Effects of Chemical Reactions on Fluidic Thrust Vectoring Performance in Dual-Bell Nozzles. Technical Physics, 71(8), 610-633. [doi:10.1134/S1063784226600712](https://doi.org/10.1134/S1063784226600712).
+* Waste, H. P., & Ladewig, B. P. (2026). Report on Process Modelling and Simulation of Hydrogen Production from Plastics. [doi:10.5281/zenodo.2172194](https://doi.org/10.5281/zenodo.2172194).
 * Cuadra, A. Williams, C. T., Di Renzo, M., Vera, M., & Huete, C. (2026). The role of compressibility and vibrational excitation in hypersonic shock-turbulence interactions. Journal of Fluid Mechanics, 1032, A13. [doi:10.1017/jfm.2026.11356](https://doi.org/10.1017/jfm.2026.11355). <a href="https://doi.org/10.1017/jfm.2026.11355" class="pdf" target="_blank"></a>
 * Cuadra, A., Huete, C., & Vera, M. (2026). Combustion Toolbox: An open-source thermochemical code for gas- and condensed-phase problems involving chemical equilibrium. Computer Physics Communications, 320, 110004. [doi:10.1016/j.cpc.2025.110004](https://doi.org/10.1016/j.cpc.2025.110004).<a href="https://www.researchgate.net/publication/398856092_Combustion_Toolbox_An_open-source_thermochemical_code_for_gas-_and_condensed-phase_problems_involving_chemical_equilibrium" class="pdf" target="_blank"></a>
 * Liberatori, J., Cavalieri, D., Blandino, M., Simone, D., Liuzzi, D., Valorani, M., & Ciottoli, P. P. (2025). Modeling vaporization and combustion processes in staged and externally-ignited HTP/RP-1 green bipropellant systems. Acta Astronautica. [doi:10.1016/j.actaastro.2025.10.001](https://doi.org/10.1016/j.actaastro.2025.10.001).
@@ -63,6 +68,8 @@ Here are some contributions, work-in-progress articles, and publications where t
 
 ### Conference contributions
 
+* Cariddi, S., Cuadra, A., Sciacovelli, L., Alferez, N., Huete, C., Di Renzo, M., & Passiatore, D. (2026). Shock-Wave Interactions with Vortical and Entropic Perturbations in Nonideal Gases. In 6th International Seminar on Non-Ideal Compressible Fluid Dynamics (NICFD), Lecce, Italy.
+* Cuadra, A., Vera, M., & Huete, C. (2026). Combustion Toolbox: A reduced-order framework for high-speed reactive flows. In Joint Meeting of the Italian and Spanish Sections of The Combustion Institute 2026, Piano di Sorrento, Italy.
 * Cuadra, A., Romero, M. A., Vera, M., & Huete, C. (2025). Impact of vibrational-excitation on scramjet inlet design. In 3rd Spanish Fluid Mechanics Conference (SFMC), Málaga, Spain.
 * Cuadra, A., Huete, C., & Vera, M. (2025). Combustion Toolbox: An Open-Source Computational Tool for Aerothermochemical Research and Education. In 3rd Spanish Fluid Mechanics Conference (SFMC), Málaga, Spain.
 * Cuadra, A., Williams, C. T., Di Renzo, M., & Huete, C. (2024). Compressibility and vibrational-excitation effects in hypersonic shock-turbulence interaction. In 77th Annual Meeting of the Division of Fluid Dynamics (APS DFD), Salt Lake City, USA.
@@ -88,7 +95,7 @@ Here are some contributions, work-in-progress articles, and publications where t
 * Cuadra, A., Huete, C., & Vera, M. (2021). Development of an open-source thermochemical code: Fundamentals and application to shock turbulence interaction problems in the hypersonic regime. Seminar presented as part of the PhD Programme in Mechatronics Engineering, Málaga, Spain
 
 ### PhD, MSc & BSc thesis
-* Sobrino, A. (2026). Implementation of a chemical kinetics solver for quasi-1D scramjet combustion analysis. Universidad Carlos III de Madrid, Spain (BSc thesis - ongoing). Advisor: Alberto Cuadra.
+* Sobrino, A. (2026). Implementation of a chemical kinetics solver for quasi-1D scramjet combustion analysis. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisor: Alberto Cuadra.
 * Torremocha, A. (2025). Optimization of scramjet inlet geometry using the Lagrange multipliers method. Universidad Carlos III de Madrid, Spain (MSc thesis). Advisor: Alberto Cuadra.
 * Martín, M. L. (2025). Development of a quasi-one-dimensional scramjet flow model using the Combustion Toolbox. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisor: Alberto Cuadra.
 * Atienza, F. (2024). Optimization of scramjet inlet design for calorically perfect gaseous mixtures. Universidad Carlos III de Madrid, Spain (BSc thesis). Advisor: Alberto Cuadra.
